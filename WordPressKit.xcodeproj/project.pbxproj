@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		872EA6B293FCE6631BE2C2E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CF6DFA59734B2F271C3B17 /* libPods.a */; };
+		B46004CE1B8CBB1000757221 /* FunctionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004CD1B8CBB1000757221 /* FunctionsViewController.m */; };
+		B46004D11B8CBB3D00757221 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D01B8CBB3D00757221 /* CategoriesViewController.m */; };
+		B46004D41B8CBB5000757221 /* SourcefileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D31B8CBB5000757221 /* SourcefileViewController.m */; };
+		B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */; };
+		B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D91B8CBB6900757221 /* AboutViewController.m */; };
 		B4E53F121B87FDCB00C4CFAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F111B87FDCB00C4CFAA /* main.m */; };
 		B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F141B87FDCB00C4CFAA /* AppDelegate.m */; };
-		B4E53F181B87FDCB00C4CFAA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F171B87FDCB00C4CFAA /* FirstViewController.m */; };
-		B4E53F1B1B87FDCB00C4CFAA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F1A1B87FDCB00C4CFAA /* SecondViewController.m */; };
 		B4E53F1E1B87FDCB00C4CFAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E53F1C1B87FDCB00C4CFAA /* Main.storyboard */; };
 		B4E53F201B87FDCB00C4CFAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E53F1F1B87FDCB00C4CFAA /* Images.xcassets */; };
 		B4E53F231B87FDCB00C4CFAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E53F211B87FDCB00C4CFAA /* LaunchScreen.xib */; };
@@ -31,15 +34,21 @@
 /* Begin PBXFileReference section */
 		18CF6DFA59734B2F271C3B17 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2201DCDA6069FDA7BD32C1F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B46004CC1B8CBB1000757221 /* FunctionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionsViewController.h; sourceTree = "<group>"; };
+		B46004CD1B8CBB1000757221 /* FunctionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionsViewController.m; sourceTree = "<group>"; };
+		B46004CF1B8CBB3D00757221 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		B46004D01B8CBB3D00757221 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		B46004D21B8CBB5000757221 /* SourcefileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourcefileViewController.h; sourceTree = "<group>"; };
+		B46004D31B8CBB5000757221 /* SourcefileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourcefileViewController.m; sourceTree = "<group>"; };
+		B46004D51B8CBB5D00757221 /* ManagesiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagesiteViewController.h; sourceTree = "<group>"; };
+		B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagesiteViewController.m; sourceTree = "<group>"; };
+		B46004D81B8CBB6900757221 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		B46004D91B8CBB6900757221 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B4E53F0C1B87FDCB00C4CFAA /* WordPressKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordPressKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E53F101B87FDCB00C4CFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4E53F111B87FDCB00C4CFAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4E53F131B87FDCB00C4CFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4E53F141B87FDCB00C4CFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B4E53F161B87FDCB00C4CFAA /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		B4E53F171B87FDCB00C4CFAA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		B4E53F191B87FDCB00C4CFAA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		B4E53F1A1B87FDCB00C4CFAA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B4E53F1D1B87FDCB00C4CFAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4E53F1F1B87FDCB00C4CFAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B4E53F221B87FDCB00C4CFAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -77,6 +86,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B46004DC1B8CBB9C00757221 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B46004CC1B8CBB1000757221 /* FunctionsViewController.h */,
+				B46004CD1B8CBB1000757221 /* FunctionsViewController.m */,
+				B46004CF1B8CBB3D00757221 /* CategoriesViewController.h */,
+				B46004D01B8CBB3D00757221 /* CategoriesViewController.m */,
+				B46004D21B8CBB5000757221 /* SourcefileViewController.h */,
+				B46004D31B8CBB5000757221 /* SourcefileViewController.m */,
+				B46004D51B8CBB5D00757221 /* ManagesiteViewController.h */,
+				B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */,
+				B46004D81B8CBB6900757221 /* AboutViewController.h */,
+				B46004D91B8CBB6900757221 /* AboutViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		B4E53F031B87FDCB00C4CFAA = {
 			isa = PBXGroup;
 			children = (
@@ -102,14 +128,11 @@
 			children = (
 				B4E53F131B87FDCB00C4CFAA /* AppDelegate.h */,
 				B4E53F141B87FDCB00C4CFAA /* AppDelegate.m */,
-				B4E53F161B87FDCB00C4CFAA /* FirstViewController.h */,
-				B4E53F171B87FDCB00C4CFAA /* FirstViewController.m */,
-				B4E53F191B87FDCB00C4CFAA /* SecondViewController.h */,
-				B4E53F1A1B87FDCB00C4CFAA /* SecondViewController.m */,
 				B4E53F1C1B87FDCB00C4CFAA /* Main.storyboard */,
 				B4E53F1F1B87FDCB00C4CFAA /* Images.xcassets */,
 				B4E53F211B87FDCB00C4CFAA /* LaunchScreen.xib */,
 				B4E53F0F1B87FDCB00C4CFAA /* Supporting Files */,
+				B46004DC1B8CBB9C00757221 /* Views */,
 			);
 			path = WordPressKit;
 			sourceTree = "<group>";
@@ -283,9 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4E53F1B1B87FDCB00C4CFAA /* SecondViewController.m in Sources */,
+				B46004D41B8CBB5000757221 /* SourcefileViewController.m in Sources */,
+				B46004CE1B8CBB1000757221 /* FunctionsViewController.m in Sources */,
+				B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */,
+				B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */,
 				B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */,
-				B4E53F181B87FDCB00C4CFAA /* FirstViewController.m in Sources */,
+				B46004D11B8CBB3D00757221 /* CategoriesViewController.m in Sources */,
 				B4E53F121B87FDCB00C4CFAA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +441,7 @@
 			baseConfigurationReference = 2201DCDA6069FDA7BD32C1F2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WordPressKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,6 +454,7 @@
 			baseConfigurationReference = EEEC05FB07F931989DBD5D97 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WordPressKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
