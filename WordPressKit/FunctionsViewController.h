@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FunctionsViewController : UIViewController
+@class DataModel;
+
+@interface FunctionsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end

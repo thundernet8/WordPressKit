@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoriesViewController : UIViewController
+@class DataModel;
+
+@interface CategoriesViewController : UITableViewController
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end
