@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, assign) NSInteger itemId;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *category;
+@property (nonatomic, assign) NSInteger category;
 @property (nonatomic, copy) NSString *des;
 @property (nonatomic, copy) NSString *usage;
 @property (nonatomic, copy) NSString *parameters;

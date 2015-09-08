@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class DataModel;
+@class CatItem;
 
 @interface FunctionsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) DataModel *dataModel;
+@property (nonatomic, strong) CatItem *catItem;
 
 @end

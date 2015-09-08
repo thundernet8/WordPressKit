@@ -38,6 +38,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -344,15 +345,19 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="分类" id="Fl0-Xs-Snm"/>
+                    <connections>
+                        <segue destination="N1Q-xa-yd3" kind="show" identifier="shouCatFuncItems" id="lKi-PD-6EN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-176"/>
+            <point key="canvasLocation" x="1910" y="-176"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -498,4 +503,7 @@
         <image name="managesite" width="22" height="22"/>
         <image name="sourcefile" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lKi-PD-6EN"/>
+    </inferredMetricsTieBreakers>
 </document>

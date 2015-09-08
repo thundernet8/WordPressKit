@@ -9,12 +9,20 @@
 #import "CategoriesViewController.h"
 #import "CatItem.h"
 #import "DataModel.h"
+#import "FunctionsViewController.h"
 
 @interface CategoriesViewController ()
 
 @end
 
 @implementation CategoriesViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +33,15 @@
     
     //int id = [self.dataModel queryFuncItemsInCatItemId:2];
     //NSLog(@"%d count",id);
+    
+    //分割线全宽-tableview
+    UITableView *tableView = self.tableView;
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,10 +64,10 @@
 {
     UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:1201];
     UILabel *desLabel = (UILabel *)[cell.contentView viewWithTag:1202];
-    UILabel *countLable = (UILabel *)[cell.contentView viewWithTag:1203];
+    UILabel *countLabel = (UILabel *)[cell.contentView viewWithTag:1203];
     titleLabel.text = catItem.name;
     desLabel.text = catItem.des;
-    countLable.text = [NSString stringWithFormat:@"%d", (int)catItem.count*100];
+    countLabel.text = [NSString stringWithFormat:@"%d", (int)catItem.count];
     
 }
 
@@ -83,13 +100,25 @@
     desLabel.numberOfLines = 0;
     
     //配置countLabel尺寸
+    [countLabel sizeToFit];
     CGSize countSize = [countLabel.text sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(50.0, 12.0)];
-    CGFloat width = countSize.width + 15;
+    //CGFloat width = countSize.width + 15;
+    //CGFloat width = countLabel.frame.size.width + 15;
+    CGFloat width = 20;
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:countLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:0.0f constant:width];
     widthConstraint.active = YES;
     
     //设置选中样式
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //分割线全宽-cell
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
 
     return cell;
 }
@@ -106,10 +135,22 @@
     return cell.frame.size.height;
 }
 
-//取消选中cell
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//选中cell
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}*/
+    //取消选中
+    //[tableView deselectRowAtIndexPath:indexPath animated:NO];
+    CatItem *catItem = self.dataModel.catItems[indexPath.row];
+    [self performSegueWithIdentifier:@"shouCatFuncItems" sender:catItem];
+}
+
+//执行segue跳转至分类函数列表
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"shouCatFuncItems"]) {
+        FunctionsViewController *controller = segue.destinationViewController;
+        controller.catItem = sender;
+    }
+}
  
 @end

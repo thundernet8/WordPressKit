@@ -11,6 +11,7 @@
 #import "SourceFile.h"
 #import "DataModel.h"
 #import "FuncItemViewController.h"
+#import "CatItem.h"
 
 @interface FunctionsViewController () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -22,17 +23,28 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES; //隐藏导航条
-    
+    if (self.catItem) {
+        self.navigationController.navigationBarHidden = NO;
+    }else{
+        self.navigationController.navigationBarHidden = YES; //隐藏导航条
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [NSThread sleepForTimeInterval:1.5]; //延长Launch image加载时间
+    if (!self.catItem) {
+        [NSThread sleepForTimeInterval:1.5]; //延长Launch image加载时间
+    }
     self.searchBar.delegate = self;
     self.dataModel = [[DataModel alloc] init]; //初始化DataModel
-    [self.dataModel queryAllFuncItems];
+    if (self.catItem) {
+        [self.dataModel queryFuncItemsInCatItemId:self.catItem.id];
+        self.searchBar.placeholder = [NSString stringWithFormat:@"Search in %@",self.catItem.name];
+    }else{
+        [self.dataModel queryAllFuncItems];
+    }
+    
     //[self.dataModel queryFuncItemById:1];
     //[self.dataModel queryFuncItemBySimilarName:@"get"];
     
@@ -45,6 +57,14 @@
     //设置status bar背景色(对隐藏导航栏无效)
     //[self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     
+    //分割线全宽-tableview
+    UITableView *tableView = self.tableView;
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
     
     NSLog(@"the path is %@", [self.dataModel dataFilePath]);
 
@@ -107,6 +127,14 @@
     [self configTextForCell:cell cellWithFuncItem:item];
     //去掉分割线
     //[tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    //分割线全宽-cell
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
     return cell;
 }
 
@@ -139,7 +167,13 @@
 //搜索框内容变化
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [self.dataModel queryFuncItemBySimilarName:searchText];
+    NSInteger catId;
+    if (self.catItem) {
+        catId = self.catItem.id;
+    }else{
+        catId = 0;
+    }
+    [self.dataModel queryFuncItemBySimilarName:searchText inCatId:catId];
     [self.tableView reloadData];
 }
 

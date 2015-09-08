@@ -114,8 +114,8 @@
                 NSString *nsName = [[NSString alloc] initWithUTF8String:name];
                 funcItem.name = nsName;
                 
-                char *category = (char *)sqlite3_column_text(stmt, 2);
-                NSString *nsCategory = [[NSString alloc] initWithUTF8String:category];
+                int category = (int)sqlite3_column_int(stmt, 2);
+                NSInteger nsCategory = (int)category;
                 funcItem.category = nsCategory;
                 
                 char *des = (char *)sqlite3_column_text(stmt, 3);
@@ -185,8 +185,8 @@
                 NSString *nsName = [[NSString alloc] initWithUTF8String:name];
                 funcItem.name = nsName;
                 
-                char *category = (char *)sqlite3_column_text(stmt, 2);
-                NSString *nsCategory = [[NSString alloc] initWithUTF8String:category];
+                int category = (int)sqlite3_column_int(stmt, 2);
+                NSInteger nsCategory = (int)category;
                 funcItem.category = nsCategory;
                 
                 char *des = (char *)sqlite3_column_text(stmt, 3);
@@ -232,7 +232,7 @@
 }
 
 // --根据name近似查询funcItem
-- (int)queryFuncItemBySimilarName:(NSString *)name
+- (int)queryFuncItemBySimilarName:(NSString *)name inCatId:(NSInteger)id
 {
     NSString *path = self.dataFilePath;
     const char *npath = [path UTF8String];
@@ -240,12 +240,22 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK){
         NSAssert(NO, @"打开数据库失败");
     }else{
-        NSString *sql = @"SELECT * FROM FUNCITEMS WHERE NAME LIKE ? ORDER BY ID ASC";
+        NSString *sql;
+        if (id > 0){
+            sql = @"SELECT * FROM FUNCITEMS WHERE CATEGORY = ? AND NAME LIKE ? ORDER BY ID ASC";
+        }else{
+            sql = @"SELECT * FROM FUNCITEMS WHERE NAME LIKE ? ORDER BY ID ASC";
+        }
         const char *nsql = [sql UTF8String];
         //char *error;
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK){
-            sqlite3_bind_text(stmt, 1, [[NSString stringWithFormat:@"%%%@%%", name] UTF8String], -1, NULL);
+            if (id > 0){
+                sqlite3_bind_int(stmt, 1, (int)id);
+                sqlite3_bind_text(stmt, 2, [[NSString stringWithFormat:@"%%%@%%", name] UTF8String], -1, NULL);
+            }else{
+                sqlite3_bind_text(stmt, 1, [[NSString stringWithFormat:@"%%%@%%", name] UTF8String], -1, NULL);
+            }
             self.funcItems = [[NSMutableArray alloc] init];
             
                 while (sqlite3_step(stmt) == SQLITE_ROW) {
@@ -258,8 +268,9 @@
                 NSString *nsName = [[NSString alloc] initWithUTF8String:name];
                 funcItem.name = nsName;
                     NSLog(@"%@", nsName);
-                char *category = (char *)sqlite3_column_text(stmt, 2);
-                NSString *nsCategory = [[NSString alloc] initWithUTF8String:category];
+                    
+                int category = (int)sqlite3_column_int(stmt, 2);
+                NSInteger nsCategory = (int)category;
                 funcItem.category = nsCategory;
                 
                 char *des = (char *)sqlite3_column_text(stmt, 3);
@@ -420,7 +431,7 @@
                 
                 
                 //查询该分类下的funcItem个数
-                int count = [self queryFuncItemsInCatItemId:id];
+                int count = [self queryFuncItemsCountInCatItemId:id];
                 NSInteger nsCount = (NSInteger)count;
                 catItem.count = nsCount;
                 
@@ -435,7 +446,7 @@
 }
 
 //根据分类id查询funcItem个数
-- (int)queryFuncItemsInCatItemId:(NSInteger)id
+- (int)queryFuncItemsCountInCatItemId:(NSInteger)id
 {
     NSString *path = self.dataFilePath;
     const char* npath = [path UTF8String];
@@ -451,6 +462,77 @@
             if (sqlite3_step(stmt) == SQLITE_ROW){
                 int count = sqlite3_column_int(stmt, 0);
                 return count;
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    return 0;
+}
+
+//根据分类id查询funcItems
+- (int)queryFuncItemsInCatItemId:(NSInteger)id
+{
+    NSString *path = self.dataFilePath;
+    const char* npath = [path UTF8String];
+    // 打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"SELECT * FROM FUNCITEMS WHERE CATEGORY = ?";
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            sqlite3_bind_int(stmt, 1, (int)id);
+            self.funcItems = [[NSMutableArray alloc] init];
+            while (sqlite3_step(stmt) == SQLITE_ROW){
+                FuncItem *funcItem = [[FuncItem alloc] init];
+                int id = (int)sqlite3_column_int(stmt, 0);
+                NSInteger nsId = (NSInteger)id;
+                funcItem.itemId = nsId;
+                
+                char *name = (char *)sqlite3_column_text(stmt, 1);
+                NSString *nsName = [[NSString alloc] initWithUTF8String:name];
+                funcItem.name = nsName;
+                NSLog(@"%@", nsName);
+                
+                int category = (int)sqlite3_column_int(stmt, 2);
+                NSInteger nsCategory = (int)category;
+                funcItem.category = nsCategory;
+                
+                char *des = (char *)sqlite3_column_text(stmt, 3);
+                NSString *nsDescription = [[NSString alloc] initWithUTF8String:des];
+                funcItem.des = nsDescription;
+                
+                char *usage = (char *)sqlite3_column_text(stmt, 4);
+                NSString *nsUsage = [[NSString alloc] initWithUTF8String:usage];
+                funcItem.usage = nsUsage;
+                
+                char *parameters = (char *)sqlite3_column_text(stmt, 5);
+                NSString *nsParameters = [[NSString alloc] initWithUTF8String:parameters];
+                funcItem.parameters = nsParameters;
+                
+                char *returnvalue = (char *)sqlite3_column_text(stmt, 6);
+                NSString *nsReturnvalue = [[NSString alloc] initWithUTF8String:returnvalue];
+                funcItem.returnValue = nsReturnvalue;
+                
+                char *notes = (char *)sqlite3_column_text(stmt, 7);
+                NSString *nsNotes = [[NSString alloc] initWithUTF8String:notes];
+                funcItem.notes = nsNotes;
+                
+                char *changeLog = (char *)sqlite3_column_text(stmt, 8);
+                NSString *nsChangeLog = [[NSString alloc] initWithUTF8String:changeLog];
+                funcItem.changeLog = nsChangeLog;
+                
+                int sourceFileId = (int)sqlite3_column_int(stmt, 9);
+                NSInteger nsSourceFileId = (NSInteger)sourceFileId;
+                funcItem.sourceFileID = nsSourceFileId;
+                
+                char *img = (char *)sqlite3_column_text(stmt, 10);
+                NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
+                funcItem.img = nsImg;
+                
+                [self.funcItems addObject:funcItem];
             }
         }
         sqlite3_finalize(stmt);

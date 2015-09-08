@@ -33,12 +33,13 @@
 
 - (int)queryFuncItemById : (NSInteger)id;
 - (int)queryAllFuncItems;
-- (int)queryFuncItemBySimilarName:(NSString *)name;
+- (int)queryFuncItemBySimilarName:(NSString *)name inCatId:(NSInteger)id;
 
 - (int)querySourceFileById : (NSInteger)id;
 - (int)querySourceFiles;
 
 - (int)queryAllCatItems;
+- (int)queryFuncItemsCountInCatItemId:(NSInteger)id;
 - (int)queryFuncItemsInCatItemId:(NSInteger)id;
 
 
