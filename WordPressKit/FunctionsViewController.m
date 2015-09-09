@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if (!self.catItem) {
-        [NSThread sleepForTimeInterval:1.5]; //延长Launch image加载时间
+        [NSThread sleepForTimeInterval:2.0]; //延长Launch image加载时间
     }
     self.searchBar.delegate = self;
     self.dataModel = [[DataModel alloc] init]; //初始化DataModel
@@ -67,6 +67,7 @@
     }
     
     NSLog(@"the path is %@", [self.dataModel dataFilePath]);
+    [self setStatusBarBackgroundColor];
 
 }
 
@@ -186,12 +187,27 @@
 }
 
 //设置状态栏前景色
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleDefault;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleDefault;
+//}
 
 //设置状态栏背景色
-
+- (void)setStatusBarBackgroundColor
+{
+    self.view.window.clipsToBounds = YES;
+    [[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleLightContent];
+    
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if(orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.view.window.frame =  CGRectMake(20, 0,self.view.window.frame.size.width-20,self.view.window.frame.size.height);
+        self.view.window.bounds = CGRectMake(20, 0, self.view.window.frame.size.width, self.view.window.frame.size.height);
+    } else
+    {
+        self.view.window.frame =  CGRectMake(0,20,self.view.window.frame.size.width,self.view.window.frame.size.height-20);
+        self.view.window.bounds = CGRectMake(0, 20, self.view.window.frame.size.width, self.view.window.frame.size.height);
+    }
+}
 
 @end
