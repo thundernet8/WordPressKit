@@ -9,7 +9,7 @@
 #import "CategoriesViewController.h"
 #import "CatItem.h"
 #import "DataModel.h"
-#import "FunctionsViewController.h"
+#import "CatFuncItemsViewController.h"
 
 @interface CategoriesViewController ()
 
@@ -21,7 +21,6 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
-    
 }
 
 - (void)viewDidLoad {
@@ -42,6 +41,12 @@
     if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [tableView setLayoutMargins:UIEdgeInsetsZero];
     }
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
+    self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -148,9 +153,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"shouCatFuncItems"]) {
-        FunctionsViewController *controller = segue.destinationViewController;
+        CatFuncItemsViewController *controller = segue.destinationViewController;
         controller.catItem = sender;
     }
+}
+
+//设置状态栏前景色
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
  
 @end

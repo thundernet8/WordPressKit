@@ -316,8 +316,8 @@
 }
 
 
-//--查询全部sourceFiles
-- (int)querySourceFiles
+//--查询文件夹下的全部sourceFiles
+- (int)querySourceFilesByParentId : (NSInteger)parentId
 {
     NSString *path = self.dataFilePath;
     const char* npath = [path UTF8String];
@@ -325,12 +325,13 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"SELECT * FROM SOURCEFILES";
+        NSString *sql = @"SELECT * FROM SOURCEFILES WHERE PARENTID = ?";
         const char* nsql = [sql UTF8String];
         //char *error;
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK) {
-            self.funcItems = [[NSMutableArray alloc] init];
+            sqlite3_bind_int(stmt, 1, (int)parentId);
+            self.sourceFiles = [[NSMutableArray alloc] init];
             while (sqlite3_step(stmt) == SQLITE_ROW) {
                 SourceFile *sourceFile = [[SourceFile alloc] init];
                 int id = (int)sqlite3_column_int(stmt, 0);
@@ -341,9 +342,17 @@
                 NSString *nsName = [[NSString alloc] initWithUTF8String:name];
                 sourceFile.name = nsName;
                 
-                char *content = (char *)sqlite3_column_text(stmt, 2);
-                NSString *nsContent = [[NSString alloc] initWithUTF8String:content];
-                sourceFile.content = nsContent;
+                char *type = (char *)sqlite3_column_text(stmt, 2);
+                NSString *nsType = [[NSString alloc] initWithUTF8String:type];
+                sourceFile.type = nsType;
+                
+                int parentId = (int)sqlite3_column_int(stmt, 3);
+                NSInteger nsParentId = (NSInteger)parentId;
+                sourceFile.parentId = nsParentId;
+                
+                char *path = (char *)sqlite3_column_text(stmt, 4);
+                NSString *nsPath = [[NSString alloc] initWithUTF8String:path];
+                sourceFile.path = nsPath;
                 
                 [self.sourceFiles addObject:sourceFile];
                 
@@ -351,6 +360,9 @@
         }
         sqlite3_finalize(stmt);
         sqlite3_close(db);
+        SourceFile *oldSourceFile = [[SourceFile alloc] init];
+        oldSourceFile.parentId = parentId;
+        self.sourceFile = oldSourceFile;
     }
     return 0;
 }
@@ -380,11 +392,46 @@
                 NSString *nsName = [[NSString alloc] initWithUTF8String:name];
                 sourceFile.name = nsName;
                 
-                char *content = (char *)sqlite3_column_text(stmt, 2);
-                NSString *nsContent = [[NSString alloc] initWithUTF8String:content];
-                sourceFile.content = nsContent;
+                char *type = (char *)sqlite3_column_text(stmt, 2);
+                NSString *nsType = [[NSString alloc] initWithUTF8String:type];
+                sourceFile.type = nsType;
+                
+                int parentId = (int)sqlite3_column_int(stmt, 3);
+                NSInteger nsParentId = (NSInteger)parentId;
+                sourceFile.parentId = nsParentId;
+                
+                char *path = (char *)sqlite3_column_text(stmt, 4);
+                NSString *nsPath = [[NSString alloc] initWithUTF8String:path];
+                sourceFile.path = nsPath;
                 
                 self.sourceFile = sourceFile;
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    
+    return 0;
+}
+
+//根据父级id查询父级的父级id
+- (int)querySourceFileParentIdByParentId:(NSInteger)parentId
+{
+    NSString *path = self.dataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK){
+        NSAssert(NO, @"打开数据库失败");
+    }else{
+        NSString *sql = @"SELECT * FROM SOURCEFILES WHERE ID = ?";
+        const char *nsql = [sql UTF8String];
+        //char *error;
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK){
+            sqlite3_bind_int(stmt, 1, (int)parentId);
+            if (sqlite3_step(stmt) == SQLITE_ROW){
+                int parentId = (int)sqlite3_column_int(stmt, 3);
+                return parentId;
             }
         }
         sqlite3_finalize(stmt);

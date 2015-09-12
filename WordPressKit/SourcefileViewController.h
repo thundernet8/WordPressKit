@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SourcefileViewController : UIViewController
+@class DataModel;
+
+@interface SourcefileViewController : UITableViewController
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end

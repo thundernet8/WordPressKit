@@ -12,7 +12,9 @@
 
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, assign) NSInteger parentId;
 
 
 @end

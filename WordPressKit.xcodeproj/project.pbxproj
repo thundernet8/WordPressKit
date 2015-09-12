@@ -15,12 +15,13 @@
 		B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */; };
 		B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D91B8CBB6900757221 /* AboutViewController.m */; };
 		B4C04FD51B9B256500A43AEA /* CatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C04FD41B9B256500A43AEA /* CatItem.m */; };
-		B4DA8FE51BA080F600DF7530 /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DA8FE41BA080F600DF7530 /* FuncItems.sqlite3 */; };
+		B4DAE42C1BA44C2800D51121 /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE42B1BA44C2800D51121 /* FuncItems.sqlite3 */; };
 		B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */; };
 		B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */; };
 		B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */; };
 		B4DD04561B8DD8BE00E2ACA3 /* LoggedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD04551B8DD8BE00E2ACA3 /* LoggedViewController.m */; };
 		B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */; };
+		B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */; };
 		B4E2BB9E1B8F32DE00B10CF2 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */; };
 		B4E2BBA01B8F40B100B10CF2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E2BB9F1B8F40B100B10CF2 /* libsqlite3.0.dylib */; };
 		B4E53F121B87FDCB00C4CFAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F111B87FDCB00C4CFAA /* main.m */; };
@@ -58,7 +59,7 @@
 		B46004D91B8CBB6900757221 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B4C04FD31B9B256500A43AEA /* CatItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatItem.h; sourceTree = "<group>"; };
 		B4C04FD41B9B256500A43AEA /* CatItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatItem.m; sourceTree = "<group>"; };
-		B4DA8FE41BA080F600DF7530 /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
+		B4DAE42B1BA44C2800D51121 /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DD044B1B8DD85500E2ACA3 /* FuncItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncItemViewController.h; sourceTree = "<group>"; };
 		B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncItemViewController.m; sourceTree = "<group>"; };
 		B4DD044E1B8DD88400E2ACA3 /* CatItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatItemViewController.h; sourceTree = "<group>"; };
@@ -69,6 +70,8 @@
 		B4DD04551B8DD8BE00E2ACA3 /* LoggedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggedViewController.m; sourceTree = "<group>"; };
 		B4DD045C1B8E0F3600E2ACA3 /* FuncItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncItem.h; sourceTree = "<group>"; };
 		B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncItem.m; sourceTree = "<group>"; };
+		B4E1499E1BA3FC8500C6CA20 /* CatFuncItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatFuncItemsViewController.h; sourceTree = "<group>"; };
+		B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatFuncItemsViewController.m; sourceTree = "<group>"; };
 		B4E2BB9C1B8F32DE00B10CF2 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		B4E2BB9F1B8F40B100B10CF2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				B46004D01B8CBB3D00757221 /* CategoriesViewController.m */,
 				B4DD044E1B8DD88400E2ACA3 /* CatItemViewController.h */,
 				B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */,
+				B4E1499E1BA3FC8500C6CA20 /* CatFuncItemsViewController.h */,
+				B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -233,7 +238,7 @@
 		B4E53F0F1B87FDCB00C4CFAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B4DA8FE41BA080F600DF7530 /* FuncItems.sqlite3 */,
+				B4DAE42B1BA44C2800D51121 /* FuncItems.sqlite3 */,
 				B4E53F101B87FDCB00C4CFAA /* Info.plist */,
 				B4E53F111B87FDCB00C4CFAA /* main.m */,
 			);
@@ -350,7 +355,7 @@
 			files = (
 				B4E53F1E1B87FDCB00C4CFAA /* Main.storyboard in Resources */,
 				B4E53F231B87FDCB00C4CFAA /* LaunchScreen.xib in Resources */,
-				B4DA8FE51BA080F600DF7530 /* FuncItems.sqlite3 in Resources */,
+				B4DAE42C1BA44C2800D51121 /* FuncItems.sqlite3 in Resources */,
 				B4E53F201B87FDCB00C4CFAA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +419,7 @@
 				B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */,
 				B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */,
 				B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */,
+				B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */,
 				B46004D11B8CBB3D00757221 /* CategoriesViewController.m in Sources */,
 				B4E53F121B87FDCB00C4CFAA /* main.m in Sources */,
 				B4C04FD51B9B256500A43AEA /* CatItem.m in Sources */,

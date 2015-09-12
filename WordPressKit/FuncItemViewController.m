@@ -35,6 +35,8 @@
     // Do any additional setup after loading the view.
     //配置文字
     [self configText];
+    
+    
 
 }
 
@@ -59,7 +61,7 @@
     FuncItem *funcItem = [[FuncItem alloc] init];
     funcItem = self.funcItem;
     //标题与函数名
-    self.title = funcItem.name;
+    self.navigationItem.title = funcItem.name;
     UILabel *nameLabel = (UILabel *)[self.view viewWithTag:1101];
     nameLabel.text = funcItem.name;
     //描述
@@ -87,8 +89,8 @@
     NSString *str = [NSString stringWithFormat:@"%@ is located in <a id=\"sourfile_trigger\" href=\"javascript:\">%@</a>", funcItem.name, funcItem.sourceFile];
     NSAttributedString *astr = [[NSAttributedString alloc] initWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
     sourceFileText.attributedText = astr;
-    
-    
+    [sourceFileText setFont:[UIFont systemFontOfSize:12]];//修复字体
 }
+
 
 @end
