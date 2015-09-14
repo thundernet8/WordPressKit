@@ -92,8 +92,9 @@
 #pragma mark - 配置cell的img和label
 - (void)configImgForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
 {
+    NSString *img = [self.dataModel isBlankString:item.img] ? @"function" : item.img;
     UIGraphicsBeginImageContext(CGSizeMake(20, 20));
-    [[UIImage imageNamed:item.img] drawInRect:CGRectMake(0, 0, 20, 20)];
+    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
     cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -138,17 +139,18 @@
     return 36;
 }
 
+
+//cell选中执行segue跳转详情页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.searchBar resignFirstResponder];
     FuncItem *funcItem = [[FuncItem alloc] init];
     funcItem = self.dataModel.funcItems[indexPath.row];
-    [self.dataModel querySourceFileById:funcItem.itemId];
-    SourceFile *sourceFile = (SourceFile *)self.dataModel.sourceFile;
-    funcItem.sourceFile = sourceFile.name;
     [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
 }
 
+
+//跳转函数详情页前segue准备
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ShowFuncItem"]) {

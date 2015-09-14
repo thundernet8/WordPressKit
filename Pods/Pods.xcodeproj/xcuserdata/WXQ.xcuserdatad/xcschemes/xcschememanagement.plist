@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>WPMediaPicker-WPMediaPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>WPMediaPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13FCD093905E0A665E333397DF94548E</key>
+		<key>124E901B0E5C8FF4F4026EB205DBA929</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46D7A22EA7FD02456876B47456FA52D5</key>
+		<key>892C9BE515E7B609CDBF8A7C2A5BD427</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9A1A937B69196FE214FC8DA7B8702A87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B06A73DF267359721611E4E5EADCC3EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B2DCDC7AB24AB6B43F824614D5BFFED1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE9B49182822239C2A1DB1C04BB7BDF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

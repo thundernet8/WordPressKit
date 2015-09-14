@@ -8,8 +8,11 @@
 
 #import "FuncItemViewController.h"
 #import "FuncItem.h"
+#import "FileItemViewController.h"
+#import "DataModel.h"
+#import "SourceFile.h"
 
-@interface FuncItemViewController ()
+@interface FuncItemViewController () <UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
@@ -35,9 +38,10 @@
     // Do any additional setup after loading the view.
     //配置文字
     [self configText];
+    //textview 委托
+    UITextView *sourcefileText = (UITextView *)[self.view viewWithTag:1108];
+    sourcefileText.delegate = self;
     
-    
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,5 +96,32 @@
     [sourceFileText setFont:[UIFont systemFontOfSize:12]];//修复字体
 }
 
+//判断sourfile链接被点击
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
+{
+    if (textView.tag == 1108) {
+        FuncItem *funcItem = [[FuncItem alloc] init];
+        funcItem = self.funcItem;
+        NSInteger sourfileId = funcItem.sourceFileID;
+        if (sourfileId != 0) {
+            DataModel *dataModel = [[DataModel alloc] init];
+            self.dataModel = dataModel;
+            [self.dataModel querySourceFileById:sourfileId];
+            SourceFile *sourcefile = [[SourceFile alloc] init];
+            sourcefile = (SourceFile *)self.dataModel.sourceFile;
+            [self performSegueWithIdentifier:@"ShouSourfileFromFuncItem" sender:sourcefile];
+        }
+    }
+    return YES;
+}
+
+//执行调整sourfile页面的segue前准备
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShouSourfileFromFuncItem"]) {
+        FileItemViewController *controller = segue.destinationViewController;
+        controller.file = sender;
+    }
+}
 
 @end

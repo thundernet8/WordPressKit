@@ -63,7 +63,7 @@
 - (void)registerDefaults
 {
     //注册默认值，上次搜索词/是否首次启动/上次查看函数ID/上次查看的Tab
-    NSDictionary *dictionary = @{@"SearchWords" : @"",@"FirstTime" : @YES,@"FuncItemId" : @0,@"LastTab" : @1};
+    NSDictionary *dictionary = @{@"SearchWords" : @"",@"FirstTime" : @YES,@"FuncItemId" : @0,@"LastTab" : @1,@"WordWrap" : @NO};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
 }
 
@@ -146,7 +146,11 @@
                 NSInteger nsSourceFileId = (NSInteger)sourceFileId;
                 funcItem.sourceFileID = nsSourceFileId;
                 
-                char *img = (char *)sqlite3_column_text(stmt, 10);
+                char *sourcefile = (char *)sqlite3_column_text(stmt, 10);
+                NSString *nsSourcefile = [[NSString alloc] initWithUTF8String:sourcefile];
+                funcItem.sourceFile = nsSourcefile;
+                
+                char *img = (char *)sqlite3_column_text(stmt, 11);
                 NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
                 funcItem.img = nsImg;
                 
@@ -216,8 +220,12 @@
                 int sourceFileId = (int)sqlite3_column_int(stmt, 9);
                 NSInteger nsSourceFileId = (NSInteger)sourceFileId;
                 funcItem.sourceFileID = nsSourceFileId;
+            
+                char *sourcefile = (char *)sqlite3_column_text(stmt, 10);
+                NSString *nsSourcefile = [[NSString alloc] initWithUTF8String:sourcefile];
+                funcItem.sourceFile = nsSourcefile;
                 
-                char *img = (char *)sqlite3_column_text(stmt, 10);
+                char *img = (char *)sqlite3_column_text(stmt, 11);
                 NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
                 funcItem.img = nsImg;
                 
@@ -300,8 +308,12 @@
                 int sourceFileId = (int)sqlite3_column_int(stmt, 9);
                 NSInteger nsSourceFileId = (NSInteger)sourceFileId;
                 funcItem.sourceFileID = nsSourceFileId;
+                    
+                char *sourcefile = (char *)sqlite3_column_text(stmt, 10);
+                NSString *nsSourcefile = [[NSString alloc] initWithUTF8String:sourcefile];
+                funcItem.sourceFile = nsSourcefile;
                 
-                char *img = (char *)sqlite3_column_text(stmt, 10);
+                char *img = (char *)sqlite3_column_text(stmt, 11);
                 NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
                 funcItem.img = nsImg;
                 
@@ -423,15 +435,37 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK){
         NSAssert(NO, @"打开数据库失败");
     }else{
-        NSString *sql = @"SELECT * FROM SOURCEFILES WHERE ID = ?";
+        NSString *sql = @"SELECT * FROM SOURCEFILES WHERE ID = (SELECT PARENTID FROM SOURCEFILES WHERE ID = ?)";
         const char *nsql = [sql UTF8String];
         //char *error;
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK){
             sqlite3_bind_int(stmt, 1, (int)parentId);
             if (sqlite3_step(stmt) == SQLITE_ROW){
+                SourceFile *sourceFile = [[SourceFile alloc] init];
+                int id = (int)sqlite3_column_int(stmt, 0);
+                NSInteger nsId = (NSInteger)id;
+                sourceFile.id = nsId;
+                
+                char *name = (char *)sqlite3_column_text(stmt, 1);
+                NSString *nsName = [[NSString alloc] initWithUTF8String:name];
+                sourceFile.name = nsName;
+                
+                char *type = (char *)sqlite3_column_text(stmt, 2);
+                NSString *nsType = [[NSString alloc] initWithUTF8String:type];
+                sourceFile.type = nsType;
+                
                 int parentId = (int)sqlite3_column_int(stmt, 3);
-                return parentId;
+                NSInteger nsParentId = (NSInteger)parentId;
+                sourceFile.parentId = nsParentId;
+                
+                char *path = (char *)sqlite3_column_text(stmt, 4);
+                NSString *nsPath = [[NSString alloc] initWithUTF8String:path];
+                sourceFile.path = nsPath;
+                
+                self.parentSourceFolderInfo = sourceFile;
+                
+                return id;
             }
         }
         sqlite3_finalize(stmt);
@@ -575,7 +609,11 @@
                 NSInteger nsSourceFileId = (NSInteger)sourceFileId;
                 funcItem.sourceFileID = nsSourceFileId;
                 
-                char *img = (char *)sqlite3_column_text(stmt, 10);
+                char *sourcefile = (char *)sqlite3_column_text(stmt, 10);
+                NSString *nsSourcefile = [[NSString alloc] initWithUTF8String:sourcefile];
+                funcItem.sourceFile = nsSourcefile;
+                
+                char *img = (char *)sqlite3_column_text(stmt, 11);
                 NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
                 funcItem.img = nsImg;
                 
@@ -586,6 +624,20 @@
         sqlite3_close(db);
     }
     return 0;
+}
+
+//判断空字符串
+- (BOOL) isBlankString:(NSString *)string {
+    if (string == nil || string == NULL) {
+        return YES;
+    }
+    if ([string isKindOfClass:[NSNull class]]) {
+        return YES;
+    }
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "SourcefileViewController.h"
 #import "DataModel.h"
 #import "SourceFile.h"
+#import "FileItemViewController.h"
 
 @interface SourcefileViewController ()
 
@@ -121,18 +122,33 @@
         self.navigationItem.leftBarButtonItem = leftBar;//自定义导航返回的左按钮
         [self.dataModel querySourceFilesByParentId:sourceFile.id];//查询数据
         [self.tableView reloadData];//页面重载
+    }else if (sourceFile.type){
+        [self performSegueWithIdentifier:@"ShowSourceFileContent" sender:sourceFile];
     }
 }
 
+// selector - 返回上一文件夹
 - (void)backUpFolder
 {
     SourceFile *sourceFile = (SourceFile *)self.dataModel.sourceFile;
     NSInteger pparentId = (NSInteger)[self.dataModel querySourceFileParentIdByParentId:sourceFile.parentId];
     [self.dataModel querySourceFilesByParentId:pparentId];
+    SourceFile *parentSourceFile = (SourceFile *)self.dataModel.parentSourceFolderInfo;
+    self.navigationItem.title = parentSourceFile.name ? parentSourceFile.name : @"源码";
     if (pparentId == 0) {
         self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.title = @"源码";
     }
     [self.tableView reloadData];
+}
+
+//segue传递参数
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowSourceFileContent"]) {
+        FileItemViewController *controller = segue.destinationViewController;
+        controller.file = sender;
+    }
 }
 
 //设置状态栏前景色
@@ -140,5 +156,7 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
+
 
 @end

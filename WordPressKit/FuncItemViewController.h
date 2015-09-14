@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class FuncItem;
+@class DataModel;
 
 @interface FuncItemViewController : UIViewController
 
 @property (nonatomic, strong) FuncItem *funcItem;
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end

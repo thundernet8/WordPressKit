@@ -20,14 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MBProgressHUD (0.9.1)
+  - WPMediaPicker (0.5.0)
   - wpxmlrpc (0.8.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
+  - MBProgressHUD (~> 0.9.1)
+  - WPMediaPicker
   - wpxmlrpc (~> 0.8.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  WPMediaPicker: 0757988f1519c20b92c91f470c41633ac42e3a0e
   wpxmlrpc: bd391dab54e9bdceb5d1de23d161ecf1ba80f0e0
 
 COCOAPODS: 0.38.2

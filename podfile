@@ -2,4 +2,5 @@ platform :ios, '7.0'
 pod 'AFNetworking', '~> 2.5.4'
 pod 'wpxmlrpc', '~> 0.8.1'
 pod "WPMediaPicker"
+pod 'MBProgressHUD', '~> 0.9.1'
 

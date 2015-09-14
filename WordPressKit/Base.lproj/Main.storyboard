@@ -192,7 +192,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1108" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="text1108" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T52-fM-YVv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1108" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="text1108" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="T52-fM-YVv">
                                 <rect key="frame" x="8" y="447" width="584" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -200,6 +200,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,6 +270,7 @@
                     <navigationItem key="navigationItem" id="znQ-pi-kVf"/>
                     <connections>
                         <outlet property="scrollView" destination="cjQ-1o-Hy6" id="wB5-nP-K5g"/>
+                        <segue destination="Mxb-CT-PLD" kind="show" identifier="ShouSourfileFromFuncItem" id="r7U-Ry-fub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb8-GZ-0wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,7 +559,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bnz-13-iuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="-176"/>
+            <point key="canvasLocation" x="994" y="-176"/>
         </scene>
         <!--源码-->
         <scene sceneID="eWl-dt-8tL">
@@ -590,17 +592,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYr-Q1-lsn">
+                            <webView tag="1501" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYr-Q1-lsn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gYr-Q1-lsn" firstAttribute="top" secondItem="ziJ-tJ-Icx" secondAttribute="topMargin" id="CRz-30-f3e"/>
+                            <constraint firstAttribute="centerY" secondItem="gYr-Q1-lsn" secondAttribute="centerY" id="NYd-xA-GEU"/>
+                            <constraint firstItem="gYr-Q1-lsn" firstAttribute="bottom" secondItem="ziJ-tJ-Icx" secondAttribute="bottomMargin" id="U71-de-IId"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gYr-Q1-lsn" secondAttribute="trailing" constant="-16" id="odN-Yk-bSo"/>
+                            <constraint firstItem="gYr-Q1-lsn" firstAttribute="leading" secondItem="ziJ-tJ-Icx" secondAttribute="leadingMargin" constant="-16" id="r9f-OS-f04"/>
+                            <constraint firstAttribute="centerX" secondItem="gYr-Q1-lsn" secondAttribute="centerX" id="tYe-lg-E9F"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="内容" id="wUD-Gr-UU3"/>
+                    <connections>
+                        <outlet property="webViewer" destination="gYr-Q1-lsn" id="aRk-n8-QGK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oW4-Jr-nr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="940"/>
+            <point key="canvasLocation" x="1253" y="938"/>
         </scene>
         <!--站点-->
         <scene sceneID="AXo-dh-9e3">
@@ -633,5 +647,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wTr-pV-qft"/>
+        <segue reference="r7U-Ry-fub"/>
     </inferredMetricsTieBreakers>
 </document>

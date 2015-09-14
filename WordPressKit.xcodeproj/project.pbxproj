@@ -15,7 +15,8 @@
 		B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */; };
 		B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D91B8CBB6900757221 /* AboutViewController.m */; };
 		B4C04FD51B9B256500A43AEA /* CatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C04FD41B9B256500A43AEA /* CatItem.m */; };
-		B4DAE42C1BA44C2800D51121 /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE42B1BA44C2800D51121 /* FuncItems.sqlite3 */; };
+		B4DAE34A1BA6E7E70074A38F /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE3491BA6E7E70074A38F /* FuncItems.sqlite3 */; };
+		B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE42D1BA4876700D51121 /* sourcefile.html */; };
 		B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */; };
 		B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */; };
 		B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */; };
@@ -59,7 +60,8 @@
 		B46004D91B8CBB6900757221 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B4C04FD31B9B256500A43AEA /* CatItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatItem.h; sourceTree = "<group>"; };
 		B4C04FD41B9B256500A43AEA /* CatItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatItem.m; sourceTree = "<group>"; };
-		B4DAE42B1BA44C2800D51121 /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
+		B4DAE3491BA6E7E70074A38F /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
+		B4DAE42D1BA4876700D51121 /* sourcefile.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sourcefile.html; sourceTree = "<group>"; };
 		B4DD044B1B8DD85500E2ACA3 /* FuncItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncItemViewController.h; sourceTree = "<group>"; };
 		B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncItemViewController.m; sourceTree = "<group>"; };
 		B4DD044E1B8DD88400E2ACA3 /* CatItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatItemViewController.h; sourceTree = "<group>"; };
@@ -238,9 +240,10 @@
 		B4E53F0F1B87FDCB00C4CFAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B4DAE42B1BA44C2800D51121 /* FuncItems.sqlite3 */,
+				B4DAE3491BA6E7E70074A38F /* FuncItems.sqlite3 */,
 				B4E53F101B87FDCB00C4CFAA /* Info.plist */,
 				B4E53F111B87FDCB00C4CFAA /* main.m */,
+				B4DAE42D1BA4876700D51121 /* sourcefile.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -354,8 +357,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E53F1E1B87FDCB00C4CFAA /* Main.storyboard in Resources */,
+				B4DAE34A1BA6E7E70074A38F /* FuncItems.sqlite3 in Resources */,
 				B4E53F231B87FDCB00C4CFAA /* LaunchScreen.xib in Resources */,
-				B4DAE42C1BA44C2800D51121 /* FuncItems.sqlite3 in Resources */,
+				B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */,
 				B4E53F201B87FDCB00C4CFAA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

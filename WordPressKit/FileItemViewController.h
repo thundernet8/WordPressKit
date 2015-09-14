@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FileItemViewController : UIViewController
+@interface FileItemViewController : UIViewController <UIWebViewDelegate>
+
+@property (nonatomic, assign) NSObject *file;
 
 @end

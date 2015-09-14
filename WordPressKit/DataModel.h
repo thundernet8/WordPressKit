@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSObject *funcItem;
 @property (nonatomic, strong) NSMutableArray *sourceFiles;
 @property (nonatomic, strong) NSObject *sourceFile;
+@property (nonatomic, strong) NSObject *parentSourceFolderInfo;
 @property (nonatomic, strong) NSMutableArray *catItems;
 @property (nonatomic, strong) NSObject *catItem;
 
@@ -42,6 +43,9 @@
 - (int)queryAllCatItems;
 - (int)queryFuncItemsCountInCatItemId:(NSInteger)id;
 - (int)queryFuncItemsInCatItemId:(NSInteger)id;
+
+//判断空字符串
+- (BOOL) isBlankString:(NSString *)string;
 
 
 
