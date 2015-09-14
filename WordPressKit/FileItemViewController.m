@@ -8,6 +8,7 @@
 
 #import "FileItemViewController.h"
 #import "SourceFile.h"
+#import "MBProgressHUD.h"
 
 @interface FileItemViewController ()
 
@@ -24,10 +25,13 @@
     self.webViewer.delegate = self;//设置webview委托
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbutton_wrap"] style:UIBarButtonItemStylePlain target:self action:@selector(wrapHtmlContent)];//自定义导航右换行切换按钮
     self.navigationItem.rightBarButtonItem = rightBar;//自定义导航右换行切换按钮
-    //[self loadHtmlTemplate];
-    [self loadHtml];
+    
+    //开始加载
+    [self loadHud];
+    //[self loadHtml];
 }
 
+//网页内容切换是否自动换行
 - (void)wrapHtmlContent{
     //获取当前wrap状态
     BOOL isWrapped = [[NSUserDefaults standardUserDefaults] boolForKey:@"WordWrap"];
@@ -45,18 +49,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadHtmlTemplate
+- (void)loadHud
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"sourcefile" ofType:@"html"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [self.webViewer loadRequest:request];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Loading···";
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+       //加载内容
+        [self loadHtml];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //[MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
 }
 
 - (void)loadHtml
 {
-    //远程文本or本地缓存
     SourceFile *file = (SourceFile *)self.file;
+    
+    //导航标题
+    self.navigationItem.title = file.name;
+    
+    //远程文本or本地缓存
     NSError *error;
     NSString *sourceHtml;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -90,9 +104,6 @@
     NSURL *baseUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
     [self.webViewer loadHTMLString:html baseURL:baseUrl];
     
-    //导航标题
-    self.navigationItem.title = file.name;
-    
 }
 
 -(NSString *)htmlEntityDecode:(NSString *)string
@@ -117,6 +128,7 @@
     return string;
 }
 
+#pragma mark - webview delegate methods
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     NSLog(@"start load\r");
@@ -132,6 +144,18 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"error occurs--%@",error.localizedDescription);
+}
+
+//接收js通知
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSURL *url = [request URL];
+    if ([[url scheme] isEqualToString:@"sourcefile"] && [[url host] isEqualToString:@"completed"]) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end
