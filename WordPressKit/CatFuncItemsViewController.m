@@ -125,9 +125,6 @@
     [self.searchBar resignFirstResponder];
     FuncItem *funcItem = [[FuncItem alloc] init];
     funcItem = self.dataModel.funcItems[indexPath.row];
-    [self.dataModel querySourceFileById:funcItem.itemId];
-    SourceFile *sourceFile = (SourceFile *)self.dataModel.sourceFile;
-    funcItem.sourceFile = sourceFile.name;
     [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
 }
 

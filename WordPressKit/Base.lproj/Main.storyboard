@@ -438,12 +438,161 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="站点" id="hbp-ut-oLM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GiY-Ge-8rk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GiY-Ge-8rk">
+                            <connections>
+                                <segue destination="Cxd-fX-cr4" kind="presentation" identifier="PopAddSiteView" modalTransitionStyle="coverVertical" id="wnU-d7-1pI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWf-ZX-fcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2774" y="584"/>
+        </scene>
+        <!--Add Site View Controller-->
+        <scene sceneID="Ivh-WT-3me">
+            <objects>
+                <viewController id="Cxd-fX-cr4" customClass="AddSiteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VMn-FW-sBq"/>
+                        <viewControllerLayoutGuide type="bottom" id="dZR-wj-0Rn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="INR-Nb-scA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1701" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6w-59-BuH">
+                                <rect key="frame" x="16" y="28" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelAddSite:" destination="Cxd-fX-cr4" eventType="touchUpInside" id="yco-ri-9J5"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="512-RE-8Lc">
+                                <rect key="frame" x="140" y="120" width="320" height="360"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" tag="1702" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RST-DT-Ha9">
+                                        <rect key="frame" x="0.0" y="83" width="320" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="149" id="CqZ-tb-0yh"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoginFieldCell" id="vSt-Hb-WY3">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vSt-Hb-WY3" id="lyO-an-Z9C">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" tag="1704" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-Tw-LGl">
+                                                            <rect key="frame" x="51" y="2" width="261" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="H8H-oi-aR0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        </textField>
+                                                        <imageView userInteractionEnabled="NO" alpha="0.79999999999999982" tag="1703" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sLy-gG-hYs">
+                                                            <rect key="frame" x="14" y="14" width="16" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="MOp-pg-dId"/>
+                                                                <constraint firstAttribute="height" constant="16" id="ntt-Xv-q3M"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="iHf-Tw-LGl" secondAttribute="centerY" id="CIU-pB-U6N"/>
+                                                        <constraint firstItem="iHf-Tw-LGl" firstAttribute="trailing" secondItem="lyO-an-Z9C" secondAttribute="trailingMargin" id="FAn-qP-qv1"/>
+                                                        <constraint firstItem="iHf-Tw-LGl" firstAttribute="leading" secondItem="sLy-gG-hYs" secondAttribute="trailing" constant="12" id="K2R-xd-8AS"/>
+                                                        <constraint firstItem="sLy-gG-hYs" firstAttribute="leading" secondItem="lyO-an-Z9C" secondAttribute="leadingMargin" constant="5" id="KlR-6M-D2f"/>
+                                                        <constraint firstItem="sLy-gG-hYs" firstAttribute="top" secondItem="lyO-an-Z9C" secondAttribute="topMargin" constant="17" id="Qqw-Rw-FFe"/>
+                                                        <constraint firstItem="iHf-Tw-LGl" firstAttribute="top" secondItem="lyO-an-Z9C" secondAttribute="topMargin" constant="5" id="WAs-Cu-iyr"/>
+                                                        <constraint firstAttribute="centerY" secondItem="sLy-gG-hYs" secondAttribute="centerY" id="oLp-6h-vw3"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Qqw-Rw-FFe"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BeL-wV-o1a">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BeL-wV-o1a" id="pnK-gB-pY8">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sVN-0x-bLH">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sVN-0x-bLH" id="JFI-jX-MBd">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                    <button opaque="NO" tag="1705" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHU-WV-Srh">
+                                        <rect key="frame" x="16" y="237" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="DPe-ev-luM"/>
+                                            <constraint firstAttribute="width" constant="288" id="a2U-7Y-mkb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="添加站点">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addSite:" destination="Cxd-fX-cr4" eventType="touchUpInside" id="bQP-ry-baV"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wordpress" translatesAutoresizingMaskIntoConstraints="NO" id="GL3-6p-iVI">
+                                        <rect key="frame" x="120" y="8" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="MfU-uT-f9R"/>
+                                            <constraint firstAttribute="height" constant="80" id="gaI-FP-X9h"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RST-DT-Ha9" firstAttribute="top" secondItem="GL3-6p-iVI" secondAttribute="bottom" constant="21" id="ENv-r9-lMN"/>
+                                    <constraint firstAttribute="centerX" secondItem="QHU-WV-Srh" secondAttribute="centerX" id="MBn-LU-C41"/>
+                                    <constraint firstItem="QHU-WV-Srh" firstAttribute="top" secondItem="RST-DT-Ha9" secondAttribute="bottom" constant="25" id="Zai-KJ-arz"/>
+                                    <constraint firstAttribute="centerX" secondItem="GL3-6p-iVI" secondAttribute="centerX" id="b5j-Wg-cGc"/>
+                                    <constraint firstAttribute="height" constant="360" id="bli-dh-hUm"/>
+                                    <constraint firstItem="GL3-6p-iVI" firstAttribute="top" secondItem="512-RE-8Lc" secondAttribute="top" constant="8" id="ehY-w0-tTS"/>
+                                    <constraint firstItem="RST-DT-Ha9" firstAttribute="width" secondItem="512-RE-8Lc" secondAttribute="width" id="j2X-nj-y19"/>
+                                    <constraint firstAttribute="width" constant="320" id="s0O-Tq-cgk"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="添加基于WordPress创建的站点" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLV-9U-Cgc">
+                                <rect key="frame" x="150" y="496" width="300" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="KNv-ZY-Gvj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dZR-wj-0Rn" firstAttribute="top" secondItem="kLV-9U-Cgc" secondAttribute="bottom" constant="30" id="ivp-Oa-PC2"/>
+                            <constraint firstAttribute="centerX" secondItem="512-RE-8Lc" secondAttribute="centerX" id="mFG-of-aZf"/>
+                            <constraint firstAttribute="centerY" secondItem="512-RE-8Lc" secondAttribute="centerY" id="mWt-hC-lcM"/>
+                            <constraint firstAttribute="centerX" secondItem="kLV-9U-Cgc" secondAttribute="centerX" id="me6-Rp-IHT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="RST-DT-Ha9" id="i0y-G4-5ln"/>
+                        <outlet property="wrapView" destination="512-RE-8Lc" id="oZl-4Y-DFv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1B-0J-JO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3571" y="584"/>
         </scene>
         <!--Sourcefiles-->
         <scene sceneID="ul2-HP-d5Q">
@@ -565,7 +714,7 @@
         <scene sceneID="eWl-dt-8tL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z7d-7M-jTd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="源码" image="sourcefile" id="7Pe-wB-wFP"/>
+                    <tabBarItem key="tabBarItem" title="源码" image="tabbutton_code" id="7Pe-wB-wFP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="beJ-Ks-mHC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -642,11 +791,12 @@
         <image name="functions" width="22" height="18"/>
         <image name="indicator" width="18" height="26"/>
         <image name="managesite" width="22" height="22"/>
-        <image name="sourcefile" width="22" height="22"/>
+        <image name="tabbutton_code" width="22" height="22"/>
+        <image name="wordpress" width="120" height="120"/>
         <image name="wordpress2" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wTr-pV-qft"/>
-        <segue reference="r7U-Ry-fub"/>
+        <segue reference="Afh-rz-RHD"/>
     </inferredMetricsTieBreakers>
 </document>

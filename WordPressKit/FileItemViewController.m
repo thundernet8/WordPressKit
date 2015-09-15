@@ -80,8 +80,9 @@
         [fileManager createDirectoryAtPath:cachePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     NSString *cacheFilePath = [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%i.scache", (int)file.id]];
-    if ([fileManager fileExistsAtPath:cacheFilePath] && ![NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error]) {
+    if ([fileManager fileExistsAtPath:cacheFilePath] && [[NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error] lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 0) {
         sourceHtml = [NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error];
+        NSLog(@"string is \"%@\"",sourceHtml);
     }else{
         NSString *gitSourceBaseUrl = @"https://raw.githubusercontent.com/WordPress/WordPress/master/";
         NSString *completeUrl = [NSString stringWithFormat:@"%@%@", gitSourceBaseUrl, file.path];
@@ -124,7 +125,7 @@
     //string = [string stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
     string = [string stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
     string = [string stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
-    
+    string = [string stringByReplacingOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;"];
     return string;
 }
 

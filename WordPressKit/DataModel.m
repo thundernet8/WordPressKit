@@ -55,7 +55,7 @@
     if ([fileManager fileExistsAtPath:oripath] && ![fileManager fileExistsAtPath:newpath]) {
         NSError *error;
         [fileManager copyItemAtPath:oripath toPath:newpath error:&error];
-        //NSLog(@"%@",error);
+        NSLog(@"erro is %@",error.localizedDescription);
     }
     
 }
