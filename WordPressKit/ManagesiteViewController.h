@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DataModel;
+
 @interface ManagesiteViewController : UIViewController
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end

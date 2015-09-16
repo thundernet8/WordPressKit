@@ -44,7 +44,7 @@
     
     // 点击空白搜索框消失
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    tap.cancelsTouchesInView = YES;
+    tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
     
     //分割线全宽-tableview

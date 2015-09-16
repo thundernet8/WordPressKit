@@ -7,7 +7,7 @@
 //
 
 #import "AddSiteViewController.h"
-#import "AFNetworking.h"
+#import "WordPressApi.h"
 
 @interface AddSiteViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -162,7 +162,21 @@
         [alert show];
     }else{
         //通过xml-rpc请求验证
-        
+        // Sign in
+        [WordPressApi signInWithURL:urlField.text
+                           username:userField.text
+                           password:passwordField.text
+                            success:^(NSURL *xmlrpcURL) {
+                                NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+                                [def setObject:[xmlrpcURL absoluteString] forKey:@"wp_xmlrpc"];
+                                [def setObject:userField.text forKey:@"wp_username"];
+                                [def setObject:passwordField.text forKey:@"wp_password"];
+                                [def synchronize];
+                                [self dismissViewControllerAnimated:YES completion:nil];
+                            } failure:^(NSError *error) {
+                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                [alert show];
+                            }];
     }
 }
 

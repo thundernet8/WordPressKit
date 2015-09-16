@@ -10,6 +10,7 @@
 #import "FuncItem.h"
 #import "SourceFile.h"
 #import "CatItem.h"
+#import "Blog.h"
 
 @interface DataModel()
 
@@ -626,6 +627,101 @@
     return 0;
 }
 
+//查询博客列表
+- (int)queryAllBlogs
+{
+    NSString *path = self.dataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"SELECT * FROM BLOGS";
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            self.blogs = [[NSMutableArray alloc] init];
+            while (sqlite3_step(stmt) == SQLITE_ROW){
+                Blog *blog = [[Blog alloc] init];
+                NSInteger id = (NSInteger)sqlite3_column_int(stmt, 0);
+                blog.id = id;
+                
+                char *name = (char *)sqlite3_column_text(stmt, 1);
+                NSString *nsName = [[NSString alloc] initWithUTF8String:name];
+                blog.name = nsName;
+                
+                char *url = (char *)sqlite3_column_text(stmt, 2);
+                NSString *nsUrl = [[NSString alloc] initWithUTF8String:url];
+                blog.url = nsUrl;
+                
+                char *userName = (char *)sqlite3_column_text(stmt, 3);
+                NSString *nsUserName = [[NSString alloc] initWithUTF8String:userName];
+                blog.userName = nsUserName;
+                
+                NSInteger userId = (NSInteger)sqlite3_column_int(stmt, 4);
+                blog.userId = userId;
+                
+                [self.blogs addObject:blog];
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    
+    return 0;
+}
+
+//判断博客是否存在
+- (BOOL)isExistBlogWithUrl : (NSString *)url{
+    NSString *path = self.dataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"SELECT * FROM BLOGS WHERE URL = ?";
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            sqlite3_bind_text(stmt, 1, [url UTF8String], -1, NULL);
+            if (sqlite3_step(stmt) == SQLITE_ROW) {
+                return YES;
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    return NO;
+}
+
+//插入博客记录
+- (BOOL)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
+{
+    NSString *path = self.dataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"INSERT INTO BLOG (NAME, URL, USERNAME, USERID) VALUES(?, ?, ?, ?)";
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            sqlite3_bind_text(stmt, 1, [name UTF8String], -1, NULL);
+            sqlite3_bind_text(stmt, 2, [url UTF8String], -1, NULL);
+            sqlite3_bind_text(stmt, 3, [username UTF8String], -1, NULL);
+            sqlite3_bind_int(stmt, 4, (int)userId);
+            if (sqlite3_step(stmt) == SQLITE_ROW) {
+                return YES;
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    return NO;
+}
+
+#pragma - methods
 //判断空字符串
 - (BOOL) isBlankString:(NSString *)string {
     if (string == nil || string == NULL) {

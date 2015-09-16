@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSObject *parentSourceFolderInfo;
 @property (nonatomic, strong) NSMutableArray *catItems;
 @property (nonatomic, strong) NSObject *catItem;
+@property (nonatomic, strong) NSMutableArray *blogs;
+@property (nonatomic, strong) NSObject *blog;
 
 
 - (void)registerDefaults;
@@ -43,6 +45,13 @@
 - (int)queryAllCatItems;
 - (int)queryFuncItemsCountInCatItemId:(NSInteger)id;
 - (int)queryFuncItemsInCatItemId:(NSInteger)id;
+
+//查询博客列表
+- (int)queryAllBlogs;
+//判断博客是否存在
+- (BOOL)isExistBlogWithUrl : (NSString *)url;
+//插入博客记录
+- (BOOL)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
 
 //判断空字符串
 - (BOOL) isBlankString:(NSString *)string;
