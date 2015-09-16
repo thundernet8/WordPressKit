@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WordPressApi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>wpxmlrpc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>124E901B0E5C8FF4F4026EB205DBA929</key>
+		<key>28B5D46B0F49893210BC8EBBC8B0882F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74D967D7FAE386AEBC7999FAE491044C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76EC831393822583B656129B0F911ACD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>892C9BE515E7B609CDBF8A7C2A5BD427</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>922633EEDBB832603B0A2ED38B521776</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -53,16 +73,6 @@
 			<true/>
 		</dict>
 		<key>B06A73DF267359721611E4E5EADCC3EE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2DCDC7AB24AB6B43F824614D5BFFED1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE9B49182822239C2A1DB1C04BB7BDF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

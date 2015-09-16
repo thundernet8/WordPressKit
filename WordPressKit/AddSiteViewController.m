@@ -7,6 +7,7 @@
 //
 
 #import "AddSiteViewController.h"
+#import "AFNetworking.h"
 
 @interface AddSiteViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -159,6 +160,9 @@
     if (!isAllOk) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
+    }else{
+        //通过xml-rpc请求验证
+        
     }
 }
 
