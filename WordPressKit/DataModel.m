@@ -695,7 +695,7 @@
 }
 
 //插入博客记录
-- (BOOL)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
+- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
 {
     NSString *path = self.dataFilePath;
     const char *npath = [path UTF8String];
@@ -711,14 +711,14 @@
             sqlite3_bind_text(stmt, 2, [url UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 3, [username UTF8String], -1, NULL);
             sqlite3_bind_int(stmt, 4, (int)userId);
-            if (sqlite3_step(stmt) == SQLITE_ROW) {
-                return YES;
+            if (sqlite3_step(stmt) == SQLITE_DONE) {
+                return (int)sqlite3_last_insert_rowid(db);
             }
         }
         sqlite3_finalize(stmt);
         sqlite3_close(db);
     }
-    return NO;
+    return 0;
 }
 
 #pragma - methods

@@ -51,7 +51,7 @@
 //判断博客是否存在
 - (BOOL)isExistBlogWithUrl : (NSString *)url;
 //插入博客记录
-- (BOOL)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
+- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
 
 //判断空字符串
 - (BOOL) isBlankString:(NSString *)string;

@@ -4,3 +4,4 @@ pod 'wpxmlrpc', '~> 0.8.1'
 pod "WPMediaPicker"
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'WordPressApi', :podspec => 'https://raw.github.com/koke/WordPressApi/master/WordPressApi.podspec'
+pod 'KeychainItemWrapper', :git => 'https://github.com/baptistefetet/KeychainItemWrapper.git'

@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - KeychainItemWrapper (0.0.1)
   - MBProgressHUD (0.9.1)
   - WordPressApi (0.3.5):
     - AFNetworking (~> 2.6.0)
@@ -29,17 +30,26 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.0)
+  - KeychainItemWrapper (from `https://github.com/baptistefetet/KeychainItemWrapper.git`)
   - MBProgressHUD (~> 0.9.1)
   - WordPressApi (from `https://raw.github.com/koke/WordPressApi/master/WordPressApi.podspec`)
   - WPMediaPicker
   - wpxmlrpc (~> 0.8.1)
 
 EXTERNAL SOURCES:
+  KeychainItemWrapper:
+    :git: https://github.com/baptistefetet/KeychainItemWrapper.git
   WordPressApi:
     :podspec: https://raw.github.com/koke/WordPressApi/master/WordPressApi.podspec
 
+CHECKOUT OPTIONS:
+  KeychainItemWrapper:
+    :commit: ae0f02819299a80f7d0c3c15fdb7aa5cb40e5e6f
+    :git: https://github.com/baptistefetet/KeychainItemWrapper.git
+
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  KeychainItemWrapper: 633b6d97ac642a292a71a807ef2c4691bd7e2f74
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   WordPressApi: cb145d3c92ed54d4dbe70108d15f17ce3da3ad5d
   WPMediaPicker: 0757988f1519c20b92c91f470c41633ac42e3a0e
