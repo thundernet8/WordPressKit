@@ -82,8 +82,8 @@
     NSString *cacheFilePath = [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%i.scache", (int)file.id]];
     if ([fileManager fileExistsAtPath:cacheFilePath] && [[NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error] lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 0) {
         sourceHtml = [NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error];
-        NSLog(@"string is \"%@\"",sourceHtml);
     }else{
+        //采用Github源的代码文件
         NSString *gitSourceBaseUrl = @"https://raw.githubusercontent.com/WordPress/WordPress/master/";
         NSString *completeUrl = [NSString stringWithFormat:@"%@%@", gitSourceBaseUrl, file.path];
         NSURL *url = [[NSURL alloc] initWithString:completeUrl];

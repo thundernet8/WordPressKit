@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *userName;
-@property (nonatomic, assign) NSInteger userId;
+@property (nonatomic, assign) NSInteger blogId;
+@property (nonatomic, assign) NSInteger isAdmin;
 
 @end

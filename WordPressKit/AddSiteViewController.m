@@ -8,6 +8,10 @@
 
 #import "AddSiteViewController.h"
 #import "WordPressApi.h"
+#import "KeychainItemWrapper.h"
+#import "DataModel.h"
+#import "WordPressXMLRPCApi.h"
+#import "MBProgressHUD.h"
 
 
 @interface AddSiteViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
@@ -17,28 +21,46 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *wrapView;
 
+//插入博客记录
+- (void)tryAddBlogWithUrl:(NSString *)url withUserName:(NSString *)username withPassWord:(NSString *)password;
+//写入keyChain以保存用户名密码
+- (void)writeKeyChainWithIdentifier : (NSString *)identifier userName : (NSString *)userName passWord : (NSString *)passWord;
+//读取keyChain用户名密码
+- (NSDictionary *)readKeyChainWithIdentifier : (NSString *)identifier;
+//发送广播通知便于博客列表控制器读取新添加的数据
+- (void)sendAddBlogCompleteNotificationWithBlogUrl : (NSString *)url withUserName : (NSString *)userName withPassword : (NSString *)password;
+
+
 @end
 
 @implementation AddSiteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // 指定tableview delegate
-    //UITableView *loginTableView = (UITableView *)[self.view viewWithTag:1702];
-    //loginTableView.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
     //tableview禁止拖动
     self.tableView.scrollEnabled = NO;
+    
     //按钮-添加站点
     UIButton *addSiteButton = (UIButton *)[self.view viewWithTag:1705];
     addSiteButton.backgroundColor = [UIColor blackColor];
-    addSiteButton.alpha = 0.2f;
+    addSiteButton.alpha = 0.3f;
     addSiteButton.layer.cornerRadius = 3.0f;
+    //添加按钮的文字选择
+    if (self.blog) {
+        [addSiteButton setTitle:@"更新站点" forState:UIControlStateNormal];
+    }
+    
     //点击收起键盘
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleDownKeyboard:)];
     [self.view addGestureRecognizer:tap];
-
+    
+    //实例化datamodel
+    self.dataModel = [[DataModel alloc] init];
     
 }
 
@@ -74,14 +96,18 @@
     if (indexPath.row == 0) {
         imageField.image = [UIImage imageNamed:@"icon_user"];
         textField.placeholder = @"用户名";
+        textField.keyboardType = UIKeyboardTypeDefault;
+        textField.text = self.blog.userName;
     }else if(indexPath.row == 1){
         imageField.image = [UIImage imageNamed:@"icon_lock"];
         textField.placeholder = @"密码";
         textField.secureTextEntry = YES;
+        //textField.text = @"wxq881994";
     }else{
         imageField.image = [UIImage imageNamed:@"icon_global"];
         textField.placeholder = @"站点地址(URL)";
-        //textField.keyboardType = UIKeyboardTypeURL;
+        textField.keyboardType = UIKeyboardTypeURL;
+        textField.text = [[self.blog.url stringByReplacingOccurrencesOfString:@"http://" withString:@""] stringByReplacingOccurrencesOfString:@"/" withString:@""];;
     }
     //cell不可选中
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -162,27 +188,113 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }else{
-        //通过xml-rpc请求验证
-        // Sign in
-        [WordPressApi signInWithURL:urlField.text
-                           username:userField.text
-                           password:passwordField.text
-                            success:^(NSURL *xmlrpcURL) {
-//                                NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-//                                [def setObject:[xmlrpcURL absoluteString] forKey:@"wp_xmlrpc"];
-//                                [def setObject:userField.text forKey:@"wp_username"];
-//                                [def setObject:passwordField.text forKey:@"wp_password"];
-//                                [def synchronize];
-                                
-                                
-                                
-                                [self dismissViewControllerAnimated:YES completion:nil];
-                            } failure:^(NSError *error) {
-                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登录错误" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                                [alert show];
-                            }];
+        //通过xml-rpc请求验证并尝试添加站点
+        [self tryAddBlogWithUrl:urlField.text withUserName:userField.text withPassWord:passwordField.text];
+        
+        
+        
+        
+        
+        
     }
 }
+
+#pragma - method - 尝试添加站点
+//尝试添加站点
+- (void)tryAddBlogWithUrl:(NSString *)url withUserName:(NSString *)username withPassWord:(NSString *)password{
+    //添加指示器
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    
+    //通过getuserblogs尝试获取网站对应用户的博客列表
+    [WordPressXMLRPCApi guessXMLRPCURLForSite:url success:^(NSURL *xmlrpcURL) {
+        WordPressXMLRPCApi *xmlrpcApi = [[WordPressXMLRPCApi alloc] initWithXMLRPCEndpoint:xmlrpcURL username:username password:password];
+        [xmlrpcApi getBlogsWithSuccess:^(NSArray *blogs){
+            //如果是更新博客数据
+            if (self.blog) {
+                NSDictionary *blog = [blogs firstObject];
+                int updateId = [self.dataModel updateBlogRecordWithId:self.blog.id withName:[blog valueForKey:@"blogName"] withUrl:[blog valueForKey:@"url"] withUsername:username withPassword:password];
+                if (updateId > 0) {
+                    //keyChain存储用户名密码-标识为@"WordPressKitBlog"+插入数据库记录的ID
+                    NSString *keyChainIdentifier = [NSString stringWithFormat:@"WordPressKitBlog%i", (int)self.blog.id];
+                    [self writeKeyChainWithIdentifier:keyChainIdentifier userName:username passWord:password];
+                    //广播通知博客列表页面controller
+                    [self sendAddBlogCompleteNotificationWithBlogUrl:url withUserName:username withPassword:password];
+                    
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    return;
+                }else{
+                    //更新失败
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"更新站点配置失败，请重新尝试" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
+                    return;
+                }
+            }
+            
+            //插入到数据库
+            for (NSDictionary *blog in blogs) {
+                if ([self.dataModel isExistBlogWithUrl:[blog valueForKey:@"url"]]) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"此站点已经存在，请勿重复添加" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
+                    continue;
+                }else{
+                    int insertId = [self.dataModel insertBlogRecordWithName:[blog valueForKey:@"blogName"] blogWithUrl:[blog valueForKey:@"url"] blogWithUserName:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
+                    if (insertId > 0) {
+                        //keyChain存储用户名密码-标识为@"WordPressKitBlog"+插入数据库记录的ID
+                        NSString *keyChainIdentifier = [NSString stringWithFormat:@"WordPressKitBlog%i", insertId];
+                        [self writeKeyChainWithIdentifier:keyChainIdentifier userName:username passWord:password];
+                        //广播通知博客列表页面controller
+                        [self sendAddBlogCompleteNotificationWithBlogUrl:url withUserName:username withPassword:password];
+                        
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    }else{
+                        //插入失败
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"添加记录失败，请重新尝试" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        [alert show];
+                        break;
+                    }
+                }
+            }
+            
+            
+        } failure:^(NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }];
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
+}
+
+//写入keyChain以保存用户名密码
+- (void)writeKeyChainWithIdentifier : (NSString *)identifier userName : (NSString *)userName passWord : (NSString *)passWord{
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:identifier accessGroup:nil];
+    [keyChain setObject:@"WordPressKit" forKey:(__bridge id)kSecAttrService];
+    [keyChain setObject:userName forKey:(__bridge id)kSecAttrAccount];
+    [keyChain setObject:passWord forKey:(__bridge id)kSecValueData];
+}
+
+//读取keyChain用户名密码
+- (NSDictionary *)readKeyChainWithIdentifier : (NSString *)identifier{
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:identifier accessGroup:nil];
+    return [keyChain keychainItemData];
+}
+
+//发送广播通知便于博客列表控制器读取新添加的数据
+- (void)sendAddBlogCompleteNotificationWithBlogUrl:(NSString *)url withUserName:(NSString *)userName withPassword:(NSString *)password
+{
+    NSDictionary *blogInfo = @{@"Url" : url, @"UserName" : userName, @"Password" : password};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AddBlogCompleteNotification" object:nil userInfo:blogInfo];
+}
+
 
 
 @end

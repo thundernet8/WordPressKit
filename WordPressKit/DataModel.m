@@ -26,6 +26,11 @@
     return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/FuncItems.sqlite3"];
 }
 
+- (NSString *)userDataFilePath
+{
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserData.db"];
+}
+
 //- (void)openDataFile:(NSString *)dataFilePath
 //{
 //    if (sqlite3_open([dataFilePath UTF8String], &db) != SQLITE_OK) {
@@ -51,14 +56,16 @@
 - (void)restoreData
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *newpath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/FuncItems.sqlite3"];
-    NSString *oripath = [[NSBundle mainBundle] pathForResource:@"FuncItems" ofType:@"sqlite3"];
-    if ([fileManager fileExistsAtPath:oripath] && ![fileManager fileExistsAtPath:newpath]) {
-        NSError *error;
-        [fileManager copyItemAtPath:oripath toPath:newpath error:&error];
-        NSLog(@"erro is %@",error.localizedDescription);
+    NSString *funcItemsNewPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/FuncItems.sqlite3"];
+    NSString *funcItemsOriPath = [[NSBundle mainBundle] pathForResource:@"FuncItems" ofType:@"sqlite3"];
+    NSString *userDataNewPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserData.db"];
+    NSString *userDataOriPath = [[NSBundle mainBundle] pathForResource:@"UserData" ofType:@"db"];
+    if ([fileManager fileExistsAtPath:funcItemsOriPath] && ![fileManager fileExistsAtPath:funcItemsNewPath]) {
+        [fileManager copyItemAtPath:funcItemsOriPath toPath:funcItemsNewPath error:nil];
     }
-    
+    if ([fileManager fileExistsAtPath:userDataOriPath] && ![fileManager fileExistsAtPath:userDataNewPath]) {
+        [fileManager copyItemAtPath:userDataOriPath toPath:userDataNewPath error:nil];
+    }
 }
 
 - (void)registerDefaults
@@ -112,48 +119,66 @@
                 funcItem.itemId = nsId;
                 
                 char *name = (char *)sqlite3_column_text(stmt, 1);
-                NSString *nsName = [[NSString alloc] initWithUTF8String:name];
-                funcItem.name = nsName;
+                if (name != NULL) {
+                    NSString *nsName = [[NSString alloc] initWithUTF8String:name];
+                    funcItem.name = nsName;
+                }
                 
                 int category = (int)sqlite3_column_int(stmt, 2);
                 NSInteger nsCategory = (int)category;
                 funcItem.category = nsCategory;
                 
                 char *des = (char *)sqlite3_column_text(stmt, 3);
-                NSString *nsDescription = [[NSString alloc] initWithUTF8String:des];
-                funcItem.des = nsDescription;
+                if (des != NULL) {
+                    NSString *nsDescription = [[NSString alloc] initWithUTF8String:des];
+                    funcItem.des = nsDescription;
+                }
                 
                 char *usage = (char *)sqlite3_column_text(stmt, 4);
-                NSString *nsUsage = [[NSString alloc] initWithUTF8String:usage];
-                funcItem.usage = nsUsage;
+                if (usage != NULL) {
+                    NSString *nsUsage = [[NSString alloc] initWithUTF8String:usage];
+                    funcItem.usage = nsUsage;
+                }
                 
                 char *parameters = (char *)sqlite3_column_text(stmt, 5);
-                NSString *nsParameters = [[NSString alloc] initWithUTF8String:parameters];
-                funcItem.parameters = nsParameters;
+                if (parameters != NULL) {
+                    NSString *nsParameters = [[NSString alloc] initWithUTF8String:parameters];
+                    funcItem.parameters = nsParameters;
+                }
                 
                 char *returnvalue = (char *)sqlite3_column_text(stmt, 6);
-                NSString *nsReturnvalue = [[NSString alloc] initWithUTF8String:returnvalue];
-                funcItem.returnValue = nsReturnvalue;
+                if (returnvalue != NULL) {
+                    NSString *nsReturnvalue = [[NSString alloc] initWithUTF8String:returnvalue];
+                    funcItem.returnValue = nsReturnvalue;
+                }
                 
                 char *notes = (char *)sqlite3_column_text(stmt, 7);
-                NSString *nsNotes = [[NSString alloc] initWithUTF8String:notes];
-                funcItem.notes = nsNotes;
+                if (notes != NULL) {
+                    NSString *nsNotes = [[NSString alloc] initWithUTF8String:notes];
+                    funcItem.notes = nsNotes;
+                }
                 
                 char *changeLog = (char *)sqlite3_column_text(stmt, 8);
-                NSString *nsChangeLog = [[NSString alloc] initWithUTF8String:changeLog];
-                funcItem.changeLog = nsChangeLog;
+                if (changeLog != NULL) {
+                    NSString *nsChangeLog = [[NSString alloc] initWithUTF8String:changeLog];
+                    funcItem.changeLog = nsChangeLog;
+                }
                 
                 int sourceFileId = (int)sqlite3_column_int(stmt, 9);
                 NSInteger nsSourceFileId = (NSInteger)sourceFileId;
                 funcItem.sourceFileID = nsSourceFileId;
                 
                 char *sourcefile = (char *)sqlite3_column_text(stmt, 10);
-                NSString *nsSourcefile = [[NSString alloc] initWithUTF8String:sourcefile];
-                funcItem.sourceFile = nsSourcefile;
+                if (sourcefile != NULL) {
+                    NSString *nsSourcefile = [[NSString alloc] initWithUTF8String:sourcefile];
+                    funcItem.sourceFile = nsSourcefile;
+                }
                 
                 char *img = (char *)sqlite3_column_text(stmt, 11);
-                NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
-                funcItem.img = nsImg;
+                if (img != NULL) {
+                    NSString *nsImg = [[NSString alloc] initWithUTF8String:img];
+                    funcItem.img = nsImg;
+                }
                 
                 [self.funcItems addObject:funcItem];
                 
@@ -630,7 +655,7 @@
 //查询博客列表
 - (int)queryAllBlogs
 {
-    NSString *path = self.dataFilePath;
+    NSString *path = self.userDataFilePath;
     const char *npath = [path UTF8String];
     //打开数据库
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
@@ -658,8 +683,11 @@
                 NSString *nsUserName = [[NSString alloc] initWithUTF8String:userName];
                 blog.userName = nsUserName;
                 
-                NSInteger userId = (NSInteger)sqlite3_column_int(stmt, 4);
-                blog.userId = userId;
+                NSInteger blogId = (NSInteger)sqlite3_column_int(stmt, 4);
+                blog.blogId = blogId;
+                
+                NSInteger isAdmin = (NSInteger)sqlite3_column_int(stmt, 5);
+                blog.isAdmin = isAdmin;
                 
                 [self.blogs addObject:blog];
             }
@@ -673,7 +701,7 @@
 
 //判断博客是否存在
 - (BOOL)isExistBlogWithUrl : (NSString *)url{
-    NSString *path = self.dataFilePath;
+    NSString *path = self.userDataFilePath;
     const char *npath = [path UTF8String];
     //打开数据库
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
@@ -695,24 +723,73 @@
 }
 
 //插入博客记录
-- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithUserId : (NSInteger)userId;
+- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithId : (NSInteger)blogId isAdmin : (NSInteger)isAdmin;
 {
-    NSString *path = self.dataFilePath;
+    NSString *path = self.userDataFilePath;
     const char *npath = [path UTF8String];
     //打开数据库
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"INSERT INTO BLOG (NAME, URL, USERNAME, USERID) VALUES(?, ?, ?, ?)";
+        NSString *sql = @"INSERT INTO BLOGS (NAME, URL, USERNAME, BLOGID, ISADMIN) VALUES(?, ?, ?, ?, ?)";
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
             sqlite3_bind_text(stmt, 1, [name UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 2, [url UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 3, [username UTF8String], -1, NULL);
-            sqlite3_bind_int(stmt, 4, (int)userId);
+            sqlite3_bind_int(stmt, 4, (int)blogId);
+            sqlite3_bind_int(stmt, 5, (int)isAdmin);
             if (sqlite3_step(stmt) == SQLITE_DONE) {
                 return (int)sqlite3_last_insert_rowid(db);
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    return 0;
+}
+
+//删除博客记录
+- (int)deleteBlogRecordWithId:(NSInteger)id
+{
+    NSString *path = self.userDataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"DELETE FROM BLOGS WHERE ID = ?";
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            sqlite3_bind_int(stmt, 1, (int)id);
+            if (sqlite3_step(stmt) == SQLITE_DONE) {
+                return 1;
+            }
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    return 0;
+}
+
+//更新博客记录
+- (int)updateBlogRecordWithId:(NSInteger)id withName:(NSString *)name withUrl:(NSString *)url withUsername:(NSString *)username withPassword:(NSString *)password
+{
+    NSString *path = self.userDataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = [NSString stringWithFormat:@"UPDATE BLOGS SET NAME = \"%@\", URL = \"%@\", USERNAME = \"%@\", PASSWORD = \"%@\" WHERE ID = ?", name, url, username, password];
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            sqlite3_bind_int(stmt, 1, (int)id);
+            if (sqlite3_step(stmt) == SQLITE_DONE) {
+                return 1;
             }
         }
         sqlite3_finalize(stmt);
@@ -735,5 +812,8 @@
     }
     return NO;
 }
+
+
+
 
 @end

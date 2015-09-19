@@ -91,8 +91,12 @@
         [cell.imageView.image drawInRect:CGRectMake(0, 0, 20, 20)];
         cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        //配置acc
+        if ([sourceFile.type isEqualToString:@"folder"]) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
     }else{
-        cell.textLabel.text = @"Oops, Nothing Founded...";
+        cell.textLabel.text = @"Oops, 这里空空如也 ···";
     }
     
     
