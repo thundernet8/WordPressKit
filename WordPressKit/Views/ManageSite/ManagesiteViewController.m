@@ -12,6 +12,7 @@
 #import "AddSiteViewController.h"
 #import "WordPressApi.h"
 #import "KeychainItemWrapper.h"
+#import "SiteToolsViewController.h"
 
 @interface ManagesiteViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -97,7 +98,7 @@
     UILabel *blogUrl = (UILabel *)[cell viewWithTag:1603];
     
     Blog *blog = (Blog *)self.dataModel.blogs[indexPath.row];
-    blogLogo.image = [UIImage imageNamed:@"icon_global"];
+    blogLogo.image = [UIImage imageNamed:@"icon_blogavatar"];
     blogLogo.alpha = 0.5;
     blogName.text = blog.name;
     blogUrl.text = [[blog.url stringByReplacingOccurrencesOfString:@"http://" withString:@""] stringByReplacingOccurrencesOfString:@"/" withString:@""];
@@ -105,7 +106,7 @@
     
     //给config按钮设置基于index.row的tag便于后面读取
     UIButton *configBtn = [cell.contentView.subviews objectAtIndex:3];
-    [configBtn addTarget:self action:@selector(clickConfigBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [configBtn addTarget:self action:@selector(clickConfigBtn:) forControlEvents:UIControlEventTouchDown];
     configBtn.tag = indexPath.row + 100;
     
     return cell;
@@ -122,6 +123,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"PopConfigSiteView"]) {
         AddSiteViewController *controller = segue.destinationViewController;
+        controller.blog = sender;
+    }else if ([segue.identifier isEqualToString:@"ShowSiteToolsView"]){
+        SiteToolsViewController *controller = segue.destinationViewController;
         controller.blog = sender;
     }
 }
@@ -148,7 +152,7 @@
     //检查站点用户名密码是否正确
     
     //keyChain读取密码
-    //NSDictionary *userInfo = [self.dataModel readKeyChainWithId:blog.id];
+    //NSString *password = [self.dataModel readKeyChainWithId:blog.id];
     
     
     /*[WordPressApi signInWithURL:blog.url username:blog.userName password:password success:^(NSURL *xmlrpcURL) {
@@ -161,6 +165,9 @@
         //[self performSegueWithIdentifier:@"PopConfigSiteView" sender:blog];
         NSLog(@"identifier is %@, and password is %@", keyChainIdentifier, password);
     }];*/
+    
+    //提高响应速度，不检查用户名密码，抓取文章时进行检查
+    [self performSegueWithIdentifier:@"ShowSiteToolsView" sender:blog];
 }
 
 

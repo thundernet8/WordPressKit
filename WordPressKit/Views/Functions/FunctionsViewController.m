@@ -48,13 +48,13 @@
     [self.view addGestureRecognizer:tap];
     
     //分割线全宽-tableview
-    UITableView *tableView = self.tableView;
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
+//    UITableView *tableView = self.tableView;
+//    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [tableView setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [tableView setLayoutMargins:UIEdgeInsetsZero];
+//    }
     [self setStatusBarBackgroundColor]; //设置状态栏背景色
         
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色

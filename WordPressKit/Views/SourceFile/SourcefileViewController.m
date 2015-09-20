@@ -31,14 +31,17 @@
     self.dataModel = [[DataModel alloc] init]; //初始化dataModel
     [self.dataModel querySourceFilesByParentId:0]; //查询初始文件夹层级所有内容
     
+    //去除tableview底部空白cell
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     //分割线全宽-tableview
-    UITableView *tableView = self.tableView;
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
+//    UITableView *tableView = self.tableView;
+//    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [tableView setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [tableView setLayoutMargins:UIEdgeInsetsZero];
+//    }
     
     self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色

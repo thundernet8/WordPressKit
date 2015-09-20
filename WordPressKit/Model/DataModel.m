@@ -823,38 +823,23 @@
 //写入keyChain以保存用户名密码
 - (void)writeKeyChainWithId : (NSInteger)bid UserName : (NSString *)userName passWord : (NSString *)passWord{
     KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"com.wuxueqian.WordPressKit" accessGroup:nil];
-    [keyChain setObject:@"WordPressKit" forKey:(__bridge id)kSecAttrService];
-    
-    NSData *Users = [keyChain objectForKey:(__bridge id)kSecAttrAccount];
-    NSData *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
-    
-    Users = [NSJSONSerialization JSONObjectWithData:Users options:NSJSONReadingMutableLeaves error:nil];
-    Pwds = [NSJSONSerialization JSONObjectWithData:Pwds options:NSJSONReadingMutableLeaves error:nil];
-    
-    NSMutableDictionary *newUsers = [Users mutableCopy];
+    NSDictionary *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
+    Pwds = Pwds.count > 0 ? Pwds : [[NSDictionary alloc] init];
     NSMutableDictionary *newPwds = [Pwds mutableCopy];
     
-    //添加或更新账户及密码
-    [newUsers setValue:userName forKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
-    [newPwds setValue:passWord forKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
-    [keyChain setObject:[NSJSONSerialization dataWithJSONObject:newUsers options:NSJSONWritingPrettyPrinted error:nil] forKey:(__bridge id)kSecAttrAccount];
-    [keyChain setObject:[NSJSONSerialization dataWithJSONObject:newPwds options:NSJSONWritingPrettyPrinted error:nil] forKey:(__bridge id)kSecValueData];
+    //添加或更新密码
+    [newPwds setObject:passWord forKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
+    [keyChain setObject:newPwds forKey:(__bridge id)kSecValueData];
 }
 
 //读取keyChain用户名密码
-- (NSDictionary *)readKeyChainWithId : (NSInteger)bid{
+- (NSString *)readKeyChainWithId : (NSInteger)bid{
     KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"com.wuxueqian.WordPressKit" accessGroup:nil];
-    NSData *Users = [keyChain objectForKey:(__bridge id)kSecAttrAccount];
-    NSData *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
-    
-    Users = [NSJSONSerialization JSONObjectWithData:Users options:NSJSONReadingMutableLeaves error:nil];
-    Pwds = [NSJSONSerialization JSONObjectWithData:Pwds options:NSJSONReadingMutableLeaves error:nil];
-    
-    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
-    [userInfo setValue:[Users valueForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]] forKey:@"username"];
-    [userInfo setValue:[Pwds valueForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]] forKey:@"password"];
-    
-    return userInfo;
+    NSDictionary *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
+    if (Pwds.count > 0) {
+        return [Pwds valueForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
+    }
+    return nil;
 }
 
 

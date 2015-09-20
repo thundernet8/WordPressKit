@@ -64,7 +64,7 @@
 //写入keyChain以保存用户名密码
 - (void)writeKeyChainWithId : (NSInteger)bid UserName : (NSString *)userName passWord : (NSString *)passWord;
 //读取keyChain用户名密码
-- (NSDictionary *)readKeyChainWithId : (NSInteger)bid;
+- (NSString *)readKeyChainWithId : (NSInteger)bid;
 
 
 
