@@ -11,6 +11,7 @@
 #import "SourceFile.h"
 #import "CatItem.h"
 #import "Blog.h"
+#import "KeychainItemWrapper.h"
 
 @interface DataModel()
 
@@ -775,7 +776,7 @@
 }
 
 //更新博客记录
-- (int)updateBlogRecordWithId:(NSInteger)id withName:(NSString *)name withUrl:(NSString *)url withUsername:(NSString *)username withPassword:(NSString *)password
+- (int)updateBlogRecordWithId:(NSInteger)id withName:(NSString *)name withUrl:(NSString *)url withUsername:(NSString *)username blogWithId:(NSInteger)blogId isAdmin:(NSInteger)isAdmin
 {
     NSString *path = self.userDataFilePath;
     const char *npath = [path UTF8String];
@@ -783,11 +784,16 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = [NSString stringWithFormat:@"UPDATE BLOGS SET NAME = \"%@\", URL = \"%@\", USERNAME = \"%@\", PASSWORD = \"%@\" WHERE ID = ?", name, url, username, password];
+        NSString *sql = @"UPDATE BLOGS SET NAME = ?, URL = ?, USERNAME = ?, BLOGID = ?, ISADMIN = ? WHERE ID = ?";
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
-            sqlite3_bind_int(stmt, 1, (int)id);
+            sqlite3_bind_text(stmt, 1, [name UTF8String], -1, NULL);
+            sqlite3_bind_text(stmt, 2, [url UTF8String], -1, NULL);
+            sqlite3_bind_text(stmt, 3, [username UTF8String], -1, NULL);
+            sqlite3_bind_int(stmt, 4, (int)blogId);
+            sqlite3_bind_int(stmt, 5, (int)isAdmin);
+            sqlite3_bind_int(stmt, 6, (int)id);
             if (sqlite3_step(stmt) == SQLITE_DONE) {
                 return 1;
             }
@@ -813,7 +819,43 @@
     return NO;
 }
 
+#pragma - method for keyChain
+//写入keyChain以保存用户名密码
+- (void)writeKeyChainWithId : (NSInteger)bid UserName : (NSString *)userName passWord : (NSString *)passWord{
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"com.wuxueqian.WordPressKit" accessGroup:nil];
+    [keyChain setObject:@"WordPressKit" forKey:(__bridge id)kSecAttrService];
+    
+    NSData *Users = [keyChain objectForKey:(__bridge id)kSecAttrAccount];
+    NSData *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
+    
+    Users = [NSJSONSerialization JSONObjectWithData:Users options:NSJSONReadingMutableLeaves error:nil];
+    Pwds = [NSJSONSerialization JSONObjectWithData:Pwds options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSMutableDictionary *newUsers = [Users mutableCopy];
+    NSMutableDictionary *newPwds = [Pwds mutableCopy];
+    
+    //添加或更新账户及密码
+    [newUsers setValue:userName forKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
+    [newPwds setValue:passWord forKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
+    [keyChain setObject:[NSJSONSerialization dataWithJSONObject:newUsers options:NSJSONWritingPrettyPrinted error:nil] forKey:(__bridge id)kSecAttrAccount];
+    [keyChain setObject:[NSJSONSerialization dataWithJSONObject:newPwds options:NSJSONWritingPrettyPrinted error:nil] forKey:(__bridge id)kSecValueData];
+}
 
+//读取keyChain用户名密码
+- (NSDictionary *)readKeyChainWithId : (NSInteger)bid{
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"com.wuxueqian.WordPressKit" accessGroup:nil];
+    NSData *Users = [keyChain objectForKey:(__bridge id)kSecAttrAccount];
+    NSData *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
+    
+    Users = [NSJSONSerialization JSONObjectWithData:Users options:NSJSONReadingMutableLeaves error:nil];
+    Pwds = [NSJSONSerialization JSONObjectWithData:Pwds options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    [userInfo setValue:[Users valueForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]] forKey:@"username"];
+    [userInfo setValue:[Pwds valueForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]] forKey:@"password"];
+    
+    return userInfo;
+}
 
 
 @end

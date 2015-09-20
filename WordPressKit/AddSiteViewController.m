@@ -8,7 +8,6 @@
 
 #import "AddSiteViewController.h"
 #import "WordPressApi.h"
-#import "KeychainItemWrapper.h"
 #import "DataModel.h"
 #import "WordPressXMLRPCApi.h"
 #import "MBProgressHUD.h"
@@ -23,10 +22,7 @@
 
 //插入博客记录
 - (void)tryAddBlogWithUrl:(NSString *)url withUserName:(NSString *)username withPassWord:(NSString *)password;
-//写入keyChain以保存用户名密码
-- (void)writeKeyChainWithIdentifier : (NSString *)identifier userName : (NSString *)userName passWord : (NSString *)passWord;
-//读取keyChain用户名密码
-- (NSDictionary *)readKeyChainWithIdentifier : (NSString *)identifier;
+
 //发送广播通知便于博客列表控制器读取新添加的数据
 - (void)sendAddBlogCompleteNotificationWithBlogUrl : (NSString *)url withUserName : (NSString *)userName withPassword : (NSString *)password;
 
@@ -213,11 +209,10 @@
             //如果是更新博客数据
             if (self.blog) {
                 NSDictionary *blog = [blogs firstObject];
-                int updateId = [self.dataModel updateBlogRecordWithId:self.blog.id withName:[blog valueForKey:@"blogName"] withUrl:[blog valueForKey:@"url"] withUsername:username withPassword:password];
+                int updateId = [self.dataModel updateBlogRecordWithId:self.blog.id withName:[blog valueForKey:@"blogName"] withUrl:[blog valueForKey:@"url"] withUsername:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
                 if (updateId > 0) {
-                    //keyChain存储用户名密码-标识为@"WordPressKitBlog"+插入数据库记录的ID
-                    NSString *keyChainIdentifier = [NSString stringWithFormat:@"WordPressKitBlog%i", (int)self.blog.id];
-                    [self writeKeyChainWithIdentifier:keyChainIdentifier userName:username passWord:password];
+                    //keyChain存储用户名密码
+                    [self.dataModel writeKeyChainWithId:self.blog.id UserName:username passWord:password];
                     //广播通知博客列表页面controller
                     [self sendAddBlogCompleteNotificationWithBlogUrl:url withUserName:username withPassword:password];
                     
@@ -243,9 +238,9 @@
                 }else{
                     int insertId = [self.dataModel insertBlogRecordWithName:[blog valueForKey:@"blogName"] blogWithUrl:[blog valueForKey:@"url"] blogWithUserName:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
                     if (insertId > 0) {
-                        //keyChain存储用户名密码-标识为@"WordPressKitBlog"+插入数据库记录的ID
-                        NSString *keyChainIdentifier = [NSString stringWithFormat:@"WordPressKitBlog%i", insertId];
-                        [self writeKeyChainWithIdentifier:keyChainIdentifier userName:username passWord:password];
+                        //keyChain存储用户名密码
+                        [self.dataModel writeKeyChainWithId:insertId UserName:username passWord:password];
+                        
                         //广播通知博客列表页面controller
                         [self sendAddBlogCompleteNotificationWithBlogUrl:url withUserName:username withPassword:password];
                         
@@ -274,19 +269,7 @@
     }];
 }
 
-//写入keyChain以保存用户名密码
-- (void)writeKeyChainWithIdentifier : (NSString *)identifier userName : (NSString *)userName passWord : (NSString *)passWord{
-    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:identifier accessGroup:nil];
-    [keyChain setObject:@"WordPressKit" forKey:(__bridge id)kSecAttrService];
-    [keyChain setObject:userName forKey:(__bridge id)kSecAttrAccount];
-    [keyChain setObject:passWord forKey:(__bridge id)kSecValueData];
-}
 
-//读取keyChain用户名密码
-- (NSDictionary *)readKeyChainWithIdentifier : (NSString *)identifier{
-    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:identifier accessGroup:nil];
-    return [keyChain keychainItemData];
-}
 
 //发送广播通知便于博客列表控制器读取新添加的数据
 - (void)sendAddBlogCompleteNotificationWithBlogUrl:(NSString *)url withUserName:(NSString *)userName withPassword:(NSString *)password

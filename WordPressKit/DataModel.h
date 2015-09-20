@@ -56,10 +56,15 @@
 //删除博客记录
 - (int)deleteBlogRecordWithId : (NSInteger)id;
 //更新博客记录
-- (int)updateBlogRecordWithId : (NSInteger)id withName : (NSString *)name withUrl : (NSString *)url withUsername : (NSString *)username withPassword : (NSString *)password;
+- (int)updateBlogRecordWithId : (NSInteger)id withName : (NSString *)name withUrl : (NSString *)url withUsername : (NSString *)username blogWithId : (NSInteger)blogId isAdmin : (NSInteger)isAdmin;
 
 //判断空字符串
 - (BOOL) isBlankString:(NSString *)string;
+
+//写入keyChain以保存用户名密码
+- (void)writeKeyChainWithId : (NSInteger)bid UserName : (NSString *)userName passWord : (NSString *)passWord;
+//读取keyChain用户名密码
+- (NSDictionary *)readKeyChainWithId : (NSInteger)bid;
 
 
 

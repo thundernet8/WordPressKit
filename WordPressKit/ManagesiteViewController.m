@@ -10,6 +10,8 @@
 #import "DataModel.h"
 #import "Blog.h"
 #import "AddSiteViewController.h"
+#import "WordPressApi.h"
+#import "KeychainItemWrapper.h"
 
 @interface ManagesiteViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,6 +27,7 @@
     bottomBorder.frame = CGRectMake(0.0f, [self.dataModel.blogs count]*56.0f-1, self.tableView.frame.size.width, 1.0f);
     bottomBorder.backgroundColor = [[UIColor alloc] initWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1].CGColor;
     [self.tableView.layer addSublayer:bottomBorder];
+    
 }
 
 - (void)viewDidLoad {
@@ -57,6 +60,7 @@
     if (self.dataModel.blogs.count >0) {
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
+
 }
 
 
@@ -136,6 +140,27 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 56.0f;
+}
+
+#pragma mark - cell点击
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Blog *blog = self.dataModel.blogs[indexPath.row];
+    //检查站点用户名密码是否正确
+    
+    //keyChain读取密码
+    //NSDictionary *userInfo = [self.dataModel readKeyChainWithId:blog.id];
+    
+    
+    /*[WordPressApi signInWithURL:blog.url username:blog.userName password:password success:^(NSURL *xmlrpcURL) {
+        NSLog(@"success");
+        
+    } failure:^(NSError *error) {
+        //请求重新配置站点
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"站点配置信息有误, 需要重新配置" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        //[alert show];
+        //[self performSegueWithIdentifier:@"PopConfigSiteView" sender:blog];
+        NSLog(@"identifier is %@, and password is %@", keyChainIdentifier, password);
+    }];*/
 }
 
 
