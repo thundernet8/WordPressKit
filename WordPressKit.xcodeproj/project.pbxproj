@@ -131,59 +131,59 @@
 		B46004DC1B8CBB9C00757221 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B4DD04591B8DD90500E2ACA3 /* Functions */,
-				B4DD045A1B8DD91100E2ACA3 /* Categories */,
-				B4DD04581B8DD8ED00E2ACA3 /* SourceFile */,
-				B4DD04571B8DD8D900E2ACA3 /* ManageSite */,
 				B4DD045B1B8DD91C00E2ACA3 /* About */,
+				B4DD045A1B8DD91100E2ACA3 /* Categories */,
+				B4DD04591B8DD90500E2ACA3 /* Functions */,
+				B4DD04571B8DD8D900E2ACA3 /* ManageSite */,
+				B4DD04581B8DD8ED00E2ACA3 /* SourceFile */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B4DD04571B8DD8D900E2ACA3 /* ManageSite */ = {
 			isa = PBXGroup;
 			children = (
-				B46004D51B8CBB5D00757221 /* ManagesiteViewController.h */,
-				B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */,
 				B4A91A771BA7243900874D56 /* AddSiteViewController.h */,
 				B4A91A781BA7243900874D56 /* AddSiteViewController.m */,
+				B46004D51B8CBB5D00757221 /* ManagesiteViewController.h */,
+				B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */,
 			);
-			name = ManageSite;
+			path = ManageSite;
 			sourceTree = "<group>";
 		};
 		B4DD04581B8DD8ED00E2ACA3 /* SourceFile */ = {
 			isa = PBXGroup;
 			children = (
-				B46004D21B8CBB5000757221 /* SourcefileViewController.h */,
-				B46004D31B8CBB5000757221 /* SourcefileViewController.m */,
 				B4DD04511B8DD89500E2ACA3 /* FileItemViewController.h */,
 				B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */,
+				B46004D21B8CBB5000757221 /* SourcefileViewController.h */,
+				B46004D31B8CBB5000757221 /* SourcefileViewController.m */,
 			);
-			name = SourceFile;
+			path = SourceFile;
 			sourceTree = "<group>";
 		};
 		B4DD04591B8DD90500E2ACA3 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				B46004CC1B8CBB1000757221 /* FunctionsViewController.h */,
-				B46004CD1B8CBB1000757221 /* FunctionsViewController.m */,
 				B4DD044B1B8DD85500E2ACA3 /* FuncItemViewController.h */,
 				B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */,
+				B46004CC1B8CBB1000757221 /* FunctionsViewController.h */,
+				B46004CD1B8CBB1000757221 /* FunctionsViewController.m */,
 			);
-			name = Functions;
+			path = Functions;
 			sourceTree = "<group>";
 		};
 		B4DD045A1B8DD91100E2ACA3 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				B46004CF1B8CBB3D00757221 /* CategoriesViewController.h */,
-				B46004D01B8CBB3D00757221 /* CategoriesViewController.m */,
-				B4DD044E1B8DD88400E2ACA3 /* CatItemViewController.h */,
-				B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */,
 				B4E1499E1BA3FC8500C6CA20 /* CatFuncItemsViewController.h */,
 				B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */,
+				B4DD044E1B8DD88400E2ACA3 /* CatItemViewController.h */,
+				B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */,
+				B46004CF1B8CBB3D00757221 /* CategoriesViewController.h */,
+				B46004D01B8CBB3D00757221 /* CategoriesViewController.m */,
 			);
-			name = Categories;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		B4DD045B1B8DD91C00E2ACA3 /* About */ = {
@@ -192,34 +192,34 @@
 				B46004D81B8CBB6900757221 /* AboutViewController.h */,
 				B46004D91B8CBB6900757221 /* AboutViewController.m */,
 			);
-			name = About;
+			path = About;
 			sourceTree = "<group>";
 		};
 		B4DD045F1B8E0F3B00E2ACA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B4DD045C1B8E0F3600E2ACA3 /* FuncItem.h */,
-				B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */,
-				B4E2BB9C1B8F32DE00B10CF2 /* DataModel.h */,
-				B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */,
-				B44B19D91B9499B10028D41C /* SourceFile.h */,
-				B44B19DA1B9499B10028D41C /* SourceFile.m */,
-				B4C04FD31B9B256500A43AEA /* CatItem.h */,
-				B4C04FD41B9B256500A43AEA /* CatItem.m */,
 				B41049E01BA992BC00109B9B /* Blog.h */,
 				B41049E11BA992BC00109B9B /* Blog.m */,
+				B4C04FD31B9B256500A43AEA /* CatItem.h */,
+				B4C04FD41B9B256500A43AEA /* CatItem.m */,
+				B4E2BB9C1B8F32DE00B10CF2 /* DataModel.h */,
+				B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */,
+				B4DD045C1B8E0F3600E2ACA3 /* FuncItem.h */,
+				B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */,
+				B44B19D91B9499B10028D41C /* SourceFile.h */,
+				B44B19DA1B9499B10028D41C /* SourceFile.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B4E53F031B87FDCB00C4CFAA = {
 			isa = PBXGroup;
 			children = (
+				B622458F32FA8E0D941839DB /* Frameworks */,
+				4C441027CD5E2358E6F37960 /* Pods */,
+				B4E53F0D1B87FDCB00C4CFAA /* Products */,
 				B4E53F0E1B87FDCB00C4CFAA /* WordPressKit */,
 				B4E53F2B1B87FDCB00C4CFAA /* WordPressKitTests */,
-				B4E53F0D1B87FDCB00C4CFAA /* Products */,
-				4C441027CD5E2358E6F37960 /* Pods */,
-				B622458F32FA8E0D941839DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,14 +235,14 @@
 		B4E53F0E1B87FDCB00C4CFAA /* WordPressKit */ = {
 			isa = PBXGroup;
 			children = (
+				B4DD045F1B8E0F3B00E2ACA3 /* Model */,
+				B4E53F0F1B87FDCB00C4CFAA /* Supporting Files */,
+				B46004DC1B8CBB9C00757221 /* Views */,
 				B4E53F131B87FDCB00C4CFAA /* AppDelegate.h */,
 				B4E53F141B87FDCB00C4CFAA /* AppDelegate.m */,
-				B4E53F1C1B87FDCB00C4CFAA /* Main.storyboard */,
 				B4E53F1F1B87FDCB00C4CFAA /* Images.xcassets */,
 				B4E53F211B87FDCB00C4CFAA /* LaunchScreen.xib */,
-				B4E53F0F1B87FDCB00C4CFAA /* Supporting Files */,
-				B4DD045F1B8E0F3B00E2ACA3 /* Model */,
-				B46004DC1B8CBB9C00757221 /* Views */,
+				B4E53F1C1B87FDCB00C4CFAA /* Main.storyboard */,
 			);
 			path = WordPressKit;
 			sourceTree = "<group>";
@@ -251,19 +251,19 @@
 			isa = PBXGroup;
 			children = (
 				B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */,
-				B4DB66321BAC3D7A00B625CC /* UserData.db */,
 				B4E53F101B87FDCB00C4CFAA /* Info.plist */,
+				B4DB66321BAC3D7A00B625CC /* UserData.db */,
 				B4E53F111B87FDCB00C4CFAA /* main.m */,
 				B4DAE42D1BA4876700D51121 /* sourcefile.html */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B4E53F2B1B87FDCB00C4CFAA /* WordPressKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				B4E53F2E1B87FDCB00C4CFAA /* WordPressKitTests.m */,
 				B4E53F2C1B87FDCB00C4CFAA /* Supporting Files */,
+				B4E53F2E1B87FDCB00C4CFAA /* WordPressKitTests.m */,
 			);
 			path = WordPressKitTests;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			children = (
 				B4E53F2D1B87FDCB00C4CFAA /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B622458F32FA8E0D941839DB /* Frameworks */ = {
@@ -344,7 +344,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B4E53F071B87FDCB00C4CFAA /* Build configuration list for PBXProject "WordPressKit" */;
+			buildConfigurationList = B4E53F071B87FDCB00C4CFAA /* Build configuration list for PBXProject "wordpresskit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -469,6 +469,7 @@
 				B4E53F1D1B87FDCB00C4CFAA /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		B4E53F211B87FDCB00C4CFAA /* LaunchScreen.xib */ = {
@@ -477,6 +478,7 @@
 				B4E53F221B87FDCB00C4CFAA /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -570,7 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = WordPressKit/Info.plist;
+				INFOPLIST_FILE = "WordPressKit/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -583,7 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = WordPressKit/Info.plist;
+				INFOPLIST_FILE = "WordPressKit/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -602,7 +604,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WordPressKitTests/Info.plist;
+				INFOPLIST_FILE = "WordPressKitTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordPressKit.app/WordPressKit";
@@ -617,7 +619,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WordPressKitTests/Info.plist;
+				INFOPLIST_FILE = "WordPressKitTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordPressKit.app/WordPressKit";
@@ -627,7 +629,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B4E53F071B87FDCB00C4CFAA /* Build configuration list for PBXProject "WordPressKit" */ = {
+		B4E53F071B87FDCB00C4CFAA /* Build configuration list for PBXProject "wordpresskit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B4E53F301B87FDCB00C4CFAA /* Debug */,
