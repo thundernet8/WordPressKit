@@ -7,6 +7,7 @@
 //
 
 #import "SiteToolsViewController.h"
+#import "ToolKit/WebBrowserController.h"
 
 @interface SiteToolsViewController ()
 
@@ -108,16 +109,6 @@
 }
 
 #pragma - tableview的header
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section == 1) {
-        return @"发布";
-    }else if (section == 2){
-        return @"配置";
-    }
-    
-    return NULL;
-}
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *header = [[UIView alloc] init];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16.0f, 25.0f, tableView.frame.size.width, 20.0f)];
@@ -135,6 +126,17 @@
     return 0.0f;
 }
 
+#pragma - tableview delegate
+//cell点击
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section ==0 && indexPath.row == 1) {
+        NSString *urlString = [self.blog.url stringByAppendingString:@"wp-admin"];
+        NSURL *url = [NSURL URLWithString:urlString];
+        [[UIApplication sharedApplication] openURL:url];
+    }else if (indexPath.section == 0 && indexPath.row ==0){
+        [self performSegueWithIdentifier:@"ShowWebBrowser" sender:self.blog.url];
+    }
+}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
@@ -176,5 +178,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"ShowWebBrowser"]) {
+        WebBrowserController *controller = segue.destinationViewController;
+        controller.url = (NSString *)sender;
+    }
+}
 
 @end

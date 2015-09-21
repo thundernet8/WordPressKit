@@ -26,6 +26,7 @@
 		B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */; };
 		B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */; };
 		B4E0DF471BAE602D00289630 /* SiteToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */; };
+		B4E0DF4A1BAEB0B000289630 /* WebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DF491BAEB0B000289630 /* WebBrowserController.m */; };
 		B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */; };
 		B4E2BB9E1B8F32DE00B10CF2 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */; };
 		B4E2BBA01B8F40B100B10CF2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E2BB9F1B8F40B100B10CF2 /* libsqlite3.0.dylib */; };
@@ -82,6 +83,8 @@
 		B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncItem.m; sourceTree = "<group>"; };
 		B4E0DF451BAE602D00289630 /* SiteToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteToolsViewController.h; sourceTree = "<group>"; };
 		B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteToolsViewController.m; sourceTree = "<group>"; };
+		B4E0DF481BAEB0B000289630 /* WebBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebBrowserController.h; path = ToolKit/WebBrowserController.h; sourceTree = "<group>"; };
+		B4E0DF491BAEB0B000289630 /* WebBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebBrowserController.m; path = ToolKit/WebBrowserController.m; sourceTree = "<group>"; };
 		B4E1499E1BA3FC8500C6CA20 /* CatFuncItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatFuncItemsViewController.h; sourceTree = "<group>"; };
 		B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatFuncItemsViewController.m; sourceTree = "<group>"; };
 		B4E2BB9C1B8F32DE00B10CF2 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 				B4DD04591B8DD90500E2ACA3 /* Functions */,
 				B4DD04571B8DD8D900E2ACA3 /* ManageSite */,
 				B4DD04581B8DD8ED00E2ACA3 /* SourceFile */,
+				B4E0DF4B1BAEB0B600289630 /* ToolKit */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +219,15 @@
 				B44B19DA1B9499B10028D41C /* SourceFile.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4E0DF4B1BAEB0B600289630 /* ToolKit */ = {
+			isa = PBXGroup;
+			children = (
+				B4E0DF481BAEB0B000289630 /* WebBrowserController.h */,
+				B4E0DF491BAEB0B000289630 /* WebBrowserController.m */,
+			);
+			name = ToolKit;
 			sourceTree = "<group>";
 		};
 		B4E53F031B87FDCB00C4CFAA = {
@@ -438,6 +451,7 @@
 				B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */,
 				B44B19DB1B9499B10028D41C /* SourceFile.m in Sources */,
 				B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */,
+				B4E0DF4A1BAEB0B000289630 /* WebBrowserController.m in Sources */,
 				B4E0DF471BAE602D00289630 /* SiteToolsViewController.m in Sources */,
 				B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */,
 				B41049E21BA992BC00109B9B /* Blog.m in Sources */,

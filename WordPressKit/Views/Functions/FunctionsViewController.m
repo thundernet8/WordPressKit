@@ -92,11 +92,12 @@
 #pragma mark - 配置cell的img和label
 - (void)configImgForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
 {
-    NSString *img = [self.dataModel isBlankString:item.img] ? @"function" : item.img;
-    UIGraphicsBeginImageContext(CGSizeMake(20, 20));
-    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
-    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    NSString *img = [self.dataModel isBlankString:item.img] ? @"type_icon_function" : [NSString stringWithFormat:@"type_icon_%@",item.img];
+//    UIGraphicsBeginImageContext(CGSizeMake(20, 20));
+//    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
+//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    cell.imageView.image = [UIImage imageNamed:img];
     
 }
 

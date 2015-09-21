@@ -88,12 +88,18 @@
         //配置内容
         SourceFile *sourceFile = self.dataModel.sourceFiles[indexPath.row];
         cell.textLabel.text = sourceFile.name;
-        [cell.imageView setImage:[UIImage imageNamed:@"parameter"]];
+        NSString *img = sourceFile.type;
+        NSArray *imgAvailable = @[@"php",@"css",@"js",@"txt",@"folder",@"html",@"xml"];
+        if (![imgAvailable containsObject:img]) {
+            img = @"unkown";
+        }
+        img = [NSString stringWithFormat:@"type_icon_%@",img];
+        [cell.imageView setImage:[UIImage imageNamed:img]];
         //控制img大小
-        UIGraphicsBeginImageContext(CGSizeMake(20, 20));
-        [cell.imageView.image drawInRect:CGRectMake(0, 0, 20, 20)];
-        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+//        UIGraphicsBeginImageContext(CGSizeMake(20, 20));
+//        [cell.imageView.image drawInRect:CGRectMake(0, 0, 20, 20)];
+//        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
         //配置acc
         if ([sourceFile.type isEqualToString:@"folder"]) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

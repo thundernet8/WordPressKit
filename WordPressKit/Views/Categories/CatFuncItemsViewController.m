@@ -49,13 +49,13 @@
     [self.view addGestureRecognizer:tap];
     
     //分割线全宽-tableview
-    UITableView *tableView = self.tableView;
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
+//    UITableView *tableView = self.tableView;
+//    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [tableView setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [tableView setLayoutMargins:UIEdgeInsetsZero];
+//    }
 
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
     
@@ -77,11 +77,12 @@
 #pragma mark - 配置cell的img和label
 - (void)configImgForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
 {
-    NSString *img = [self.dataModel isBlankString:item.img] ? @"function" : item.img;
-    UIGraphicsBeginImageContext(CGSizeMake(20, 20));
-    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
-    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    NSString *img = [self.dataModel isBlankString:item.img] ? @"type_icon_function" : [NSString stringWithFormat:@"type_icon_%@",item.img];
+//    UIGraphicsBeginImageContext(CGSizeMake(20, 20));
+//    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
+//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    cell.imageView.image = [UIImage imageNamed:img];
     
 }
 
