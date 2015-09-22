@@ -8,6 +8,7 @@
 
 #import "SiteToolsViewController.h"
 #import "ToolKit/WebBrowserController.h"
+#import "ManageSite/ListPostsViewController.h"
 
 @interface SiteToolsViewController ()
 
@@ -104,7 +105,7 @@
     cell.imageView.image = [UIImage imageNamed:icon];
     cell.textLabel.text = text;
     cell.textLabel.textColor = [[UIColor alloc] initWithRed:25/255.0 green:50/255.0 blue:68/255.0 alpha:1.0f];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -135,6 +136,8 @@
         [[UIApplication sharedApplication] openURL:url];
     }else if (indexPath.section == 0 && indexPath.row ==0){
         [self performSegueWithIdentifier:@"ShowWebBrowser" sender:self.blog.url];
+    }else if (indexPath.section == 1 && indexPath.row == 0){
+        [self performSegueWithIdentifier:@"ShowPosts" sender:self.blog];
     }
 }
 
@@ -184,6 +187,9 @@
     if ([segue.identifier isEqualToString:@"ShowWebBrowser"]) {
         WebBrowserController *controller = segue.destinationViewController;
         controller.url = (NSString *)sender;
+    } else if ([segue.identifier isEqualToString:@"ShowPosts"]){
+        ListPostsViewController *controller = segue.destinationViewController;
+        controller.blog = sender;
     }
 }
 

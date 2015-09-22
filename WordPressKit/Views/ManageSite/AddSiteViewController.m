@@ -187,11 +187,6 @@
         //通过xml-rpc请求验证并尝试添加站点
         [self tryAddBlogWithUrl:urlField.text withUserName:userField.text withPassWord:passwordField.text];
         
-        
-        
-        
-        
-        
     }
 }
 

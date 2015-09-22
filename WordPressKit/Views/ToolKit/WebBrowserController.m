@@ -54,6 +54,10 @@
     //工具条view前置 z-index
     [self.view bringSubviewToFront:self.bottomToolBar];
     
+    //右上角更多按钮功能待添加，先隐藏
+    self.rightTopBtn.enabled = NO;
+    self.rightTopBtn.alpha = 0.0f;
+    
     
 }
 
@@ -133,6 +137,8 @@
         [self.webView reload];
     }else{
         [self.webView stopLoading];
+        _pageLoaded = YES;
+        [self.stopBtn setImage:[UIImage imageNamed:@"button_refresh_gray"] forState:UIControlStateNormal];
     }
 }
 

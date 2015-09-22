@@ -13,6 +13,7 @@
 #import "WordPressApi.h"
 #import "KeychainItemWrapper.h"
 #import "SiteToolsViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ManagesiteViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -76,6 +77,13 @@
 //    NSString *url = [blogInfo valueForKey:@"Url"];
 //    NSString *userName = [blogInfo valueForKey:@"UserName"];
 //    NSString *password = [blogInfo valueForKey:@"Password"];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.labelText = @"Completed";
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check_white"]];
+    [hud hide:YES afterDelay:2];
+    
     [self.dataModel queryAllBlogs];
     //由于子线程无法更新UI，需要切换主线程执行重载任务
     dispatch_async(dispatch_get_main_queue(), ^{

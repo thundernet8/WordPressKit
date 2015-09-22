@@ -21,6 +21,8 @@
 		B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE42D1BA4876700D51121 /* sourcefile.html */; };
 		B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */; };
 		B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66321BAC3D7A00B625CC /* UserData.db */; };
+		B4DD02E71BB044CE0066C8E5 /* ListPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */; };
+		B4DD02EA1BB045F20066C8E5 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E91BB045F20066C8E5 /* PostCell.m */; };
 		B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */; };
 		B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */; };
 		B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */; };
@@ -73,6 +75,10 @@
 		B4DAE42D1BA4876700D51121 /* sourcefile.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sourcefile.html; sourceTree = "<group>"; };
 		B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DB66321BAC3D7A00B625CC /* UserData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserData.db; sourceTree = "<group>"; };
+		B4DD02E51BB044CE0066C8E5 /* ListPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListPostsViewController.h; sourceTree = "<group>"; };
+		B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListPostsViewController.m; sourceTree = "<group>"; };
+		B4DD02E81BB045F20066C8E5 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		B4DD02E91BB045F20066C8E5 /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		B4DD044B1B8DD85500E2ACA3 /* FuncItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncItemViewController.h; sourceTree = "<group>"; };
 		B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncItemViewController.m; sourceTree = "<group>"; };
 		B4DD044E1B8DD88400E2ACA3 /* CatItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatItemViewController.h; sourceTree = "<group>"; };
@@ -156,6 +162,10 @@
 				B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */,
 				B4E0DF451BAE602D00289630 /* SiteToolsViewController.h */,
 				B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */,
+				B4DD02E51BB044CE0066C8E5 /* ListPostsViewController.h */,
+				B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */,
+				B4DD02E81BB045F20066C8E5 /* PostCell.h */,
+				B4DD02E91BB045F20066C8E5 /* PostCell.m */,
 			);
 			path = ManageSite;
 			sourceTree = "<group>";
@@ -453,7 +463,9 @@
 				B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */,
 				B4E0DF4A1BAEB0B000289630 /* WebBrowserController.m in Sources */,
 				B4E0DF471BAE602D00289630 /* SiteToolsViewController.m in Sources */,
+				B4DD02EA1BB045F20066C8E5 /* PostCell.m in Sources */,
 				B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */,
+				B4DD02E71BB044CE0066C8E5 /* ListPostsViewController.m in Sources */,
 				B41049E21BA992BC00109B9B /* Blog.m in Sources */,
 				B4A91A791BA7243900874D56 /* AddSiteViewController.m in Sources */,
 				B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */,

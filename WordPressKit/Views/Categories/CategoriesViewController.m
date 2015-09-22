@@ -106,7 +106,7 @@
     
     //配置countLabel尺寸
     [countLabel sizeToFit];
-    CGSize countSize = [countLabel.text sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(50.0, 12.0)];
+    //CGSize countSize = [countLabel.text sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(50.0, 12.0)];
     //CGFloat width = countSize.width + 15;
     //CGFloat width = countLabel.frame.size.width + 15;
     CGFloat width = 20;

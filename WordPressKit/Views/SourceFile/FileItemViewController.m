@@ -132,7 +132,7 @@
 #pragma mark - webview delegate methods
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"start load\r");
+
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
