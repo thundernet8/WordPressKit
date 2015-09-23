@@ -41,6 +41,9 @@
 //    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
 //        [tableView setLayoutMargins:UIEdgeInsetsZero];
 //    }
+    
+    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];//tableview分割线颜色
+    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
     self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
     

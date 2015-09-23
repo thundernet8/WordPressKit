@@ -55,6 +55,9 @@
 //    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
 //        [tableView setLayoutMargins:UIEdgeInsetsZero];
 //    }
+    
+    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];//tableview分割线颜色
+    
     [self setStatusBarBackgroundColor]; //设置状态栏背景色
         
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色

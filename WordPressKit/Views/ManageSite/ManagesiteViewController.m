@@ -41,6 +41,8 @@
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
     
+    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];//tableview分割线颜色
+    
     //tableView 委托与数据源
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

@@ -16,5 +16,8 @@
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, assign) NSInteger blogId;
 @property (nonatomic, assign) NSInteger isAdmin;
+@property (nonatomic, copy) NSString *password;
+
+- (NSArray *)getXMLRPCArgsWithExtra:(id)extra withDBRecordId:(NSInteger)rid;
 
 @end

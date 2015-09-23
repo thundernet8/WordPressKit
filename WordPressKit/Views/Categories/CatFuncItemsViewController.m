@@ -56,6 +56,8 @@
 //    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
 //        [tableView setLayoutMargins:UIEdgeInsetsZero];
 //    }
+    
+    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];
 
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
     

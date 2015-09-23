@@ -8,6 +8,7 @@
 
 #import "ListPostsViewController.h"
 #import "PostCell.h"
+#import "WordPressApi.h"
 
 @interface ListPostsViewController ()
 

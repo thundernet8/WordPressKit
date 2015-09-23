@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NSObject-SafeExpectations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03641E8AB9E8CA7FD3C81881EA3DEDB7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>03788C9D32037DB15CF2320DCE44D970</key>
+		<key>16F43D0DF26662EE52E7871E3B4B1376</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47BA666D57846AB319639B3DFF10DF11</key>
+		<key>356B589E1F211529BFA6B9680AA73C23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54167798CAB2EA5EC92E55F9F0845E02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C2BB579412C00D37633FBE65DA34126</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B06A73DF267359721611E4E5EADCC3EE</key>
+		<key>A51B4E68B234354BEFFCE1201CD4C434</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B69461082D1131FBDD9C0071F20248B4</key>
+		<key>B06A73DF267359721611E4E5EADCC3EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
