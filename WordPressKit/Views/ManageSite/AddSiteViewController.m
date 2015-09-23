@@ -204,7 +204,7 @@
             //如果是更新博客数据
             if (self.blog) {
                 NSDictionary *blog = [blogs firstObject];
-                int updateId = [self.dataModel updateBlogRecordWithId:self.blog.id withName:[blog valueForKey:@"blogName"] withUrl:[blog valueForKey:@"url"] withUsername:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
+                int updateId = [self.dataModel updateBlogRecordWithId:self.blog.id withName:[blog valueForKey:@"blogName"] withUrl:[blog valueForKey:@"url"] withUsername:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] blogWithXmlrpc:[blog valueForKey:@"xmlrpc"] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
                 if (updateId > 0) {
                     //keyChain存储用户名密码
                     [self.dataModel writeKeyChainWithId:self.blog.id UserName:username passWord:password];
@@ -231,7 +231,7 @@
                     [alert show];
                     continue;
                 }else{
-                    int insertId = [self.dataModel insertBlogRecordWithName:[blog valueForKey:@"blogName"] blogWithUrl:[blog valueForKey:@"url"] blogWithUserName:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
+                    int insertId = [self.dataModel insertBlogRecordWithName:[blog valueForKey:@"blogName"] blogWithUrl:[blog valueForKey:@"url"] blogWithUserName:username blogWithId:[[blog valueForKey:@"blogid"] integerValue] blogWithXmlrpc:[blog valueForKey:@"xmlrpc"] isAdmin:[[blog valueForKey:@"isAdmin"] integerValue]];
                     if (insertId > 0) {
                         //keyChain存储用户名密码
                         [self.dataModel writeKeyChainWithId:insertId UserName:username passWord:password];

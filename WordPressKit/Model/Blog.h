@@ -17,6 +17,7 @@
 @property (nonatomic, assign) NSInteger blogId;
 @property (nonatomic, assign) NSInteger isAdmin;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *xmlrpc;
 
 - (NSArray *)getXMLRPCArgsWithExtra:(id)extra withDBRecordId:(NSInteger)rid;
 

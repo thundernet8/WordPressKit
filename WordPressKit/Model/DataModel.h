@@ -52,11 +52,11 @@
 //判断博客是否存在
 - (BOOL)isExistBlogWithUrl : (NSString *)url;
 //插入博客记录
-- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithId : (NSInteger)blogId isAdmin : (NSInteger)isAdmin;
+- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithId : (NSInteger)blogId blogWithXmlrpc : (NSString *)xmlrpc isAdmin : (NSInteger)isAdmin;
 //删除博客记录
 - (int)deleteBlogRecordWithId : (NSInteger)id;
 //更新博客记录
-- (int)updateBlogRecordWithId : (NSInteger)id withName : (NSString *)name withUrl : (NSString *)url withUsername : (NSString *)username blogWithId : (NSInteger)blogId isAdmin : (NSInteger)isAdmin;
+- (int)updateBlogRecordWithId : (NSInteger)id withName : (NSString *)name withUrl : (NSString *)url withUsername : (NSString *)username blogWithId : (NSInteger)blogId blogWithXmlrpc : (NSString *)xmlrpc isAdmin : (NSInteger)isAdmin;
 
 //判断空字符串
 - (BOOL) isBlankString:(NSString *)string;

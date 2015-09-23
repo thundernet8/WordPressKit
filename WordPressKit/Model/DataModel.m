@@ -687,7 +687,11 @@
                 NSInteger blogId = (NSInteger)sqlite3_column_int(stmt, 4);
                 blog.blogId = blogId;
                 
-                NSInteger isAdmin = (NSInteger)sqlite3_column_int(stmt, 5);
+                char *xmlrpc = (char *)sqlite3_column_text(stmt, 5);
+                NSString *nsXmlrpc = [[NSString alloc] initWithUTF8String:xmlrpc];
+                blog.xmlrpc = nsXmlrpc;
+                
+                NSInteger isAdmin = (NSInteger)sqlite3_column_int(stmt, 6);
                 blog.isAdmin = isAdmin;
                 
                 [self.blogs addObject:blog];
@@ -724,7 +728,7 @@
 }
 
 //插入博客记录
-- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithId : (NSInteger)blogId isAdmin : (NSInteger)isAdmin;
+- (int)insertBlogRecordWithName : (NSString *)name blogWithUrl : (NSString *)url blogWithUserName : (NSString *)username blogWithId : (NSInteger)blogId blogWithXmlrpc : (NSString *)xmlrpc isAdmin : (NSInteger)isAdmin;
 {
     NSString *path = self.userDataFilePath;
     const char *npath = [path UTF8String];
@@ -732,7 +736,7 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"INSERT INTO BLOGS (NAME, URL, USERNAME, BLOGID, ISADMIN) VALUES(?, ?, ?, ?, ?)";
+        NSString *sql = @"INSERT INTO BLOGS (NAME, URL, USERNAME, BLOGID, XMLRPC, ISADMIN) VALUES(?, ?, ?, ?, ?, ?)";
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
@@ -740,7 +744,8 @@
             sqlite3_bind_text(stmt, 2, [url UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 3, [username UTF8String], -1, NULL);
             sqlite3_bind_int(stmt, 4, (int)blogId);
-            sqlite3_bind_int(stmt, 5, (int)isAdmin);
+            sqlite3_bind_text(stmt, 5, [xmlrpc UTF8String], -1, NULL);
+            sqlite3_bind_int(stmt, 6, (int)isAdmin);
             if (sqlite3_step(stmt) == SQLITE_DONE) {
                 return (int)sqlite3_last_insert_rowid(db);
             }
@@ -776,7 +781,7 @@
 }
 
 //更新博客记录
-- (int)updateBlogRecordWithId:(NSInteger)id withName:(NSString *)name withUrl:(NSString *)url withUsername:(NSString *)username blogWithId:(NSInteger)blogId isAdmin:(NSInteger)isAdmin
+- (int)updateBlogRecordWithId:(NSInteger)id withName:(NSString *)name withUrl:(NSString *)url withUsername:(NSString *)username blogWithId:(NSInteger)blogId blogWithXmlrpc : (NSString *)xmlrpc isAdmin:(NSInteger)isAdmin
 {
     NSString *path = self.userDataFilePath;
     const char *npath = [path UTF8String];
@@ -784,7 +789,7 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"UPDATE BLOGS SET NAME = ?, URL = ?, USERNAME = ?, BLOGID = ?, ISADMIN = ? WHERE ID = ?";
+        NSString *sql = @"UPDATE BLOGS SET NAME = ?, URL = ?, USERNAME = ?, BLOGID = ?, XMLRPC = ? ISADMIN = ? WHERE ID = ?";
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
@@ -792,7 +797,8 @@
             sqlite3_bind_text(stmt, 2, [url UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 3, [username UTF8String], -1, NULL);
             sqlite3_bind_int(stmt, 4, (int)blogId);
-            sqlite3_bind_int(stmt, 5, (int)isAdmin);
+            sqlite3_bind_text(stmt, 5, [xmlrpc UTF8String], -1, NULL);
+            sqlite3_bind_int(stmt, 6, (int)isAdmin);
             sqlite3_bind_int(stmt, 6, (int)id);
             if (sqlite3_step(stmt) == SQLITE_DONE) {
                 return 1;
