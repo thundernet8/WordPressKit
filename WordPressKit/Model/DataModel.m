@@ -10,7 +10,6 @@
 #import "FuncItem.h"
 #import "SourceFile.h"
 #import "CatItem.h"
-#import "Blog.h"
 #import "KeychainItemWrapper.h"
 
 @interface DataModel()
@@ -703,6 +702,56 @@
     
     return 0;
 }
+
+//查询单个博客
+- (Blog *)queryBlogWithId:(NSInteger)Id{
+    NSString *path = self.userDataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"SELECT * FROM BLOGS WHERE ID = ?";
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+            sqlite3_bind_int(stmt, 1, (int)Id);
+                if (sqlite3_step(stmt) == SQLITE_ROW) {
+                    Blog *blog = [[Blog alloc] init];
+                    NSInteger id = (NSInteger)sqlite3_column_int(stmt, 0);
+                    blog.id = id;
+                    
+                    char *name = (char *)sqlite3_column_text(stmt, 1);
+                    NSString *nsName = [[NSString alloc] initWithUTF8String:name];
+                    blog.name = nsName;
+                    
+                    char *url = (char *)sqlite3_column_text(stmt, 2);
+                    NSString *nsUrl = [[NSString alloc] initWithUTF8String:url];
+                    blog.url = nsUrl;
+                    
+                    char *userName = (char *)sqlite3_column_text(stmt, 3);
+                    NSString *nsUserName = [[NSString alloc] initWithUTF8String:userName];
+                    blog.userName = nsUserName;
+                    
+                    NSInteger blogId = (NSInteger)sqlite3_column_int(stmt, 4);
+                    blog.blogId = blogId;
+                    
+                    char *xmlrpc = (char *)sqlite3_column_text(stmt, 5);
+                    NSString *nsXmlrpc = [[NSString alloc] initWithUTF8String:xmlrpc];
+                    blog.xmlrpc = nsXmlrpc;
+                    
+                    NSInteger isAdmin = (NSInteger)sqlite3_column_int(stmt, 6);
+                    blog.isAdmin = isAdmin;
+                    
+                    return blog;
+                }
+            }
+            sqlite3_finalize(stmt);
+            sqlite3_close(db);
+        }
+    return nil;
+}
+
 
 //判断博客是否存在
 - (BOOL)isExistBlogWithUrl : (NSString *)url{

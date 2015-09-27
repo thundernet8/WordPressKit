@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "Blog.h"
 
 //#define DBFILENAME @"FuncItems.sqlite3"
 
@@ -49,6 +50,8 @@
 
 //查询博客列表
 - (int)queryAllBlogs;
+//查询单个博客
+- (Blog *)queryBlogWithId:(NSInteger)Id;
 //判断博客是否存在
 - (BOOL)isExistBlogWithUrl : (NSString *)url;
 //插入博客记录

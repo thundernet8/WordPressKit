@@ -8,6 +8,24 @@
 
 #import "PostCell.h"
 
+@interface PostCell()
+@property (weak, nonatomic) IBOutlet UIView *PostWrapper;
+@property (weak, nonatomic) IBOutlet UIView *PostHead;
+@property (weak, nonatomic) IBOutlet UIImageView *BlogAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *BlogName;
+@property (weak, nonatomic) IBOutlet UILabel *PostAuthor;
+
+@property (weak, nonatomic) IBOutlet UIImageView *PostThumb;
+@property (weak, nonatomic) IBOutlet UILabel *PostTitle;
+@property (weak, nonatomic) IBOutlet UILabel *PostContent;
+@property (weak, nonatomic) IBOutlet UILabel *PostDate;
+@property (weak, nonatomic) IBOutlet UIView *ActionBar;
+
+
+
+
+@end
+
 @implementation PostCell
 
 - (void)awakeFromNib {

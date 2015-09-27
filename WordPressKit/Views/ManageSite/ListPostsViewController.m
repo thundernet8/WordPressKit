@@ -9,12 +9,25 @@
 #import "ListPostsViewController.h"
 #import "PostCell.h"
 #import "WordPressApi.h"
+#import "Blog.h"
+#import "DataModel.h"
+#import "WPXMLRPCClient.h"
+#import "RemotePost.h"
+#import "PostControll.h"
+
+BOOL fetched = NO;
+NSInteger const syncTimeInterval = 300;
+NSString *const postType = @"post";
+
 
 @interface ListPostsViewController ()
+
+@property (nonatomic, strong) NSMutableArray *posts;
 
 @end
 
 @implementation ListPostsViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +37,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //[PostControll syncPostsWithBlog:self.blog];
+    self.pc = [[PostControll alloc] initWithBlog:self.blog];
+    [self.pc getDBPostsofType:@"post" ForBlog:self.blog number:20];
+    NSLog(@"posts count is %i", (int)self.pc.posts.count);
+    //[PostControll syncPostsWithBlog:_blog postType:postType];
+    [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
+    NSLog(@"posts count is %i", (int)self.pc.posts.count);
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,19 +63,40 @@
 
 //行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 12;
+    return [self.pc.posts count];
 }
 
 //cell实例化
 - (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostXibCell"];
+    if (cell == nil) {
+        [tableView registerNib:[UINib nibWithNibName:@"PostImageCell" bundle:nil] forCellReuseIdentifier:@"PostImageCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"PostImageCell"];
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+//    //
+//    [PostControll getPostsOfType:@"post" forBlog:self.blog options:@{@"post_status":@"publish",@"number":@5} success:^(NSArray *posts) {
+//        
+//        //配置post cell内容
+////        RemotePost *post = [posts objectAtIndex:indexPath.row];
+////        cell.postCellPostTitle.text = post.title;
+////        cell.postCellPostContent.attributedText = [[NSAttributedString alloc] initWithData:[post.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+////        cell.postCellThumb.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:post.postThumbnailPath]]];
+////        cell.postCellPostDate.text = [NSString stringWithFormat:@"%@",post.date];
+//        
+//        
+//        
+//        
+//    } failure:^(NSError *error) {
+//        NSLog(@"oh no");
+//    }];
+    
     // Post Cell头部配置
     cell.postCellBlogName.text = self.blog.name;
     
-    if (indexPath.row == 0) {
-        cell.postCellPostContent.text = @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈";
-    }
+    
     return cell;
 }
 
@@ -80,6 +124,7 @@
     CGFloat height = 188.0 + titleRect.size.height + contentRect.size.height + thumbHeight;
     return height;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -124,5 +169,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Fetch posts
+- (void)fetchPostsForBlog{
+    Blog *blog = self.blog;
+    if (fetched) {
+        return;
+    }
+    [PostControll getPostsOfType:@"post" forBlog:blog options:@{@"post_status":@"publish",@"number":@5} success:^(NSArray *posts) {
+        
+        self.posts = [posts mutableCopy];
+        
+        
+        fetched = YES;
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"oh no");
+    }];
+}
+
 
 @end

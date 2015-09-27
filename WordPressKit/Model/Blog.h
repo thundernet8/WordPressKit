@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WPXMLRPCClient.h"
 
 @interface Blog : NSObject
 
@@ -18,6 +19,9 @@
 @property (nonatomic, assign) NSInteger isAdmin;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *xmlrpc;
+
+//只读属性
+@property (nonatomic, strong,  readonly) WPXMLRPCClient *api;
 
 - (NSArray *)getXMLRPCArgsWithExtra:(id)extra withDBRecordId:(NSInteger)rid;
 

@@ -17,7 +17,6 @@
 		B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */; };
 		B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D91B8CBB6900757221 /* AboutViewController.m */; };
 		B46572111BB2CBCD00835972 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572101BB2CBCD00835972 /* Post.m */; };
-		B46572181BB2D81D00835972 /* PostServiceRemoteXMLRPC.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572171BB2D81D00835972 /* PostServiceRemoteXMLRPC.m */; };
 		B46572231BB2DAF200835972 /* RemotePost.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572221BB2DAF200835972 /* RemotePost.m */; };
 		B465722D1BB2F32400835972 /* WPMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = B465722C1BB2F32400835972 /* WPMapFilterReduce.m */; };
 		B46572301BB2F39B00835972 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B465722F1BB2F39B00835972 /* NSString+Util.m */; };
@@ -26,9 +25,12 @@
 		B46572391BB2F87200835972 /* NSMutableDictionary+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572381BB2F87200835972 /* NSMutableDictionary+Helpers.m */; };
 		B4A91A791BA7243900874D56 /* AddSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A91A781BA7243900874D56 /* AddSiteViewController.m */; };
 		B4C04FD51B9B256500A43AEA /* CatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C04FD41B9B256500A43AEA /* CatItem.m */; };
+		B4DA700A1BB5723000F55F6C /* PostTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DA70081BB5723000F55F6C /* PostTextCell.xib */; };
+		B4DA70121BB5907900F55F6C /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DA70111BB5907900F55F6C /* PostImageCell.xib */; };
 		B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE42D1BA4876700D51121 /* sourcefile.html */; };
 		B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */; };
 		B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66321BAC3D7A00B625CC /* UserData.db */; };
+		B4DB8A921BB4090200058147 /* PostControll.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB8A911BB4090200058147 /* PostControll.m */; };
 		B4DD02E71BB044CE0066C8E5 /* ListPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */; };
 		B4DD02EA1BB045F20066C8E5 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E91BB045F20066C8E5 /* PostCell.m */; };
 		B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */; };
@@ -78,8 +80,6 @@
 		B46004D91B8CBB6900757221 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B465720F1BB2CBCD00835972 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		B46572101BB2CBCD00835972 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
-		B46572161BB2D81D00835972 /* PostServiceRemoteXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostServiceRemoteXMLRPC.h; path = XmlRpc/PostServiceRemoteXMLRPC.h; sourceTree = "<group>"; };
-		B46572171BB2D81D00835972 /* PostServiceRemoteXMLRPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostServiceRemoteXMLRPC.m; path = XmlRpc/PostServiceRemoteXMLRPC.m; sourceTree = "<group>"; };
 		B465721B1BB2D8F100835972 /* PostServiceRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostServiceRemote.h; path = XmlRpc/PostServiceRemote.h; sourceTree = "<group>"; };
 		B465721E1BB2D9C000835972 /* ServiceRemoteXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceRemoteXMLRPC.h; path = XmlRpc/ServiceRemoteXMLRPC.h; sourceTree = "<group>"; };
 		B46572211BB2DAF200835972 /* RemotePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemotePost.h; sourceTree = "<group>"; };
@@ -98,9 +98,13 @@
 		B4A91A781BA7243900874D56 /* AddSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSiteViewController.m; sourceTree = "<group>"; };
 		B4C04FD31B9B256500A43AEA /* CatItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatItem.h; sourceTree = "<group>"; };
 		B4C04FD41B9B256500A43AEA /* CatItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatItem.m; sourceTree = "<group>"; };
+		B4DA70081BB5723000F55F6C /* PostTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTextCell.xib; sourceTree = "<group>"; };
+		B4DA70111BB5907900F55F6C /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
 		B4DAE42D1BA4876700D51121 /* sourcefile.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sourcefile.html; sourceTree = "<group>"; };
 		B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DB66321BAC3D7A00B625CC /* UserData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserData.db; sourceTree = "<group>"; };
+		B4DB8A901BB4090200058147 /* PostControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostControll.h; path = XmlRpc/PostControll.h; sourceTree = "<group>"; };
+		B4DB8A911BB4090200058147 /* PostControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostControll.m; path = XmlRpc/PostControll.m; sourceTree = "<group>"; };
 		B4DD02E51BB044CE0066C8E5 /* ListPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListPostsViewController.h; sourceTree = "<group>"; };
 		B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListPostsViewController.m; sourceTree = "<group>"; };
 		B4DD02E81BB045F20066C8E5 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -182,12 +186,12 @@
 		B46572191BB2D82200835972 /* XmlRpc */ = {
 			isa = PBXGroup;
 			children = (
-				B46572161BB2D81D00835972 /* PostServiceRemoteXMLRPC.h */,
-				B46572171BB2D81D00835972 /* PostServiceRemoteXMLRPC.m */,
 				B465721B1BB2D8F100835972 /* PostServiceRemote.h */,
 				B465721E1BB2D9C000835972 /* ServiceRemoteXMLRPC.h */,
 				B46572311BB2F68F00835972 /* DisplayableImageHelper.h */,
 				B46572321BB2F68F00835972 /* DisplayableImageHelper.m */,
+				B4DB8A901BB4090200058147 /* PostControll.h */,
+				B4DB8A911BB4090200058147 /* PostControll.m */,
 			);
 			name = XmlRpc;
 			sourceTree = "<group>";
@@ -218,6 +222,8 @@
 				B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */,
 				B4DD02E81BB045F20066C8E5 /* PostCell.h */,
 				B4DD02E91BB045F20066C8E5 /* PostCell.m */,
+				B4DA70081BB5723000F55F6C /* PostTextCell.xib */,
+				B4DA70111BB5907900F55F6C /* PostImageCell.xib */,
 			);
 			path = ManageSite;
 			sourceTree = "<group>";
@@ -459,7 +465,9 @@
 				B4E53F1E1B87FDCB00C4CFAA /* Main.storyboard in Resources */,
 				B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */,
 				B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */,
+				B4DA70121BB5907900F55F6C /* PostImageCell.xib in Resources */,
 				B4E53F231B87FDCB00C4CFAA /* LaunchScreen.xib in Resources */,
+				B4DA700A1BB5723000F55F6C /* PostTextCell.xib in Resources */,
 				B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */,
 				B4E53F201B87FDCB00C4CFAA /* Images.xcassets in Resources */,
 			);
@@ -518,8 +526,8 @@
 				B46572231BB2DAF200835972 /* RemotePost.m in Sources */,
 				B46572361BB2F79600835972 /* RemotePostCategory.m in Sources */,
 				B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */,
+				B4DB8A921BB4090200058147 /* PostControll.m in Sources */,
 				B46004D41B8CBB5000757221 /* SourcefileViewController.m in Sources */,
-				B46572181BB2D81D00835972 /* PostServiceRemoteXMLRPC.m in Sources */,
 				B46004CE1B8CBB1000757221 /* FunctionsViewController.m in Sources */,
 				B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */,
 				B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */,

@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Blog.h"
 
+@class PostControll;
+
 @interface ListPostsViewController : UITableViewController
 
 @property (nonatomic, strong) Blog *blog;
+@property (nonatomic, strong) PostControll *pc;
+
 
 @end
