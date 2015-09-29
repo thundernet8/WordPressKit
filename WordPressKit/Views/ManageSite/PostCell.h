@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RemotePost.h"
+#import "Blog.h"
 
 @interface PostCell : UITableViewCell
+
+
 @property (weak, nonatomic) IBOutlet UIView *postCellWrapper;
 @property (weak, nonatomic) IBOutlet UIView *postCellHeaderView;
 @property (weak, nonatomic) IBOutlet UIImageView *postCellBlogAvatar;
@@ -25,5 +29,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postCellPostPreviewButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postCellPostTrashButton;
 
+- (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog;
 
 @end

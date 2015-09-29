@@ -14,6 +14,9 @@
 #import "RemotePostCategory.h"
 #import "NSDictionary+SafeExpectations.h"
 #import "NSString+Util.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+#import "DDFileLogger.h"
 
 #import "DataModel.h"
 
@@ -24,6 +27,9 @@ NSString * const PostStatusPublish = @"publish";
 NSString * const PostStatusScheduled = @"future";
 NSString * const PostStatusTrash = @"trash";
 NSInteger const NumberofPoststoFetch = 20;
+
+//DDLog日志记录等级
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface PostControll()
 
@@ -51,6 +57,7 @@ NSInteger const NumberofPoststoFetch = 20;
 @end
 
 @implementation PostControll
+
 
 - (instancetype)initWithBlog:(Blog *)blog
 {
@@ -130,10 +137,6 @@ NSInteger const NumberofPoststoFetch = 20;
 {
     for (RemotePost *post in posts) {
         [[[self alloc] initWithBlog:blog] writePostToDB:post inBlog:blog];
-    }
-    PostControll *pc = [[PostControll alloc] initWithBlog:blog];
-    if (!pc.syncing) {
-        [pc getDBPostsofType:postType ForBlog:blog number:NumberofPoststoFetch];
     }
 }
 
@@ -231,10 +234,8 @@ NSInteger const NumberofPoststoFetch = 20;
             sqlite3_bind_text(stmt, 19, [post.pathForDisplayImage UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 20, [metaStr UTF8String], -1, NULL);
             
-            NSLog(@"123");
             if (sqlite3_step(stmt) == SQLITE_DONE) {
-                //return;
-                NSLog(@"need sync %i",sqlite3_step(stmt));
+                //DDLogError(@"Insert the post");
             }
         }
         sqlite3_finalize(stmt);
@@ -370,11 +371,12 @@ NSInteger const NumberofPoststoFetch = 20;
 /**
  *  从数据库查询获取最新的文章数据
  *
- *  @param postType WordPress文章类型
- *  @param blog     博客对象
- *  @param number   查询文章的数量
+ *  @param postType   WordPress文章类型
+ *  @param postStatus WordPress 文章状态
+ *  @param blog       博客对象
+ *  @param number     查询文章的数量
  */
-- (void)getDBPostsofType:(NSString *)postType ForBlog:(Blog *)blog number:(NSInteger)number
+- (void)getDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog number:(NSInteger)number
 {
     NSString *path = [self userDataFilePath];
     const char *npath = [path UTF8String];
@@ -382,7 +384,7 @@ NSInteger const NumberofPoststoFetch = 20;
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM POSTS WHERE TYPE = '%@' AND SITEID = %i ORDER BY POSTID DESC LIMIT %i",postType,(int)blog.id,(int)number];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM POSTS WHERE TYPE = '%@' AND STATUS = '%@' AND SITEID = %i ORDER BY POSTID DESC LIMIT %i",postType,postStatus,(int)blog.id,(int)number];
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK) {
@@ -655,7 +657,12 @@ NSInteger const NumberofPoststoFetch = 20;
     int lastSyncTimestamp = [self getSiteLastSyncTimestamp:blog.id];
     if (lastSyncTimestamp + timeInterval < nowTimestamp) {
         [PostControll syncPostsWithBlog:blog postType:postType];
+        //DDLogError(@"last is %i and now is %i",lastSyncTimestamp,nowTimestamp);
     }
 }
+
+
+
+
 
 @end

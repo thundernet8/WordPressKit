@@ -7,3 +7,5 @@ pod 'WordPressApi', :podspec => 'https://raw.github.com/koke/WordPressApi/master
 pod 'KeychainItemWrapper', :git => 'https://github.com/baptistefetet/KeychainItemWrapper.git'
 pod 'NSObject-SafeExpectations', '0.0.2'
 pod 'CocoaLumberjack', '= 2.0.0'
+pod 'SDWebImage', '~> 3.7.3'
+pod 'SDWebImage-Category', '~> 1.4'

@@ -34,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage-Category.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>WPMediaPicker-WPMediaPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,12 +67,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>28B5D46B0F49893210BC8EBBC8B0882F</key>
+		<key>057F03BD3B07FDC25967D77937C236F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7824F371315A4FA47D0BCF44E670AF4B</key>
+		<key>0E79A956AD81449981D907AFC901A61A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28B5D46B0F49893210BC8EBBC8B0882F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98779463063447BFF2C65BFB987A6148</key>
+		<key>8F7CB00F365ECB38B485E9C78A32E65B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>937F365EDA99F846E101B3EA7DEB6261</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,27 +102,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>ABB31D6E262870C163255C14E5420615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B06A73DF267359721611E4E5EADCC3EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1D90A3FA8903D184287F504BE994208</key>
+		<key>C04A577ED5FD5DA24F568A9EDB346A16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B75DF57281FCC3C469CFCB7C77A4150F</key>
+		<key>C36EBFF084540DFE8652E9B38EFCA983</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D31F539B03A5459762D18925DE3DC58C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D45D07A099A87E8750BDD4F2DFFC19F5</key>
+		<key>F8C2B0501DF06C79719480A4543E58E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

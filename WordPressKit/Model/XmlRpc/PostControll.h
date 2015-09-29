@@ -31,7 +31,7 @@
                options:(NSDictionary *)options
                success:(void (^)(NSArray *posts))success
                failure:(void (^)(NSError *error))failure;
-- (void)getDBPostsofType:(NSString *)postType ForBlog:(Blog *)blog number:(NSInteger)number;
+- (void)getDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog number:(NSInteger)number;
 - (void)needsSyncPostsForBlog:(Blog *)blog forTimeInterval:(NSInteger)timeInterval postType:(NSString *)postType;
 
 

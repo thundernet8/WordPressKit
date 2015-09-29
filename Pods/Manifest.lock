@@ -31,6 +31,11 @@ PODS:
   - KeychainItemWrapper (0.0.1)
   - MBProgressHUD (0.9.1)
   - NSObject-SafeExpectations (0.0.2)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage-Category (1.4):
+    - SDWebImage
+  - SDWebImage/Core (3.7.3)
   - WordPressApi (0.3.5):
     - AFNetworking (~> 2.6.0)
     - wpxmlrpc (~> 0.7)
@@ -43,6 +48,8 @@ DEPENDENCIES:
   - KeychainItemWrapper (from `https://github.com/baptistefetet/KeychainItemWrapper.git`)
   - MBProgressHUD (~> 0.9.1)
   - NSObject-SafeExpectations (= 0.0.2)
+  - SDWebImage (~> 3.7.3)
+  - SDWebImage-Category (~> 1.4)
   - WordPressApi (from `https://raw.github.com/koke/WordPressApi/master/WordPressApi.podspec`)
   - WPMediaPicker
   - wpxmlrpc (~> 0.8.1)
@@ -64,6 +71,8 @@ SPEC CHECKSUMS:
   KeychainItemWrapper: 633b6d97ac642a292a71a807ef2c4691bd7e2f74
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   NSObject-SafeExpectations: 7d7f48df90df4e11da7cfe86b64f45eff7a7f521
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SDWebImage-Category: 1f1c00880a538f7faf5b726e1559cf1ca555c553
   WordPressApi: cb145d3c92ed54d4dbe70108d15f17ce3da3ad5d
   WPMediaPicker: 0757988f1519c20b92c91f470c41633ac42e3a0e
   wpxmlrpc: bd391dab54e9bdceb5d1de23d161ecf1ba80f0e0
