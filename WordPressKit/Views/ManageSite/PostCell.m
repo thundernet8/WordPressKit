@@ -8,6 +8,7 @@
 
 #import "PostCell.h"
 #import "NSString+Util.h"
+#import "UIImageView+WebCache.h"
 
 @interface PostCell()
 @property (weak, nonatomic) IBOutlet UIView *PostWrapper;
@@ -67,6 +68,8 @@
     
     //NSLog(@"awakeFromNib");
     
+    //[self setNeedsUpdateConstraints];
+    
 }
 
 - (void)didMoveToSuperview{
@@ -94,13 +97,10 @@
     //文章标题
     self.PostTitle.text = post.title;
     //特色图
-    if (self.PostThumb) {
-        self.PostThumb.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:post.postThumbnailPath]]];
-    }
-    self.PostThumb.contentMode = UIViewContentModeScaleToFill;
+    [self confiImageWithPost:post];
     //文章内容
-    NSString *content = [post.excerpt isEmpty] ? post.content : post.excerpt;
-    NSUInteger length = content.length > 200 ? 200 : content.length;
+    NSString *content = [post.excerpt isEmpty] ? [post.content trim] : [post.excerpt trim];
+    NSUInteger length = content.length > 120 ? 120 : content.length;
     content = [content substringWithRange:NSMakeRange(0, length)];
     self.PostContent.attributedText = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     self.PostContent.font = [UIFont systemFontOfSize:14.0f];
@@ -111,9 +111,67 @@
     self.PostDate.text = dateStr;
     
 
-    
+    [self setNeedsUpdateConstraints];
 }
 
+/**
+ *  重建自适应内容高度方法
+ *
+ *  @param size 内容的约束尺寸
+ *
+ *  @return 返回内容的合适尺寸
+ */
+- (CGSize)sizeThatFits:(CGSize)size
+{
+    NSLog(@"sizing begin");
+    CGFloat height = CGRectGetMinY(self.PostWrapper.frame);
+    
+    height += CGRectGetMinY(self.PostHead.frame);
+    height += 34;//head height
+    height += 16;//head low margin
+    
+    if (self.PostThumb) {
+        height += CGRectGetHeight(self.PostThumb.frame);
+        height += 16;
+    }
+    CGFloat width = size.width - 32;
+    CGSize innerSize = CGSizeMake(width, CGFLOAT_MAX);
+    height += [self.PostTitle sizeThatFits:innerSize].height;
+    height += 16;//title low margin
+    
+    height += [self.PostContent sizeThatFits:innerSize].height;
+    height += 16;//post content low margin
+    
+    height += CGRectGetHeight(self.PostDate.frame);
+    height += 16;
+    
+    height += CGRectGetHeight(self.ActionBar.frame);
+    NSLog(@"sizing end");
+    return CGSizeMake(size.width, height);
+}
+
+/**
+ *  配置cell的缩略图
+ *
+ *  @param post 文章对象
+ */
+- (void)confiImageWithPost:(RemotePost *)post
+{
+    if (!self.PostThumb) {
+        return;
+    }
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadImageWithURL:[NSURL URLWithString:post.postThumbnailPath] options:SDWebImageContinueInBackground progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        NSLog(@"download progress is %f", receivedSize/expectedSize*1.0);
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        if (finished) {
+            NSLog(@"download finished");
+            self.PostThumb.image = image;
+        }
+    }];
+    self.PostThumb.contentMode = UIViewContentModeScaleToFill;
+}
 
 
 @end

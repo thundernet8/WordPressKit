@@ -30,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postCellPostTrashButton;
 
 - (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog;
+- (void)confiImageWithPost:(RemotePost *)post;
 
 @end

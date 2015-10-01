@@ -29,7 +29,7 @@ NSString *const postStatus = @"publish";
 - (void)configCellStyle:(PostCell *)cell;
 - (void)configVariable;
 - (void)configCellContent:(PostCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-@property (nonatomic) int *cnt;
+
 
 @end
 
@@ -57,11 +57,6 @@ NSString *const postStatus = @"publish";
 
 #pragma mark - Table view data source and delegate
 
-//节数
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 //行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection:");
@@ -70,10 +65,11 @@ NSString *const postStatus = @"publish";
 
 //cell实例化
 - (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"cellforrowatindexpath");
     PostCell *cell = [self configCellNib:indexPath];
     [self configCellStyle:cell];
     [self configCellContent:cell atIndexPath:indexPath];
-    NSLog(@"cellforrowatindexpath");
+    
 //    //
 //    [PostControll getPostsOfType:@"post" forBlog:self.blog options:@{@"post_status":@"publish",@"number":@5} success:^(NSArray *posts) {
 //        
@@ -92,7 +88,7 @@ NSString *const postStatus = @"publish";
 //    }];
     
     // Post Cell头部配置
-    cell.postCellBlogName.text = self.blog.name;
+    //cell.postCellBlogName.text = self.blog.name;
     
     
     return cell;
@@ -101,42 +97,49 @@ NSString *const postStatus = @"publish";
 //即将显示cell
 - (void)tableView:(UITableView *)tableView willDisplayCell:(PostCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     //去掉cell背景
-    cell.backgroundColor = [UIColor clearColor];
+    //cell.backgroundColor = [UIColor clearColor];
     //cell边框阴影效果
-    UIView *view = cell.postCellWrapper;
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, cell.bounds.size.width-8, cell.bounds.size.height-21)];
-    view.layer.masksToBounds = NO;
-    view.layer.shadowColor = [UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0].CGColor;
-    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-    view.layer.shadowOpacity = 0.2f;
-    view.layer.shadowPath = shadowPath.CGPath;
+//    UIView *view = cell.postCellWrapper;
+//    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, cell.bounds.size.width-8, cell.bounds.size.height-21)];
+//    view.layer.masksToBounds = NO;
+//    view.layer.shadowColor = [UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0].CGColor;
+//    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+//    view.layer.shadowOpacity = 0.2f;
+//    view.layer.shadowPath = shadowPath.CGPath;
 
 }
 
-//cell 高度
+/**
+ *  预估cell高度，减少不必要的heightForRowAtIndexPath的调用
+ *
+ *  @param tableView tableView
+ *  @param indexPath indexPath
+ *
+ *  @return 预估的cell高度值
+ */
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RemotePost *post = self.pc.posts[indexPath.row];
+    if ([post.postThumbnailPath isEmpty]) {
+        return 324.0;
+    }
+    return 536.0;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //PostCell *cell = (PostCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
-    //PostCell *cell = [self configCellNib:indexPath];
-//    //cell 高度
-//    CGRect titleRect = [cell.postCellPostTitle.text boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 24.0, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont fontWithName:@"Georgia" size:16.0]} context:nil];
-//    CGRect contentRect = [cell.postCellPostContent.text boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 24.0, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont fontWithName:@"Georgia" size:14.0]} context:nil];
-//    CGFloat thumbHeight = 0.75 * ([UIScreen mainScreen].bounds.size.width - 8);
-//    CGFloat height = 188.0 + titleRect.size.height + contentRect.size.height + thumbHeight;
-    //return height;
     NSLog(@"heightForRowAtIndexPath:");
     //return CGRectGetHeight(cell.frame);
     RemotePost *post = self.pc.posts[indexPath.row];
     PostCell *cell;
     if ([post.postThumbnailPath isEmpty]) {
         cell = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
-        return 350;
     }else{
         cell = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostImageCell" owner:nil options:nil] firstObject];
     }
-    //[self forceUpdateCellLayout:textCellForLayout];
+    [self configCellContent:cell atIndexPath:indexPath];
     CGSize size = [cell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 12, CGFLOAT_MAX)];
     CGFloat height = ceil(size.height);
-    return 520;
+    return height;
 }
 
 
@@ -210,8 +213,6 @@ NSString *const postStatus = @"publish";
     RemotePost *post = self.pc.posts[indexPath.row];
     NSNumber *thumb = post.postThumbnailID;
     NSString *thumbPath = post.postThumbnailPath;
-    NSLog(@"call times is %i",(int)self.cnt);
-    self.cnt++;
     NSString *cellIdentifier = (thumb > 0 && ![thumbPath isEqualToString:@""]) ? @"PostImageCell" : @"PostTextCell";
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     return cell;
@@ -247,31 +248,29 @@ NSString *const postStatus = @"publish";
     RemotePost *post = self.pc.posts[indexPath.row];
 
     [cell configCellWithPost:post inBlog:self.blog];
-    CGSize size = [cell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 12, CGFLOAT_MAX)];
-    CGFloat height = ceil(size.height);
 }
 
 
 
 
-- (void)configureCellsForLayout
-{
-    PostCell *textCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
-    [self forceUpdateCellLayout:textCellForLayout];
-    
-    PostCell *imageCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostImageCell" owner:nil options:nil] firstObject];
-    [self forceUpdateCellLayout:imageCellForLayout];
-}
-
-- (void)forceUpdateCellLayout:(PostCell *)cell
-{
-    // Force a layout pass to ensure that constrants are configured for the
-    // proper size class.
-    [self.view addSubview:cell];
-    [cell updateConstraintsIfNeeded];
-    [cell layoutIfNeeded];
-    [cell removeFromSuperview];
-}
+//- (void)configureCellsForLayout
+//{
+//    PostCell *textCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
+//    [self forceUpdateCellLayout:textCellForLayout];
+//    
+//    PostCell *imageCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostImageCell" owner:nil options:nil] firstObject];
+//    [self forceUpdateCellLayout:imageCellForLayout];
+//}
+//
+//- (void)forceUpdateCellLayout:(PostCell *)cell
+//{
+//    // Force a layout pass to ensure that constrants are configured for the
+//    // proper size class.
+//    [self.view addSubview:cell];
+//    [cell updateConstraintsIfNeeded];
+//    [cell layoutIfNeeded];
+//    [cell removeFromSuperview];
+//}
 
 
 

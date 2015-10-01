@@ -54,14 +54,14 @@
                                     <constraint firstItem="XJH-x1-UXL" firstAttribute="top" secondItem="Lty-M2-8y3" secondAttribute="top" id="z1U-F7-mvh"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNn-GH-Rzr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNn-GH-Rzr">
                                 <rect key="frame" x="14" y="65" width="280" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Content" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gX-yf-NK1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Content" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gX-yf-NK1">
                                 <rect key="frame" x="14" y="92" width="280" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -92,9 +92,12 @@
                                     <constraint firstItem="LHn-Vv-pJ7" firstAttribute="leading" secondItem="Kmb-kE-Kku" secondAttribute="leading" id="cJ8-yY-fFL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMj-fd-MYf">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMj-fd-MYf">
                                 <rect key="frame" x="0.0" y="153" width="308" height="37"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="EHT-qX-seK"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,6 +111,7 @@
                             <constraint firstItem="4gX-yf-NK1" firstAttribute="top" secondItem="bNn-GH-Rzr" secondAttribute="bottom" constant="6" id="Niw-6c-2pD"/>
                             <constraint firstItem="Kmb-kE-Kku" firstAttribute="leading" secondItem="54H-vI-RbD" secondAttribute="leading" constant="14" id="OVx-mn-TiU"/>
                             <constraint firstItem="Lty-M2-8y3" firstAttribute="leading" secondItem="54H-vI-RbD" secondAttribute="leading" constant="14" id="QUr-qB-7wQ"/>
+                            <constraint firstAttribute="bottom" secondItem="GMj-fd-MYf" secondAttribute="bottom" id="cSD-Ng-OjK"/>
                             <constraint firstItem="bNn-GH-Rzr" firstAttribute="leading" secondItem="54H-vI-RbD" secondAttribute="leading" constant="14" id="g1N-uj-mSA"/>
                             <constraint firstAttribute="trailing" secondItem="4gX-yf-NK1" secondAttribute="trailing" constant="14" id="gRz-vl-EAC"/>
                             <constraint firstAttribute="trailing" secondItem="bNn-GH-Rzr" secondAttribute="trailing" constant="14" id="hFR-L3-fsF"/>
@@ -124,6 +128,7 @@
                     <constraint firstItem="54H-vI-RbD" firstAttribute="top" secondItem="o7F-AU-Z7o" secondAttribute="topMargin" constant="8" id="vXV-cm-ed2"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.89411764705882346" green="0.92549019607843142" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="ActionBar" destination="GMj-fd-MYf" id="Aty-ND-Zlt"/>
                 <outlet property="BlogAvatar" destination="Ju2-Xd-oE0" id="vs3-ge-E0O"/>
