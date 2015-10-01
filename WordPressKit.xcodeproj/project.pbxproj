@@ -27,6 +27,7 @@
 		B4C04FD51B9B256500A43AEA /* CatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C04FD41B9B256500A43AEA /* CatItem.m */; };
 		B4DA700A1BB5723000F55F6C /* PostTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DA70081BB5723000F55F6C /* PostTextCell.xib */; };
 		B4DA70121BB5907900F55F6C /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DA70111BB5907900F55F6C /* PostImageCell.xib */; };
+		B4DAD8861BBD613A0014A830 /* WordPress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4DAD8851BBD613A0014A830 /* WordPress.bundle */; };
 		B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */ = {isa = PBXBuildFile; fileRef = B4DAE42D1BA4876700D51121 /* sourcefile.html */; };
 		B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */; };
 		B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66321BAC3D7A00B625CC /* UserData.db */; };
@@ -100,6 +101,7 @@
 		B4C04FD41B9B256500A43AEA /* CatItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatItem.m; sourceTree = "<group>"; };
 		B4DA70081BB5723000F55F6C /* PostTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTextCell.xib; sourceTree = "<group>"; };
 		B4DA70111BB5907900F55F6C /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
+		B4DAD8851BBD613A0014A830 /* WordPress.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WordPress.bundle; sourceTree = "<group>"; };
 		B4DAE42D1BA4876700D51121 /* sourcefile.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sourcefile.html; sourceTree = "<group>"; };
 		B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DB66321BAC3D7A00B625CC /* UserData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserData.db; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				B4DB66321BAC3D7A00B625CC /* UserData.db */,
 				B4E53F111B87FDCB00C4CFAA /* main.m */,
 				B4DAE42D1BA4876700D51121 /* sourcefile.html */,
+				B4DAD8851BBD613A0014A830 /* WordPress.bundle */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				B4E53F1E1B87FDCB00C4CFAA /* Main.storyboard in Resources */,
 				B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */,
 				B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */,
+				B4DAD8861BBD613A0014A830 /* WordPress.bundle in Resources */,
 				B4DA70121BB5907900F55F6C /* PostImageCell.xib in Resources */,
 				B4E53F231B87FDCB00C4CFAA /* LaunchScreen.xib in Resources */,
 				B4DA700A1BB5723000F55F6C /* PostTextCell.xib in Resources */,
