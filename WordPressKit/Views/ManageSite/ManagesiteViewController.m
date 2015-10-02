@@ -82,7 +82,7 @@
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeCustomView;
-    hud.labelText = @"Completed";
+    //hud.labelText = @"Completed";
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check_white"]];
     [hud hide:YES afterDelay:2];
     

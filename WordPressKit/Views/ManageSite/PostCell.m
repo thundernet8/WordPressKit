@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *PostDate;
 @property (weak, nonatomic) IBOutlet UIView *ActionBar;
 
+@property (weak, nonatomic) RemotePost *post;
+
 
 
 
@@ -90,6 +92,7 @@
  */
 - (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog
 {
+    self.post = post;
     //博客名
     self.BlogName.text = blog.name;
     //作者
@@ -106,7 +109,7 @@
     self.PostContent.font = [UIFont systemFontOfSize:14.0f];
     //文章日期
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"YYYY-MM-DD HH:MM:SS"];
+    [dateFormat setDateFormat:@"YYYY-MM-dd HH:MM:SS"];
     NSString *dateStr = [dateFormat stringFromDate:post.date];
     self.PostDate.text = dateStr;
     

@@ -83,12 +83,7 @@
     if ([fileManager fileExistsAtPath:cacheFilePath] && [[NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error] lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 0) {
         sourceHtml = [NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error];
     }else{
-        //采用Github源的代码文件
-        NSString *gitSourceBaseUrl = @"https://raw.githubusercontent.com/WordPress/WordPress/master/";
-        NSString *completeUrl = [NSString stringWithFormat:@"%@%@", gitSourceBaseUrl, file.path];
-        NSURL *url = [[NSURL alloc] initWithString:completeUrl];
-        //sourceHtml = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
-        //or APP内嵌bundle
+        //APP内嵌bundle
         NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"WordPress" ofType:@"bundle"];
         if (resourcePath.length > 0) {
             NSBundle *wpBundle = [[NSBundle alloc] initWithPath:resourcePath];
@@ -96,6 +91,10 @@
             NSLog(@"localfile url is %@",localFile);
             sourceHtml = [NSString stringWithContentsOfFile:localFile encoding:NSUTF8StringEncoding error:&error];
         }else{
+            //采用Github源的代码文件
+            NSString *gitSourceBaseUrl = @"https://raw.githubusercontent.com/WordPress/WordPress/master/";
+            NSString *completeUrl = [NSString stringWithFormat:@"%@%@", gitSourceBaseUrl, file.path];
+            NSURL *url = [[NSURL alloc] initWithString:completeUrl];
             sourceHtml = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
         }
         

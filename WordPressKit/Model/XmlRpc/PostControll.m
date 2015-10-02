@@ -46,6 +46,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (NSString *)userDataFilePath;
 - (BOOL)existPost:(NSNumber *)postId;
 - (NSDate *)getDateFromStr:(NSString *)dateStr;
+- (NSString *)getDateStr:(NSDate *)date;
 - (void)insertCats:(NSArray *)categories;
 - (void)insertCat:(RemotePostCategory *)category;
 - (BOOL)existCategory:(NSNumber *)categoryId;
@@ -53,6 +54,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)siteLastSynced:(NSNumber *)siteid;
 - (int)getSiteLastSyncTimestamp:(NSInteger)siteid;
 - (void)configSyncStatus:(BOOL)status ForBlog:(Blog *)blog;
+- (void)configNetworkStatus:(BOOL)status;
 
 @end
 
@@ -119,10 +121,13 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     [pc configSyncStatus:YES ForBlog:blog];
     [self getPostsOfType:postType forBlog:blog options:nil success:^(NSArray *posts) {
         [self writePostsToDB:posts inBlog:blog postType:postType];
-        [pc configSyncStatus:YES ForBlog:blog];
+        [pc configSyncStatus:NO ForBlog:blog];
+        [pc configNetworkStatus:YES];
+        
     } failure:^(NSError *error) {
         //*****************************//
         [pc configSyncStatus:NO ForBlog:blog];
+        [pc configNetworkStatus:NO];
         
     }];
 }
@@ -202,12 +207,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
+        //重置插入post计数
+        self.chagedPostsNum = 0;
         //判断post是否已存在,不存在则插入,存在则更新
         NSString *sql;
         if ([self existPost:post.postID]) {
             sql = [NSString stringWithFormat:@"UPDATE POSTS SET SITEID = %i, AUTHORAVATAR = ?, AUTHORNAME = ?, AUTHOREMAIL = ?, AUTHORURL = ?, AUTHORID = %i, DATE = ?, TITLE = ?, URL = ?, SHORTURL = ?, CONTENT = ?, EXCERPT = ?, SLUG = ?, STATUS = ?, PASSWORD = ?, PARENTID = %i, POSTTHUMBNAILID = %i, POSTTHUMBNAILPATH = ?, TYPE = ?, FORMAT = ?, COMMENTCOUNT = %i, CATEGORIES = ?, TAGS = ?, PATHFORDISPLAYIMAGE = ?, METADATA = ? WHERE POSTID = %i",siteid,[post.authorID intValue],[post.parentID intValue],[post.postThumbnailID intValue],[post.commentCount intValue],[post.postID intValue]];
         }else{
           sql = [NSString stringWithFormat:@"INSERT INTO POSTS (POSTID, SITEID, AUTHORAVATAR, AUTHORNAME, AUTHOREMAIL, AUTHORURL, AUTHORID, DATE, TITLE, URL, SHORTURL, CONTENT, EXCERPT, SLUG, STATUS, PASSWORD, PARENTID, POSTTHUMBNAILID, POSTTHUMBNAILPATH, TYPE, FORMAT, COMMENTCOUNT, CATEGORIES, TAGS, PATHFORDISPLAYIMAGE, METADATA) VALUES(%i, %i,?,?,?,?,%i,?,?,?,?,?,?,?,?,?,%i,%i,?,?,?,%i,?,?,?,?)",[post.postID intValue],siteid,[post.authorID intValue],[post.parentID intValue],[post.postThumbnailID intValue],[post.commentCount intValue]];
+            //插入计数加1
+            self.chagedPostsNum ++;
         }
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
@@ -217,7 +226,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
             sqlite3_bind_text(stmt, 2, [post.authorDisplayName UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 3, [post.authorEmail UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 4, [post.authorURL UTF8String], -1, NULL);
-            sqlite3_bind_text(stmt, 5, [[NSString stringWithFormat:@"%@",post.date] UTF8String], -1, NULL);
+            sqlite3_bind_text(stmt, 5, [[self getDateStr:post.date] UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 6, [post.title UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 7, [[post.URL absoluteString] UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 8, [[post.shortURL absoluteString] UTF8String], -1, NULL);
@@ -458,9 +467,24 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (NSDate *)getDateFromStr:(NSString *)dateStr
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"YYYY-MM-DD HH:MM:SS ZZZ"];
+    [dateFormat setDateFormat:@"YYYY-MM-DD HH:MM:SS"];
     NSDate *date = [dateFormat dateFromString:dateStr];
     return date;
+}
+
+/**
+ *  格式化时间为字符串
+ *
+ *  @param date NSDate对象
+ *
+ *  @return 时间字符串
+ */
+- (NSString *)getDateStr:(NSDate *)date
+{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"YYYY-MM-DD HH:MM:SS"];
+    NSString *dateStr = [dateFormat stringFromDate:date];
+    return dateStr;
 }
 
 /**
@@ -661,7 +685,15 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 }
 
-
+/**
+ *  最新网络请求失败或成功状态
+ *
+ *  @param status 网络请求是否成功
+ */
+- (void)configNetworkStatus:(BOOL)status
+{
+    self.networkFailure = status;
+}
 
 
 

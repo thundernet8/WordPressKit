@@ -21,6 +21,8 @@
 @property (nonatomic,strong) NSArray *posts;
 @property (nonatomic,strong) Blog *blog;
 @property (nonatomic,assign) BOOL syncing;
+@property (nonatomic,assign) NSInteger chagedPostsNum;
+@property (nonatomic,assign) BOOL networkFailure;
 
 - (instancetype)initWithBlog:(Blog *)blog;
 
