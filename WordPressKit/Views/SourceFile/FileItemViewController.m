@@ -88,7 +88,6 @@
         if (resourcePath.length > 0) {
             NSBundle *wpBundle = [[NSBundle alloc] initWithPath:resourcePath];
             NSString *localFile = [wpBundle pathForResource:file.path ofType:nil];
-            NSLog(@"localfile url is %@",localFile);
             sourceHtml = [NSString stringWithContentsOfFile:localFile encoding:NSUTF8StringEncoding error:&error];
         }else{
             //采用Github源的代码文件

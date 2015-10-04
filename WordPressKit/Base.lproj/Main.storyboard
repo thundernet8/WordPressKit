@@ -966,6 +966,9 @@
                     <navigationItem key="navigationItem" title="文章" id="aY5-Z5-irH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7ms-gH-aez"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="9iQ-bM-FKu" kind="presentation" identifier="PreviewPost" id="tSG-ye-M2V"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdO-8Z-U1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1174,10 +1177,10 @@
                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CF8-ac-IdC">
                                 <rect key="frame" x="0.0" y="229" width="600" height="322"/>
                                 <connections>
-                                    <segue destination="51t-0S-Ewq" kind="embed" id="o4c-uI-LKI"/>
+                                    <segue destination="51t-0S-Ewq" kind="embed" identifier="AboutStaticTable" id="o4c-uI-LKI"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="版本: 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIl-zB-TNK">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="版本: 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIl-zB-TNK">
                                 <rect key="frame" x="189" y="191" width="223" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="02h-Hf-8dF"/>
@@ -1217,10 +1220,10 @@
             </objects>
             <point key="canvasLocation" x="-1055" y="938"/>
         </scene>
-        <!--Table View Controller-->
+        <!--About Table View Controller-->
         <scene sceneID="vHx-Sc-9GA">
             <objects>
-                <tableViewController id="51t-0S-Ewq" sceneMemberID="viewController">
+                <tableViewController id="51t-0S-Ewq" customClass="AboutTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="M9k-CE-g3D">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1237,7 +1240,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="功能介绍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rmr-tv-n20">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1251,7 +1254,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="帮助" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="146-TV-uag">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1265,7 +1268,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="反馈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vxs-Tb-Nfy">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1275,7 +1278,7 @@
                             </tableViewSection>
                             <tableViewSection id="OG2-P7-kuB">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="yxh-kY-PCX">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CacheCell" id="yxh-kY-PCX">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yxh-kY-PCX" id="xfc-RX-crU">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1287,10 +1290,10 @@
                                                         <constraint firstAttribute="width" constant="100" id="ggf-G9-aq2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqk-0o-Nqu">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqk-0o-Nqu">
                                                     <rect key="frame" x="492" y="11" width="100" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Mtn-W5-OSt"/>
@@ -1317,6 +1320,9 @@
                             <outlet property="delegate" destination="51t-0S-Ewq" id="1pa-O1-R09"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="cacheLabel" destination="Vqk-0o-Nqu" id="OKa-Dm-lpN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xy-3N-VZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1454,8 +1460,9 @@
         <image name="wordpress2" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UZO-Er-ThG"/>
+        <segue reference="tSG-ye-M2V"/>
         <segue reference="uAS-rc-Y1h"/>
         <segue reference="Afh-rz-RHD"/>
-        <segue reference="UZO-Er-ThG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rw-s2-CXB">
                                 <rect key="frame" x="14" y="15" width="296" height="34"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_blogavatar" translatesAutoresizingMaskIntoConstraints="NO" id="caK-IK-tbC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_blogavatar" translatesAutoresizingMaskIntoConstraints="NO" id="caK-IK-tbC">
                                         <rect key="frame" x="0.0" y="1" width="32" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
@@ -104,7 +104,7 @@
                                     <constraint firstItem="afq-VS-2s4" firstAttribute="top" secondItem="Dhi-lC-n9m" secondAttribute="top" id="dRv-gf-Lkl"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qjj-5z-oip">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qjj-5z-oip" customClass="PostActionBar">
                                 <rect key="frame" x="0.0" y="366" width="308" height="37"/>
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -154,7 +154,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="ActionBar" destination="Qjj-5z-oip" id="Wms-en-lfQ"/>
+                <outlet property="ActionBar" destination="Qjj-5z-oip" id="wuZ-ko-7LA"/>
                 <outlet property="BlogAvatar" destination="caK-IK-tbC" id="Ulo-E3-yVt"/>
                 <outlet property="BlogName" destination="0o8-iN-IOg" id="frY-Bw-8cH"/>
                 <outlet property="PostAuthor" destination="LVq-ki-0f2" id="nXY-tJ-mL7"/>

@@ -14,9 +14,6 @@
 #import "RemotePostCategory.h"
 #import "NSDictionary+SafeExpectations.h"
 #import "NSString+Util.h"
-#import "DDLog.h"
-#import "DDTTYLogger.h"
-#import "DDFileLogger.h"
 
 #import "DataModel.h"
 
@@ -28,8 +25,6 @@ NSString * const PostStatusScheduled = @"future";
 NSString * const PostStatusTrash = @"trash";
 NSInteger const NumberofPoststoFetch = 20;
 
-//DDLog日志记录等级
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface PostControll()
 
@@ -244,7 +239,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
             sqlite3_bind_text(stmt, 20, [metaStr UTF8String], -1, NULL);
             
             if (sqlite3_step(stmt) == SQLITE_DONE) {
-                //DDLogError(@"Insert the post");
+                //NSLog(@"Insert the post");
             }
         }
         sqlite3_finalize(stmt);

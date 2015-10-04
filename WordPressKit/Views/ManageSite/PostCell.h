@@ -10,6 +10,17 @@
 #import "RemotePost.h"
 #import "Blog.h"
 
+@protocol PostCellDelegate <NSObject>
+
+@optional
+- (void)cell:(UITableViewCell *)cell receivedEditActionForProvider:(RemotePost *)post;
+- (void)cell:(UITableViewCell *)cell receivedViewActionForProvider:(RemotePost *)post;
+- (void)cell:(UITableViewCell *)cell receivedTrashActionForProvider:(RemotePost *)post;
+- (void)cell:(UITableViewCell *)cell receivedPublishActionForProvider:(RemotePost *)post;
+- (void)cell:(UITableViewCell *)cell receivedRestoreActionForProvider:(RemotePost *)post;
+
+@end
+
 @interface PostCell : UITableViewCell
 
 
@@ -28,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postCellPostEditButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postCellPostPreviewButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postCellPostTrashButton;
+
+@property (weak, nonatomic) id<PostCellDelegate> delegate;
 
 - (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog;
 - (void)confiImageWithPost:(RemotePost *)post;

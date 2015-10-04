@@ -92,7 +92,7 @@
                                     <constraint firstItem="LHn-Vv-pJ7" firstAttribute="leading" secondItem="Kmb-kE-Kku" secondAttribute="leading" id="cJ8-yY-fFL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMj-fd-MYf">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMj-fd-MYf" customClass="PostActionBar">
                                 <rect key="frame" x="0.0" y="153" width="308" height="37"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

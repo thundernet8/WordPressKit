@@ -7,10 +7,14 @@
 //
 
 #import "AboutViewController.h"
+#import "AboutTableViewController.h"
 
-@interface AboutViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface AboutViewController ()
 @property (weak, nonatomic) IBOutlet UIView *staticCellContainer;
+@property (weak, nonatomic) UITableView *tableView;
 
+- (void)configureStyle;
+- (void)configureLabel;
 
 @end
 
@@ -18,23 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
-    UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, -1, [UIScreen mainScreen].bounds.size.width, 22)];
-    statusBarView.backgroundColor  =  [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1];
-    [self.view addSubview:statusBarView];//设置status bar背景色
-    
-    //
-    UIView *containerView = self.staticCellContainer;
-    
-    UITableView *tableView = [containerView.subviews firstObject];
-    
-    //tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
-    tableView.delegate = self;
-    
-    NSLog(@"tableview is %@", tableView.description);
-    
-    
+    [self configureStyle];
+    [self configureLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,21 +31,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)configureStyle
+{
+    //tab bar tint color
+    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0];
+    //设置status bar背景色
+    UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, -1, [UIScreen mainScreen].bounds.size.width, 22)];
+    statusBarView.backgroundColor  =  [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1];
+    [self.view addSubview:statusBarView];
 }
-*/
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 0.0;
+- (void)configureLabel
+{
+    UILabel *verLabel = (UILabel *)[self.view viewWithTag:1000];
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [infoDict objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [infoDict objectForKey:@"CFBundleVersion"];
+    NSString *verLabelText = [NSString stringWithFormat:@"版本: %@.%@",version,build];
+    verLabel.text = verLabelText;
+}
+
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AboutStaticTable"]) {
+        UITableViewController *staticTableViewController = segue.destinationViewController;
+        self.tableView = staticTableViewController.tableView;
     }
-    return 2.0;
 }
 
 @end
