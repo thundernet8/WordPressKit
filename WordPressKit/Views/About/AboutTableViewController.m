@@ -82,10 +82,13 @@
 }
 
 #pragma mark - tableview delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1 && indexPath.row ==0) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
         [self clearCache];
         [self statisticCache];
+    }else{
+        
     }
 }
 

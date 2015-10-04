@@ -128,6 +128,7 @@
 }
 
 #pragma - tableview delegate
+
 //cell点击
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==0 && indexPath.row == 1) {

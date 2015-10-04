@@ -135,9 +135,14 @@ NSInteger const NumberofPoststoFetch = 20;
  */
 + (void)writePostsToDB:(NSArray *)posts inBlog:(Blog *)blog postType:(NSString *)postType
 {
+    PostControll *pc = [[self alloc] initWithBlog:blog];
+    pc.chagedPostsNum = 0;
     for (RemotePost *post in posts) {
-        [[[self alloc] initWithBlog:blog] writePostToDB:post inBlog:blog];
+        [pc writePostToDB:post inBlog:blog];
     }
+    //广播通知ListPostsViewController
+    NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInteger:pc.chagedPostsNum]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
 }
 
 /**
@@ -202,8 +207,6 @@ NSInteger const NumberofPoststoFetch = 20;
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        //重置插入post计数
-        self.chagedPostsNum = 0;
         //判断post是否已存在,不存在则插入,存在则更新
         NSString *sql;
         if ([self existPost:post.postID]) {

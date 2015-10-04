@@ -99,13 +99,12 @@
     
     //配置desLabel尺寸以及cell自动尺寸
     UILabel *desLabel = (UILabel *)[cell.contentView viewWithTag:1202];
-    CGSize desSize = [desLabel.text sizeWithFont:[UIFont systemFontOfSize:10.0] constrainedToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+    //desLabel换行
+    desLabel.numberOfLines = 0;
+    CGSize desSize = [desLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT)];
     CGRect rect = cell.frame;
     rect.size.height = 32 + desSize.height;
     cell.frame = rect;
-    
-    //desLabel换行
-    desLabel.numberOfLines = 0;
     
     //配置countLabel尺寸
     [countLabel sizeToFit];

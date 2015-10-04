@@ -877,9 +877,18 @@
 #pragma - method for keyChain
 //写入keyChain以保存用户名密码
 - (void)writeKeyChainWithId : (NSInteger)bid UserName : (NSString *)userName passWord : (NSString *)passWord{
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *device = [infoDict objectForKey:@"DTPlatformName"];
+    //针对模拟器
+    if ([device isEqualToString:@"iphonesimulator"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:passWord forKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
+        return;
+    }
+    
+    //针对真机
     KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"com.wuxueqian.WordPressKit" accessGroup:nil];
     NSDictionary *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
-    Pwds = Pwds.count > 0 ? Pwds : [[NSDictionary alloc] init];
+    Pwds = (Pwds && Pwds.count > 0) ? Pwds : [[NSDictionary alloc] init];
     NSMutableDictionary *newPwds = [Pwds mutableCopy];
     
     //添加或更新密码
@@ -889,9 +898,20 @@
 
 //读取keyChain用户名密码
 - (NSString *)readKeyChainWithId : (NSInteger)bid{
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *device = [infoDict objectForKey:@"DTPlatformName"];
+    //针对模拟器
+    if ([device isEqualToString:@"iphonesimulator"]) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]]){
+            return [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
+        }
+        return nil;
+    }
+
+    //针对真机
     KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"com.wuxueqian.WordPressKit" accessGroup:nil];
     NSDictionary *Pwds = [keyChain objectForKey:(__bridge id)kSecValueData];
-    if (Pwds.count > 0) {
+    if (Pwds && Pwds.count > 0) {
         return [Pwds valueForKey:[NSString stringWithFormat:@"Blog%i",(int)bid]];
     }
     return nil;

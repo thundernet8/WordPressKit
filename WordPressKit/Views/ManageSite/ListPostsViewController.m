@@ -15,6 +15,7 @@
 #import "PostControll.h"
 #import "NSString+Util.h"
 #import "WebBrowserController.h"
+#import "MBProgressHUD.h"
 
 BOOL fetched = NO;
 NSInteger const syncTimeInterval = 300;
@@ -35,6 +36,9 @@ NSString *const postStatus = @"publish";
 - (void)publishPost:(RemotePost *)post;
 - (void)deletePost:(RemotePost *)post;
 - (void)restorePost:(RemotePost *)post;
+- (void)addHud;
+- (void)removeHud;
+- (void)addNotificationObserver;
 
 @end
 
@@ -44,7 +48,7 @@ NSString *const postStatus = @"publish";
     [super viewDidLoad];
     [self configVariable];
     [self configureTableView];
-    
+    [self addHud];
     
     [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
 
@@ -58,10 +62,12 @@ NSString *const postStatus = @"publish";
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSLog(@"view appear");
+    [self addNotificationObserver];
     [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
-    if (self.pc.chagedPostsNum == 0) {
-        [self.tableView reloadData];
-    }
+//    if (self.pc.chagedPostsNum != 0) {
+//        [self.tableView reloadData];
+//    }
+    [self removeHud];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +80,7 @@ NSString *const postStatus = @"publish";
 //行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection:");
-    return [self.pc.posts count];
+    return self.pc.posts ? [self.pc.posts count] : 0;
 }
 
 //cell实例化
@@ -83,27 +89,6 @@ NSString *const postStatus = @"publish";
     PostCell *cell = [self configCellNib:indexPath];
     [self configCellStyle:cell];
     [self configCellContent:cell atIndexPath:indexPath];
-    
-//    //
-//    [PostControll getPostsOfType:@"post" forBlog:self.blog options:@{@"post_status":@"publish",@"number":@5} success:^(NSArray *posts) {
-//        
-//        //配置post cell内容
-////        RemotePost *post = [posts objectAtIndex:indexPath.row];
-////        cell.postCellPostTitle.text = post.title;
-////        cell.postCellPostContent.attributedText = [[NSAttributedString alloc] initWithData:[post.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-////        cell.postCellThumb.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:post.postThumbnailPath]]];
-////        cell.postCellPostDate.text = [NSString stringWithFormat:@"%@",post.date];
-//        
-//        
-//        
-//        
-//    } failure:^(NSError *error) {
-//        NSLog(@"oh no");
-//    }];
-    
-    // Post Cell头部配置
-    //cell.postCellBlogName.text = self.blog.name;
-    
     
     return cell;
 }
@@ -427,7 +412,40 @@ NSString *const postStatus = @"publish";
 }
 
 
+#pragma mark - hud
+- (void)addHud
+{
+    if (!self.pc.posts || self.pc.posts.count == 0) {
+        //添加指示器
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDAnimationFade;
+        hud.labelText = @"加载中···";
+    }
+}
 
+- (void)removeHud
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
 
+#pragma mark - notification
+
+- (void)addNotificationObserver
+{
+    //监听来自PostControll广播通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(writePostsToDBNotificationCallback:) name:@"writePostsToDBNotification" object:nil];
+}
+
+- (void)writePostsToDBNotificationCallback:(NSNotification *)notification
+{
+    NSDictionary *info = [notification userInfo];
+    NSNumber *chagedPostsNum = [info valueForKey:@"chagedPostsNum"];
+    if (chagedPostsNum > 0) {
+        [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }
+}
 
 @end
