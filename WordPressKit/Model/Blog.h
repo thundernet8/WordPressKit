@@ -17,8 +17,15 @@
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, assign) NSInteger blogId;
 @property (nonatomic, assign) NSInteger isAdmin;
+@property (nonatomic, assign) NSInteger lastSync;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *xmlrpc;
+@property (nonatomic, copy) NSString *subTitle;
+@property (nonatomic, copy) NSString *defaultFormat;
+@property (nonatomic, copy) NSString *defaultCat;
+@property (nonatomic, assign) NSInteger defaultCatId;
+@property (nonatomic ,assign) NSInteger locationMark;
+@property (nonatomic, copy) NSString *template;
 
 //只读属性
 @property (nonatomic, strong,  readonly) WPXMLRPCClient *api;

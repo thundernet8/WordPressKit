@@ -9,12 +9,19 @@
 #import "SiteToolsViewController.h"
 #import "ToolKit/WebBrowserController.h"
 #import "ManageSite/ListPostsViewController.h"
+#import "ManageSite/SiteSettingViewController.h"
+#import "DataModel.h"
 
 @interface SiteToolsViewController ()
 
 @end
 
 @implementation SiteToolsViewController
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.blog = [[[DataModel alloc] init] queryBlogWithId:self.blog.id];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -139,6 +146,8 @@
         [self performSegueWithIdentifier:@"ShowWebBrowser" sender:self.blog.url];
     }else if (indexPath.section == 1 && indexPath.row == 0){
         [self performSegueWithIdentifier:@"ShowPosts" sender:self.blog];
+    }else if (indexPath.section == 2 && indexPath.row == 0){
+        [self performSegueWithIdentifier:@"SiteSettings" sender:self.blog];
     }
 }
 
@@ -184,12 +193,16 @@
 */
 
 #pragma mark - Segue
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ShowWebBrowser"]) {
         WebBrowserController *controller = segue.destinationViewController;
         controller.url = (NSString *)sender;
     } else if ([segue.identifier isEqualToString:@"ShowPosts"]){
         ListPostsViewController *controller = segue.destinationViewController;
+        controller.blog = sender;
+    } else if ([segue.identifier isEqualToString:@"SiteSettings"]){
+        SiteSettingViewController *controller = segue.destinationViewController;
         controller.blog = sender;
     }
 }

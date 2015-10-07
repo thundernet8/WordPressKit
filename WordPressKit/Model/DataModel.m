@@ -70,8 +70,8 @@
 
 - (void)registerDefaults
 {
-    //注册默认值，上次搜索词/是否首次启动/上次查看函数ID/上次查看的Tab
-    NSDictionary *dictionary = @{@"SearchWords" : @"",@"FirstTime" : @YES,@"FuncItemId" : @0,@"LastTab" : @1,@"WordWrap" : @NO};
+    //注册默认值，上次搜索词/是否首次启动/上次查看函数ID/上次查看的Tab/撰写地理位置标记
+    NSDictionary *dictionary = @{@"SearchWords" : @"",@"FirstTime" : @YES,@"FuncItemId" : @0,@"LastTab" : @1,@"WordWrap" : @NO,@"LocationMark" : @NO};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
 }
 
@@ -81,6 +81,7 @@
     if (firstTime) {
         [self restoreData];//首次启用将数据文件导入数据库
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstTime"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
@@ -693,6 +694,31 @@
                 NSInteger isAdmin = (NSInteger)sqlite3_column_int(stmt, 6);
                 blog.isAdmin = isAdmin;
                 
+                NSInteger lastSync = (NSInteger)sqlite3_column_int(stmt, 7);
+                blog.lastSync = lastSync;
+                
+                char *subTitle = (char *)sqlite3_column_text(stmt, 8);
+                NSString *nsSubTitle = subTitle ? [[NSString alloc] initWithUTF8String:subTitle] : nil;
+                blog.subTitle = nsSubTitle;
+                
+                NSInteger defaultCatId = (NSInteger)sqlite3_column_int(stmt, 9);
+                blog.defaultCatId = defaultCatId;
+                
+                char *defaultCat = (char *)sqlite3_column_text(stmt, 10);
+                NSString *nsDefaultCat = defaultCat ? [[NSString alloc] initWithUTF8String:defaultCat] : nil;
+                blog.defaultCat = nsDefaultCat;
+                
+                char *defaultFormat = (char *)sqlite3_column_text(stmt, 11);
+                NSString *nsDefaultFormat = defaultFormat ? [[NSString alloc] initWithUTF8String:defaultFormat] : nil;
+                blog.defaultCat = nsDefaultFormat;
+                
+                NSInteger locationMark = (NSInteger)sqlite3_column_int(stmt, 12);
+                blog.locationMark = locationMark;
+                
+                char *template = (char *)sqlite3_column_text(stmt, 13);
+                NSString *nsTemplate = template ? [[NSString alloc] initWithUTF8String:template] : nil;
+                blog.template = nsTemplate;
+                
                 [self.blogs addObject:blog];
             }
         }
@@ -742,6 +768,31 @@
                     
                     NSInteger isAdmin = (NSInteger)sqlite3_column_int(stmt, 6);
                     blog.isAdmin = isAdmin;
+                    
+                    NSInteger lastSync = (NSInteger)sqlite3_column_int(stmt, 7);
+                    blog.lastSync = lastSync;
+                    
+                    char *subTitle = (char *)sqlite3_column_text(stmt, 8);
+                    NSString *nsSubTitle = subTitle ? [[NSString alloc] initWithUTF8String:subTitle] : nil;
+                    blog.subTitle = nsSubTitle;
+                    
+                    NSInteger defaultCatId = (NSInteger)sqlite3_column_int(stmt, 9);
+                    blog.defaultCatId = defaultCatId;
+                    
+                    char *defaultCat = (char *)sqlite3_column_text(stmt, 10);
+                    NSString *nsDefaultCat = defaultCat ? [[NSString alloc] initWithUTF8String:defaultCat] : nil;
+                    blog.defaultCat = nsDefaultCat;
+                    
+                    char *defaultFormat = (char *)sqlite3_column_text(stmt, 11);
+                    NSString *nsDefaultFormat = defaultFormat ? [[NSString alloc] initWithUTF8String:defaultFormat] : nil;
+                    blog.defaultCat = nsDefaultFormat;
+                    
+                    NSInteger locationMark = (NSInteger)sqlite3_column_int(stmt, 12);
+                    blog.locationMark = locationMark;
+                    
+                    char *template = (char *)sqlite3_column_text(stmt, 13);
+                    NSString *nsTemplate = template ? [[NSString alloc] initWithUTF8String:template] : nil;
+                    blog.template = nsTemplate;
                     
                     return blog;
                 }
@@ -857,6 +908,49 @@
         sqlite3_close(db);
     }
     return 0;
+}
+
+//更新博客其他设置并返回最新blog对象
+- (Blog *)updateBlog:(NSInteger)id WithKeyValuePairs:(NSDictionary *)keyValuePairs
+{
+    NSString *path = self.userDataFilePath;
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = @"UPDATE BLOGS SET ";
+        NSLog(@"keyvalue %@", keyValuePairs);
+        if (!keyValuePairs.count == 0) {
+            NSInteger i = 0;
+            for (NSString *key in keyValuePairs) {
+                i++;
+                if (i != 1) sql = [sql stringByAppendingString:@", "];
+                if ([[keyValuePairs objectForKey:key] isKindOfClass:[NSString class]]){
+                   sql = [sql stringByAppendingString:[NSString stringWithFormat:@"%@ = '%@'",key,[keyValuePairs valueForKey:key]]];
+                }else if ([[keyValuePairs objectForKey:key] isKindOfClass:[NSNumber class]]){
+                    NSNumber *markNum = (NSNumber *)[keyValuePairs valueForKey:key];
+                    sql = [sql stringByAppendingString:[NSString stringWithFormat:@"%@ = %i",key,[markNum intValue]]];
+                }else{
+                   sql = [sql stringByAppendingString:[NSString stringWithFormat:@"%@ = %i",key,(int)[keyValuePairs valueForKey:key]]];
+                }
+                
+            }
+            sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE ID = %i",(int)id]];
+            const char *nsql = [sql UTF8String];
+            sqlite3_stmt *stmt;
+            if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
+                if (sqlite3_step(stmt) == SQLITE_DONE) {
+                    return [self queryBlogWithId:(NSInteger)id];
+                }
+            }
+            sqlite3_finalize(stmt);
+        }else{
+           return [self queryBlogWithId:(NSInteger)id];
+        }
+        sqlite3_close(db);
+    }
+    return [self queryBlogWithId:(NSInteger)id];
 }
 
 #pragma - methods

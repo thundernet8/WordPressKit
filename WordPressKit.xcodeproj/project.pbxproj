@@ -35,6 +35,7 @@
 		B4DB7D9C1BBF6C2300DC203A /* PostActionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9B1BBF6C2300DC203A /* PostActionBarItem.m */; };
 		B4DB7D9F1BBF6EF000DC203A /* PostActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9E1BBF6EF000DC203A /* PostActionBar.m */; };
 		B4DB8A921BB4090200058147 /* PostControll.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB8A911BB4090200058147 /* PostControll.m */; };
+		B4DC00421BC21B6C00B8F194 /* SiteSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */; };
 		B4DD02E71BB044CE0066C8E5 /* ListPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */; };
 		B4DD02EA1BB045F20066C8E5 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E91BB045F20066C8E5 /* PostCell.m */; };
 		B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */; };
@@ -116,6 +117,8 @@
 		B4DB7D9E1BBF6EF000DC203A /* PostActionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActionBar.m; sourceTree = "<group>"; };
 		B4DB8A901BB4090200058147 /* PostControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostControll.h; path = XmlRpc/PostControll.h; sourceTree = "<group>"; };
 		B4DB8A911BB4090200058147 /* PostControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostControll.m; path = XmlRpc/PostControll.m; sourceTree = "<group>"; };
+		B4DC00401BC21B6C00B8F194 /* SiteSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteSettingViewController.h; sourceTree = "<group>"; };
+		B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteSettingViewController.m; sourceTree = "<group>"; };
 		B4DD02E51BB044CE0066C8E5 /* ListPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListPostsViewController.h; sourceTree = "<group>"; };
 		B4DD02E61BB044CE0066C8E5 /* ListPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListPostsViewController.m; sourceTree = "<group>"; };
 		B4DD02E81BB045F20066C8E5 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				B4DB7D9B1BBF6C2300DC203A /* PostActionBarItem.m */,
 				B4DB7D9D1BBF6EF000DC203A /* PostActionBar.h */,
 				B4DB7D9E1BBF6EF000DC203A /* PostActionBar.m */,
+				B4DC00401BC21B6C00B8F194 /* SiteSettingViewController.h */,
+				B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */,
 			);
 			path = ManageSite;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 				B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */,
 				B4DA77B01BC0B8DB00B3E9D4 /* AboutTableViewController.m in Sources */,
 				B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */,
+				B4DC00421BC21B6C00B8F194 /* SiteSettingViewController.m in Sources */,
 				B4DB7D9F1BBF6EF000DC203A /* PostActionBar.m in Sources */,
 				B46004D11B8CBB3D00757221 /* CategoriesViewController.m in Sources */,
 				B46572111BB2CBCD00835972 /* Post.m in Sources */,

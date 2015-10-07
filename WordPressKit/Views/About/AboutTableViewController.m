@@ -8,9 +8,11 @@
 
 #import "AboutTableViewController.h"
 #import "UIImageView+WebCache.h"
+#import "WebBrowserController.h"
 
 @interface AboutTableViewController ()
 
+- (void)configTableView;
 - (void)statisticCache;
 - (void)clearCache;
 - (float)fileSizeAtPath:(NSString *)filePath;
@@ -28,7 +30,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    //[self statisticCache];
+    [self configTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -44,12 +46,14 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 3;
+    }else if (section == 1){
+        return 2;
     }
     return 1;
 }
@@ -57,9 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    if (indexPath.section == 1 && indexPath.row == 0) {
-        
-    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -72,23 +74,30 @@
  *  @return 对应section的header高度
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 0.0;
-    }
-    if ([UIScreen mainScreen].bounds.size.height < 500){
-        return 2.0;
-    }
-    return 10.0;
+//    if (section == 0) {
+//        return 0.0;
+//    }
+    return 6.0;
 }
 
 #pragma mark - tableview delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        
+    }else if(indexPath.section == 1 && indexPath.row == 0) {
+        //打开App Store评分
+        NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/WordPressKit"];
+        [[UIApplication sharedApplication] openURL:url];
+        
+    }else if(indexPath.section == 1 && indexPath.row == 1) {
+        //打开源代码网页
+        NSString *url = @"https://www.github.com/WuXueqian/WordPressKit";
+        [self performSegueWithIdentifier:@"AboutToBrowser" sender:url];
+        
+    }else if(indexPath.section == 2 && indexPath.row == 0) {
         [self clearCache];
         [self statisticCache];
-    }else{
-        
     }
 }
 
@@ -137,6 +146,16 @@
 */
 
 #pragma mark - accessories
+
+- (void)configTableView
+{
+    CGFloat deviceHeight = [UIScreen mainScreen].bounds.size.height;
+    if (deviceHeight < 560.0) {
+        self.tableView.scrollEnabled = YES;
+    }else{
+        self.tableView.scrollEnabled = NO;
+    }
+}
 
 /**
  *  统计缓存文件大小并配置相关标签数据
@@ -208,6 +227,16 @@
         folderSize += [self fileSizeAtPath:fileAbsolutePath];
     }
     return folderSize;
+}
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AboutToBrowser"]) {
+        WebBrowserController *controller = segue.destinationViewController;
+        controller.url = sender;
+    }
 }
 
 @end

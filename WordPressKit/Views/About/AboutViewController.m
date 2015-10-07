@@ -47,7 +47,7 @@
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
     NSString *version = [infoDict objectForKey:@"CFBundleShortVersionString"];
     NSString *build = [infoDict objectForKey:@"CFBundleVersion"];
-    NSString *verLabelText = [NSString stringWithFormat:@"版本: %@.%@",version,build];
+    NSString *verLabelText = [NSString stringWithFormat:@"版本: %@ build %@",version,build];
     verLabel.text = verLabelText;
 }
 

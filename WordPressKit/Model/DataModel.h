@@ -60,6 +60,8 @@
 - (int)deleteBlogRecordWithId : (NSInteger)id;
 //更新博客记录
 - (int)updateBlogRecordWithId : (NSInteger)id withName : (NSString *)name withUrl : (NSString *)url withUsername : (NSString *)username blogWithId : (NSInteger)blogId blogWithXmlrpc : (NSString *)xmlrpc isAdmin : (NSInteger)isAdmin;
+//更新博客其他设置数据
+- (Blog *)updateBlog:(NSInteger)id WithKeyValuePairs:(NSDictionary *)keyValuePairs;
 
 //判断空字符串
 - (BOOL) isBlankString:(NSString *)string;

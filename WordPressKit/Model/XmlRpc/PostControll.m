@@ -51,6 +51,7 @@ NSInteger const NumberofPoststoFetch = 20;
 - (void)configSyncStatus:(BOOL)status ForBlog:(Blog *)blog;
 - (void)configNetworkStatus:(BOOL)status;
 
+
 @end
 
 @implementation PostControll
@@ -692,6 +693,9 @@ NSInteger const NumberofPoststoFetch = 20;
 {
     self.networkFailure = status;
 }
+
+
+#pragma mark - site options
 
 
 
