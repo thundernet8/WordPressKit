@@ -10,7 +10,6 @@
 #import "ToolKit/WebBrowserController.h"
 #import "ManageSite/ListPostsViewController.h"
 #import "ManageSite/SiteSettingViewController.h"
-#import "DataModel.h"
 
 @interface SiteToolsViewController ()
 
@@ -18,10 +17,6 @@
 
 @implementation SiteToolsViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.blog = [[[DataModel alloc] init] queryBlogWithId:self.blog.id];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
