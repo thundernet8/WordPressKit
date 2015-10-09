@@ -28,6 +28,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
+  - FrameAccessor (1.3.2)
   - KeychainItemWrapper (0.0.1)
   - MBProgressHUD (0.9.1)
   - NSObject-SafeExpectations (0.0.2)
@@ -45,6 +46,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6.0)
   - CocoaLumberjack (= 2.0.0)
+  - FrameAccessor (~> 1.3.2)
   - KeychainItemWrapper (from `https://github.com/baptistefetet/KeychainItemWrapper.git`)
   - MBProgressHUD (~> 0.9.1)
   - NSObject-SafeExpectations (= 0.0.2)
@@ -68,6 +70,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  FrameAccessor: 0f7ba6ce37be9a5d0302a27c731dca70af8d438b
   KeychainItemWrapper: 633b6d97ac642a292a71a807ef2c4691bd7e2f74
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   NSObject-SafeExpectations: 7d7f48df90df4e11da7cfe86b64f45eff7a7f521

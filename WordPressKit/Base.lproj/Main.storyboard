@@ -763,11 +763,31 @@
                         <segue destination="9iQ-bM-FKu" kind="presentation" identifier="ShowWebBrowser" id="4wf-xV-8FY"/>
                         <segue destination="ZdS-0o-eYh" kind="show" identifier="ShowPosts" id="D0y-5E-7IA"/>
                         <segue destination="6U3-yg-acK" kind="show" identifier="SiteSettings" id="6wU-c0-A8l"/>
+                        <segue destination="Afq-BV-PRa" kind="show" identifier="ShowPostsList" id="BWA-PV-b4a"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usX-EA-18d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3547" y="584"/>
+        </scene>
+        <!--文章-->
+        <scene sceneID="ryr-Hw-9sS">
+            <objects>
+                <viewController id="Afq-BV-PRa" customClass="PostsListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dHZ-W0-SuZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="yD6-zs-djY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P8V-fZ-hXM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="文章" id="qFm-0N-X8c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SnL-ex-c7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4475" y="-176"/>
         </scene>
         <!--文章-->
         <scene sceneID="5N3-CP-F1D">
@@ -1838,9 +1858,9 @@
         <image name="wordpress2" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="uAS-rc-Y1h"/>
         <segue reference="Afh-rz-RHD"/>
         <segue reference="UZO-Er-ThG"/>
-        <segue reference="4wf-xV-8FY"/>
-        <segue reference="uAS-rc-Y1h"/>
+        <segue reference="tSG-ye-M2V"/>
     </inferredMetricsTieBreakers>
 </document>

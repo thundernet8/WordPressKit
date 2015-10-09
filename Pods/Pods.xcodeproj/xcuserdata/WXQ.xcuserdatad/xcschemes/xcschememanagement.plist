@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FrameAccessor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KeychainItemWrapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,32 +72,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>039A4C4DCFFAD31CB1B77B2632F90E56</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>057F03BD3B07FDC25967D77937C236F1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>28B5D46B0F49893210BC8EBBC8B0882F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2FD6B0EB81C656F181974499C0D60789</key>
+		<key>363327FEEF9B39D114E3E51142A54FBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57622AA818BF982C1E2A01934AAE56D4</key>
+		<key>4000ADB74198D793C276AF0B40EF451C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69BB23A8ED0DC6FB5AE3F0450BB37D7E</key>
+		<key>46D5DE774E9BA5E0D175AA81F0324A4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4BBC8EFD739DEB4DBD655AC815C52C0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5528E56A3FAF29CF498A0BB2CAED6D24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AD3B425518F612122F3C3876FE11D2DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B06A73DF267359721611E4E5EADCC3EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C080B040F23229273CDD3D59D412469F</key>
+		<key>B7873D3787E11D34E6905EB3EB7BC0E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB82316417E59FA1D2A30BBD7E5A7312</key>
+		<key>FC6942D940842D90986D726006ED2EB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

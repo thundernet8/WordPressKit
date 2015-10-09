@@ -1,12 +1,12 @@
 //
-//  ListPostsViewController.m
+//  PostsListViewController.m
 //  WordPressKit
 //
-//  Created by wuxueqian on 15/9/21.
+//  Created by wuxueqian on 15/10/8.
 //  Copyright (c) 2015年 wuxueqian. All rights reserved.
 //
 
-#import "ListPostsViewController.h"
+#import "PostsListViewController.h"
 #import "PostCell.h"
 #import "WordPressApi.h"
 #import "Blog.h"
@@ -17,13 +17,13 @@
 #import "WebBrowserController.h"
 #import "MBProgressHUD.h"
 
-extern BOOL fetched;
-extern NSInteger const syncTimeInterval;
-extern NSString *const postType;
-extern NSString *const postStatus;
+BOOL fetched = NO;
+NSInteger const syncTimeInterval = 300;
+NSString *const postType = @"post";
+NSString *const postStatus = @"publish";
 
+@interface PostsListViewController () <UITableViewDelegate, UITableViewDataSource, PostCellDelegate>
 
-@interface ListPostsViewController () <PostCellDelegate>
 
 
 - (void)configureTableView;
@@ -39,35 +39,48 @@ extern NSString *const postStatus;
 - (void)addHud;
 - (void)removeHud;
 - (void)addNotificationObserver;
+- (void)addSCPullRefreshBlocks;
 
 @end
 
-@implementation ListPostsViewController
+@implementation PostsListViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self configureTableView];
     [self configVariable];
-    [self configureTableView];
     [self addHud];
+    [self addSCPullRefreshBlocks];
     
     [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
-
+    
     //[self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
-
+    
+    
     NSLog(@"viewDidLoad");
     
     
 }
+
+- (void)loadView {
+    [super loadView];
+    
+    [self configureTableView];
+    
+}
+
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSLog(@"view appear");
     [self addNotificationObserver];
     [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
-//    if (self.pc.chagedPostsNum != 0) {
-//        [self.tableView reloadData];
-//    }
+    //    if (self.pc.chagedPostsNum != 0) {
+    //        [self.tableView reloadData];
+    //    }
     [self removeHud];
+    NSLog(@"blog name is %@", self.blog.name);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,14 +111,14 @@ extern NSString *const postStatus;
     //去掉cell背景
     //cell.backgroundColor = [UIColor clearColor];
     //cell边框阴影效果
-//    UIView *view = cell.postCellWrapper;
-//    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, cell.bounds.size.width-8, cell.bounds.size.height-21)];
-//    view.layer.masksToBounds = NO;
-//    view.layer.shadowColor = [UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0].CGColor;
-//    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-//    view.layer.shadowOpacity = 0.2f;
-//    view.layer.shadowPath = shadowPath.CGPath;
-
+    //    UIView *view = cell.postCellWrapper;
+    //    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, cell.bounds.size.width-8, cell.bounds.size.height-21)];
+    //    view.layer.masksToBounds = NO;
+    //    view.layer.shadowColor = [UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0].CGColor;
+    //    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    //    view.layer.shadowOpacity = 0.2f;
+    //    view.layer.shadowPath = shadowPath.CGPath;
+    
 }
 
 /**
@@ -143,55 +156,64 @@ extern NSString *const postStatus;
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - configuration
 - (void)configureTableView
 {
+    //init
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    
+    //delegate
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     self.tableView.accessibilityIdentifier = @"PostsTable";
     self.tableView.isAccessibilityElement = YES;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:self.tableView];
     
     // Register the cells
     UINib *postTextCellNib = [UINib nibWithNibName:@"PostTextCell" bundle:[NSBundle mainBundle]];
@@ -215,7 +237,7 @@ extern NSString *const postStatus;
     NSString *cellIdentifier = (thumb > 0 && ![thumbPath isEqualToString:@""]) ? @"PostImageCell" : @"PostTextCell";
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     return cell;
-
+    
 }
 
 /**
@@ -245,7 +267,7 @@ extern NSString *const postStatus;
 - (void)configCellContent:(PostCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     RemotePost *post = self.pc.posts[indexPath.row];
-
+    
     [cell configCellWithPost:post inBlog:self.blog];
     
     //cell delegate
@@ -260,7 +282,7 @@ extern NSString *const postStatus;
 //{
 //    PostCell *textCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
 //    [self forceUpdateCellLayout:textCellForLayout];
-//    
+//
 //    PostCell *imageCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostImageCell" owner:nil options:nil] firstObject];
 //    [self forceUpdateCellLayout:imageCellForLayout];
 //}
@@ -305,30 +327,30 @@ extern NSString *const postStatus;
 #pragma mark - Post Actions
 
 /*
-- (void)createPost
-{
-    UINavigationController *navController;
-    
-    if ([WPPostViewController isNewEditorEnabled]) {
-        WPPostViewController *postViewController = [[WPPostViewController alloc] initWithDraftForBlog:self.blog];
-        navController = [[UINavigationController alloc] initWithRootViewController:postViewController];
-        navController.restorationIdentifier = WPEditorNavigationRestorationID;
-        navController.restorationClass = [WPPostViewController class];
-    } else {
-        WPLegacyEditPostViewController *editPostViewController = [[WPLegacyEditPostViewController alloc] initWithDraftForLastUsedBlog];
-        navController = [[UINavigationController alloc] initWithRootViewController:editPostViewController];
-        navController.restorationIdentifier = WPLegacyEditorNavigationRestorationID;
-        navController.restorationClass = [WPLegacyEditPostViewController class];
-    }
-    
-    [navController setToolbarHidden:NO]; // Fixes incorrect toolbar animation.
-    navController.modalPresentationStyle = UIModalPresentationFullScreen;
-    
-    [self presentViewController:navController animated:YES completion:nil];
-    
-    [WPAnalytics track:WPAnalyticsStatEditorCreatedPost withProperties:@{ @"tap_source": @"posts_view" }];
-}
-*/
+ - (void)createPost
+ {
+ UINavigationController *navController;
+ 
+ if ([WPPostViewController isNewEditorEnabled]) {
+ WPPostViewController *postViewController = [[WPPostViewController alloc] initWithDraftForBlog:self.blog];
+ navController = [[UINavigationController alloc] initWithRootViewController:postViewController];
+ navController.restorationIdentifier = WPEditorNavigationRestorationID;
+ navController.restorationClass = [WPPostViewController class];
+ } else {
+ WPLegacyEditPostViewController *editPostViewController = [[WPLegacyEditPostViewController alloc] initWithDraftForLastUsedBlog];
+ navController = [[UINavigationController alloc] initWithRootViewController:editPostViewController];
+ navController.restorationIdentifier = WPLegacyEditorNavigationRestorationID;
+ navController.restorationClass = [WPLegacyEditPostViewController class];
+ }
+ 
+ [navController setToolbarHidden:NO]; // Fixes incorrect toolbar animation.
+ navController.modalPresentationStyle = UIModalPresentationFullScreen;
+ 
+ [self presentViewController:navController animated:YES completion:nil];
+ 
+ [WPAnalytics track:WPAnalyticsStatEditorCreatedPost withProperties:@{ @"tap_source": @"posts_view" }];
+ }
+ */
 
 - (void)previewEditPost:(RemotePost *)post
 {
@@ -349,21 +371,21 @@ extern NSString *const postStatus;
 
 - (void)editPost:(RemotePost *)post withEditMode:(NSString *)mode
 {
-//    if ([WPPostViewController isNewEditorEnabled]) {
-//        WPPostViewController *postViewController = [[WPPostViewController alloc] initWithPost:apost mode:mode];
-//        postViewController.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:postViewController animated:YES];
-//    } else {
-//        // In legacy mode, view means edit
-//        WPLegacyEditPostViewController *editPostViewController = [[WPLegacyEditPostViewController alloc] initWithPost:apost];
-//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editPostViewController];
-//        [navController setToolbarHidden:NO]; // Fixes incorrect toolbar animation.
-//        navController.modalPresentationStyle = UIModalPresentationFullScreen;
-//        navController.restorationIdentifier = WPLegacyEditorNavigationRestorationID;
-//        navController.restorationClass = [WPLegacyEditPostViewController class];
-//        
-//        [self presentViewController:navController animated:YES completion:nil];
-//    }
+    //    if ([WPPostViewController isNewEditorEnabled]) {
+    //        WPPostViewController *postViewController = [[WPPostViewController alloc] initWithPost:apost mode:mode];
+    //        postViewController.hidesBottomBarWhenPushed = YES;
+    //        [self.navigationController pushViewController:postViewController animated:YES];
+    //    } else {
+    //        // In legacy mode, view means edit
+    //        WPLegacyEditPostViewController *editPostViewController = [[WPLegacyEditPostViewController alloc] initWithPost:apost];
+    //        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editPostViewController];
+    //        [navController setToolbarHidden:NO]; // Fixes incorrect toolbar animation.
+    //        navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    //        navController.restorationIdentifier = WPLegacyEditorNavigationRestorationID;
+    //        navController.restorationClass = [WPLegacyEditPostViewController class];
+    //
+    //        [self presentViewController:navController animated:YES completion:nil];
+    //    }
 }
 
 //- (void)promptThatPostRestoredToFilter:(PostListFilter *)filter
@@ -447,5 +469,34 @@ extern NSString *const postStatus;
         });
     }
 }
+
+#pragma mark - SCPullRefresh Blocks
+
+- (void)addSCPullRefreshBlocks
+{
+    __weak typeof(PostsListViewController) *weakSelf = self;
+    
+    self.refreshBlock = ^{
+        
+        __strong typeof(PostsListViewController) *strongSelf = weakSelf;
+        
+        [strongSelf performSelector:@selector(endRefresh) withObject:strongSelf afterDelay:2.0];
+        
+    };
+    
+    self.loadMoreBlock = ^{
+        
+        __strong typeof(PostsListViewController) *strongSelf = weakSelf;
+        
+        [strongSelf performSelector:@selector(endLoadMore) withObject:strongSelf afterDelay:2.0];
+        
+    };
+}
+
+#pragma mark - dealloc
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 @end
