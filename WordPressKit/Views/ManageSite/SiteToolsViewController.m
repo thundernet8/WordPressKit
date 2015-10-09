@@ -8,7 +8,6 @@
 
 #import "SiteToolsViewController.h"
 #import "ToolKit/WebBrowserController.h"
-#import "ManageSite/ListPostsViewController.h"
 #import "ManageSite/PostsListViewController.h"
 #import "ManageSite/SiteSettingViewController.h"
 
@@ -195,7 +194,6 @@
         WebBrowserController *controller = segue.destinationViewController;
         controller.url = (NSString *)sender;
     } else if ([segue.identifier isEqualToString:@"ShowPostsList"]){
-        //ListPostsViewController *controller = segue.destinationViewController;
         PostsListViewController *controller = segue.destinationViewController;
         controller.blog = sender;
     } else if ([segue.identifier isEqualToString:@"SiteSettings"]){
