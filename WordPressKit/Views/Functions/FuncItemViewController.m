@@ -14,6 +14,7 @@
 
 @interface FuncItemViewController () <UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+- (void)configureNavBackItemTitle;
 
 @end
 
@@ -41,7 +42,7 @@
     //textview 委托
     UITextView *sourcefileText = (UITextView *)[self.view viewWithTag:1108];
     sourcefileText.delegate = self;
-    
+    [self configureNavBackItemTitle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,6 +123,18 @@
         FileItemViewController *controller = segue.destinationViewController;
         controller.file = sender;
     }
+}
+
+#pragma mark - configure
+
+/**
+ *  配置即将push的VC的导航返回按钮的文字(只能在父级中配置)
+ */
+- (void)configureNavBackItemTitle
+{
+    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:[NSString string] style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
 }
 
 @end

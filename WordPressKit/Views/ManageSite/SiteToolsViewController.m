@@ -13,6 +13,8 @@
 
 @interface SiteToolsViewController ()
 
+- (void)configureNavBackItemTitle;
+
 @end
 
 @implementation SiteToolsViewController
@@ -43,6 +45,8 @@
     
     //tableview分割线颜色
     self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];
+    
+    [self configureNavBackItemTitle];
     
 }
 
@@ -200,6 +204,18 @@
         SiteSettingViewController *controller = segue.destinationViewController;
         controller.blog = sender;
     }
+}
+
+#pragma mark - configure
+
+/**
+ *  配置即将push的VC的导航返回按钮的文字(只能在父级中配置)
+ */
+- (void)configureNavBackItemTitle
+{
+    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:[NSString string] style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
 }
 
 @end

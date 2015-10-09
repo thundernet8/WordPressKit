@@ -25,6 +25,9 @@ NSString * const PostStatusScheduled = @"future";
 NSString * const PostStatusTrash = @"trash";
 NSInteger const NumberofPoststoFetch = 20;
 
+extern NSString *const postType;
+extern NSString *postStatus;
+
 
 @interface PostControll()
 
@@ -268,8 +271,8 @@ NSInteger const NumberofPoststoFetch = 20;
                success:(void (^)(NSArray *posts))success
                failure:(void (^)(NSError *error))failure {
     WPXMLRPCClient *client = [self getClientWithBlog:blog];
-    NSArray *statuses = @[PostStatusDraft, PostStatusPending, PostStatusPrivate, PostStatusPublish, PostStatusScheduled, PostStatusTrash];
-    NSString *postStatus = [statuses componentsJoinedByString:@","];
+    //NSArray *statuses = @[PostStatusDraft, PostStatusPending, PostStatusPrivate, PostStatusPublish, PostStatusScheduled, PostStatusTrash];
+    //NSString *postStatus = [statuses componentsJoinedByString:@","];
     NSDictionary *extraParameters = @{
                                       @"number": @20,
                                       @"post_type": postType,

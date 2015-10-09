@@ -20,7 +20,9 @@
 BOOL fetched = NO;
 NSInteger const syncTimeInterval = 300;
 NSString *const postType = @"post";
-NSString *const postStatus = @"publish";
+NSString *const postStatus = @"pending";
+CGFloat tableViewInsertTop = 64.0;
+CGFloat tableViewInsertBottom = 49.0;
 
 @interface PostsListViewController () <UITableViewDelegate, UITableViewDataSource, PostCellDelegate>
 
@@ -45,7 +47,6 @@ NSString *const postStatus = @"publish";
 
 @implementation PostsListViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self configureTableView];
@@ -65,9 +66,11 @@ NSString *const postStatus = @"publish";
 
 - (void)loadView {
     [super loadView];
-    
+    //顶部导航预留空间
+    self.tableViewInsertTop = tableViewInsertTop;
+    //底部选项卡预留空间
+    self.tableViewInsertBottom = tableViewInsertBottom;
     [self configureTableView];
-    
 }
 
 
@@ -80,7 +83,11 @@ NSString *const postStatus = @"publish";
     //        [self.tableView reloadData];
     //    }
     [self removeHud];
-    NSLog(@"blog name is %@", self.blog.name);
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    //self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -465,9 +472,11 @@ NSString *const postStatus = @"publish";
     if (chagedPostsNum > 0) {
         [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self endRefresh];
             [self.tableView reloadData];
         });
     }
+    //[self removeHud];
 }
 
 #pragma mark - SCPullRefresh Blocks
@@ -480,7 +489,8 @@ NSString *const postStatus = @"publish";
         
         __strong typeof(PostsListViewController) *strongSelf = weakSelf;
         
-        [strongSelf performSelector:@selector(endRefresh) withObject:strongSelf afterDelay:2.0];
+        //[strongSelf performSelector:@selector(endRefresh) withObject:strongSelf afterDelay:2.0];
+        [PostControll syncPostsWithBlog:strongSelf.blog postType:postType];
         
     };
     
@@ -489,7 +499,6 @@ NSString *const postStatus = @"publish";
         __strong typeof(PostsListViewController) *strongSelf = weakSelf;
         
         [strongSelf performSelector:@selector(endLoadMore) withObject:strongSelf afterDelay:2.0];
-        
     };
 }
 
