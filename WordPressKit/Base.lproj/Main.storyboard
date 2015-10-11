@@ -782,12 +782,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="文章" id="qFm-0N-X8c"/>
+                    <navigationItem key="navigationItem" title="文章" id="qFm-0N-X8c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BQX-Jk-7d5"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="6Cx-S0-qCN" id="VBL-Wa-XCo"/>
                         <segue destination="9iQ-bM-FKu" kind="presentation" identifier="PreviewPost" id="8dJ-qP-zOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnL-ex-c7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Cx-S0-qCN" customClass="NavBarTitleDropdownButton">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapFilterButton:" destination="Afq-BV-PRa" eventType="touchUpInside" id="tpP-cp-CkR"/>
+                    </connections>
+                </button>
             </objects>
             <point key="canvasLocation" x="4439" y="584"/>
         </scene>

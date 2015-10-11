@@ -11,6 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "PostActionBar.h"
 #import "PostActionBarItem.h"
+#import "RemotePostCategory.h"
 
 extern NSString * const PostStatusDraft;
 extern NSString * const PostStatusPending;
@@ -31,6 +32,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 @property (weak, nonatomic) IBOutlet UILabel *PostTitle;
 @property (weak, nonatomic) IBOutlet UILabel *PostContent;
 @property (weak, nonatomic) IBOutlet UILabel *PostDate;
+@property (weak, nonatomic) IBOutlet UILabel *PostCat;
 @property (weak, nonatomic) IBOutlet PostActionBar *ActionBar;
 
 
@@ -81,10 +83,17 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     self.PostContent.font = [UIFont systemFontOfSize:14.0f];
     //文章日期
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"YYYY-MM-dd HH:MM:SS"];
+    [dateFormat setDateFormat:@"YYYY-MM-dd HH:MM"];
     NSString *dateStr = [dateFormat stringFromDate:post.date];
     self.PostDate.text = dateStr;
-    
+    //文章分类
+    NSMutableArray *catNames = [NSMutableArray new];
+    for (RemotePostCategory *cat in post.categories) {
+        [catNames addObject:cat.name];
+    }
+    NSString *catStr = [catNames componentsJoinedByString:@" · "];
+    self.PostCat.text = catStr;
+    //Action bar
     [self configureActionBar];
 
     [self setNeedsUpdateConstraints];

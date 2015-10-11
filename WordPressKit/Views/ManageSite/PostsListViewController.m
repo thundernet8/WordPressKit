@@ -16,18 +16,30 @@
 #import "NSString+Util.h"
 #import "WebBrowserController.h"
 #import "MBProgressHUD.h"
+#import "NavBarTitleDropdownButton.h"
+#import "PostStatusType.h"
+#import "FiltersTableViewController.h"
+#import "UIDevice+ShortCut.h"
 
 BOOL fetched = NO;
 NSInteger const syncTimeInterval = 300;
-NSString *const postType = @"post";
-NSString *const postStatus = @"pending";
+NSString * postType = @"post";
+NSInteger postStatusIndex = 0;
+NSString * postStatus = @"publish";
+NSString * postStatusText = @"已发布 ";
 CGFloat tableViewInsertTop = 64.0;
 CGFloat tableViewInsertBottom = 49.0;
 
-@interface PostsListViewController () <UITableViewDelegate, UITableViewDataSource, PostCellDelegate>
+@interface PostsListViewController () <UITableViewDelegate, UITableViewDataSource, PostCellDelegate, UIPopoverControllerDelegate>
 
+@property (nonatomic, strong) NSArray *postStatusFilters;
 
+@property (weak, nonatomic) IBOutlet NavBarTitleDropdownButton *filterButton;
+@property (nonatomic, strong) UIPopoverController *postFilterPopoverController;
 
+- (IBAction)didTapFilterButton:(id)sender;
+
+- (void)configureNavbar;
 - (void)configureTableView;
 - (PostCell *)configCellNib:(NSIndexPath *)indexPath;
 - (void)configCellStyle:(PostCell *)cell;
@@ -42,6 +54,13 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)removeHud;
 - (void)addNotificationObserver;
 - (void)addSCPullRefreshBlocks;
+- (void)updateFilter;
+- (PostStatusType *)currentPostStatusFilter;
+- (NSInteger)currentPostStatusFilterIndex;
+- (void)updateFilterTitle;
+- (void)displayFiltersView;
+- (void)setCurrentFilterIndex:(NSInteger)newIndex;
+- (void)fetchPostsFromDBWithReloadTableView:(BOOL)reloadTableView;
 
 @end
 
@@ -49,15 +68,16 @@ CGFloat tableViewInsertBottom = 49.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self configureTableView];
+    [self addNotificationObserver];
     [self configVariable];
-    [self addHud];
+    [self updateFilter];
+    [self configureNavbar];
+    //[self configureTableView];
+    //[self addHud];
     [self addSCPullRefreshBlocks];
     
-    [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
-    
-    //[self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
-    
+
+    [self fetchPostsFromDBWithReloadTableView:NO];
     
     NSLog(@"viewDidLoad");
     
@@ -77,12 +97,7 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSLog(@"view appear");
-    [self addNotificationObserver];
     [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
-    //    if (self.pc.chagedPostsNum != 0) {
-    //        [self.tableView reloadData];
-    //    }
-    [self removeHud];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -207,6 +222,12 @@ CGFloat tableViewInsertBottom = 49.0;
  */
 
 #pragma mark - configuration
+- (void)configureNavbar
+{
+    self.navigationItem.titleView = self.filterButton;
+    [self updateFilterTitle];
+}
+
 - (void)configureTableView
 {
     //init
@@ -263,6 +284,7 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)configVariable
 {
     self.pc = [[PostControll alloc] initWithBlog:self.blog];
+    self.postStatusFilters = [PostStatusType newPostStatusFilterWithPostType:postType];
 }
 
 /**
@@ -444,17 +466,21 @@ CGFloat tableViewInsertBottom = 49.0;
 #pragma mark - hud
 - (void)addHud
 {
-    if (!self.pc.posts || self.pc.posts.count == 0) {
+    //if (!self.pc.posts || self.pc.posts.count == 0) {
         //添加指示器
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDAnimationFade;
         hud.labelText = @"加载中···";
-    }
+    //}
+    NSLog(@"add hud");
 }
 
 - (void)removeHud
 {
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    });
+    NSLog(@"remove hud");
 }
 
 #pragma mark - notification
@@ -463,6 +489,7 @@ CGFloat tableViewInsertBottom = 49.0;
 {
     //监听来自PostControll广播通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(writePostsToDBNotificationCallback:) name:@"writePostsToDBNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(queryedDBPostsNotificationCallback:) name:@"queryedDBPostsNotification" object:nil];
 }
 
 - (void)writePostsToDBNotificationCallback:(NSNotification *)notification
@@ -477,6 +504,13 @@ CGFloat tableViewInsertBottom = 49.0;
         });
     }
     //[self removeHud];
+}
+
+- (void)queryedDBPostsNotificationCallback:(NSNotification *)notification
+{
+    //NSDictionary *info = [notification userInfo];
+    //NSNumber *postsCount = [info valueForKey:@"queryedDBPostsCount"];
+    [self removeHud];
 }
 
 #pragma mark - SCPullRefresh Blocks
@@ -507,5 +541,151 @@ CGFloat tableViewInsertBottom = 49.0;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - Nav Filter Button
+- (IBAction)didTapFilterButton:(id)sender
+{
+    if (self.postFilterPopoverController) {
+        return;
+    }
+    [self displayFiltersView];
+}
 
+#pragma mark - post status filter
+- (void)updateFilter
+{
+    PostStatusType *filter = [self currentPostStatusFilter];
+    postStatusIndex = [self currentPostStatusFilterIndex];
+    postStatus = filter.postStatus;
+    postStatusText = filter.postStatusText;
+}
+
+- (PostStatusType *)currentPostStatusFilter
+{
+    return self.postStatusFilters[[self currentPostStatusFilterIndex]];
+}
+
+- (NSInteger)currentPostStatusFilterIndex
+{
+    NSNumber *index = [[NSUserDefaults standardUserDefaults] objectForKey:@"PostStatusFilterIndex"];
+    if (!index || [index integerValue] >= [self.postStatusFilters count]) {
+        return 0;
+    }
+    return [index integerValue];
+}
+
+- (void)updateFilterTitle
+{
+    [self.filterButton setAttributedTitleForTitle:postStatusText];
+}
+
+- (void)setCurrentFilterIndex:(NSInteger)newIndex
+{
+    NSInteger index = [self currentPostStatusFilterIndex];
+    if (newIndex == index) {
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:@(newIndex) forKey:@"PostStatusFilterIndex"];
+    [NSUserDefaults resetStandardUserDefaults];
+    [self updateFilter];
+    [self updateFilterTitle];
+
+    [self fetchPostsFromDBWithReloadTableView:YES];
+}
+
+
+#pragma mark - filter view controll
+- (void)displayFiltersView
+{
+    FiltersTableViewController *controller = [[FiltersTableViewController alloc] initWithStyle:UITableViewStylePlain andFilters:self.postStatusFilters andCurrentIndex:[self currentPostStatusFilterIndex]];
+    controller.onItemSelected = ^(NSNumber *selectedIndex) {
+        if (self.postFilterPopoverController) {
+            [self.postFilterPopoverController dismissPopoverAnimated:YES];
+            self.postFilterPopoverController = nil;
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        [self setCurrentFilterIndex:[selectedIndex integerValue]];
+    };
+    controller.onCancel = ^() {
+        [self handleFilterSelectionCanceled];
+    };
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    if ([[UIDevice alloc] isPad]) {
+        [self displayFilterPopover:navController];
+    } else {
+        [self displayFilterModal:navController];
+    }
+}
+
+- (void)displayFilterPopover:(UIViewController *)controller
+{
+    controller.preferredContentSize = CGSizeMake(320.0, 220.0);
+    
+    CGRect titleRect = self.navigationItem.titleView.frame;
+    titleRect = [self.navigationController.view convertRect:titleRect fromView:self.navigationItem.titleView.superview];
+    
+    self.postFilterPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
+    self.postFilterPopoverController.delegate = self;
+    [self.postFilterPopoverController presentPopoverFromRect:titleRect
+                                                      inView:self.navigationController.view
+                                    permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                    animated:YES];
+}
+
+- (void)displayFilterModal:(UIViewController *)controller
+{
+    controller.modalPresentationStyle = UIModalPresentationPageSheet;
+    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+         
+- (void)handleFilterSelectionCanceled
+{
+    if (self.postFilterPopoverController) {
+        [self popoverControllerDidDismissPopover:self.postFilterPopoverController];
+    }
+}
+
+#pragma mark - UIPopover Delegate Methods
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.postFilterPopoverController.delegate = nil;
+    self.postFilterPopoverController = nil;
+}
+
+#pragma mark - fetch posts
+
+- (void)fetchPostsFromDBWithReloadTableView:(BOOL)reloadTableView
+{
+    [self addHud];
+    [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
+    if (reloadTableView) {
+        [self.tableView reloadData];
+    }
+}
+         
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
 @end

@@ -17,16 +17,17 @@
 
 #import "DataModel.h"
 
-NSString * const PostStatusDraft = @"draft";
-NSString * const PostStatusPending = @"pending";
-NSString * const PostStatusPrivate = @"private";
-NSString * const PostStatusPublish = @"publish";
-NSString * const PostStatusScheduled = @"future";
-NSString * const PostStatusTrash = @"trash";
+extern NSString * const PostStatusDraft;
+extern NSString * const PostStatusPending;
+extern NSString * const PostStatusPrivate;
+extern NSString * const PostStatusPublish;
+extern NSString * const PostStatusScheduled;
+extern NSString * const PostStatusTrash;
 NSInteger const NumberofPoststoFetch = 20;
 
-extern NSString *const postType;
-extern NSString *postStatus;
+extern NSString * postType;
+extern NSInteger postStatusIndex;
+extern NSString * postStatus;
 
 
 @interface PostControll()
@@ -452,6 +453,10 @@ extern NSString *postStatus;
             }
             self.posts = results;
             
+            //广播通知ListPostsViewController
+            NSDictionary *info = @{@"queryedDBPostsCount" : [NSNumber numberWithInteger:results.count]};
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"queryedDBPostsNotification" object:nil userInfo:info];
+            
         }
         sqlite3_finalize(stmt);
         sqlite3_close(db);
@@ -577,7 +582,7 @@ extern NSString *postStatus;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
             sqlite3_bind_int(stmt, 1, [categoryId intValue]);
             if (sqlite3_step(stmt) == SQLITE_ROW) {
-                RemotePostCategory *cat;
+                RemotePostCategory *cat = [RemotePostCategory new];
                 cat.categoryID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
                 cat.name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)];
                 cat.parentID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];

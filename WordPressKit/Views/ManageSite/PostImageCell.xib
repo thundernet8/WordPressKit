@@ -85,24 +85,45 @@
                                 <rect key="frame" x="14" y="333" width="280" height="16"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="49U-0D-Tvs">
-                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                        <rect key="frame" x="0.0" y="-1" width="16" height="16"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afq-VS-2s4">
-                                        <rect key="frame" x="19" y="0.0" width="42" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0000-00-00 00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afq-VS-2s4">
+                                        <rect key="frame" x="19" y="0.0" width="122" height="16"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.66274509803921566" green="0.74117647058823533" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="post_icon_category" translatesAutoresizingMaskIntoConstraints="NO" id="dZv-Vd-Jwj">
+                                        <rect key="frame" x="140" y="0.0" width="16" height="16"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cym-AV-Qvi">
+                                        <rect key="frame" x="162" y="0.0" width="122" height="16"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.66274509800000003" green="0.74117647060000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="dZv-Vd-Jwj" firstAttribute="leading" secondItem="afq-VS-2s4" secondAttribute="trailing" constant="8" id="AoL-N9-6D4"/>
+                                    <constraint firstItem="cym-AV-Qvi" firstAttribute="leading" secondItem="dZv-Vd-Jwj" secondAttribute="trailing" constant="3" id="BDk-je-lLB"/>
                                     <constraint firstItem="49U-0D-Tvs" firstAttribute="leading" secondItem="Dhi-lC-n9m" secondAttribute="leading" id="BVZ-Lc-uNK"/>
-                                    <constraint firstItem="49U-0D-Tvs" firstAttribute="top" secondItem="Dhi-lC-n9m" secondAttribute="top" id="LnO-Tx-MaI"/>
+                                    <constraint firstItem="49U-0D-Tvs" firstAttribute="top" secondItem="Dhi-lC-n9m" secondAttribute="top" constant="-1" id="LnO-Tx-MaI"/>
                                     <constraint firstItem="afq-VS-2s4" firstAttribute="leading" secondItem="49U-0D-Tvs" secondAttribute="trailing" constant="3" id="bEh-B0-isN"/>
                                     <constraint firstItem="afq-VS-2s4" firstAttribute="top" secondItem="Dhi-lC-n9m" secondAttribute="top" id="dRv-gf-Lkl"/>
+                                    <constraint firstItem="cym-AV-Qvi" firstAttribute="top" secondItem="Dhi-lC-n9m" secondAttribute="top" id="dpe-wX-gZu"/>
+                                    <constraint firstItem="cym-AV-Qvi" firstAttribute="leading" secondItem="dZv-Vd-Jwj" secondAttribute="trailing" constant="3" id="fi4-Ld-mVS"/>
+                                    <constraint firstItem="dZv-Vd-Jwj" firstAttribute="top" secondItem="Dhi-lC-n9m" secondAttribute="top" constant="-1" id="o9W-0t-iOp"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BDk-je-lLB"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qjj-5z-oip" customClass="PostActionBar">
                                 <rect key="frame" x="0.0" y="366" width="308" height="37"/>
@@ -158,6 +179,7 @@
                 <outlet property="BlogAvatar" destination="caK-IK-tbC" id="Ulo-E3-yVt"/>
                 <outlet property="BlogName" destination="0o8-iN-IOg" id="frY-Bw-8cH"/>
                 <outlet property="PostAuthor" destination="LVq-ki-0f2" id="nXY-tJ-mL7"/>
+                <outlet property="PostCat" destination="cym-AV-Qvi" id="J7S-df-z95"/>
                 <outlet property="PostContent" destination="PMZ-9L-2KH" id="GAj-ku-S3C"/>
                 <outlet property="PostDate" destination="afq-VS-2s4" id="gdP-kl-nXh"/>
                 <outlet property="PostHead" destination="2Rw-s2-CXB" id="ZYM-Tm-DaK"/>
@@ -170,6 +192,7 @@
     </objects>
     <resources>
         <image name="icon_blogavatar" width="32" height="32"/>
+        <image name="post_icon_category" width="16" height="16"/>
         <image name="post_icon_time" width="16" height="16"/>
     </resources>
 </document>

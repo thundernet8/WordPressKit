@@ -44,7 +44,7 @@
     blogUrl.text = [[self.blog.url stringByReplacingOccurrencesOfString:@"http://" withString:@""] stringByReplacingOccurrencesOfString:@"/" withString:@""];
     
     //tableview分割线颜色
-    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];
+    self.tableView.separatorColor = kSeparatorColor;
     
     [self configureNavBackItemTitle];
     
