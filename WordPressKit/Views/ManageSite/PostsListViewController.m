@@ -19,7 +19,6 @@
 #import "NavBarTitleDropdownButton.h"
 #import "PostStatusType.h"
 #import "FiltersTableViewController.h"
-#import "UIDevice+ShortCut.h"
 
 BOOL fetched = NO;
 NSInteger const syncTimeInterval = 300;
@@ -611,7 +610,7 @@ CGFloat tableViewInsertBottom = 49.0;
     };
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    if ([[UIDevice alloc] isPad]) {
+    if (IS_IPAD) {
         [self displayFilterPopover:navController];
     } else {
         [self displayFilterModal:navController];

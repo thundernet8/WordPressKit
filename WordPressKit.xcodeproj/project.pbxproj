@@ -50,7 +50,6 @@
 		B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */; };
 		B4E0DD3C1BC93EBA0052519A /* PostStatusType.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DD3B1BC93EBA0052519A /* PostStatusType.m */; };
 		B4E0DD401BC95DF20052519A /* FiltersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DD3F1BC95DF20052519A /* FiltersTableViewController.m */; };
-		B4E0DD4A1BC96ECE0052519A /* UIDevice+ShortCut.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DD491BC96ECE0052519A /* UIDevice+ShortCut.m */; };
 		B4E0DF471BAE602D00289630 /* SiteToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */; };
 		B4E0DF4A1BAEB0B000289630 /* WebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DF491BAEB0B000289630 /* WebBrowserController.m */; };
 		B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */; };
@@ -157,8 +156,6 @@
 		B4E0DD3B1BC93EBA0052519A /* PostStatusType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostStatusType.m; sourceTree = "<group>"; };
 		B4E0DD3E1BC95DF20052519A /* FiltersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersTableViewController.h; sourceTree = "<group>"; };
 		B4E0DD3F1BC95DF20052519A /* FiltersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersTableViewController.m; sourceTree = "<group>"; };
-		B4E0DD481BC96ECE0052519A /* UIDevice+ShortCut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+ShortCut.h"; path = "ExternTool/UIDevice+ShortCut.h"; sourceTree = "<group>"; };
-		B4E0DD491BC96ECE0052519A /* UIDevice+ShortCut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+ShortCut.m"; path = "ExternTool/UIDevice+ShortCut.m"; sourceTree = "<group>"; };
 		B4E0DF451BAE602D00289630 /* SiteToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteToolsViewController.h; sourceTree = "<group>"; };
 		B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteToolsViewController.m; sourceTree = "<group>"; };
 		B4E0DF481BAEB0B000289630 /* WebBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebBrowserController.h; path = ToolKit/WebBrowserController.h; sourceTree = "<group>"; };
@@ -255,8 +252,6 @@
 				B465722F1BB2F39B00835972 /* NSString+Util.m */,
 				B46572371BB2F87200835972 /* NSMutableDictionary+Helpers.h */,
 				B46572381BB2F87200835972 /* NSMutableDictionary+Helpers.m */,
-				B4E0DD481BC96ECE0052519A /* UIDevice+ShortCut.h */,
-				B4E0DD491BC96ECE0052519A /* UIDevice+ShortCut.m */,
 			);
 			name = ExternTool;
 			sourceTree = "<group>";
@@ -651,7 +646,6 @@
 				B4DB8A921BB4090200058147 /* PostControll.m in Sources */,
 				B46004D41B8CBB5000757221 /* SourcefileViewController.m in Sources */,
 				B46004CE1B8CBB1000757221 /* FunctionsViewController.m in Sources */,
-				B4E0DD4A1BC96ECE0052519A /* UIDevice+ShortCut.m in Sources */,
 				B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */,
 				B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */,
 				B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */,

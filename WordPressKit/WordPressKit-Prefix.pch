@@ -24,4 +24,14 @@
 #define kWhiteColor ([UIColor whiteColor])
 #define kNaviBackgroundColorBlue ([[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0])
 
+//Device
+//判断是否为iPhone
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+//判断是否为iPad
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+//判断是否为ipod
+#define IS_IPOD ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
+
 #endif
