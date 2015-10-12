@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *goBackBtn;
 @property (weak, nonatomic) IBOutlet UIButton *goForwardBtn;
 @property (weak, nonatomic) IBOutlet UIButton *stopBtn;
+@property(nonatomic,copy) UIActivityViewControllerCompletionWithItemsHandler completionHandler;
 - (IBAction)closePage:(UIButton *)sender;
 - (IBAction)moreFunc:(UIButton *)sender;
 - (IBAction)goBack:(UIButton *)sender;
@@ -116,9 +117,36 @@
 }
 
 - (IBAction)moreFunc:(UIButton *)sender{
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"分享" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"破坏性按钮" otherButtonTitles:@"分享到微博", @"分享到朋友圈", nil];
-    [actionSheet showInView:self.view];
-
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"分享" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"破坏性按钮" otherButtonTitles:@"分享到微博", @"分享到朋友圈", nil];
+//    [actionSheet showInView:self.view];
+    
+    //使用UIActivityViewController
+    NSString *textToShare = self.pageTitle.text;
+    //UIImage *imageToShare = [UIImage imageNamed:@"iosshare.jpg"];
+    NSURL *urlToShare = self.webView.request.mainDocumentURL;
+    NSArray *activityItems = @[textToShare, urlToShare];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    UIActivityViewControllerCompletionWithItemsHandler block = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError)
+    {
+        NSLog(@"activityType :%@", activityType);
+        if (completed)
+        {
+            NSLog(@"completed");
+        }
+        else
+        {
+            NSLog(@"cancel");
+        }
+        
+        //返回上一级界面
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        
+    };
+    
+    // 初始化completionHandler，当post结束之后（无论是done还是cancell）该blog都会被调用
+    activityVC.completionWithItemsHandler = block;
+    [self presentViewController:activityVC animated:YES completion:nil];
     
 }
 

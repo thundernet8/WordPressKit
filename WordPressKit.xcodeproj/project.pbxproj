@@ -42,6 +42,7 @@
 		B4DB7D9C1BBF6C2300DC203A /* PostActionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9B1BBF6C2300DC203A /* PostActionBarItem.m */; };
 		B4DB7D9F1BBF6EF000DC203A /* PostActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9E1BBF6EF000DC203A /* PostActionBar.m */; };
 		B4DB8A921BB4090200058147 /* PostControll.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB8A911BB4090200058147 /* PostControll.m */; };
+		B4DBDCDB1BCC0887005AF2EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DBDCD51BCBF18B005AF2EC /* SystemConfiguration.framework */; };
 		B4DC00421BC21B6C00B8F194 /* SiteSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */; };
 		B4DD02EA1BB045F20066C8E5 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD02E91BB045F20066C8E5 /* PostCell.m */; };
 		B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044C1B8DD85500E2ACA3 /* FuncItemViewController.m */; };
@@ -143,6 +144,13 @@
 		B4DBDCD51BCBF18B005AF2EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B4DBDCD71BCBF4A4005AF2EC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B4DBDCD91BCBF4B2005AF2EC /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		B4DBDCDC1BCC0891005AF2EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B4DBDCDE1BCC08A2005AF2EC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B4DBDCE01BCC08AA005AF2EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B4DBDCE21BCC08B6005AF2EC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		B4DBDCE41BCC08C3005AF2EC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B4DBDCE81BCC090B005AF2EC /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		B4DBDCEA1BCC0916005AF2EC /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		B4DC00401BC21B6C00B8F194 /* SiteSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteSettingViewController.h; sourceTree = "<group>"; };
 		B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteSettingViewController.m; sourceTree = "<group>"; };
 		B4DD02E81BB045F20066C8E5 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DBDCDB1BCC0887005AF2EC /* SystemConfiguration.framework in Frameworks */,
 				B41049E61BA9AA7000109B9B /* Security.framework in Frameworks */,
 				B4E2BBA01B8F40B100B10CF2 /* libsqlite3.0.dylib in Frameworks */,
 				872EA6B293FCE6631BE2C2E8 /* libPods.a in Frameworks */,
@@ -490,6 +499,13 @@
 		B622458F32FA8E0D941839DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B4DBDCEA1BCC0916005AF2EC /* libiconv.dylib */,
+				B4DBDCE81BCC090B005AF2EC /* libstdc++.dylib */,
+				B4DBDCE41BCC08C3005AF2EC /* CoreText.framework */,
+				B4DBDCE21BCC08B6005AF2EC /* ImageIO.framework */,
+				B4DBDCE01BCC08AA005AF2EC /* QuartzCore.framework */,
+				B4DBDCDE1BCC08A2005AF2EC /* CoreTelephony.framework */,
+				B4DBDCDC1BCC0891005AF2EC /* CoreGraphics.framework */,
 				B4DBDCD91BCBF4B2005AF2EC /* libc++.dylib */,
 				B4DBDCD71BCBF4A4005AF2EC /* libz.dylib */,
 				B4DBDCD51BCBF18B005AF2EC /* SystemConfiguration.framework */,
