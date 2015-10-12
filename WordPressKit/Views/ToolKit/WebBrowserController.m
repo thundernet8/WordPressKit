@@ -7,10 +7,8 @@
 //
 
 #import "WebBrowserController.h"
-#import "UMSocial.h"
-#import "UMSocialWechatHandler.h"
 
-@interface WebBrowserController () <UIWebViewDelegate, UMSocialUIDelegate, UMSocialDataDelegate>
+@interface WebBrowserController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIButton *leftTopBtn;
 @property (weak, nonatomic) IBOutlet UILabel *pageTitle;
@@ -120,20 +118,7 @@
 - (IBAction)moreFunc:(UIButton *)sender{
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"分享" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"破坏性按钮" otherButtonTitles:@"分享到微博", @"分享到朋友圈", nil];
     [actionSheet showInView:self.view];
-//    NSArray *shareSnsNames = @[UMShareToSina,UMShareToTencent,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite,UMShareToFacebook,UMShareToTwitter,UMShareToRenren,UMShareToEmail,UMShareToSms];
-//    
-//    [UMSocialSnsService presentSnsIconSheetView:self
-//                                         appKey:UM_AppKey
-//                                      shareText:@"友盟社会化分享让您快速实现分享等社会化功能，http://umeng.com/social"
-//                                     shareImage:[UIImage imageNamed:@"icon_tableview_loading"]
-//                                shareToSnsNames:shareSnsNames
-//                                       delegate:self];
-    
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:@"分享内嵌文字" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            NSLog(@"分享成功！");
-        }
-    }];
+
     
 }
 
@@ -170,23 +155,6 @@
 }
 */
 
-#pragma mark - share delegate
-- (void)didFinishGetUMSocialDataResponse:(UMSocialResponseEntity *)response
-{
-    
-}
-
-
-#pragma mark - share callback
--(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-    }
-}
 
 
 
