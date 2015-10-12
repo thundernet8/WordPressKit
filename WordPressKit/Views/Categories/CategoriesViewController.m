@@ -10,6 +10,7 @@
 #import "CatItem.h"
 #import "DataModel.h"
 #import "CatFuncItemsViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface CategoriesViewController ()
 
@@ -43,6 +44,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
 /*

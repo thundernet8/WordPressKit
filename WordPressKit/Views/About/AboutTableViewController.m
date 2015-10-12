@@ -9,6 +9,7 @@
 #import "AboutTableViewController.h"
 #import "UIImageView+WebCache.h"
 #import "WebBrowserController.h"
+#import "UIImageView+WebCache.h"
 
 @interface AboutTableViewController ()
 
@@ -184,6 +185,7 @@
 {
     //SDWebImageCache
     [[SDImageCache sharedImageCache] clearDisk];
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];//内存缓存清理 防止内存泄露
     //sourcefile代码缓存
     NSString *codeSourceCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/SourceFiles"];
     NSFileManager *manager = [NSFileManager defaultManager];

@@ -14,6 +14,7 @@
 #import "KeychainItemWrapper.h"
 #import "SiteToolsViewController.h"
 #import "MBProgressHUD.h"
+#import "UIImageView+WebCache.h"
 
 @interface ManagesiteViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -71,6 +72,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
 //监听广播通知执行页面重载

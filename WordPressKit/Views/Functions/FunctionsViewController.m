@@ -12,6 +12,7 @@
 #import "DataModel.h"
 #import "FuncItemViewController.h"
 #import "CatItem.h"
+#import "UIImageView+WebCache.h"
 
 @interface FunctionsViewController () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -80,6 +81,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
 /*

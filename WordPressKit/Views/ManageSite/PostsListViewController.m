@@ -19,6 +19,7 @@
 #import "NavBarTitleDropdownButton.h"
 #import "PostStatusType.h"
 #import "FiltersTableViewController.h"
+#import "UIImageView+WebCache.h"
 
 NSInteger const syncTimeInterval = 300;
 NSInteger const numOfPostsPerPage = 10;
@@ -99,23 +100,27 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSLog(@"view appear");
-    [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
+    if (self.pc.posts.count <= numOfPostsPerPage) {
+        [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
+        page = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPage));
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
 #pragma mark - Table view data source and delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"numberOfRowsInSection:");
+    //NSLog(@"numberOfRowsInSection:");
     return self.pc.posts ? [self.pc.posts count] : 0;
 }
 
 - (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cellforrowatindexpath");
+    //NSLog(@"cellforrowatindexpath");
     PostCell *cell = [self configCellNib:indexPath];
     [self configCellStyle:cell];
     [self configCellContent:cell atIndexPath:indexPath];
@@ -617,7 +622,7 @@ CGFloat tableViewInsertBottom = 49.0;
 
 - (void)displayFilterPopover:(UIViewController *)controller
 {
-    controller.preferredContentSize = CGSizeMake(320.0, 220.0);
+    controller.preferredContentSize = CGSizeMake(320.0, 264.0);
     
     CGRect titleRect = self.navigationItem.titleView.frame;
     titleRect = [self.navigationController.view convertRect:titleRect fromView:self.navigationItem.titleView.superview];
