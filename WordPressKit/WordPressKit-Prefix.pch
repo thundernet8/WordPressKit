@@ -34,4 +34,7 @@
 //判断是否为ipod
 #define IS_IPOD ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
 
+//UM Share AppKey
+#define UM_AppKey ([NSString stringWithFormat:@"561bb4e0e0f55ab548001090"])
+
 #endif

@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "DDLog.h"
-#import "DDTTYLogger.h"
-#import "DDFileLogger.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +18,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //UMeng share AppKey
+    [UMSocialData setAppKey:UM_AppKey];
+    //设置微信AppId、appSecret，分享url
+    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.fedepot.com"];
+    //iOS9 对未安装客户端的应用分享进行隐藏
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
+    
     
     return YES;
 }
@@ -44,6 +49,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//UM Share delegate
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
 }
 
 @end
