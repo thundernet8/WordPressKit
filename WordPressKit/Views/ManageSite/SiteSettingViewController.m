@@ -200,7 +200,6 @@
 - (void)retrieveSiteOptions:(Blog *)blog
 {
     NSString *password = [self.dataModel readKeyChainWithId:blog.id];
-    NSLog(@"password is %@", password);
     WordPressXMLRPCApi *xmlrpcApi = [[WordPressXMLRPCApi alloc] initWithXMLRPCEndpoint:[NSURL URLWithString:blog.xmlrpc] username:blog.userName password:password];
     [xmlrpcApi getBlogOptionsWithSuccess:^(id options) {
         self.blogOptions = options;
@@ -214,7 +213,6 @@
         UILabel *subTitleLabel = [subTitleCell.contentView.subviews lastObject];
         subTitleLabel.text = self.blog.subTitle;
         
-        //NSLog(@"options are %@", options);
     } failure:^(NSError *error) {
         NSLog(@"error are %@", error.description);
     }];

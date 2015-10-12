@@ -59,6 +59,7 @@
 {
     self.tableView.backgroundColor = kBackgroundColorLightBlue;
     self.tableView.separatorColor = kSeparatorColor;
+    self.tableView.scrollEnabled = NO;
 }
 
 - (void)configureNavibar

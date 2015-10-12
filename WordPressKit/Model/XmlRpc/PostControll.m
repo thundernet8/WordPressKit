@@ -25,6 +25,8 @@ extern NSString * const PostStatusScheduled;
 extern NSString * const PostStatusTrash;
 NSInteger const NumberofPoststoFetch = 20;
 
+extern NSInteger numOfPostsPerPage;
+extern NSUInteger page;
 extern NSString * postType;
 extern NSInteger postStatusIndex;
 extern NSString * postStatus;
@@ -115,17 +117,19 @@ extern NSString * postStatus;
  *
  *  @param blog 博客对象，用于获取用户名密码以及xmlrpc接口地址
  */
-+ (void)syncPostsWithBlog:(Blog *)blog postType:(NSString *)postType
++ (void)syncPostsWithBlog:(Blog *)blog postType:(NSString *)postType page:(NSInteger)page
 {
     PostControll *pc = [[PostControll alloc] initWithBlog:blog];
     [pc configSyncStatus:YES ForBlog:blog];
-    [self getPostsOfType:postType forBlog:blog options:nil success:^(NSArray *posts) {
+    NSDictionary *options = @{@"offset": [NSNumber numberWithInteger:(page-1)*numOfPostsPerPage]};
+    [self getPostsOfType:postType forBlog:blog options:options success:^(NSArray *posts) {
         [self writePostsToDB:posts inBlog:blog postType:postType];
         [pc configSyncStatus:NO ForBlog:blog];
         [pc configNetworkStatus:YES];
         
     } failure:^(NSError *error) {
         //*****************************//
+        NSLog(@"sync error: %@",error.description);
         [pc configSyncStatus:NO ForBlog:blog];
         [pc configNetworkStatus:NO];
         
@@ -146,7 +150,7 @@ extern NSString * postStatus;
         [pc writePostToDB:post inBlog:blog];
     }
     //广播通知ListPostsViewController
-    NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInteger:pc.chagedPostsNum]};
+    NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInteger:pc.chagedPostsNum],@"netWorkOk" : @YES};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
 }
 
@@ -275,9 +279,10 @@ extern NSString * postStatus;
     //NSArray *statuses = @[PostStatusDraft, PostStatusPending, PostStatusPrivate, PostStatusPublish, PostStatusScheduled, PostStatusTrash];
     //NSString *postStatus = [statuses componentsJoinedByString:@","];
     NSDictionary *extraParameters = @{
-                                      @"number": @20,
+                                      @"number": [NSNumber numberWithInteger: numOfPostsPerPage],
                                       @"post_type": postType,
                                       @"post_status": postStatus,
+                                      @"offset": [NSNumber numberWithInteger:(page-1)*numOfPostsPerPage]
                                       };
     if (options) {
         NSMutableDictionary *mutableParameters = [extraParameters mutableCopy];
@@ -462,6 +467,96 @@ extern NSString * postStatus;
         sqlite3_close(db);
     }
     
+}
+
+/**
+ *  从数据库查询获取最新的文章数据
+ *
+ *  @param postType   WordPress文章类型
+ *  @param postStatus WordPress 文章状态
+ *  @param blog       博客对象
+ *  @param page       页码
+ *
+ *  @return Posts数组
+ */
+- (NSArray *)loadMoreDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog page:(NSInteger)page
+{
+    NSString *path = [self userDataFilePath];
+    const char *npath = [path UTF8String];
+    //打开数据库
+    if (sqlite3_open(npath, &db) != SQLITE_OK) {
+        NSAssert(NO, @"打开数据库文件失败");
+    }else{
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM POSTS WHERE TYPE = '%@' AND STATUS = '%@' AND SITEID = %i ORDER BY POSTID DESC LIMIT %li,%i",postType,postStatus,(int)blog.id,(int)numOfPostsPerPage*(page-1),(int)numOfPostsPerPage];
+        const char *nsql = [sql UTF8String];
+        sqlite3_stmt *stmt;
+        if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK) {
+            NSMutableArray *results = [[NSMutableArray alloc] init];
+            while (sqlite3_step(stmt) == SQLITE_ROW) {
+                RemotePost *post = [[RemotePost alloc] init];
+                // col 0 为自增序号，无需记录至post对象
+                post.postID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
+                post.siteID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 2)];
+                post.authorAvatarURL = sqlite3_column_text(stmt, 3) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 3)] : @"";
+                post.authorDisplayName = sqlite3_column_text(stmt, 4) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 4)] : @"";
+                post.authorEmail = sqlite3_column_text(stmt, 5) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 5)] : @"";
+                post.authorURL = sqlite3_column_text(stmt, 6) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 6)] : @"";
+                post.authorID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 7)];
+                post.date = [self getDateFromStr:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 8)]];
+                post.title = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 9)];
+                post.URL = [NSURL URLWithString:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 10)]];
+                post.shortURL = sqlite3_column_text(stmt, 11) ? [NSURL URLWithString:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 11)]] : nil;
+                post.content = sqlite3_column_text(stmt, 12) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 12)] : @"";
+                post.excerpt = sqlite3_column_text(stmt, 13) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 13)] : @"";
+                post.slug = sqlite3_column_text(stmt, 14) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 14)] : @"";
+                post.status = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 15)];
+                post.password = sqlite3_column_text(stmt, 16) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 16)] : @"";
+                post.parentID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 17)];
+                post.postThumbnailID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 18)];
+                post.postThumbnailPath = sqlite3_column_text(stmt, 19) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 19)] : @"";
+                post.type = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 20)];
+                post.format = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 21)];
+                post.commentCount = [NSNumber numberWithInt:sqlite3_column_int(stmt, 22)];
+                //categories
+                NSArray *catIds = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 23)] componentsSeparatedByString:@","];
+                NSMutableArray *cats = [NSMutableArray new];
+                for (NSString *catId in catIds) {
+                    NSNumber *categoryId = [NSNumber numberWithInteger:[catId integerValue]];
+                    RemotePostCategory *category = [self queryCategoryWithId:categoryId];
+                    if (category) {
+                        [cats addObject:category];
+                    }
+                }
+                post.categories = [cats copy];
+                //tags
+                NSArray *tagNames = sqlite3_column_text(stmt, 24) ? [[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 24)] componentsSeparatedByString:@","] : nil;
+                post.tags = tagNames;
+                
+                post.pathForDisplayImage = sqlite3_column_text(stmt, 25) ? [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 25)] : @"";
+                
+                //meta
+                NSString *metaStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 26)];
+                NSArray *metaArr = [NSJSONSerialization JSONObjectWithData:[metaStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+                post.metadata = metaArr;
+                
+                [results addObject:post];
+                
+            }
+            //合并posts
+            NSLog(@"old posts: %i \r\nloadmore count: %i \r\npage is %i\r\n",self.posts.count,results.count,page);
+            self.posts = [self.posts arrayByAddingObjectsFromArray:results];
+            return results;
+            
+//            //广播通知ListPostsViewController
+//            NSDictionary *info = @{@"queryedDBPostsCount" : [NSNumber numberWithInteger:results.count]};
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"queryedDBPostsNotification" object:nil userInfo:info];
+            
+        }
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+    }
+    
+    return nil;
 }
 
 /**
@@ -687,7 +782,7 @@ extern NSString * postStatus;
     int nowTimestamp = [[NSDate date] timeIntervalSince1970];
     int lastSyncTimestamp = [self getSiteLastSyncTimestamp:blog.id];
     if (lastSyncTimestamp + timeInterval < nowTimestamp) {
-        [PostControll syncPostsWithBlog:blog postType:postType];
+        [PostControll syncPostsWithBlog:blog postType:postType page:page];
         //DDLogError(@"last is %i and now is %i",lastSyncTimestamp,nowTimestamp);
     }
 }
@@ -700,6 +795,11 @@ extern NSString * postStatus;
 - (void)configNetworkStatus:(BOOL)status
 {
     self.networkFailure = status;
+    if (!status) {
+        //广播通知ListPostsViewController网络加载失败
+        NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInt:0],@"netWorkOk" : @NO};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
+    }
 }
 
 

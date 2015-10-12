@@ -49,7 +49,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 }
 
 - (void)didMoveToSuperview{
-    //NSLog(@"didMoveToSuperview");
+   
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -108,7 +108,6 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
  */
 - (CGSize)sizeThatFits:(CGSize)size
 {
-    NSLog(@"sizing begin");
     CGFloat height = CGRectGetMinY(self.PostWrapper.frame);
     
     height += CGRectGetMinY(self.PostHead.frame);
@@ -131,7 +130,6 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     height += 16;
     
     height += CGRectGetHeight(self.ActionBar.frame);
-    NSLog(@"sizing end");
     return CGSizeMake(size.width, height);
 }
 
@@ -147,11 +145,9 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     }
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
     [manager downloadImageWithURL:[NSURL URLWithString:post.postThumbnailPath] options:SDWebImageContinueInBackground progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-        NSLog(@"download progress is %f", receivedSize/expectedSize*1.0);
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         if (finished) {
-            NSLog(@"download finished");
             self.PostThumb.image = image;
         }
     }];

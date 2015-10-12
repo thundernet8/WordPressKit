@@ -20,12 +20,13 @@
 #import "PostStatusType.h"
 #import "FiltersTableViewController.h"
 
-BOOL fetched = NO;
 NSInteger const syncTimeInterval = 300;
+NSInteger const numOfPostsPerPage = 10;
+NSUInteger page = 1;
 NSString * postType = @"post";
 NSInteger postStatusIndex = 0;
 NSString * postStatus = @"publish";
-NSString * postStatusText = @"已发布 ";
+NSString * postStatusText = @"已发布";
 CGFloat tableViewInsertTop = 64.0;
 CGFloat tableViewInsertBottom = 49.0;
 
@@ -60,6 +61,8 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)displayFiltersView;
 - (void)setCurrentFilterIndex:(NSInteger)newIndex;
 - (void)fetchPostsFromDBWithReloadTableView:(BOOL)reloadTableView;
+
+- (void)appendMorePosts:(NSArray *)morePosts;
 
 @end
 
@@ -99,11 +102,6 @@ CGFloat tableViewInsertBottom = 49.0;
     [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    //self.automaticallyAdjustsScrollViewInsets = YES;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -111,13 +109,11 @@ CGFloat tableViewInsertBottom = 49.0;
 
 #pragma mark - Table view data source and delegate
 
-//行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection:");
     return self.pc.posts ? [self.pc.posts count] : 0;
 }
 
-//cell实例化
 - (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"cellforrowatindexpath");
     PostCell *cell = [self configCellNib:indexPath];
@@ -160,8 +156,6 @@ CGFloat tableViewInsertBottom = 49.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"heightForRowAtIndexPath:");
-    //return CGRectGetHeight(cell.frame);
     RemotePost *post = self.pc.posts[indexPath.row];
     PostCell *cell;
     if ([post.postThumbnailPath isEmpty]) {
@@ -175,50 +169,6 @@ CGFloat tableViewInsertBottom = 49.0;
     return height;
 }
 
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 #pragma mark - configuration
 - (void)configureNavbar
@@ -471,7 +421,6 @@ CGFloat tableViewInsertBottom = 49.0;
         hud.mode = MBProgressHUDAnimationFade;
         hud.labelText = @"加载中···";
     //}
-    NSLog(@"add hud");
 }
 
 - (void)removeHud
@@ -479,7 +428,6 @@ CGFloat tableViewInsertBottom = 49.0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     });
-    NSLog(@"remove hud");
 }
 
 #pragma mark - notification
@@ -494,14 +442,23 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)writePostsToDBNotificationCallback:(NSNotification *)notification
 {
     NSDictionary *info = [notification userInfo];
-    NSNumber *chagedPostsNum = [info valueForKey:@"chagedPostsNum"];
-    if (chagedPostsNum > 0) {
-        [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
+    NSNumber *chagedPostsNum = [info objectForKey:@"chagedPostsNum"];
+    BOOL netWorkOk = [[info objectForKey:@"netWorkOk"] boolValue];
+    if (!netWorkOk) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"\r\n网络连接或博客服务器存在问题,更新失败\r\n" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    if ([chagedPostsNum intValue] > 0 && ![self isLoadingMore]) {
+        [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:numOfPostsPerPage];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self endRefresh];
+            //[self endRefresh];
             [self.tableView reloadData];
         });
+    }else if ([self isLoadingMore]){
+        [self hasSyncMorePosts];
     }
+    [self endRefresh];
+    //[self endLoadMore];
     //[self removeHud];
 }
 
@@ -523,17 +480,58 @@ CGFloat tableViewInsertBottom = 49.0;
         __strong typeof(PostsListViewController) *strongSelf = weakSelf;
         
         //[strongSelf performSelector:@selector(endRefresh) withObject:strongSelf afterDelay:2.0];
-        [PostControll syncPostsWithBlog:strongSelf.blog postType:postType];
+        [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:page];
         
     };
     
     self.loadMoreBlock = ^{
-        
+
         __strong typeof(PostsListViewController) *strongSelf = weakSelf;
         
-        [strongSelf performSelector:@selector(endLoadMore) withObject:strongSelf afterDelay:2.0];
+        NSArray *morePosts = [strongSelf.pc loadMoreDBPostsofType:postType postStatus:postStatus ForBlog:strongSelf.blog page:page+1];
+        if (morePosts && morePosts.count >= numOfPostsPerPage) {
+            [strongSelf appendMorePosts:morePosts];
+            [strongSelf endLoadMore];
+            page++;
+        }else{
+            [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:page+1];
+        }
+        //[strongSelf performSelector:@selector(endLoadMore) withObject:strongSelf afterDelay:2.0];
     };
 }
+
+- (void)appendMorePosts:(NSArray *)morePosts
+{
+    int64_t delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+        NSInteger addNum = morePosts?morePosts.count:0;
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        NSInteger currentCount = self.pc.posts.count-addNum;
+        for (int i = 0; i < addNum; i++) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:currentCount+i inSection:0]];
+        }
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+        [self.tableView scrollToRowAtIndexPath:[indexPaths firstObject] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        //[self.tableView layoutIfNeeded];
+    });
+}
+
+- (void)hasSyncMorePosts
+{
+    NSArray *morePosts = [self.pc loadMoreDBPostsofType:postType postStatus:postStatus ForBlog:self.blog page:page+1];
+    if (morePosts && morePosts.count > 0) {
+        [self appendMorePosts:morePosts];
+        [self endLoadMore];
+        page++;
+    }else{
+        [self endLoadMore];
+    }
+}
+
+
 
 #pragma mark - dealloc
 - (void)dealloc {
@@ -659,7 +657,7 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)fetchPostsFromDBWithReloadTableView:(BOOL)reloadTableView
 {
     [self addHud];
-    [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:10];
+    [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:numOfPostsPerPage];
     if (reloadTableView) {
         [self.tableView reloadData];
     }

@@ -27,7 +27,7 @@
 
 - (instancetype)initWithBlog:(Blog *)blog;
 
-+ (void)syncPostsWithBlog:(Blog *)blog postType:(NSString *)postType;
++ (void)syncPostsWithBlog:(Blog *)blog postType:(NSString *)postType page:(NSInteger)page;
 
 + (void)getPostsOfType:(NSString *)postType
                forBlog:(Blog *)blog
@@ -35,6 +35,7 @@
                success:(void (^)(NSArray *posts))success
                failure:(void (^)(NSError *error))failure;
 - (void)getDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog number:(NSInteger)number;
+- (NSArray *)loadMoreDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog page:(NSInteger)page;
 - (void)needsSyncPostsForBlog:(Blog *)blog forTimeInterval:(NSInteger)timeInterval postType:(NSString *)postType;
 
 
