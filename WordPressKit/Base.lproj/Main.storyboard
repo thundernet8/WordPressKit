@@ -560,11 +560,11 @@
                             <view tag="1901" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-l7-XZm" userLabel="TopBar">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4N-4F-Mvd">
-                                        <rect key="frame" x="24" y="31" width="20" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4N-4F-Mvd">
+                                        <rect key="frame" x="10" y="27" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="EYE-7v-DQe"/>
-                                            <constraint firstAttribute="width" constant="20" id="w89-7e-CIX"/>
+                                            <constraint firstAttribute="height" constant="30" id="EYE-7v-DQe"/>
+                                            <constraint firstAttribute="width" constant="30" id="w89-7e-CIX"/>
                                         </constraints>
                                         <state key="normal" image="button_close_white">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -574,15 +574,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-BJ-RTl">
-                                        <rect key="frame" x="553" y="27" width="26" height="26"/>
+                                        <rect key="frame" x="553" y="27" width="36" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="26" id="10g-Tm-6fP"/>
-                                            <constraint firstAttribute="height" constant="26" id="9CX-di-SEK"/>
+                                            <constraint firstAttribute="width" constant="30" id="10g-Tm-6fP"/>
+                                            <constraint firstAttribute="height" constant="30" id="9CX-di-SEK"/>
                                         </constraints>
                                         <state key="normal" image="button_more_white">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="moreFunc:" destination="9iQ-bM-FKu" eventType="touchDown" id="WU0-cb-WX9"/>
                                             <action selector="moreFunc:" destination="9iQ-bM-FKu" eventType="touchUpInside" id="kN5-x8-f6p"/>
                                         </connections>
                                     </button>
@@ -598,14 +599,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="e4N-4F-Mvd" firstAttribute="top" secondItem="ZMy-l7-XZm" secondAttribute="top" constant="33" id="Gk5-ty-6Yj"/>
-                                    <constraint firstItem="e4N-4F-Mvd" firstAttribute="leading" secondItem="ZMy-l7-XZm" secondAttribute="leading" constant="16" id="Hk2-AB-b7q"/>
+                                    <constraint firstItem="e4N-4F-Mvd" firstAttribute="top" secondItem="ZMy-l7-XZm" secondAttribute="top" constant="27" id="Gk5-ty-6Yj"/>
+                                    <constraint firstItem="e4N-4F-Mvd" firstAttribute="leading" secondItem="ZMy-l7-XZm" secondAttribute="leading" constant="10" id="Hk2-AB-b7q"/>
                                     <constraint firstAttribute="height" constant="64" id="LDJ-xg-BXC"/>
-                                    <constraint firstAttribute="trailing" secondItem="IWI-BJ-RTl" secondAttribute="trailing" constant="16" id="LLx-TB-8jP"/>
+                                    <constraint firstAttribute="trailing" secondItem="IWI-BJ-RTl" secondAttribute="trailing" constant="10" id="LLx-TB-8jP"/>
                                     <constraint firstItem="lBL-4h-pdD" firstAttribute="leading" secondItem="e4N-4F-Mvd" secondAttribute="trailing" constant="20" id="el2-jI-hdJ"/>
                                     <constraint firstItem="lBL-4h-pdD" firstAttribute="top" secondItem="ZMy-l7-XZm" secondAttribute="top" constant="33" id="gXD-Os-XxH"/>
                                     <constraint firstAttribute="centerX" secondItem="lBL-4h-pdD" secondAttribute="centerX" id="iMw-vO-LQC"/>
-                                    <constraint firstItem="IWI-BJ-RTl" firstAttribute="top" secondItem="ZMy-l7-XZm" secondAttribute="top" constant="30" id="rTA-ig-yfz"/>
+                                    <constraint firstItem="IWI-BJ-RTl" firstAttribute="top" secondItem="ZMy-l7-XZm" secondAttribute="top" constant="27" id="rTA-ig-yfz"/>
                                     <constraint firstItem="IWI-BJ-RTl" firstAttribute="leading" secondItem="lBL-4h-pdD" secondAttribute="trailing" constant="20" id="tK8-u4-xxC"/>
                                 </constraints>
                             </view>
@@ -1656,7 +1657,7 @@
         <image name="button_close_white" width="16" height="16"/>
         <image name="button_config" width="25" height="25"/>
         <image name="button_forward_gray" width="28" height="28"/>
-        <image name="button_more_white" width="21" height="21"/>
+        <image name="button_more_white" width="30" height="30"/>
         <image name="indicator" width="18" height="26"/>
         <image name="managesite" width="22" height="22"/>
         <image name="tabbar_button_category" width="22" height="22"/>

@@ -259,27 +259,6 @@ CGFloat tableViewInsertBottom = 49.0;
 }
 
 
-
-
-//- (void)configureCellsForLayout
-//{
-//    PostCell *textCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
-//    [self forceUpdateCellLayout:textCellForLayout];
-//
-//    PostCell *imageCellForLayout = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostImageCell" owner:nil options:nil] firstObject];
-//    [self forceUpdateCellLayout:imageCellForLayout];
-//}
-//
-//- (void)forceUpdateCellLayout:(PostCell *)cell
-//{
-//    // Force a layout pass to ensure that constrants are configured for the
-//    // proper size class.
-//    [self.view addSubview:cell];
-//    [cell updateConstraintsIfNeeded];
-//    [cell layoutIfNeeded];
-//    [cell removeFromSuperview];
-//}
-
 #pragma mark - cell delegate methods
 
 - (void)cell:(PostCell *)cell receivedEditActionForProvider:(RemotePost *)post
@@ -532,6 +511,11 @@ CGFloat tableViewInsertBottom = 49.0;
         [self endLoadMore];
         page++;
     }else{
+        [MBProgressHUD hideHUDForView:self.view animated:NO];
+        MBProgressHUD *textHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        textHud.mode = MBProgressHUDModeText;
+        textHud.labelText = @"没有更多了";
+        [textHud hide:YES afterDelay:1.5];
         [self endLoadMore];
     }
 }
