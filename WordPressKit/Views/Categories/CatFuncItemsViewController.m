@@ -57,7 +57,7 @@
 //        [tableView setLayoutMargins:UIEdgeInsetsZero];
 //    }
     
-    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];
+    [self configureTableView];
 
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
     
@@ -74,6 +74,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)configureTableView
+{
+    self.tableView.separatorColor = kSeparatorColor;
+    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    self.tableView.tableFooterView = [UIView new];
 }
 
 #pragma mark - 配置cell的img和label

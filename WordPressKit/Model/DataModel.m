@@ -107,7 +107,7 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"SELECT * FROM FUNCITEMS";
+        NSString *sql = @"SELECT * FROM FUNCITEMS ORDER BY UPPER(NAME) ASC";
         const char* nsql = [sql UTF8String];
         //char *error;
         sqlite3_stmt *stmt;
@@ -277,9 +277,9 @@
     }else{
         NSString *sql;
         if (id > 0){
-            sql = @"SELECT * FROM FUNCITEMS WHERE CATEGORY = ? AND NAME LIKE ? ORDER BY ID ASC";
+            sql = @"SELECT * FROM FUNCITEMS WHERE CATEGORY = ? AND NAME LIKE ? ORDER BY UPPER(NAME) ASC";
         }else{
-            sql = @"SELECT * FROM FUNCITEMS WHERE NAME LIKE ? ORDER BY ID ASC";
+            sql = @"SELECT * FROM FUNCITEMS WHERE NAME LIKE ? ORDER BY UPPER(NAME) ASC";
         }
         const char *nsql = [sql UTF8String];
         //char *error;
@@ -511,7 +511,7 @@
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"SELECT * FROM CATEGORIES";
+        NSString *sql = @"SELECT * FROM CATEGORIES ORDER BY UPPER(NAME) ASC";
         const char* nsql = [sql UTF8String];
         //char *error;
         sqlite3_stmt *stmt;

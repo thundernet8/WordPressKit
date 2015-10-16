@@ -11,6 +11,7 @@
 #import "FileItemViewController.h"
 #import "DataModel.h"
 #import "SourceFile.h"
+#import "NSString+Util.h"
 
 @interface FuncItemViewController () <UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -90,11 +91,15 @@
 
     //源文件
     UITextView *sourceFileText = (UITextView *)[self.view viewWithTag:1108];
-    //html格式化
-    NSString *str = [NSString stringWithFormat:@"%@ is located in <a id=\"sourfile_trigger\" href=\"javascript:\">%@</a>", funcItem.name, funcItem.sourceFile];
-    NSAttributedString *astr = [[NSAttributedString alloc] initWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
-    sourceFileText.attributedText = astr;
-    [sourceFileText setFont:[UIFont systemFontOfSize:12]];//修复字体
+    if (funcItem.sourceFile && ![funcItem.sourceFile isEmpty]) {
+        //html格式化
+        NSString *str = [NSString stringWithFormat:@"%@ is located in <a id=\"sourfile_trigger\" href=\"javascript:\">%@</a>", funcItem.name, funcItem.sourceFile];
+        NSAttributedString *astr = [[NSAttributedString alloc] initWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+        sourceFileText.attributedText = astr;
+        [sourceFileText setFont:[UIFont systemFontOfSize:12]];//修复字体
+    }else{
+       sourceFileText.text = @"N/A";
+    }
 }
 
 //判断sourfile链接被点击

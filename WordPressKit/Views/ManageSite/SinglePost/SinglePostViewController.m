@@ -37,7 +37,6 @@ static NSInteger currentFontSizeIndex;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(@"%@",[@"<123><223>" htmlEntityEncode]);
 }
 
 - (void)viewDidLayoutSubviews{
@@ -99,7 +98,7 @@ static NSInteger currentFontSizeIndex;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"post" ofType:@"html"];
     NSString *localHtml = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     //合并
-    NSString *html = [localHtml stringByReplacingOccurrencesOfString:@"{{postcontent}}" withString:[self.post.content htmlEntityEncode]];
+    NSString *html = [localHtml stringByReplacingOccurrencesOfString:@"{{postcontent}}" withString:self.post.content];
     
     //加载
     NSURL *baseUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];

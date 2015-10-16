@@ -14,8 +14,10 @@
 #import "CatItem.h"
 #import "UIImageView+WebCache.h"
 
-@interface FunctionsViewController () <UISearchBarDelegate>
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface FunctionsViewController () <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,weak) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -33,38 +35,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [NSThread sleepForTimeInterval:2.0]; //延长Launch image加载时间
+    //[NSThread sleepForTimeInterval:2.0]; //延长Launch image加载时间
     
-    self.searchBar.delegate = self;
+    
+    [self configureTableView];
     
     self.dataModel = [[DataModel alloc] init]; //初始化DataModel
     
     [self.dataModel queryAllFuncItems]; //查询数据
     
-    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
-    
-    // 点击空白搜索框消失
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    tap.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:tap];
-    
-    //分割线全宽-tableview
-//    UITableView *tableView = self.tableView;
-//    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-//        [tableView setSeparatorInset:UIEdgeInsetsZero];
-//    }
-//    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-//        [tableView setLayoutMargins:UIEdgeInsetsZero];
-//    }
-    
-    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];//tableview分割线颜色
-    
+    [self configureSearchBar];
+    [self configureNavi];
+    [self configureTabbar];
     [self setStatusBarBackgroundColor]; //设置状态栏背景色
-        
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
-    self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
+    [self addTapGesture];
     
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
     
     NSLog(@"the path is %@", [self.dataModel dataFilePath]);
     
@@ -84,15 +69,40 @@
     [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)addTapGesture
+{
+    // 点击空白搜索框消失
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
 }
-*/
+
+- (void)configureSearchBar
+{
+    self.searchBar.delegate = self;
+}
+
+- (void)configureTableView
+{
+    self.tableView.separatorColor = kSeparatorColor;
+    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
+
+- (void)configureNavi
+{
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
+    self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
+    
+}
+
+- (void)configureTabbar
+{
+    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
+}
 
 #pragma mark - 配置cell的img和label
 - (void)configImgForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
@@ -113,6 +123,7 @@
 }
 
 #pragma mark - tableview datasource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.dataModel.funcItems count];
@@ -126,9 +137,6 @@
     [self configImgForCell:cell cellWithFuncItem:item];
     [self configTextForCell:cell cellWithFuncItem:item];
     
-    //去掉分割线
-    //[tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
     //分割线全宽-cell
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:UIEdgeInsetsZero];
@@ -136,6 +144,7 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -188,8 +197,8 @@
 //设置状态栏背景色
 - (void)setStatusBarBackgroundColor
 {
-    UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 22)];
-    statusBarView.backgroundColor  =  [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1];
+    UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 22)];
+    statusBarView.backgroundColor  =  kNaviBackgroundColorBlue;
     [self.view addSubview:statusBarView];
 }
 

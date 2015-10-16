@@ -6,51 +6,73 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Functions-->
-        <scene sceneID="sWe-KW-rlm">
+        <!--Functions View Controller-->
+        <scene sceneID="E95-gd-f9E">
             <objects>
-                <tableViewController title="Functions" id="N1Q-xa-yd3" customClass="FunctionsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="skk-nH-W75">
+                <viewController id="wVa-iQ-48b" customClass="FunctionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R9a-S9-j11"/>
+                        <viewControllerLayoutGuide type="bottom" id="700-9D-dyx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="okT-GT-9rV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" id="xir-Lx-VD8">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
-                            <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FuncItem" textLabel="XSf-qc-k4h" style="IBUITableViewCellStyleDefault" id="A1M-CU-DIb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A1M-CU-DIb" id="97n-PJ-LHX">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XSf-qc-k4h">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="N1Q-xa-yd3" id="fRG-aV-MHw"/>
-                            <outlet property="delegate" destination="N1Q-xa-yd3" id="9KF-3J-LJA"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="函数" id="FLk-Qj-VVH"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="obI-06-ekR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tBg-Mn-Y0N">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FuncItem" textLabel="4lX-el-RCG" style="IBUITableViewCellStyleDefault" id="Cpe-ry-8pU">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cpe-ry-8pU" id="3vZ-co-7yU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4lX-el-RCG">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="obI-06-ekR" secondAttribute="trailing" constant="-16" id="3dG-yA-Ce4"/>
+                            <constraint firstAttribute="centerX" secondItem="tBg-Mn-Y0N" secondAttribute="centerX" id="8xr-GL-W8R"/>
+                            <constraint firstAttribute="centerX" secondItem="tBg-Mn-Y0N" secondAttribute="centerX" id="9ev-6S-ukX"/>
+                            <constraint firstItem="obI-06-ekR" firstAttribute="leading" secondItem="okT-GT-9rV" secondAttribute="leadingMargin" constant="-16" id="Nmz-Cy-Y2C"/>
+                            <constraint firstItem="tBg-Mn-Y0N" firstAttribute="top" secondItem="obI-06-ekR" secondAttribute="bottom" id="cU0-NA-npS"/>
+                            <constraint firstItem="tBg-Mn-Y0N" firstAttribute="leading" secondItem="okT-GT-9rV" secondAttribute="leadingMargin" constant="-16" id="gFZ-Jx-M0T"/>
+                            <constraint firstAttribute="centerY" secondItem="tBg-Mn-Y0N" secondAttribute="centerY" id="luG-O4-6fU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tBg-Mn-Y0N" secondAttribute="trailing" constant="-16" id="mzy-cl-1vs"/>
+                            <constraint firstItem="obI-06-ekR" firstAttribute="top" secondItem="R9a-S9-j11" secondAttribute="bottom" id="vwu-MN-wcp"/>
+                            <constraint firstItem="700-9D-dyx" firstAttribute="top" secondItem="tBg-Mn-Y0N" secondAttribute="bottom" id="yoX-vV-krD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8xr-GL-W8R"/>
+                                <exclude reference="luG-O4-6fU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="PO9-X0-4aN"/>
                     <connections>
-                        <outlet property="searchBar" destination="xir-Lx-VD8" id="gKT-h7-8iM"/>
-                        <segue destination="66C-2J-q8F" kind="show" identifier="ShowFuncItem" id="uAS-rc-Y1h"/>
+                        <outlet property="searchBar" destination="obI-06-ekR" id="snL-Ok-zv1"/>
+                        <outlet property="tableView" destination="tBg-Mn-Y0N" id="SBS-O0-y6d"/>
+                        <segue destination="66C-2J-q8F" kind="show" identifier="ShowFuncItem" id="Owd-lW-jMT"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U6t-q7-sxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Dx-QQ-pyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="812" y="-1046"/>
         </scene>
@@ -1700,7 +1722,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="N1Q-xa-yd3" kind="relationship" relationship="rootViewController" id="Uoj-Tx-zX0"/>
+                        <segue destination="wVa-iQ-48b" kind="relationship" relationship="rootViewController" id="mMH-Bs-ZUF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9l-dz-wxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1819,7 +1841,7 @@
         <image name="wordpress2" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uAS-rc-Y1h"/>
+        <segue reference="Owd-lW-jMT"/>
         <segue reference="r7U-Ry-fub"/>
         <segue reference="UZO-Er-ThG"/>
         <segue reference="jcu-AJ-ziY"/>

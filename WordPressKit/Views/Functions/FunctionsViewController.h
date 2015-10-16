@@ -11,7 +11,7 @@
 @class DataModel;
 @class CatItem;
 
-@interface FunctionsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FunctionsViewController : UIViewController
 
 @property (nonatomic, strong) DataModel *dataModel;
 @property (nonatomic, strong) CatItem *catItem;
