@@ -37,7 +37,7 @@
 - (void)getDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog number:(NSInteger)number;
 - (NSArray *)loadMoreDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog page:(NSInteger)page;
 - (void)needsSyncPostsForBlog:(Blog *)blog forTimeInterval:(NSInteger)timeInterval postType:(NSString *)postType;
-
+- (NSArray *)walkPages:(NSArray *)posts;
 
 
 @end

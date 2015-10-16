@@ -26,10 +26,10 @@
 - (void)viewDidLayoutSubviews{
     //tableView 高度 - (待autolayout完成后更改，才能生效)
     [self.tableView setFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 64.0f + [self.dataModel.blogs count]*56.0f)];
-    //CALayer *bottomBorder = [CALayer layer];
-    //bottomBorder.frame = CGRectMake(0.0f, [self.dataModel.blogs count]*56.0f-1, self.tableView.frame.size.width, 1.0f);
-    //bottomBorder.backgroundColor = [[UIColor alloc] initWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1].CGColor;
-    //[self.tableView.layer addSublayer:bottomBorder];
+//    CALayer *bottomBorder = [CALayer layer];
+//    bottomBorder.frame = CGRectMake(0.0f, [self.dataModel.blogs count]*56.0f-1, self.tableView.frame.size.width, 1.0f);
+//    bottomBorder.backgroundColor = [[UIColor alloc] initWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1].CGColor;
+//    [self.tableView.layer addSublayer:bottomBorder];
     
 }
 

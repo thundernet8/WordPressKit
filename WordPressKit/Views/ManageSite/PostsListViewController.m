@@ -20,20 +20,21 @@
 #import "PostStatusType.h"
 #import "FiltersTableViewController.h"
 #import "UIImageView+WebCache.h"
+#import "SinglePostViewController.h"
 
-NSInteger const syncTimeInterval = 300;
-NSInteger const numOfPostsPerPage = 10;
-NSUInteger page = 1;
-NSString * postType = @"post";
-NSInteger postStatusIndex = 0;
-NSString * postStatus = @"publish";
-NSString * postStatusText = @"已发布";
-CGFloat tableViewInsertTop = 64.0;
-CGFloat tableViewInsertBottom = 49.0;
+static NSInteger const syncTimeInterval = 300;
+NSInteger const numOfPostsPerPageA = 10;
+NSUInteger pageA = 1;//当前页码
+static NSString * postType = @"post";
+NSString * postStatusA = @"publish";
+static NSString * postStatusText = @"已发布";
+const CGFloat tableViewInsertTop = 64.0;
+const CGFloat tableViewInsertBottom = 49.0;
 
 @interface PostsListViewController () <UITableViewDelegate, UITableViewDataSource, PostCellDelegate, UIPopoverControllerDelegate>
 
 @property (nonatomic, strong) NSArray *postStatusFilters;
+@property (nonatomic) NSInteger postStatusIndex;
 
 @property (weak, nonatomic) IBOutlet NavBarTitleDropdownButton *filterButton;
 @property (nonatomic, strong) UIPopoverController *postFilterPopoverController;
@@ -75,15 +76,10 @@ CGFloat tableViewInsertBottom = 49.0;
     [self configVariable];
     [self updateFilter];
     [self configureNavbar];
-    //[self configureTableView];
-    //[self addHud];
     [self addSCPullRefreshBlocks];
-    
-
     [self fetchPostsFromDBWithReloadTableView:NO];
     
     NSLog(@"viewDidLoad");
-    
     
 }
 
@@ -100,10 +96,10 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSLog(@"view appear");
-    if (self.pc.posts.count <= numOfPostsPerPage) {
+    if (self.pc.posts.count <= numOfPostsPerPageA) {
         [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
-        page = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPage));
     }
+    pageA = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPageA));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,11 +170,20 @@ CGFloat tableViewInsertBottom = 49.0;
     return height;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RemotePost *post = self.pc.posts[indexPath.row];
+    [self performSegueWithIdentifier:@"ViewPost" sender:post];
+}
+
 
 #pragma mark - configuration
 - (void)configureNavbar
 {
     self.navigationItem.titleView = self.filterButton;
+    //配置即将push的VC的导航返回按钮的文字(只能在父级中配置)
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
     [self updateFilterTitle];
 }
 
@@ -237,6 +242,7 @@ CGFloat tableViewInsertBottom = 49.0;
  */
 - (void)configVariable
 {
+    self.postStatusIndex = 0;
     self.pc = [[PostControll alloc] initWithBlog:self.blog];
     self.postStatusFilters = [PostStatusType newPostStatusFilterWithPostType:postType];
 }
@@ -392,6 +398,9 @@ CGFloat tableViewInsertBottom = 49.0;
     if ([segue.identifier isEqualToString:@"PreviewPost"]) {
         WebBrowserController *controller = segue.destinationViewController;
         controller.url = sender;
+    }else if ([segue.identifier isEqualToString:@"ViewPost"]){
+        SinglePostViewController *controller = segue.destinationViewController;
+        controller.post = sender;
     }
 }
 
@@ -433,7 +442,7 @@ CGFloat tableViewInsertBottom = 49.0;
         [alert show];
     }
     if ([chagedPostsNum intValue] > 0 && ![self isLoadingMore]) {
-        [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:numOfPostsPerPage];
+        [self.pc getDBPostsofType:postType postStatus:postStatusA ForBlog:self.blog number:numOfPostsPerPageA];
         dispatch_async(dispatch_get_main_queue(), ^{
             //[self endRefresh];
             [self.tableView reloadData];
@@ -464,7 +473,7 @@ CGFloat tableViewInsertBottom = 49.0;
         __strong typeof(PostsListViewController) *strongSelf = weakSelf;
         
         //[strongSelf performSelector:@selector(endRefresh) withObject:strongSelf afterDelay:2.0];
-        [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:page];
+        [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:pageA];
         
     };
     
@@ -472,13 +481,13 @@ CGFloat tableViewInsertBottom = 49.0;
 
         __strong typeof(PostsListViewController) *strongSelf = weakSelf;
         
-        NSArray *morePosts = [strongSelf.pc loadMoreDBPostsofType:postType postStatus:postStatus ForBlog:strongSelf.blog page:page+1];
-        if (morePosts && morePosts.count >= numOfPostsPerPage) {
+        NSArray *morePosts = [strongSelf.pc loadMoreDBPostsofType:postType postStatus:postStatusA ForBlog:strongSelf.blog page:pageA+1];
+        if (morePosts && morePosts.count >= numOfPostsPerPageA) {
             [strongSelf appendMorePosts:morePosts];
             [strongSelf endLoadMore];
-            page++;
+            pageA++;
         }else{
-            [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:page+1];
+            [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:pageA+1];
         }
         //[strongSelf performSelector:@selector(endLoadMore) withObject:strongSelf afterDelay:2.0];
     };
@@ -505,11 +514,11 @@ CGFloat tableViewInsertBottom = 49.0;
 
 - (void)hasSyncMorePosts
 {
-    NSArray *morePosts = [self.pc loadMoreDBPostsofType:postType postStatus:postStatus ForBlog:self.blog page:page+1];
+    NSArray *morePosts = [self.pc loadMoreDBPostsofType:postType postStatus:postStatusA ForBlog:self.blog page:pageA+1];
     if (morePosts && morePosts.count > 0) {
         [self appendMorePosts:morePosts];
         [self endLoadMore];
-        page++;
+        pageA++;
     }else{
         [MBProgressHUD hideHUDForView:self.view animated:NO];
         MBProgressHUD *textHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -540,8 +549,8 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)updateFilter
 {
     PostStatusType *filter = [self currentPostStatusFilter];
-    postStatusIndex = [self currentPostStatusFilterIndex];
-    postStatus = filter.postStatus;
+    self.postStatusIndex = [self currentPostStatusFilterIndex];
+    postStatusA = filter.postStatus;
     postStatusText = filter.postStatusText;
 }
 
@@ -646,7 +655,7 @@ CGFloat tableViewInsertBottom = 49.0;
 - (void)fetchPostsFromDBWithReloadTableView:(BOOL)reloadTableView
 {
     [self addHud];
-    [self.pc getDBPostsofType:postType postStatus:postStatus ForBlog:self.blog number:numOfPostsPerPage];
+    [self.pc getDBPostsofType:postType postStatus:postStatusA ForBlog:self.blog number:numOfPostsPerPageA];
     if (reloadTableView) {
         [self.tableView reloadData];
     }

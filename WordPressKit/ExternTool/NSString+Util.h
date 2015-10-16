@@ -15,6 +15,8 @@
 - (NSString *)trim;
 - (NSNumber *)numericValue;
 - (CGSize)suggestedSizeWithFont:(UIFont *)font width:(CGFloat)width;
+- (NSString *)htmlEntityDecode;
+- (NSString *)htmlEntityEncode;
 
 @end
 

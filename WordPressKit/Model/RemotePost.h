@@ -39,8 +39,9 @@
 @property (nonatomic, strong) NSString *pathForDisplayImage;
 @property (nonatomic, assign) BOOL isFeaturedImageChanged;
 
+
 /**
- Array of custom fields. Each value is a dictionary containing {ID, key, value}
+ 自定义字段数组. 每个值均为一个dictionary, 结构{ID, key, value}
  */
 @property (nonatomic, strong) NSArray *metadata;
 

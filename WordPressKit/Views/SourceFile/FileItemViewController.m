@@ -9,6 +9,7 @@
 #import "FileItemViewController.h"
 #import "SourceFile.h"
 #import "MBProgressHUD.h"
+#import "NSString+Util.h"
 
 @interface FileItemViewController ()
 
@@ -101,7 +102,7 @@
         [fileManager createFileAtPath:cacheFilePath contents:[sourceHtml dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
         
     }
-    sourceHtml = [self htmlEntityEncode:sourceHtml];
+    sourceHtml = [sourceHtml htmlEntityEncode];
     NSString *preRomoteHtml = [NSString stringWithFormat:@"<pre class=\"precode prettyprint linenums\">%@</pre>",sourceHtml];
     //本地模板文本
     NSString *path = [[NSBundle mainBundle] pathForResource:@"sourcefile" ofType:@"html"];
@@ -114,28 +115,6 @@
     NSURL *baseUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
     [self.webViewer loadHTMLString:html baseURL:baseUrl];
     
-}
-
--(NSString *)htmlEntityDecode:(NSString *)string
-{
-    string = [string stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-    string = [string stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-    string = [string stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-    string = [string stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-    string = [string stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
-    
-    return string;
-}
-
--(NSString *)htmlEntityEncode:(NSString *)string
-{
-    //string = [string stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
-    //string = [string stringByReplacingOccurrencesOfString:@"'" withString:@"&apos;"];
-    //string = [string stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
-    string = [string stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
-    string = [string stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
-    string = [string stringByReplacingOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;"];
-    return string;
 }
 
 #pragma mark - webview delegate methods

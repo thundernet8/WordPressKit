@@ -37,6 +37,7 @@
 		B4DB405D1BC7C877009BD1A6 /* SCPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB40591BC7C877009BD1A6 /* SCPullRefreshViewController.m */; };
 		B4DB40611BC7C8F7009BD1A6 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB40601BC7C8F7009BD1A6 /* DACircularProgressView.m */; };
 		B4DB40641BC817A5009BD1A6 /* NavBarTitleDropdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB40631BC817A5009BD1A6 /* NavBarTitleDropdownButton.m */; };
+		B4DB43591BD111550023B227 /* post.html in Resources */ = {isa = PBXBuildFile; fileRef = B4DB43581BD111550023B227 /* post.html */; };
 		B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */; };
 		B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66321BAC3D7A00B625CC /* UserData.db */; };
 		B4DB7D9C1BBF6C2300DC203A /* PostActionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9B1BBF6C2300DC203A /* PostActionBarItem.m */; };
@@ -49,6 +50,10 @@
 		B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD044F1B8DD88400E2ACA3 /* CatItemViewController.m */; };
 		B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */; };
 		B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */; };
+		B4DDA85D1BCFDC75006A33B9 /* SinglePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DDA85C1BCFDC75006A33B9 /* SinglePostViewController.m */; };
+		B4DEF97B1BCD1459001D78DE /* PagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DEF97A1BCD1459001D78DE /* PagesListViewController.m */; };
+		B4DEF9841BCD26E4001D78DE /* PageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DEF9831BCD26E4001D78DE /* PageCell.m */; };
+		B4DEF9861BCD26F7001D78DE /* PageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DEF9851BCD26F7001D78DE /* PageCell.xib */; };
 		B4E0DD3C1BC93EBA0052519A /* PostStatusType.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DD3B1BC93EBA0052519A /* PostStatusType.m */; };
 		B4E0DD401BC95DF20052519A /* FiltersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DD3F1BC95DF20052519A /* FiltersTableViewController.m */; };
 		B4E0DF471BAE602D00289630 /* SiteToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */; };
@@ -133,6 +138,7 @@
 		B4DB40601BC7C8F7009BD1A6 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		B4DB40621BC817A5009BD1A6 /* NavBarTitleDropdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavBarTitleDropdownButton.h; sourceTree = "<group>"; };
 		B4DB40631BC817A5009BD1A6 /* NavBarTitleDropdownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavBarTitleDropdownButton.m; sourceTree = "<group>"; };
+		B4DB43581BD111550023B227 /* post.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = post.html; sourceTree = "<group>"; };
 		B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DB66321BAC3D7A00B625CC /* UserData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserData.db; sourceTree = "<group>"; };
 		B4DB7D9A1BBF6C2300DC203A /* PostActionBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActionBarItem.h; sourceTree = "<group>"; };
@@ -163,6 +169,13 @@
 		B4DD04521B8DD89500E2ACA3 /* FileItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileItemViewController.m; sourceTree = "<group>"; };
 		B4DD045C1B8E0F3600E2ACA3 /* FuncItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncItem.h; sourceTree = "<group>"; };
 		B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncItem.m; sourceTree = "<group>"; };
+		B4DDA85B1BCFDC75006A33B9 /* SinglePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SinglePostViewController.h; path = SinglePost/SinglePostViewController.h; sourceTree = "<group>"; };
+		B4DDA85C1BCFDC75006A33B9 /* SinglePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SinglePostViewController.m; path = SinglePost/SinglePostViewController.m; sourceTree = "<group>"; };
+		B4DEF9791BCD1459001D78DE /* PagesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesListViewController.h; sourceTree = "<group>"; };
+		B4DEF97A1BCD1459001D78DE /* PagesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesListViewController.m; sourceTree = "<group>"; };
+		B4DEF9821BCD26E4001D78DE /* PageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCell.h; sourceTree = "<group>"; };
+		B4DEF9831BCD26E4001D78DE /* PageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCell.m; sourceTree = "<group>"; };
+		B4DEF9851BCD26F7001D78DE /* PageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageCell.xib; sourceTree = "<group>"; };
 		B4E0DD3A1BC93EBA0052519A /* PostStatusType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostStatusType.h; sourceTree = "<group>"; };
 		B4E0DD3B1BC93EBA0052519A /* PostStatusType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostStatusType.m; sourceTree = "<group>"; };
 		B4E0DD3E1BC95DF20052519A /* FiltersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersTableViewController.h; sourceTree = "<group>"; };
@@ -312,11 +325,15 @@
 				B4E0DF451BAE602D00289630 /* SiteToolsViewController.h */,
 				B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */,
 				B4E0DD391BC93D8A0052519A /* PostCell */,
+				B4DEF9811BCD264F001D78DE /* PageCell */,
 				B4E0DD411BC95E020052519A /* Filters */,
 				B4DC00401BC21B6C00B8F194 /* SiteSettingViewController.h */,
 				B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */,
 				B40213B71BC6BB8600E71E6B /* PostsListViewController.h */,
 				B40213B81BC6BB8600E71E6B /* PostsListViewController.m */,
+				B4DEF9791BCD1459001D78DE /* PagesListViewController.h */,
+				B4DEF97A1BCD1459001D78DE /* PagesListViewController.m */,
+				B4DDA85E1BCFDC7B006A33B9 /* SinglePost */,
 			);
 			path = ManageSite;
 			sourceTree = "<group>";
@@ -389,6 +406,25 @@
 				B46572351BB2F79600835972 /* RemotePostCategory.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4DDA85E1BCFDC7B006A33B9 /* SinglePost */ = {
+			isa = PBXGroup;
+			children = (
+				B4DDA85B1BCFDC75006A33B9 /* SinglePostViewController.h */,
+				B4DDA85C1BCFDC75006A33B9 /* SinglePostViewController.m */,
+			);
+			name = SinglePost;
+			sourceTree = "<group>";
+		};
+		B4DEF9811BCD264F001D78DE /* PageCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4DEF9821BCD26E4001D78DE /* PageCell.h */,
+				B4DEF9851BCD26F7001D78DE /* PageCell.xib */,
+				B4DEF9831BCD26E4001D78DE /* PageCell.m */,
+			);
+			name = PageCell;
 			sourceTree = "<group>";
 		};
 		B4E0DD391BC93D8A0052519A /* PostCell */ = {
@@ -473,6 +509,7 @@
 				B4E53F101B87FDCB00C4CFAA /* Info.plist */,
 				B4DB66321BAC3D7A00B625CC /* UserData.db */,
 				B4E53F111B87FDCB00C4CFAA /* main.m */,
+				B4DB43581BD111550023B227 /* post.html */,
 				B4DAE42D1BA4876700D51121 /* sourcefile.html */,
 				B4DAD8851BBD613A0014A830 /* WordPress.bundle */,
 			);
@@ -603,7 +640,9 @@
 				B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */,
 				B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */,
 				B4DAD8861BBD613A0014A830 /* WordPress.bundle in Resources */,
+				B4DEF9861BCD26F7001D78DE /* PageCell.xib in Resources */,
 				B4DA70121BB5907900F55F6C /* PostImageCell.xib in Resources */,
+				B4DB43591BD111550023B227 /* post.html in Resources */,
 				B4E53F231B87FDCB00C4CFAA /* LaunchScreen.xib in Resources */,
 				B4DA700A1BB5723000F55F6C /* PostTextCell.xib in Resources */,
 				B4DAE42E1BA4876700D51121 /* sourcefile.html in Resources */,
@@ -665,6 +704,7 @@
 				B46572391BB2F87200835972 /* NSMutableDictionary+Helpers.m in Sources */,
 				B46572231BB2DAF200835972 /* RemotePost.m in Sources */,
 				B46572361BB2F79600835972 /* RemotePostCategory.m in Sources */,
+				B4DEF97B1BCD1459001D78DE /* PagesListViewController.m in Sources */,
 				B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */,
 				B4DB8A921BB4090200058147 /* PostControll.m in Sources */,
 				B46004D41B8CBB5000757221 /* SourcefileViewController.m in Sources */,
@@ -673,6 +713,8 @@
 				B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */,
 				B4DD04501B8DD88400E2ACA3 /* CatItemViewController.m in Sources */,
 				B44B19DB1B9499B10028D41C /* SourceFile.m in Sources */,
+				B4DDA85D1BCFDC75006A33B9 /* SinglePostViewController.m in Sources */,
+				B4DEF9841BCD26E4001D78DE /* PageCell.m in Sources */,
 				B4DB405D1BC7C877009BD1A6 /* SCPullRefreshViewController.m in Sources */,
 				B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */,
 				B4DB405B1BC7C877009BD1A6 /* SCBubbleRefreshView.m in Sources */,

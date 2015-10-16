@@ -15,6 +15,22 @@
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
+//color border
+#define kColorBorderOrange ([UIColor colorWithRed:255/255.0 green:179/255.0 blue:151/255.0 alpha:1.0])
+#define kColorBorderBluePurple ([UIColor colorWithRed:107/255.0 green:110/255.0 blue:230/255.0 alpha:1.0])
+#define kColorBorderGray ([UIColor colorWithRed:175/255.0 green:175/255.0 blue:178/255.0 alpha:1.0])
+#define kColorBorderRed ([UIColor colorWithRed:255/255.0 green:163/255.0 blue:168/255.0 alpha:1.0])
+#define kColorBorderLightBlue ([UIColor colorWithRed:129/255.0 green:219/255.0 blue:216/255.0 alpha:1.0])
+#define kColorBorderGreen ([UIColor colorWithRed:160/255.0 green:212/255.0 blue:169/255.0 alpha:1.0])
+#define kColorBorderYellow ([UIColor colorWithRed:255/255.0 green:223/255.0 blue:109/255.0 alpha:1.0])
+
+//background
+#define kBackgroundColorGray ([UIColor colorWithRed:247/255.0 green:247/255.0 blue:247/255.0 alpha:1.0])
+
+//font color
+#define kFontColorGray ([UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0])
+#define kFontColorGrayBlue ([UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0f])
+
 //tableView
 #define kBackgroundColorLightBlue ([UIColor colorWithRed:228/255.0 green:236/255.0 blue:241/255.0 alpha:1.0])
 #define kSeparatorColor ([[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f])

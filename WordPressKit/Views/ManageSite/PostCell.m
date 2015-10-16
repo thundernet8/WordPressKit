@@ -77,9 +77,13 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     [self confiImageWithPost:post];
     //文章内容
     NSString *content = [post.excerpt isEmpty] ? [post.content trim] : [post.excerpt trim];
+//    content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+//    content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     NSUInteger length = content.length > 120 ? 120 : content.length;
+    NSString *tail = content.length > 120 ? @" ···" : @"";
     content = [content substringWithRange:NSMakeRange(0, length)];
-    self.PostContent.attributedText = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    content = [content stringByAppendingString:tail];
+    self.PostContent.text = content;
     self.PostContent.font = [UIFont systemFontOfSize:14.0f];
     //文章日期
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];

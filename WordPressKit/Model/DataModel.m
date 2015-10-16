@@ -71,7 +71,7 @@
 - (void)registerDefaults
 {
     //注册默认值，上次搜索词/是否首次启动/上次查看函数ID/上次查看的Tab/撰写地理位置标记/上次访问文章类型过滤器索引
-    NSDictionary *dictionary = @{@"SearchWords" : @"",@"FirstTime" : @YES,@"FuncItemId" : @0,@"LastTab" : @1,@"WordWrap" : @NO,@"LocationMark" : @NO,@"PostStatusFilterIndex" : @0};
+    NSDictionary *dictionary = @{@"SearchWords" : @"",@"FirstTime" : @YES,@"FuncItemId" : @0,@"LastTab" : @1,@"WordWrap" : @NO,@"LocationMark" : @NO,@"PostStatusFilterIndex" : @0,@"PageStatusFilterIndex" : @0};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
 }
 

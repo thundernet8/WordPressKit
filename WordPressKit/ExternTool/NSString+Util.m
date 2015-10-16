@@ -16,7 +16,7 @@
 }
 
 - (NSString *)trim {
-    NSCharacterSet *set = [NSCharacterSet whitespaceCharacterSet];
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     return [self stringByTrimmingCharactersInSet:set];
 }
 
@@ -27,6 +27,26 @@
 - (CGSize)suggestedSizeWithFont:(UIFont *)font width:(CGFloat)width {
     CGRect bounds = [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil];
     return bounds.size;
+}
+
+-(NSString *)htmlEntityDecode{
+    NSString *string = [self stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
+    string = [self stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+    string = [self stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    string = [self stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+    string = [self stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    
+    return string;
+}
+
+-(NSString *)htmlEntityEncode{
+    //string = [self stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
+    //string = [self stringByReplacingOccurrencesOfString:@"'" withString:@"&apos;"];
+    //string = [self stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+    NSString *string = [self stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+    string = [self stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+    string = [self stringByReplacingOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;"];
+    return string;
 }
 
 @end

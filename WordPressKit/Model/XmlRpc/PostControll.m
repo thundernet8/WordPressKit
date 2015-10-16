@@ -23,13 +23,18 @@ extern NSString * const PostStatusPrivate;
 extern NSString * const PostStatusPublish;
 extern NSString * const PostStatusScheduled;
 extern NSString * const PostStatusTrash;
-NSInteger const NumberofPoststoFetch = 20;
 
-extern NSInteger numOfPostsPerPage;
-extern NSUInteger page;
-extern NSString * postType;
-extern NSInteger postStatusIndex;
-extern NSString * postStatus;
+static NSString * postTypePC = @"post";
+static NSInteger numOfPostsPerPagePC = 10;
+static NSUInteger pagePC = 1;
+static NSString * postStatusPC = @"publish";
+
+extern NSInteger numOfPostsPerPageA;
+extern NSInteger numOfPostsPerPageB;
+extern NSUInteger pageA;
+extern NSUInteger pageB;
+extern NSString * postStatusA;
+extern NSString * postStatusB;
 
 
 @interface PostControll()
@@ -56,7 +61,8 @@ extern NSString * postStatus;
 - (int)getSiteLastSyncTimestamp:(NSInteger)siteid;
 - (void)configSyncStatus:(BOOL)status ForBlog:(Blog *)blog;
 - (void)configNetworkStatus:(BOOL)status;
-
+- (NSString *)getExcerptofPost:(RemotePost *)post;
+- (NSDateComponents *)differenceBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
 
 @end
 
@@ -113,15 +119,37 @@ extern NSString * postStatus;
 }
 
 /**
+ *  根据请求调用方文章类型决定一些全局变量
+ *
+ *  @param postType 文章类型,一般为post或page
+ */
++ (void)configureStaticVariablesWithPostType:(NSString *)postType
+{
+    if ([postType isEqualToString:@"post"]) {
+        numOfPostsPerPagePC = numOfPostsPerPageA;
+        pagePC = pageA;
+        postStatusPC = postStatusA;
+    }else if ([postType isEqualToString:@"page"]){
+        numOfPostsPerPagePC = numOfPostsPerPageB;
+        pagePC = pageB;
+        postStatusPC = postStatusB;
+    }
+    postTypePC = postType;
+}
+
+/**
  *  抓取远程服务器文章数据并实现数据持久化
  *
  *  @param blog 博客对象，用于获取用户名密码以及xmlrpc接口地址
  */
 + (void)syncPostsWithBlog:(Blog *)blog postType:(NSString *)postType page:(NSInteger)page
 {
+    //修改全局变量
+    [self configureStaticVariablesWithPostType:postType];
+    
     PostControll *pc = [[PostControll alloc] initWithBlog:blog];
     [pc configSyncStatus:YES ForBlog:blog];
-    NSDictionary *options = @{@"offset": [NSNumber numberWithInteger:(page-1)*numOfPostsPerPage]};
+    NSDictionary *options = @{@"offset": [NSNumber numberWithInteger:(page-1)*numOfPostsPerPagePC]};
     [self getPostsOfType:postType forBlog:blog options:options success:^(NSArray *posts) {
         [self writePostsToDB:posts inBlog:blog postType:postType];
         [pc configSyncStatus:NO ForBlog:blog];
@@ -238,7 +266,8 @@ extern NSString * postStatus;
             sqlite3_bind_text(stmt, 7, [[post.URL absoluteString] UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 8, [[post.shortURL absoluteString] UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 9, [post.content UTF8String], -1, NULL);
-            sqlite3_bind_text(stmt, 10, [post.excerpt UTF8String], -1, NULL);
+            NSString *excerpt = [self getExcerptofPost:post];
+            sqlite3_bind_text(stmt, 10, [excerpt UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 11, [post.slug UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 12, [post.status UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 13, [post.password UTF8String], -1, NULL);
@@ -275,14 +304,15 @@ extern NSString * postStatus;
                options:(NSDictionary *)options
                success:(void (^)(NSArray *posts))success
                failure:(void (^)(NSError *error))failure {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     WPXMLRPCClient *client = [self getClientWithBlog:blog];
     //NSArray *statuses = @[PostStatusDraft, PostStatusPending, PostStatusPrivate, PostStatusPublish, PostStatusScheduled, PostStatusTrash];
     //NSString *postStatus = [statuses componentsJoinedByString:@","];
     NSDictionary *extraParameters = @{
-                                      @"number": [NSNumber numberWithInteger: numOfPostsPerPage],
+                                      @"number": [NSNumber numberWithInteger: numOfPostsPerPagePC],
                                       @"post_type": postType,
-                                      @"post_status": postStatus,
-                                      @"offset": [NSNumber numberWithInteger:(page-1)*numOfPostsPerPage]
+                                      @"post_status": postStatusPC,
+                                      @"offset": [NSNumber numberWithInteger:(pagePC-1)*numOfPostsPerPagePC]
                                       };
     if (options) {
         NSMutableDictionary *mutableParameters = [extraParameters mutableCopy];
@@ -295,10 +325,12 @@ extern NSString * postStatus;
                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
                      NSAssert([responseObject isKindOfClass:[NSArray class]], @"Response should be an array.");
                      if (success) {
+                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                          success([self remotePostsFromXMLRPCArray:responseObject]);
                      }
                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                      if (failure) {
+                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                          failure(error);
                      }
                  }];
@@ -395,6 +427,9 @@ extern NSString * postStatus;
  */
 - (void)getDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog number:(NSInteger)number
 {
+    //修改全局变量
+    [PostControll configureStaticVariablesWithPostType:postType];
+    
     NSString *path = [self userDataFilePath];
     const char *npath = [path UTF8String];
     //打开数据库
@@ -481,13 +516,16 @@ extern NSString * postStatus;
  */
 - (NSArray *)loadMoreDBPostsofType:(NSString *)postType postStatus:(NSString *)postStatus ForBlog:(Blog *)blog page:(NSInteger)page
 {
+    //修改全局变量
+    [PostControll configureStaticVariablesWithPostType:postType];
+    
     NSString *path = [self userDataFilePath];
     const char *npath = [path UTF8String];
     //打开数据库
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM POSTS WHERE TYPE = '%@' AND STATUS = '%@' AND SITEID = %i ORDER BY POSTID DESC LIMIT %li,%i",postType,postStatus,(int)blog.id,(int)numOfPostsPerPage*(page-1),(int)numOfPostsPerPage];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM POSTS WHERE TYPE = '%@' AND STATUS = '%@' AND SITEID = %i ORDER BY POSTID DESC LIMIT %li,%i",postType,postStatus,(int)blog.id,(int)numOfPostsPerPagePC*(page-1),(int)numOfPostsPerPagePC];
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK) {
@@ -543,7 +581,7 @@ extern NSString * postStatus;
                 
             }
             //合并posts
-            NSLog(@"old posts: %i \r\nloadmore count: %i \r\npage is %i\r\n",self.posts.count,results.count,page);
+            NSLog(@"old posts: %lu \r\nloadmore count: %lu \r\npage is %i\r\n",(unsigned long)self.posts.count,(unsigned long)results.count,(int)page);
             self.posts = [self.posts arrayByAddingObjectsFromArray:results];
             return results;
             
@@ -779,10 +817,13 @@ extern NSString * postStatus;
  */
 - (void)needsSyncPostsForBlog:(Blog *)blog forTimeInterval:(NSInteger)timeInterval postType:(NSString *)postType
 {
+    //修改全局变量
+    [PostControll configureStaticVariablesWithPostType:postType];
+    
     int nowTimestamp = [[NSDate date] timeIntervalSince1970];
     int lastSyncTimestamp = [self getSiteLastSyncTimestamp:blog.id];
     if (lastSyncTimestamp + timeInterval < nowTimestamp) {
-        [PostControll syncPostsWithBlog:blog postType:postType page:page];
+        [PostControll syncPostsWithBlog:blog postType:postType page:pagePC];
         //DDLogError(@"last is %i and now is %i",lastSyncTimestamp,nowTimestamp);
     }
 }
@@ -802,9 +843,248 @@ extern NSString * postStatus;
     }
 }
 
+/**
+ *  获取文章的摘要
+ *
+ *  @param post post对象
+ *
+ *  @return 摘要
+ */
+- (NSString *)getExcerptofPost:(RemotePost *)post
+{
+    NSString *content = [post.excerpt isEmpty] ? post.content : post.excerpt;
+    NSAttributedString *str = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    content = [str string];
+//    content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+//    content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSUInteger length = content.length > 200 ? 200 : content.length;
+    content = [content substringWithRange:NSMakeRange(0, length)];
+    return content;
+}
+
+#pragma mark - postType page 特殊按时间多节处理
+//计算两个日期之间的差别
+- (NSDateComponents *)differenceBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay fromDate:fromDate toDate:toDate options:0];
+    
+    return difference;
+}
+
+- (NSArray *)walkPages:(NSArray *)posts
+{
+    if (posts && posts.count > 0) {
+        NSString *headerTitle = @"十年前";
+        NSInteger rows = 0;
+        NSInteger index = posts.count;
+        NSString *lastDiffType = @"";
+        NSMutableArray *results = [NSMutableArray new];
+        NSDictionary *result;
+        NSDate *nowDate = [NSDate date];
+        //反转posts 旧的排前
+        posts = [[posts reverseObjectEnumerator] allObjects];
+        for (RemotePost *post in posts) {
+            NSDateComponents *diff = [self differenceBetweenDate:nowDate andDate:post.date];
+            if (ABS(diff.day) >= 365*10) {
+                rows ++;
+            }else if (ABS(diff.day) >= 365*5){
+                if ([lastDiffType isEqualToString:@"fiveYears"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"fiveYears";
+                headerTitle = @"五年前";
+            }else if (ABS(diff.day) >= 365*3){
+                if ([lastDiffType isEqualToString:@"threeYears"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"threeYears";
+                headerTitle = @"三年前";
+            }else if (ABS(diff.day) >= 365*2){
+                if ([lastDiffType isEqualToString:@"twoYears"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"twoYears";
+                headerTitle = @"两年前";
+            }else if (ABS(diff.day) >= 365){
+                if ([lastDiffType isEqualToString:@"oneYears"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"oneYears";
+                headerTitle = @"一年前";
+            }else if (ABS(diff.day) >= 30*6){
+                if ([lastDiffType isEqualToString:@"halfYears"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"halfYears";
+                headerTitle = @"半年前";
+            }else if (ABS(diff.day) >= 30*3){
+                if ([lastDiffType isEqualToString:@"threeMonths"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"threeMonths";
+                headerTitle = @"三个月前";
+            }else if (ABS(diff.day) >= 30*2){
+                if ([lastDiffType isEqualToString:@"twoMonths"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"twoMonths";
+                headerTitle = @"两个月前";
+            }else if (ABS(diff.day) >= 30){
+                if ([lastDiffType isEqualToString:@"oneMonths"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"oneMonths";
+                headerTitle = @"一个月前";
+            }else if (ABS(diff.day) >= 7*2){
+                if ([lastDiffType isEqualToString:@"twoWeeks"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"twoWeeks";
+                headerTitle = @"两周前";
+            }else if (ABS(diff.day) >= 7){
+                if ([lastDiffType isEqualToString:@"oneWeeks"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"oneWeeks";
+                headerTitle = @"一周前";
+            }else{
+                if ([lastDiffType isEqualToString:@"inWeeks"]) {
+                    rows++;
+                }else if (rows > 0){
+                    result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+                    [results addObject:result];
+                    rows = 1;
+                }else{
+                    rows = 1;
+                }
+                lastDiffType = @"inWeeks";
+                headerTitle = @"一周内";
+            }
+            index--;
+        }
+        if (rows > 0) {
+            result = @{@"headerTitle":headerTitle,@"rows":[NSNumber numberWithInteger:rows],@"index":[NSNumber numberWithInteger:index]};
+            [results addObject:result];
+        }
+        return [[results reverseObjectEnumerator] allObjects];
+    }
+    return nil;
+}
 
 #pragma mark - site options
 
+
+#pragma mark - single post
+- (void)getPostWithID:(NSNumber *)postID
+              forBlog:(Blog *)blog
+              success:(void (^)(RemotePost *post))success
+              failure:(void (^)(NSError *))failure
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSArray *parameters = [self getXMLRPCArgsWithExtra:postID inBlog:blog];
+    WPXMLRPCClient *client = [PostControll getClientWithBlog:blog];
+    [client callMethod:@"wp.getPost"
+              parameters:parameters
+                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                     if (success) {
+                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                         success([PostControll remotePostFromXMLRPCDictionary:responseObject]);
+                     }
+                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                     if (failure) {
+                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                         failure(error);
+                     }
+                 }];
+}
+
+- (NSArray *)getXMLRPCArgsWithExtra:(id)extra inBlog:(Blog *)blog
+{
+    NSMutableArray *result = [NSMutableArray array];
+    NSString *password = [[[DataModel alloc] init] readKeyChainWithId:blog.id];
+    
+    [result addObject:[NSNumber numberWithInteger:blog.blogId]];
+    [result addObject:blog.userName];
+    [result addObject:password];
+    
+    if ([extra isKindOfClass:[NSArray class]]) {
+        [result addObjectsFromArray:extra];
+    } else if (extra != nil) {
+        [result addObject:extra];
+    }
+    
+    return [NSArray arrayWithArray:result];
+}
 
 
 @end
