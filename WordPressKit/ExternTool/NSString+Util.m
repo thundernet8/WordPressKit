@@ -31,10 +31,10 @@
 
 -(NSString *)htmlEntityDecode{
     NSString *string = [self stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-    string = [self stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-    string = [self stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-    string = [self stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-    string = [self stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    string = [string stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+    string = [string stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    string = [string stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+    string = [string stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
     
     return string;
 }
@@ -44,8 +44,8 @@
     //string = [self stringByReplacingOccurrencesOfString:@"'" withString:@"&apos;"];
     //string = [self stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
     NSString *string = [self stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
-    string = [self stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
-    string = [self stringByReplacingOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;"];
+    string = [string stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+    string = [string stringByReplacingOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;"];
     return string;
 }
 

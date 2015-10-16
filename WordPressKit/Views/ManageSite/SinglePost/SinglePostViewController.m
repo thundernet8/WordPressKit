@@ -37,6 +37,7 @@ static NSInteger currentFontSizeIndex;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSLog(@"%@",[@"<123><223>" htmlEntityEncode]);
 }
 
 - (void)viewDidLayoutSubviews{
