@@ -38,6 +38,12 @@
 		B4DB40611BC7C8F7009BD1A6 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB40601BC7C8F7009BD1A6 /* DACircularProgressView.m */; };
 		B4DB40641BC817A5009BD1A6 /* NavBarTitleDropdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB40631BC817A5009BD1A6 /* NavBarTitleDropdownButton.m */; };
 		B4DB43591BD111550023B227 /* post.html in Resources */ = {isa = PBXBuildFile; fileRef = B4DB43581BD111550023B227 /* post.html */; };
+		B4DB62FC1BD25833007DF1D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DB62FB1BD25833007DF1D1 /* Accelerate.framework */; };
+		B4DB62FE1BD2583E007DF1D1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DB62FD1BD2583E007DF1D1 /* AssetsLibrary.framework */; };
+		B4DB62FF1BD25848007DF1D1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DBDCE21BCC08B6005AF2EC /* ImageIO.framework */; };
+		B4DB63011BD25852007DF1D1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DB63001BD25852007DF1D1 /* MobileCoreServices.framework */; };
+		B4DB63021BD2585C007DF1D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DBDCE01BCC08AA005AF2EC /* QuartzCore.framework */; };
+		B4DB63041BD25864007DF1D1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DB63031BD25864007DF1D1 /* CoreImage.framework */; };
 		B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */; };
 		B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66321BAC3D7A00B625CC /* UserData.db */; };
 		B4DB7D9C1BBF6C2300DC203A /* PostActionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9B1BBF6C2300DC203A /* PostActionBarItem.m */; };
@@ -139,6 +145,10 @@
 		B4DB40621BC817A5009BD1A6 /* NavBarTitleDropdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavBarTitleDropdownButton.h; sourceTree = "<group>"; };
 		B4DB40631BC817A5009BD1A6 /* NavBarTitleDropdownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavBarTitleDropdownButton.m; sourceTree = "<group>"; };
 		B4DB43581BD111550023B227 /* post.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = post.html; sourceTree = "<group>"; };
+		B4DB62FB1BD25833007DF1D1 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		B4DB62FD1BD2583E007DF1D1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		B4DB63001BD25852007DF1D1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B4DB63031BD25864007DF1D1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DB66321BAC3D7A00B625CC /* UserData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserData.db; sourceTree = "<group>"; };
 		B4DB7D9A1BBF6C2300DC203A /* PostActionBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActionBarItem.h; sourceTree = "<group>"; };
@@ -208,6 +218,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DB63041BD25864007DF1D1 /* CoreImage.framework in Frameworks */,
+				B4DB63021BD2585C007DF1D1 /* QuartzCore.framework in Frameworks */,
+				B4DB63011BD25852007DF1D1 /* MobileCoreServices.framework in Frameworks */,
+				B4DB62FF1BD25848007DF1D1 /* ImageIO.framework in Frameworks */,
+				B4DB62FE1BD2583E007DF1D1 /* AssetsLibrary.framework in Frameworks */,
+				B4DB62FC1BD25833007DF1D1 /* Accelerate.framework in Frameworks */,
 				B4DBDCDB1BCC0887005AF2EC /* SystemConfiguration.framework in Frameworks */,
 				B41049E61BA9AA7000109B9B /* Security.framework in Frameworks */,
 				B4E2BBA01B8F40B100B10CF2 /* libsqlite3.0.dylib in Frameworks */,
@@ -536,6 +552,10 @@
 		B622458F32FA8E0D941839DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B4DB63031BD25864007DF1D1 /* CoreImage.framework */,
+				B4DB63001BD25852007DF1D1 /* MobileCoreServices.framework */,
+				B4DB62FD1BD2583E007DF1D1 /* AssetsLibrary.framework */,
+				B4DB62FB1BD25833007DF1D1 /* Accelerate.framework */,
 				B4DBDCEA1BCC0916005AF2EC /* libiconv.dylib */,
 				B4DBDCE81BCC090B005AF2EC /* libstdc++.dylib */,
 				B4DBDCE41BCC08C3005AF2EC /* CoreText.framework */,
@@ -565,6 +585,7 @@
 				B4E53F091B87FDCB00C4CFAA /* Frameworks */,
 				B4E53F0A1B87FDCB00C4CFAA /* Resources */,
 				CCF9E8702D2AB3D89A5077C8 /* Copy Pods Resources */,
+				E16B91F22AE7A717615CC790 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -688,6 +709,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E16B91F22AE7A717615CC790 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -872,6 +908,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WordPressKit/WordPressKit-Prefix.pch";
 				INFOPLIST_FILE = "WordPressKit/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -891,6 +928,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WordPressKit/WordPressKit-Prefix.pch";
 				INFOPLIST_FILE = "WordPressKit/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
