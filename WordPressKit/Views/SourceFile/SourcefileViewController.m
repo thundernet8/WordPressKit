@@ -107,7 +107,7 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }else{
-        cell.textLabel.text = @"Oops, 这里空空如也 ···";
+        cell.textLabel.text = @"Oops, 这里什么都没有 ···";
     }
     
     
@@ -133,13 +133,36 @@
     NSString *title = sourceFile.name ? sourceFile.name : @"源码";
     if ([sourceFile.type  isEqual: @"folder"]) {
         [self.navigationItem setTitle:title];//设定导航标题
-        UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbutton_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backUpFolder)];//自定义导航返回的左按钮
-        self.navigationItem.leftBarButtonItem = leftBar;//自定义导航返回的左按钮
+        [self configureNavBackButton];//自定义导航返回的左按钮
         [self.dataModel querySourceFilesByParentId:sourceFile.id];//查询数据
         [self.tableView reloadData];//页面重载
     }else if (sourceFile.type){
         [self performSegueWithIdentifier:@"ShowSourceFileContent" sender:sourceFile];
     }
+}
+
+//导航左按钮
+- (void)configureNavBackButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    button.exclusiveTouch = YES;
+    button.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.2] forState:UIControlStateHighlighted];
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward_hl"] forState:UIControlStateHighlighted];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -12.0, 0.0, 0.0)];
+    CGSize fontSize = [button.titleLabel sizeThatFits:CGSizeMake(100.0, 22.0)];
+    button.frame = CGRectMake(0.0, 0.0, button.imageView.image.size.width+fontSize.width+1, 40.0);
+    [button addTarget:self action:@selector(backUpFolder) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barbtn = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //修正iOS7以上左边距
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -16;
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,barbtn, nil];
 }
 
 // selector - 返回上一文件夹
@@ -151,7 +174,7 @@
     SourceFile *parentSourceFile = (SourceFile *)self.dataModel.parentSourceFolderInfo;
     self.navigationItem.title = parentSourceFile.name ? parentSourceFile.name : @"源码";
     if (pparentId == 0) {
-        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.leftBarButtonItems = nil;
         self.navigationItem.title = @"源码";
     }
     [self.tableView reloadData];

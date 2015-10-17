@@ -85,7 +85,8 @@ static NSInteger currentFontSizeIndex;
     //date
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     //[dateFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [dateFormat setDateFormat:@"YYYY-MM-dd a hh:mm"];
+    [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Shanghai"]];
+    [dateFormat setDateFormat:@"yyyy-MM-dd hh:MM a"];
     NSString *metaStr = [dateFormat stringFromDate:self.post.date];
     //authorname
     if (![self.post.authorDisplayName isEmpty]) {
