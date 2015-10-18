@@ -150,6 +150,7 @@
 
 - (void)configTableView
 {
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
     CGFloat deviceHeight = [UIScreen mainScreen].bounds.size.height;
     if (deviceHeight < 560.0) {
         self.tableView.scrollEnabled = YES;

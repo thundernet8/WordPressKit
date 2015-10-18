@@ -66,6 +66,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
  */
 - (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog
 {
+    self.backgroundColor = kBackgroundColorLightGray;
     self.post = post;
     //博客名
     self.BlogName.text = blog.name;

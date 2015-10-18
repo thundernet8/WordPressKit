@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "wordpress@1x.png"
+      "filename" : "wordpress_transparent@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "wordpress@2x.png"
+      "filename" : "wordpress_transparent@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "wordpress@3x.png"
+      "filename" : "wordpress_transparent@3x.png"
     }
   ],
   "info" : {

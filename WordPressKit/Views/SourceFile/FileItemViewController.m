@@ -22,11 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
+    
     self.webViewer.delegate = self;//设置webview委托
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbutton_wrap"] style:UIBarButtonItemStylePlain target:self action:@selector(wrapHtmlContent)];//自定义导航右换行切换按钮
     self.navigationItem.rightBarButtonItem = rightBar;//自定义导航右换行切换按钮
     [self configureNavBackButton];
+    [self configureTabbar];
     //开始加载
     [self loadHud];
     //[self loadHtml];
@@ -175,6 +176,11 @@
 - (void)backForward:(UINavigationItem *)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)configureTabbar
+{
+    self.tabBarController.tabBar.tintColor = kFontColorGreenBlue; //tab bar tint color
 }
 
 @end

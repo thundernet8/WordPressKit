@@ -31,13 +31,10 @@
     self.dataModel = [[DataModel alloc] init];//
     [self.dataModel queryAllCatItems]; //查询
     
-    self.tableView.separatorColor = kSeparatorColor;
     
-    self.navigationController.navigationBar.tintColor = kWhiteColor;//导航条文字颜色
-    self.navigationController.navigationBar.barTintColor = kNaviBackgroundColorBlue; //导航条背景色
-    
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: kWhiteColor};//导航条标题颜色
-    
+    [self configureNavi];
+    [self configureTabbar];
+    [self configureTableView];
 
 }
 
@@ -47,15 +44,25 @@
     [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)configureTabbar
+{
+    self.tabBarController.tabBar.tintColor = kFontColorGreenBlue; //tab bar tint color
 }
-*/
+
+- (void)configureNavi
+{
+    self.navigationController.navigationBar.tintColor = kWhiteColor;//导航条文字颜色
+    self.navigationController.navigationBar.barTintColor = kNaviBackgroundColorGreenBlue; //导航条背景色
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: kWhiteColor};//导航条标题颜色
+}
+
+- (void)configureTableView
+{
+    self.tableView.separatorColor = kSeparatorColor;
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
+    self.view.backgroundColor = kBackgroundColorLightGray;
+}
 
 //配置cell label text
 - (void)configLabelTextForCell:(UITableViewCell *)cell cellWithCatItem:(CatItem *)catItem

@@ -33,6 +33,7 @@
 
 - (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog
 {
+    self.backgroundColor = kBackgroundColorLightGray;
     //左border
     //self.colorBorder.backgroundColor
     self.colorBorder.backgroundColor = [self getBorderColor];

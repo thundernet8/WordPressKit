@@ -11,8 +11,10 @@
 #import "ManageSite/PostsListViewController.h"
 #import "ManageSite/SiteSettingViewController.h"
 #import "ManageSite/PagesListViewController.h"
+#import "ManageSite/CustomPostsListViewController.h"
+#import "NSString+Util.h"
 
-@interface SiteToolsViewController ()
+@interface SiteToolsViewController () <UIAlertViewDelegate>
 
 - (void)configureNavBackItemTitle;
 
@@ -23,37 +25,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    //去除tableview底部空白cell
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
+    [self configureBlogInfo];
+    [self configureNavBackItemTitle];
+    [self configureTableView];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - configure
+- (void)configureBlogInfo
+{
     //标题
     self.navigationItem.title = self.blog.name;
     
     //table上方描述
+    UIView *blogInfoWrapper = [self.view viewWithTag:1801];
+    blogInfoWrapper.backgroundColor = kBackgroundColorLightGray;
     UIImageView *blogLogo = (UIImageView *)[self.view viewWithTag:1802];
     blogLogo.image = [UIImage imageNamed:@"icon_blogavatar"];
     UILabel *blogName = (UILabel *)[self.view viewWithTag:1803];
     blogName.text = self.blog.name;
     UILabel *blogUrl = (UILabel *)[self.view viewWithTag:1804];
     blogUrl.text = [[self.blog.url stringByReplacingOccurrencesOfString:@"http://" withString:@""] stringByReplacingOccurrencesOfString:@"/" withString:@""];
-    
-    //tableview分割线颜色
-    self.tableView.separatorColor = kSeparatorColor;
-    
-    [self configureNavBackItemTitle];
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)configureTableView
+{
+    //去除tableview底部空白cell
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    //tableview分割线颜色
+    self.tableView.separatorColor = kSeparatorColor;
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
+    self.view.backgroundColor = kBackgroundColorLightGray;
 }
 
 #pragma mark - Table view data source
@@ -66,6 +72,7 @@
     if (section == 0) {
         return 2;
     }else if (section == 1){
+        //return 4;
         return 3;
     }else if (section == 2){
         return 1;
@@ -100,6 +107,10 @@
             text = @"页面";
             break;
         case 22:
+            icon = @"icon_filter";
+            text = @"自定义";
+            break;
+        case 23:
             icon = @"icon_comments";
             text = @"评论";
             break;
@@ -120,7 +131,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *header = [[UIView alloc] init];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16.0f, 25.0f, tableView.frame.size.width, 20.0f)];
-    label.text = section == 0 ? @"" : section == 1 ? @"发布" : @"配置";
+    label.text = section == 0 ? @"" : section == 1 ? @"内容" : @"配置";
     label.textColor = [[UIColor alloc] initWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0f];
     label.font = [UIFont systemFontOfSize:14.0];
     [header addSubview:label];
@@ -148,6 +159,12 @@
         [self performSegueWithIdentifier:@"ShowPostsList" sender:self.blog];
     }else if (indexPath.section == 1 && indexPath.row == 1){
         [self performSegueWithIdentifier:@"ShowPagesList" sender:self.blog];
+    }else if (indexPath.section == 1 && indexPath.row == 2){
+        [self.tableView cellForRowAtIndexPath:indexPath].selected = NO;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"输入文章类型" message:@"请输入自定义的文章类型,例如'post'" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert show];
+        
     }else if (indexPath.section == 2 && indexPath.row == 0){
         [self performSegueWithIdentifier:@"SiteSettings" sender:self.blog];
     }
@@ -174,6 +191,9 @@
     } else if ([segue.identifier isEqualToString:@"SiteSettings"]){
         SiteSettingViewController *controller = segue.destinationViewController;
         controller.blog = sender;
+    } else if ([segue.identifier isEqualToString:@"ShowCustomPosts"]){
+        CustomPostsListViewController *controller = segue.destinationViewController;
+        controller.blogInfo = sender;
     }
 }
 
@@ -187,6 +207,50 @@
     //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:[NSString string] style:UIBarButtonItemStylePlain target:nil action:nil];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
+    [self configureNavBackButton];
+}
+
+- (void)configureNavBackButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    button.exclusiveTouch = YES;
+    button.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.2] forState:UIControlStateHighlighted];
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward_hl"] forState:UIControlStateHighlighted];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -12.0, 0.0, 0.0)];
+    CGSize fontSize = [button.titleLabel sizeThatFits:CGSizeMake(100.0, 22.0)];
+    button.frame = CGRectMake(0.0, 0.0, button.imageView.image.size.width+fontSize.width+1, 40.0);
+    [button addTarget:self action:@selector(backForward:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barbtn = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //修正iOS7以上左边距
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -16;
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,barbtn, nil];
+}
+
+- (void)backForward:(UINavigationItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - alertview delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        UITextField *textField = [alertView textFieldAtIndex:0];
+        [textField resignFirstResponder];
+        NSString *postType = textField.text;
+        if (![postType isEmpty]) {
+            NSArray *blogInfo = @[self.blog,postType];
+            [self performSegueWithIdentifier:@"ShowCustomPosts" sender:blogInfo];
+        }
+    }
 }
 
 @end

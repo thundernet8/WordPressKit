@@ -44,6 +44,7 @@
 		B4DB63011BD25852007DF1D1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DB63001BD25852007DF1D1 /* MobileCoreServices.framework */; };
 		B4DB63021BD2585C007DF1D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DBDCE01BCC08AA005AF2EC /* QuartzCore.framework */; };
 		B4DB63041BD25864007DF1D1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DB63031BD25864007DF1D1 /* CoreImage.framework */; };
+		B4DB63071BD2AFB0007DF1D1 /* CustomPostsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB63061BD2AFB0007DF1D1 /* CustomPostsListViewController.m */; };
 		B4DB66311BAC3D4E00B625CC /* FuncItems.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */; };
 		B4DB66331BAC3D7A00B625CC /* UserData.db in Resources */ = {isa = PBXBuildFile; fileRef = B4DB66321BAC3D7A00B625CC /* UserData.db */; };
 		B4DB7D9C1BBF6C2300DC203A /* PostActionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DB7D9B1BBF6C2300DC203A /* PostActionBarItem.m */; };
@@ -149,6 +150,8 @@
 		B4DB62FD1BD2583E007DF1D1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		B4DB63001BD25852007DF1D1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B4DB63031BD25864007DF1D1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		B4DB63051BD2AFB0007DF1D1 /* CustomPostsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPostsListViewController.h; sourceTree = "<group>"; };
+		B4DB63061BD2AFB0007DF1D1 /* CustomPostsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPostsListViewController.m; sourceTree = "<group>"; };
 		B4DB66301BAC3D4E00B625CC /* FuncItems.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuncItems.sqlite3; sourceTree = "<group>"; };
 		B4DB66321BAC3D7A00B625CC /* UserData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserData.db; sourceTree = "<group>"; };
 		B4DB7D9A1BBF6C2300DC203A /* PostActionBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActionBarItem.h; sourceTree = "<group>"; };
@@ -349,6 +352,8 @@
 				B40213B81BC6BB8600E71E6B /* PostsListViewController.m */,
 				B4DEF9791BCD1459001D78DE /* PagesListViewController.h */,
 				B4DEF97A1BCD1459001D78DE /* PagesListViewController.m */,
+				B4DB63051BD2AFB0007DF1D1 /* CustomPostsListViewController.h */,
+				B4DB63061BD2AFB0007DF1D1 /* CustomPostsListViewController.m */,
 				B4DDA85E1BCFDC7B006A33B9 /* SinglePost */,
 			);
 			path = ManageSite;
@@ -759,6 +764,7 @@
 				B4E0DF471BAE602D00289630 /* SiteToolsViewController.m in Sources */,
 				B4DB40641BC817A5009BD1A6 /* NavBarTitleDropdownButton.m in Sources */,
 				B4DD02EA1BB045F20066C8E5 /* PostCell.m in Sources */,
+				B4DB63071BD2AFB0007DF1D1 /* CustomPostsListViewController.m in Sources */,
 				B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */,
 				B41049E21BA992BC00109B9B /* Blog.m in Sources */,
 				B4DB40611BC7C8F7009BD1A6 /* DACircularProgressView.m in Sources */,

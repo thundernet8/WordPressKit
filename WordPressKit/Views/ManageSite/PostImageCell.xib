@@ -166,7 +166,7 @@
                         </variation>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.89411764709999997" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="8qP-aB-hwT" firstAttribute="leading" secondItem="tC7-r5-sIX" secondAttribute="leadingMargin" constant="-10" id="2tC-bQ-3en"/>
                     <constraint firstItem="8qP-aB-hwT" firstAttribute="top" secondItem="tC7-r5-sIX" secondAttribute="topMargin" constant="8" id="9Lt-7d-z2b"/>

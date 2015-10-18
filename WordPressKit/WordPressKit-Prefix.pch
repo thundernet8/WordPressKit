@@ -30,15 +30,18 @@
 //font color
 #define kFontColorGray ([UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0])
 #define kFontColorGrayBlue ([UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0f])
+#define kFontColorGreenBlue ([[UIColor alloc] initWithRed:66/255.0 green:133/255.0 blue:244/255.0 alpha:1.0])
 
 //tableView
 #define kBackgroundColorLightBlue ([UIColor colorWithRed:228/255.0 green:236/255.0 blue:241/255.0 alpha:1.0])
+#define kBackgroundColorLightGray ([UIColor colorWithRed:247/255.0 green:247/255.0 blue:247/255.0 alpha:1.0])
 #define kSeparatorColor ([[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f])
 
 //Navigation
 
 #define kWhiteColor ([UIColor whiteColor])
 #define kNaviBackgroundColorBlue ([[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0])
+#define kNaviBackgroundColorGreenBlue ([[UIColor alloc] initWithRed:66/255.0 green:133/255.0 blue:244/255.0 alpha:1.0])
 
 //Device
 //判断是否为iPhone

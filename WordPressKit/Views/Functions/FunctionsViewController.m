@@ -80,12 +80,14 @@
 - (void)configureSearchBar
 {
     self.searchBar.delegate = self;
+    self.searchBar.backgroundColor = kNaviBackgroundColorGreenBlue;
 }
 
 - (void)configureTableView
 {
+    self.view.backgroundColor = kBackgroundColorLightGray;
     self.tableView.separatorColor = kSeparatorColor;
-    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -101,7 +103,7 @@
 
 - (void)configureTabbar
 {
-    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
+    self.tabBarController.tabBar.tintColor = kFontColorGreenBlue; //tab bar tint color
 }
 
 #pragma mark - 配置cell的img和label
@@ -159,8 +161,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.searchBar resignFirstResponder];
-    FuncItem *funcItem = [[FuncItem alloc] init];
-    funcItem = self.dataModel.funcItems[indexPath.row];
+    FuncItem *funcItem = self.dataModel.funcItems[indexPath.row];
     [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
 }
 
@@ -198,7 +199,7 @@
 - (void)setStatusBarBackgroundColor
 {
     UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 22)];
-    statusBarView.backgroundColor  =  kNaviBackgroundColorBlue;
+    statusBarView.backgroundColor  =  kNaviBackgroundColorGreenBlue;
     [self.view addSubview:statusBarView];
 }
 

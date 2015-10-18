@@ -43,6 +43,7 @@
     //textview 委托
     UITextView *sourcefileText = (UITextView *)[self.view viewWithTag:1108];
     sourcefileText.delegate = self;
+    [self configureNavi];
     [self configureNavBackItemTitle];
 }
 
@@ -51,20 +52,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 // 配置各模块的文字
 - (void)configText
 {
-    FuncItem *funcItem = [[FuncItem alloc] init];
+    FuncItem *funcItem = [FuncItem new];
     funcItem = self.funcItem;
     //标题与函数名
     self.navigationItem.title = funcItem.name;
@@ -131,6 +123,10 @@
 }
 
 #pragma mark - configure
+- (void)configureNavi
+{
+    self.navigationController.navigationBar.barTintColor = kNaviBackgroundColorGreenBlue;
+}
 
 /**
  *  配置即将push的VC的导航返回按钮的文字(只能在父级中配置)

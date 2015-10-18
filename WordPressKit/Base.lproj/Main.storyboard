@@ -36,7 +36,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4lX-el-RCG">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -578,7 +578,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="1901" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-l7-XZm" userLabel="TopBar">
+                            <view tag="1901" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-l7-XZm" userLabel="TopBar">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4N-4F-Mvd">
@@ -618,7 +618,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="e4N-4F-Mvd" firstAttribute="top" secondItem="ZMy-l7-XZm" secondAttribute="top" constant="27" id="Gk5-ty-6Yj"/>
                                     <constraint firstItem="e4N-4F-Mvd" firstAttribute="leading" secondItem="ZMy-l7-XZm" secondAttribute="leading" constant="10" id="Hk2-AB-b7q"/>
@@ -631,7 +631,7 @@
                                     <constraint firstItem="IWI-BJ-RTl" firstAttribute="leading" secondItem="lBL-4h-pdD" secondAttribute="trailing" constant="20" id="tK8-u4-xxC"/>
                                 </constraints>
                             </view>
-                            <view tag="1903" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-oY-EHx" userLabel="BottomToolBar">
+                            <view tag="1903" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-oY-EHx" userLabel="BottomToolBar">
                                 <rect key="frame" x="0.0" y="564" width="600" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-Hn-L3q">
@@ -685,7 +685,7 @@
                                     <constraint firstItem="cg2-Um-69E" firstAttribute="leading" secondItem="GQh-r5-c73" secondAttribute="trailing" constant="60" id="oI7-us-ZzM"/>
                                 </constraints>
                             </view>
-                            <webView tag="1902" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JQ-xF-d24">
+                            <webView tag="1902" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7JQ-xF-d24">
                                 <rect key="frame" x="0.0" y="64" width="600" height="508"/>
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -786,11 +786,46 @@
                         <segue destination="6U3-yg-acK" kind="show" identifier="SiteSettings" id="6wU-c0-A8l"/>
                         <segue destination="Afq-BV-PRa" kind="show" identifier="ShowPostsList" id="BWA-PV-b4a"/>
                         <segue destination="cPD-Ue-39a" kind="show" identifier="ShowPagesList" id="zsL-7i-f5S"/>
+                        <segue destination="avv-Tx-suI" kind="show" identifier="ShowCustomPosts" id="OAe-e3-R4q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usX-EA-18d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3547" y="584"/>
+        </scene>
+        <!--自定义文章-->
+        <scene sceneID="5q1-XZ-d8m">
+            <objects>
+                <viewController id="avv-Tx-suI" customClass="CustomPostsListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WXX-9E-S4B"/>
+                        <viewControllerLayoutGuide type="bottom" id="91A-wo-noK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4sh-9c-BZL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="自定义文章" id="K5J-tN-TL8"/>
+                    <connections>
+                        <outlet property="filterButton" destination="jY3-OE-4Kx" id="OPk-IJ-bkB"/>
+                        <segue destination="INO-MP-ly1" kind="show" identifier="ViewCustomPost" id="osW-FN-eW0"/>
+                        <segue destination="9iQ-bM-FKu" kind="show" identifier="PreviewCustomPost" id="HH7-c2-iqw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wtz-RR-WfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jY3-OE-4Kx" customClass="NavBarTitleDropdownButton">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapFilterButton:" destination="avv-Tx-suI" eventType="touchUpInside" id="MwW-j3-e2p"/>
+                    </connections>
+                </button>
+            </objects>
+            <point key="canvasLocation" x="4439" y="-894"/>
         </scene>
         <!--页面-->
         <scene sceneID="gfq-Ft-BW3">
@@ -845,7 +880,7 @@
                                         <rect key="frame" x="8" y="8" width="584" height="20"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM4-Dh-9pc">
@@ -1451,7 +1486,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dZR-wj-0Rn" firstAttribute="top" secondItem="kLV-9U-Cgc" secondAttribute="bottom" constant="30" id="ivp-Oa-PC2"/>
                             <constraint firstAttribute="centerX" secondItem="512-RE-8Lc" secondAttribute="centerX" id="mFG-of-aZf"/>
@@ -1510,7 +1545,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wordpress2" translatesAutoresizingMaskIntoConstraints="NO" id="xxk-TC-cDn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wordpress_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="xxk-TC-cDn">
                                 <rect key="frame" x="260" y="75" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="G3c-5j-CLe"/>
@@ -1520,7 +1555,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WordPress Kit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUL-uw-VIJ">
                                 <rect key="frame" x="189" y="158" width="223" height="25"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.074509803921568626" green="0.59215686274509804" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CF8-ac-IdC">
@@ -1837,14 +1872,14 @@
         <image name="tabbar_button_category" width="22" height="22"/>
         <image name="tabbar_button_function" width="22" height="22"/>
         <image name="tabbutton_code" width="22" height="22"/>
-        <image name="wordpress" width="120" height="120"/>
-        <image name="wordpress2" width="120" height="120"/>
+        <image name="wordpress" width="60" height="60"/>
+        <image name="wordpress_transparent" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Owd-lW-jMT"/>
         <segue reference="r7U-Ry-fub"/>
         <segue reference="UZO-Er-ThG"/>
-        <segue reference="jcu-AJ-ziY"/>
-        <segue reference="74y-rj-jzf"/>
+        <segue reference="osW-FN-eW0"/>
+        <segue reference="HH7-c2-iqw"/>
     </inferredMetricsTieBreakers>
 </document>

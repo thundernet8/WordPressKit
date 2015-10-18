@@ -47,7 +47,7 @@
 {
     title = [title stringByAppendingString:@" "];
     NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
-                                 NSFontAttributeName : [UIFont systemFontOfSize:16.0] };
+                                 NSFontAttributeName : [UIFont boldSystemFontOfSize:17.0] };
     NSMutableAttributedString *titleText = [[NSMutableAttributedString alloc] initWithString:title attributes:attributes];
     
     [self setAttributedTitle:titleText forState:UIControlStateNormal];

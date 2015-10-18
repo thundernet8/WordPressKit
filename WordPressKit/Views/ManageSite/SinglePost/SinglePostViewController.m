@@ -32,6 +32,7 @@ static NSInteger currentFontSizeIndex;
     // Do any additional setup after loading the view.
     [self addHud];
     [self configureVariables];
+    [self configureNavBackButton];
     [self configureContent];
 }
 
@@ -67,7 +68,7 @@ static NSInteger currentFontSizeIndex;
 
 - (void)configureVariables
 {
-    fontSizes = @[@"small",@"normal",@"big"];
+    fontSizes = @[@"normal",@"big",@"small"];
 }
 
 - (void)configureView
@@ -107,6 +108,34 @@ static NSInteger currentFontSizeIndex;
     
     self.postContent.delegate = self;
     
+}
+
+- (void)configureNavBackButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    button.exclusiveTouch = YES;
+    button.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.2] forState:UIControlStateHighlighted];
+    [button setTitle:@"站点" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward_hl"] forState:UIControlStateHighlighted];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -12.0, 0.0, 0.0)];
+    CGSize fontSize = [button.titleLabel sizeThatFits:CGSizeMake(100.0, 22.0)];
+    button.frame = CGRectMake(0.0, 0.0, button.imageView.image.size.width+fontSize.width+1, 40.0);
+    [button addTarget:self action:@selector(backForward:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barbtn = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //修正iOS7以上左边距
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -16;
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,barbtn, nil];
+}
+
+- (void)backForward:(UINavigationItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - webview delegate

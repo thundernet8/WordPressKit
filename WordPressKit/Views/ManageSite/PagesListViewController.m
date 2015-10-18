@@ -53,6 +53,7 @@ extern const CGFloat tableViewInsertBottom;
     [self configVariable];
     [self updateFilter];
     [self configureNavbar];
+    [self configureNavBackButton];
     [self addSCPullRefreshBlocks];
     [self fetchPostsFromDBWithReloadTableView:NO];
     
@@ -62,7 +63,9 @@ extern const CGFloat tableViewInsertBottom;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSLog(@"view appear");
-    if (self.pc.posts.count <= numOfPostsPerPageB) {
+    if (self.pc.posts.count == 0) {
+        [PostControll syncPostsWithBlog:self.blog postType:postType page:pageB];
+    }else if (self.pc.posts.count <= numOfPostsPerPageB) {
         [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
     }
     pageB = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPageB));
@@ -167,13 +170,41 @@ extern const CGFloat tableViewInsertBottom;
     [self updateFilterTitle];
 }
 
+- (void)configureNavBackButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    button.exclusiveTouch = YES;
+    button.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.2] forState:UIControlStateHighlighted];
+    [button setTitle:@"站点" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"barbutton_backward_hl"] forState:UIControlStateHighlighted];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -12.0, 0.0, 0.0)];
+    CGSize fontSize = [button.titleLabel sizeThatFits:CGSizeMake(100.0, 22.0)];
+    button.frame = CGRectMake(0.0, 0.0, button.imageView.image.size.width+fontSize.width+1, 40.0);
+    [button addTarget:self action:@selector(backForward:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barbtn = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //修正iOS7以上左边距
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -16;
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,barbtn, nil];
+}
+
+- (void)backForward:(UINavigationItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)configureTableView
 {
     //init
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.tableFooterView = [UIView new];
     
-    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
     self.tableView.separatorColor = kSeparatorColor;
     
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 12, 0, 0);
@@ -398,11 +429,13 @@ extern const CGFloat tableViewInsertBottom;
 
 - (void)writePostsToDBNotificationCallback:(NSNotification *)notification
 {
+    NSLog(@"notice");
     NSDictionary *info = [notification userInfo];
     NSNumber *chagedPostsNum = [info objectForKey:@"chagedPostsNum"];
     BOOL netWorkOk = [[info objectForKey:@"netWorkOk"] boolValue];
     if (!netWorkOk) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"\r\n网络连接或博客服务器存在问题,更新失败\r\n" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        [self removeHud];
         [alert show];
     }
     if ([chagedPostsNum intValue] > 0 && ![self isLoadingMore]) {
@@ -414,12 +447,15 @@ extern const CGFloat tableViewInsertBottom;
     }else if ([self isLoadingMore]){
         [self hasSyncMorePosts];
     }
+    [self removeHud];
     [self endRefresh];
 }
 
 - (void)queryedDBPostsNotificationCallback:(NSNotification *)notification
 {
-    [self removeHud];
+    if (self.pc.posts.count > 0) {
+        [self removeHud];
+    }
 }
 
 #pragma mark - SCPullRefresh Blocks

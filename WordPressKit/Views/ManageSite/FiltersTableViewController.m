@@ -64,7 +64,7 @@
 
 - (void)configureNavibar
 {
-    self.navigationController.navigationBar.barTintColor = kNaviBackgroundColorBlue;
+    self.navigationController.navigationBar.barTintColor = kNaviBackgroundColorGreenBlue;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: kWhiteColor};
     self.navigationController.navigationBar.tintColor = kWhiteColor;
 }

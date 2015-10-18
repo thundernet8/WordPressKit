@@ -31,11 +31,15 @@ static NSString * postStatusPC = @"publish";
 
 extern NSInteger numOfPostsPerPageA;
 extern NSInteger numOfPostsPerPageB;
+extern NSInteger numOfPostsPerPageC;
 extern NSUInteger pageA;
 extern NSUInteger pageB;
+extern NSUInteger pageC;
 extern NSString * postStatusA;
 extern NSString * postStatusB;
+extern NSString * postStatusC;
 
+static NSInteger chagedPostsNum = 0;
 
 @interface PostControll()
 
@@ -48,7 +52,7 @@ extern NSString * postStatusB;
 + (NSArray *)remoteCategoriesFromXMLRPCTermsArray:(NSArray *)terms;
 + (RemotePostCategory *)remoteCategoryFromXMLRPCDictionary:(NSDictionary *)xmlrpcCategory;
 + (void)writePostsToDB:(NSArray *)posts inBlog:(Blog *)blog postType:(NSString *)postType;
-- (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog;
+- (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
 - (NSString *)userDataFilePath;
 - (BOOL)existPost:(NSNumber *)postId;
 - (NSDate *)getDateFromStr:(NSString *)dateStr;
@@ -133,6 +137,10 @@ extern NSString * postStatusB;
         numOfPostsPerPagePC = numOfPostsPerPageB;
         pagePC = pageB;
         postStatusPC = postStatusB;
+    }else{
+        numOfPostsPerPagePC = numOfPostsPerPageC;
+        pagePC = pageC;
+        postStatusPC = postStatusC;
     }
     postTypePC = postType;
 }
@@ -173,13 +181,12 @@ extern NSString * postStatusB;
 + (void)writePostsToDB:(NSArray *)posts inBlog:(Blog *)blog postType:(NSString *)postType
 {
     PostControll *pc = [[self alloc] initWithBlog:blog];
-    pc.chagedPostsNum = 0;
+    chagedPostsNum = 0;
     for (RemotePost *post in posts) {
-        [pc writePostToDB:post inBlog:blog];
+        [pc writePostToDB:post inBlog:blog needNotification:!(chagedPostsNum+1!=posts.count)];
     }
-    //广播通知ListPostsViewController
-    NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInteger:pc.chagedPostsNum],@"netWorkOk" : @YES};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
+    pc = nil;
+    
 }
 
 /**
@@ -197,11 +204,12 @@ extern NSString * postStatusB;
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        NSString *sql = @"SELECT * FROM POSTS WHERE POSTID = ?";
+        NSString *sql = @"SELECT * FROM POSTS WHERE POSTID = ? AND SITEID = ?";
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
             sqlite3_bind_int(stmt, 1, [postId intValue]);
+            sqlite3_bind_int(stmt, 2, (int)self.blog.id);
             if (sqlite3_step(stmt) == SQLITE_ROW) {
                 sqlite3_finalize(stmt);
                 //sqlite3_close(db);
@@ -221,7 +229,7 @@ extern NSString * postStatusB;
  *  @param post 格式化的单个文章对象
  *  @param blog 博客对象,区别文章归属
  */
-- (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog
+- (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
 {
     int siteid = (int)blog.id;
     //将categories数组写入对应表，重组category id为字符串写入post对应字段
@@ -251,7 +259,7 @@ extern NSString * postStatusB;
         }else{
           sql = [NSString stringWithFormat:@"INSERT INTO POSTS (POSTID, SITEID, AUTHORAVATAR, AUTHORNAME, AUTHOREMAIL, AUTHORURL, AUTHORID, DATE, TITLE, URL, SHORTURL, CONTENT, EXCERPT, SLUG, STATUS, PASSWORD, PARENTID, POSTTHUMBNAILID, POSTTHUMBNAILPATH, TYPE, FORMAT, COMMENTCOUNT, CATEGORIES, TAGS, PATHFORDISPLAYIMAGE, METADATA) VALUES(%i, %i,?,?,?,?,%i,?,?,?,?,?,?,?,?,?,%i,%i,?,?,?,%i,?,?,?,?)",[post.postID intValue],siteid,[post.authorID intValue],[post.parentID intValue],[post.postThumbnailID intValue],[post.commentCount intValue]];
             //插入计数加1
-            self.chagedPostsNum ++;
+            chagedPostsNum ++;
         }
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
@@ -285,6 +293,11 @@ extern NSString * postStatusB;
         }
         sqlite3_finalize(stmt);
         sqlite3_close(db);
+    }
+    if (needNotification) {
+        //广播通知ListPostsViewController
+        NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInteger:chagedPostsNum],@"netWorkOk" : @YES};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
     }
     //记录博客同步时间
     [self siteLastSynced:[NSNumber numberWithInt:siteid]];
@@ -493,7 +506,7 @@ extern NSString * postStatusB;
             }
             self.posts = results;
             
-            //广播通知ListPostsViewController
+            //广播通知PostsListViewController
             NSDictionary *info = @{@"queryedDBPostsCount" : [NSNumber numberWithInteger:results.count]};
             [[NSNotificationCenter defaultCenter] postNotificationName:@"queryedDBPostsNotification" object:nil userInfo:info];
             
@@ -583,11 +596,11 @@ extern NSString * postStatusB;
             //合并posts
             NSLog(@"old posts: %lu \r\nloadmore count: %lu \r\npage is %i\r\n",(unsigned long)self.posts.count,(unsigned long)results.count,(int)page);
             self.posts = [self.posts arrayByAddingObjectsFromArray:results];
-            return results;
             
-//            //广播通知ListPostsViewController
-//            NSDictionary *info = @{@"queryedDBPostsCount" : [NSNumber numberWithInteger:results.count]};
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"queryedDBPostsNotification" object:nil userInfo:info];
+            //广播通知PostListsViewController
+            NSDictionary *info = @{@"queryedDBPostsCount" : [NSNumber numberWithInteger:results.count]};
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"queryedDBPostsNotification" object:nil userInfo:info];
+            return results;
             
         }
         sqlite3_finalize(stmt);

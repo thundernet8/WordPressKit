@@ -31,25 +31,10 @@
     self.dataModel = [[DataModel alloc] init]; //初始化dataModel
     [self.dataModel querySourceFilesByParentId:0]; //查询初始文件夹层级所有内容
     
-    //去除tableview底部空白cell
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    //分割线全宽-tableview
-//    UITableView *tableView = self.tableView;
-//    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-//        [tableView setSeparatorInset:UIEdgeInsetsZero];
-//    }
-//    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-//        [tableView setLayoutMargins:UIEdgeInsetsZero];
-//    }
-    
-    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];//tableview分割线颜色
-    
-    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
-    self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
-    
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
+    [self configureNavi];
+    [self configureTableView];
+    [self configureTabbar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,15 +42,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - configure
+- (void)configureNavi
+{
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
+    self.navigationController.navigationBar.barTintColor = kNaviBackgroundColorGreenBlue; //导航条背景色
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
 }
-*/
+
+- (void)configureTabbar
+{
+    self.tabBarController.tabBar.tintColor = kFontColorGreenBlue; //tab bar tint color
+}
+
+- (void)configureTableView
+{
+    self.tableView.separatorColor = kSeparatorColor;//tableview分割线颜色
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];//去除tableview底部空白cell
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
+    self.view.backgroundColor = kBackgroundColorLightGray;
+}
+
 
 #pragma mark - datasource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -36,21 +36,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tabBarController.tabBar.tintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //tab bar tint color
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
-    self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
     
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
-    
-    self.tableView.separatorColor = [[UIColor alloc] initWithRed:229/255.0 green:236/255.0 blue:240/255.0 alpha:1.0f];//tableview分割线颜色
-    
-    //tableView 委托与数据源
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-    //tableView 禁止拖动
-    self.tableView.scrollEnabled = NO;
-    
+    [self configureNavi];
+    [self configureTableView];
+    [self configureTabbar];
     
     //初始化dataModel
     self.dataModel = [[DataModel alloc] init];
@@ -75,6 +64,33 @@
     [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
+#pragma mark - configure
+- (void)configureNavi
+{
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//导航条文字颜色
+    self.navigationController.navigationBar.barTintColor = kFontColorGreenBlue; //导航条背景色
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
+}
+
+- (void)configureTableView
+{
+    self.tableView.separatorColor = kSeparatorColor;//tableview分割线颜色
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
+    self.view.backgroundColor = kBackgroundColorLightGray;
+    //tableView 委托与数据源
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    //tableView 禁止拖动
+    self.tableView.scrollEnabled = NO;
+}
+
+- (void)configureTabbar
+{
+    self.tabBarController.tabBar.tintColor = kFontColorGreenBlue; //tab bar tint color
+}
+
 //监听广播通知执行页面重载
 - (void)addBlogComplete : (NSNotification *)notification{
 //   NSDictionary *blogInfo = [notification userInfo];
@@ -86,7 +102,7 @@
     hud.mode = MBProgressHUDModeCustomView;
     //hud.labelText = @"Completed";
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_check_white"]];
-    [hud hide:YES afterDelay:2];
+    [hud hide:YES afterDelay:1];
     
     [self.dataModel queryAllBlogs];
     //由于子线程无法更新UI，需要切换主线程执行重载任务

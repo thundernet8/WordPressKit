@@ -33,13 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureTableView];
     
-    // 指定tableview delegate
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-    //tableview禁止拖动
-    self.tableView.scrollEnabled = NO;
     
     //按钮-添加站点
     UIButton *addSiteButton = (UIButton *)[self.view viewWithTag:1705];
@@ -63,6 +58,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - configure
+- (void)configureTableView
+{
+    // 指定tableview delegate
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    //tableview禁止拖动
+    self.tableView.scrollEnabled = NO;
+    self.view.backgroundColor = kNaviBackgroundColorGreenBlue;
+    //self.tableView.backgroundColor = kBackgroundColorLightGray;
 }
 
 //tap selector
