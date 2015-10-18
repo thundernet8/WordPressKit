@@ -58,7 +58,7 @@ extern CGFloat tableViewInsertBottom;
     [self configureNavbar];
     [self configureNavBackButton];
     [self addSCPullRefreshBlocks];
-    [self fetchPostsFromDBWithReloadTableView:NO];
+    [self fetchPostsFromDB];
     
     NSLog(@"viewDidLoad");
     
@@ -457,10 +457,7 @@ extern CGFloat tableViewInsertBottom;
     }
     if ([chagedPostsNum intValue] > 0 && ![self isLoadingMore]) {
         [self.pc getDBPostsofType:postType postStatus:postStatusC ForBlog:self.blog number:numOfPostsPerPageC];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //[self endRefresh];
-            [self.tableView reloadData];
-        });
+        [self fetchPostsFromDB];
     }else if ([self isLoadingMore]){
         [self hasSyncMorePosts];
     }
@@ -471,10 +468,11 @@ extern CGFloat tableViewInsertBottom;
 
 - (void)queryedDBPostsNotificationCallback:(NSNotification *)notification
 {
-    //NSDictionary *info = [notification userInfo];
-    //NSNumber *postsCount = [info valueForKey:@"queryedDBPostsCount"];
     if (self.pc.posts.count > 0) {
         [self removeHud];
+    }
+    if (self.pc.posts.count > 0 && ![self isLoadingMore]) {
+        [self.tableView reloadData];
     }
 }
 
@@ -599,7 +597,7 @@ extern CGFloat tableViewInsertBottom;
     [self updateFilter];
     [self updateFilterTitle];
     
-    [self fetchPostsFromDBWithReloadTableView:YES];
+    [self fetchPostsFromDB];
 }
 
 
@@ -667,13 +665,10 @@ extern CGFloat tableViewInsertBottom;
 
 #pragma mark - fetch posts
 
-- (void)fetchPostsFromDBWithReloadTableView:(BOOL)reloadTableView
+- (void)fetchPostsFromDB
 {
     [self addHud];
     [self.pc getDBPostsofType:postType postStatus:postStatusC ForBlog:self.blog number:numOfPostsPerPageC];
-    if (reloadTableView) {
-        [self.tableView reloadData];
-    }
 }
 
 
