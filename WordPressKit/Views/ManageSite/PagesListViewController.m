@@ -150,7 +150,9 @@ extern const CGFloat tableViewInsertBottom;
         NSInteger indexOfSectionBegin = [[walkSectionResult objectForKey:@"index"] integerValue];
         NSInteger index = indexOfSectionBegin + indexPath.row;
         RemotePost *post = self.pc.posts[index];
-        [self performSegueWithIdentifier:@"ViewPage" sender:post];
+        Blog *blog = self.blog;
+        NSDictionary *sender = @{@"blog":blog,@"post":post};
+        [self performSegueWithIdentifier:@"ViewPage" sender:sender];
     }
 }
 
@@ -368,7 +370,8 @@ extern const CGFloat tableViewInsertBottom;
         controller.url = sender;
     }else if ([segue.identifier isEqualToString:@"ViewPage"]){
         SinglePostViewController *controller = segue.destinationViewController;
-        controller.post = sender;
+        controller.blog = [sender objectForKey:@"blog"];
+        controller.post = [sender objectForKey:@"post"];
     }
 }
 
@@ -426,23 +429,30 @@ extern const CGFloat tableViewInsertBottom;
 
 - (void)writePostsToDBNotificationCallback:(NSNotification *)notification
 {
-    NSLog(@"notice");
     NSDictionary *info = [notification userInfo];
-    NSNumber *chagedPostsNum = [info objectForKey:@"chagedPostsNum"];
+    NSNumber *insertedPostsNum = [info objectForKey:@"insertedPostsNum"];
     BOOL netWorkOk = [[info objectForKey:@"netWorkOk"] boolValue];
     if (!netWorkOk) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"\r\n网络连接或博客服务器存在问题,更新失败\r\n" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         [self removeHud];
         [alert show];
     }
-    if ([chagedPostsNum intValue] > 0 && ![self isLoadingMore]) {
+    if ([insertedPostsNum intValue] > 0 && ![self isLoadingMore]) {
         [self.pc getDBPostsofType:postType postStatus:postStatusB ForBlog:self.blog number:numOfPostsPerPageB];
         [self fetchPostsFromDB];
     }else if ([self isLoadingMore]){
         [self hasSyncMorePosts];
+    }else if ([self isRefreshing]){
+        if ([insertedPostsNum intValue] == 0) {
+            [MBProgressHUD hideHUDForView:self.view animated:NO];
+            MBProgressHUD *textHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            textHud.mode = MBProgressHUDModeText;
+            textHud.labelText = @"已经是最新了";
+            [textHud hide:YES afterDelay:1.5];
+        }
+        [self endRefresh];
     }
     [self removeHud];
-    [self endRefresh];
 }
 
 - (void)queryedDBPostsNotificationCallback:(NSNotification *)notification
@@ -450,8 +460,11 @@ extern const CGFloat tableViewInsertBottom;
     if (self.pc.posts.count > 0) {
         [self removeHud];
     }
-    if (self.pc.posts.count > 0 && ![self isLoadingMore]) {
+    if (![self isLoadingMore]) {
         [self.tableView reloadData];
+    }
+    if ([self isRefreshing]) {
+        [self endRefresh];
     }
 }
 

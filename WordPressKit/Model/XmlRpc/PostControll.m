@@ -39,7 +39,8 @@ extern NSString * postStatusA;
 extern NSString * postStatusB;
 extern NSString * postStatusC;
 
-static NSInteger chagedPostsNum = 0;
+static NSInteger changedPostsNum = 0;
+static NSInteger insertedPostsNum = 0;
 
 @interface PostControll()
 
@@ -54,7 +55,7 @@ static NSInteger chagedPostsNum = 0;
 + (void)writePostsToDB:(NSArray *)posts inBlog:(Blog *)blog postType:(NSString *)postType;
 - (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
 - (NSString *)userDataFilePath;
-- (BOOL)existPost:(NSNumber *)postId;
+- (BOOL)existPost:(NSNumber *)postId inBlogId:(NSInteger)blogId;
 - (NSDate *)getDateFromStr:(NSString *)dateStr;
 - (NSString *)getDateStr:(NSDate *)date;
 - (void)insertCats:(NSArray *)categories;
@@ -180,10 +181,16 @@ static NSInteger chagedPostsNum = 0;
  */
 + (void)writePostsToDB:(NSArray *)posts inBlog:(Blog *)blog postType:(NSString *)postType
 {
+    if (!posts || posts.count == 0) {
+        //广播通知ListPostsViewController
+        NSDictionary *info = @{@"insertedPostsNum" : [NSNumber numberWithInteger:insertedPostsNum],@"netWorkOk" : @YES};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
+        return;
+    }
     PostControll *pc = [[self alloc] initWithBlog:blog];
-    chagedPostsNum = 0;
+    insertedPostsNum = changedPostsNum = 0;
     for (RemotePost *post in posts) {
-        [pc writePostToDB:post inBlog:blog needNotification:!(chagedPostsNum+1!=posts.count)];
+        [pc writePostToDB:post inBlog:blog needNotification:!(changedPostsNum+1!=posts.count)];
     }
     pc = nil;
     
@@ -193,10 +200,11 @@ static NSInteger chagedPostsNum = 0;
  *  判断文章是否存在于数据库
  *
  *  @param postId 判断的文章Id
+ *  @param blogId 博客的Id
  *
  *  @return 存在则返回YES,否则NO
  */
-- (BOOL)existPost:(NSNumber *)postId
+- (BOOL)existPost:(NSNumber *)postId inBlogId:(NSInteger)blogId
 {
     NSString *path = [self userDataFilePath];
     const char *npath = [path UTF8String];
@@ -254,12 +262,11 @@ static NSInteger chagedPostsNum = 0;
     }else{
         //判断post是否已存在,不存在则插入,存在则更新
         NSString *sql;
-        if ([self existPost:post.postID]) {
+        if ([self existPost:post.postID inBlogId:siteid]) {
             sql = [NSString stringWithFormat:@"UPDATE POSTS SET SITEID = %i, AUTHORAVATAR = ?, AUTHORNAME = ?, AUTHOREMAIL = ?, AUTHORURL = ?, AUTHORID = %i, DATE = ?, TITLE = ?, URL = ?, SHORTURL = ?, CONTENT = ?, EXCERPT = ?, SLUG = ?, STATUS = ?, PASSWORD = ?, PARENTID = %i, POSTTHUMBNAILID = %i, POSTTHUMBNAILPATH = ?, TYPE = ?, FORMAT = ?, COMMENTCOUNT = %i, CATEGORIES = ?, TAGS = ?, PATHFORDISPLAYIMAGE = ?, METADATA = ? WHERE POSTID = %i",siteid,[post.authorID intValue],[post.parentID intValue],[post.postThumbnailID intValue],[post.commentCount intValue],[post.postID intValue]];
         }else{
           sql = [NSString stringWithFormat:@"INSERT INTO POSTS (POSTID, SITEID, AUTHORAVATAR, AUTHORNAME, AUTHOREMAIL, AUTHORURL, AUTHORID, DATE, TITLE, URL, SHORTURL, CONTENT, EXCERPT, SLUG, STATUS, PASSWORD, PARENTID, POSTTHUMBNAILID, POSTTHUMBNAILPATH, TYPE, FORMAT, COMMENTCOUNT, CATEGORIES, TAGS, PATHFORDISPLAYIMAGE, METADATA) VALUES(%i, %i,?,?,?,?,%i,?,?,?,?,?,?,?,?,?,%i,%i,?,?,?,%i,?,?,?,?)",[post.postID intValue],siteid,[post.authorID intValue],[post.parentID intValue],[post.postThumbnailID intValue],[post.commentCount intValue]];
-            //插入计数加1
-            chagedPostsNum ++;
+            insertedPostsNum++;
         }
         const char *nsql = [sql UTF8String];
         sqlite3_stmt *stmt;
@@ -286,9 +293,9 @@ static NSInteger chagedPostsNum = 0;
             sqlite3_bind_text(stmt, 18, [tagStr UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 19, [post.pathForDisplayImage UTF8String], -1, NULL);
             sqlite3_bind_text(stmt, 20, [metaStr UTF8String], -1, NULL);
-            
             if (sqlite3_step(stmt) == SQLITE_DONE) {
-                //NSLog(@"Insert the post");
+                //插入计数加1
+                changedPostsNum ++;
             }
         }
         sqlite3_finalize(stmt);
@@ -296,7 +303,7 @@ static NSInteger chagedPostsNum = 0;
     }
     if (needNotification) {
         //广播通知ListPostsViewController
-        NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInteger:chagedPostsNum],@"netWorkOk" : @YES};
+        NSDictionary *info = @{@"insertedPostsNum" : [NSNumber numberWithInteger:insertedPostsNum],@"netWorkOk" : @YES};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
     }
     //记录博客同步时间
@@ -500,6 +507,7 @@ static NSInteger chagedPostsNum = 0;
                 NSString *metaStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 26)];
                 NSArray *metaArr = [NSJSONSerialization JSONObjectWithData:[metaStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
                 post.metadata = metaArr;
+                post.lastSyncComment = sqlite3_column_int(stmt, 27);
                 
                 [results addObject:post];
                 
@@ -531,7 +539,6 @@ static NSInteger chagedPostsNum = 0;
 {
     //修改全局变量
     [PostControll configureStaticVariablesWithPostType:postType];
-    
     NSString *path = [self userDataFilePath];
     const char *npath = [path UTF8String];
     //打开数据库
@@ -851,7 +858,7 @@ static NSInteger chagedPostsNum = 0;
     self.networkFailure = status;
     if (!status) {
         //广播通知ListPostsViewController网络加载失败
-        NSDictionary *info = @{@"chagedPostsNum" : [NSNumber numberWithInt:0],@"netWorkOk" : @NO};
+        NSDictionary *info = @{@"insertedPostsNum" : [NSNumber numberWithInt:0],@"netWorkOk" : @NO};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
     }
 }

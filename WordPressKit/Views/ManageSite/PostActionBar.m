@@ -87,7 +87,7 @@ static const UIEdgeInsets MoreButtonImageInsets = {3.0, 0.0, 0.0, 4.0};
     
     self.contentView = [[UIView alloc] initWithFrame:self.bounds];
     self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.contentView.backgroundColor = [UIColor colorWithRed:235/255.0 green:240/255.0 blue:243/255.0 alpha:1.0];
+    self.contentView.backgroundColor = [UIColor colorWithRed:228/255.0 green:232/255.0 blue:240/255.0 alpha:1.0];
     [self addSubview:self.contentView];
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_contentView);
@@ -146,7 +146,7 @@ static const UIEdgeInsets MoreButtonImageInsets = {3.0, 0.0, 0.0, 4.0};
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.translatesAutoresizingMaskIntoConstraints = NO;
     button.exclusiveTouch = YES;
-    button.backgroundColor = [UIColor colorWithRed:243/255.0 green:246/255.0 blue:248/255.0 alpha:1.0];
+    button.backgroundColor = [UIColor colorWithRed:236/255.0 green:240/255.0 blue:242/255.0 alpha:1.0];
     button.titleLabel.font = [UIFont systemFontOfSize:12.0];
     [button setTitleColor:[UIColor colorWithRed:15/255.0 green:115/255.0 blue:176/255.0 alpha:1.0] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithRed:1/255.0 green:36/255.0 blue:60/255.0 alpha:1.0] forState:UIControlStateHighlighted];

@@ -57,7 +57,7 @@
 
 - (void)configureTableView
 {
-    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
     self.tableView.separatorColor = kSeparatorColor;
     self.tableView.scrollEnabled = NO;
 }

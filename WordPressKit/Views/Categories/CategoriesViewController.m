@@ -92,23 +92,24 @@
     //设置计数标签背景和圆角
     UILabel *countLabel = (UILabel *)[cell.contentView viewWithTag:1203];
     countLabel.layer.backgroundColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:0.1].CGColor;
-    countLabel.layer.cornerRadius = 6;
+    countLabel.layer.cornerRadius = 5;
     
     //配置desLabel尺寸以及cell自动尺寸
     UILabel *desLabel = (UILabel *)[cell.contentView viewWithTag:1202];
     //desLabel换行
     desLabel.numberOfLines = 0;
-    CGSize desSize = [desLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT)];
+    CGSize desSize = [desLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 36, MAXFLOAT)];
     CGRect rect = cell.frame;
     rect.size.height = 32 + desSize.height;
     cell.frame = rect;
     
     //配置countLabel尺寸
-    [countLabel sizeToFit];
+    //[countLabel sizeToFit];
     //CGSize countSize = [countLabel.text sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(50.0, 12.0)];
     //CGFloat width = countSize.width + 15;
     //CGFloat width = countLabel.frame.size.width + 15;
-    CGFloat width = 20;
+    CGSize countSize = [countLabel sizeThatFits:CGSizeMake(CGFLOAT_MAX, 16.0)];
+    CGFloat width = countSize.width + 10;
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:countLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:0.0f constant:width];
     widthConstraint.active = YES;
     

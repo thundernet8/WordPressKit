@@ -7,9 +7,12 @@
 //
 
 #import "SinglePostViewController.h"
+#import "PostCommentsViewController.h"
 #import "RemotePost.h"
 #import "NSString+Util.h"
 #import "MBProgressHUD.h"
+#import "CommentData.h"
+#import "Comment.h"
 
 static NSArray *fontSizes;
 static NSInteger currentFontSizeIndex;
@@ -17,10 +20,15 @@ static NSInteger currentFontSizeIndex;
 @interface SinglePostViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *contentCommentSwitch;
+@property (weak, nonatomic) IBOutlet UIView *postViewWrapper;
+@property (weak, nonatomic) IBOutlet UIView *commentViewWrapper;
 @property (weak, nonatomic) IBOutlet UIView *postHeader;
 @property (weak, nonatomic) IBOutlet UILabel *postTitle;
 @property (weak, nonatomic) IBOutlet UILabel *postMeta;
 @property (weak, nonatomic) IBOutlet UIWebView *postContent;
+@property (nonatomic,strong) NSArray *comments;
+@property (nonatomic, strong) CommentData *cmt;
+
 - (IBAction)chageFontSize:(id)sender;
 
 @end
@@ -33,16 +41,19 @@ static NSInteger currentFontSizeIndex;
     [self addHud];
     [self configureVariables];
     [self configureNavBackButton];
+    [self configureSegmentControll];
     [self configureContent];
+    [self.view bringSubviewToFront:self.postViewWrapper];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    //NSLog(@"subviews %@", self.view.subviews.description);
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    [self configureView];
     
 }
 
@@ -71,9 +82,23 @@ static NSInteger currentFontSizeIndex;
     fontSizes = @[@"normal",@"big",@"small"];
 }
 
-- (void)configureView
+- (void)configureSegmentControll
 {
-    //[self.postContent setContentOffset:CGPointZero];
+    [self.contentCommentSwitch addTarget:self action:@selector(segControllClicked:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)segControllClicked:(UISegmentedControl *)sender
+{
+    if (sender.selectedSegmentIndex == 1) {
+        [self.view bringSubviewToFront:self.commentViewWrapper];
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+        self.navigationItem.rightBarButtonItem.image = nil;
+        [self maybeLoadComments];
+    }else{
+        [self.view bringSubviewToFront:self.postViewWrapper];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+        self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"barbutton_fontsize"];
+    }
 }
 
 - (void)configureContent
@@ -87,7 +112,7 @@ static NSInteger currentFontSizeIndex;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     //[dateFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Shanghai"]];
-    [dateFormat setDateFormat:@"yyyy-MM-dd hh:MM a"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd hhMM a"];
     NSString *metaStr = [dateFormat stringFromDate:self.post.date];
     //authorname
     if (![self.post.authorDisplayName isEmpty]) {
@@ -167,6 +192,15 @@ static NSInteger currentFontSizeIndex;
     
 }
 
+#pragma mark - comments
+- (void)maybeLoadComments
+{
+    //切换到comments view时加载评论
+    
+}
+
+
+
 #pragma mark - IBAction change fontSize
 - (IBAction)chageFontSize:(id)sender
 {
@@ -174,5 +208,17 @@ static NSInteger currentFontSizeIndex;
     NSString *fontSize = fontSizes[currentFontSizeIndex%3];
     [self.postContent stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"changeFontSize('%@')",fontSize]];
 }
+
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowCommentsTable"]) {
+        PostCommentsViewController *controller = segue.destinationViewController;
+        controller.blog = self.blog;
+        controller.post = self.post;
+    }
+}
+
+
 
 @end

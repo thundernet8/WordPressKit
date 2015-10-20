@@ -1,8 +1,8 @@
 //
-//  SinglePostViewController.h
+//  PostCommentsViewController.h
 //  WordPressKit
 //
-//  Created by wuxueqian on 15/10/15.
+//  Created by wuxueqian on 15/10/20.
 //  Copyright (c) 2015年 wuxueqian. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import "RemotePost.h"
 #import "Blog.h"
 
-@interface SinglePostViewController : UIViewController
+@interface PostCommentsViewController : UITableViewController
 
 @property (nonatomic, strong) RemotePost *post;
 @property (nonatomic, strong) Blog *blog;

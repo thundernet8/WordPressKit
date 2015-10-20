@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		872EA6B293FCE6631BE2C2E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CF6DFA59734B2F271C3B17 /* libPods.a */; };
+		B4012D051BD524700037C426 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D041BD524700037C426 /* Comment.m */; };
+		B4012D081BD526210037C426 /* CommentData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D071BD526210037C426 /* CommentData.m */; };
 		B40213B91BC6BB8600E71E6B /* PostsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40213B81BC6BB8600E71E6B /* PostsListViewController.m */; };
 		B41049E21BA992BC00109B9B /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = B41049E11BA992BC00109B9B /* Blog.m */; };
 		B41049E61BA9AA7000109B9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41049E51BA9AA7000109B9B /* Security.framework */; };
@@ -68,6 +70,8 @@
 		B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E1499F1BA3FC8500C6CA20 /* CatFuncItemsViewController.m */; };
 		B4E2BB9E1B8F32DE00B10CF2 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */; };
 		B4E2BBA01B8F40B100B10CF2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E2BB9F1B8F40B100B10CF2 /* libsqlite3.0.dylib */; };
+		B4E45AD61BD65536002C34FB /* PostCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E45AD51BD65536002C34FB /* PostCommentsViewController.m */; };
+		B4E45AD91BD67B5C002C34FB /* GravatarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E45AD81BD67B5C002C34FB /* GravatarHelper.m */; };
 		B4E53F121B87FDCB00C4CFAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F111B87FDCB00C4CFAA /* main.m */; };
 		B4E53F151B87FDCB00C4CFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E53F141B87FDCB00C4CFAA /* AppDelegate.m */; };
 		B4E53F1E1B87FDCB00C4CFAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E53F1C1B87FDCB00C4CFAA /* Main.storyboard */; };
@@ -89,6 +93,10 @@
 /* Begin PBXFileReference section */
 		18CF6DFA59734B2F271C3B17 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2201DCDA6069FDA7BD32C1F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B4012D031BD524700037C426 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		B4012D041BD524700037C426 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		B4012D061BD526210037C426 /* CommentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentData.h; path = XmlRpc/CommentData.h; sourceTree = "<group>"; };
+		B4012D071BD526210037C426 /* CommentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentData.m; path = XmlRpc/CommentData.m; sourceTree = "<group>"; };
 		B40213B71BC6BB8600E71E6B /* PostsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsListViewController.h; sourceTree = "<group>"; };
 		B40213B81BC6BB8600E71E6B /* PostsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsListViewController.m; sourceTree = "<group>"; };
 		B40213C51BC6C84300E71E6B /* WordPressKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordPressKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -202,6 +210,10 @@
 		B4E2BB9C1B8F32DE00B10CF2 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		B4E2BB9F1B8F40B100B10CF2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		B4E45AD41BD65536002C34FB /* PostCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCommentsViewController.h; path = SinglePost/PostCommentsViewController.h; sourceTree = "<group>"; };
+		B4E45AD51BD65536002C34FB /* PostCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCommentsViewController.m; path = SinglePost/PostCommentsViewController.m; sourceTree = "<group>"; };
+		B4E45AD71BD67B5C002C34FB /* GravatarHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarHelper.h; sourceTree = "<group>"; };
+		B4E45AD81BD67B5C002C34FB /* GravatarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravatarHelper.m; sourceTree = "<group>"; };
 		B4E53F0C1B87FDCB00C4CFAA /* WordPressKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordPressKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E53F101B87FDCB00C4CFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4E53F111B87FDCB00C4CFAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -283,6 +295,8 @@
 				B46572321BB2F68F00835972 /* DisplayableImageHelper.m */,
 				B4DB8A901BB4090200058147 /* PostControll.h */,
 				B4DB8A911BB4090200058147 /* PostControll.m */,
+				B4012D061BD526210037C426 /* CommentData.h */,
+				B4012D071BD526210037C426 /* CommentData.m */,
 			);
 			name = XmlRpc;
 			sourceTree = "<group>";
@@ -296,6 +310,8 @@
 				B465722F1BB2F39B00835972 /* NSString+Util.m */,
 				B46572371BB2F87200835972 /* NSMutableDictionary+Helpers.h */,
 				B46572381BB2F87200835972 /* NSMutableDictionary+Helpers.m */,
+				B4E45AD71BD67B5C002C34FB /* GravatarHelper.h */,
+				B4E45AD81BD67B5C002C34FB /* GravatarHelper.m */,
 			);
 			name = ExternTool;
 			sourceTree = "<group>";
@@ -414,6 +430,8 @@
 				B4C04FD31B9B256500A43AEA /* CatItem.h */,
 				B4C04FD41B9B256500A43AEA /* CatItem.m */,
 				B4E2BB9C1B8F32DE00B10CF2 /* DataModel.h */,
+				B4012D031BD524700037C426 /* Comment.h */,
+				B4012D041BD524700037C426 /* Comment.m */,
 				B4E2BB9D1B8F32DE00B10CF2 /* DataModel.m */,
 				B4DD045C1B8E0F3600E2ACA3 /* FuncItem.h */,
 				B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */,
@@ -434,6 +452,8 @@
 			children = (
 				B4DDA85B1BCFDC75006A33B9 /* SinglePostViewController.h */,
 				B4DDA85C1BCFDC75006A33B9 /* SinglePostViewController.m */,
+				B4E45AD41BD65536002C34FB /* PostCommentsViewController.h */,
+				B4E45AD51BD65536002C34FB /* PostCommentsViewController.m */,
 			);
 			name = SinglePost;
 			sourceTree = "<group>";
@@ -742,6 +762,7 @@
 				B4DB405A1BC7C877009BD1A6 /* CAAnimation+Blocks.m in Sources */,
 				B4E2BB9E1B8F32DE00B10CF2 /* DataModel.m in Sources */,
 				B465722D1BB2F32400835972 /* WPMapFilterReduce.m in Sources */,
+				B4012D081BD526210037C426 /* CommentData.m in Sources */,
 				B46572391BB2F87200835972 /* NSMutableDictionary+Helpers.m in Sources */,
 				B46572231BB2DAF200835972 /* RemotePost.m in Sources */,
 				B46572361BB2F79600835972 /* RemotePostCategory.m in Sources */,
@@ -767,13 +788,16 @@
 				B4DB63071BD2AFB0007DF1D1 /* CustomPostsListViewController.m in Sources */,
 				B4DD044D1B8DD85500E2ACA3 /* FuncItemViewController.m in Sources */,
 				B41049E21BA992BC00109B9B /* Blog.m in Sources */,
+				B4012D051BD524700037C426 /* Comment.m in Sources */,
 				B4DB40611BC7C8F7009BD1A6 /* DACircularProgressView.m in Sources */,
 				B4E0DD401BC95DF20052519A /* FiltersTableViewController.m in Sources */,
 				B4A91A791BA7243900874D56 /* AddSiteViewController.m in Sources */,
+				B4E45AD61BD65536002C34FB /* PostCommentsViewController.m in Sources */,
 				B4DD04531B8DD89500E2ACA3 /* FileItemViewController.m in Sources */,
 				B4DA77B01BC0B8DB00B3E9D4 /* AboutTableViewController.m in Sources */,
 				B4E149A01BA3FC8500C6CA20 /* CatFuncItemsViewController.m in Sources */,
 				B4DC00421BC21B6C00B8F194 /* SiteSettingViewController.m in Sources */,
+				B4E45AD91BD67B5C002C34FB /* GravatarHelper.m in Sources */,
 				B4DB7D9F1BBF6EF000DC203A /* PostActionBar.m in Sources */,
 				B46004D11B8CBB3D00757221 /* CategoriesViewController.m in Sources */,
 				B46572111BB2CBCD00835972 /* Post.m in Sources */,

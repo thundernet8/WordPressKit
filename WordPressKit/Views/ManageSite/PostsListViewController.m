@@ -41,31 +41,6 @@ const CGFloat tableViewInsertBottom = 49.0;
 
 - (IBAction)didTapFilterButton:(id)sender;
 
-- (void)configureNavbar;
-- (void)configureTableView;
-- (PostCell *)configCellNib:(NSIndexPath *)indexPath;
-- (void)configCellStyle:(PostCell *)cell;
-- (void)configVariable;
-- (void)configCellContent:(PostCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)editPost:(RemotePost *)post;
-- (void)viewPost:(RemotePost *)post;
-- (void)publishPost:(RemotePost *)post;
-- (void)deletePost:(RemotePost *)post;
-- (void)restorePost:(RemotePost *)post;
-- (void)addHud;
-- (void)removeHud;
-- (void)addNotificationObserver;
-- (void)addSCPullRefreshBlocks;
-- (void)updateFilter;
-- (PostStatusType *)currentPostStatusFilter;
-- (NSInteger)currentPostStatusFilterIndex;
-- (void)updateFilterTitle;
-- (void)displayFiltersView;
-- (void)setCurrentFilterIndex:(NSInteger)newIndex;
-- (void)fetchPostsFromDB;
-
-- (void)appendMorePosts:(NSArray *)morePosts;
-
 @end
 
 @implementation PostsListViewController
@@ -107,19 +82,17 @@ const CGFloat tableViewInsertBottom = 49.0;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
 #pragma mark - Table view data source and delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //NSLog(@"numberOfRowsInSection:");
     return self.pc.posts ? [self.pc.posts count] : 0;
 }
 
 - (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"cellforrowatindexpath");
+    NSLog(@"cellforrowatindexpath");
     PostCell *cell = [self configCellNib:indexPath];
     [self configCellStyle:cell];
     [self configCellContent:cell atIndexPath:indexPath];
@@ -176,7 +149,9 @@ const CGFloat tableViewInsertBottom = 49.0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RemotePost *post = self.pc.posts[indexPath.row];
-    [self performSegueWithIdentifier:@"ViewPost" sender:post];
+    Blog *blog = self.blog;
+    NSDictionary *sender = @{@"blog":blog,@"post":post};
+    [self performSegueWithIdentifier:@"ViewPost" sender:sender];
 }
 
 
@@ -431,7 +406,8 @@ const CGFloat tableViewInsertBottom = 49.0;
         controller.url = sender;
     }else if ([segue.identifier isEqualToString:@"ViewPost"]){
         SinglePostViewController *controller = segue.destinationViewController;
-        controller.post = sender;
+        controller.blog = [sender objectForKey:@"blog"];
+        controller.post = [sender objectForKey:@"post"];
     }
 }
 
@@ -466,21 +442,29 @@ const CGFloat tableViewInsertBottom = 49.0;
 - (void)writePostsToDBNotificationCallback:(NSNotification *)notification
 {
     NSDictionary *info = [notification userInfo];
-    NSNumber *chagedPostsNum = [info objectForKey:@"chagedPostsNum"];
+    NSNumber *insertedPostsNum = [info objectForKey:@"insertedPostsNum"];
     BOOL netWorkOk = [[info objectForKey:@"netWorkOk"] boolValue];
     if (!netWorkOk) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"\r\n网络连接或博客服务器存在问题,更新失败\r\n" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         [self removeHud];
         [alert show];
     }
-    NSLog(@"[chagedPostsNum intValue] %i",[chagedPostsNum intValue]);
-    if ([chagedPostsNum intValue] > 0 && ![self isLoadingMore]) {
+    if ([insertedPostsNum intValue] > 0 && ![self isLoadingMore]) {
         [self.pc getDBPostsofType:postType postStatus:postStatusA ForBlog:self.blog number:numOfPostsPerPageA];
         [self fetchPostsFromDB];
     }else if ([self isLoadingMore]){
         [self hasSyncMorePosts];
+    }else if ([self isRefreshing]){
+        if ([insertedPostsNum intValue] == 0) {
+            [MBProgressHUD hideHUDForView:self.view animated:NO];
+            MBProgressHUD *textHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            textHud.mode = MBProgressHUDModeText;
+            textHud.labelText = @"已经是最新了";
+            [textHud hide:YES afterDelay:1.5];
+        }
+        [self endRefresh];
     }
-    [self endRefresh];
+    
     //[self endLoadMore];
     [self removeHud];
 }
@@ -492,11 +476,13 @@ const CGFloat tableViewInsertBottom = 49.0;
     if (self.pc.posts.count > 0) {
         [self removeHud];
     }
-    if (self.pc.posts.count > 0 && ![self isLoadingMore]) {
+    //if (self.pc.posts.count > 0 && ![self isLoadingMore]) {
+    if (![self isLoadingMore]) {
         [self.tableView reloadData];
     }
-    NSLog(@"queryposts callback current thread = %@", [NSThread currentThread]);
-
+    if ([self isRefreshing]) {
+        [self endRefresh];
+    }
 }
 
 #pragma mark - SCPullRefresh Blocks
@@ -532,7 +518,7 @@ const CGFloat tableViewInsertBottom = 49.0;
 
 - (void)appendMorePosts:(NSArray *)morePosts
 {
-    int64_t delayInSeconds = 2.0;
+    int64_t delayInSeconds = 0.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
         NSInteger addNum = morePosts?morePosts.count:0;
@@ -551,7 +537,6 @@ const CGFloat tableViewInsertBottom = 49.0;
 
 - (void)hasSyncMorePosts
 {
-    NSLog(@"hassyncmoreposts");
     NSArray *morePosts = [self.pc loadMoreDBPostsofType:postType postStatus:postStatusA ForBlog:self.blog page:pageA+1];
     if (morePosts && morePosts.count > 0) {
         [self appendMorePosts:morePosts];

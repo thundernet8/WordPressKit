@@ -32,6 +32,7 @@
 @property (nonatomic, strong) NSString *format;
 
 @property (nonatomic, strong) NSNumber *commentCount;
+@property (nonatomic) NSInteger lastSyncComment;
 @property (nonatomic, strong) NSNumber *likeCount;
 
 @property (nonatomic, strong) NSArray *categories;
