@@ -9,7 +9,7 @@
 #import "CommentData.h"
 #import "DataModel.h"
 #import "Blog.h"
-#import "RemotePost.h"
+#import "Post.h"
 #import "WordPressXMLRPCApi.h"
 #import "WPMapFilterReduce.h"
 #import "NSDictionary+SafeExpectations.h"
@@ -37,7 +37,7 @@ static NSInteger changedCommentsNum = 0;
     return sharedManager;
 }
 
-- (void)configureManagerPost:(RemotePost *)post forBlog:(Blog *)blog;
+- (void)configureManagerPost:(Post *)post forBlog:(Blog *)blog;
 {
     if (!self) {
         return;

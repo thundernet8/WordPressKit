@@ -10,8 +10,8 @@
 
 #import "WordPressXMLRPCApi.h"
 #import "WPMapFilterReduce.h"
-#import "RemotePost.h"
-#import "RemotePostCategory.h"
+#import "Post.h"
+#import "PostCategory.h"
 #import "NSDictionary+SafeExpectations.h"
 #import "NSString+Util.h"
 
@@ -47,26 +47,26 @@ static NSInteger insertedPostsNum = 0;
 + (WordPressXMLRPCApi *)getApiWithBlog:(Blog *)blog;
 + (WPXMLRPCClient *)getClientWithBlog:(Blog *)blog;
 + (NSArray *)remotePostsFromXMLRPCArray:(NSArray *)xmlrpcArray;
-+ (RemotePost *)remotePostFromXMLRPCDictionary:(NSDictionary *)xmlrpcDictionary;
++ (Post *)remotePostFromXMLRPCDictionary:(NSDictionary *)xmlrpcDictionary;
 + (NSString *)statusForPostStatus:(NSString *)status andDate:(NSDate *)date;
 + (NSArray *)tagsFromXMLRPCTermsArray:(NSArray *)terms;
 + (NSArray *)remoteCategoriesFromXMLRPCTermsArray:(NSArray *)terms;
-+ (RemotePostCategory *)remoteCategoryFromXMLRPCDictionary:(NSDictionary *)xmlrpcCategory;
++ (PostCategory *)remoteCategoryFromXMLRPCDictionary:(NSDictionary *)xmlrpcCategory;
 + (void)writePostsToDB:(NSArray *)posts inBlog:(Blog *)blog postType:(NSString *)postType;
-- (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
+- (void)writePostToDB:(Post *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
 - (NSString *)userDataFilePath;
 - (BOOL)existPost:(NSNumber *)postId inBlogId:(NSInteger)blogId;
 - (NSDate *)getDateFromStr:(NSString *)dateStr;
 - (NSString *)getDateStr:(NSDate *)date;
 - (void)insertCats:(NSArray *)categories;
-- (void)insertCat:(RemotePostCategory *)category;
+- (void)insertCat:(PostCategory *)category;
 - (BOOL)existCategory:(NSNumber *)categoryId;
-- (RemotePostCategory *)queryCategoryWithId:(NSNumber *)categoryId;
+- (PostCategory *)queryCategoryWithId:(NSNumber *)categoryId;
 - (void)siteLastSynced:(NSNumber *)siteid;
 - (int)getSiteLastSyncTimestamp:(NSInteger)siteid;
 - (void)configSyncStatus:(BOOL)status ForBlog:(Blog *)blog;
 - (void)configNetworkStatus:(BOOL)status;
-- (NSString *)getExcerptofPost:(RemotePost *)post;
+- (NSString *)getExcerptofPost:(Post *)post;
 - (NSDateComponents *)differenceBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
 
 @end
@@ -189,7 +189,7 @@ static NSInteger insertedPostsNum = 0;
     }
     PostControll *pc = [[self alloc] initWithBlog:blog];
     insertedPostsNum = changedPostsNum = 0;
-    for (RemotePost *post in posts) {
+    for (Post *post in posts) {
         [pc writePostToDB:post inBlog:blog needNotification:!(changedPostsNum+1!=posts.count)];
     }
     //记录博客同步时间
@@ -239,12 +239,12 @@ static NSInteger insertedPostsNum = 0;
  *  @param post 格式化的单个文章对象
  *  @param blog 博客对象,区别文章归属
  */
-- (void)writePostToDB:(RemotePost *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
+- (void)writePostToDB:(Post *)post inBlog:(Blog *)blog needNotification:(BOOL)needNotification;
 {
     int siteid = (int)blog.id;
     //将categories数组写入对应表，重组category id为字符串写入post对应字段
     NSMutableArray *catIds = [NSMutableArray new];
-    for (RemotePostCategory *cat in post.categories) {
+    for (PostCategory *cat in post.categories) {
         [self insertCat:cat];
         [catIds addObject:cat.categoryID];
     
@@ -362,8 +362,8 @@ static NSInteger insertedPostsNum = 0;
     }];
 }
 
-+ (RemotePost *)remotePostFromXMLRPCDictionary:(NSDictionary *)xmlrpcDictionary {
-    RemotePost *post = [RemotePost new];
++ (Post *)remotePostFromXMLRPCDictionary:(NSDictionary *)xmlrpcDictionary {
+    Post *post = [Post new];
     
     post.postID = [xmlrpcDictionary numberForKey:@"post_id"];
     post.date = xmlrpcDictionary[@"post_date_gmt"];
@@ -429,8 +429,8 @@ static NSInteger insertedPostsNum = 0;
     }];
 }
 
-+ (RemotePostCategory *)remoteCategoryFromXMLRPCDictionary:(NSDictionary *)xmlrpcCategory {
-    RemotePostCategory *category = [RemotePostCategory new];
++ (PostCategory *)remoteCategoryFromXMLRPCDictionary:(NSDictionary *)xmlrpcCategory {
+    PostCategory *category = [PostCategory new];
     category.categoryID = [xmlrpcCategory numberForKey:@"term_id"];
     category.name = [xmlrpcCategory stringForKey:@"name"];
     category.parentID = [xmlrpcCategory numberForKey:@"parent"];
@@ -462,7 +462,7 @@ static NSInteger insertedPostsNum = 0;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK) {
             NSMutableArray *results = [[NSMutableArray alloc] init];
             while (sqlite3_step(stmt) == SQLITE_ROW) {
-                RemotePost *post = [[RemotePost alloc] init];
+                Post *post = [[Post alloc] init];
                 // col 0 为自增序号，无需记录至post对象
                 post.postID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
                 post.siteID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 2)];
@@ -491,7 +491,7 @@ static NSInteger insertedPostsNum = 0;
                 NSMutableArray *cats = [NSMutableArray new];
                 for (NSString *catId in catIds) {
                     NSNumber *categoryId = [NSNumber numberWithInteger:[catId integerValue]];
-                    RemotePostCategory *category = [self queryCategoryWithId:categoryId];
+                    PostCategory *category = [self queryCategoryWithId:categoryId];
                     if (category) {
                         [cats addObject:category];
                     }
@@ -551,7 +551,7 @@ static NSInteger insertedPostsNum = 0;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK) {
             NSMutableArray *results = [[NSMutableArray alloc] init];
             while (sqlite3_step(stmt) == SQLITE_ROW) {
-                RemotePost *post = [[RemotePost alloc] init];
+                Post *post = [[Post alloc] init];
                 // col 0 为自增序号，无需记录至post对象
                 post.postID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
                 post.siteID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 2)];
@@ -580,7 +580,7 @@ static NSInteger insertedPostsNum = 0;
                 NSMutableArray *cats = [NSMutableArray new];
                 for (NSString *catId in catIds) {
                     NSNumber *categoryId = [NSNumber numberWithInteger:[catId integerValue]];
-                    RemotePostCategory *category = [self queryCategoryWithId:categoryId];
+                    PostCategory *category = [self queryCategoryWithId:categoryId];
                     if (category) {
                         [cats addObject:category];
                     }
@@ -654,7 +654,7 @@ static NSInteger insertedPostsNum = 0;
  */
 - (void)insertCats:(NSArray *)categories
 {
-    for (RemotePostCategory *category in categories) {
+    for (PostCategory *category in categories) {
         [self insertCat:category];
     }
 }
@@ -664,7 +664,7 @@ static NSInteger insertedPostsNum = 0;
  *
  *  @param category 文章分类对象
  */
-- (void)insertCat:(RemotePostCategory *)category
+- (void)insertCat:(PostCategory *)category
 {
     //检查是否存在该分类
     if ([self existCategory:category.categoryID]) {
@@ -721,7 +721,7 @@ static NSInteger insertedPostsNum = 0;
     return NO;
 }
 
-- (RemotePostCategory *)queryCategoryWithId:(NSNumber *)categoryId
+- (PostCategory *)queryCategoryWithId:(NSNumber *)categoryId
 {
     NSString *path = [self userDataFilePath];
     const char *npath = [path UTF8String];
@@ -735,7 +735,7 @@ static NSInteger insertedPostsNum = 0;
         if (sqlite3_prepare_v2(db, nsql, -1, &stmt, NULL) == SQLITE_OK ){
             sqlite3_bind_int(stmt, 1, [categoryId intValue]);
             if (sqlite3_step(stmt) == SQLITE_ROW) {
-                RemotePostCategory *cat = [RemotePostCategory new];
+                PostCategory *cat = [PostCategory new];
                 cat.categoryID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
                 cat.name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)];
                 cat.parentID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
@@ -870,7 +870,7 @@ static NSInteger insertedPostsNum = 0;
  *
  *  @return 摘要
  */
-- (NSString *)getExcerptofPost:(RemotePost *)post
+- (NSString *)getExcerptofPost:(Post *)post
 {
     NSString *content = [post.excerpt isEmpty] ? post.content : post.excerpt;
     NSAttributedString *str = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
@@ -913,7 +913,7 @@ static NSInteger insertedPostsNum = 0;
         NSDate *nowDate = [NSDate date];
         //反转posts 旧的排前
         posts = [[posts reverseObjectEnumerator] allObjects];
-        for (RemotePost *post in posts) {
+        for (Post *post in posts) {
             NSDateComponents *diff = [self differenceBetweenDate:nowDate andDate:post.date];
             if (ABS(diff.day) >= 365*10) {
                 rows ++;
@@ -1067,7 +1067,7 @@ static NSInteger insertedPostsNum = 0;
 #pragma mark - single post
 - (void)getPostWithID:(NSNumber *)postID
               forBlog:(Blog *)blog
-              success:(void (^)(RemotePost *post))success
+              success:(void (^)(Post *post))success
               failure:(void (^)(NSError *))failure
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

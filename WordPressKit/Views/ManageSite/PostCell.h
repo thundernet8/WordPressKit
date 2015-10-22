@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RemotePost.h"
+#import "Post.h"
 #import "Blog.h"
 
 @protocol PostCellDelegate <NSObject>
 
 @optional
-- (void)cell:(UITableViewCell *)cell receivedEditActionForProvider:(RemotePost *)post;
-- (void)cell:(UITableViewCell *)cell receivedViewActionForProvider:(RemotePost *)post;
-- (void)cell:(UITableViewCell *)cell receivedTrashActionForProvider:(RemotePost *)post;
-- (void)cell:(UITableViewCell *)cell receivedPublishActionForProvider:(RemotePost *)post;
-- (void)cell:(UITableViewCell *)cell receivedRestoreActionForProvider:(RemotePost *)post;
+- (void)cell:(UITableViewCell *)cell receivedEditActionForProvider:(Post *)post;
+- (void)cell:(UITableViewCell *)cell receivedViewActionForProvider:(Post *)post;
+- (void)cell:(UITableViewCell *)cell receivedTrashActionForProvider:(Post *)post;
+- (void)cell:(UITableViewCell *)cell receivedPublishActionForProvider:(Post *)post;
+- (void)cell:(UITableViewCell *)cell receivedRestoreActionForProvider:(Post *)post;
 
 @end
 
@@ -42,7 +42,7 @@
 
 @property (weak, nonatomic) id<PostCellDelegate> delegate;
 
-- (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog;
-- (void)confiImageWithPost:(RemotePost *)post;
+- (void)configCellWithPost:(Post *)post inBlog:(Blog *)blog;
+- (void)confiImageWithPost:(Post *)post;
 
 @end

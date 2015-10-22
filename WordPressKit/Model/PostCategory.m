@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 wuxueqian. All rights reserved.
 //
 
-#import "RemotePostCategory.h"
+#import "PostCategory.h"
 
-@implementation RemotePostCategory
+@implementation PostCategory
 
 - (NSString *)debugDescription {
     NSDictionary *properties = @{

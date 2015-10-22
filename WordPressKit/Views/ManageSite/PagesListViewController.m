@@ -149,7 +149,7 @@ extern const CGFloat tableViewInsertBottom;
         NSDictionary *walkSectionResult = self.walkedPagesResults[indexPath.section];
         NSInteger indexOfSectionBegin = [[walkSectionResult objectForKey:@"index"] integerValue];
         NSInteger index = indexOfSectionBegin + indexPath.row;
-        RemotePost *post = self.pc.posts[index];
+        Post *post = self.pc.posts[index];
         Blog *blog = self.blog;
         NSDictionary *sender = @{@"blog":blog,@"post":post};
         [self performSegueWithIdentifier:@"ViewPage" sender:sender];

@@ -31,7 +31,7 @@
     // Configure the view for the selected state
 }
 
-- (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog
+- (void)configCellWithPost:(Post *)post inBlog:(Blog *)blog
 {
     self.backgroundColor = kBackgroundColorLightGray;
     //左border

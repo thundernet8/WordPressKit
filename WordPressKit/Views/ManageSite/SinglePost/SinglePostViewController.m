@@ -8,7 +8,7 @@
 
 #import "SinglePostViewController.h"
 #import "PostCommentsViewController.h"
-#import "RemotePost.h"
+#import "Post.h"
 #import "NSString+Util.h"
 #import "MBProgressHUD.h"
 #import "CommentData.h"

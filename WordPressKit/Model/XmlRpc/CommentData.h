@@ -7,7 +7,7 @@
 //
 
 #import "Blog.h"
-#import "RemotePost.h"
+#import "Post.h"
 #import "WordPressApi.h"
 #import "Comment.h"
 #import <sqlite3.h>
@@ -20,11 +20,11 @@
 
 @property (nonatomic,strong) WPXMLRPCClient *client;
 @property (nonatomic,strong) WordPressXMLRPCApi *api;
-@property (nonatomic,strong) RemotePost *post;
+@property (nonatomic,strong) Post *post;
 @property (nonatomic,strong) Blog *blog;
 
 + (CommentData *)sharedManager;
-- (void)configureManagerPost:(RemotePost *)post forBlog:(Blog *)blog;
+- (void)configureManagerPost:(Post *)post forBlog:(Blog *)blog;
 - (void)getPostCommentsOfStatus:(NSString *)commentStatus commentType:(NSString *)commentType inCommentPage:(NSInteger)page;
 - (void)fetchPostCommentsOfStatus:(NSString *)commentStatus commentType:(NSString *)commentType inCommentPage:(NSInteger)page;
 - (void)maybeFetchPostCommentsOfStatus:(NSString *)commentStatus commentType:(NSString *)commentType inCommentPage:(NSInteger)page;

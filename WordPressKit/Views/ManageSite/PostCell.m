@@ -11,7 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "PostActionBar.h"
 #import "PostActionBarItem.h"
-#import "RemotePostCategory.h"
+#import "PostCategory.h"
 
 extern NSString * const PostStatusDraft;
 extern NSString * const PostStatusPending;
@@ -36,7 +36,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 @property (weak, nonatomic) IBOutlet PostActionBar *ActionBar;
 
 
-@property (weak, nonatomic) RemotePost *post;
+@property (weak, nonatomic) Post *post;
 
 @end
 
@@ -64,7 +64,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
  *  @param cell UITableViewCell对象
  *  @param post 文章对象
  */
-- (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog
+- (void)configCellWithPost:(Post *)post inBlog:(Blog *)blog
 {
     self.backgroundColor = kBackgroundColorLightGray;
     self.post = post;
@@ -93,7 +93,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     self.PostDate.text = dateStr;
     //文章分类
     NSMutableArray *catNames = [NSMutableArray new];
-    for (RemotePostCategory *cat in post.categories) {
+    for (PostCategory *cat in post.categories) {
         [catNames addObject:cat.name];
     }
     NSString *catStr = [catNames componentsJoinedByString:@" · "];
@@ -143,7 +143,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
  *
  *  @param post 文章对象
  */
-- (void)confiImageWithPost:(RemotePost *)post
+- (void)confiImageWithPost:(Post *)post
 {
     if (!self.PostThumb) {
         return;

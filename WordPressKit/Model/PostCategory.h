@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RemotePostCategory : NSObject
+@interface PostCategory : NSObject
 
 @property (nonatomic, strong) NSNumber *categoryID;
 @property (nonatomic, strong) NSString *name;

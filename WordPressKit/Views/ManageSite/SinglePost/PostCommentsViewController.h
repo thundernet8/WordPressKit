@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RemotePost.h"
+#import "Post.h"
 #import "Blog.h"
 
 @interface PostCommentsViewController : UITableViewController
 
-@property (nonatomic, strong) RemotePost *post;
+@property (nonatomic, strong) Post *post;
 @property (nonatomic, strong) Blog *blog;
 
 @end

@@ -19,12 +19,11 @@
 		B46004D41B8CBB5000757221 /* SourcefileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D31B8CBB5000757221 /* SourcefileViewController.m */; };
 		B46004D71B8CBB5D00757221 /* ManagesiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */; };
 		B46004DA1B8CBB6900757221 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46004D91B8CBB6900757221 /* AboutViewController.m */; };
-		B46572111BB2CBCD00835972 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572101BB2CBCD00835972 /* Post.m */; };
-		B46572231BB2DAF200835972 /* RemotePost.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572221BB2DAF200835972 /* RemotePost.m */; };
+		B46572231BB2DAF200835972 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572221BB2DAF200835972 /* Post.m */; };
 		B465722D1BB2F32400835972 /* WPMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = B465722C1BB2F32400835972 /* WPMapFilterReduce.m */; };
 		B46572301BB2F39B00835972 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B465722F1BB2F39B00835972 /* NSString+Util.m */; };
 		B46572331BB2F68F00835972 /* DisplayableImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572321BB2F68F00835972 /* DisplayableImageHelper.m */; };
-		B46572361BB2F79600835972 /* RemotePostCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572351BB2F79600835972 /* RemotePostCategory.m */; };
+		B46572361BB2F79600835972 /* PostCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572351BB2F79600835972 /* PostCategory.m */; };
 		B46572391BB2F87200835972 /* NSMutableDictionary+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B46572381BB2F87200835972 /* NSMutableDictionary+Helpers.m */; };
 		B4A91A791BA7243900874D56 /* AddSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A91A781BA7243900874D56 /* AddSiteViewController.m */; };
 		B4C04FD51B9B256500A43AEA /* CatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C04FD41B9B256500A43AEA /* CatItem.m */; };
@@ -115,20 +114,18 @@
 		B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagesiteViewController.m; sourceTree = "<group>"; };
 		B46004D81B8CBB6900757221 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		B46004D91B8CBB6900757221 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		B465720F1BB2CBCD00835972 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		B46572101BB2CBCD00835972 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		B465721B1BB2D8F100835972 /* PostServiceRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostServiceRemote.h; path = XmlRpc/PostServiceRemote.h; sourceTree = "<group>"; };
 		B465721E1BB2D9C000835972 /* ServiceRemoteXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceRemoteXMLRPC.h; path = XmlRpc/ServiceRemoteXMLRPC.h; sourceTree = "<group>"; };
-		B46572211BB2DAF200835972 /* RemotePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemotePost.h; sourceTree = "<group>"; };
-		B46572221BB2DAF200835972 /* RemotePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemotePost.m; sourceTree = "<group>"; };
+		B46572211BB2DAF200835972 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		B46572221BB2DAF200835972 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		B465722B1BB2F32400835972 /* WPMapFilterReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPMapFilterReduce.h; path = ExternTool/WPMapFilterReduce.h; sourceTree = "<group>"; };
 		B465722C1BB2F32400835972 /* WPMapFilterReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPMapFilterReduce.m; path = ExternTool/WPMapFilterReduce.m; sourceTree = "<group>"; };
 		B465722E1BB2F39B00835972 /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Util.h"; path = "ExternTool/NSString+Util.h"; sourceTree = "<group>"; };
 		B465722F1BB2F39B00835972 /* NSString+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Util.m"; path = "ExternTool/NSString+Util.m"; sourceTree = "<group>"; };
 		B46572311BB2F68F00835972 /* DisplayableImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayableImageHelper.h; path = XmlRpc/DisplayableImageHelper.h; sourceTree = "<group>"; };
 		B46572321BB2F68F00835972 /* DisplayableImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayableImageHelper.m; path = XmlRpc/DisplayableImageHelper.m; sourceTree = "<group>"; };
-		B46572341BB2F79600835972 /* RemotePostCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemotePostCategory.h; sourceTree = "<group>"; };
-		B46572351BB2F79600835972 /* RemotePostCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemotePostCategory.m; sourceTree = "<group>"; };
+		B46572341BB2F79600835972 /* PostCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCategory.h; sourceTree = "<group>"; };
+		B46572351BB2F79600835972 /* PostCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCategory.m; sourceTree = "<group>"; };
 		B46572371BB2F87200835972 /* NSMutableDictionary+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+Helpers.h"; path = "ExternTool/NSMutableDictionary+Helpers.h"; sourceTree = "<group>"; };
 		B46572381BB2F87200835972 /* NSMutableDictionary+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+Helpers.m"; path = "ExternTool/NSMutableDictionary+Helpers.m"; sourceTree = "<group>"; };
 		B4A91A771BA7243900874D56 /* AddSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSiteViewController.h; sourceTree = "<group>"; };
@@ -434,12 +431,10 @@
 				B4DD045D1B8E0F3600E2ACA3 /* FuncItem.m */,
 				B44B19D91B9499B10028D41C /* SourceFile.h */,
 				B44B19DA1B9499B10028D41C /* SourceFile.m */,
-				B465720F1BB2CBCD00835972 /* Post.h */,
-				B46572101BB2CBCD00835972 /* Post.m */,
-				B46572211BB2DAF200835972 /* RemotePost.h */,
-				B46572221BB2DAF200835972 /* RemotePost.m */,
-				B46572341BB2F79600835972 /* RemotePostCategory.h */,
-				B46572351BB2F79600835972 /* RemotePostCategory.m */,
+				B46572211BB2DAF200835972 /* Post.h */,
+				B46572221BB2DAF200835972 /* Post.m */,
+				B46572341BB2F79600835972 /* PostCategory.h */,
+				B46572351BB2F79600835972 /* PostCategory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -774,8 +769,8 @@
 				B465722D1BB2F32400835972 /* WPMapFilterReduce.m in Sources */,
 				B4012D081BD526210037C426 /* CommentData.m in Sources */,
 				B46572391BB2F87200835972 /* NSMutableDictionary+Helpers.m in Sources */,
-				B46572231BB2DAF200835972 /* RemotePost.m in Sources */,
-				B46572361BB2F79600835972 /* RemotePostCategory.m in Sources */,
+				B46572231BB2DAF200835972 /* Post.m in Sources */,
+				B46572361BB2F79600835972 /* PostCategory.m in Sources */,
 				B4DEF97B1BCD1459001D78DE /* PagesListViewController.m in Sources */,
 				B4DD045E1B8E0F3600E2ACA3 /* FuncItem.m in Sources */,
 				B4DB8A921BB4090200058147 /* PostControll.m in Sources */,
@@ -810,7 +805,6 @@
 				B4E45AD91BD67B5C002C34FB /* GravatarHelper.m in Sources */,
 				B4DB7D9F1BBF6EF000DC203A /* PostActionBar.m in Sources */,
 				B46004D11B8CBB3D00757221 /* CategoriesViewController.m in Sources */,
-				B46572111BB2CBCD00835972 /* Post.m in Sources */,
 				B4E53F121B87FDCB00C4CFAA /* main.m in Sources */,
 				B46572301BB2F39B00835972 /* NSString+Util.m in Sources */,
 				B4DB405C1BC7C877009BD1A6 /* SCCircularRefreshView.m in Sources */,

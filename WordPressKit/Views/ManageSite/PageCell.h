@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RemotePost.h"
+#import "Post.h"
 #import "Blog.h"
 
 @interface PageCell : UITableViewCell
 
 
-- (void)configCellWithPost:(RemotePost *)post inBlog:(Blog *)blog;
+- (void)configCellWithPost:(Post *)post inBlog:(Blog *)blog;
 
 @end

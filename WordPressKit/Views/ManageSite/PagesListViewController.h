@@ -8,7 +8,7 @@
 
 #import "SCPullRefreshViewController.h"
 #import "Blog.h"
-#import "RemotePost.h"
+#import "Post.h"
 
 @class PostControll;
 

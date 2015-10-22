@@ -132,7 +132,7 @@ extern CGFloat tableViewInsertBottom;
  */
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RemotePost *post = self.pc.posts[indexPath.row];
+    Post *post = self.pc.posts[indexPath.row];
     if ([post.postThumbnailPath isEmpty]) {
         return 324.0;
     }
@@ -140,7 +140,7 @@ extern CGFloat tableViewInsertBottom;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    RemotePost *post = self.pc.posts[indexPath.row];
+    Post *post = self.pc.posts[indexPath.row];
     PostCell *cell;
     if ([post.postThumbnailPath isEmpty]) {
         cell = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
@@ -155,7 +155,7 @@ extern CGFloat tableViewInsertBottom;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RemotePost *post = self.pc.posts[indexPath.row];
+    Post *post = self.pc.posts[indexPath.row];
     Blog *blog = self.blog;
     NSDictionary *sender = @{@"blog":blog,@"post":post};
     [self performSegueWithIdentifier:@"ViewCustomPost" sender:sender];
@@ -231,7 +231,7 @@ extern CGFloat tableViewInsertBottom;
  */
 - (PostCell *)configCellNib:(NSIndexPath *)indexPath
 {
-    RemotePost *post = self.pc.posts[indexPath.row];
+    Post *post = self.pc.posts[indexPath.row];
     NSNumber *thumb = post.postThumbnailID;
     NSString *thumbPath = post.postThumbnailPath;
     NSString *cellIdentifier = (thumb > 0 && ![thumbPath isEqualToString:@""]) ? @"PostImageCell" : @"PostTextCell";
@@ -270,7 +270,7 @@ extern CGFloat tableViewInsertBottom;
  */
 - (void)configCellContent:(PostCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    RemotePost *post = self.pc.posts[indexPath.row];
+    Post *post = self.pc.posts[indexPath.row];
     
     [cell configCellWithPost:post inBlog:self.blog];
     
@@ -282,27 +282,27 @@ extern CGFloat tableViewInsertBottom;
 
 #pragma mark - cell delegate methods
 
-- (void)cell:(PostCell *)cell receivedEditActionForProvider:(RemotePost *)post
+- (void)cell:(PostCell *)cell receivedEditActionForProvider:(Post *)post
 {
     [self editPost:post];
 }
 
-- (void)cell:(PostCell *)cell receivedViewActionForProvider:(RemotePost *)post
+- (void)cell:(PostCell *)cell receivedViewActionForProvider:(Post *)post
 {
     [self viewPost:post];
 }
 
-- (void)cell:(PostCell *)cell receivedPublishActionForProvider:(RemotePost *)post
+- (void)cell:(PostCell *)cell receivedPublishActionForProvider:(Post *)post
 {
     [self publishPost:post];
 }
 
-- (void)cell:(PostCell *)cell receivedTrashActionForProvider:(RemotePost *)post
+- (void)cell:(PostCell *)cell receivedTrashActionForProvider:(Post *)post
 {
     [self deletePost:post];
 }
 
-- (void)cell:(PostCell *)cell receivedRestoreActionForProvider:(RemotePost *)post
+- (void)cell:(PostCell *)cell receivedRestoreActionForProvider:(Post *)post
 {
     [self restorePost:post];
 }
@@ -335,24 +335,24 @@ extern CGFloat tableViewInsertBottom;
  }
  */
 
-- (void)previewEditPost:(RemotePost *)post
+- (void)previewEditPost:(Post *)post
 {
     [self editPost:post withEditMode:@"preview"];
 }
 
-- (void)editPost:(RemotePost *)post
+- (void)editPost:(Post *)post
 {
     [self editPost:post withEditMode:@"edit"];
 }
 
-- (void)viewPost:(RemotePost *)post
+- (void)viewPost:(Post *)post
 {
     NSString *url = [post.URL absoluteString];
     [self performSegueWithIdentifier:@"PreviewPost" sender:url];
 }
 
 
-- (void)editPost:(RemotePost *)post withEditMode:(NSString *)mode
+- (void)editPost:(Post *)post withEditMode:(NSString *)mode
 {
     //    if ([WPPostViewController isNewEditorEnabled]) {
     //        WPPostViewController *postViewController = [[WPPostViewController alloc] initWithPost:apost mode:mode];
@@ -392,17 +392,17 @@ extern CGFloat tableViewInsertBottom;
 //    [alertView show];
 //}
 
-- (void)publishPost:(RemotePost *)post
+- (void)publishPost:(Post *)post
 {
     
 }
 
-- (void)deletePost:(RemotePost *)post
+- (void)deletePost:(Post *)post
 {
     
 }
 
-- (void)restorePost:(RemotePost *)post
+- (void)restorePost:(Post *)post
 {
     
 }
