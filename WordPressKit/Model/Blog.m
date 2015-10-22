@@ -11,10 +11,10 @@
 
 @implementation Blog
 
-- (NSArray *)getXMLRPCArgsWithExtra:(id)extra withDBRecordId:(NSInteger)rid{
+- (NSArray *)getXMLRPCArgsWithExtra:(id)extra{
     NSMutableArray *result = [NSMutableArray array];
     DataModel *dataModel = [[DataModel alloc] init];
-    NSString *password = [dataModel readKeyChainWithId:rid];
+    NSString *password = [dataModel readKeyChainWithId:self.id];
     [result addObject:[NSNumber numberWithInteger:self.blogId]];
     [result addObject:self.userName];
     [result addObject:password];

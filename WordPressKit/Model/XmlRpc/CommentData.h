@@ -6,14 +6,14 @@
 //  Copyright (c) 2015年 wuxueqian. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Blog.h"
 #import "RemotePost.h"
 #import "WordPressApi.h"
 #import "Comment.h"
 #import <sqlite3.h>
+#import "CommentDataDelegate.h"
 
-@interface CommentData : NSObject
+@interface CommentData()
 {
     sqlite3 *db;
 }
@@ -23,7 +23,10 @@
 @property (nonatomic,strong) RemotePost *post;
 @property (nonatomic,strong) Blog *blog;
 
-- (instancetype)initWithBlog:(Blog *)blog inPost:(RemotePost *)post;
-- (NSArray *)getPostCommentsOfStatus:(NSInteger)commentStatus excludeType:(NSArray *)commentType;
++ (CommentData *)sharedManager;
+- (void)configureManagerPost:(RemotePost *)post forBlog:(Blog *)blog;
+- (void)getPostCommentsOfStatus:(NSString *)commentStatus commentType:(NSString *)commentType inCommentPage:(NSInteger)page;
+- (void)fetchPostCommentsOfStatus:(NSString *)commentStatus commentType:(NSString *)commentType inCommentPage:(NSInteger)page;
+- (void)maybeFetchPostCommentsOfStatus:(NSString *)commentStatus commentType:(NSString *)commentType inCommentPage:(NSInteger)page;
 
 @end

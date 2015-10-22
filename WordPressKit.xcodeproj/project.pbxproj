@@ -225,6 +225,7 @@
 		B4E53F281B87FDCB00C4CFAA /* WordPressKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordPressKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E53F2D1B87FDCB00C4CFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4E53F2E1B87FDCB00C4CFAA /* WordPressKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordPressKitTests.m; sourceTree = "<group>"; };
+		B4E6CC251BD6926900DFCDC8 /* CommentDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentDataDelegate.h; path = XmlRpc/CommentDataDelegate.h; sourceTree = "<group>"; };
 		EEEC05FB07F931989DBD5D97 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,6 +298,7 @@
 				B4DB8A911BB4090200058147 /* PostControll.m */,
 				B4012D061BD526210037C426 /* CommentData.h */,
 				B4012D071BD526210037C426 /* CommentData.m */,
+				B4E6CC251BD6926900DFCDC8 /* CommentDataDelegate.h */,
 			);
 			name = XmlRpc;
 			sourceTree = "<group>";
@@ -359,17 +361,12 @@
 				B46004D61B8CBB5D00757221 /* ManagesiteViewController.m */,
 				B4E0DF451BAE602D00289630 /* SiteToolsViewController.h */,
 				B4E0DF461BAE602D00289630 /* SiteToolsViewController.m */,
+				B4DC00401BC21B6C00B8F194 /* SiteSettingViewController.h */,
+				B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */,
 				B4E0DD391BC93D8A0052519A /* PostCell */,
 				B4DEF9811BCD264F001D78DE /* PageCell */,
 				B4E0DD411BC95E020052519A /* Filters */,
-				B4DC00401BC21B6C00B8F194 /* SiteSettingViewController.h */,
-				B4DC00411BC21B6C00B8F194 /* SiteSettingViewController.m */,
-				B40213B71BC6BB8600E71E6B /* PostsListViewController.h */,
-				B40213B81BC6BB8600E71E6B /* PostsListViewController.m */,
-				B4DEF9791BCD1459001D78DE /* PagesListViewController.h */,
-				B4DEF97A1BCD1459001D78DE /* PagesListViewController.m */,
-				B4DB63051BD2AFB0007DF1D1 /* CustomPostsListViewController.h */,
-				B4DB63061BD2AFB0007DF1D1 /* CustomPostsListViewController.m */,
+				B4E1B71D1BD7ABA600683BD3 /* PostsList */,
 				B4DDA85E1BCFDC7B006A33B9 /* SinglePost */,
 			);
 			path = ManageSite;
@@ -503,6 +500,19 @@
 				B4E0DF491BAEB0B000289630 /* WebBrowserController.m */,
 			);
 			name = ToolKit;
+			sourceTree = "<group>";
+		};
+		B4E1B71D1BD7ABA600683BD3 /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				B40213B71BC6BB8600E71E6B /* PostsListViewController.h */,
+				B40213B81BC6BB8600E71E6B /* PostsListViewController.m */,
+				B4DEF9791BCD1459001D78DE /* PagesListViewController.h */,
+				B4DEF97A1BCD1459001D78DE /* PagesListViewController.m */,
+				B4DB63051BD2AFB0007DF1D1 /* CustomPostsListViewController.h */,
+				B4DB63061BD2AFB0007DF1D1 /* CustomPostsListViewController.m */,
+			);
+			name = PostsList;
 			sourceTree = "<group>";
 		};
 		B4E53F031B87FDCB00C4CFAA = {

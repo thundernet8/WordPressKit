@@ -192,6 +192,8 @@ static NSInteger insertedPostsNum = 0;
     for (RemotePost *post in posts) {
         [pc writePostToDB:post inBlog:blog needNotification:!(changedPostsNum+1!=posts.count)];
     }
+    //记录博客同步时间
+    [pc siteLastSynced:[NSNumber numberWithInt:(int)blog.id]];
     pc = nil;
     
 }
@@ -306,8 +308,6 @@ static NSInteger insertedPostsNum = 0;
         NSDictionary *info = @{@"insertedPostsNum" : [NSNumber numberWithInteger:insertedPostsNum],@"netWorkOk" : @YES};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"writePostsToDBNotification" object:nil userInfo:info];
     }
-    //记录博客同步时间
-    [self siteLastSynced:[NSNumber numberWithInt:siteid]];
 }
 
 /**
@@ -339,7 +339,7 @@ static NSInteger insertedPostsNum = 0;
         [mutableParameters addEntriesFromDictionary:options];
         extraParameters = [NSDictionary dictionaryWithDictionary:mutableParameters];
     }
-    NSArray *parameters = [blog getXMLRPCArgsWithExtra:extraParameters withDBRecordId:blog.id];
+    NSArray *parameters = [blog getXMLRPCArgsWithExtra:extraParameters];
     [client  callMethod:@"wp.getPosts"
               parameters:parameters
                  success:^(AFHTTPRequestOperation *operation, id responseObject) {

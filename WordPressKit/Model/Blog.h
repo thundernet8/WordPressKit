@@ -30,6 +30,6 @@
 //只读属性
 @property (nonatomic, strong,  readonly) WPXMLRPCClient *api;
 
-- (NSArray *)getXMLRPCArgsWithExtra:(id)extra withDBRecordId:(NSInteger)rid;
+- (NSArray *)getXMLRPCArgsWithExtra:(id)extra;
 
 @end

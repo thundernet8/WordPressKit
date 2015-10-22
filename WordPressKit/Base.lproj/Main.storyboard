@@ -949,7 +949,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJr-2j-obH">
-                                        <rect key="frame" x="0.0" y="-64" width="600" height="551"/>
+                                        <rect key="frame" x="0.0" y="-64" width="600" height="600"/>
                                         <connections>
                                             <segue destination="zbA-i3-xbL" kind="embed" identifier="ShowCommentsTable" id="GC0-gT-pHY"/>
                                         </connections>
@@ -958,7 +958,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="QJr-2j-obH" firstAttribute="leading" secondItem="M9r-dc-Tbt" secondAttribute="leading" id="1NT-2E-Fna"/>
-                                    <constraint firstAttribute="bottom" secondItem="QJr-2j-obH" secondAttribute="bottom" id="S8s-PN-cuB"/>
+                                    <constraint firstAttribute="bottom" secondItem="QJr-2j-obH" secondAttribute="bottom" constant="-49" id="S8s-PN-cuB"/>
                                     <constraint firstAttribute="trailing" secondItem="QJr-2j-obH" secondAttribute="trailing" id="ed3-J6-XUe"/>
                                     <constraint firstItem="QJr-2j-obH" firstAttribute="top" secondItem="M9r-dc-Tbt" secondAttribute="top" constant="-64" id="vAo-pk-hWk"/>
                                 </constraints>
@@ -1891,7 +1891,7 @@
             <objects>
                 <tableViewController title="文章评论表格" id="zbA-i3-xbL" customClass="PostCommentsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ve2-SZ-7b0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1936,7 +1936,7 @@
                                     <constraints>
                                         <constraint firstItem="nAi-62-lWa" firstAttribute="leading" secondItem="hwT-qs-F5p" secondAttribute="leadingMargin" id="34I-x8-ghE"/>
                                         <constraint firstItem="jJg-Pp-xqw" firstAttribute="leading" secondItem="hwT-qs-F5p" secondAttribute="leadingMargin" id="EhN-SD-mMj"/>
-                                        <constraint firstItem="nAi-62-lWa" firstAttribute="top" secondItem="hwT-qs-F5p" secondAttribute="topMargin" constant="45" id="FDZ-lC-MJi"/>
+                                        <constraint firstItem="nAi-62-lWa" firstAttribute="top" secondItem="hwT-qs-F5p" secondAttribute="topMargin" constant="50" id="FDZ-lC-MJi"/>
                                         <constraint firstItem="gnI-Sb-pKo" firstAttribute="trailing" secondItem="hwT-qs-F5p" secondAttribute="trailingMargin" id="Inz-wW-bdX"/>
                                         <constraint firstItem="nAi-62-lWa" firstAttribute="trailing" secondItem="hwT-qs-F5p" secondAttribute="trailingMargin" id="Kd5-HR-lvn"/>
                                         <constraint firstItem="Pys-n1-mbr" firstAttribute="leading" secondItem="jJg-Pp-xqw" secondAttribute="trailing" constant="16" id="L7q-bP-vMM"/>
