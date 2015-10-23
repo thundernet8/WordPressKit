@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface AboutTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *cacheLabel;

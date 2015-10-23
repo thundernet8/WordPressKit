@@ -10,8 +10,9 @@
 #import "UIImageView+WebCache.h"
 #import "WebBrowserController.h"
 #import "UIImageView+WebCache.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface AboutTableViewController ()
+@interface AboutTableViewController () <MFMailComposeViewControllerDelegate>
 
 - (void)configTableView;
 - (void)statisticCache;
@@ -85,7 +86,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0 && indexPath.row == 0) {
+        //功能介绍
         
+    }else if(indexPath.section == 0 && indexPath.row == 1) {
+        //帮助
+        
+    }else if(indexPath.section == 0 && indexPath.row == 2) {
+        //反馈
+        [self sendEmail];
     }else if(indexPath.section == 1 && indexPath.row == 0) {
         //打开App Store评分
         NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/WordPressKit"];
@@ -102,49 +110,6 @@
     }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - accessories
 
@@ -157,6 +122,50 @@
     }else{
         self.tableView.scrollEnabled = NO;
     }
+}
+
+- (void)sendEmail
+{
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:@"WordPressKit 意见反馈"];
+    [mc setToRecipients:[NSArray arrayWithObjects:@"wuxueqian2010@icloud.com", nil]];
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [infoDict objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [infoDict objectForKey:@"CFBundleVersion"];
+    NSString *osVersion = [[UIDevice currentDevice] systemVersion];
+    NSString *content = [NSString stringWithFormat:@"<感谢您的反馈意见,我们会认真听取并改进!>\n\n系统版本:%@\n程序版本:%@ build %@",osVersion,version,build];
+    [mc setMessageBody:content isHTML:NO];
+    [self presentViewController:mc animated:YES completion:nil];
+}
+
+//发送邮件委托方法
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    NSString *notice;
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            notice = @"您取消了发送";
+            break;
+        case MFMailComposeResultSaved:
+            notice = @"反馈已保存, 请记得发送";
+            break;
+        case MFMailComposeResultSent:
+            notice = @":-)邮件已发送, 感谢您的反馈";
+            break;
+        case MFMailComposeResultFailed:
+            notice = [NSString stringWithFormat:@":-(发生了错误%@",[error localizedDescription]];
+            break;
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:^(void){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view.superview.superview animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = notice;
+        [hud hide:YES afterDelay:1.5];
+    }];
 }
 
 /**
