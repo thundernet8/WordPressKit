@@ -23,9 +23,9 @@
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tBg-Mn-Y0N">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="tBg-Mn-Y0N">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FuncItem" textLabel="4lX-el-RCG" style="IBUITableViewCellStyleDefault" id="Cpe-ry-8pU">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -1774,10 +1774,10 @@
             </objects>
             <point key="canvasLocation" x="-1055" y="1872"/>
         </scene>
-        <!--单个函数Nav-->
+        <!--函数Nav-->
         <scene sceneID="3O8-9d-JlC">
             <objects>
-                <navigationController title="单个函数Nav" automaticallyAdjustsScrollViewInsets="NO" id="b2Z-Jh-W87" sceneMemberID="viewController">
+                <navigationController title="函数Nav" automaticallyAdjustsScrollViewInsets="NO" id="b2Z-Jh-W87" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="函数" image="tabbar_button_function" id="RRj-nB-M61"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dTv-bV-Y6r">
@@ -1980,7 +1980,7 @@
         <image name="wordpress_transparent" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wTr-pV-qft"/>
+        <segue reference="Owd-lW-jMT"/>
         <segue reference="r7U-Ry-fub"/>
         <segue reference="UZO-Er-ThG"/>
         <segue reference="4wf-xV-8FY"/>

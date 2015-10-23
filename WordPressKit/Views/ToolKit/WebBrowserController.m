@@ -39,6 +39,8 @@
     //Webview delegate
     self.webView.delegate = self;
     
+    self.webView.backgroundColor = kBackgroundColorLightGray;
+    
     //加载url
     NSURL *url = [NSURL URLWithString:self.url];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

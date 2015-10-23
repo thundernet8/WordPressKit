@@ -90,6 +90,12 @@
     self.tableView.backgroundColor = kBackgroundColorLightGray;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.contentInset = UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0);
+    if ([self.tableView respondsToSelector:@selector(setSectionIndexColor:)]) {
+        self.tableView.sectionIndexColor = kNaviBackgroundColorGreenBlue;
+        self.tableView.sectionIndexTrackingBackgroundColor = [UIColor clearColor];
+        self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
+    }
 }
 
 - (void)configureNavi
@@ -125,9 +131,20 @@
 }
 
 #pragma mark - tableview datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if (!self.searchBar.text || [self.searchBar.text isEqualToString:@""]) {
+        return 26;
+    }
+    return 1;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (!self.searchBar.text || [self.searchBar.text isEqualToString:@""]) {
+        NSArray *rowNums = @[@90,@11,@98,@82,@31,@28,@475,@28,@138,@3,@3,@33,@66,@22,@7,@85,@2,@69,@105,@222,@111,@14,@773,@6,@1,@177];
+        return [rowNums[section] integerValue];
+    }
     return [self.dataModel.funcItems count];
 }
 
@@ -135,7 +152,13 @@
 {
     static NSString *CellIdentifier = @"FuncItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    FuncItem *item = self.dataModel.funcItems[indexPath.row];
+    NSArray *rowNums = @[@90,@11,@98,@82,@31,@28,@475,@28,@138,@3,@3,@33,@66,@22,@7,@85,@2,@69,@105,@222,@111,@14,@773,@6,@1,@177];
+    NSInteger num = 0;
+    for (NSInteger i=0; i<indexPath.section; i++) {
+        num += [rowNums[i] integerValue];
+    }
+    num += indexPath.row;
+    FuncItem *item = self.dataModel.funcItems[num];
     [self configImgForCell:cell cellWithFuncItem:item];
     [self configTextForCell:cell cellWithFuncItem:item];
     
@@ -156,6 +179,27 @@
     return 36;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 1.0;
+    }
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [UIView new];
+}
+
+//索引标题
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    if (!self.searchBar.text || [self.searchBar.text isEqualToString:@""]) {
+        return @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Z",@"#"];
+    }
+    return nil;
+}
 
 //cell选中执行segue跳转详情页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
