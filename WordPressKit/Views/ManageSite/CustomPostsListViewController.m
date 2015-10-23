@@ -149,7 +149,7 @@ extern CGFloat tableViewInsertBottom;
     }
     [self configCellContent:cell atIndexPath:indexPath];
     CGSize size = [cell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 12, CGFLOAT_MAX)];
-    CGFloat height = ceil(size.height);
+    CGFloat height = ceil(size.height)-50;
     return height;
 }
 
@@ -204,7 +204,7 @@ extern CGFloat tableViewInsertBottom;
 {
     //init
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
-    self.tableView.backgroundColor = kBackgroundColorLightBlue;
+    self.tableView.backgroundColor = kBackgroundColorLightGray;
     
     //delegate
     self.tableView.delegate = self;

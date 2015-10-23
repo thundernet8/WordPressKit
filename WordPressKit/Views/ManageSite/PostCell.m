@@ -33,6 +33,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 @property (weak, nonatomic) IBOutlet UILabel *PostContent;
 @property (weak, nonatomic) IBOutlet UILabel *PostDate;
 @property (weak, nonatomic) IBOutlet UILabel *PostCat;
+@property (weak, nonatomic) IBOutlet UIImageView *catIcon;
 @property (weak, nonatomic) IBOutlet PostActionBar *ActionBar;
 
 
@@ -49,7 +50,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 }
 
 - (void)didMoveToSuperview{
-   
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -92,15 +93,23 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     NSString *dateStr = [dateFormat stringFromDate:post.date];
     self.PostDate.text = dateStr;
     //文章分类
-    NSMutableArray *catNames = [NSMutableArray new];
-    for (PostCategory *cat in post.categories) {
-        [catNames addObject:cat.name];
+    if ([post.type isEqualToString:@"post"]) {
+        NSMutableArray *catNames = [NSMutableArray new];
+        for (PostCategory *cat in post.categories) {
+            [catNames addObject:cat.name];
+        }
+        NSString *catStr = [catNames componentsJoinedByString:@" · "];
+        self.PostCat.text = catStr;
+    }else{
+        [self.catIcon removeFromSuperview];
+        [self.PostCat removeFromSuperview];
     }
-    NSString *catStr = [catNames componentsJoinedByString:@" · "];
-    self.PostCat.text = catStr;
     //Action bar
-    [self configureActionBar];
-
+    if ([post.type isEqualToString:@"post"]) {
+        [self configureActionBar];
+    }else{
+        [self.ActionBar removeFromSuperview];
+    }
     [self setNeedsUpdateConstraints];
 }
 

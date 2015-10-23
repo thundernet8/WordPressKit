@@ -568,6 +568,31 @@ const CGFloat tableViewInsertBottom = 49.0;
     [self displayFiltersView];
 }
 
+#pragma mark - noresults view
+- (void)dealNoPostsView
+{
+    //********************//:-(
+    [self removeNoPostsView];
+    UIView *noCommentsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 160.0)];
+    noCommentsView.tag = 8;
+    UILabel *emotion = [[UILabel alloc] initWithFrame:CGRectMake(0, 30.0, noCommentsView.frame.size.width, 100.0)];
+    emotion.font = [UIFont systemFontOfSize:36.0];
+    emotion.textColor = [UIColor colorWithRed:225/255.0 green:225/255.0 blue:225/255.0 alpha:1.0];
+    emotion.text = @":-(\r\nNo Posts";
+    emotion.numberOfLines = 0;
+    emotion.textAlignment = NSTextAlignmentCenter;
+    [noCommentsView addSubview:emotion];
+    [self.tableView addSubview:noCommentsView];
+    
+}
+
+- (void)removeNoPostsView
+{
+    if ([self.view viewWithTag:8]) {
+        [[self.view viewWithTag:8] removeFromSuperview];
+    }
+}
+
 #pragma mark - post status filter
 - (void)updateFilter
 {

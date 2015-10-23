@@ -279,6 +279,7 @@ static NSString *commentType = @"";
     }
     if (Comments && Comments.count > 0 && !_isLoadingMore) {
         _comments = [Comments mutableCopy];
+        [self removeNoCommentsView];
         [self.tableView reloadData];
     }else if (Comments && Comments.count > 0 && _isLoadingMore) {
         //append
