@@ -13,6 +13,7 @@
 #import "FuncItemViewController.h"
 #import "CatItem.h"
 #import "UIImageView+WebCache.h"
+#import "temp.h"
 
 @interface FunctionsViewController () <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
@@ -152,12 +153,7 @@
 {
     static NSString *CellIdentifier = @"FuncItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSArray *rowNums = @[@90,@11,@98,@82,@31,@28,@475,@28,@138,@3,@3,@33,@66,@22,@7,@85,@2,@69,@105,@222,@111,@14,@773,@6,@1,@177];
-    NSInteger num = 0;
-    for (NSInteger i=0; i<indexPath.section; i++) {
-        num += [rowNums[i] integerValue];
-    }
-    num += indexPath.row;
+    NSInteger num = [self getFuncItemRowNumofIndexPath:indexPath];
     FuncItem *item = self.dataModel.funcItems[num];
     [self configImgForCell:cell cellWithFuncItem:item];
     [self configTextForCell:cell cellWithFuncItem:item];
@@ -205,8 +201,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.searchBar resignFirstResponder];
-    FuncItem *funcItem = self.dataModel.funcItems[indexPath.row];
-    [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
+    NSInteger num = [self getFuncItemRowNumofIndexPath:indexPath];
+    FuncItem *funcItem = self.dataModel.funcItems[num];
+    //[self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
+    [self performSegueWithIdentifier:@"Show" sender:funcItem];
 }
 
 
@@ -216,7 +214,10 @@
     if ([segue.identifier isEqualToString:@"ShowFuncItem"]) {
         FuncItemViewController *controller = segue.destinationViewController;
         controller.funcItem = sender;
-        
+    }
+    if ([segue.identifier isEqualToString:@"Show"]) {
+        temp *controller = segue.destinationViewController;
+        controller.item = sender;
     }
 }
 
@@ -252,6 +253,18 @@
     UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 22)];
     statusBarView.backgroundColor  =  [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1];
     [self.navigationController.navigationBar addSubview:statusBarView];
+}
+
+//获取对应indexPath下的函数row
+- (NSInteger)getFuncItemRowNumofIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *rowNums = @[@90,@11,@98,@82,@31,@28,@475,@28,@138,@3,@3,@33,@66,@22,@7,@85,@2,@69,@105,@222,@111,@14,@773,@6,@1,@177];
+    NSInteger num = 0;
+    for (NSInteger i=0; i<indexPath.section; i++) {
+        num += [rowNums[i] integerValue];
+    }
+    num += indexPath.row;
+    return num;
 }
 
 @end
