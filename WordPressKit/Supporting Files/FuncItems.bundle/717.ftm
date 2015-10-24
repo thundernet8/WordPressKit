@@ -1,0 +1,96 @@
+<article id="post-2242" class="post-2242 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_term_field/">get_term_field ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$field</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$term</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">'display'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get sanitized Term field.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Does checks for $term, based on the $taxonomy. The function is for contextual reasons and for simplicity of usage. See sanitize_term_field() for more information.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|int|null|WP_Error)</span> Will return an empty string if $term is not an object or if $field is not set in $term.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$field</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Term field to fetch.</span>
+									</p>
+							</dd>
+									<dt>$term</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Term ID.</span>
+									</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Taxonomy Name.</span>
+									</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> default is display. Look at sanitize_term_field() for available options.</span>
+									</p>
+								<p class="default">Default value: 'display'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menu_item_setting/populate_value/">WP_Customize_Nav_Menu_Item_Setting::populate_value()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/walker_nav_menu_edit/start_el/">Walker_Nav_Menu_Edit::start_el()</a>
+							</li>
+													<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/term_description/">term_description()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_setup_nav_menu_item/">wp_setup_nav_menu_item()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_nav_menu_item/">wp_update_nav_menu_item()</a>
+							</li>
+																</ul>
+			</article>

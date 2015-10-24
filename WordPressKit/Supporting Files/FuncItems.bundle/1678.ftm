@@ -1,0 +1,71 @@
+<article id="post-1026" class="post-1026 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_rewrite-php wp-parser-package-rewrite wp-parser-package-wordpress wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/url_to_postid/">url_to_postid ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span> )</a></h1>
+
+	<section class="summary">
+		<p>Examine a url and try to determine the post ID it represents.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks are supposedly from the hosted site blog.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> Post ID, or 0 on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/rewrite.php/">wp-includes/rewrite.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Permalink to check.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_local_attachment/">is_local_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/pingback_ping/">wp_xmlrpc_server::pingback_ping()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/pingback_extensions_getpingbacks/">wp_xmlrpc_server::pingback_extensions_getPingbacks()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_newcomment/">wp_xmlrpc_server::wp_newComment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/pingback/">pingback()</a>
+							</li>
+																</ul>
+			</article>

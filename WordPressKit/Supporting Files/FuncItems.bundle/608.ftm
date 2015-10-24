@@ -1,0 +1,64 @@
+<article id="post-1128" class="post-1128 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_custom_values/">get_post_custom_values ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$key</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$post_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve values for a custom post field.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The parameters must not be considered optional. All of the post meta fields will be retrieved and only the meta field key values returned.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|null)</span> Meta field values.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Meta field key. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post ID. Default is ID of the global $post.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_meta/">the_meta()</a>
+							</li>
+																</ul>
+			</article>

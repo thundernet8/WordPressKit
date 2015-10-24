@@ -1,0 +1,79 @@
+<article id="post-3416" class="post-3416 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_text_diff/">wp_text_diff ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$left_string</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$right_string</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Displays a human readable HTML representation of the difference between two strings.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The Diff is available for getting the changes between versions. The output is HTML, so the primary use is for displaying the changes. If the two strings are equivalent, then an empty string will be returned.</p>
+<p>The arguments supported and can be changed are listed below.</p>
+<p>&#8216;title&#8217; : Default is an empty string. Titles the diff in a manner compatible</p>
+<pre><code>with the output.</code></pre>
+<p>&#8216;title_left&#8217; : Default is an empty string. Change the HTML to the left of the</p>
+<pre><code>title.</code></pre>
+<p>&#8216;title_right&#8217; : Default is an empty string. Change the HTML to the right of</p>
+<pre><code>the title.</code></pre>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Empty string if strings are equivalent or HTML with differences.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$left_string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">&quot;old&quot; (left) version of string</span>
+									</p>
+							</dd>
+									<dt>$right_string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">&quot;new&quot; (right) version of string</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Change 'title', 'title_left', and 'title_right' defaults.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_revision_ui_diff/">wp_get_revision_ui_diff()</a>
+							</li>
+																</ul>
+			</article>

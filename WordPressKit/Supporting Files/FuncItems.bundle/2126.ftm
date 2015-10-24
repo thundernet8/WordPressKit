@@ -1,0 +1,82 @@
+<article id="post-1570" class="post-1570 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-2-0-0 wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_insert_user/">wp_insert_user ( <span class="arg-type">array|object|WP_User</span>&nbsp;<span class="arg-name">$userdata</span> )</a></h1>
+
+	<section class="summary">
+		<p>Insert a user into the database.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Most of the <code>$userdata</code> array fields have filters associated with the values. Exceptions are &#8216;ID&#8217;, &#8216;rich_editing&#8217;, &#8216;comment_shortcuts&#8217;, &#8216;admin_color&#8217;, &#8216;use_ssl&#8217;, &#8216;user_registered&#8217;, and &#8216;role&#8217;. The filters have the prefix &#8216;pre<em>user</em>&#8216; followed by the field name. An example using &#8216;description&#8217; would have the filter called, &#8216;pre_user_description&#8217; that can be hooked into.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|WP_Error)</span> The newly created user's ID or a WP_Error object if the user could not                      be created.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$userdata</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="object">object</span>|<span class="WP_User">WP_User</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An array, object, or WP_User object of user data arguments. <ul class="param-hash"><li><b>'ID'</b><br /><i><span class='type'>(int)</span></i> User ID. If supplied, the user will be updated. </li>
+<li><b>'user_pass'</b><br /><i><span class='type'>(string)</span></i> The plain-text user password. </li>
+<li><b>'user_login'</b><br /><i><span class='type'>(string)</span></i> The user's login username. </li>
+<li><b>'user_nicename'</b><br /><i><span class='type'>(string)</span></i> The URL-friendly user name. </li>
+<li><b>'user_url'</b><br /><i><span class='type'>(string)</span></i> The user URL. </li>
+<li><b>'user_email'</b><br /><i><span class='type'>(string)</span></i> The user email address. </li>
+<li><b>'display_name'</b><br /><i><span class='type'>(string)</span></i> The user's display name. Default is the the user's username. </li>
+<li><b>'nickname'</b><br /><i><span class='type'>(string)</span></i> The user's nickname. Default is the the user's username. </li>
+<li><b>'first_name'</b><br /><i><span class='type'>(string)</span></i> The user's first name. For new users, will be used to build the first part of the user's display name if &lt;code&gt;$display_name&lt;/code&gt; is not specified. </li>
+<li><b>'last_name'</b><br /><i><span class='type'>(string)</span></i> The user's last name. For new users, will be used to build the second part of the user's display name if &lt;code&gt;$display_name&lt;/code&gt; is not specified. </li>
+<li><b>'description'</b><br /><i><span class='type'>(string)</span></i> The user's biographical description. </li>
+<li><b>'rich_editing'</b><br /><i><span class='type'>(string|bool)</span></i> Whether to enable the rich-editor for the user. False if not empty. </li>
+<li><b>'comment_shortcuts'</b><br /><i><span class='type'>(string|bool)</span></i> Whether to enable comment moderation keyboard shortcuts for the user. Default false. </li>
+<li><b>'admin_color'</b><br /><i><span class='type'>(string)</span></i> Admin color scheme for the user. Default 'fresh'. </li>
+<li><b>'use_ssl'</b><br /><i><span class='type'>(bool)</span></i> Whether the user should always access the admin over https. Default false. </li>
+<li><b>'user_registered'</b><br /><i><span class='type'>(string)</span></i> Date the user registered. Format is 'Y-m-d H:i:s'. </li>
+<li><b>'show_admin_bar_front'</b><br /><i><span class='type'>(string|bool)</span></i> Whether to display the Admin Bar for the user on the site's frontend. Default true. </li>
+<li><b>'role'</b><br /><i><span class='type'>(string)</span></i> User's role.</li>
+</li></ul>
+</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_user/">edit_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_user/">wp_update_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_user/">wp_create_user()</a>
+							</li>
+																</ul>
+			</article>

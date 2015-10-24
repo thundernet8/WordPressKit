@@ -1,0 +1,214 @@
+<article id="post-93" class="post-93 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment/">get_comment ( <span class="arg-type">object|string|int</span>&nbsp;<span class="arg-name">$comment</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$output</span>&nbsp;=&nbsp;<span class="arg-default">OBJECT</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieves comment data given a comment ID or comment object.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If an object is passed then the comment data will be cached and then returned after being passed through a filter. If the comment is empty, then the global comment variable will be used, if it is set.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|array|null)</span> Depends on $output value.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comment</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>|<span class="string">string</span>|<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment to retrieve.</span>
+									</p>
+							</dd>
+									<dt>$output</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> OBJECT or ARRAY_A or ARRAY_N constants.</span>
+									</p>
+								<p class="default">Default value: OBJECT</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_delete_comment/">wp_ajax_delete_comment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_dim_comment/">wp_ajax_dim_comment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_get_comments/">wp_ajax_get_comments()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_replyto_comment/">wp_ajax_replyto_comment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_edit_comment/">wp_ajax_edit_comment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-comments-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_comments_list_table/column_comment/">WP_Comments_List_Table::column_comment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_to_edit/">get_comment_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/map_meta_cap/">map_meta_cap()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_notify_postauthor/">wp_notify_postauthor()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_notify_moderator/">wp_notify_moderator()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_commentdata/">get_commentdata()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_scheduled_delete/">wp_scheduled_delete()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_edit_comment_link/">get_edit_comment_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/feed.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_guid/">get_comment_guid()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_deletecomment/">wp_xmlrpc_server::wp_deleteComment()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_editcomment/">wp_xmlrpc_server::wp_editComment()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getcomment/">wp_xmlrpc_server::wp_getComment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comment_form_title/">comment_form_title()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_reply_link/">get_comment_reply_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_link/">get_comment_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_text/">get_comment_text()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comment_text/">comment_text()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_type/">get_comment_type()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_class/">get_comment_class()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_date/">get_comment_date()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_excerpt/">get_comment_excerpt()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_author/">get_comment_author()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_author_email/">get_comment_author_email()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_author_ip/">get_comment_author_IP()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_author_url/">get_comment_author_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_comment_status/">wp_set_comment_status()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_comment/">wp_update_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_spam_comment/">wp_spam_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_comment_status/">wp_get_comment_status()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_comment/">wp_insert_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_page_of_comment/">get_page_of_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_comment/">wp_delete_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_trash_comment/">wp_trash_comment()</a>
+							</li>
+																			<a href="#" class="show-more">Show 38 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

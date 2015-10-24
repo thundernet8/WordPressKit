@@ -1,0 +1,74 @@
+<article id="post-271" class="post-271 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment_author_email_link/">get_comment_author_email_link ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$linktext</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$before</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$after</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Return the html email link to the author of the current comment.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Care should be taken to protect the email address and assure that email harvesters do not capture your commentors&#8217; email address. Most assume that their email address will not appear in raw form on the blog. Doing so will enable anyone, including those that people don&#8217;t want to get the email address and use it for their own means good and bad.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$linktext</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Text to display instead of the comment author's email address.                         </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$before</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Text or HTML to display before the email link. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$after</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Text or HTML to display after the email link. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comment_author_email_link/">comment_author_email_link()</a>
+							</li>
+																</ul>
+			</article>

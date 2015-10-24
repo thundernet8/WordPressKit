@@ -1,0 +1,86 @@
+<article id="post-1096" class="post-1096 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_status/">get_post_status ( <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$ID</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the post status based on the Post ID.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the post ID is of an attachment, then the parent post status will be given instead.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> Post status on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$ID</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post ID or post object. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/save_post/">WP_Press_This::save_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_sample_permalink_html/">get_sample_permalink_html()</a>
+							</li>
+													<li>
+								<span>wp-admin/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_post/">redirect_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_query/get_posts/">WP_Query::get_posts()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_post_categories/">wp_set_post_categories()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_post/">wp_delete_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_status/">get_post_status()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

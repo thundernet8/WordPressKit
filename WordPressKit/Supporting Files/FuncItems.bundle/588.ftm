@@ -1,0 +1,67 @@
+<article id="post-1214" class="post-1214 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-wordpress wp-parser-package-post wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_page_uri/">get_page_uri ( <span class="arg-type">WP_Post|object|int</span>&nbsp;<span class="arg-name">$page</span> )</a></h1>
+
+	<section class="summary">
+		<p>Build URI for a page.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Sub pages will be in the &#8220;directory&#8221; under the parent page post name.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> Page URI, false on error.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$page</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>|<span class="object">object</span>|<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Page object or page ID.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_sample_permalink/">get_sample_permalink()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_permalink/">get_post_permalink()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_get_page_link/">_get_page_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/page_uri_index/">WP_Rewrite::page_uri_index()</a>
+							</li>
+																</ul>
+			</article>

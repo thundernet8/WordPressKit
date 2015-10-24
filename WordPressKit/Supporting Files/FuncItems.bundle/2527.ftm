@@ -1,0 +1,63 @@
+<article id="post-682" class="post-682 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_rss-php wp-parser-package-external wp-parser-package-magpierss wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_fetch_remote_file/">_fetch_remote_file ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$headers</span>&nbsp;=&nbsp;<span class="arg-default">&quot;&quot;</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve URL headers and content using WP HTTP Request API.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(Snoopy)</span> style response</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/rss.php/">wp-includes/rss.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">URL to retrieve</span>
+									</p>
+							</dd>
+									<dt>$headers</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Headers to send to the URL.</span>
+									</p>
+								<p class="default">Default value: &quot;&quot;</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/rss.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/fetch_rss/">fetch_rss()</a>
+							</li>
+																</ul>
+			</article>

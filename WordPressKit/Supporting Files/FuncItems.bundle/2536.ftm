@@ -1,0 +1,45 @@
+<article id="post-4747" class="post-4747 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_get_dropins/">_get_dropins ()</a></h1>
+
+	<section class="summary">
+		<p>Returns drop-ins that WordPress uses.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Includes Multisite drop-ins only when is_multisite()</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Key is file name. The value is an array, with the first value the purpose of the drop-in and the second value the name of the constant that must be true for the drop-in to be used, or true if no constant is required.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-plugins-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugins_list_table/single_row/">WP_Plugins_List_Table::single_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_dropins/">get_dropins()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,77 @@
+<article id="post-1516" class="post-1516 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_bookmark-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_walk_bookmarks/">_walk_bookmarks ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$bookmarks</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>The formatted output of a list of bookmarks.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The $bookmarks array must contain bookmark objects and will be iterated over to retrieve the bookmark to be used in the output.</p>
+<p>The output is formatted as HTML with no way to change that format. However, what is between, before, and after can be changed. The link itself will be HTML.</p>
+<p>This function is used internally by wp_list_bookmarks() and should not be used by themes.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Formatted output in HTML</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/bookmark-template.php/">wp-includes/bookmark-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$bookmarks</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">List of bookmarks to traverse.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Bookmarks arguments. <ul class="param-hash"><li><b>'show_updated'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to show the time the bookmark was last updated. Accepts 1|true or 0|false. Default 0|false. </li>
+<li><b>'show_description'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to show the bookmakr description. Accepts 1|true, Accepts 1|true or 0|false. Default 0|false. </li>
+<li><b>'show_images'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to show the link image if available. Accepts 1|true or 0|false. Default 1|true. </li>
+<li><b>'show_name'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to show link name if available. Accepts 1|true or 0|false. Default 0|false. </li>
+<li><b>'before'</b><br /><i><span class='type'>(string)</span></i> The HTML or text to prepend to each bookmark. Default &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt;. </li>
+<li><b>'after'</b><br /><i><span class='type'>(string)</span></i> The HTML or text to append to each bookmark. Default &lt;code&gt;&amp;lt;/li&amp;gt;&lt;/code&gt;. </li>
+<li><b>'link_before'</b><br /><i><span class='type'>(string)</span></i> The HTML or text to prepend to each bookmark inside the anchor tags. </li>
+<li><b>'link_after'</b><br /><i><span class='type'>(string)</span></i> The HTML or text to append to each bookmark inside the anchor tags. </li>
+<li><b>'between'</b><br /><i><span class='type'>(string)</span></i> The string for use in between the link, description, and image. Default &quot;n&quot;. </li>
+<li><b>'show_rating'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to show the link rating. Accepts 1|true or 0|false. Default 0|false.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/bookmark-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_bookmarks/">wp_list_bookmarks()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,63 @@
+<article id="post-1212" class="post-1212 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_page_hierarchy/">get_page_hierarchy ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$pages</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$page_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Order the pages with children under parents in a flat list.</p>
+	</section>
+
+
+	<section class="description">
+		<p>It uses auxiliary structure to hold parent-children relationships and runs in O(N) complexity</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> A list arranged by hierarchy. Children immediately follow their parents.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$pages</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Posts array, passed by reference.</span>
+									</p>
+							</dd>
+									<dt>$page_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Parent page ID. Default 0.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/page_uri_index/">WP_Rewrite::page_uri_index()</a>
+							</li>
+																</ul>
+			</article>

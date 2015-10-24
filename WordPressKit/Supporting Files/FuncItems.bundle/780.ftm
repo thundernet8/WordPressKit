@@ -1,0 +1,45 @@
+<article id="post-318" class="post-318 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_trackback_url/">get_trackback_url ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve The current post&#8217;s trackback URL.</p>
+	</section>
+
+
+	<section class="description">
+		<p>There is a check to see if permalink&#8217;s have been enabled and if so, will retrieve the pretty path. If permalinks weren&#8217;t enabled, the ID of the current post is used and appended to the correct page to go to.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The trackback URL after being filtered.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/trackback_url/">trackback_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/trackback_rdf/">trackback_rdf()</a>
+							</li>
+																</ul>
+			</article>

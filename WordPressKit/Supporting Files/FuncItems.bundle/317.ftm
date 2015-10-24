@@ -1,0 +1,70 @@
+<article id="post-1765" class="post-1765 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_feed-php wp-parser-package-feed wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/fetch_feed/">fetch_feed ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$url</span> )</a></h1>
+
+	<section class="summary">
+		<p>Build SimplePie object based on RSS or Atom feed from URL.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Error|SimplePie)</span> WP_Error object on failure or SimplePie object on success</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/feed.php/">wp-includes/feed.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">URL of feed to retrieve. If an array of URLs, the feeds are merged using SimplePie's multifeed feature. See also <a href="https://developer.wordpress.org/reference/functions/​&lt;a href=&quot;http://simplepie.org/wiki/faq/typical_multifeed_gotchas&quot;&gt;http://simplepie.org/wiki/faq/typical_multifeed_gotchas&lt;/a&gt;">​&lt;a href=&quot;http://simplepie.org/wiki/faq/typical_multifeed_gotchas&quot;&gt;http://simplepie.org/wiki/faq/typical_multifeed_gotchas&lt;/a&gt;</a></span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_rss_control/">wp_dashboard_rss_control()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_plugins_output/">wp_dashboard_plugins_output()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_rss/widget/">WP_Widget_RSS::widget()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_widget_rss_output/">wp_widget_rss_output()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_widget_rss_process/">wp_widget_rss_process()</a>
+							</li>
+																</ul>
+			</article>

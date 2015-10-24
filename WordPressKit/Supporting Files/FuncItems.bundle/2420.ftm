@@ -1,0 +1,70 @@
+<article id="post-2293" class="post-2293 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_unique_term_slug/">wp_unique_term_slug ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$slug</span>,  <span class="arg-type">object</span>&nbsp;<span class="arg-name">$term</span> )</a></h1>
+
+	<section class="summary">
+		<p>Will make slug unique, if it isn&#8217;t already.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The <code>$slug</code> has to be unique global to every taxonomy, meaning that one taxonomy term can&#8217;t have a matching slug with another taxonomy term. Each slug has to be globally unique for every taxonomy.</p>
+<p>The way this works is that if the taxonomy that the term belongs to is hierarchical and has a parent, it will append that parent to the $slug.</p>
+<p>If that still doesn&#8217;t return an unique slug, then it try to append a number until it finds a number that is truly unique.</p>
+<p>The only purpose for <code>$term</code> is for appending a parent, if one exists.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Will return a true unique slug.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$slug</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The string that will be tried for a unique slug.</span>
+									</p>
+							</dd>
+									<dt>$term</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The term object that the &lt;code&gt;$slug&lt;/code&gt; will belong to.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_term/">wp_update_term()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_term/">wp_insert_term()</a>
+							</li>
+																</ul>
+			</article>

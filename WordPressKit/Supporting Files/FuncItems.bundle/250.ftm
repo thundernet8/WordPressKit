@@ -1,0 +1,57 @@
+<article id="post-1869" class="post-1869 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-3-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/doing_filter/">doing_filter ( <span class="arg-type">null|string</span>&nbsp;<span class="arg-name">$filter</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the name of a filter currently being processed.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The function current_filter() only returns the most recent filter or action being executed. did_action() returns true once the action is initially processed.</p>
+<p>This function allows detection for any filter currently being executed (despite not being the most recent filter to fire, in the case of hooks called from hook callbacks) to be verified.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the filter is currently in the stack.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$filter</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="null">null</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Filter to check. Defaults to null, which                            checks if any filter is currently being run.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/doing_action/">doing_action()</a>
+							</li>
+																</ul>
+			</article>

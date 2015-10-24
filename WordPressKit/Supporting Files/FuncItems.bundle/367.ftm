@@ -1,0 +1,127 @@
+<article id="post-1085" class="post-1085 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-wordpress wp-parser-package-post wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_attached_file/">get_attached_file ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$attachment_id</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$unfiltered</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve attached file path based on attachment ID.</p>
+	</section>
+
+
+	<section class="description">
+		<p>By default the path will go through the &#8216;get_attached_file&#8217; filter, but passing a true to the $unfiltered argument of get_attached_file() will return the file path unfiltered.</p>
+<p>The function works by getting the single post meta name, named &#8216;_wp_attached_file&#8217; and returning it. This is a convenience function to prevent looking up the meta name and provide a mechanism for sending the attached filename through a filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> The file path to where the attached file should be, false otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attachment_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment ID.</span>
+									</p>
+							</dd>
+									<dt>$unfiltered</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to apply filters. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_attachment_is/">wp_attachment_is()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/file_upload_upgrader/__construct/">File_Upload_Upgrader::__construct()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_restore_image/">wp_restore_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_image/">wp_save_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_copy_image_file/">_copy_image_file()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_load_image_to_edit_path/">_load_image_to_edit_path()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_crop_image/">wp_crop_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attachment_submitbox_metadata/">attachment_submitbox_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_2/">Custom_Image_Header::step_2()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_3/">Custom_Image_Header::step_3()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_load_image/">wp_load_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_attachment_icon_src/">get_attachment_icon_src()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_generate_attachment_metadata/">wp_maybe_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_attachment_for_js/">wp_prepare_attachment_for_js()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_attachment/">wp_delete_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_attachment_thumb_file/">wp_get_attachment_thumb_file()</a>
+							</li>
+																			<a href="#" class="show-more">Show 16 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,51 @@
+<article id="post-2533" class="post-2533 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/bool_from_yn/">bool_from_yn ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$yn</span> )</a></h1>
+
+	<section class="summary">
+		<p>Whether input is yes or no.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Must be &#8216;y&#8217; to be true.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if yes, false on anything else.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$yn</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Character string containing either 'y' (yes) or 'n' (no).</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

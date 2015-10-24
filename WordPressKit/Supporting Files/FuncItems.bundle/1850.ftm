@@ -1,0 +1,88 @@
+<article id="post-16105" class="post-16105 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_attachment_is/">wp_attachment_is ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span>,  <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$post_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Verifies an attachment is of a given type.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if one of the accepted types, false otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment type. Accepts 'image', 'audio', or 'video'.</span>
+									</p>
+							</dd>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Attachment ID. Default 0.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_generate_attachment_metadata/">wp_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_form_image_editor/">edit_form_image_editor()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_send_attachment_to_editor/">wp_ajax_send_attachment_to_editor()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_save_attachment/">wp_ajax_save_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/prepend_attachment/">prepend_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_enqueue_media/">wp_enqueue_media()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_attachment_is_image/">wp_attachment_is_image()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,71 @@
+<article id="post-262" class="post-262 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment_author/">get_comment_author ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$comment_ID</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the author of the current comment.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the comment has an empty comment_author field, then &#8216;Anonymous&#8217; person is assumed.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The comment author</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comment_ID</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The ID of the comment for which to retrieve the author. Default current comment.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-comments-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_comments_list_table/column_comment/">WP_Comments_List_Table::column_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/feed.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_author_rss/">get_comment_author_rss()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comment_form_title/">comment_form_title()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comment_author/">comment_author()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_author_link/">get_comment_author_link()</a>
+							</li>
+																</ul>
+			</article>

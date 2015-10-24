@@ -1,0 +1,74 @@
+<article id="post-1352" class="post-1352 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_embed_handler_audio/">wp_embed_handler_audio ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$matches</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$attr</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$rawattr</span> )</a></h1>
+
+	<section class="summary">
+		<p>Audio embed handler callback.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The embed HTML.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$matches</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The RegEx matches from the provided regex when calling wp_embed_register_handler().</span>
+									</p>
+							</dd>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Embed attributes.</span>
+									</p>
+							</dd>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The original URL that was matched by the regex.</span>
+									</p>
+							</dd>
+									<dt>$rawattr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The original unmodified attributes.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

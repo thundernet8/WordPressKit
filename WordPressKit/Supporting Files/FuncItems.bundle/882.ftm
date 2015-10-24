@@ -1,0 +1,36 @@
+<article id="post-5314" class="post-5314 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_theme-install-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. since 3.1.0 Use get_theme_feature_list() instead.</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/install_themes_feature_list/">install_themes_feature_list ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve list of WordPress theme features (aka theme tags)</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/theme-install.php/">wp-admin/includes/theme-install.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

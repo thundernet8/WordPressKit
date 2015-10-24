@@ -1,0 +1,67 @@
+<article id="post-1115" class="post-1115 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_post_type_support/">add_post_type_support ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$post_type</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$feature</span> )</a></h1>
+
+	<section class="summary">
+		<p>Register support of certain features for a post type.</p>
+	</section>
+
+
+	<section class="description">
+		<p>All core features are directly associated with a functional area of the edit screen, such as the editor or a meta box. Features include: &#8216;title&#8217;, &#8216;editor&#8217;, &#8216;comments&#8217;, &#8216;revisions&#8217;, &#8216;trackbacks&#8217;, &#8216;author&#8217;, &#8216;excerpt&#8217;, &#8216;page-attributes&#8217;, &#8216;thumbnail&#8217;, &#8216;custom-fields&#8217;, and &#8216;post-formats&#8217;.</p>
+<p>Additionally, the &#8216;revisions&#8217; feature dictates whether the post type will store revisions, and the &#8216;comments&#8217; feature dictates whether the comments count will show on the edit screen.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The post type for which to add the feature.</span>
+									</p>
+							</dd>
+									<dt>$feature</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The feature being added, accepts an array of                                feature strings or a single string.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/create_initial_post_types/">create_initial_post_types()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,68 @@
+<article id="post-1991" class="post-1991 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-wp-styles-php wp-parser-package-backpress wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_style_add_data/">wp_style_add_data ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$handle</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$key</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$value</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add metadata to a CSS stylesheet.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Works only if the stylesheet has already been added.</p>
+<p>Possible values for $key and $value: &#8216;conditional&#8217; string      Comments for IE 6, lte IE 7 etc. &#8216;rtl&#8217;         bool|string To declare an RTL stylesheet. &#8216;suffix&#8217;      string      Optional suffix, used in combination with RTL. &#8216;alt&#8217;         bool        For rel=&#8221;alternate stylesheet&#8221;. &#8216;title&#8217;       string      For preferred/alternate stylesheets.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions-wp-styles.php/">wp-includes/functions.wp-styles.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$handle</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of the stylesheet.</span>
+									</p>
+							</dd>
+									<dt>$key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of data point for which we're storing a value.                       Accepts 'conditional', 'rtl' and 'suffix', 'alt' and 'title'.</span>
+									</p>
+							</dd>
+									<dt>$value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">String containing the CSS data to be added.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

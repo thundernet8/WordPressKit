@@ -1,0 +1,51 @@
+<article id="post-923" class="post-923 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wpmu_activate_signup/">wpmu_activate_signup ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$key</span> )</a></h1>
+
+	<section class="summary">
+		<p>Activate a signup.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Hook to &#8216;wpmu_activate_user&#8217; or &#8216;wpmu_activate_blog&#8217; for events that should happen only when users or sites are self-created (since those actions are not called when users and sites are created by a Super Admin).</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|WP_Error)</span> An array containing information about the activated user and/or blog</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The activation key provided to the user.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

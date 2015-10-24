@@ -1,0 +1,81 @@
+<article id="post-2661" class="post-2661 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-3-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/reset_mbstring_encoding/">reset_mbstring_encoding ()</a></h1>
+
+	<section class="summary">
+		<p>Reset the mbstring internal encoding to a users previously set encoding.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/strip_invalid_text/">wpdb::strip_invalid_text()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-ftpext.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_ftpext/put_contents/">WP_Filesystem_FTPext::put_contents()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-direct.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_direct/put_contents/">WP_Filesystem_Direct::put_contents()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_read_image_metadata/">wp_read_image_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-ftpsockets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_ftpsockets/dirlist/">WP_Filesystem_ftpsockets::dirlist()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-ftpsockets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_ftpsockets/get_contents/">WP_Filesystem_ftpsockets::get_contents()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-ftpsockets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_ftpsockets/put_contents/">WP_Filesystem_ftpsockets::put_contents()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_unzip_file_pclzip/">_unzip_file_pclzip()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/seems_utf8/">seems_utf8()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/utf8_uri_encode/">utf8_uri_encode()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-http.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_http/request/">WP_Http::request()</a>
+							</li>
+																			<a href="#" class="show-more">Show 11 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

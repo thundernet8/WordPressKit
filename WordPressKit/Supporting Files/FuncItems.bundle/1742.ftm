@@ -1,0 +1,43 @@
+<article id="post-765" class="post-765 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-blogs-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wpmu_update_blogs_date/">wpmu_update_blogs_date ()</a></h1>
+
+	<section class="summary">
+		<p>Update the last_updated field for the current blog.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-blogs.php/">wp-includes/ms-blogs.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_update_blog_date_on_post_publish/">_update_blog_date_on_post_publish()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_update_blog_date_on_post_delete/">_update_blog_date_on_post_delete()</a>
+							</li>
+																</ul>
+			</article>

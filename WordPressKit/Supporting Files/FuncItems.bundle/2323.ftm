@@ -1,0 +1,90 @@
+<article id="post-18654" class="post-18654 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_capabilities-php wp-parser-package-user wp-parser-package-wordpress wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_roles/">wp_roles ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieves the global WP_Roles instance and instantiates it if necessary.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Roles)</span> WP_Roles global instance if not already instantiated.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/capabilities.php/">wp-includes/capabilities.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_user/">edit_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_editable_roles/">get_editable_roles()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/single_row/">WP_Users_List_Table::single_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/get_views/">WP_Users_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user/get_role_caps/">WP_User::get_role_caps()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_role/add_cap/">WP_Role::add_cap()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_role/remove_cap/">WP_Role::remove_cap()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_role/">get_role()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_role/">add_role()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_role/">remove_role()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/count_users/">count_users()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/switch_to_blog/">switch_to_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/restore_current_blog/">restore_current_blog()</a>
+							</li>
+																			<a href="#" class="show-more">Show 13 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

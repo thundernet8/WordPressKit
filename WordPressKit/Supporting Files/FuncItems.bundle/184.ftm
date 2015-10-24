@@ -1,0 +1,35 @@
+<article id="post-3937" class="post-3937 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_update-core-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/core_upgrade_preamble/">core_upgrade_preamble ()</a></h1>
+
+	<section class="summary">
+		<p>Display upgrade WordPress for downloading latest or upgrading automatically form.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/update-core.php/">wp-admin/update-core.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

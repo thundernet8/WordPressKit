@@ -1,0 +1,68 @@
+<article id="post-3255" class="post-3255 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_archives/">wp_get_archives ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display archive links based on type and format.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> String when retrieving.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Default archive links arguments. Optional. <ul class="param-hash"><li><b>'type'</b><br /><i><span class='type'>(string)</span></i> Type of archive to retrieve. Accepts 'daily', 'weekly', 'monthly', 'yearly', 'postbypost', or 'alpha'. Both 'postbypost' and 'alpha' display the same archive link list as well as post titles instead of displaying dates. The difference between the two is that 'alpha' will order by post title and 'postbypost' will order by post date. Default 'monthly'. </li>
+<li><b>'limit'</b><br /><i><span class='type'>(string|int)</span></i> Number of links to limit the query to. Default empty (no limit). </li>
+<li><b>'format'</b><br /><i><span class='type'>(string)</span></i> Format each link should take using the $before and $after args. Accepts 'link' (&lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; tag), 'option' (&lt;code&gt;&amp;lt;option&amp;gt;&lt;/code&gt; tag), 'html' (&lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; tag), or a custom format, which generates a link anchor with $before preceding and $after succeeding. Default 'html'. </li>
+<li><b>'before'</b><br /><i><span class='type'>(string)</span></i> Markup to prepend to the beginning of each link. </li>
+<li><b>'after'</b><br /><i><span class='type'>(string)</span></i> Markup to append to the end of each link. </li>
+<li><b>'show_post_count'</b><br /><i><span class='type'>(bool)</span></i> Whether to display the post count alongside the link. Default false. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to echo or return the links list. Default 1|true to echo. </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Whether to use ascending or descending order. Accepts 'ASC', or 'DESC'. Default 'DESC'.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_archives/">get_archives()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_archives/widget/">WP_Widget_Archives::widget()</a>
+							</li>
+																</ul>
+			</article>

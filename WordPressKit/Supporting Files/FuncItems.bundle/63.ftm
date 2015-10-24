@@ -1,0 +1,94 @@
+<article id="post-4769" class="post-4769 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_utility_page/">add_utility_page ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$page_title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$menu_title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$capability</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$menu_slug</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$function</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$icon_url</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add a top level menu page in the &#8216;utility&#8217; section</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function takes a capability which will be used to determine whether or not a page is included in the menu.</p>
+<p>The function which is hooked in to handle the output of the page must check that the user has the required capability as well.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The resulting page's hook_suffix</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$page_title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The text to be displayed in the title tags of the page when the menu is selected</span>
+									</p>
+							</dd>
+									<dt>$menu_title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The text to be used for the menu</span>
+									</p>
+							</dd>
+									<dt>$capability</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The capability required for this menu to be displayed to the user.</span>
+									</p>
+							</dd>
+									<dt>$menu_slug</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The slug name to refer to this menu by (should be unique for this menu)</span>
+									</p>
+							</dd>
+									<dt>$function</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The function to be called to output the content for this page.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$icon_url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The url to the icon to be used for this menu</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

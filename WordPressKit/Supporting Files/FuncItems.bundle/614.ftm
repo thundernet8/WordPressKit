@@ -1,0 +1,56 @@
+<article id="post-843" class="post-843 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-formats-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_format_strings/">get_post_format_strings ()</a></h1>
+
+	<section class="summary">
+		<p>Returns an array of post format slugs to their translated and pretty display versions</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> The array of translated post format names.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-formats.php/">wp-includes/post-formats.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post-formats.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_format_slugs/">get_post_format_slugs()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-formats.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_format_string/">get_post_format_string()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_editpost/">wp_xmlrpc_server::mw_editPost()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_newpost/">wp_xmlrpc_server::mw_newPost()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getpostformats/">wp_xmlrpc_server::wp_getPostFormats()</a>
+							</li>
+																</ul>
+			</article>

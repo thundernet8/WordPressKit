@@ -1,0 +1,83 @@
+<article id="post-1560" class="post-1560 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/sanitize_user_field/">sanitize_user_field ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$field</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$value</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sanitize user field based on context.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Possible context values are:  &#8216;raw&#8217;, &#8216;edit&#8217;, &#8216;db&#8217;, &#8216;display&#8217;, &#8216;attribute&#8217; and &#8216;js&#8217;. The &#8216;display&#8217; context is used by default. &#8216;attribute&#8217; and &#8216;js&#8217; contexts are treated like &#8216;display&#8217; when calling filters.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> Sanitized value.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$field</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The user Object field name.</span>
+									</p>
+							</dd>
+									<dt>$value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The user Object value.</span>
+									</p>
+							</dd>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User ID.</span>
+									</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">How to sanitize user fields. Looks for 'raw', 'edit', 'db', 'display',                        'attribute' and 'js'.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user/__get/">WP_User::__get()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_user_object/">sanitize_user_object()</a>
+							</li>
+																</ul>
+			</article>

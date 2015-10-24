@@ -1,0 +1,76 @@
+<article id="post-18521" class="post-18521 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_default_comment_status/">get_default_comment_status ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$post_type</span>&nbsp;=&nbsp;<span class="arg-default">'post'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$comment_type</span>&nbsp;=&nbsp;<span class="arg-default">'comment'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Gets the default comment status for a post type.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Expected return value is 'open' or 'closed'.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post type. </span>
+									</p>
+								<p class="default">Default value: 'post'</p>
+							</dd>
+									<dt>$comment_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Comment type. </span>
+									</p>
+								<p class="default">Default value: 'comment'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_default_post_to_edit/">get_default_post_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_post/">wp_insert_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_editpost/">wp_xmlrpc_server::mw_editPost()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_newpost/">wp_xmlrpc_server::mw_newPost()</a>
+							</li>
+																</ul>
+			</article>

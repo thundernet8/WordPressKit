@@ -1,0 +1,79 @@
+<article id="post-3016" class="post-3016 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_kses_bad_protocol/">wp_kses_bad_protocol ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$string</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$allowed_protocols</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sanitize string from bad protocols.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function removes all non-allowed protocols from the beginning of $string. It ignores whitespace and the case of the letters, and it does understand HTML entities. It does its work in a while loop, so it won&#8217;t be fooled by a string like &#8220;javascript:javascript:alert(57)&#8221;.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Filtered content</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Content to filter bad protocols from</span>
+									</p>
+							</dd>
+									<dt>$allowed_protocols</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Allowed protocols to keep</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_one_attr/">wp_kses_one_attr()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/esc_url/">esc_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_hair/">wp_kses_hair()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-http.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_http/request/">WP_Http::request()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_http_validate_url/">wp_http_validate_url()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,75 @@
+<article id="post-2784" class="post-2784 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-php wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_category_by_path/">get_category_by_path ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$category_path</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$full_match</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$output</span>&nbsp;=&nbsp;<span class="arg-default">OBJECT</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve category based on URL containing the category slug.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Breaks the $category_path parameter up to get the category slug.</p>
+<p>Tries to find the child path and will return it. If it doesn&#8217;t find a match, then it will return the first category matching slug, if $full_match, is set to false. If it does not, then it will return null.</p>
+<p>It is also possible that it will return a WP_Error object on failure. Check for it when using this function.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|array|WP_Error|void)</span> Type is based on $output value.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category.php/">wp-includes/category.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$category_path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">URL containing category slugs.</span>
+									</p>
+							</dd>
+									<dt>$full_match</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether full path should be matched.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$output</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Constant OBJECT, ARRAY_A, or ARRAY_N</span>
+									</p>
+								<p class="default">Default value: OBJECT</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+																</ul>
+			</article>

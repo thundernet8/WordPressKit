@@ -1,0 +1,35 @@
+<article id="post-814" class="post-814 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_author-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/the_author_posts/">the_author_posts ()</a></h1>
+
+	<section class="summary">
+		<p>Display the number of posts by the author of the current post.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/author-template.php/">wp-includes/author-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,56 @@
+<article id="post-1435" class="post-1435 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-5-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_page_template/">is_page_template ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$template</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Whether currently in a page template.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This template tag allows you to determine if you are in a page template. You can optionally provide a template name or array of template names and then the check will be specific to that template.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$template</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The specific template name or array of templates to match.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_body_class/">get_body_class()</a>
+							</li>
+																</ul>
+			</article>

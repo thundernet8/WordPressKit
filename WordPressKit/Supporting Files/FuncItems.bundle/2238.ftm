@@ -1,0 +1,67 @@
+<article id="post-3385" class="post-3385 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_notify_postauthor/">wp_notify_postauthor ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$comment_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$deprecated</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Notify an author (and/or others) of a comment/trackback/pingback on a post.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on completion. False if no email addresses were specified.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comment_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment ID</span>
+									</p>
+							</dd>
+									<dt>$deprecated</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Not used</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_new_comment/">wp_new_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_comment_status/">wp_set_comment_status()</a>
+							</li>
+																</ul>
+			</article>

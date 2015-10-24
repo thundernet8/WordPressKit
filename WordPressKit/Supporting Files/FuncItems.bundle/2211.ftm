@@ -1,0 +1,52 @@
+<article id="post-4540" class="post-4540 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_media-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_media_upload_handler/">wp_media_upload_handler ()</a></h1>
+
+	<section class="summary">
+		<p></p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(null|string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/media.php/">wp-admin/includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_image/">media_upload_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_audio/">media_upload_audio()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_video/">media_upload_video()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_file/">media_upload_file()</a>
+							</li>
+																</ul>
+			</article>

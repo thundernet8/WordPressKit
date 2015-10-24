@@ -1,0 +1,43 @@
+<article id="post-1383" class="post-1383 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/the_id/">the_ID ()</a></h1>
+
+	<section class="summary">
+		<p>Display the ID of the current item in the WordPress Loop.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/column_cb/">WP_Posts_List_Table::column_cb()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_recent_posts/widget/">WP_Widget_Recent_Posts::widget()</a>
+							</li>
+																</ul>
+			</article>

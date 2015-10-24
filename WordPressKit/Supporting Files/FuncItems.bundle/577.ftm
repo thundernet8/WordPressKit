@@ -1,0 +1,87 @@
+<article id="post-1215" class="post-1215 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_pages/">get_pages ( <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve a list of pages.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|false)</span> List of pages matching defaults or <code>$args</code>.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments to retrieve pages. <ul class="param-hash"><li><b>'child_of'</b><br /><i><span class='type'>(int)</span></i> Page ID to return child and grandchild pages of. Default 0, or no restriction. </li>
+<li><b>'sort_order'</b><br /><i><span class='type'>(string)</span></i> How to sort retrieved pages. Accepts 'ASC', 'DESC'. Default 'ASC'. </li>
+<li><b>'sort_column'</b><br /><i><span class='type'>(string)</span></i> What columns to sort pages by, comma-separated. Accepts 'post_author', 'post_date', 'post_title', 'post_name', 'post_modified', 'menu_order', 'post_modified_gmt', 'post_parent', 'ID', 'rand', 'comment&lt;em&gt;count'. 'post&lt;/em&gt;' can be omitted for any values that start with it. Default 'post_title'. </li>
+<li><b>'hierarchical'</b><br /><i><span class='type'>(bool)</span></i> Whether to return pages hierarchically. Default true. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(array)</span></i> Array of page IDs to exclude. </li>
+<li><b>'include'</b><br /><i><span class='type'>(array)</span></i> Array of page IDs to include. Cannot be used with &lt;code&gt;$child_of&lt;/code&gt;, &lt;code&gt;$parent&lt;/code&gt;, &lt;code&gt;$exclude&lt;/code&gt;, &lt;code&gt;$meta_key&lt;/code&gt;, &lt;code&gt;$meta_value&lt;/code&gt;, or &lt;code&gt;$hierarchical&lt;/code&gt;. </li>
+<li><b>'meta_key'</b><br /><i><span class='type'>(string)</span></i> Only include pages with this meta key. </li>
+<li><b>'meta_value'</b><br /><i><span class='type'>(string)</span></i> Only include pages with this meta value. Requires &lt;code&gt;$meta_key&lt;/code&gt;. </li>
+<li><b>'authors'</b><br /><i><span class='type'>(string)</span></i> A comma-separated list of author IDs. </li>
+<li><b>'parent'</b><br /><i><span class='type'>(int)</span></i> Page ID to return direct children of. &lt;code&gt;$hierarchical&lt;/code&gt; must be false. Default -1, or no restriction. </li>
+<li><b>'exclude_tree'</b><br /><i><span class='type'>(string|array)</span></i> Comma-separated string or array of page IDs to exclude. </li>
+<li><b>'number'</b><br /><i><span class='type'>(int)</span></i> The number of pages to return. Default 0, or all pages. </li>
+<li><b>'offset'</b><br /><i><span class='type'>(int)</span></i> The number of pages to skip before returning. Requires &lt;code&gt;$number&lt;/code&gt;. Default 0. </li>
+<li><b>'post_type'</b><br /><i><span class='type'>(string)</span></i> The post type to query. Default 'page'. </li>
+<li><b>'post_status'</b><br /><i><span class='type'>(string)</span></i> A comma-separated list of post status types to include. Default 'publish'.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/_display_rows_hierarchical/">WP_Posts_List_Table::_display_rows_hierarchical()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/register_controls/">WP_Customize_Manager::register_controls()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dropdown_pages/">wp_dropdown_pages()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_pages/">wp_list_pages()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_body_class/">get_body_class()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,50 @@
+<article id="post-268" class="post-268 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/comment_author_email/">comment_author_email ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$comment_ID</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display the email of the author of the current global $comment.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Care should be taken to protect the email address and assure that email harvesters do not capture your commentors&#8217; email address. Most assume that their email address will not appear in raw form on the blog. Doing so will enable anyone, including those that people don&#8217;t want to get the email address and use it for their own means good and bad.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comment_ID</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The ID of the comment for which to print the author's email. Default current comment.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

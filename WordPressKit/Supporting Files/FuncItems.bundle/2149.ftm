@@ -1,0 +1,79 @@
+<article id="post-3015" class="post-3015 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_kses_check_attr_val/">wp_kses_check_attr_val ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$value</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$vless</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$checkname</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$checkvalue</span> )</a></h1>
+
+	<section class="summary">
+		<p>Performs different checks for attribute values.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The currently implemented checks are &#8220;maxlen&#8221;, &#8220;minlen&#8221;, &#8220;maxval&#8221;, &#8220;minval&#8221; and &#8220;valueless&#8221;.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether check passes</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attribute value</span>
+									</p>
+							</dd>
+									<dt>$vless</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Whether the value is valueless. Use 'y' or 'n'</span>
+									</p>
+							</dd>
+									<dt>$checkname</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">What $checkvalue is checking for.</span>
+									</p>
+							</dd>
+									<dt>$checkvalue</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">What constraint the value should pass</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_attr_check/">wp_kses_attr_check()</a>
+							</li>
+																</ul>
+			</article>

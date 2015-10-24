@@ -1,0 +1,52 @@
+<article id="post-1539" class="post-1539 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-3-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_validate_logged_in_cookie/">wp_validate_logged_in_cookie ( <span class="arg-type">int|bool</span>&nbsp;<span class="arg-name">$user_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Validate the logged-in cookie.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks the logged-in cookie if the previous auth cookie could not be validated and parsed.</p>
+<p>This is a callback for the determine_current_user filter, rather than API.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|false)</span> User ID if validated, false otherwise. If a user ID from                   an earlier filter callback is received, that value is returned.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The user ID (or false) as received from the                       determine_current_user filter.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

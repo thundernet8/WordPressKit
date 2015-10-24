@@ -1,0 +1,120 @@
+<article id="post-1674" class="post-1674 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_option-php wp-parser-package-option wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/update_site_option/">update_site_option ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$option</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$value</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update the value of a site option that was already added.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> False if value was not updated and true if value was updated.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/option.php/">wp-includes/option.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$option</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of option. Expected to not be SQL-escaped.</span>
+									</p>
+							</dd>
+									<dt>$value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Option value. Expected to not be SQL-escaped.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/after_core_update/">WP_Automatic_Updater::after_core_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/send_email/">WP_Automatic_Updater::send_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/grant_super_admin/">grant_super_admin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/revoke_super_admin/">revoke_super_admin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dismiss_core_update/">dismiss_core_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/undismiss_core_update/">undismiss_core_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_network/">upgrade_network()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/activate_plugin/">activate_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/deactivate_plugins/">deactivate_plugins()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_wp_compression_test/">wp_ajax_wp_compression_test()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_salt/">wp_salt()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_site_transient/">set_site_transient()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_network_site_counts/">wp_update_network_site_counts()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_network_user_counts/">wp_update_network_user_counts()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/welcome_user_msg_filter/">welcome_user_msg_filter()</a>
+							</li>
+																			<a href="#" class="show-more">Show 15 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,68 @@
+<article id="post-3446" class="post-3446 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/format_to_edit/">format_to_edit ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$content</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$richedit</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Acts on text which is about to be edited.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The $content is run through esc_textarea(), which uses htmlspecialchars() to convert special characters to HTML entities. If $richedit is set to true, it is simply a holder for the &#8216;format_to_edit&#8217; filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The text after the filter (and possibly htmlspecialchars()) has been run.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$content</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The text about to be edited.</span>
+									</p>
+							</dd>
+									<dt>$richedit</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether the $content should not pass through htmlspecialchars(). Default false (meaning it will be passed).</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_to_edit/">get_comment_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_post_field/">sanitize_post_field()</a>
+							</li>
+																</ul>
+			</article>

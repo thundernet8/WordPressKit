@@ -1,0 +1,58 @@
+<article id="post-3320" class="post-3320 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/the_generator/">the_generator ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display the generator XML or Comment for RSS, ATOM, etc.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Returns the correct generator type for the requested output format. Allows for a plugin to filter generators overall the the_generator filter.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The type of generator to output - (html|xhtml|atom|rss2|rdf|comment|export).</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/export.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/export_wp/">export_wp()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_generator/">wp_generator()</a>
+							</li>
+																</ul>
+			</article>

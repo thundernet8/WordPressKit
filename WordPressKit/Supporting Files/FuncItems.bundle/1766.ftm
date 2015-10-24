@@ -1,0 +1,37 @@
+<article id="post-1889" class="post-1889 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_admin-bar-php wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_render/">wp_admin_bar_render ()</a></h1>
+
+	<section class="summary">
+		<p>Render the admin bar to the page based on the $wp_admin_bar-&amp;gt;menu member var.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This is called very late on the footer actions so that it will render after anything else being added to the footer.</p>
+<p>It includes the action &#8220;admin_bar_menu&#8221; which should be used to hook in and add new menus to the admin bar. That way you can be sure that you are adding at most optimal point, right before the admin bar is rendered. This also gives you access to the $post global, among others.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/admin-bar.php/">wp-includes/admin-bar.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

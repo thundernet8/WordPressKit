@@ -1,0 +1,75 @@
+<article id="post-2207" class="post-2207 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_edit_profile_url/">get_edit_profile_url ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$scheme</span>&nbsp;=&nbsp;<span class="arg-default">'admin'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get the URL to the user&#8217;s profile editor.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Dashboard url link with optional path appended.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> User ID. Defaults to current user.</span>
+									</p>
+							</dd>
+									<dt>$scheme</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The scheme to use. Default is 'admin', which obeys force_ssl_admin() and is_ssl().                        'http' or 'https' can be passed to force those schemes.</span>
+									</p>
+								<p class="default">Default value: 'admin'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/default_password_nag/">default_password_nag()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_edit_user_link/">get_edit_user_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_my_account_item/">wp_admin_bar_my_account_item()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_my_account_menu/">wp_admin_bar_my_account_menu()</a>
+							</li>
+																</ul>
+			</article>

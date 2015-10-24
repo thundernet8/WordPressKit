@@ -1,0 +1,79 @@
+<article id="post-3013" class="post-3013 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_kses_attr/">wp_kses_attr ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$element</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$attr</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$allowed_html</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$allowed_protocols</span> )</a></h1>
+
+	<section class="summary">
+		<p>Removes all attributes, if none are allowed for this element.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If some are allowed it calls wp_kses_hair() to split them further, and then it builds up new HTML code from the data that kses_hair() returns. It also removes &#8220;&lt;&#8221; and &#8220;&gt;&#8221; characters, if there are any left. One more thing it does is to check if the tag has a closing XHTML slash, and if it does, it puts one in the returned code as well.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Sanitized HTML element</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$element</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">HTML element/tag</span>
+									</p>
+							</dd>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">HTML attributes from HTML element to closing HTML element tag</span>
+									</p>
+							</dd>
+									<dt>$allowed_html</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Allowed HTML elements</span>
+									</p>
+							</dd>
+									<dt>$allowed_protocols</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Allowed protocols to keep</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_split2/">wp_kses_split2()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,91 @@
+<article id="post-1276" class="post-1276 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/image_constrain_size_for_editor/">image_constrain_size_for_editor ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$width</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$height</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$size</span>&nbsp;=&nbsp;<span class="arg-default">'medium'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Scale down the default size of an image.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This is so that the image is a better fit for the editor and theme.</p>
+<p>The <code>$size</code> parameter accepts either an array or a string. The supported string values are &#8216;thumb&#8217; or &#8216;thumbnail&#8217; for the given thumbnail size or defaults at 128 width and 96 height in pixels. Also supported for the string value is &#8216;medium&#8217; and &#8216;full&#8217;. The &#8216;full&#8217; isn&#8217;t actually supported, but any value other than the supported will result in the content_width size or 500 if that is not set.</p>
+<p>Finally, there is a filter named <a href="https://developer.wordpress.org/reference/hooks/editor_max_image_size">&#8216;editor_max_image_size&#8217;</a>, that will be called on the calculated array for width and height, respectively. The second parameter will be the value that was in the $size parameter. The returned type for the hook is an array with the width as the first element and the height as the second element.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Width and height of what the result image should resize to.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$width</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Width of the image in pixels.</span>
+									</p>
+							</dd>
+									<dt>$height</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Height of the image in pixels.</span>
+									</p>
+							</dd>
+									<dt>$size</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Size or array of sizes of what the result image                              should be. Accepts any valid image size name. </span>
+									</p>
+								<p class="default">Default value: 'medium'</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Could be 'display' (like in a theme) or 'edit'                              (like inserting into an editor). </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_attachment_for_js/">wp_prepare_attachment_for_js()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_get_intermediate_size/">image_get_intermediate_size()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_downsize/">image_downsize()</a>
+							</li>
+																</ul>
+			</article>

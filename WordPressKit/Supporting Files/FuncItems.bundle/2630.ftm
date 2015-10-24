@@ -1,0 +1,70 @@
+<article id="post-3420" class="post-3420 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wptexturize_pushpop_element/">_wptexturize_pushpop_element ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$text</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$stack</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$disabled_elements</span> )</a></h1>
+
+	<section class="summary">
+		<p>Search for disabled element tags. Push element to stack on tag open and pop on tag close.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Assumes first char of $text is tag opening and last char is tag closing. Assumes second char of $text is optionally &#8216;/&#8217; to indicate closing as in .</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Text to check. Must be a tag like &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; or &lt;code&gt;[shortcode]&lt;/code&gt;.</span>
+									</p>
+							</dd>
+									<dt>$stack</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">List of open tag elements.</span>
+									</p>
+							</dd>
+									<dt>$disabled_elements</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The tag names to match against. Spaces are not allowed in tag names.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wptexturize/">wptexturize()</a>
+							</li>
+																</ul>
+			</article>

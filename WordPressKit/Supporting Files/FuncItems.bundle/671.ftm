@@ -1,0 +1,67 @@
+<article id="post-4664" class="post-4664 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_settings_errors/">get_settings_errors ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$setting</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">boolean</span>&nbsp;<span class="arg-name">$sanitize</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Fetch settings errors registered by add_settings_error()</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks the $wp_settings_errors array for any errors declared during the current pageload and returns them.</p>
+<p>If changes were just submitted ($_GET[&#8216;settings-updated&#8217;]) and settings errors were saved to the &#8216;settings_errors&#8217; transient then those errors will be returned instead. This is used to pass errors back across pageloads.</p>
+<p>Use the $sanitize argument to manually re-sanitize the option before returning errors. This is useful if you have errors or notices you want to show even when the user hasn&#8217;t submitted data (i.e. when they first load an options page, or in admin_notices action hook)</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Array of settings errors</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$setting</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">slug title of a specific setting who's errors you want.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$sanitize</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="boolean">boolean</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether to re-sanitize the setting value before returning errors.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/settings_errors/">settings_errors()</a>
+							</li>
+																</ul>
+			</article>

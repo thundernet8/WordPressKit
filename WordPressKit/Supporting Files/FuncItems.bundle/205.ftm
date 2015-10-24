@@ -1,0 +1,54 @@
+<article id="post-2598" class="post-2598 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-3-2">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/dead_db/">dead_db ()</a></h1>
+
+	<section class="summary">
+		<p>Load custom DB error or display WordPress DB error.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If a file exists in the wp-content directory named db-error.php, then it will be loaded instead of displaying the WordPress DB error. If it is not found, then the WordPress DB error will be displayed instead.</p>
+<p>The WordPress DB error sets the HTTP status header to 500 to try to prevent search engines from caching the message. Custom DB messages should do the same.</p>
+<p>This function was backported to WordPress 2.3.2, but originally was added in WordPress 2.5.0.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_wpdb_vars/">wp_set_wpdb_vars()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_blog_installed/">is_blog_installed()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/ms_not_installed/">ms_not_installed()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/check_connection/">wpdb::check_connection()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,71 @@
+<article id="post-3755" class="post-3755 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_cron-php wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_unschedule_event/">wp_unschedule_event ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$timestamp</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$hook</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Unschedule a previously scheduled cron job.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The $timestamp and $hook parameters are required, so that the event can be identified.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/cron.php/">wp-includes/cron.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$timestamp</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Timestamp for when to run the event.</span>
+									</p>
+							</dd>
+									<dt>$hook</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Action hook, the execution of which will be unscheduled.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Arguments to pass to the hook's callback function. Although not passed to a callback function, these arguments are used to uniquely identify the scheduled event, so they should be the same as those used when originally scheduling the event.</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_clear_scheduled_hook/">wp_clear_scheduled_hook()</a>
+							</li>
+																</ul>
+			</article>

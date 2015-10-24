@@ -1,0 +1,97 @@
+<article id="post-884" class="post-884 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_bookmark-php wp-parser-package-bookmark wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_bookmark/">get_bookmark ( <span class="arg-type">int|stdClass</span>&nbsp;<span class="arg-name">$bookmark</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$output</span>&nbsp;=&nbsp;<span class="arg-default">OBJECT</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$filter</span>&nbsp;=&nbsp;<span class="arg-default">'raw'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve Bookmark data</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|object|null)</span> Type returned depends on $output value.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/bookmark.php/">wp-includes/bookmark.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$bookmark</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="stdClass">stdClass</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$output</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Either OBJECT, ARRAY_N, or ARRAY_A constant</span>
+									</p>
+								<p class="default">Default value: OBJECT</p>
+							</dd>
+									<dt>$filter</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> </span>
+									</p>
+								<p class="default">Default value: 'raw'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_delete_link/">wp_ajax_delete_link()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_link_to_edit/">get_link_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_link/">wp_update_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_link/">get_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_edit_bookmark_link/">get_edit_bookmark_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_bookmark_link/">edit_bookmark_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_bookmark_field/">get_bookmark_field()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

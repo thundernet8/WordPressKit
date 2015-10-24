@@ -1,0 +1,67 @@
+<article id="post-1436" class="post-1436 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_page_template_slug/">get_page_template_slug ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$post_id</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get the specific template name for a page.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> Page template filename. Returns an empty string when the default page template 	is in use. Returns false if the post is not a page.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The page ID to check. Defaults to the current post, when used in the loop.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_page_template/">get_page_template()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_page_template/">is_page_template()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_body_class/">get_body_class()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/_prepare_page/">wp_xmlrpc_server::_prepare_page()</a>
+							</li>
+																</ul>
+			</article>

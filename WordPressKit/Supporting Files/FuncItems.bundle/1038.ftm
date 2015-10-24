@@ -1,0 +1,92 @@
+<article id="post-2506" class="post-2506 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/maybe_unserialize/">maybe_unserialize ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$original</span> )</a></h1>
+
+	<section class="summary">
+		<p>Unserialize value only if it was serialized.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> Unserialized data can be any type.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$original</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Maybe unserialized original, if is needed.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/themes_api/">themes_api()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/plugins_api/">plugins_api()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_list_meta_row/">_list_meta_row()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_site_option/">get_site_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_load_core_site_options/">wp_load_core_site_options()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_option/">get_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/count_users/">count_users()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_activate_signup/">wpmu_activate_signup()</a>
+							</li>
+													<li>
+								<span>wp-includes/meta.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_metadata/">get_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/meta.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_metadata_by_mid/">get_metadata_by_mid()</a>
+							</li>
+																			<a href="#" class="show-more">Show 10 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

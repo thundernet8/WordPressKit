@@ -1,0 +1,72 @@
+<article id="post-1024" class="post-1024 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_rewrite-php wp-parser-package-wordpress wp-parser-package-rewrite wp-parser-since-2-1-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_rewrite_endpoint/">add_rewrite_endpoint ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$name</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$places</span>,  <span class="arg-type">string|bool</span>&nbsp;<span class="arg-name">$query_var</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add an endpoint, like /trackback/.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Adding an endpoint creates extra rewrite rules for each of the matching places specified by the provided bitmask. For example:</p>
+<pre><code>add_rewrite_endpoint( 'json', EP_PERMALINK | EP_PAGES );</code></pre>
+<p>will add a new rewrite rule ending with &#8220;json(/(.*))?/?$&#8221; for every permastruct that describes a permalink (post) or page. This is rewritten to &#8220;json=$match&#8221; where $match is the part of the URL matched by the endpoint regex (e.g. &#8220;foo&#8221; in &#8220;[permalink]/json/foo/&#8221;).</p>
+<p>A new query var with the same name as the endpoint will also be created.</p>
+<p>When specifying $places ensure that you are using the EP_* constants (or a combination of them using the bitwise OR operator) as their values are not guaranteed to remain static (especially <code>EP_ALL</code>).</p>
+<p>Be sure to flush the rewrite rules &#8211; see flush_rewrite_rules() &#8211; when your plugin gets activated and deactivated.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/rewrite.php/">wp-includes/rewrite.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of the endpoint.</span>
+									</p>
+							</dd>
+									<dt>$places</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Endpoint mask describing the places the endpoint should be added.</span>
+									</p>
+							</dd>
+									<dt>$query_var</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Name of the corresponding query variable. Pass &lt;code&gt;false&lt;/code&gt; to skip registering a query_var                               for this endpoint. Defaults to the value of &lt;code&gt;$name&lt;/code&gt;.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

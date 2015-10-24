@@ -1,0 +1,57 @@
+<article id="post-4151" class="post-4151 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_widgets-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_list_widget_controls/">wp_list_widget_controls ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$sidebar</span>, &nbsp;<span class="arg-name">$sidebar_name</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Show the widgets and their settings for a sidebar.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Used in the admin widget config screen.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/widgets.php/">wp-admin/includes/widgets.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$sidebar</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">id slug of the sidebar</span>
+									</p>
+							</dd>
+									<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">$sidebar_name Include the HTML for the sidebar name</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

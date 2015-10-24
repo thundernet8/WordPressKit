@@ -1,0 +1,37 @@
+<article id="post-3039" class="post-3039 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/kses_init/">kses_init ()</a></h1>
+
+	<section class="summary">
+		<p>Sets up most of the Kses filters for input form content.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If you remove the kses_init() function from &#8216;init&#8217; hook and &#8216;set_current_user&#8217; (priority is default), then none of the Kses filter hooks will be added.</p>
+<p>First removes all of the Kses filters in case the current user does not need to have Kses filter the content. If the user does not have unfiltered_html capability, then Kses filters are added.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

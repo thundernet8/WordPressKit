@@ -1,0 +1,63 @@
+<article id="post-5491" class="post-5491 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_theme-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_page_templates/">get_page_templates ( <span class="arg-type">WP_Post|null</span>&nbsp;<span class="arg-name">$post</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get the Page Templates available in this theme</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Key is the template name, value is the filename of the template</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/theme.php/">wp-admin/includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>|<span class="null">null</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The post being edited, provided for context.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/page_template_dropdown/">page_template_dropdown()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/page_attributes_meta_box/">page_attributes_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getpagetemplates/">wp_xmlrpc_server::wp_getPageTemplates()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,41 @@
+<article id="post-1097" class="post-1097 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_statuses/">get_post_statuses ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve all of the WordPress supported post statuses.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Posts have a limited set of valid status values, this provides the post_status values and descriptions.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> List of post statuses.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getpoststatuslist/">wp_xmlrpc_server::wp_getPostStatusList()</a>
+							</li>
+																</ul>
+			</article>

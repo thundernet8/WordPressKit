@@ -1,0 +1,70 @@
+<article id="post-2793" class="post-2793 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-php wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_tag/">get_tag ( <span class="arg-type">int|object</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$output</span>&nbsp;=&nbsp;<span class="arg-default">OBJECT</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$filter</span>&nbsp;=&nbsp;<span class="arg-default">'raw'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve post tag by tag ID or tag object.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If you pass the $tag parameter an object, which is assumed to be the tag row object retrieved the database. It will cache the tag data.</p>
+<p>If you pass $tag an integer of the tag ID, then that tag will be retrieved from the database, if it isn&#8217;t already cached, and pass it back.</p>
+<p>If you look at get_term(), then both types will be passed through several filters and finally sanitized based on the $filter parameter value.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|array|WP_Error|null)</span> Tag data in type defined by $output parameter. WP_Error if $tag is empty, null if it does not exist.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category.php/">wp-includes/category.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$output</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Constant OBJECT, ARRAY_A, or ARRAY_N</span>
+									</p>
+								<p class="default">Default value: OBJECT</p>
+							</dd>
+									<dt>$filter</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Default is raw or no WordPress defined filter will applied.</span>
+									</p>
+								<p class="default">Default value: 'raw'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

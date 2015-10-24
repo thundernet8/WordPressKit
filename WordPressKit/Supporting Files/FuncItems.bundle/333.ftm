@@ -1,0 +1,55 @@
+<article id="post-5178" class="post-5178 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_ms-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/format_code_lang/">format_code_lang ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$code</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Returns the language for a language code.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The language corresponding to $code if it exists. If it does not exist,                then the first two letters of $code is returned.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/ms.php/">wp-admin/includes/ms.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$code</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The two-letter language code. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/mu_dropdown_languages/">mu_dropdown_languages()</a>
+							</li>
+																</ul>
+			</article>

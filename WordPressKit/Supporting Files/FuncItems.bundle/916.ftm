@@ -1,0 +1,60 @@
+<article id="post-2815" class="post-2815 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_query-php wp-parser-package-query wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_front_page/">is_front_page ()</a></h1>
+
+	<section class="summary">
+		<p>Is the query for the front page of the site?</p>
+	</section>
+
+
+	<section class="description">
+		<p>This is for what is displayed at your site&#8217;s main URL.</p>
+<p>Depends on the site&#8217;s &#8220;Front page displays&#8221; Reading Settings &#8216;show_on_front&#8217; and &#8216;page_on_front&#8217;.</p>
+<p>If you set a static page for the front page of your site, this function will return true when viewing that page.</p>
+<p>Otherwise the same as @see is_home()</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True, if front of site.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/query.php/">wp-includes/query.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_title/">wp_title()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_menu_item_classes_by_context/">_wp_menu_item_classes_by_context()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_page_menu/">wp_page_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_body_class/">get_body_class()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+																</ul>
+			</article>

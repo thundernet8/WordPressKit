@@ -1,0 +1,65 @@
+<article id="post-4576" class="post-4576 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_media-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/media_upload_type_url_form/">media_upload_type_url_form ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">object</span>&nbsp;<span class="arg-name">$errors</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">integer</span>&nbsp;<span class="arg-name">$id</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p></p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/media.php/">wp-admin/includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$errors</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="integer">integer</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

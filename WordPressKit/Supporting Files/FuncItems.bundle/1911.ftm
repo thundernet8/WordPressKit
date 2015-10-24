@@ -1,0 +1,74 @@
+<article id="post-1141" class="post-1141 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_count_posts/">wp_count_posts ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span>&nbsp;=&nbsp;<span class="arg-default">'post'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$perm</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Count number of posts of a post type and if user has permissions to view.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function provides an efficient method of finding the amount of post&#8217;s type a blog has. Another method is to count the amount of items in get_posts(), but that method has a lot of overhead with doing so. Therefore, when developing for 2.5+, use this function instead.</p>
+<p>The $perm parameter checks for &#8216;readable&#8217; value and if the user can read private posts, it will display that for the user that is signed in.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> Number of posts for each status.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post type to retrieve count. </span>
+									</p>
+								<p class="default">Default value: 'post'</p>
+							</dd>
+									<dt>$perm</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> 'readable' or empty. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_right_now/">wp_dashboard_right_now()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_available_post_statuses/">get_available_post_statuses()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/get_views/">WP_Posts_List_Table::get_views()</a>
+							</li>
+																</ul>
+			</article>

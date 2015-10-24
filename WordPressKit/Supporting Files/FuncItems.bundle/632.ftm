@@ -1,0 +1,94 @@
+<article id="post-3276" class="post-3276 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_time/">get_post_time ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$d</span>&nbsp;=&nbsp;<span class="arg-default">'U'</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$gmt</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$post</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$translate</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the time at which the post was written.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|string|int)</span> Formatted date string or Unix timestamp. False on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$d</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Format to use for retrieving the time the post                               was written. Either 'G', 'U', or php date format. </span>
+									</p>
+								<p class="default">Default value: 'U'</p>
+							</dd>
+									<dt>$gmt</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to retrieve the GMT time. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">WP_Post object or ID. Default is global $post object.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$translate</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether to translate the time string. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/column_date/">WP_Posts_List_Table::column_date()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-media-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_media_list_table/column_date/">WP_Media_List_Table::column_date()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/export.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/export_wp/">export_wp()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_time/">get_the_time()</a>
+							</li>
+																</ul>
+			</article>

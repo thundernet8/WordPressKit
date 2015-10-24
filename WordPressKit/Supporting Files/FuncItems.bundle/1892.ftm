@@ -1,0 +1,68 @@
+<article id="post-2329" class="post-2329 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_check_term_hierarchy_for_loops/">wp_check_term_hierarchy_for_loops ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$parent</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$term_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span> )</a></h1>
+
+	<section class="summary">
+		<p>Checks the given subset of the term hierarchy for hierarchy loops.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Prevents loops from forming and breaks those that it finds.</p>
+<p>Attached to the <a href="https://developer.wordpress.org/reference/hooks/wp_update_term_parent">&#8216;wp_update_term_parent&#8217;</a> filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> The new parent for the term.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$parent</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">&lt;code&gt;term_id&lt;/code&gt; of the parent for the term we're checking.</span>
+									</p>
+							</dd>
+									<dt>$term_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The term we're checking.</span>
+									</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The taxonomy of the term we're checking.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

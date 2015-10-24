@@ -1,0 +1,106 @@
+<article id="post-2557" class="post-2557 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_upload_dir/">wp_upload_dir ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$time</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get an array containing the current upload directory&#8217;s path and url.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks the &#8216;upload_path&#8217; option, which should be from the web root folder, and if it isn&#8217;t empty it will be used. If it is empty, then the path will be &#8216;WP_CONTENT_DIR/uploads&#8217;. If the &#8216;UPLOADS&#8217; constant is defined, then it will override the &#8216;upload_path&#8217; option and &#8216;WP_CONTENT_DIR/uploads&#8217; path.</p>
+<p>The upload URL path is set either by the &#8216;upload_url_path&#8217; option or by using the &#8216;WP_CONTENT_URL&#8217; constant and appending &#8216;/uploads&#8217; to the path.</p>
+<p>If the &#8216;uploads_use_yearmonth_folders&#8217; is set to true (checkbox if checked in the administration settings panel), then the time will be used. The format will be year first and then month.</p>
+<p>If the path couldn&#8217;t be created, then an error will be returned with the key &#8216;error&#8217; containing the error message. The error suggests that the parent directory is not writable by the server.</p>
+<p>On success, the returned array will have many indices: &#8216;path&#8217; &#8211; base directory and sub directory or full path to upload directory. &#8216;url&#8217; &#8211; base url and sub directory or absolute URL to upload directory. &#8216;subdir&#8217; &#8211; sub directory if uploads use year/month folders option is on. &#8216;basedir&#8217; &#8211; path without subdir. &#8216;baseurl&#8217; &#8211; URL path without subdir. &#8216;error&#8217; &#8211; set to false.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> See above for description.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$time</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Time formatted in 'yyyy/mm'. </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attachment_url_to_postid/">attachment_url_to_postid()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_handle_upload/">_wp_handle_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/file_upload_upgrader/__construct/">File_Upload_Upgrader::__construct()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_delete_blog/">wpmu_delete_blog()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_import_upload_form/">wp_import_upload_form()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_upload_bits/">wp_upload_bits()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_attachment/">wp_delete_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_attachment_url/">wp_get_attachment_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_attached_file/">get_attached_file()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_relative_upload_path/">_wp_relative_upload_path()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_space_used/">get_space_used()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/discover_pingback_server_uri/">discover_pingback_server_uri()</a>
+							</li>
+																			<a href="#" class="show-more">Show 12 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

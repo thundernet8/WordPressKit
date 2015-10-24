@@ -1,0 +1,56 @@
+<article id="post-1244" class="post-1244 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_lastpostdate/">get_lastpostdate ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$timezone</span>&nbsp;=&nbsp;<span class="arg-default">'server'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the date that the last post was published.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The server timezone is the default and is the difference between GMT and server time. The &#8216;blog&#8217; value is the date when the last post was posted. The &#8216;gmt&#8217; is when the last post was posted in GMT formatted date.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The date of the last post.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$timezone</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The location to get the time. Accepts 'gmt', 'blog',                         or 'server'. </span>
+									</p>
+								<p class="default">Default value: 'server'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_lastpostmodified/">get_lastpostmodified()</a>
+							</li>
+																</ul>
+			</article>

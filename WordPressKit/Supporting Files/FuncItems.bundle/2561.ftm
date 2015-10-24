@@ -1,0 +1,86 @@
+<article id="post-2795" class="post-2795 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-php wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_make_cat_compat/">_make_cat_compat ( <span class="arg-type">array|object</span>&nbsp;<span class="arg-name">$category</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update category structure to old pre 2.3 from new taxonomy structure.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function was added for the taxonomy support to update the new category structure with the old category one. This will maintain compatibility with plugins and themes which depend on the old key or property names.</p>
+<p>The parameter should only be passed a variable and not create the array or object inline to the parameter. The reason for this is that parameter is passed by reference and PHP will fail unless it has the variable.</p>
+<p>There is no return value, because everything is updated on the variable you pass to it. This is one of the features with using pass by reference in PHP.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category.php/">wp-includes/category.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$category</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Category Row object or array</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_to_edit/">get_category_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_category/">wp_update_category()</a>
+							</li>
+													<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_category/">get_the_category()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_query/get_queried_object/">WP_Query::get_queried_object()</a>
+							</li>
+													<li>
+								<span>wp-includes/category.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_categories/">get_categories()</a>
+							</li>
+													<li>
+								<span>wp-includes/category.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category/">get_category()</a>
+							</li>
+													<li>
+								<span>wp-includes/category.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_by_path/">get_category_by_path()</a>
+							</li>
+													<li>
+								<span>wp-includes/category.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_by_slug/">get_category_by_slug()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

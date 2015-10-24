@@ -1,0 +1,96 @@
+<article id="post-73" class="post-73 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_meta-php wp-parser-package-meta wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/delete_metadata_by_mid/">delete_metadata_by_mid ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_type</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$meta_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Delete meta data by meta ID</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on successful delete, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/meta.php/">wp-includes/meta.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$meta_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Type of object metadata is for (e.g., comment, post, or user)</span>
+									</p>
+							</dd>
+									<dt>$meta_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">ID for a specific meta row</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_delete_user/">wpmu_delete_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_user/">wp_delete_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_meta/">delete_meta()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_enclose/">do_enclose()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_attachment/">wp_delete_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_post/">wp_delete_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/set_custom_fields/">wp_xmlrpc_server::set_custom_fields()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_all_pings/">do_all_pings()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_comment/">wp_delete_comment()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

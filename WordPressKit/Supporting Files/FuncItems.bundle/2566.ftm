@@ -1,0 +1,36 @@
+<article id="post-2029" class="post-2029 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_update-php wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_maybe_update_plugins/">_maybe_update_plugins ()</a></h1>
+
+	<section class="summary">
+		<p>Check the last time plugins were run before checking plugin versions.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This might have been backported to WordPress 2.6.1 for performance reasons. This is used for the wp-admin to check only so often instead of every page load.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/update.php/">wp-includes/update.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

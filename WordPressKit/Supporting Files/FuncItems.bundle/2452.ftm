@@ -1,0 +1,86 @@
+<article id="post-2560" class="post-2560 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_upload_bits/">wp_upload_bits ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$name</span>,  <span class="arg-type">null|string</span>&nbsp;<span class="arg-name">$deprecated</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$bits</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$time</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Create a file in the upload folder with given content.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If there is an error, then the key &#8216;error&#8217; will exist with the error message. If success, then the key &#8216;file&#8217; will have the unique file path, the &#8216;url&#8217; key will have the link to the new file. and the &#8216;error&#8217; key will be set to false.</p>
+<p>This function will not move an uploaded file to the upload folder. It will create a new file with the content in $bits parameter. If you move the upload file, read the content of the uploaded file, and then you can give the filename and content to this function, which will add it to the upload folder.</p>
+<p>The permissions will be set on the new file automatically by this function.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Filename.</span>
+									</p>
+							</dd>
+									<dt>$deprecated</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="null">null</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Never used. Set to null.</span>
+									</p>
+							</dd>
+									<dt>$bits</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">File content</span>
+									</p>
+							</dd>
+									<dt>$time</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Time formatted in 'yyyy/mm'. </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_generate_attachment_metadata/">wp_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_newmediaobject/">wp_xmlrpc_server::mw_newMediaObject()</a>
+							</li>
+																</ul>
+			</article>

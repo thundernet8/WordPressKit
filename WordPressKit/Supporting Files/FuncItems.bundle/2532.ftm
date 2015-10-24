@@ -1,0 +1,63 @@
+<article id="post-1912" class="post-1912 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_admin-bar-php wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_get_admin_bar_pref/">_get_admin_bar_pref ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">'front'</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the admin bar display preference of a user.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the admin bar should be showing for this user.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/admin-bar.php/">wp-includes/admin-bar.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Context of this preference check. Defaults to 'front'. The 'admin' 	preference is no longer used.</span>
+									</p>
+								<p class="default">Default value: 'front'</p>
+							</dd>
+									<dt>$user</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> ID of the user to check, defaults to 0 for current user.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_admin_bar_showing/">is_admin_bar_showing()</a>
+							</li>
+																</ul>
+			</article>

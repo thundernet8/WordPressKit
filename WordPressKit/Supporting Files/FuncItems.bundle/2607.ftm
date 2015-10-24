@@ -1,0 +1,35 @@
+<article id="post-1009" class="post-1009 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_revision-php wp-parser-package-post_revisions wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_show_post_preview/">_show_post_preview ()</a></h1>
+
+	<section class="summary">
+		<p>Filters the latest content for preview from the post autosave.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/revision.php/">wp-includes/revision.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

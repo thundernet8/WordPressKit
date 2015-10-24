@@ -1,0 +1,40 @@
+<article id="post-3609" class="post-3609 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_theme_roots/">get_theme_roots ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve theme roots.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|string)</span> An array of theme roots keyed by template/stylesheet or a single theme root if all themes have the same root.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_raw_theme_root/">get_raw_theme_root()</a>
+							</li>
+																</ul>
+			</article>

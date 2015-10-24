@@ -1,0 +1,104 @@
+<article id="post-3681" class="post-3681 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_dropdown_categories/">wp_dropdown_categories ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display or retrieve the HTML dropdown list of categories.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The &#8216;hierarchical&#8217; argument, which is disabled by default, will override the depth argument, unless it is true. When the argument is false, it will display all of the categories. When it is enabled it will use the value in the &#8216;depth&#8217; argument.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> HTML content only if 'echo' argument is 0.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category-template.php/">wp-includes/category-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments to generate a categories drop-down element. <ul class="param-hash"><li><b>'show_option_all'</b><br /><i><span class='type'>(string)</span></i> Text to display for showing all categories. </li>
+<li><b>'show_option_none'</b><br /><i><span class='type'>(string)</span></i> Text to display for showing no categories. </li>
+<li><b>'option_none_value'</b><br /><i><span class='type'>(string)</span></i> Value to use when no category is selected. </li>
+<li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> Which column to use for ordering categories. See get_terms() for a list of accepted values. Default 'id' (term_id). </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Whether to order terms in ascending or descending order. Accepts 'ASC' or 'DESC'. Default 'ASC'. </li>
+<li><b>'pad_counts'</b><br /><i><span class='type'>(bool)</span></i> See get_terms() for an argument description. Default false. </li>
+<li><b>'show_count'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to include post counts. Accepts 0, 1, or their bool equivalents. Default 0. </li>
+<li><b>'hide_empty'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to hide categories that don't have any posts. Accepts 0, 1, or their bool equivalents. Default 1. </li>
+<li><b>'child_of'</b><br /><i><span class='type'>(int)</span></i> Term ID to retrieve child terms of. See get_terms(). Default 0. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(array|string)</span></i> Array or comma/space-separated string of term ids to exclude. If &lt;code&gt;$include&lt;/code&gt; is non-empty, &lt;code&gt;$exclude&lt;/code&gt; is ignored. Default empty array. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to echo or return the generated markup. Accepts 0, 1, or their bool equivalents. Default 1. </li>
+<li><b>'hierarchical'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to traverse the taxonomy hierarchy. Accepts 0, 1, or their bool equivalents. Default 0. </li>
+<li><b>'depth'</b><br /><i><span class='type'>(int)</span></i> Maximum depth. Default 0. </li>
+<li><b>'tab_index'</b><br /><i><span class='type'>(int)</span></i> Tab index for the select element. Default 0 (no tabindex). </li>
+<li><b>'name'</b><br /><i><span class='type'>(string)</span></i> Value for the 'name' attribute of the select element. Default 'cat'. </li>
+<li><b>'id'</b><br /><i><span class='type'>(string)</span></i> Value for the 'id' attribute of the select element. Defaults to the value of &lt;code&gt;$name&lt;/code&gt;. </li>
+<li><b>'class'</b><br /><i><span class='type'>(string)</span></i> Value for the 'class' attribute of the select element. Default 'postform'. </li>
+<li><b>'selected'</b><br /><i><span class='type'>(int|string)</span></i> Value of the option that should be selected. Default 0. </li>
+<li><b>'value_field'</b><br /><i><span class='type'>(string)</span></i> Term field that should be used to populate the 'value' attribute of the option elements. Accepts any valid term field: 'term_id', 'name', 'slug', 'term_group', 'term_taxonomy_id', 'taxonomy', 'description', 'parent', 'count'. Default 'term_id'. </li>
+<li><b>'taxonomy'</b><br /><i><span class='type'>(string)</span></i> Name of the category to retrieve. Default 'category'. </li>
+<li><b>'hide_if_empty'</b><br /><i><span class='type'>(bool)</span></i> True to skip generating markup if no categories are found. Default false (create select element even if no categories are found).</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/categories_html/">WP_Press_This::categories_html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-links-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_links_list_table/extra_tablenav/">WP_Links_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_ajax_add_hierarchical_term/">_wp_ajax_add_hierarchical_term()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_categories_meta_box/">post_categories_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/extra_tablenav/">WP_Posts_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dropdown_cats/">dropdown_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_categories/widget/">WP_Widget_Categories::widget()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

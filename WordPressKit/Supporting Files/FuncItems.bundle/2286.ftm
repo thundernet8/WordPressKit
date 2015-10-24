@@ -1,0 +1,129 @@
+<article id="post-3378" class="post-3378 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-1-5-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_redirect/">wp_redirect ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$location</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$status</span>&nbsp;=&nbsp;<span class="arg-default">302</span> )</a></h1>
+
+	<section class="summary">
+		<p>Redirects to another page.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> False if $location is not provided, true otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$location</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The path to redirect to.</span>
+									</p>
+							</dd>
+									<dt>$status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Status code to use.</span>
+									</p>
+								<p class="default">Default value: 302</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_media_attach_action/">wp_media_attach_action()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/set_pagination_args/">WP_List_Table::set_pagination_args()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_setup/">wp_dashboard_setup()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/activate_plugin/">activate_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_post/">redirect_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_dismiss_core_update/">do_dismiss_core_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_undismiss_core_update/">do_undismiss_core_update()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/after_setup_theme/">WP_Customize_Manager::after_setup_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/spawn_cron/">spawn_cron()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_safe_redirect/">wp_safe_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/auth_redirect/">auth_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_old_slug_redirect/">wp_old_slug_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_not_installed/">wp_not_installed()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_redirect_admin_locations/">wp_redirect_admin_locations()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/maybe_redirect_404/">maybe_redirect_404()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_admin_do_redirect/">wpmu_admin_do_redirect()</a>
+							</li>
+																			<a href="#" class="show-more">Show 17 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

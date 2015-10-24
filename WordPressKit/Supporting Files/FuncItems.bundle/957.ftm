@@ -1,0 +1,114 @@
+<article id="post-2618" class="post-2618 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_ssl/">is_ssl ()</a></h1>
+
+	<section class="summary">
+		<p>Determine if SSL is used.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if SSL, false if not used.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_customize_menu/">wp_admin_bar_customize_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_avatar_data/">get_avatar_data()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_parse_embed/">wp_ajax_parse_embed()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugin_information/">install_plugin_information()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_browser_nag/">wp_dashboard_browser_nag()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_parse_auth_cookie/">wp_parse_auth_cookie()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_auth_cookie/">wp_set_auth_cookie()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/auth_redirect/">auth_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_login_form/">wp_login_form()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_auth_check_html/">wp_auth_check_html()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_guess_url/">wp_guess_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_url_scheme/">set_url_scheme()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_home_url/">network_home_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_home_url/">get_home_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/__get/">WP_Admin_Bar::__get()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_signon/">wp_signon()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_attachment_url/">wp_get_attachment_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/filter_ssl/">filter_SSL()</a>
+							</li>
+																			<a href="#" class="show-more">Show 19 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,77 @@
+<article id="post-784" class="post-784 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-blogs-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_blog_option/">get_blog_option ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$option</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$default</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve option value for a given blog id based on name of option.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the option does not exist or does not have a value, then the return value will be false. This is useful to check whether you need to install an option and is commonly used during installation of plugin options and to test whether upgrading is required.</p>
+<p>If the option was serialized then it will be unserialized when it is returned.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> Value set for the option.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-blogs.php/">wp-includes/ms-blogs.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">A blog ID. Can be null to refer to the current blog.</span>
+									</p>
+							</dd>
+									<dt>$option</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of option to retrieve. Expected to not be SQL-escaped.</span>
+									</p>
+							</dd>
+									<dt>$default</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Default value to return if the option does not exist.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_site_icon_url/">get_site_icon_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_blog/">install_blog()</a>
+							</li>
+																</ul>
+			</article>

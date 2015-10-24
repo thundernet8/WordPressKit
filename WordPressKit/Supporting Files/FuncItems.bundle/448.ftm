@@ -1,0 +1,75 @@
+<article id="post-283" class="post-283 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment_author_url_link/">get_comment_author_url_link ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$linktext</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$before</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$after</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieves the HTML link of the url of the author of the current comment.</p>
+	</section>
+
+
+	<section class="description">
+		<p>$linktext parameter is only used if the URL does not exist for the comment author. If the URL does exist then the URL will be used and the $linktext will be ignored.</p>
+<p>Encapsulate the HTML link between the $before and $after. So it will appear in the order of $before, link, and finally $after.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The HTML link between the $before and $after parameters.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$linktext</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The text to display instead of the comment                         author's email address. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$before</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The text or HTML to display before the email link.                         </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$after</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The text or HTML to display after the email link.                         </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comment_author_url_link/">comment_author_url_link()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,130 @@
+<article id="post-1171" class="post-1171 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-1-0-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_insert_post/">wp_insert_post ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$postarr</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$wp_error</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Insert or update a post.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the $postarr parameter has &#8216;ID&#8217; set to a value, then post will be updated.</p>
+<p>You can set the post date manually, by setting the values for &#8216;post_date&#8217; and &#8216;post_date_gmt&#8217; keys. You can close the comments or open the comments by setting the value for &#8216;comment_status&#8217; key.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|WP_Error)</span> The post ID on success. The value 0 or WP_Error on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$postarr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An array of elements that make up a post to update or insert. <ul class="param-hash"><li><b>'ID'</b><br /><i><span class='type'>(int)</span></i> The post ID. If equal to something other than 0, the post with that ID will be updated. Default 0. </li>
+<li><b>'post_author'</b><br /><i><span class='type'>(int)</span></i> The ID of the user who added the post. Default is the current user ID. </li>
+<li><b>'post_date'</b><br /><i><span class='type'>(string)</span></i> The date of the post. Default is the current time. </li>
+<li><b>'post_date_gmt'</b><br /><i><span class='type'>(string)</span></i> The date of the post in the GMT timezone. Default is the value of &lt;code&gt;$post_date&lt;/code&gt;. </li>
+<li><b>'post_content'</b><br /><i><span class='type'>(mixed)</span></i> The post content. Default empty. </li>
+<li><b>'post_content_filtered'</b><br /><i><span class='type'>(string)</span></i> The filtered post content. Default empty. </li>
+<li><b>'post_title'</b><br /><i><span class='type'>(string)</span></i> The post title. Default empty. </li>
+<li><b>'post_excerpt'</b><br /><i><span class='type'>(string)</span></i> The post excerpt. Default empty. </li>
+<li><b>'post_status'</b><br /><i><span class='type'>(string)</span></i> The post status. Default 'draft'. </li>
+<li><b>'post_type'</b><br /><i><span class='type'>(string)</span></i> The post type. Default 'post'. </li>
+<li><b>'comment_status'</b><br /><i><span class='type'>(string)</span></i> Whether the post can accept comments. Accepts 'open' or 'closed'. Default is the value of 'default_comment_status' option. </li>
+<li><b>'ping_status'</b><br /><i><span class='type'>(string)</span></i> Whether the post can accept pings. Accepts 'open' or 'closed'. Default is the value of 'default_ping_status' option. </li>
+<li><b>'post_password'</b><br /><i><span class='type'>(string)</span></i> The password to access the post. Default empty. </li>
+<li><b>'post_name'</b><br /><i><span class='type'>(string)</span></i> The post name. Default is the sanitized post title. </li>
+<li><b>'to_ping'</b><br /><i><span class='type'>(string)</span></i> Space or carriage return-separated list of URLs to ping. Default empty. </li>
+<li><b>'pinged'</b><br /><i><span class='type'>(string)</span></i> Space or carriage return-separated list of URLs that have been pinged. Default empty. </li>
+<li><b>'post_modified'</b><br /><i><span class='type'>(string)</span></i> The date when the post was last modified. Default is the current time. </li>
+<li><b>'post_modified_gmt'</b><br /><i><span class='type'>(string)</span></i> The date when the post was last modified in the GMT timezone. Default is the current time. </li>
+<li><b>'post_parent'</b><br /><i><span class='type'>(int)</span></i> Set this for the post it belongs to, if any. Default 0. </li>
+<li><b>'menu_order'</b><br /><i><span class='type'>(int)</span></i> The order the post should be displayed in. Default 0. </li>
+<li><b>'post_mime_type'</b><br /><i><span class='type'>(string)</span></i> The mime type of the post. Default empty. </li>
+<li><b>'guid'</b><br /><i><span class='type'>(string)</span></i> Global Unique ID for referencing the post. Default empty.</li>
+</li></ul>
+</span>
+									</p>
+							</dd>
+									<dt>$wp_error</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to allow return of WP_Error on failure. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_write_post/">wp_write_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_default_post_to_edit/">get_default_post_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_attachment/">wp_insert_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_post/">wp_update_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_trash_post/">wp_trash_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_untrash_post/">wp_untrash_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_put_post_revision/">_wp_put_post_revision()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_nav_menu_item/">wp_update_nav_menu_item()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/blogger_newpost/">wp_xmlrpc_server::blogger_newPost()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_newpost/">wp_xmlrpc_server::mw_newPost()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/_insert_post/">wp_xmlrpc_server::_insert_post()</a>
+							</li>
+																			<a href="#" class="show-more">Show 11 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

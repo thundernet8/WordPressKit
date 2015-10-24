@@ -1,0 +1,74 @@
+<article id="post-1426" class="post-1426 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/walk_page_tree/">walk_page_tree ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$pages</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$depth</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$current_page</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$r</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve HTML list content for page list.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$pages</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$depth</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$current_page</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$r</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_pages/">wp_list_pages()</a>
+							</li>
+																</ul>
+			</article>

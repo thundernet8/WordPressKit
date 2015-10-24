@@ -1,0 +1,43 @@
+<article id="post-14741" class="post-14741 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_update-php wp-parser-package-wordpress wp-parser-since-4-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_clean_update_cache/">wp_clean_update_cache ()</a></h1>
+
+	<section class="summary">
+		<p>Clear existing update caches for plugins, themes, and core.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/update.php/">wp-includes/update.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/run/">WP_Automatic_Updater::run()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/language_pack_upgrader/bulk_upgrade/">Language_Pack_Upgrader::bulk_upgrade()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,85 @@
+<article id="post-7996" class="post-7996 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_compat-php wp-parser-package-php wp-parser-since-3-9-2">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/hash_equals/">hash_equals ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$a</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$b</span> )</a></h1>
+
+	<section class="summary">
+		<p>Compare two strings in constant time.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function was added in PHP 5.6. It can leak the length of a string.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether strings are equal.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/compat.php/">wp-includes/compat.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$a</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Expected string.</span>
+									</p>
+							</dd>
+									<dt>$b</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Actual string.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/render_menu/">WP_Customize_Nav_Menus::render_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_verify_nonce/">wp_verify_nonce()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_check_password/">wp_check_password()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_validate_auth_cookie/">wp_validate_auth_cookie()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_password_reset_key/">check_password_reset_key()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/sanitize_widget_instance/">WP_Customize_Widgets::sanitize_widget_instance()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

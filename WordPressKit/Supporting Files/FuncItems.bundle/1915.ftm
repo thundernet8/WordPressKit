@@ -1,0 +1,50 @@
+<article id="post-743" class="post-743 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_nav-menu-php wp-parser-package-nav_menus wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_create_nav_menu/">wp_create_nav_menu ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$menu_name</span> )</a></h1>
+
+	<section class="summary">
+		<p>Create a Navigation Menu.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|WP_Error)</span> Menu ID on success, WP_Error object on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/nav-menu.php/">wp-includes/nav-menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$menu_name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Menu name.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

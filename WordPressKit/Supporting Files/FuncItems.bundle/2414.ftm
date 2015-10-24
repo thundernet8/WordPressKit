@@ -1,0 +1,85 @@
+<article id="post-3483" class="post-3483 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_trim_words/">wp_trim_words ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$text</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$num_words</span>&nbsp;=&nbsp;<span class="arg-default">55</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$more</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Trims text to a certain number of words.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function is localized. For languages that count &#8216;words&#8217; by the individual character (such as East Asian languages), the $num_words argument will apply to the number of individual characters.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Trimmed text.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Text to trim.</span>
+									</p>
+							</dd>
+									<dt>$num_words</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Number of words. </span>
+									</p>
+								<p class="default">Default value: 55</p>
+							</dd>
+									<dt>$more</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> What to append if $text needs to be trimmed. Default '&amp;hellip;'.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_recent_drafts/">wp_dashboard_recent_drafts()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_trim_excerpt/">wp_trim_excerpt()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_widget_rss_output/">wp_widget_rss_output()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_setup_nav_menu_item/">wp_setup_nav_menu_item()</a>
+							</li>
+																</ul>
+			</article>

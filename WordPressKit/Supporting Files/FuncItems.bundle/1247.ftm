@@ -1,0 +1,76 @@
+<article id="post-3633" class="post-3633 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/remove_theme_mod/">remove_theme_mod ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$name</span> )</a></h1>
+
+	<section class="summary">
+		<p>Remove theme modification name from current theme list.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If removing the name also removes all elements, then the entire option will be removed.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Theme modification name.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/set_header_image/">Custom_Image_Header::set_header_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/take_action/">Custom_Background::take_action()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_delete_attachment_theme_mod/">_delete_attachment_theme_mod()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/switch_theme/">switch_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_background_image_setting/update/">WP_Customize_Background_Image_Setting::update()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/retrieve_widgets/">retrieve_widgets()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

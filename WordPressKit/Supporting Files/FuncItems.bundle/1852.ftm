@@ -1,0 +1,75 @@
+<article id="post-1319" class="post-1319 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_audio_shortcode/">wp_audio_shortcode ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$attr</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$content</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds the Audio shortcode output.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This implements the functionality of the Audio Shortcode for displaying WordPress mp3s in a post.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> HTML content to display audio.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attributes of the audio shortcode. <ul class="param-hash"><li><b>'src'</b><br /><i><span class='type'>(string)</span></i> URL to the source of the audio file. Default empty. </li>
+<li><b>'loop'</b><br /><i><span class='type'>(string)</span></i> The 'loop' attribute for the &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; element. Default empty. </li>
+<li><b>'autoplay'</b><br /><i><span class='type'>(string)</span></i> The 'autoplay' attribute for the &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; element. Default empty. </li>
+<li><b>'preload'</b><br /><i><span class='type'>(string)</span></i> The 'preload' attribute for the &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; element. Default empty. </li>
+<li><b>'class'</b><br /><i><span class='type'>(string)</span></i> The 'class' attribute for the &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; element. Default 'wp-audio-shortcode'. </li>
+<li><b>'style'</b><br /><i><span class='type'>(string)</span></i> The 'style' attribute for the &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; element. Default 'width: 100%'.</li>
+</li></ul>
+</span>
+									</p>
+							</dd>
+									<dt>$content</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Shortcode content.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_form_image_editor/">edit_form_image_editor()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/prepend_attachment/">prepend_attachment()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,36 @@
+<article id="post-4507" class="post-4507 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_post-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-8-5">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_admin_notice_post_locked/">_admin_notice_post_locked ()</a></h1>
+
+	<section class="summary">
+		<p>Outputs the HTML for the notice to say that someone else is editing or has taken over editing of this post.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(none)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/post.php/">wp-admin/includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

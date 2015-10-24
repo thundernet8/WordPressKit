@@ -1,0 +1,50 @@
+<article id="post-189" class="post-189 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_script-loader-php wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_default_scripts/">wp_default_scripts ( <span class="arg-type">WP_Scripts</span>&nbsp;<span class="arg-name">$scripts</span> )</a></h1>
+
+	<section class="summary">
+		<p>Register all WordPress scripts.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Localizes some of them. args order: $scripts-&gt;add( &#8216;handle&#8217;, &#8216;url&#8217;, &#8216;dependencies&#8217;, &#8216;query-string&#8217;, 1 ); when last arg === 1 queues the script for the footer</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/script-loader.php/">wp-includes/script-loader.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$scripts</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Scripts">WP_Scripts</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">WP_Scripts object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

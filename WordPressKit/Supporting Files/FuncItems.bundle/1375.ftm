@@ -1,0 +1,88 @@
+<article id="post-5496" class="post-5496 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_theme-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/themes_api/">themes_api ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$action</span>,  <span class="arg-type">array|object</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve theme installer pages from WordPress Themes API.</p>
+	</section>
+
+
+	<section class="description">
+		<p>It is possible for a theme to override the Themes API result with three filters. Assume this is for themes, which can extend on the Theme Info to offer more choices. This is very powerful and must be used with care, when overriding the filters.</p>
+<p>The first filter, &#8216;themes_api_args&#8217;, is for the args and gives the action as the second parameter. The hook for &#8216;themes_api_args&#8217; must ensure that an object is returned.</p>
+<p>The second filter, &#8216;themes_api&#8217;, is the result that would be returned.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/theme.php/">wp-admin/includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$action</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The requested action. Likely values are 'theme_information',                             'feature_list', or 'query_themes'.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="object">object</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Arguments to serialize for the Theme Info API.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/check_parent_theme_filter/">Theme_Upgrader::check_parent_theme_filter()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_theme_feature_list/">get_theme_feature_list()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_themes_feature_list/">install_themes_feature_list()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_theme_information/">install_theme_information()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-theme-install-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_theme_install_list_table/prepare_items/">WP_Theme_Install_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_query_themes/">wp_ajax_query_themes()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

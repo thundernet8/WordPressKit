@@ -1,0 +1,56 @@
+<article id="post-3595" class="post-3595 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_stylesheet_directory/">get_stylesheet_directory ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve stylesheet directory path for current theme.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Path to current theme directory.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_editor_stylesheets/">get_editor_stylesheets()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_current_theme/">validate_current_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_locale_stylesheet_uri/">get_locale_stylesheet_uri()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/">load_child_theme_textdomain()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-constants.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_templating_constants/">wp_templating_constants()</a>
+							</li>
+																</ul>
+			</article>

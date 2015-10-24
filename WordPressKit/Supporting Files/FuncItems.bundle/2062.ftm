@@ -1,0 +1,54 @@
+<article id="post-874" class="post-874 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-load-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_network/">wp_get_network ( <span class="arg-type">object|int</span>&nbsp;<span class="arg-name">$network</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve an object containing information about the requested network.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|false)</span> Object containing network information if found, false if not.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-load.php/">wp-includes/ms-load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$network</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>|<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The network's database row or ID.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/ms-load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_network_by_path/">get_network_by_path()</a>
+							</li>
+																</ul>
+			</article>

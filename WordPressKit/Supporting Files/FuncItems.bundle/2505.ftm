@@ -1,0 +1,58 @@
+<article id="post-182" class="post-182 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_close_comments_for_old_post/">_close_comments_for_old_post ( <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$open</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$post_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Close comments on an old post. Hooked to comments_open and pings_open.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> $open</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$open</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comments open or closed</span>
+									</p>
+							</dd>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post ID</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

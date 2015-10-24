@@ -1,0 +1,89 @@
+<article id="post-3617" class="post-3617 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_raw_theme_root/">get_raw_theme_root ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$stylesheet_or_template</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$skip_cache</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get the raw theme root relative to the content directory with no filters applied.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Theme root</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$stylesheet_or_template</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The stylesheet or template name of the theme</span>
+									</p>
+							</dd>
+									<dt>$skip_cache</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to skip the cache.                                       Defaults to false, meaning the cache is used.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/get_template_root/">WP_Customize_Manager::get_template_root()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/get_stylesheet_root/">WP_Customize_Manager::get_stylesheet_root()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_theme_root/">get_theme_root()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_theme_root_uri/">get_theme_root_uri()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/switch_theme/">switch_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_themes/">wp_get_themes()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_theme/">wp_get_theme()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

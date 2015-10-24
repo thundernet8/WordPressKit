@@ -1,0 +1,55 @@
+<article id="post-1164" class="post-1164 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_untrash_post_comments/">wp_untrash_post_comments ( <span class="arg-type">int|WP_Post|null</span>&nbsp;<span class="arg-name">$post</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Restore comments for a post from the trash.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(true|void)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>|<span class="null">null</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post ID or post object. Defaults to global $post.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_untrash_post/">wp_untrash_post()</a>
+							</li>
+																</ul>
+			</article>

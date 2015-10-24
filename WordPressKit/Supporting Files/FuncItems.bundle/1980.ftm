@@ -1,0 +1,35 @@
+<article id="post-9115" class="post-9115 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-4-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_destroy_other_sessions/">wp_destroy_other_sessions ()</a></h1>
+
+	<section class="summary">
+		<p>Remove all but the current session token for the current user for the database.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

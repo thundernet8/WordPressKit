@@ -1,0 +1,117 @@
+<article id="post-3528" class="post-3528 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_basename/">wp_basename ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$path</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$suffix</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>i18n friendly version of basename()</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">A path.</span>
+									</p>
+							</dd>
+									<dt>$suffix</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">If the filename ends in suffix this will also be cut off.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-media-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_media_list_table/column_title/">WP_Media_List_Table::column_title()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attachment_submitbox_metadata/">attachment_submitbox_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_media_item/">get_media_item()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_attachment_fields_to_save/">image_attachment_fields_to_save()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_send_link_to_editor/">wp_ajax_send_link_to_editor()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_query/get_posts/">WP_Query::get_posts()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_query/parse_tax_query/">WP_Query::parse_tax_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor-imagick.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor_imagick/_save/">WP_Image_Editor_Imagick::_save()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor/get_output_format/">WP_Image_Editor::get_output_format()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor/generate_filename/">WP_Image_Editor::generate_filename()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor-gd.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor_gd/_save/">WP_Image_Editor_GD::_save()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_attachment_for_js/">wp_prepare_attachment_for_js()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/">wp_get_attachment_image_src()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_downsize/">image_downsize()</a>
+							</li>
+																			<a href="#" class="show-more">Show 14 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

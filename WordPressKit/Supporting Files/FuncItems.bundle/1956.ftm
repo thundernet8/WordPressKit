@@ -1,0 +1,42 @@
+<article id="post-2744" class="post-2744 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_load-php wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_debug_mode/">wp_debug_mode ()</a></h1>
+
+	<section class="summary">
+		<p>Set PHP error reporting based on WordPress debug settings.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Uses three constants: <code>WP_DEBUG</code>, <code>WP_DEBUG_DISPLAY</code>, and <code>WP_DEBUG_LOG</code>. All three can be defined in wp-config.php, and by default are set to false.</p>
+<p>When <code>WP_DEBUG</code> is true, all PHP notices are reported. WordPress will also display internal notices: when a deprecated WordPress function, function argument, or file is used. Deprecated code may be removed from a later version.</p>
+<p>It is strongly recommended that plugin and theme developers use <code>WP_DEBUG</code> in their development environments.</p>
+<p><code>WP_DEBUG_DISPLAY</code> and <code>WP_DEBUG_LOG</code> perform no function unless <code>WP_DEBUG</code> is true.</p>
+<p>When <code>WP_DEBUG_DISPLAY</code> is true, WordPress will force errors to be displayed. <code>WP_DEBUG_DISPLAY</code> defaults to true. Defining it as null prevents WordPress from changing the global configuration setting. Defining <code>WP_DEBUG_DISPLAY</code> as false will force errors to be hidden.</p>
+<p>When <code>WP_DEBUG_LOG</code> is true, errors will be logged to debug.log in the content directory.</p>
+<p>Errors are never displayed for XML-RPC requests.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/load.php/">wp-includes/load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

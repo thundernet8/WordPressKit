@@ -1,0 +1,51 @@
+<article id="post-932" class="post-932 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/newuser_notify_siteadmin/">newuser_notify_siteadmin ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Notifies the network admin that a new user has been activated.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Filter &#8216;newuser_notify_siteadmin&#8217; to change the content of the notification email.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The new user's ID.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

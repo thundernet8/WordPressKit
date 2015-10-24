@@ -1,0 +1,78 @@
+<article id="post-1342" class="post-1342 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_expand_dimensions/">wp_expand_dimensions ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$example_width</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$example_height</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$max_width</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$max_height</span> )</a></h1>
+
+	<section class="summary">
+		<p>Based on a supplied width/height example, return the biggest possible dimensions based on the max width/height.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> The maximum possible width and height based on the example ratio.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$example_width</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The width of an example embed.</span>
+									</p>
+							</dd>
+									<dt>$example_height</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The height of an example embed.</span>
+									</p>
+							</dd>
+									<dt>$max_width</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The maximum allowed width.</span>
+									</p>
+							</dd>
+									<dt>$max_height</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The maximum allowed height.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_embed_handler_googlevideo/">wp_embed_handler_googlevideo()</a>
+							</li>
+																</ul>
+			</article>

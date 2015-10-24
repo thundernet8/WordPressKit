@@ -1,0 +1,51 @@
+<article id="post-98" class="post-98 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment_count/">get_comment_count ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$post_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>The amount of comments in a post or total comments.</p>
+	</section>
+
+
+	<section class="description">
+		<p>A lot like <a href="https://developer.wordpress.org/reference/functions/wp_count_comments">wp_count_comments()</a>, in that they both return comment stats (albeit with different types). The <a href="https://developer.wordpress.org/reference/functions/wp_count_comments">wp_count_comments()</a> actual caches, but this function does not.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> The amount of spam, approved, awaiting moderation, and total comments.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Comment amount in post if &gt; 0, else total comments blog wide.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

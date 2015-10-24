@@ -1,0 +1,240 @@
+<article id="post-4677" class="post-4677 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/submit_button/">submit_button ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$text</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span>&nbsp;=&nbsp;<span class="arg-default">'primary'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$name</span>&nbsp;=&nbsp;<span class="arg-default">'submit'</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$wrap</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$other_attributes</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Echoes a submit button, with provided text and appropriate class(es).</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The text of the button (defaults to 'Save Changes')</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The type and CSS class(es) of the button. Core values                                       include 'primary', 'secondary', 'delete'. Default 'primary'</span>
+									</p>
+								<p class="default">Default value: 'primary'</p>
+							</dd>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The HTML name of the submit button. Defaults to &quot;submit&quot;. If no                                       id attribute is given in $other_attributes below, $name will be                                       used as the button's id.</span>
+									</p>
+								<p class="default">Default value: 'submit'</p>
+							</dd>
+									<dt>$wrap</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">True if the output button should be wrapped in a paragraph tag,                                       false otherwise. Defaults to true</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$other_attributes</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Other attributes that should be output with the button, mapping                                       attributes to their values, such as setting tabindex to 1, etc.                                       These key/value attribute pairs will be output as attribute=&quot;value&quot;,                                       where attribute is the key. Other attributes can also be provided                                       as a string such as 'tabindex=&quot;1&quot;', though the array format is                                       preferred. </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/network.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_step1/">network_step1()</a>
+							</li>
+													<li>
+								<span>wp-admin/install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/display_setup_form/">display_setup_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugins-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugins_list_table/extra_tablenav/">WP_Plugins_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-links-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_links_list_table/extra_tablenav/">WP_Links_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_theme_search_form/">install_theme_search_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_themes_dashboard/">install_themes_dashboard()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_themes_upload/">install_themes_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/search_box/">WP_List_Table::search_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/bulk_actions/">WP_List_Table::bulk_actions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_search_form/">install_search_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugins_upload/">install_plugins_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_dashboard_control_callback/">_wp_dashboard_control_callback()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_network_dashboard_right_now/">wp_network_dashboard_right_now()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_quick_press/">wp_dashboard_quick_press()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/find_posts_div/">find_posts_div()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/meta_form/">meta_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_import_upload_form/">wp_import_upload_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/extra_tablenav/">WP_Users_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_type_form/">media_upload_type_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_gallery_form/">media_upload_gallery_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_library_form/">media_upload_library_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_form/">media_upload_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/link_submit_meta_box/">link_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_submit_meta_box/">post_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attachment_submit_meta_box/">attachment_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-media-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_media_list_table/extra_tablenav/">WP_Media_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-comments-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_comments_list_table/extra_tablenav/">WP_Comments_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_post_type_meta_box/">wp_nav_menu_item_post_type_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_taxonomy_meta_box/">wp_nav_menu_item_taxonomy_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/request_filesystem_credentials/">request_filesystem_credentials()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/inline_edit/">WP_Posts_List_Table::inline_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_widget_control/">wp_widget_control()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/extra_tablenav/">WP_Posts_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_1/">Custom_Image_Header::step_1()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_2/">Custom_Image_Header::step_2()</a>
+							</li>
+													<li>
+								<span>wp-admin/network/users.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/confirm_delete_users/">confirm_delete_users()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_core_update/">list_core_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/admin_page/">Custom_Background::admin_page()</a>
+							</li>
+																			<a href="#" class="show-more">Show 38 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

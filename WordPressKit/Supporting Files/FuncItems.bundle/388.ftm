@@ -1,0 +1,77 @@
+<article id="post-16163" class="post-16163 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_avatar_data/">get_avatar_data ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$id_or_email</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve default data about the avatar.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> $processed_args {     Along with the arguments passed in <code>$args</code>, this will contain a couple of extra arguments.     @type bool   $found_avatar True if we were able to find an avatar for this user,                                false or not set if we couldn't.     @type string $url          The URL of the avatar we found. }</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id_or_email</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The Gravatar to check the data against. Accepts a user_id, gravatar md5 hash,                           user email, WP_User object, WP_Post object, or comment object.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Arguments to return instead of the default arguments. <ul class="param-hash"><li><b>'size'</b><br /><i><span class='type'>(int)</span></i> Height and width of the avatar image file in pixels. Default 96. </li>
+<li><b>'height'</b><br /><i><span class='type'>(int)</span></i> Display height of the avatar in pixels. Defaults to $size. </li>
+<li><b>'width'</b><br /><i><span class='type'>(int)</span></i> Display width of the avatar in pixels. Defaults to $size. </li>
+<li><b>'default'</b><br /><i><span class='type'>(string)</span></i> URL for the default image or a default type. Accepts '404' (return a 404 instead of a default image), 'retro' (8bit), 'monsterid' (monster), 'wavatar' (cartoon face), 'indenticon' (the &quot;quilt&quot;), 'mystery', 'mm', or 'mysterman' (The Oyster Man), 'blank' (transparent GIF), or 'gravatar_default' (the Gravatar logo). Default is the value of the 'avatar_default' option, with a fallback of 'mystery'. </li>
+<li><b>'force_default'</b><br /><i><span class='type'>(bool)</span></i> Whether to always show the default image, never the Gravatar. Default false. </li>
+<li><b>'rating'</b><br /><i><span class='type'>(string)</span></i> What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option. </li>
+<li><b>'scheme'</b><br /><i><span class='type'>(string)</span></i> URL scheme to use. See set_url_scheme() for accepted values. </li>
+<li><b>'processed_args'</b><br /><i><span class='type'>(array)</span></i> When the function returns, the value will be the processed/sanitized $args plus a &quot;found_avatar&quot; guess. Pass as a reference. </li>
+<li><b>'extra_attr'</b><br /><i><span class='type'>(string)</span></i> HTML attributes to insert in the IMG element. Is not sanitized. Default empty.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_avatar_url/">get_avatar_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_avatar/">get_avatar()</a>
+							</li>
+																</ul>
+			</article>

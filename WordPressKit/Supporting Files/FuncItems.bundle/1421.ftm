@@ -1,0 +1,43 @@
+<article id="post-1739" class="post-1739 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_feed-php wp-parser-package-feed wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/the_permalink_rss/">the_permalink_rss ()</a></h1>
+
+	<section class="summary">
+		<p>Display the permalink to the post for use in feeds.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/feed.php/">wp-includes/feed.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/export.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/export_wp/">export_wp()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/permalink_single_rss/">permalink_single_rss()</a>
+							</li>
+																</ul>
+			</article>

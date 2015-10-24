@@ -1,0 +1,55 @@
+<article id="post-3452" class="post-3452 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/addslashes_gpc/">addslashes_gpc ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$gpc</span> )</a></h1>
+
+	<section class="summary">
+		<p>Adds slashes to escape strings.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Slashes will first be removed if magic_quotes_gpc is set, see <a href="http://www.php.net/magic_quotes">http://www.php.net/magic_quotes</a> for more details.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Returns a string escaped with slashes.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$gpc</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The string returned from HTTP request data.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_query/get_posts/">WP_Query::get_posts()</a>
+							</li>
+																</ul>
+			</article>

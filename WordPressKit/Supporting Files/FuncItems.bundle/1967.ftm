@@ -1,0 +1,62 @@
+<article id="post-4349" class="post-4349 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_bookmark-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_delete_link/">wp_delete_link ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$link_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Delete link specified from database.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(true)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/bookmark.php/">wp-admin/includes/bookmark.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$link_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">ID of the link to delete</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_delete_user/">wpmu_delete_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_user/">wp_delete_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_delete_link/">wp_ajax_delete_link()</a>
+							</li>
+																</ul>
+			</article>

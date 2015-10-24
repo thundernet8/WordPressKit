@@ -1,0 +1,62 @@
+<article id="post-327" class="post-327 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/comments_template/">comments_template ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>&nbsp;=&nbsp;<span class="arg-default">'/comments.php'</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$separate_comments</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Load the comment template specified in $file.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will not display the comments template if not on single post or page, or if the post does not have comments.</p>
+<p>Uses the WordPress database object to query for the comments. The comments are passed through the &#8216;comments_array&#8217; filter hook with the list of comments and the post ID respectively.</p>
+<p>The $file path is passed through a filter hook called, &#8216;comments_template&#8217; which includes the TEMPLATEPATH and $file combined. Tries the $filtered path first and if it fails it will require the default comment template from the default theme. If either does not exist, then the WordPress process will be halted. It is advised for that reason, that the default theme is not deleted.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The file to load. </span>
+									</p>
+								<p class="default">Default value: '/comments.php'</p>
+							</dd>
+									<dt>$separate_comments</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to separate the comments by comment type.                                  </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

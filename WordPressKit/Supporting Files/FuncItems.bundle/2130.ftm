@@ -1,0 +1,41 @@
+<article id="post-15466" class="post-15466 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_upgrade-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_install_maybe_enable_pretty_permalinks/">wp_install_maybe_enable_pretty_permalinks ()</a></h1>
+
+	<section class="summary">
+		<p>Maybe enable pretty permalinks on install.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If after enabling pretty permalinks don&#8217;t work, fallback to query-string permalinks.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether pretty permalinks are enabled. False otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/upgrade.php/">wp-admin/includes/upgrade.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_install/">wp_install()</a>
+							</li>
+																</ul>
+			</article>

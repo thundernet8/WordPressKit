@@ -1,0 +1,99 @@
+<article id="post-3374" class="post-3374 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/check_admin_referer/">check_admin_referer ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$action</span>&nbsp;=&nbsp;<span class="arg-default">-1</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$query_arg</span>&nbsp;=&nbsp;<span class="arg-default">'_wpnonce'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Makes sure that a user was referred from another admin page.</p>
+	</section>
+
+
+	<section class="description">
+		<p>To avoid security exploits.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|int)</span> False if the nonce is invalid, 1 if the nonce is valid and generated between                   0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$action</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Action nonce.</span>
+									</p>
+								<p class="default">Default value: -1</p>
+							</dd>
+									<dt>$query_arg</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Key to check for nonce in &lt;code&gt;$_REQUEST&lt;/code&gt; (since 2.5).                              </span>
+									</p>
+								<p class="default">Default value: '_wpnonce'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_screen_options/">set_screen_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_setup/">wp_dashboard_setup()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_form_handler/">media_upload_form_handler()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_media_upload_handler/">wp_media_upload_handler()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_2/">Custom_Image_Header::step_2()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_3/">Custom_Image_Header::step_3()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/take_action/">Custom_Image_Header::take_action()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/take_action/">Custom_Background::take_action()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/handle_upload/">Custom_Background::handle_upload()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

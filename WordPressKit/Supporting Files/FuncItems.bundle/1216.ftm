@@ -1,0 +1,96 @@
+<article id="post-1107" class="post-1107 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$post_type</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Register a post type. Do not use before init.</p>
+	</section>
+
+
+	<section class="description">
+		<p>A function for creating or modifying a post type based on the parameters given. The function will accept an array (second optional parameter), along with a string for the post type name.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|WP_Error)</span> The registered post type object, or an error object.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post type key, must not exceed 20 characters.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments for registering a post type. <ul class="param-hash"><li><b>'label'</b><br /><i><span class='type'>(string)</span></i> Name of the post type shown in the menu. Usually plural. Default is value of $labels['name']. </li>
+<li><b>'labels'</b><br /><i><span class='type'>(array)</span></i> An array of labels for this post type. If not set, post labels are inherited for non-hierarchical types and page labels for hierarchical ones. <a href="https://developer.wordpress.org/reference/functions/get_post_type_labels">get_post_type_labels()</a>. </li>
+<li><b>'description'</b><br /><i><span class='type'>(string)</span></i> A short descriptive summary of what the post type is. </li>
+<li><b>'public'</b><br /><i><span class='type'>(bool)</span></i> Whether a post type is intended for use publicly either via the admin interface or by front-end users. While the default settings of $exclude_from_search, $publicly_queryable, $show_ui, and $show_in_nav_menus are inherited from public, each does not rely on this relationship and controls a very specific intention. Default false. </li>
+<li><b>'hierarchical'</b><br /><i><span class='type'>(bool)</span></i> Whether the post type is hierarchical (e.g. page). Default false. </li>
+<li><b>'exclude_from_search'</b><br /><i><span class='type'>(bool)</span></i> Whether to exclude posts with this post type from front end search results. Default is the opposite value of $public. </li>
+<li><b>'publicly_queryable'</b><br /><i><span class='type'>(bool)</span></i> Whether queries can be performed on the front end for the post type as part of <a href="https://developer.wordpress.org/reference/functions/parse_request">parse_request()</a>. Endpoints would include: &lt;em&gt; ?post_type={post_type_key} &lt;/em&gt; ?{post_type_key}={single_post_slug} &lt;em&gt; ?{post_type_query_var}={single_post_slug} If not set, the default is inherited from $public. </li>
+<li><b>'show_ui'</b><br /><i><span class='type'>(bool)</span></i> Whether to generate a default UI for managing this post type in the admin. Default is value of $public. </li>
+<li><b>'show_in_menu'</b><br /><i><span class='type'>(bool)</span></i> Where to show the post type in the admin menu. To work, $show_ui must be true. If true, the post type is shown in its own top level menu. If false, no menu is shown. If a string of an existing top level menu (eg. 'tools.php' or 'edit.php?post_type=page'), the post type will be placed as a sub-menu of that. Default is value of $show_ui. </li>
+<li><b>'show_in_nav_menus'</b><br /><i><span class='type'>(bool)</span></i> Makes this post type available for selection in navigation menus. Default is value $public. </li>
+<li><b>'show_in_admin_bar'</b><br /><i><span class='type'>(bool)</span></i> Makes this post type available via the admin bar. Default is value of $show_in_menu. </li>
+<li><b>'menu_position'</b><br /><i><span class='type'>(int)</span></i> The position in the menu order the post type should appear. To work, $show_in_menu must be true. Default null (at the bottom). </li>
+<li><b>'menu_icon'</b><br /><i><span class='type'>(string)</span></i> The url to the icon to be used for this menu. Pass a base64-encoded SVG using a data URI, which will be colored to match the color scheme -- this should begin with 'data:image/svg+xml;base64,'. Pass the name of a Dashicons helper class to use a font icon, e.g. 'dashicons-chart-pie'. Pass 'none' to leave div.wp-menu-image empty so an icon can be added via CSS. Defaults to use the posts icon. </li>
+<li><b>'capability_type'</b><br /><i><span class='type'>(string)</span></i> The string to use to build the read, edit, and delete capabilities. May be passed as an array to allow for alternative plurals when using this argument as a base to construct the capabilities, e.g. array('story', 'stories'). Default 'post'. </li>
+<li><b>'capabilities'</b><br /><i><span class='type'>(array)</span></i> Array of capabilities for this post type. $capability_type is used as a base to construct capabilities by default. <a href="https://developer.wordpress.org/reference/functions/get_post_type_capabilities">get_post_type_capabilities()</a>. </li>
+<li><b>'map_meta_cap'</b><br /><i><span class='type'>(bool)</span></i> Whether to use the internal default meta capability handling. Default false. </li>
+<li><b>'supports'</b><br /><i><span class='type'>(array)</span></i> An alias for calling <a href="https://developer.wordpress.org/reference/functions/add_post_type_support">add_post_type_support()</a> directly. Defaults to array containing 'title' &amp;amp; 'editor'. </li>
+<li><b>'register_meta_box_cb'</b><br /><i><span class='type'>(callback)</span></i> Provide a callback function that sets up the meta boxes for the edit form. Do remove_meta_box() and add_meta_box() calls in the callback. Default null. </li>
+<li><b>'taxonomies'</b><br /><i><span class='type'>(array)</span></i> An array of taxonomy identifiers that will be registered for the post type. Taxonomies can be registered later with <a href="https://developer.wordpress.org/reference/functions/register_taxonomy">register_taxonomy()</a> or <a href="https://developer.wordpress.org/reference/functions/register_taxonomy_for_object_type">register_taxonomy_for_object_type()</a>. </li>
+<li><b>'has_archive'</b><br /><i><span class='type'>(bool|string)</span></i> Whether there should be post type archives, or if a string, the archive slug to use. Will generate the proper rewrite rules if $rewrite is enabled. Default false. </li>
+<li><b>'rewrite'</b><br /><i><span class='type'>(bool|array)</span></i> { Triggers the handling of rewrites for this post type. To prevent rewrite, set to false. Defaults to true, using $post_type as slug. To specify rewrite rules, an array can be passed with any of these keys: </li>
+<li><b>'slug'</b><br /><i><span class='type'>(string)</span></i> Customize the permastruct slug. Defaults to $post_type key. </li>
+<li><b>'with_front'</b><br /><i><span class='type'>(bool)</span></i> Whether the permastruct should be prepended with WP_Rewrite::$front. Default true. </li>
+<li><b>'feeds'</b><br /><i><span class='type'>(bool)</span></i> Whether the feed permastruct should be built for this post type. Default is value of $has_archive. </li>
+<li><b>'pages'</b><br /><i><span class='type'>(bool)</span></i> Whether the permastruct should provide for pagination. Default true. </li>
+<li><b>'ep_mask'</b><br /><i><span class='type'>(const)</span></i> Endpoint mask to assign. If not specified and permalink_epmask is set, inherits from $permalink_epmask. If not specified and permalink_epmask is not set, defaults to EP_PERMALINK. } </li>
+<li><b>'query_var'</b><br /><i><span class='type'>(string|bool)</span></i> Sets the query_var key for this post type. Defaults to $post_type key. If false, a post type cannot be loaded at ?{query_var}={post_slug}. If specified as a string, the query ?{query_var_string}={post_slug} will be valid. </li>
+<li><b>'can_export'</b><br /><i><span class='type'>(bool)</span></i> Whether to allow this post type to be exported. Default true. </li>
+<li><b>'delete_with_user'</b><br /><i><span class='type'>(bool)</span></i> Whether to delete posts of this type when deleting a user. If true, posts of this type belonging to the user will be moved to trash when then user is deleted. If false, posts of this type belonging to the user will &lt;/em&gt;not* be trashed or deleted. If not set (the default), posts are trashed if post_type_supports('author'). Otherwise posts are not trashed or deleted. Default null. </li>
+<li><b>'_builtin'</b><br /><i><span class='type'>(bool)</span></i> FOR INTERNAL USE ONLY! True if this post type is a native or &quot;built-in&quot; post_type. Default false. </li>
+<li><b>'_edit_link'</b><br /><i><span class='type'>(string)</span></i> FOR INTERNAL USE ONLY! URL segment to use for edit link of this post type. Default 'post.php?post=%d'.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/create_initial_post_types/">create_initial_post_types()</a>
+							</li>
+																</ul>
+			</article>

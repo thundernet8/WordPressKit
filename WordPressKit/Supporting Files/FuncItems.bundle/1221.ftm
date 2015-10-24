@@ -1,0 +1,164 @@
+<article id="post-2230" class="post-2230 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-2-3-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/register_taxonomy/">register_taxonomy ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$object_type</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Create or modify a taxonomy object. Do not use before init.</p>
+	</section>
+
+
+	<section class="description">
+		<p>A simple function for creating or modifying a taxonomy object based on the parameters given. The function will accept an array (third optional parameter), along with strings for the taxonomy name and another string for the object type.</p>
+<p>Nothing is returned, so expect error maybe or use taxonomy_exists() to check whether taxonomy exists.</p>
+<p>Optional $args contents:</p>
+<ul>
+<li>label &#8211; Name of the taxonomy shown in the menu. Usually plural. If not set, labels[&#8216;name&#8217;] will be used.</li>
+<li>labels &#8211; An array of labels for this taxonomy.
+<ul>
+<li>By default tag labels are used for non-hierarchical types and category labels for hierarchical ones.</li>
+<li>You can see accepted values in <a href="https://developer.wordpress.org/reference/functions/get_taxonomy_labels">get_taxonomy_labels()</a>.</li>
+</ul>
+</li>
+<li>description &#8211; A short descriptive summary of what the taxonomy is for. Defaults to blank.</li>
+<li>public &#8211; If the taxonomy should be publicly queryable; //@TODO not implemented.
+<ul>
+<li>Defaults to true.</li>
+</ul>
+</li>
+<li>hierarchical &#8211; Whether the taxonomy is hierarchical (e.g. category). Defaults to false.</li>
+<li>show_ui &#8211; Whether to generate a default UI for managing this taxonomy in the admin.
+<ul>
+<li>If not set, the default is inherited from public.</li>
+</ul>
+</li>
+<li>show_in_menu &#8211; Whether to show the taxonomy in the admin menu.
+<ul>
+<li>If true, the taxonomy is shown as a submenu of the object type menu.</li>
+<li>If false, no menu is shown.</li>
+<li>show_ui must be true.</li>
+<li>If not set, the default is inherited from show_ui.</li>
+</ul>
+</li>
+<li>show_in_nav_menus &#8211; Makes this taxonomy available for selection in navigation menus.
+<ul>
+<li>If not set, the default is inherited from public.</li>
+</ul>
+</li>
+<li>show_tagcloud &#8211; Whether to list the taxonomy in the Tag Cloud Widget.
+<ul>
+<li>If not set, the default is inherited from show_ui.</li>
+</ul>
+</li>
+<li>show_in_quick_edit &#8211; Whether to show the taxonomy in the quick/bulk edit panel.
+<ul>
+<li>It not set, the default is inherited from show_ui.</li>
+</ul>
+</li>
+<li>show_admin_column &#8211; Whether to display a column for the taxonomy on its post type listing screens.
+<ul>
+<li>Defaults to false.</li>
+</ul>
+</li>
+<li>meta_box_cb &#8211; Provide a callback function for the meta box display.
+<ul>
+<li>If not set, defaults to post_categories_meta_box for hierarchical taxonomies and post_tags_meta_box for non-hierarchical.</li>
+<li>If false, no meta box is shown.</li>
+</ul>
+</li>
+<li>capabilities &#8211; Array of capabilities for this taxonomy.
+<ul>
+<li>You can see accepted values in this function.</li>
+</ul>
+</li>
+<li>rewrite &#8211; Triggers the handling of rewrites for this taxonomy. Defaults to true, using $taxonomy as slug.
+<ul>
+<li>To prevent rewrite, set to false.</li>
+<li>To specify rewrite rules, an array can be passed with any of these keys
+<ul>
+<li>&#8216;slug&#8217; =&gt; string Customize the permastruct slug. Defaults to $taxonomy key</li>
+<li>&#8216;with_front&#8217; =&gt; bool Should the permastruct be prepended with WP_Rewrite::$front. Defaults to true.</li>
+<li>&#8216;hierarchical&#8217; =&gt; bool Either hierarchical rewrite tag or not. Defaults to false.</li>
+<li>&#8216;ep_mask&#8217; =&gt; const Assign an endpoint mask.
+<ul>
+<li>If not specified, defaults to EP_NONE.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>query_var &#8211; Sets the query_var key for this taxonomy. Defaults to $taxonomy key
+<ul>
+<li>If false, a taxonomy cannot be loaded at ?{query_var}={term_slug}</li>
+<li>If specified as a string, the query ?{query_var_string}={term_slug} will be valid.</li>
+</ul>
+</li>
+<li>update_count_callback &#8211; Works much like a hook, in that it will be called when the count is updated.
+<ul>
+<li>Defaults to _update_post_term_count() for taxonomies attached to post types, which then confirms that the objects are published before counting them.</li>
+<li>Defaults to _update_generic_term_count() for taxonomies attached to other object types, such as links.</li>
+</ul>
+</li>
+<li>_builtin &#8211; true if this taxonomy is a native or &#8220;built-in&#8221; taxonomy. THIS IS FOR INTERNAL USE ONLY!</li>
+</ul>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Error|void)</span> WP_Error, if errors.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Taxonomy key, must not exceed 32 characters.</span>
+									</p>
+							</dd>
+									<dt>$object_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of the object type for the taxonomy object.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">See optional args description above.</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/create_initial_taxonomies/">create_initial_taxonomies()</a>
+							</li>
+																</ul>
+			</article>

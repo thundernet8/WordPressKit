@@ -1,0 +1,82 @@
+<article id="post-2604" class="post-2604 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_deprecated_file/">_deprecated_file ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$version</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$replacement</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$message</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Mark a file as deprecated and inform when it has been used.</p>
+	</section>
+
+
+	<section class="description">
+		<p>There is a hook deprecated_file_included that will be called that can be used to get the backtrace up to what file and function included the deprecated file.</p>
+<p>The current behavior is to trigger a user error if WP_DEBUG is true.</p>
+<p>This function is to be used in every file that is deprecated.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The file that was included.</span>
+									</p>
+							</dd>
+									<dt>$version</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The version of WordPress that deprecated the file.</span>
+									</p>
+							</dd>
+									<dt>$replacement</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The file that should have been included based on ABSPATH.                            </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$message</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> A message regarding the change. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_active_and_valid_plugins/">wp_get_active_and_valid_plugins()</a>
+							</li>
+																</ul>
+			</article>

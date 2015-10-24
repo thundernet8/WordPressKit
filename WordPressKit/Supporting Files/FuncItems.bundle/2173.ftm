@@ -1,0 +1,81 @@
+<article id="post-3684" class="post-3684 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_list_categories/">wp_list_categories ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display or retrieve the HTML list of categories.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The list of arguments is below:</p>
+<pre><code>'show_option_all' (string) - Text to display for showing all categories.
+'orderby' (string) default is 'ID' - What column to use for ordering the</code></pre>
+<p>categories.</p>
+<pre><code>'order' (string) default is 'ASC' - What direction to order categories.
+'show_count' (bool|int) default is 0 - Whether to show how many posts are</code></pre>
+<p>in the category.</p>
+<pre><code>'hide_empty' (bool|int) default is 1 - Whether to hide categories that</code></pre>
+<p>don&#8217;t have any posts attached to them.</p>
+<pre><code>'use_desc_for_title' (bool|int) default is 1 - Whether to use the</code></pre>
+<p>category description as the title attribute.</p>
+<pre><code>'feed' - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'feed_type' - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'feed_image' - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'child_of' (int) default is 0 - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'exclude' (string) - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'exclude_tree' (string) - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'echo' (bool|int) default is 1 - Whether to display or retrieve content.
+'current_category' (int) - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'hierarchical' (bool) - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'title_li' (string) - See <a href="https://developer.wordpress.org/reference/functions/get_categories">get_categories()</a>.
+'depth' (int) - The max depth.</code></pre>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|string)</span> HTML content only if 'echo' argument is 0.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category-template.php/">wp-includes/category-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Override default arguments.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_cats/">wp_list_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_categories/widget/">WP_Widget_Categories::widget()</a>
+							</li>
+																</ul>
+			</article>

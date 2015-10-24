@@ -1,0 +1,66 @@
+<article id="post-1267" class="post-1267 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_update_term_count_on_transition_post_status/">_update_term_count_on_transition_post_status ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$new_status</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$old_status</span>,  <span class="arg-type">WP_Post</span>&nbsp;<span class="arg-name">$post</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update the custom taxonomies&#8217; term counts when a post&#8217;s status is changed.</p>
+	</section>
+
+
+	<section class="description">
+		<p>For example, default posts term counts (for custom taxonomies) don&#8217;t include private / draft posts.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$new_status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">New post status.</span>
+									</p>
+							</dd>
+									<dt>$old_status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Old post status.</span>
+									</p>
+							</dd>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

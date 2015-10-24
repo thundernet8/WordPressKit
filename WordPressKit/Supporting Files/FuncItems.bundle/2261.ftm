@@ -1,0 +1,36 @@
+<article id="post-18600" class="post-18600 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_post_preview_js/">wp_post_preview_js ()</a></h1>
+
+	<section class="summary">
+		<p>Outputs a small JS snippet on preview tabs/windows to remove `window.name` on unload.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This prevents reusing the same tab for a preview when the user has navigated away.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

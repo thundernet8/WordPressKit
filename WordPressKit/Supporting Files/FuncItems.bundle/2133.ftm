@@ -1,0 +1,78 @@
+<article id="post-2960" class="post-2960 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_vars-php wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_is_mobile/">wp_is_mobile ()</a></h1>
+
+	<section class="summary">
+		<p>Test if the current browser runs on a mobile device (smart phone, tablet, etc.)</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/vars.php/">wp-includes/vars.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_shake_js/">wp_shake_js()</a>
+							</li>
+													<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/login_header/">login_header()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_ipad_meta/">_ipad_meta()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_form/">media_upload_form()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_customize_loader_settings/">_wp_customize_loader_settings()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_richedit/">user_can_richedit()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_device_can_upload/">_device_can_upload()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/_render/">WP_Admin_Bar::_render()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_plupload_default_settings/">wp_plupload_default_settings()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/editor_settings/">_WP_Editors::editor_settings()</a>
+							</li>
+																			<a href="#" class="show-more">Show 10 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

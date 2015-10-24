@@ -1,0 +1,83 @@
+<article id="post-4649" class="post-4649 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/touch_time/">touch_time ( <span class="arg-type">int|bool</span>&nbsp;<span class="arg-name">$edit</span>&nbsp;=&nbsp;<span class="arg-default">1</span>,  <span class="arg-type">int|bool</span>&nbsp;<span class="arg-name">$for_post</span>&nbsp;=&nbsp;<span class="arg-default">1</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$tab_index</span>,  <span class="arg-type">int|bool</span>&nbsp;<span class="arg-name">$multi</span> )</a></h1>
+
+	<section class="summary">
+		<p>Print out HTML form date elements for editing post or comment publish date.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$edit</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Accepts 1|true for editing the date, 0|false for adding the date.</span>
+									</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+									<dt>$for_post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Accepts 1|true for applying the date to a post, 0|false for a comment.</span>
+									</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+									<dt>$tab_index</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The tabindex attribute to add. Default 0.</span>
+									</p>
+							</dd>
+									<dt>$multi</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether the additional fields and buttons should be added.                            Default 0|false.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_submit_meta_box/">post_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/inline_edit/">WP_Posts_List_Table::inline_edit()</a>
+							</li>
+																</ul>
+			</article>

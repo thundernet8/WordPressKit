@@ -1,0 +1,43 @@
+<article id="post-4845" class="post-4845 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_upgrade-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_check_mysql_version/">wp_check_mysql_version ()</a></h1>
+
+	<section class="summary">
+		<p>Checks the version of the installed MySQL binary.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/upgrade.php/">wp-admin/includes/upgrade.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_upgrade/">wp_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_install/">wp_install()</a>
+							</li>
+																</ul>
+			</article>

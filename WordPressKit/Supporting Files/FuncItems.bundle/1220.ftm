@@ -1,0 +1,76 @@
+<article id="post-3142" class="post-3142 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-2-2-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use wp_register_sidebar_widget()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/register_sidebar_widget/">register_sidebar_widget ( <span class="arg-type">string|int</span>&nbsp;<span class="arg-name">$name</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$output_callback</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$classname</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Register widget for sidebar with backwards compatibility.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Allows $name to be an array that accepts either three elements to grab the first element and the third for the name or just uses the first element of the array for the name.</p>
+<p>Passes to <a href="https://developer.wordpress.org/reference/functions/wp_register_sidebar_widget">wp_register_sidebar_widget()</a> after argument list and backwards compatibility is complete.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Widget ID.</span>
+									</p>
+							</dd>
+									<dt>$output_callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Run when widget is called.</span>
+									</p>
+							</dd>
+									<dt>$classname</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Classname widget option.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$params</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">,... Widget parameters.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

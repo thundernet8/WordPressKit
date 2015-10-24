@@ -1,0 +1,59 @@
+<article id="post-2788" class="post-2788 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-php wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/cat_is_ancestor_of/">cat_is_ancestor_of ( <span class="arg-type">int|object</span>&nbsp;<span class="arg-name">$cat1</span>,  <span class="arg-type">int|object</span>&nbsp;<span class="arg-name">$cat2</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check if a category is an ancestor of another category.</p>
+	</section>
+
+
+	<section class="description">
+		<p>You can use either an id or the category object for both parameters. If you use an integer the category will be retrieved.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether $cat2 is child of $cat1</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category.php/">wp-includes/category.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$cat1</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">ID or object to check if this is the parent category.</span>
+									</p>
+							</dd>
+									<dt>$cat2</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The child category.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

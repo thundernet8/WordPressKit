@@ -1,0 +1,58 @@
+<article id="post-180" class="post-180 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_close_comments_for_old_posts/">_close_comments_for_old_posts ( <span class="arg-type">WP_Post</span>&nbsp;<span class="arg-name">$posts</span>,  <span class="arg-type">WP_Query</span>&nbsp;<span class="arg-name">$query</span> )</a></h1>
+
+	<section class="summary">
+		<p>Close comments on old posts on the fly, without any extra DB queries. Hooked to the_posts.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$posts</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post data object.</span>
+									</p>
+							</dd>
+									<dt>$query</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Query">WP_Query</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Query object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

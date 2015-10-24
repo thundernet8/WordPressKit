@@ -1,0 +1,81 @@
+<article id="post-347" class="post-347 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-0-0 wp-parser-since-4-1-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/comment_form/">comment_form ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span>,  <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$post_id</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Output a complete commenting form for use within a template.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Most strings and form fields may be controlled through the $args array passed into the function, while you may also choose to use the comment_form_default_fields filter to modify the array of default fields if you&#8217;d just like to add a new one or remove a single field. All fields are also individually passed through a filter of the form comment_form<em>field</em>$name where $name is the key used in the array of fields.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Default arguments and form fields to override. <ul class="param-hash"><li><b>'fields'</b><br /><i><span class='type'>(array)</span></i> { Default comment fields, filterable by default via the 'comment_form_default_fields' hook. </li>
+<li><b>'author'</b><br /><i><span class='type'>(string)</span></i> Comment author field HTML. </li>
+<li><b>'email'</b><br /><i><span class='type'>(string)</span></i> Comment author email field HTML. </li>
+<li><b>'url'</b><br /><i><span class='type'>(string)</span></i> Comment author URL field HTML. } </li>
+<li><b>'comment_field'</b><br /><i><span class='type'>(string)</span></i> The comment textarea field HTML. </li>
+<li><b>'must_log_in'</b><br /><i><span class='type'>(string)</span></i> HTML element for a 'must be logged in to comment' message. </li>
+<li><b>'logged_in_as'</b><br /><i><span class='type'>(string)</span></i> HTML element for a 'logged in as [user]' message. </li>
+<li><b>'comment_notes_before'</b><br /><i><span class='type'>(string)</span></i> HTML element for a message displayed before the comment form. Default 'Your email address will not be published.'. </li>
+<li><b>'comment_notes_after'</b><br /><i><span class='type'>(string)</span></i> HTML element for a message displayed after the comment form. </li>
+<li><b>'id_form'</b><br /><i><span class='type'>(string)</span></i> The comment form element id attribute. Default 'commentform'. </li>
+<li><b>'id_submit'</b><br /><i><span class='type'>(string)</span></i> The comment submit element id attribute. Default 'submit'. </li>
+<li><b>'class_submit'</b><br /><i><span class='type'>(string)</span></i> The comment submit element class attribute. Default 'submit'. </li>
+<li><b>'name_submit'</b><br /><i><span class='type'>(string)</span></i> The comment submit element name attribute. Default 'submit'. </li>
+<li><b>'title_reply'</b><br /><i><span class='type'>(string)</span></i> The translatable 'reply' button label. Default 'Leave a Reply'. </li>
+<li><b>'title_reply_to'</b><br /><i><span class='type'>(string)</span></i> The translatable 'reply-to' button label. Default 'Leave a Reply to %s', where %s is the author of the comment being replied to. </li>
+<li><b>'cancel_reply_link'</b><br /><i><span class='type'>(string)</span></i> The translatable 'cancel reply' button label. Default 'Cancel reply'. </li>
+<li><b>'label_submit'</b><br /><i><span class='type'>(string)</span></i> The translatable 'submit' button label. Default 'Post a comment'. </li>
+<li><b>'submit_button'</b><br /><i><span class='type'>(string)</span></i> HTML format for the Submit button. Default: '&lt;input name=&quot;%1$s&quot; type=&quot;submit&quot; id=&quot;%2$s&quot; class=&quot;%3$s&quot; value=&quot;%4$s&quot; /&gt;'. </li>
+<li><b>'submit_field'</b><br /><i><span class='type'>(string)</span></i> HTML format for the markup surrounding the Submit button and comment hidden fields. Default: '&lt;p class=&quot;form-submit&quot;&gt;%1$s %2$s&lt;/a&gt;', where %1$s is the submit button markup and %2$s is the comment hidden fields. </li>
+<li><b>'format'</b><br /><i><span class='type'>(string)</span></i> The comment form format. Default 'xhtml'. Accepts 'xhtml', 'html5'.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Post ID or WP_Post object to generate the form for. Default current post.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

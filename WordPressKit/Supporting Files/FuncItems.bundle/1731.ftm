@@ -1,0 +1,37 @@
+<article id="post-880" class="post-880 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-load-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. </div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/wpmu_current_site/">wpmu_current_site ()</a></h1>
+
+	<section class="summary">
+		<p>This deprecated function managed much of the site and network loading in multisite.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The current bootstrap code is now responsible for parsing the site and network load as well as setting the global $current_site object.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-load.php/">wp-includes/ms-load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,80 @@
+<article id="post-2617" class="post-2617 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/validate_file/">validate_file ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$allowed_files</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>File validates against allowed set of defined rules.</p>
+	</section>
+
+
+	<section class="description">
+		<p>A return value of &#8216;1&#8217; means that the $file contains either &#8216;..&#8217; or &#8216;./&#8217;. A return value of &#8216;2&#8217; means that the $file contains &#8216;:&#8217; after the first character. A return value of &#8216;3&#8217; means that the file is not in the allowed files list.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> 0 means nothing is wrong, greater than 0 means something was wrong.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">File path.</span>
+									</p>
+							</dd>
+									<dt>$allowed_files</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">List of allowed files.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_plugin/">validate_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_file_to_edit/">validate_file_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_active_and_valid_plugins/">wp_get_active_and_valid_plugins()</a>
+							</li>
+													<li>
+								<span>wp-includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_page_template/">get_page_template()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_active_network_plugins/">wp_get_active_network_plugins()</a>
+							</li>
+																</ul>
+			</article>

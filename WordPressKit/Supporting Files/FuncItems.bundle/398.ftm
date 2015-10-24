@@ -1,0 +1,67 @@
+<article id="post-896" class="post-896 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_blog_count/">get_blog_count ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$network_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>The number of active sites on your installation.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The count is cached and updated twice daily. This is not a live count.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$network_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Deprecated, not supported.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_network_dashboard_right_now/">wp_network_dashboard_right_now()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_version_check/">wp_version_check()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_is_large_network/">wp_is_large_network()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_sitestats/">get_sitestats()</a>
+							</li>
+																</ul>
+			</article>

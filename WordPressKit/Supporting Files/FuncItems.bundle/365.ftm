@@ -1,0 +1,92 @@
+<article id="post-3253" class="post-3253 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_archives_link/">get_archives_link ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$text</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$format</span>&nbsp;=&nbsp;<span class="arg-default">'html'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$before</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$after</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve archive link content based on predefined or custom code.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The format can be one of four styles. The &#8216;link&#8217; for head element, &#8216;option&#8217; for use in the select element, &#8216;html&#8217; for use in list (either ol or ul HTML elements). Custom content is also supported using the before and after parameters.</p>
+<p>The &#8216;link&#8217; format uses the <code>&lt;link&gt;</code> HTML element with the <strong>archives</strong> relationship. The before and after parameters are not used. The text parameter is used to describe the link.</p>
+<p>The &#8216;option&#8217; format uses the option HTML element for use in select element. The value is the url parameter and the before and after parameters are used between the text description.</p>
+<p>The &#8216;html&#8217; format, which is the default, uses the li HTML element for use in the list HTML elements. The before parameter is before the link and the after parameter is after the closing link.</p>
+<p>The custom format uses the before parameter before the link (&#8216;a&#8217; HTML element) and the after parameter after the closing link tag. If the above three values for the format are not used, then custom format is assumed.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> HTML link content for archive.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">URL to archive.</span>
+									</p>
+							</dd>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Archive text description.</span>
+									</p>
+							</dd>
+									<dt>$format</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Can be 'link', 'option', 'html', or custom.</span>
+									</p>
+								<p class="default">Default value: 'html'</p>
+							</dd>
+									<dt>$before</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$after</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_archives/">wp_get_archives()</a>
+							</li>
+																</ul>
+			</article>

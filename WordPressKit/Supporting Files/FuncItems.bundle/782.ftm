@@ -1,0 +1,67 @@
+<article id="post-3575" class="post-3575 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_l10n-php wp-parser-package-i18n wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_translations_for_domain/">get_translations_for_domain ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$domain</span> )</a></h1>
+
+	<section class="summary">
+		<p>Return the Translations instance for a text domain.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If there isn&#8217;t one, returns empty Translations instance.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(NOOP_Translations)</span> A Translations instance.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/l10n.php/">wp-includes/l10n.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$domain</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Text domain. Unique identifier for retrieving translated strings.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/translate/">translate()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/translate_with_gettext_context/">translate_with_gettext_context()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_n/">_n()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_nx/">_nx()</a>
+							</li>
+																</ul>
+			</article>

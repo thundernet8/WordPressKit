@@ -1,0 +1,98 @@
+<article id="post-3525" class="post-3525 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_strip_all_tags/">wp_strip_all_tags ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$string</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$remove_breaks</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Properly strip all HTML tags including script and style</p>
+	</section>
+
+
+	<section class="description">
+		<p>This differs from strip_tags() because it removes the contents of the <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> tags. E.g. <code>strip_tags( '&lt;script&gt;something&lt;/script&gt;' )</code> will return &#8216;something&#8217;. wp_strip_all_tags will return &#8221;</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The processed string.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">String containing HTML tags</span>
+									</p>
+							</dd>
+									<dt>$remove_breaks</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to remove left over line breaks and white space chars</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/single_row_columns/">WP_List_Table::single_row_columns()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/single_row/">WP_Users_List_Table::single_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_form_handler/">media_upload_form_handler()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_post/">edit_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_save_attachment/">wp_ajax_save_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_text_field/">sanitize_text_field()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_html_excerpt/">wp_html_excerpt()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_trim_words/">wp_trim_words()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_user/">sanitize_user()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

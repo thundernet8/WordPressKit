@@ -1,0 +1,111 @@
+<article id="post-3409" class="post-3409 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_generate_password/">wp_generate_password ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$length</span>&nbsp;=&nbsp;<span class="arg-default">12</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$special_chars</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$extra_special_chars</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Generates a random password drawn from the defined set of characters.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The random password.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$length</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The length of password to generate. </span>
+									</p>
+								<p class="default">Default value: 12</p>
+							</dd>
+									<dt>$special_chars</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to include standard special characters.                                  </span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$extra_special_chars</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to include other special characters.                                  Used when generating secret keys and salts. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/session.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_session_tokens/create/">WP_Session_Tokens::create()</a>
+							</li>
+													<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/retrieve_password/">retrieve_password()</a>
+							</li>
+													<li>
+								<span>wp-admin/network.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_step2/">network_step2()</a>
+							</li>
+													<li>
+								<span>wp-admin/install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/display_setup_form/">display_setup_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_install/">wp_install()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_new_user_notification/">wp_new_user_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_salt/">wp_salt()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_new_user/">register_new_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_activate_signup/">wpmu_activate_signup()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/generate_random_password/">generate_random_password()</a>
+							</li>
+																			<a href="#" class="show-more">Show 10 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

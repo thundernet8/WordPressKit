@@ -1,0 +1,158 @@
+<article id="post-3340" class="post-3340 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-1-2-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_mail/">wp_mail ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$to</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$subject</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$message</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$headers</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$attachments</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Send mail, similar to PHP&#8217;s mail</p>
+	</section>
+
+
+	<section class="description">
+		<p>A true return value does not automatically mean that the user received the email successfully. It just only means that the method used was able to process the request without any errors.</p>
+<p>Using the two &#8216;wp_mail_from&#8217; and &#8216;wp_mail_from_name&#8217; hooks allow from creating a from address like &#8216;Name <a href="mailto:email@address.com">email@address.com</a>&#8216; when both are set. If just &#8216;wp_mail_from&#8217; is set, then just the email address will be used with no name.</p>
+<p>The default content type is &#8216;text/plain&#8217; which does not allow using HTML. However, you can set the content type of the email by using the &#8216;wp_mail_content_type&#8217; filter.</p>
+<p>The default charset is based on the charset used on the blog. The charset can be set using the &#8216;wp_mail_charset&#8217; filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the email contents were sent successfully.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$to</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Array or comma-separated list of email addresses to send message.</span>
+									</p>
+							</dd>
+									<dt>$subject</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Email subject</span>
+									</p>
+							</dd>
+									<dt>$message</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Message contents</span>
+									</p>
+							</dd>
+									<dt>$headers</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Additional headers.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$attachments</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Files to attach.</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/retrieve_password/">retrieve_password()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/send_email/">WP_Automatic_Updater::send_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/send_debug_email/">WP_Automatic_Updater::send_debug_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_option_new_admin_email/">update_option_new_admin_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/send_confirmation_on_profile_email/">send_confirmation_on_profile_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_new_blog_notification/">wp_new_blog_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_password_change_notification/">wp_password_change_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_new_user_notification/">wp_new_user_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_notify_postauthor/">wp_notify_postauthor()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_notify_moderator/">wp_notify_moderator()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_user/">wp_update_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_welcome_user_notification/">wpmu_welcome_user_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/newblog_notify_siteadmin/">newblog_notify_siteadmin()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/newuser_notify_siteadmin/">newuser_notify_siteadmin()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_welcome_notification/">wpmu_welcome_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_signup_blog_notification/">wpmu_signup_blog_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_signup_user_notification/">wpmu_signup_user_notification()</a>
+							</li>
+																			<a href="#" class="show-more">Show 17 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

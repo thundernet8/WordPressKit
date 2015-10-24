@@ -1,0 +1,64 @@
+<article id="post-1091" class="post-1091 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_extended/">get_extended ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$post</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get extended entry info (&lt;!&#8211;more&#8211;&gt;).</p>
+	</section>
+
+
+	<section class="description">
+		<p>There should not be any space after the second dash and before the word &#8216;more&#8217;. There can be text or space(s) after the word &#8216;more&#8217;, but won&#8217;t be referenced.</p>
+<p>The returned array has &#8216;main&#8217;, &#8216;extended&#8217;, and &#8216;more_text&#8217; keys. Main has the text before the <code>&lt;!--more--&gt;</code>. The &#8216;extended&#8217; key has the content after the <code>&lt;!--more--&gt;</code> comment. The &#8216;more_text&#8217; key has the custom &#8220;Read More&#8221; text.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Post before ('main'), after ('extended'), and custom readmore ('more_text').</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post content.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_getpost/">wp_xmlrpc_server::mw_getPost()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_getrecentposts/">wp_xmlrpc_server::mw_getRecentPosts()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/_prepare_page/">wp_xmlrpc_server::_prepare_page()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,62 @@
+<article id="post-2650" class="post-2650 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_is_stream/">wp_is_stream ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$path</span> )</a></h1>
+
+	<section class="summary">
+		<p>Test if a given path is a stream URL</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if the path is a stream URL.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The resource path or URL.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_mkdir_p/">wp_mkdir_p()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor/make_image/">WP_Image_Editor::make_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor-gd.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor_gd/make_image/">WP_Image_Editor_GD::make_image()</a>
+							</li>
+																</ul>
+			</article>

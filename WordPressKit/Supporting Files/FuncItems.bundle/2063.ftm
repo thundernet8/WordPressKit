@@ -1,0 +1,45 @@
+<article id="post-2528" class="post-2528 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_nocache_headers/">wp_get_nocache_headers ()</a></h1>
+
+	<section class="summary">
+		<p>Get the header information to prevent caching.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The several different headers cover the different ways cache prevention is handled by different browsers</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> The associative array of header names and field values.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp/send_headers/">WP::send_headers()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/nocache_headers/">nocache_headers()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,51 @@
+<article id="post-890" class="post-890 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_bookmark-php wp-parser-package-bookmark wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/clean_bookmark_cache/">clean_bookmark_cache (&nbsp;<span class="arg-name">$bookmark_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Deletes bookmark cache</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/bookmark.php/">wp-includes/bookmark.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_user/">wp_delete_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_link/">wp_insert_link()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_link_cats/">wp_set_link_cats()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_link/">wp_delete_link()</a>
+							</li>
+																</ul>
+			</article>

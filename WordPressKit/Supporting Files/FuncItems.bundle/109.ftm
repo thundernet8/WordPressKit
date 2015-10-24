@@ -1,0 +1,67 @@
+<article id="post-4966" class="post-4966 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_taxonomy-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/category_exists/">category_exists ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$cat_name</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$parent</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check whether a category exists.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/taxonomy.php/">wp-admin/includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$cat_name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Category name.</span>
+									</p>
+							</dd>
+									<dt>$parent</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> ID of parent term.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_category/">wp_create_category()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_categories/">wp_create_categories()</a>
+							</li>
+																</ul>
+			</article>

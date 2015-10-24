@@ -1,0 +1,35 @@
+<article id="post-4682" class="post-4682 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_local_storage_notice/">_local_storage_notice ()</a></h1>
+
+	<section class="summary">
+		<p>Output the HTML for restoring the post data from DOM storage</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

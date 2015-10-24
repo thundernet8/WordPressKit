@@ -1,0 +1,83 @@
+<article id="post-1111" class="post-1111 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-3-0-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_type_labels/">get_post_type_labels ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$post_type_object</span> )</a></h1>
+
+	<section class="summary">
+		<p>Build an object with all post type labels out of a post type object</p>
+	</section>
+
+
+	<section class="description">
+		<p>Accepted keys of the label array in the post type object:</p>
+<ul>
+<li>name &#8211; general name for the post type, usually plural. The same and overridden
+<pre><code> by $post_type_object-&gt;label. Default is Posts/Pages</code></pre>
+</li>
+<li>singular_name &#8211; name for one object of this post type. Default is Post/Page</li>
+<li>add_new &#8211; Default is Add New for both hierarchical and non-hierarchical types.
+<pre><code>    When internationalizing this string, please use a gettext context
+    <a href="https://codex.wordpress.org/I18n_for_WordPress_Developers#Disambiguation_by_context">https://codex.wordpress.org/I18n_for_WordPress_Developers#Disambiguation_by_context</a>
+    matching your post type. Example: `_x( 'Add New', 'product' );`.</code></pre>
+</li>
+<li>add_new_item &#8211; Default is Add New Post/Add New Page.</li>
+<li>edit_item &#8211; Default is Edit Post/Edit Page.</li>
+<li>new_item &#8211; Default is New Post/New Page.</li>
+<li>view_item &#8211; Default is View Post/View Page.</li>
+<li>search_items &#8211; Default is Search Posts/Search Pages.</li>
+<li>not_found &#8211; Default is No posts found/No pages found.</li>
+<li>not_found_in_trash &#8211; Default is No posts found in Trash/No pages found in Trash.</li>
+<li>parent_item_colon &#8211; This string isn&#8217;t used on non-hierarchical types. In hierarchical
+<pre><code>              ones the default is 'Parent Page:'.</code></pre>
+</li>
+<li>all_items &#8211; String for the submenu. Default is All Posts/All Pages.</li>
+<li>featured_image &#8211; Default is Featured Image.</li>
+<li>set_featured_image &#8211; Default is Set featured image.</li>
+<li>remove_featured_image &#8211; Default is Remove featured image.</li>
+<li>use_featured_image &#8211; Default is Use as featured image.</li>
+<li>menu_name &#8211; Default is the same as <code>name</code>.</li>
+</ul>
+<p>Above, the first default value is for non-hierarchical post types (like posts) and the second one is for hierarchical post types (like pages).</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> object with all the labels as member variables.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_type_object</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post type object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type()</a>
+							</li>
+																</ul>
+			</article>

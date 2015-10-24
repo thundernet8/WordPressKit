@@ -1,0 +1,64 @@
+<article id="post-154" class="post-154 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-1-5-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_new_comment/">wp_new_comment ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$commentdata</span> )</a></h1>
+
+	<section class="summary">
+		<p>Adds a new comment to the database.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Filters new comment to ensure that the fields are sanitized and valid before inserting comment into database. Calls &#8216;comment_post&#8217; action with comment ID and whether comment is approved by WordPress. Also has &#8216;preprocess_comment&#8217; filter for processing the comment data before the function handles it.</p>
+<p>We use REMOTE_ADDR here directly. If you are behind a proxy, you should ensure that it is properly set, such as in wp-config.php, for your environment. See <a href="https://core.trac.wordpress.org/ticket/9235">https://core.trac.wordpress.org/ticket/9235</a></p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|false)</span> The ID of the comment on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$commentdata</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Contains information on the comment. See wp_insert_comment()                           for information on accepted arguments.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_replyto_comment/">wp_ajax_replyto_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/pingback_ping/">wp_xmlrpc_server::pingback_ping()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_newcomment/">wp_xmlrpc_server::wp_newComment()</a>
+							</li>
+																</ul>
+			</article>

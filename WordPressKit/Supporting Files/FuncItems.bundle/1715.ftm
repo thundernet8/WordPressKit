@@ -1,0 +1,89 @@
+<article id="post-1458" class="post-1458 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_nav-menu-template-php wp-parser-package-nav_menus wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/walk_nav_menu_tree/">walk_nav_menu_tree ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$items</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$depth</span>,  <span class="arg-type">object</span>&nbsp;<span class="arg-name">$r</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the HTML list content for nav menu items.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/nav-menu-template.php/">wp-includes/nav-menu-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$items</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$depth</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$r</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_add_menu_item/">wp_ajax_add_menu_item()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_ajax_menu_quick_search/">_wp_ajax_menu_quick_search()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_post_type_meta_box/">wp_nav_menu_item_post_type_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_taxonomy_meta_box/">wp_nav_menu_item_taxonomy_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_nav_menu_to_edit/">wp_get_nav_menu_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu/">wp_nav_menu()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

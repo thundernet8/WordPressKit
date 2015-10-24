@@ -1,0 +1,37 @@
+<article id="post-1758" class="post-1758 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_feed-php wp-parser-package-feed wp-parser-package-wordpress wp-parser-since-2-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/atom_enclosure/">atom_enclosure ()</a></h1>
+
+	<section class="summary">
+		<p>Display the atom enclosure for the current post.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Uses the global $post to check whether the post requires a password and if the user has the password for the post. If not then it will return before displaying.</p>
+<p>Also uses the function get_post_custom() to get the post&#8217;s &#8216;enclosure&#8217; metadata field and parses the value to display the enclosure(s). The enclosure(s) consist of link HTML tag(s) with a URI and other attributes.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/feed.php/">wp-includes/feed.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

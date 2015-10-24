@@ -1,0 +1,94 @@
+<article id="post-2153" class="post-2153 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/adjacent_post_link/">adjacent_post_link ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$format</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$link</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$in_same_term</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$excluded_terms</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$previous</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span>&nbsp;=&nbsp;<span class="arg-default">'category'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display adjacent post link.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Can be either next post link or previous.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$format</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Link anchor format.</span>
+									</p>
+							</dd>
+									<dt>$link</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Link permalink format.</span>
+									</p>
+							</dd>
+									<dt>$in_same_term</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether link should be in a same taxonomy term.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$excluded_terms</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Array or comma-separated list of excluded category IDs.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$previous</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to display link to previous or next post. </span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Taxonomy, if $in_same_term is true. </span>
+									</p>
+								<p class="default">Default value: 'category'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

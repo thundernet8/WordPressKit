@@ -1,0 +1,41 @@
+<article id="post-5000" class="post-5000 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_misc-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/iis7_save_url_rewrite_rules/">iis7_save_url_rewrite_rules ()</a></h1>
+
+	<section class="summary">
+		<p>Updates the IIS web.config file with the current rules if it is writable.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the permalinks do not require rewrite rules then the rules are deleted from the web.config file.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if web.config was updated successfully</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/misc.php/">wp-admin/includes/misc.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/flush_rules/">WP_Rewrite::flush_rules()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,116 @@
+<article id="post-1226" class="post-1226 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_update_attachment_metadata/">wp_update_attachment_metadata ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$post_id</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$data</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update metadata for an attachment.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|bool)</span> False if $post is invalid.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment ID.</span>
+									</p>
+							</dd>
+									<dt>$data</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment data.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-site-icon.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_site_icon/insert_attachment/">WP_Site_Icon::insert_attachment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_crop_image/">wp_ajax_crop_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_restore_image/">wp_restore_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_image/">wp_save_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_generate_attachment_metadata/">wp_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_handle_upload/">media_handle_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_handle_sideload/">media_handle_sideload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_post/">edit_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_save_attachment/">wp_ajax_save_attachment()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/insert_attachment/">Custom_Image_Header::insert_attachment()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_2/">Custom_Image_Header::step_2()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/handle_upload/">Custom_Background::handle_upload()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_generate_attachment_metadata/">wp_maybe_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_newmediaobject/">wp_xmlrpc_server::mw_newMediaObject()</a>
+							</li>
+																			<a href="#" class="show-more">Show 14 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

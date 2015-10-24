@@ -1,0 +1,64 @@
+<article id="post-3641" class="post-3641 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-3-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_random_header_image/">is_random_header_image ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span>&nbsp;=&nbsp;<span class="arg-default">'any'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check if random header image is in use.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Always true if user expressly chooses the option in Appearance &gt; Header. Also true if theme has multiple header images registered, no specific header image is chosen, and theme turns on random headers with add_theme_support().</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The random pool to use. any|default|uploaded</span>
+									</p>
+								<p class="default">Default value: 'any'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/show_header_selector/">Custom_Image_Header::show_header_selector()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_header_image/">get_header_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_custom_header/">get_custom_header()</a>
+							</li>
+																</ul>
+			</article>

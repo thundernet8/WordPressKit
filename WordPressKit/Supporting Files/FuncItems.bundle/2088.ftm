@@ -1,0 +1,54 @@
+<article id="post-16715" class="post-16715 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_split_terms/">wp_get_split_terms ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$old_term_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get data about terms that previously shared a single term_id, but have since been split.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Array of new term IDs, keyed by taxonomy.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$old_term_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Term ID. This is the old, pre-split term ID.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_split_term/">wp_get_split_term()</a>
+							</li>
+																</ul>
+			</article>

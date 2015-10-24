@@ -1,0 +1,50 @@
+<article id="post-3189" class="post-3189 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. </div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/clean_page_cache/">clean_page_cache ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Will clean the page in the cache.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Clean (read: delete) page from cache that matches $id. Will also clean cache associated with &#8216;all_page_ids&#8217; and &#8216;get_pages&#8217;.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Page ID to clean</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,52 @@
+<article id="post-984" class="post-984 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_upload_space_available/">get_upload_space_available ()</a></h1>
+
+	<section class="summary">
+		<p>Determines if there is any upload space left in the current blog&#8217;s quota.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> of upload space available in bytes</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/fix_import_form_size/">fix_import_form_size()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_upload_size/">check_upload_size()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_upload_space_available/">is_upload_space_available()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upload_size_limit_filter/">upload_size_limit_filter()</a>
+							</li>
+																</ul>
+			</article>

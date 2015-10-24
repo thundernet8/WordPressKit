@@ -1,0 +1,43 @@
+<article id="post-4671" class="post-4671 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/iframe_footer/">iframe_footer ()</a></h1>
+
+	<section class="summary">
+		<p>Generic Iframe footer for use with Thickbox</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_theme_information/">install_theme_information()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugin_information/">install_plugin_information()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,63 @@
+<article id="post-1378" class="post-1378 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-wordpress wp-parser-package-media wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_gallery/">get_post_gallery ( <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$post</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$html</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check a specified post&#8217;s content for gallery and, if present, return the first</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|array)</span> Gallery data and srcs parsed from the expanded shortcode.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post ID or WP_Post object. Default is global $post.</span>
+									</p>
+							</dd>
+									<dt>$html</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to return HTML or data. Default is true.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_gallery_images/">get_post_gallery_images()</a>
+							</li>
+																</ul>
+			</article>

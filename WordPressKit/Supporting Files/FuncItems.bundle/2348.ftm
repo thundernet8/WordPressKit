@@ -1,0 +1,78 @@
+<article id="post-757" class="post-757 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_nav-menu-php wp-parser-package-nav_menus wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_setup_nav_menu_item/">wp_setup_nav_menu_item ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$menu_item</span> )</a></h1>
+
+	<section class="summary">
+		<p>Decorates a menu item object with the shared navigation menu item properties.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Properties:</p>
+<ul>
+<li>ID:               The term_id if the menu item represents a taxonomy term.</li>
+<li>attr_title:       The title attribute of the link element for this menu item.</li>
+<li>classes:          The array of class attribute values for the link element of this menu item.</li>
+<li>db_id:            The DB ID of this item as a nav_menu_item object, if it exists (0 if it doesn&#8217;t exist).</li>
+<li>description:      The description of this menu item.</li>
+<li>menu_item_parent: The DB ID of the nav_menu_item that is this item&#8217;s menu parent, if any. 0 otherwise.</li>
+<li>object:           The type of object originally represented, such as &#8220;category,&#8221; &#8220;post&#8221;, or &#8220;attachment.&#8221;</li>
+<li>object_id:        The DB ID of the original object this menu item represents, e.g. ID for posts and term_id for categories.</li>
+<li>post_parent:      The DB ID of the original object&#8217;s parent object, if any (0 otherwise).</li>
+<li>post_title:       A &#8220;no title&#8221; label if menu item represents a post that lacks a title.</li>
+<li>target:           The target attribute of the link element for this menu item.</li>
+<li>title:            The title of this menu item.</li>
+<li>type:             The family of objects originally represented, such as &#8220;post_type&#8221; or &#8220;taxonomy.&#8221;</li>
+<li>type_label:       The singular label used to describe this type of menu item.</li>
+<li>url:              The URL to which this menu item points.</li>
+<li>xfn:              The XFN relationship expressed in the link of this menu item.</li>
+<li>_invalid:         Whether the menu item represents an object that no longer exists.</li>
+</ul>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> $menu_item The menu item with standard menu item properties.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/nav-menu.php/">wp-includes/nav-menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$menu_item</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The menu item to modify.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menu_item_setting/value/">WP_Customize_Nav_Menu_Item_Setting::value()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_add_menu_item/">wp_ajax_add_menu_item()</a>
+							</li>
+																</ul>
+			</article>

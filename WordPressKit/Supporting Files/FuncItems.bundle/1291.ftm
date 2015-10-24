@@ -1,0 +1,110 @@
+<article id="post-3433" class="post-3433 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/sanitize_user/">sanitize_user ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$username</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$strict</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sanitizes a username, stripping out unsafe characters.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Removes tags, octets, entities, and if strict is enabled, will only keep alphanumeric, _, space, ., -, @. After sanitizing, it passes the username, raw username (the username in the parameter), and the value of $strict as parameters for the &#8216;sanitize_user&#8217; filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The sanitized username, after passing through filters.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$username</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The username to be sanitized.</span>
+									</p>
+							</dd>
+									<dt>$strict</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">If set limits $username to specific characters. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/display_setup_form/">display_setup_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugin_information/">install_plugin_information()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_user/">edit_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user/get_data_by/">WP_User::get_data_by()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_authenticate/">wp_authenticate()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_new_user/">register_new_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_username/">validate_username()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_user/">wp_insert_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_create_user/">wpmu_create_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_create_blog/">wpmu_create_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_validate_user_signup/">wpmu_validate_user_signup()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_signup_user/">wpmu_signup_user()</a>
+							</li>
+																			<a href="#" class="show-more">Show 12 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

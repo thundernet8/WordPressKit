@@ -1,0 +1,40 @@
+<article id="post-3694" class="post-3694 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/walk_category_tree/">walk_category_tree ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve HTML list content for category list.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category-template.php/">wp-includes/category-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_categories/">wp_list_categories()</a>
+							</li>
+																</ul>
+			</article>

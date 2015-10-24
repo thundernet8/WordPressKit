@@ -1,0 +1,36 @@
+<article id="post-4046" class="post-4046 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_press-this-php wp-parser-package-press_this wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/press_it/">press_it ()</a></h1>
+
+	<section class="summary">
+		<p>Press It form handler.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> Post ID</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/press-this.php/">wp-admin/press-this.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

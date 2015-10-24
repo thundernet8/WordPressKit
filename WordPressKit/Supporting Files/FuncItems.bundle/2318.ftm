@@ -1,0 +1,64 @@
+<article id="post-1000" class="post-1000 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_revision-php wp-parser-package-post_revisions wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_restore_post_revision/">wp_restore_post_revision ( <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$revision_id</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$fields</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Restores a post to the specified revision.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Can restore a past revision using all fields of the post revision, or only selected fields.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|false|null)</span> Null if error, false if no fields to restore, (int) post ID if success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/revision.php/">wp-includes/revision.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$revision_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Revision ID or revision object.</span>
+									</p>
+							</dd>
+									<dt>$fields</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> What fields to restore from. Defaults to all.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_restorerevision/">wp_xmlrpc_server::wp_restoreRevision()</a>
+							</li>
+																</ul>
+			</article>

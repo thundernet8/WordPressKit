@@ -1,0 +1,121 @@
+<article id="post-4655" class="post-4655 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_meta_box/">add_meta_box ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$callback</span>,  <span class="arg-type">string|WP_Screen</span>&nbsp;<span class="arg-name">$screen</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">'advanced'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$priority</span>&nbsp;=&nbsp;<span class="arg-default">'default'</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$callback_args</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add a meta box to an edit form.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">String for use in the 'id' attribute of tags.</span>
+									</p>
+							</dd>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Title of the meta box.</span>
+									</p>
+							</dd>
+									<dt>$callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Function that fills the box with the desired content.                                        The function should echo its output.</span>
+									</p>
+							</dd>
+									<dt>$screen</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="WP_Screen">WP_Screen</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The screen on which to show the box (like a post                                        type, 'link', or 'comment'). Default is the current screen.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The context within the screen where the boxes                                        should display. Available contexts vary from screen to                                        screen. Post edit screen contexts include 'normal', 'side',                                        and 'advanced'. Comments screen contexts include 'normal'                                        and 'side'. Menus meta boxes (accordion sections) all use                                        the 'side' context. Global </span>
+									</p>
+								<p class="default">Default value: 'advanced'</p>
+							</dd>
+									<dt>$priority</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The priority within the context where the boxes                                        should show ('high', 'low'). </span>
+									</p>
+								<p class="default">Default value: 'default'</p>
+							</dd>
+									<dt>$callback_args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Data that should be set as the $args property                                        of the box array (which is the second parameter passed                                        to your callback). </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_add_dashboard_widget/">wp_add_dashboard_widget()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_meta_boxes/">do_meta_boxes()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_setup/">wp_nav_menu_setup()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_post_type_meta_boxes/">wp_nav_menu_post_type_meta_boxes()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_taxonomy_meta_boxes/">wp_nav_menu_taxonomy_meta_boxes()</a>
+							</li>
+																</ul>
+			</article>

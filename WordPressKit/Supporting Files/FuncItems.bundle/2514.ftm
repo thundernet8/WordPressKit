@@ -1,0 +1,35 @@
+<article id="post-3655" class="post-3655 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_custom_header_background_just_in_time/">_custom_header_background_just_in_time ()</a></h1>
+
+	<section class="summary">
+		<p>Registers the internal custom header and background routines.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

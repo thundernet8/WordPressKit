@@ -1,0 +1,100 @@
+<article id="post-4910" class="post-4910 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_image-php wp-parser-package-wordpress wp-parser-package-administration wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_generate_attachment_metadata/">wp_generate_attachment_metadata ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$attachment_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span> )</a></h1>
+
+	<section class="summary">
+		<p>Generate post thumbnail attachment meta data.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> Metadata for attachment.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/image.php/">wp-admin/includes/image.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attachment_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment Id to process.</span>
+									</p>
+							</dd>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Filepath of the Attached image.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-site-icon.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_site_icon/insert_attachment/">WP_Site_Icon::insert_attachment()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_crop_image/">wp_ajax_crop_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_generate_attachment_metadata/">wp_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_handle_upload/">media_handle_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_handle_sideload/">media_handle_sideload()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/insert_attachment/">Custom_Image_Header::insert_attachment()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_2/">Custom_Image_Header::step_2()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/handle_upload/">Custom_Background::handle_upload()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_generate_attachment_metadata/">wp_maybe_generate_attachment_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/mw_newmediaobject/">wp_xmlrpc_server::mw_newMediaObject()</a>
+							</li>
+																			<a href="#" class="show-more">Show 10 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

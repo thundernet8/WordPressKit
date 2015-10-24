@@ -1,0 +1,118 @@
+<article id="post-3556" class="post-3556 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_l10n-php wp-parser-package-i18n wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_nx/">_nx ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$single</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$plural</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$number</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$domain</span>&nbsp;=&nbsp;<span class="arg-default">'default'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the plural or single form based on the supplied amount with gettext context.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This is a hybrid of _n() and _x(). It supports contexts and plurals.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Either $single or $plural translated text with context.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/l10n.php/">wp-includes/l10n.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$single</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The text that will be used if $number is 1.</span>
+									</p>
+							</dd>
+									<dt>$plural</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The text that will be used if $number is not 1.</span>
+									</p>
+							</dd>
+									<dt>$number</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The number to compare against to use either $single or $plural.</span>
+									</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Context information for the translators.</span>
+									</p>
+							</dd>
+									<dt>$domain</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Text domain. Unique identifier for retrieving translated strings.</span>
+									</p>
+								<p class="default">Default value: 'default'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/get_views/">WP_MS_Users_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugins-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugins_list_table/get_views/">WP_Plugins_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-themes-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_themes_list_table/get_views/">WP_MS_Themes_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_right_now/">wp_dashboard_right_now()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/get_views/">WP_Users_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-media-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_media_list_table/get_views/">WP_Media_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/get_views/">WP_Posts_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/translate_nooped_plural/">translate_nooped_plural()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

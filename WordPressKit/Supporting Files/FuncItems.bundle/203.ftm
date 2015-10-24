@@ -1,0 +1,80 @@
+<article id="post-4756" class="post-4756 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/deactivate_plugins/">deactivate_plugins ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$plugins</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$silent</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$network_wide</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Deactivate a single plugin or multiple plugins.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The deactivation hook is disabled by the plugin upgrader by using the $silent parameter.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$plugins</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Single plugin or list of plugins to deactivate.</span>
+									</p>
+							</dd>
+									<dt>$silent</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Prevent calling deactivation hooks. Default is false.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$network_wide</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether to deactivate the plugin for all sites in the network. 	A value of null (the default) will deactivate plugins for both the site and the network.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/deactivate_plugin_before_upgrade/">Plugin_Upgrader::deactivate_plugin_before_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_380/">upgrade_380()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_active_plugins/">validate_active_plugins()</a>
+							</li>
+																</ul>
+			</article>

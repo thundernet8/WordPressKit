@@ -1,0 +1,66 @@
+<article id="post-1284" class="post-1284 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/">set_post_thumbnail_size ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$width</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$height</span>,  <span class="arg-type">bool|array</span>&nbsp;<span class="arg-name">$crop</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Registers an image size for the post thumbnail.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$width</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Image width in pixels.</span>
+									</p>
+							</dd>
+									<dt>$height</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Image height in pixels.</span>
+									</p>
+							</dd>
+									<dt>$crop</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to crop images to specified height and width or resize.                           An array can specify positioning of the crop area. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

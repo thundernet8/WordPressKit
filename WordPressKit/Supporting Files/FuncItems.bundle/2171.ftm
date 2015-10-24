@@ -1,0 +1,71 @@
+<article id="post-819" class="post-819 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_author-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_list_authors/">wp_list_authors ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>List all the authors of the blog, with several options available.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> The output, if echo is set to false.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/author-template.php/">wp-includes/author-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of default arguments. <ul class="param-hash"><li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> How to sort the authors. Accepts 'nicename', 'email', 'url', 'registered', 'user_nicename', 'user_email', 'user_url', 'user_registered', 'name', 'display_name', 'post_count', 'ID', 'meta_value', 'user_login'. Default 'name'. </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Sorting direction for $orderby. Accepts 'ASC', 'DESC'. Default 'ASC'. </li>
+<li><b>'number'</b><br /><i><span class='type'>(int)</span></i> Maximum authors to return or display. Default empty (all authors). </li>
+<li><b>'optioncount'</b><br /><i><span class='type'>(bool)</span></i> Show the count in parenthesis next to the author's name. Default false. </li>
+<li><b>'exclude_admin'</b><br /><i><span class='type'>(bool)</span></i> Whether to exclude the 'admin' account, if it exists. Default false. </li>
+<li><b>'show_fullname'</b><br /><i><span class='type'>(bool)</span></i> Whether to show the author's full name. Default false. </li>
+<li><b>'hide_empty'</b><br /><i><span class='type'>(bool)</span></i> Whether to hide any authors with no posts. Default true. </li>
+<li><b>'feed'</b><br /><i><span class='type'>(string)</span></i> If not empty, show a link to the author's feed and use this text as the alt parameter of the link. </li>
+<li><b>'feed_image'</b><br /><i><span class='type'>(string)</span></i> If not empty, show a link to the author's feed and use this image URL as clickable anchor. </li>
+<li><b>'feed_type'</b><br /><i><span class='type'>(string)</span></i> The feed type to link to, such as 'rss2'. Defaults to default feed type. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(bool)</span></i> Whether to output the result or instead return it. Default true. </li>
+<li><b>'style'</b><br /><i><span class='type'>(string)</span></i> If 'list', each author is wrapped in an &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; element, otherwise the authors will be separated by commas. </li>
+<li><b>'html'</b><br /><i><span class='type'>(bool)</span></i> Whether to list the items in HTML form or plaintext. Default true. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(string)</span></i> An array, comma-, or space-separated list of author IDs to exclude. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(string)</span></i> An array, comma-, or space-separated list of author IDs to include.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_authors/">list_authors()</a>
+							</li>
+																</ul>
+			</article>

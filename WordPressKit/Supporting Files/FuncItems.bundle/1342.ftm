@@ -1,0 +1,66 @@
+<article id="post-3246" class="post-3246 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/single_cat_title/">single_cat_title ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$prefix</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$display</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display or retrieve page title for category archive.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This is useful for category template file or files, because it is optimized for category page title and with less overhead than <a href="https://developer.wordpress.org/reference/functions/wp_title">wp_title()</a>.</p>
+<p>It does not support placing the separator after the title, but by leaving the prefix parameter empty, you can set the title separator manually. The prefix does not automatically place a space between the prefix, so if there should be a space, the parameter value will need to have it at the end.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> Title when retrieving.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$prefix</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> What to display before the title.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$display</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Whether to display or retrieve title.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_archive_title/">get_the_archive_title()</a>
+							</li>
+																</ul>
+			</article>

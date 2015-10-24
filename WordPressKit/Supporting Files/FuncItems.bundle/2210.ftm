@@ -1,0 +1,70 @@
+<article id="post-4581" class="post-4581 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_media-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_media_insert_url_form/">wp_media_insert_url_form ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$default_view</span>&nbsp;=&nbsp;<span class="arg-default">'image'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Creates the form for external url</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> the form html</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/media.php/">wp-admin/includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$default_view</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'image'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_image/">type_url_form_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_audio/">type_url_form_audio()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_video/">type_url_form_video()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_file/">type_url_form_file()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_type_url_form/">media_upload_type_url_form()</a>
+							</li>
+																</ul>
+			</article>

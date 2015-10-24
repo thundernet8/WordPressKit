@@ -1,0 +1,64 @@
+<article id="post-1304" class="post-1304 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/gallery_shortcode/">gallery_shortcode ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$attr</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds the Gallery shortcode output.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This implements the functionality of the Gallery Shortcode for displaying WordPress images on a post.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> HTML content to display gallery.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attributes of the gallery shortcode. <ul class="param-hash"><li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Order of the images in the gallery. Default 'ASC'. Accepts 'ASC', 'DESC'. </li>
+<li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> The field to use when ordering the images. Default 'menu_order ID'. Accepts any valid SQL ORDERBY statement. </li>
+<li><b>'id'</b><br /><i><span class='type'>(int)</span></i> Post ID. </li>
+<li><b>'itemtag'</b><br /><i><span class='type'>(string)</span></i> HTML tag to use for each image in the gallery. Default 'dl', or 'figure' when the theme registers HTML5 gallery support. </li>
+<li><b>'icontag'</b><br /><i><span class='type'>(string)</span></i> HTML tag to use for each image's icon. Default 'dt', or 'div' when the theme registers HTML5 gallery support. </li>
+<li><b>'captiontag'</b><br /><i><span class='type'>(string)</span></i> HTML tag to use for each image's caption. Default 'dd', or 'figcaption' when the theme registers HTML5 gallery support. </li>
+<li><b>'columns'</b><br /><i><span class='type'>(int)</span></i> Number of columns of images to display. Default 3. </li>
+<li><b>'size'</b><br /><i><span class='type'>(string)</span></i> Size of the images to display. Default 'thumbnail'. </li>
+<li><b>'ids'</b><br /><i><span class='type'>(string)</span></i> A comma-separated list of IDs of attachments to display. Default empty. </li>
+<li><b>'include'</b><br /><i><span class='type'>(string)</span></i> A comma-separated list of IDs of attachments to include. Default empty. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(string)</span></i> A comma-separated list of IDs of attachments to exclude. Default empty. </li>
+<li><b>'link'</b><br /><i><span class='type'>(string)</span></i> What to link each image to. Default empty (links to the attachment page). Accepts 'file', 'none'.</li>
+</li></ul>
+</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

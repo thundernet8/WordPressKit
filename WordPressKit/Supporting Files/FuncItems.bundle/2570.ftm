@@ -1,0 +1,52 @@
+<article id="post-2586" class="post-2586 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_mce_set_direction/">_mce_set_direction ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$input</span> )</a></h1>
+
+	<section class="summary">
+		<p>Set the localized direction for MCE plugin.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will only set the direction to &#8216;rtl&#8217;, if the WordPress locale has the text direction set to &#8216;rtl&#8217;.</p>
+<p>Fills in the &#8216;directionality&#8217; setting, enables the &#8216;directionality&#8217; plugin, and adds the &#8216;ltr&#8217; button to &#8216;toolbar1&#8217;, formerly &#8216;theme_advanced_buttons1&#8217; array keys. These keys are then returned in the $input (TinyMCE settings) array.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Direction set for 'rtl', if needed by locale.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$input</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">MCE settings array.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

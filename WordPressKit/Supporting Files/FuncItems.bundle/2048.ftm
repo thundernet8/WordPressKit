@@ -1,0 +1,68 @@
+<article id="post-4978" class="post-4978 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_schema-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_db_schema/">wp_get_db_schema ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$scope</span>&nbsp;=&nbsp;<span class="arg-default">'all'</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$blog_id</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the SQL for creating database tables.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The SQL needed to create the requested tables.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/schema.php/">wp-admin/includes/schema.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$scope</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The tables for which to retrieve SQL. Can be all, global, ms_global, or blog tables. Defaults to all.</span>
+									</p>
+								<p class="default">Default value: 'all'</p>
+							</dd>
+									<dt>$blog_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The blog ID for which to retrieve SQL. Default is the current blog ID.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_network/">install_network()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dbdelta/">dbDelta()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,76 @@
+<article id="post-3461" class="post-3461 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_split_str_by_whitespace/">_split_str_by_whitespace ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$string</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$goal</span> )</a></h1>
+
+	<section class="summary">
+		<p>Breaks a string into chunks by splitting at whitespace characters.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The length of each returned chunk is as close to the specified length goal as possible, with the caveat that each chunk includes its trailing delimiter. Chunks longer than the goal are guaranteed to not have any inner whitespace.</p>
+<p>Joining the returned chunks with empty delimiters reconstructs the input string losslessly.</p>
+<p>Input string must have no null characters (or eventual transformations on output chunks must not care about null characters)</p>
+<pre><code>_split_str_by_whitespace( "1234 67890 1234 67890a cd 1234   890 123456789 1234567890a    45678   1 3 5 7 90 ", 10 ) ==
+array (
+    0 =&gt; '1234 67890 ',  // 11 characters: Perfect split
+    1 =&gt; '1234 ',        //  5 characters: '1234 67890a' was too long
+    2 =&gt; '67890a cd ',   // 10 characters: '67890a cd 1234' was too long
+    3 =&gt; '1234   890 ',  // 11 characters: Perfect split
+    4 =&gt; '123456789 ',   // 10 characters: '123456789 1234567890a' was too long
+    5 =&gt; '1234567890a ', // 12 characters: Too long, but no inner whitespace on which to split
+    6 =&gt; '   45678   ',  // 11 characters: Perfect split
+    7 =&gt; '1 3 5 7 90 ',  // 11 characters: End of $string
+);</code></pre>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Numeric array of chunks.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The string to split.</span>
+									</p>
+							</dd>
+									<dt>$goal</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The desired chunk length.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/make_clickable/">make_clickable()</a>
+							</li>
+																</ul>
+			</article>

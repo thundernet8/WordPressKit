@@ -1,0 +1,57 @@
+<article id="post-1564" class="post-1564 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/update_user_caches/">update_user_caches ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$user</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update all user caches</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User object to be cached</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user/get_data_by/">WP_User::get_data_by()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/cache_users/">cache_users()</a>
+							</li>
+																</ul>
+			</article>

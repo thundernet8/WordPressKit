@@ -1,0 +1,75 @@
+<article id="post-2764" class="post-2764 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_load-php wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_load_translations_early/">wp_load_translations_early ()</a></h1>
+
+	<section class="summary">
+		<p>Attempt an early load of translations.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Used for errors encountered during the initial loading process, before the locale has been properly detected and loaded.</p>
+<p>Designed for unusual load sequences (like setup-config.php) or for when the script will then terminate with an error, otherwise there is a risk that a file can be double-included.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/load.php/">wp-includes/load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_check_php_mysql_versions/">wp_check_php_mysql_versions()</a>
+							</li>
+													<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maintenance/">wp_maintenance()</a>
+							</li>
+													<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_wpdb_vars/">wp_set_wpdb_vars()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dead_db/">dead_db()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_blog_installed/">is_blog_installed()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/ms_not_installed/">ms_not_installed()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/select/">wpdb::select()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/print_error/">wpdb::print_error()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/db_connect/">wpdb::db_connect()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

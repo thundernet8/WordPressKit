@@ -1,0 +1,59 @@
+<article id="post-904" class="post-904 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu-2-6-5">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_blog_id_from_url/">get_blog_id_from_url ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$domain</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$path</span>&nbsp;=&nbsp;<span class="arg-default">'/'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get a blog&#8217;s numeric ID from its URL.</p>
+	</section>
+
+
+	<section class="description">
+		<p>On a subdirectory installation like example.com/blog1/, $domain will be the root &#8216;example.com&#8217; and $path the subdirectory &#8216;/blog1/&#8217;. With subdomains like blog1.example.com, $domain is &#8216;blog1.example.com&#8217; and $path is &#8216;/&#8217;.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> 0 if no blog found, otherwise the ID of the matching blog</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$domain</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Not required for subdomain installations.</span>
+									</p>
+								<p class="default">Default value: '/'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

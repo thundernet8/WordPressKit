@@ -1,0 +1,327 @@
+<article id="post-1631" class="post-1631 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_option-php wp-parser-package-wordpress wp-parser-package-option wp-parser-since-1-0-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/update_option/">update_option ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$option</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$value</span>,  <span class="arg-type">string|bool</span>&nbsp;<span class="arg-name">$autoload</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update the value of an option that was already added.</p>
+	</section>
+
+
+	<section class="description">
+		<p>You do not need to serialize values. If the value needs to be serialized, then it will be serialized before it is inserted into the database. Remember, resources can not be serialized or added as an option.</p>
+<p>If the option does not exist, then the option will be added with the option value, with an <code>$autoload</code> value of &#8216;yes&#8217;.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> False if value was not updated and true if value was updated.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/option.php/">wp-includes/option.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$option</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Option name. Expected to not be SQL-escaped.</span>
+									</p>
+							</dd>
+									<dt>$value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Option value. Must be serializable if non-scalar. Expected to not be SQL-escaped.</span>
+									</p>
+							</dd>
+									<dt>$autoload</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to load the option when WordPress starts up. For existing options,                              &lt;code&gt;$autoload&lt;/code&gt; can only be updated using &lt;code&gt;update_option()&lt;/code&gt; if &lt;code&gt;$value&lt;/code&gt; is also changed.                              Accepts 'yes'|true to enable or 'no'|false to disable. For non-existent options,                              the default value is 'yes'. </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menu_setting/update/">WP_Customize_Nav_Menu_Setting::update()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_batch_split_terms/">_wp_batch_split_terms()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_430/">upgrade_430()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_400/">upgrade_400()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/run/">WP_Automatic_Updater::run()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugins-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugins_list_table/prepare_items/">WP_Plugins_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_option_new_admin_email/">update_option_new_admin_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/send_confirmation_on_profile_email/">send_confirmation_on_profile_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_recently_edited/">update_recently_edited()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_options/">populate_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_rss_control/">wp_dashboard_rss_control()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/make_site_theme/">make_site_theme()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/maybe_disable_automattic_widgets/">maybe_disable_automattic_widgets()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/maybe_disable_link_manager/">maybe_disable_link_manager()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_290/">upgrade_290()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_330/">upgrade_330()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_350/">upgrade_350()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_all/">upgrade_all()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_130/">upgrade_130()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_230/">upgrade_230()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/upgrade_280/">upgrade_280()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_install/">wp_install()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_install_defaults/">wp_install_defaults()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/uninstall_plugin/">uninstall_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/activate_plugin/">activate_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/deactivate_plugins/">deactivate_plugins()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_active_plugins/">validate_active_plugins()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_update_menu_items/">wp_nav_menu_update_menu_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/request_filesystem_credentials/">request_filesystem_credentials()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_roles/add_cap/">WP_Roles::add_cap()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_roles/remove_cap/">WP_Roles::remove_cap()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_roles/add_role/">WP_Roles::add_role()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_roles/remove_role/">WP_Roles::remove_role()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/save/">WP_Customize_Manager::save()</a>
+							</li>
+													<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_set_cron_array/">_set_cron_array()</a>
+							</li>
+													<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_upgrade_cron_array/">_upgrade_cron_array()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_theme_switched/">check_theme_switched()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_theme_mod/">set_theme_mod()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_theme_mod/">remove_theme_mod()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/switch_theme/">switch_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_theme_mods/">get_theme_mods()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_theme/get_allowed_on_site/">WP_Theme::get_allowed_on_site()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_uninstall_hook/">register_uninstall_hook()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_setting/_update_option/">WP_Customize_Setting::_update_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_site_option/">update_site_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_transient/">set_transient()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_reset_front_page_settings_for_post/">_reset_front_page_settings_for_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/stick_post/">stick_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/unstick_post/">unstick_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/set_permalink_structure/">WP_Rewrite::set_permalink_structure()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/set_category_base/">WP_Rewrite::set_category_base()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/set_tag_base/">WP_Rewrite::set_tag_base()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/wp_rewrite_rules/">WP_Rewrite::wp_rewrite_rules()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_upgrade_revisions_of_post/">_wp_upgrade_revisions_of_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_posts_count/">update_posts_count()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/global_terms/">global_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_create_blog/">wpmu_create_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_blog/">install_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_blog_details/">update_blog_details()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_blog_option/">update_blog_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_setoptions/">wp_xmlrpc_server::wp_setOptions()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget/save_settings/">WP_Widget::save_settings()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_sidebars_widgets/">wp_set_sidebars_widgets()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_convert_widget_settings/">wp_convert_widget_settings()</a>
+							</li>
+																			<a href="#" class="show-more">Show 64 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

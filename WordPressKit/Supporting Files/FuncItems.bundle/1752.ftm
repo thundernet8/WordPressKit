@@ -1,0 +1,59 @@
+<article id="post-1985" class="post-1985 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-wp-styles-php wp-parser-package-backpress wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_add_inline_style/">wp_add_inline_style ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$handle</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$data</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add extra CSS styles to a registered stylesheet.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Styles will only be added if the stylesheet in already in the queue. Accepts a string $data containing the CSS. If two or more CSS code blocks are added to the same stylesheet $handle, they will be printed in the order they were added, i.e. the latter added styles can redeclare the previous.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions-wp-styles.php/">wp-includes/functions.wp-styles.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$handle</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of the stylesheet to add the extra styles to. Must be lowercase.</span>
+									</p>
+							</dd>
+									<dt>$data</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">String containing the CSS styles to be added.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,55 @@
+<article id="post-4765" class="post-4765 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/uninstall_plugin/">uninstall_plugin ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$plugin</span> )</a></h1>
+
+	<section class="summary">
+		<p>Uninstall a single plugin.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Calls the uninstall hook, if it is available.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(true)</span> True if a plugin's uninstall.php file has been found and included.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$plugin</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Relative plugin path from Plugin Directory.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_plugins/">delete_plugins()</a>
+							</li>
+																</ul>
+			</article>

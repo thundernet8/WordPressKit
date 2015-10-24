@@ -1,0 +1,242 @@
+<article id="post-3237" class="post-3237 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_bloginfo/">get_bloginfo ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$show</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$filter</span>&nbsp;=&nbsp;<span class="arg-default">'raw'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve information about the blog.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Some show parameter values are deprecated and will be removed in future versions. These options will trigger the <a href="https://developer.wordpress.org/reference/functions/_deprecated_argument">_deprecated_argument()</a> function. The deprecated blog info options are listed in the function contents.</p>
+<p>The possible values for the &#8216;show&#8217; parameter are listed below.</p>
+<ol>
+<li>url &#8211; Blog URI to homepage.</li>
+<li>wpurl &#8211; Blog URI path to WordPress.</li>
+<li>description &#8211; Secondary title</li>
+</ol>
+<p>The feed URL options can be retrieved from &#8216;rdf_url&#8217; (RSS 0.91), &#8216;rss_url&#8217; (RSS 1.0), &#8216;rss2_url&#8217; (RSS 2.0), or &#8216;atom_url&#8217; (Atom feed). The comment feeds can be retrieved from the &#8216;comments_atom_url&#8217; (Atom comment feed) or &#8216;comments_rss2_url&#8217; (RSS 2.0 comment feed).</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Mostly string values, might be empty.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$show</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Blog info to retrieve.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$filter</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">How to filter what is retrieved.</span>
+									</p>
+								<p class="default">Default value: 'raw'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menu_item_setting/populate_value/">WP_Customize_Nav_Menu_Item_Setting::populate_value()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_language_attributes/">get_language_attributes()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/search_available_items_query/">WP_Customize_Nav_Menus::search_available_items_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/customize_register/">WP_Customize_Nav_Menus::customize_register()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/load_available_items_query/">WP_Customize_Nav_Menus::load_available_items_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_media_control/to_json/">WP_Customize_Media_Control::to_json()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/html/">WP_Press_This::html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/fetch_source_html/">WP_Press_This::fetch_source_html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/upgrade.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_install_maybe_enable_pretty_permalinks/">wp_install_maybe_enable_pretty_permalinks()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-panel.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_panel/json/">WP_Customize_Panel::json()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-section.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_section/json/">WP_Customize_Section::json()</a>
+							</li>
+													<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/login_footer/">login_footer()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/send_debug_email/">WP_Automatic_Updater::send_debug_email()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/export.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/export_wp/">export_wp()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_access_denied_splash/">_access_denied_splash()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/core_update_footer/">core_update_footer()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_right_now_message/">update_right_now_message()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_fix_attachment_links/">_fix_attachment_links()</a>
+							</li>
+													<li>
+								<span>wp-admin/user-new.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/admin_created_user_email/">admin_created_user_email()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_mail/">wp_mail()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_css_uri/">wp_admin_css_uri()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_generator/">get_the_generator()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/feed_links/">feed_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/feed_links_extra/">feed_links_extra()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/rsd_link/">rsd_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/bloginfo/">bloginfo()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_title/">wp_title()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_index_rel_link/">get_index_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp/send_headers/">WP::send_headers()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-http.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_http/request/">WP_Http::request()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nonce_ays/">wp_nonce_ays()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/cache_javascript_headers/">cache_javascript_headers()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_pagenum_link/">get_pagenum_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_plugins/">wp_update_plugins()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_themes/">wp_update_themes()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_site_menu/">wp_admin_bar_site_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/feed.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/html_type_rss/">html_type_rss()</a>
+							</li>
+													<li>
+								<span>wp-includes/feed.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_bloginfo_rss/">get_bloginfo_rss()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/filter_ssl/">filter_SSL()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/pingback_ping/">wp_xmlrpc_server::pingback_ping()</a>
+							</li>
+													<li>
+								<span>wp-includes/script-loader.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_default_styles/">wp_default_styles()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/weblog_ping/">weblog_ping()</a>
+							</li>
+													<li>
+								<span>wp-includes/script-loader.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_default_scripts/">wp_default_scripts()</a>
+							</li>
+																			<a href="#" class="show-more">Show 43 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

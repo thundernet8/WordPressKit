@@ -1,0 +1,98 @@
+<article id="post-3075" class="post-3075 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-0-71">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use wp_link_pages()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/link_pages/">link_pages ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$before</span>&nbsp;=&nbsp;<span class="arg-default">'&lt;br /&gt;'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$after</span>&nbsp;=&nbsp;<span class="arg-default">'&lt;br /&gt;'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$next_or_number</span>&nbsp;=&nbsp;<span class="arg-default">'number'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$nextpagelink</span>&nbsp;=&nbsp;<span class="arg-default">'next page'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$previouspagelink</span>&nbsp;=&nbsp;<span class="arg-default">'previous page'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$pagelink</span>&nbsp;=&nbsp;<span class="arg-default">'%'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$more_file</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Print list of pages based on arguments.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$before</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: '&lt;br /&gt;'</p>
+							</dd>
+									<dt>$after</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: '&lt;br /&gt;'</p>
+							</dd>
+									<dt>$next_or_number</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'number'</p>
+							</dd>
+									<dt>$nextpagelink</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'next page'</p>
+							</dd>
+									<dt>$previouspagelink</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'previous page'</p>
+							</dd>
+									<dt>$pagelink</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: '%'</p>
+							</dd>
+									<dt>$more_file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,37 @@
+<article id="post-1887" class="post-1887 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_admin-bar-php wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_admin_bar_init/">_wp_admin_bar_init ()</a></h1>
+
+	<section class="summary">
+		<p>Instantiate the admin bar object and set it up as a global for access elsewhere.</p>
+	</section>
+
+
+	<section class="description">
+		<p>UNHOOKING THIS FUNCTION WILL NOT PROPERLY REMOVE THE ADMIN BAR. For that, use show_admin_bar(false) or the &#8216;show_admin_bar&#8217; filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the admin bar was successfully initialized.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/admin-bar.php/">wp-includes/admin-bar.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

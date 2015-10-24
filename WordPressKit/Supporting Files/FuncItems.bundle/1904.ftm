@@ -1,0 +1,101 @@
+<article id="post-1288" class="post-1288 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_constrain_dimensions/">wp_constrain_dimensions ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$current_width</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$current_height</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$max_width</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$max_height</span> )</a></h1>
+
+	<section class="summary">
+		<p>Calculates the new dimensions for a down-sampled image.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If either width or height are empty, no constraint is applied on that dimension.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> First item is the width, the second item is the height.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$current_width</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Current width of the image.</span>
+									</p>
+							</dd>
+									<dt>$current_height</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Current height of the image.</span>
+									</p>
+							</dd>
+									<dt>$max_width</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Max width in pixels to constrain to. Default 0.</span>
+									</p>
+							</dd>
+									<dt>$max_height</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Max height in pixels to constrain to. Default 0.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_shrink_dimensions/">wp_shrink_dimensions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_udims/">get_udims()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_image_editor/">wp_image_editor()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_expand_dimensions/">wp_expand_dimensions()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_resize_dimensions/">image_resize_dimensions()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_constrain_size_for_editor/">image_constrain_size_for_editor()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

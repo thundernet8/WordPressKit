@@ -1,0 +1,68 @@
+<article id="post-907" class="post-907 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wpmu_validate_user_signup/">wpmu_validate_user_signup ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_name</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_email</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sanitize and validate data required for a user sign-up.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Verifies the validity and uniqueness of user names and user email addresses, and checks email addresses against admin-provided domain whitelists and blacklists.</p>
+<p>The <a href="https://developer.wordpress.org/reference/hooks/wpmu_validate_user_signup">&#8216;wpmu_validate_user_signup&#8217;</a> hook provides an easy way to modify the sign-up process. The value $result, which is passed to the hook, contains both the user-provided info and the error messages created by the function. <a href="https://developer.wordpress.org/reference/hooks/wpmu_validate_user_signup">&#8216;wpmu_validate_user_signup&#8217;</a> allows you to process the data in any way you&#8217;d like, and unset the relevant errors if necessary.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Contains username, email, and error messages.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The login name provided by the user.</span>
+									</p>
+							</dd>
+									<dt>$user_email</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The email provided by the user.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-signup.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_user_form/">validate_user_form()</a>
+							</li>
+													<li>
+								<span>wp-signup.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_blog_signup/">validate_blog_signup()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,70 @@
+<article id="post-2828" class="post-2828 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_query-php wp-parser-package-query wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_404/">is_404 ()</a></h1>
+
+	<section class="summary">
+		<p>Is the query a 404 (returns no results)?</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/query.php/">wp-includes/query.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/customize_preview_override_404_status/">WP_Customize_Manager::customize_preview_override_404_status()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_title/">wp_title()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp/handle_404/">WP::handle_404()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_old_slug_redirect/">wp_old_slug_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_body_class/">get_body_class()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_redirect_admin_locations/">wp_redirect_admin_locations()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/maybe_redirect_404/">maybe_redirect_404()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

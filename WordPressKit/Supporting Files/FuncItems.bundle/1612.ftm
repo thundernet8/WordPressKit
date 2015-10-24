@@ -1,0 +1,79 @@
+<article id="post-4391" class="post-4391 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_update-core-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/update_core/">update_core ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$from</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$to</span> )</a></h1>
+
+	<section class="summary">
+		<p>Upgrade the core of WordPress.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This will create a .maintenance file at the base of the WordPress directory to ensure that people can not access the web site, when the files are being copied to their locations.</p>
+<p>The files in the <a href="https://developer.wordpress.org/reference/functions/$_old_files">$_old_files</a> list will be removed and the new files copied from the zip file after the database is upgraded.</p>
+<p>The files in the <a href="https://developer.wordpress.org/reference/functions/$_new_bundled_files">$_new_bundled_files</a> list will be added to the installation if the version is greater than or equal to the old version being upgraded.</p>
+<p>The steps for the upgrader for after the new release is downloaded and unzipped is:</p>
+<ol>
+<li>Test unzipped location for select files to ensure that unzipped worked.</li>
+<li>Create the .maintenance file in current WordPress base.</li>
+<li>Copy new WordPress directory over old WordPress files.</li>
+<li>Upgrade WordPress to new version. 4.1. Copy all files/folders other than wp-content 4.2. Copy any language files to WP_LANG_DIR (which may differ from WP_CONTENT_DIR 4.3. Copy any new bundled themes/plugins to their respective locations</li>
+<li>Delete new WordPress directory path.</li>
+<li>Delete .maintenance file.</li>
+<li>Remove old files.</li>
+<li>Delete &#8216;update_core&#8217; option.</li>
+</ol>
+<p>There are several areas of failure. For instance if PHP times out before step 6, then you will not be able to access any portion of your site. Also, since the upgrade will not continue where it left off, you will not be able to automatically remove old files and remove the &#8216;update_core&#8217; option. This isn&#8217;t that bad.</p>
+<p>If the copy of the new WordPress over the old fails, then the worse is that the new WordPress directory will remain.</p>
+<p>If it is assumed that every file will be copied over, including plugins and themes, then if you edit the default theme, you should rename it, so that your changes remain.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Error|null)</span> WP_Error on failure, null on success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/update-core.php/">wp-admin/includes/update-core.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$from</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">New release unzipped path.</span>
+									</p>
+							</dd>
+									<dt>$to</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Path to old WordPress installation.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/core_upgrader/upgrade/">Core_Upgrader::upgrade()</a>
+							</li>
+																</ul>
+			</article>

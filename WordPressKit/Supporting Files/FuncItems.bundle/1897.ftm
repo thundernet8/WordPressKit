@@ -1,0 +1,47 @@
+<article id="post-3367" class="post-3367 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_clear_auth_cookie/">wp_clear_auth_cookie ()</a></h1>
+
+	<section class="summary">
+		<p>Removes all of the cookies associated with authentication.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_logout/">wp_logout()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_user/">wp_update_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_clearcookie/">wp_clearcookie()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,36 @@
+<article id="post-4850" class="post-4850 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_dashboard-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_dashboard_setup/">wp_dashboard_setup ()</a></h1>
+
+	<section class="summary">
+		<p>Registers dashboard widgets.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Handles POST data, sets up filters.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/dashboard.php/">wp-admin/includes/dashboard.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,55 @@
+<article id="post-2173" class="post-2173 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-7-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_previous_comments_link/">get_previous_comments_link ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$label</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Return the previous comments page link.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> HTML-formatted link for the previous page of comments.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$label</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Label for comments link text.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/previous_comments_link/">previous_comments_link()</a>
+							</li>
+																</ul>
+			</article>

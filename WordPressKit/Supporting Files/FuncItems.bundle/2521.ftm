@@ -1,0 +1,1107 @@
+<article id="post-2601" class="post-2601 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_deprecated_function/">_deprecated_function ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$function</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$version</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$replacement</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Mark a function as deprecated and inform when it has been used.</p>
+	</section>
+
+
+	<section class="description">
+		<p>There is a hook deprecated_function_run that will be called that can be used to get the backtrace up to what file and function called the deprecated function.</p>
+<p>The current behavior is to trigger a user error if WP_DEBUG is true.</p>
+<p>This function is to be used in every function that is deprecated.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$function</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The function that was called.</span>
+									</p>
+							</dd>
+									<dt>$version</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The version of WordPress that deprecated the function.</span>
+									</p>
+							</dd>
+									<dt>$replacement</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The function that should have been called. </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user_search/__construct/">WP_User_Search::__construct()</a>
+							</li>
+													<li>
+								<span>xmlrpc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/logio/">logIO()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_relocate_children/">_relocate_children()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_to_edit/">get_post_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_default_page_to_edit/">get_default_page_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_thumbnail/">wp_create_thumbnail()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_locations_meta_box/">wp_nav_menu_locations_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_core/">wp_update_core()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_plugin/">wp_update_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_theme/">wp_update_theme()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_attachment_links/">the_attachment_links()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_print_editor_js/">wp_print_editor_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_quicktags/">wp_quicktags()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/screen_layout/">screen_layout()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/screen_options/">screen_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/favorite_actions/">favorite_actions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_image/">media_upload_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_audio/">media_upload_audio()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_video/">media_upload_video()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_file/">media_upload_file()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_image/">type_url_form_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_audio/">type_url_form_audio()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_video/">type_url_form_video()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/type_url_form_file/">type_url_form_file()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_contextual_help/">add_contextual_help()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_allowed_themes/">get_allowed_themes()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_broken_themes/">get_broken_themes()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/current_theme_info/">current_theme_info()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_insert_into_post_button/">_insert_into_post_button()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_media_button/">_media_button()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dropdown_categories/">dropdown_categories()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dropdown_link_categories/">dropdown_link_categories()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_real_file_to_edit/">get_real_file_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dropdown_cats/">wp_dropdown_cats()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_option_update_handler/">add_option_update_handler()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_option_update_handler/">remove_option_update_handler()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/codepress_get_lang/">codepress_get_lang()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/codepress_footer_js/">codepress_footer_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/use_codepress/">use_codepress()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_author_user_ids/">get_author_user_ids()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_editable_authors/">get_editable_authors()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_editable_user_ids/">get_editable_user_ids()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_nonauthor_user_ids/">get_nonauthor_user_ids()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_others_unpublished_posts/">get_others_unpublished_posts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_others_drafts/">get_others_drafts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_others_pending/">get_others_pending()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_quick_press_output/">wp_dashboard_quick_press_output()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_tiny_mce/">wp_tiny_mce()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_preload_dialogs/">wp_preload_dialogs()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/tinymce_include/">tinymce_include()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/documentation_link/">documentation_link()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_shrink_dimensions/">wp_shrink_dimensions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_udims/">get_udims()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_themes_feature_list/">install_themes_feature_list()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/display_theme/">display_theme()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-base.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_base/find_base_dir/">WP_Filesystem_Base::find_base_dir()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-base.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_base/get_base_dir/">WP_Filesystem_Base::get_base_dir()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_menu/">wpmu_menu()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_checkavailablespace/">wpmu_checkAvailableSpace()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/mu_options/">mu_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/activate_sitewide_plugin/">activate_sitewide_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/deactivate_sitewide_plugin/">deactivate_sitewide_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_wpmu_sitewide_plugin/">is_wpmu_sitewide_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_site_allowed_themes/">get_site_allowed_themes()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_get_blog_allowedthemes/">wpmu_get_blog_allowedthemes()</a>
+							</li>
+													<li>
+								<span>wp-includes/cache.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_object_cache/reset/">WP_Object_Cache::reset()</a>
+							</li>
+													<li>
+								<span>wp-includes/cache.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_cache_reset/">wp_cache_reset()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/preview_theme/">preview_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_preview_theme_template_filter/">_preview_theme_template_filter()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_preview_theme_stylesheet_filter/">_preview_theme_stylesheet_filter()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/preview_theme_ob_filter/">preview_theme_ob_filter()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/preview_theme_ob_filter_callback/">preview_theme_ob_filter_callback()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/like_escape/">like_escape()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_htmledit_pre/">wp_htmledit_pre()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_richedit_pre/">wp_richedit_pre()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/gd_edit_image_support/">gd_edit_image_support()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_convert_bytes_to_hr/">wp_convert_bytes_to_hr()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_search_terms_tidy/">_search_terms_tidy()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/rich_edit_exists/">rich_edit_exists()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/format_to_post/">format_to_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clean_pre/">clean_pre()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_custom_image_header/">add_custom_image_header()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_custom_image_header/">remove_custom_image_header()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_custom_background/">add_custom_background()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_custom_background/">remove_custom_background()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_theme_data/">get_theme_data()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_page_cache/">update_page_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clean_page_cache/">clean_page_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_explain_nonce/">wp_explain_nonce()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sticky_class/">sticky_class()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_get_post_ancestors/">_get_post_ancestors()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_load_image/">wp_load_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_resize/">image_resize()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_single_post/">wp_get_single_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_pass_ok/">user_pass_ok()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_metavalues/">get_user_metavalues()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_user_object/">sanitize_user_object()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_boundary_post_rel_link/">get_boundary_post_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/start_post_rel_link/">start_post_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_index_rel_link/">get_index_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/index_rel_link/">index_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_parent_post_rel_link/">get_parent_post_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/parent_post_rel_link/">parent_post_rel_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_dashboard_view_site_menu/">wp_admin_bar_dashboard_view_site_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_blog_user/">is_blog_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/debug_fopen/">debug_fopen()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/debug_fwrite/">debug_fwrite()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/debug_fclose/">debug_fclose()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_themes/">get_themes()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_theme/">get_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_current_theme/">get_current_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_widget_control/">register_widget_control()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/unregister_widget_control/">unregister_widget_control()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_usermeta/">delete_usermeta()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_usermeta/">get_usermeta()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_usermeta/">update_usermeta()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_users_of_blog/">get_users_of_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/automatic_feed_links/">automatic_feed_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_profile/">get_profile()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_usernumposts/">get_usernumposts()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/funky_javascript_fix/">funky_javascript_fix()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_taxonomy/">is_taxonomy()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_term/">is_term()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_plugin_page/">is_plugin_page()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_category_cache/">update_category_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_timezone_supported/">wp_timezone_supported()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_editor/">the_editor()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/__ngettext/">__ngettext()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/__ngettext_noop/">__ngettext_noop()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_alloptions/">get_alloptions()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_attachment_link/">get_the_attachment_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_attachment_icon_src/">get_attachment_icon_src()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_attachment_icon/">get_attachment_icon()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_attachment_innerhtml/">get_attachment_innerHTML()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_link/">get_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_url/">sanitize_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clean_url/">clean_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/js_escape/">js_escape()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_specialchars/">wp_specialchars()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attribute_escape/">attribute_escape()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_sidebar_widget/">register_sidebar_widget()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/unregister_sidebar_widget/">unregister_sidebar_widget()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_icq/">get_the_author_icq()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_icq/">the_author_icq()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_yim/">get_the_author_yim()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_yim/">the_author_yim()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_msn/">get_the_author_msn()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_msn/">the_author_msn()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_aim/">get_the_author_aim()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_aim/">the_author_aim()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_author_name/">get_author_name()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_url/">get_the_author_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_url/">the_author_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_id/">get_the_author_ID()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_id/">the_author_ID()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_content_rss/">the_content_rss()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/make_url_footnote/">make_url_footnote()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_c/">_c()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/translate_with_context/">translate_with_context()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_nc/">_nc()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_author_rss_link/">get_author_rss_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comments_rss/">comments_rss()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/create_user/">create_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/gzip_compression/">gzip_compression()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_commentdata/">get_commentdata()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_catname/">get_catname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_children/">get_category_children()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_description/">get_the_author_description()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_description/">the_author_description()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_login/">get_the_author_login()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_login/">the_author_login()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_firstname/">get_the_author_firstname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_firstname/">the_author_firstname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_lastname/">get_the_author_lastname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_lastname/">the_author_lastname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_nickname/">get_the_author_nickname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_nickname/">the_author_nickname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_author_email/">get_the_author_email()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_author_email/">the_author_email()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/dropdown_cats/">dropdown_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_authors/">list_authors()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_post_cats/">wp_get_post_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_post_cats/">wp_set_post_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_archives/">get_archives()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_author_link/">get_author_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/link_pages/">link_pages()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_settings/">get_settings()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/permalink_link/">permalink_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/permalink_single_rss/">permalink_single_rss()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_links/">wp_get_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_links/">get_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_links_list/">get_links_list()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/links_popup_script/">links_popup_script()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkrating/">get_linkrating()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkcatname/">get_linkcatname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comments_rss_link/">comments_rss_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_rss_link/">get_category_rss_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_create_post/">user_can_create_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_create_draft/">user_can_create_draft()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_edit_post/">user_can_edit_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_delete_post/">user_can_delete_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_set_post_date/">user_can_set_post_date()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_edit_post_date/">user_can_edit_post_date()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_edit_post_comments/">user_can_edit_post_comments()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_delete_post_comments/">user_can_delete_post_comments()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/user_can_edit_user/">user_can_edit_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linksbyname/">get_linksbyname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_linksbyname/">wp_get_linksbyname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkobjectsbyname/">get_linkobjectsbyname()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkobjects/">get_linkobjects()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linksbyname_withrating/">get_linksbyname_withrating()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_links_withrating/">get_links_withrating()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_autotoggle/">get_autotoggle()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_cats/">list_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_cats/">wp_list_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_postdata/">get_postdata()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/start_wp/">start_wp()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_category_id/">the_category_ID()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_category_head/">the_category_head()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/previous_post/">previous_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/next_post/">next_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_all_category_ids/">get_all_category_ids()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/url_is_accessable_via_ssl/">url_is_accessable_via_ssl()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/recursive_render/">WP_Admin_Bar::recursive_render()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_atom_server/__call/">wp_atom_server::__call()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_atom_server/__callstatic/">wp_atom_server::__callStatic()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_current_user/">set_current_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_userdatabylogin/">get_userdatabylogin()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_by_email/">get_user_by_email()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_setcookie/">wp_setcookie()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_clearcookie/">wp_clearcookie()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_cookie_login/">wp_get_cookie_login()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_login/">wp_login()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_current_site_name/">get_current_site_name()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_current_site/">wpmu_current_site()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/generate_random_password/">generate_random_password()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_site_admin/">is_site_admin()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/graceful_fail/">graceful_fail()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_details/">get_user_details()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clear_global_post_cache/">clear_global_post_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_main_blog/">is_main_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_email/">validate_email()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blog_list/">get_blog_list()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_most_active_blogs/">get_most_active_blogs()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_admin_do_redirect/">wpmu_admin_do_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_admin_redirect_add_updated_param/">wpmu_admin_redirect_add_updated_param()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_id_from_string/">get_user_id_from_string()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blogaddress_by_domain/">get_blogaddress_by_domain()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_dashboard_blog/">get_dashboard_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/class.wp-scripts.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_scripts/print_scripts_l10n/">WP_Scripts::print_scripts_l10n()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/supports_collation/">wpdb::supports_collation()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/_weak_escape/">wpdb::_weak_escape()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/escape/">wpdb::escape()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/setup_widget_addition_previews/">WP_Customize_Widgets::setup_widget_addition_previews()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/prepreview_added_sidebars_widgets/">WP_Customize_Widgets::prepreview_added_sidebars_widgets()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/prepreview_added_widget_instance/">WP_Customize_Widgets::prepreview_added_widget_instance()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/remove_prepreview_filters/">WP_Customize_Widgets::remove_prepreview_filters()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/wp_fullscreen_html/">_WP_Editors::wp_fullscreen_html()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/editor/">_WP_Editors::editor()</a>
+							</li>
+																			<a href="#" class="show-more">Show 259 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

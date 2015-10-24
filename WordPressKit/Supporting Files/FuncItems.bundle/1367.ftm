@@ -1,0 +1,58 @@
+<article id="post-5180" class="post-5180 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_ms-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/sync_category_tag_slugs/">sync_category_tag_slugs ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$term</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span> )</a></h1>
+
+	<section class="summary">
+		<p>Synchronize category and post tag slugs when global terms are enabled.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|array)</span> Returns <code>$term</code>, after filtering the 'slug' field with <a href="https://developer.wordpress.org/reference/functions/sanitize_title">sanitize_title()</a>                      if $taxonomy is 'category' or 'post_tag'.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/ms.php/">wp-admin/includes/ms.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$term</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The term.</span>
+									</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The taxonomy for $term. Should be 'category' or 'post_tag', as these are                         the only taxonomies which are processed by this function; anything else                         will be returned untouched.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

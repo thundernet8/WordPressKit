@@ -1,0 +1,79 @@
+<article id="post-1338" class="post-1338 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_embed_register_handler/">wp_embed_register_handler ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$regex</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$callback</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$priority</span>&nbsp;=&nbsp;<span class="arg-default">10</span> )</a></h1>
+
+	<section class="summary">
+		<p>Registers an embed handler.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Should probably only be used for sites that do not support oEmbed.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An internal ID/name for the handler. Needs to be unique.</span>
+									</p>
+							</dd>
+									<dt>$regex</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The regex that will be used to see if this handler should be used for a URL.</span>
+									</p>
+							</dd>
+									<dt>$callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The callback function that will be called if the regex is matched.</span>
+									</p>
+							</dd>
+									<dt>$priority</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Used to specify the order in which the registered handlers will                           be tested. </span>
+									</p>
+								<p class="default">Default value: 10</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_load_embeds/">wp_maybe_load_embeds()</a>
+							</li>
+																</ul>
+			</article>

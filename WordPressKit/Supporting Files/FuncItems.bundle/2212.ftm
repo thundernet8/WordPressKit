@@ -1,0 +1,40 @@
+<article id="post-3234" class="post-3234 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_meta/">wp_meta ()</a></h1>
+
+	<section class="summary">
+		<p>Theme container function for the &#8216;wp_meta&#8217; action.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The &#8216;wp_meta&#8217; action can have several purposes, depending on how you use it, but one purpose might have been to allow for theme switching.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_meta/widget/">WP_Widget_Meta::widget()</a>
+							</li>
+																</ul>
+			</article>

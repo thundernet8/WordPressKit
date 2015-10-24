@@ -1,0 +1,89 @@
+<article id="post-2552" class="post-2552 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/path_join/">path_join ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$base</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$path</span> )</a></h1>
+
+	<section class="summary">
+		<p>Join two filesystem paths together.</p>
+	</section>
+
+
+	<section class="description">
+		<p>For example, &#8216;give me $path relative to $base&#8217;. If the $path is absolute, then it the full path is returned.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The path with the base or absolute path.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$base</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Base path.</span>
+									</p>
+							</dd>
+									<dt>$path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Path relative to $base.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_restore_image/">wp_restore_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_image/">wp_save_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-filesystem-base.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_filesystem_base/search_for_folder/">WP_Filesystem_Base::search_for_folder()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_load_image_to_edit_path/">_load_image_to_edit_path()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_upload_dir/">wp_upload_dir()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/image_get_intermediate_size/">image_get_intermediate_size()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_attachment/">wp_delete_attachment()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

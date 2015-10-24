@@ -1,0 +1,243 @@
+<article id="post-2545" class="post-2545 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-4">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_nonce_field/">wp_nonce_field ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$action</span>&nbsp;=&nbsp;<span class="arg-default">-1</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$name</span>&nbsp;=&nbsp;<span class="arg-default">&quot;_wpnonce&quot;</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$referer</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$echo</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve or display nonce hidden field for forms.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The nonce field is used to validate that the contents of the form came from the location on the current site and not somewhere else. The nonce does not offer absolute protection, but should protect against most cases. It is very important to use nonce field in forms.</p>
+<p>The $action and $name are optional, but if you want to have better security, it is strongly suggested to set those two parameters. It is easier to just call the function without any parameters, because validation of the nonce doesn&#8217;t require any parameters, but since crackers know what the default is it won&#8217;t be difficult for them to find a way around your nonce and cause damage.</p>
+<p>The input name will be whatever $name value you gave. The input value will be the nonce creation value.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Nonce field HTML markup.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$action</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Action name. </span>
+									</p>
+								<p class="default">Default value: -1</p>
+							</dd>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Nonce name. Default '_wpnonce'.</span>
+									</p>
+								<p class="default">Default value: &quot;_wpnonce&quot;</p>
+							</dd>
+									<dt>$referer</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to set the referer field for validation. </span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$echo</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to display or return hidden form field. </span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/html/">WP_Press_This::html()</a>
+							</li>
+													<li>
+								<span>wp-admin/network.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_step1/">network_step1()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/screen.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_screen/render_screen_options/">WP_Screen::render_screen_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_themes_upload/">install_themes_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/display_tablenav/">WP_List_Table::display_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/admin_color_scheme_picker/">admin_color_scheme_picker()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-theme-install-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_theme_install_list_table/display/">WP_Theme_Install_List_Table::display()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugins_upload/">install_plugins_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_dashboard_control_callback/">_wp_dashboard_control_callback()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard/">wp_dashboard()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_quick_press/">wp_dashboard_quick_press()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/settings_fields/">settings_fields()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/find_posts_div/">find_posts_div()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_comment_reply/">wp_comment_reply()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_list_meta_row/">_list_meta_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/meta_form/">meta_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-themes-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_themes_list_table/display/">WP_Themes_List_Table::display()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_type_form/">media_upload_type_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_type_url_form/">media_upload_type_url_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_gallery_form/">media_upload_gallery_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_library_form/">media_upload_library_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_comment_meta_box/">post_comment_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/link_categories_meta_box/">link_categories_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_categories_meta_box/">post_categories_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-comments-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_post_comments_list_table/display/">WP_Post_Comments_List_Table::display()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-comments-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_comments_list_table/extra_tablenav/">WP_Comments_List_Table::extra_tablenav()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-comments-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_comments_list_table/display/">WP_Comments_List_Table::display()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-terms-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_terms_list_table/inline_edit/">WP_Terms_List_Table::inline_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/inline_edit/">WP_Posts_List_Table::inline_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_1/">Custom_Image_Header::step_1()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step_2/">Custom_Image_Header::step_2()</a>
+							</li>
+													<li>
+								<span>wp-admin/network/users.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/confirm_delete_users/">confirm_delete_users()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_core_update/">list_core_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_plugin_updates/">list_plugin_updates()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_theme_updates/">list_theme_updates()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/list_translation_updates/">list_translation_updates()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/admin_page/">Custom_Background::admin_page()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/signup_nonce_fields/">signup_nonce_fields()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_comment_form_unfiltered_html_nonce/">wp_comment_form_unfiltered_html_nonce()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/wp_link_dialog/">_WP_Editors::wp_link_dialog()</a>
+							</li>
+																			<a href="#" class="show-more">Show 40 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

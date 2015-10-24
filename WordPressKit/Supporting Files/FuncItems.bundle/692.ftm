@@ -1,0 +1,66 @@
+<article id="post-3845" class="post-3845 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_capabilities-php wp-parser-package-user wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_super_admins/">get_super_admins ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve a list of super admins.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> List of super admin logins</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/capabilities.php/">wp-includes/capabilities.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/handle_row_actions/">WP_MS_Users_List_Table::handle_row_actions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/column_username/">WP_MS_Users_List_Table::column_username()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/prepare_items/">WP_MS_Users_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/get_views/">WP_MS_Users_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_delete_user/">wpmu_delete_user()</a>
+							</li>
+													<li>
+								<span>wp-admin/network/users.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/confirm_delete_users/">confirm_delete_users()</a>
+							</li>
+													<li>
+								<span>wp-includes/capabilities.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_super_admin/">is_super_admin()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,36 @@
+<article id="post-15631" class="post-15631 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_misc-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_admin_canonical_url/">wp_admin_canonical_url ()</a></h1>
+
+	<section class="summary">
+		<p>Remove single-use URL parameters and create canonical link based on new URL.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Remove specific query string parameters from a URL, create the canonical link, put it in the admin header, and change the current URL to match.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/misc.php/">wp-admin/includes/misc.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

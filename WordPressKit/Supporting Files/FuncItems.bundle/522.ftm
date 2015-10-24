@@ -1,0 +1,89 @@
+<article id="post-1285" class="post-1285 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_image_tag/">get_image_tag ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$alt</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$align</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$size</span>&nbsp;=&nbsp;<span class="arg-default">'medium'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Gets an img tag for an image attachment, scaling it down if requested.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The filter &#8216;get_image_tag_class&#8217; allows for changing the class name for the image without having to use regular expressions on the HTML content. The parameters are: what WordPress will use for the class, the Attachment ID, image align value, and the size the image should be.</p>
+<p>The second filter &#8216;get_image_tag&#8217; has the HTML content, which can then be further manipulated by a plugin to change all attribute values and even HTML content.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> HTML IMG element for given image attachment</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment ID.</span>
+									</p>
+							</dd>
+									<dt>$alt</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Image Description for the alt attribute.</span>
+									</p>
+							</dd>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Image Description for the title attribute.</span>
+									</p>
+							</dd>
+									<dt>$align</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Part of the class name for aligning the image.</span>
+									</p>
+							</dd>
+									<dt>$size</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Registered image size to retrieve a tag for, or flat array                            of height and width values. </span>
+									</p>
+								<p class="default">Default value: 'medium'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_image_send_to_editor/">get_image_send_to_editor()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,82 @@
+<article id="post-6476" class="post-6476 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_file-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-4-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_handle_upload/">_wp_handle_upload ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$file</span>,  <span class="arg-type">array|false</span>&nbsp;<span class="arg-name">$overrides</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$time</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$action</span> )</a></h1>
+
+	<section class="summary">
+		<p>Handle PHP uploads in WordPress, sanitizing file names, checking extensions for mime type, and moving the file to the appropriate directory within the uploads directory.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> On success, returns an associative array of file attributes. On failure, returns               $overrides<a href="&amp;$file, $message">'upload_error_handler'</a> or array( 'error'=>$message ).</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/file.php/">wp-admin/includes/file.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Reference to a single element of $_FILES. Call the function once for each uploaded file.</span>
+									</p>
+							</dd>
+									<dt>$overrides</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="false">false</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An associative array of names =&gt; values to override default variables. Default false.</span>
+									</p>
+							</dd>
+									<dt>$time</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Time formatted in 'yyyy/mm'.</span>
+									</p>
+							</dd>
+									<dt>$action</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Expected value for $_POST['action'].</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_handle_upload/">wp_handle_upload()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_handle_sideload/">wp_handle_sideload()</a>
+							</li>
+																</ul>
+			</article>

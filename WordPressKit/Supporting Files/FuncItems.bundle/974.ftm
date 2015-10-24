@@ -1,0 +1,78 @@
+<article id="post-1551" class="post-1551 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-mu-1-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_user_member_of_blog/">is_user_member_of_blog ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user_id</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$blog_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Find out whether a user is a member of a given blog.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The unique ID of the user. Defaults to the current user.</span>
+									</p>
+							</dd>
+									<dt>$blog_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> ID of the blog to check. Defaults to the current site.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_blog_user/">is_blog_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp/handle_404/">WP::handle_404()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_site_menu/">wp_admin_bar_site_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_user_settings/">wp_user_settings()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_all_user_settings/">wp_set_all_user_settings()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,72 @@
+<article id="post-2647" class="post-2647 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_debug_backtrace_summary/">wp_debug_backtrace_summary ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$ignore_class</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$skip_frames</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$pretty</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Return a comma-separated string of functions that have been called to get to the current point in code.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|array)</span> Either a string containing a reversed comma separated trace or an array                      of individual calls.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$ignore_class</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> A class to ignore all function calls within - useful                             when you want to just give info about the callee. </span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$skip_frames</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> A number of stack frames to skip - useful for unwinding                             back to the source of the issue. Default 0.</span>
+									</p>
+							</dd>
+									<dt>$pretty</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether or not you want a comma separated string or raw                             array returned. </span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/get_caller/">wpdb::get_caller()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,69 @@
+<article id="post-1208" class="post-1208 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-1-5-1">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use get_post()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_page/">get_page ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$page</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$output</span>&nbsp;=&nbsp;<span class="arg-default">OBJECT</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$filter</span>&nbsp;=&nbsp;<span class="arg-default">'raw'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieves page data given a page ID or page object.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Use get_post() instead of get_page().</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Post|array|null)</span> WP_Post on success or null on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$page</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Page object or page ID. Passed by reference.</span>
+									</p>
+							</dd>
+									<dt>$output</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> What to output. Accepts OBJECT, ARRAY_A, or ARRAY_N.                       </span>
+									</p>
+								<p class="default">Default value: OBJECT</p>
+							</dd>
+									<dt>$filter</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> How the return value should be filtered. Accepts 'raw',                       'edit', 'db', 'display'. </span>
+									</p>
+								<p class="default">Default value: 'raw'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

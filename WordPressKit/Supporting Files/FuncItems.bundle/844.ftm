@@ -1,0 +1,62 @@
+<article id="post-5012" class="post-5012 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_misc-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/iis7_add_rewrite_rule/">iis7_add_rewrite_rule ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$filename</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$rewrite_rule</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add WordPress rewrite rule to the IIS 7+ configuration file.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/misc.php/">wp-admin/includes/misc.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$filename</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The file path to the configuration file</span>
+									</p>
+							</dd>
+									<dt>$rewrite_rule</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The XML fragment with URL Rewrite rule</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/iis7_save_url_rewrite_rules/">iis7_save_url_rewrite_rules()</a>
+							</li>
+																</ul>
+			</article>

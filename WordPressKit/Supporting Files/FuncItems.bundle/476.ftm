@@ -1,0 +1,37 @@
+<article id="post-852" class="post-852 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-mu">
+
+	<div class='deprecated'>Warning: This function has been deprecated. </div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_dashboard_blog/">get_dashboard_blog ()</a></h1>
+
+	<section class="summary">
+		<p>Get the &quot;dashboard blog&quot;, the blog where users without a blog edit their profile data.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Dashboard blog functionality was removed in WordPress 3.1, replaced by the user admin.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-deprecated.php/">wp-includes/ms-deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

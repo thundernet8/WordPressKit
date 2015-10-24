@@ -1,0 +1,93 @@
+<article id="post-2105" class="post-2105 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_edit_term_link/">get_edit_term_link ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$term_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$object_type</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve edit term url.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|null)</span> The edit term link URL for the given term, or null on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$term_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Term ID.</span>
+									</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Taxonomy.</span>
+									</p>
+							</dd>
+									<dt>$object_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The object type. Used to highlight the proper post type menu on the linked page.                            Defaults to the first object_type associated with the taxonomy.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-terms-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_terms_list_table/handle_row_actions/">WP_Terms_List_Table::handle_row_actions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-terms-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_terms_list_table/column_name/">WP_Terms_List_Table::column_name()</a>
+							</li>
+													<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_tag_cloud/">wp_tag_cloud()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_edit_tag_link/">get_edit_tag_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_term_link/">edit_term_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_edit_menu/">wp_admin_bar_edit_menu()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

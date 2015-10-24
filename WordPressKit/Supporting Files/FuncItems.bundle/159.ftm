@@ -1,0 +1,58 @@
+<article id="post-4108" class="post-4108 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_comment-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/comment_exists/">comment_exists ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$comment_author</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$comment_date</span> )</a></h1>
+
+	<section class="summary">
+		<p>Determine if a comment exists based on author and date.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> Comment post ID on success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/comment.php/">wp-admin/includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comment_author</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Author of the comment</span>
+									</p>
+							</dd>
+									<dt>$comment_date</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Date of the comment</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

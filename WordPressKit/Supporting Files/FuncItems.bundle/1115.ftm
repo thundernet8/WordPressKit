@@ -1,0 +1,101 @@
+<article id="post-3309" class="post-3309 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/paginate_links/">paginate_links ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve paginated link for archive post pages.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Technically, the function can be used to create paginated link list for any area. The &#8216;base&#8217; argument is used to reference the url, which will be used to create the paginated links. The &#8216;format&#8217; argument is then used for replacing the page number. It is however, most likely and by default, to be used on the archive post pages.</p>
+<p>The &#8216;type&#8217; argument controls format of the returned value. The default is &#8216;plain&#8217;, which is just a string with the links separated by a newline character. The other possible values are either &#8216;array&#8217; or &#8216;list&#8217;. The &#8216;array&#8217; value will return an array of the paginated link list to offer full control of display. The &#8216;list&#8217; value will place all of the paginated links in an unordered HTML list.</p>
+<p>The &#8216;total&#8217; argument is the total amount of pages and is an integer. The &#8216;current&#8217; argument is the current page number and is also an integer.</p>
+<p>An example of the &#8216;base&#8217; argument is &#8220;<a href="http://example.com/all_posts.php%_">http://example.com/all_posts.php%_</a>%&#8221; and the &#8216;%<em>%&#8217; is required. The &#8216;%</em>%&#8217; will be replaced by the contents of in the &#8216;format&#8217; argument. An example for the &#8216;format&#8217; argument is &#8220;?page=%#%&#8221; and the &#8216;%#%&#8217; is also required. The &#8216;%#%&#8217; will be replaced with the page number.</p>
+<p>You can include the previous and next links in the list by setting the &#8216;prev_next&#8217; argument to true, which it is by default. You can set the previous text, by using the &#8216;prev_text&#8217; argument. You can set the next text by setting the &#8216;next_text&#8217; argument.</p>
+<p>If the &#8216;show_all&#8217; argument is set to true, then it will show all of the pages instead of a short list of the pages near the current page. By default, the &#8216;show_all&#8217; is set to false and controlled by the &#8216;end_size&#8217; and &#8216;mid_size&#8217; arguments. The &#8216;end_size&#8217; argument is how many numbers on either the start and the end list edges, by default is 1. The &#8216;mid_size&#8217; argument is how many numbers to either side of current page, but not including current page.</p>
+<p>It is possible to add query vars to the link by using the &#8216;add_args&#8217; argument and see <a href="https://developer.wordpress.org/reference/functions/add_query_arg">add_query_arg()</a> for more information.</p>
+<p>The &#8216;before_page_number&#8217; and &#8216;after_page_number&#8217; arguments allow users to augment the links themselves. Typically this might be to add context to the numbered links so that screen reader users understand what the links are for. The text strings are added before and after the page number &#8211; within the anchor tag.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|string|void)</span> String of page links or array of page links.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments for generating paginated links for archives. <ul class="param-hash"><li><b>'base'</b><br /><i><span class='type'>(string)</span></i> Base of the paginated url. </li>
+<li><b>'format'</b><br /><i><span class='type'>(string)</span></i> Format for the pagination structure. </li>
+<li><b>'total'</b><br /><i><span class='type'>(int)</span></i> The total amount of pages. Default is the value WP_Query's &lt;code&gt;max_num_pages&lt;/code&gt; or 1. </li>
+<li><b>'current'</b><br /><i><span class='type'>(int)</span></i> The current page number. Default is 'paged' query var or 1. </li>
+<li><b>'show_all'</b><br /><i><span class='type'>(bool)</span></i> Whether to show all pages. Default false. </li>
+<li><b>'end_size'</b><br /><i><span class='type'>(int)</span></i> How many numbers on either the start and the end list edges. Default 1. </li>
+<li><b>'mid_size'</b><br /><i><span class='type'>(int)</span></i> How many numbers to either side of the current pages. Default 2. </li>
+<li><b>'prev_next'</b><br /><i><span class='type'>(bool)</span></i> Whether to include the previous and next links in the list. Default true. </li>
+<li><b>'prev_text'</b><br /><i><span class='type'>(bool)</span></i> The previous page text. Default '&laquo; Previous'. </li>
+<li><b>'next_text'</b><br /><i><span class='type'>(bool)</span></i> The next page text. Default '&laquo; Previous'. </li>
+<li><b>'type'</b><br /><i><span class='type'>(string)</span></i> Controls format of the returned value. Possible values are 'plain', 'array' and 'list'. Default is 'plain'. </li>
+<li><b>'add_args'</b><br /><i><span class='type'>(array)</span></i> An array of query args to add. Default false. </li>
+<li><b>'add_fragment'</b><br /><i><span class='type'>(string)</span></i> A string to append to each link. </li>
+<li><b>'before_page_number'</b><br /><i><span class='type'>(string)</span></i> A string to appear before the page number. </li>
+<li><b>'after_page_number'</b><br /><i><span class='type'>(string)</span></i> A string to append after the page number.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_posts_pagination/">get_the_posts_pagination()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user_search/do_paging/">WP_User_Search::do_paging()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_library_form/">media_upload_library_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_post_type_meta_box/">wp_nav_menu_item_post_type_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_taxonomy_meta_box/">wp_nav_menu_item_taxonomy_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/paginate_comments_links/">paginate_comments_links()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

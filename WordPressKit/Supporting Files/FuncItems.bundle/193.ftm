@@ -1,0 +1,86 @@
+<article id="post-1867" class="post-1867 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/current_filter/">current_filter ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the name of the current filter or action.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Hook name of the current filter or action.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/language_pack_upgrader/bulk_upgrade/">Language_Pack_Upgrader::bulk_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/display_plugins_table/">display_plugins_table()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/capital_p_dangit/">capital_P_dangit()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_generator/">get_the_generator()</a>
+							</li>
+													<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_data/">wp_kses_data()</a>
+							</li>
+													<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_filter_kses/">wp_filter_kses()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_main_query/">is_main_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.wp-scripts.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_deregister_script/">wp_deregister_script()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_plugins/">wp_update_plugins()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_themes/">wp_update_themes()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/current_action/">current_action()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/capture_filter_pre_get_option/">WP_Customize_Widgets::capture_filter_pre_get_option()</a>
+							</li>
+																			<a href="#" class="show-more">Show 12 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

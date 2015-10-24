@@ -1,0 +1,68 @@
+<article id="post-5720" class="post-5720 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-login-php wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/login_header/">login_header ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>&nbsp;=&nbsp;<span class="arg-default">'Log In'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$message</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">WP_Error</span>&nbsp;<span class="arg-name">$wp_error</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Output the login page header.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-login.php/">wp-login.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> WordPress login Page title to display in the &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; element.                           </span>
+									</p>
+								<p class="default">Default value: 'Log In'</p>
+							</dd>
+									<dt>$message</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Message to display in header. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$wp_error</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Error">WP_Error</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The error to pass. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

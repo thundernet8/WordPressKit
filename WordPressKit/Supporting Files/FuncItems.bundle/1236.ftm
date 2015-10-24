@@ -1,0 +1,143 @@
+<article id="post-1865" class="post-1865 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/remove_filter/">remove_filter ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$function_to_remove</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$priority</span>&nbsp;=&nbsp;<span class="arg-default">10</span> )</a></h1>
+
+	<section class="summary">
+		<p>Removes a function from a specified filter hook.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function removes a function attached to a specified filter hook. This method can be used to remove default functions attached to a specific filter hook and possibly replace them with a substitute.</p>
+<p>To remove a hook, the $function_to_remove and $priority arguments must match when the hook was added. This goes for both filters and actions. No warning will be given on removal failure.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the function existed before it was removed.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The filter hook to which the function to be removed is hooked.</span>
+									</p>
+							</dd>
+									<dt>$function_to_remove</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The name of the function which should be removed.</span>
+									</p>
+							</dd>
+									<dt>$priority</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The priority of the function. </span>
+									</p>
+								<p class="default">Default value: 10</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/customize_register/">WP_Customize_Nav_Menus::customize_register()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_crop_image/">wp_ajax_crop_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/language_pack_upgrader/bulk_upgrade/">Language_Pack_Upgrader::bulk_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/bulk_upgrade/">Plugin_Upgrader::bulk_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/check_parent_theme_filter/">Theme_Upgrader::check_parent_theme_filter()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/install/">Theme_Upgrader::install()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/upgrade/">Theme_Upgrader::upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/bulk_upgrade/">Theme_Upgrader::bulk_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/install/">Plugin_Upgrader::install()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/upgrade/">Plugin_Upgrader::upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/unregister_setting/">unregister_setting()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_send_attachment_to_editor/">wp_ajax_send_attachment_to_editor()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_link_manager_disabled_message/">wp_link_manager_disabled_message()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/stop_previewing_theme/">WP_Customize_Manager::stop_previewing_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/kses_remove_filters/">kses_remove_filters()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_action/">remove_action()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/welcome_user_msg_filter/">welcome_user_msg_filter()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/stop_capturing_option_updates/">WP_Customize_Widgets::stop_capturing_option_updates()</a>
+							</li>
+																			<a href="#" class="show-more">Show 18 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

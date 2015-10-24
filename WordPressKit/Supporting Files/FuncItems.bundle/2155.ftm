@@ -1,0 +1,54 @@
+<article id="post-3021" class="post-3021 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_kses_html_error/">wp_kses_html_error ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$string</span> )</a></h1>
+
+	<section class="summary">
+		<p>Handles parsing errors in wp_kses_hair().</p>
+	</section>
+
+
+	<section class="description">
+		<p>The general plan is to remove everything to and including some whitespace, but it deals with quotes and apostrophes as well.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_hair/">wp_kses_hair()</a>
+							</li>
+																</ul>
+			</article>

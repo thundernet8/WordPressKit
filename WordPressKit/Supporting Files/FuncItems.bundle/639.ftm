@@ -1,0 +1,77 @@
+<article id="post-1109" class="post-1109 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_type_capabilities/">get_post_type_capabilities ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$args</span> )</a></h1>
+
+	<section class="summary">
+		<p>Build an object with all post type capabilities out of a post type object</p>
+	</section>
+
+
+	<section class="description">
+		<p>Post type capabilities use the &#8216;capability_type&#8217; argument as a base, if the capability is not set in the &#8216;capabilities&#8217; argument array or if the &#8216;capabilities&#8217; argument is not supplied.</p>
+<p>The capability_type argument can optionally be registered as an array, with the first value being singular and the second plural, e.g. array(&#8216;story, &#8216;stories&#8217;) Otherwise, an &#8216;s&#8217; will be added to the value for the plural form. After registration, capability_type will always be a string of the singular value.</p>
+<p>By default, seven keys are accepted as part of the capabilities array:</p>
+<ul>
+<li>
+<p>edit_post, read_post, and delete_post are meta capabilities, which are then generally mapped to corresponding primitive capabilities depending on the context, which would be the post being edited/read/deleted and the user or role being checked. Thus these capabilities would generally not be granted directly to users or roles.</p>
+</li>
+<li>edit_posts &#8211; Controls whether objects of this post type can be edited.</li>
+<li>edit_others_posts &#8211; Controls whether objects of this type owned by other users can be edited. If the post type does not support an author, then this will behave like edit_posts.</li>
+<li>publish_posts &#8211; Controls publishing objects of this post type.</li>
+<li>read_private_posts &#8211; Controls whether private objects can be read.</li>
+</ul>
+<p>These four primitive capabilities are checked in core in various locations. There are also seven other primitive capabilities which are not referenced directly in core, except in map_meta_cap(), which takes the three aforementioned meta capabilities and translates them into one or more primitive capabilities that must then be checked against the user or role, depending on the context.</p>
+<ul>
+<li>read &#8211; Controls whether objects of this post type can be read.</li>
+<li>delete_posts &#8211; Controls whether objects of this post type can be deleted.</li>
+<li>delete_private_posts &#8211; Controls whether private objects can be deleted.</li>
+<li>delete_published_posts &#8211; Controls whether published objects can be deleted.</li>
+<li>delete_others_posts &#8211; Controls whether objects owned by other users can be can be deleted. If the post type does not support an author, then this will behave like delete_posts.</li>
+<li>edit_private_posts &#8211; Controls whether private objects can be edited.</li>
+<li>edit_published_posts &#8211; Controls whether published objects can be edited.</li>
+</ul>
+<p>These additional capabilities are only used in map_meta_cap(). Thus, they are only assigned by default if the post type is registered with the &#8216;map_meta_cap&#8217; argument set to true (default is false).</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> object with all the capabilities as member variables.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post type registration arguments.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type()</a>
+							</li>
+																</ul>
+			</article>

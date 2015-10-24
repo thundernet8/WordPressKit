@@ -1,0 +1,180 @@
+<article id="post-3067" class="post-3067 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-0-71">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use wp_list_categories()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/list_cats/">list_cats ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$optionall</span>&nbsp;=&nbsp;<span class="arg-default">1</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$all</span>&nbsp;=&nbsp;<span class="arg-default">'All'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$sort_column</span>&nbsp;=&nbsp;<span class="arg-default">'ID'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$sort_order</span>&nbsp;=&nbsp;<span class="arg-default">'asc'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$list</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$optiondates</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$optioncount</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$hide_empty</span>&nbsp;=&nbsp;<span class="arg-default">1</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$use_desc_for_title</span>&nbsp;=&nbsp;<span class="arg-default">1</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$children</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$child_of</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$categories</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$recurse</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$feed</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$feed_image</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$exclude</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$hierarchical</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+			</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|null)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$optionall</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+									<dt>$all</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'All'</p>
+							</dd>
+									<dt>$sort_column</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'ID'</p>
+							</dd>
+									<dt>$sort_order</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 'asc'</p>
+							</dd>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$list</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$optiondates</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$optioncount</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$hide_empty</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+									<dt>$use_desc_for_title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+									<dt>$children</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$child_of</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$categories</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$recurse</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$feed</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$feed_image</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$exclude</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$hierarchical</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

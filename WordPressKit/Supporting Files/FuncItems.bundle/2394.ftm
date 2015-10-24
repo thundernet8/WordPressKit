@@ -1,0 +1,62 @@
+<article id="post-3686" class="post-3686 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_tag_cloud/">wp_tag_cloud ( <span class="arg-type">array|string|null</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display tag cloud.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The text size is set by the &#8216;smallest&#8217; and &#8216;largest&#8217; arguments, which will use the &#8216;unit&#8217; argument value for the CSS text size unit. The &#8216;format&#8217; argument can be &#8216;flat&#8217; (default), &#8216;list&#8217;, or &#8216;array&#8217;. The flat value for the &#8216;format&#8217; argument will separate tags with spaces. The list value for the &#8216;format&#8217; argument will format the tags in a UL HTML list. The array value for the &#8216;format&#8217; argument will return in PHP array type format.</p>
+<p>The &#8216;orderby&#8217; argument will accept &#8216;name&#8217; or &#8216;count&#8217; and defaults to &#8216;name&#8217;. The &#8216;order&#8217; is the direction to sort, defaults to &#8216;ASC&#8217; and can be &#8216;DESC&#8217;.</p>
+<p>The &#8216;number&#8217; argument is how many tags to return. By default, the limit will be to return the top 45 tags in the tag cloud list.</p>
+<p>The &#8216;topic_count_text&#8217; argument is a nooped plural from _n_noop() to generate the text for the tooltip of the tag link.</p>
+<p>The &#8216;topic_count_text_callback&#8217; argument is a function, which given the count of the posts with that tag returns a text for the tooltip of the tag link.</p>
+<p>The &#8216;post_type&#8217; argument is used only when &#8216;link&#8217; is set to &#8216;edit&#8217;. It determines the post_type passed to edit.php for the popular tags edit links.</p>
+<p>The &#8216;exclude&#8217; and &#8216;include&#8217; arguments are used for the <a href="https://developer.wordpress.org/reference/functions/get_tags">get_tags()</a> function. Only one should be used, because only one will be used and the other ignored, if they are both set.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(void|array)</span> Generated tag cloud, only if no failures and 'array' is set for the 'format' argument.                    Otherwise, this function outputs the tag cloud.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category-template.php/">wp-includes/category-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>|<span class="null">null</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Override default arguments.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_tag_cloud/widget/">WP_Widget_Tag_Cloud::widget()</a>
+							</li>
+																</ul>
+			</article>

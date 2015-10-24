@@ -1,0 +1,68 @@
+<article id="post-3149" class="post-3149 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use update_user_meta()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/update_usermeta/">update_usermeta ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_key</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$meta_value</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update metadata of user.</p>
+	</section>
+
+
+	<section class="description">
+		<p>There is no need to serialize values, they will be serialized if it is needed. The metadata key can only be a string with underscores. All else will be removed.</p>
+<p>Will remove the metadata, if the meta value is empty.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on successful update, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User ID</span>
+									</p>
+							</dd>
+									<dt>$meta_key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Metadata key.</span>
+									</p>
+							</dd>
+									<dt>$meta_value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Metadata value.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

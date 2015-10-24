@@ -1,0 +1,225 @@
+<article id="post-2203" class="post-2203 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/set_url_scheme/">set_url_scheme ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$scheme</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Set the scheme for a URL</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> $url URL with chosen scheme.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Absolute url that includes a scheme</span>
+									</p>
+							</dd>
+									<dt>$scheme</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Scheme to give $url. Currently 'http', 'https', 'login', 'login_post', 'admin', or 'relative'.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/handle_row_actions/">WP_Posts_List_Table::handle_row_actions()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_theme_control/content_template/">WP_Customize_Theme_Control::content_template()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/print_emoji_detection_script/">print_emoji_detection_script()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_staticize_emoji/">wp_staticize_emoji()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_avatar_data/">get_avatar_data()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_canonical_url/">wp_admin_canonical_url()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/translation-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/translations_api/">translations_api()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/themes_api/">themes_api()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/pagination/">WP_List_Table::pagination()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/print_column_headers/">WP_List_Table::print_column_headers()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_core_checksums/">get_core_checksums()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/plugins_api/">plugins_api()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_menu_page/">add_menu_page()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_form_image_editor/">edit_form_image_editor()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_sample_permalink_html/">get_sample_permalink_html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_admin_notice_post_locked/">_admin_notice_post_locked()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_query_themes/">wp_ajax_query_themes()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_submit_meta_box/">post_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_home_path/">get_home_path()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/show_header_selector/">Custom_Image_Header::show_header_selector()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/admin_page/">Custom_Background::admin_page()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_custom_background_cb/">_custom_background_cb()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_header_image/">get_header_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/auth_redirect/">auth_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/url_is_accessable_via_ssl/">url_is_accessable_via_ssl()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/content_url/">content_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/plugins_url/">plugins_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_site_url/">network_site_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_home_url/">network_home_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_home_url/">get_home_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_site_url/">get_site_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_version_check/">wp_version_check()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_plugins/">wp_update_plugins()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_themes/">wp_update_themes()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_edit_menu/">wp_admin_bar_edit_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/feed.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/self_link/">self_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_menu_item_classes_by_context/">_wp_menu_item_classes_by_context()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_attachment_url/">wp_get_attachment_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/filter_ssl/">filter_SSL()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/_multisite_getusersblogs/">wp_xmlrpc_server::_multisite_getUsersBlogs()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/editor_settings/">_WP_Editors::editor_settings()</a>
+							</li>
+																			<a href="#" class="show-more">Show 41 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

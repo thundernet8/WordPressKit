@@ -1,0 +1,75 @@
+<article id="post-4659" class="post-4659 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_settings_section/">add_settings_section ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$callback</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$page</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add a new section to a settings page.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Part of the Settings API. Use this to define new settings sections for an admin page. Show settings sections in your admin page callback function with do_settings_sections(). Add settings fields to your section with add_settings_field()</p>
+<p>The $callback argument should be the name of a function that echoes out any content you want to show at the top of the settings section before the actual fields. It can output nothing if you want.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Slug-name to identify the section. Used in the 'id' attribute of tags.</span>
+									</p>
+							</dd>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Formatted title of the section. Shown as the heading for the section.</span>
+									</p>
+							</dd>
+									<dt>$callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Function that echos out any content at the top of the section (between heading and fields).</span>
+									</p>
+							</dd>
+									<dt>$page</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The slug-name of the settings page on which to show the section. Built-in pages include 'general', 'reading', 'writing', 'discussion', 'media', etc. Create your own using add_options_page();</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,56 @@
+<article id="post-17984" class="post-17984 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-4-2-3">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_kses_hair_parse/">wp_kses_hair_parse ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$attr</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds an attribute list from string containing attributes.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Does not modify input.  May return &#8220;evil&#8221; output. In case of unexpected input, returns false instead of stripping things.</p>
+<p>Based on wp_kses_hair() but does not return a multi-dimensional array.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|bool)</span> List of attributes found in $attr. Returns false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attribute list from HTML element to closing HTML element tag</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_attr_parse/">wp_kses_attr_parse()</a>
+							</li>
+																</ul>
+			</article>

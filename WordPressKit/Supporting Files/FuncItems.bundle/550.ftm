@@ -1,0 +1,92 @@
+<article id="post-68" class="post-68 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_meta-php wp-parser-package-meta wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_metadata/">get_metadata ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_type</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$object_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_key</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$single</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve metadata for the specified object.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> Single metadata value, or array of values</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/meta.php/">wp-includes/meta.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$meta_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Type of object metadata is for (e.g., comment, post, or user)</span>
+									</p>
+							</dd>
+									<dt>$object_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">ID of the object metadata is for</span>
+									</p>
+							</dd>
+									<dt>$meta_key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Metadata key. If not specified, retrieve all metadata for 		                    the specified object.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$single</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">                           If true, return only the first value of the specified meta_key.                          This parameter has no effect if meta_key is not specified.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_meta/">get_user_meta()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_meta/">get_post_meta()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_comment_meta/">get_comment_meta()</a>
+							</li>
+													<li>
+								<span>wp-includes/meta.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_metadata/">update_metadata()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,95 @@
+<article id="post-1514" class="post-1514 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/locate_template/">locate_template ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$template_names</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$load</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$require_once</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the name of the highest priority template file that exists.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Searches in the STYLESHEETPATH before TEMPLATEPATH so that themes which inherit from a parent theme can just overload one file.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The template filename if one is located.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/template.php/">wp-includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$template_names</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Template file(s) to search for, in order.</span>
+									</p>
+							</dd>
+									<dt>$load</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">If true the template file will be loaded if it is found.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$require_once</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether to require_once or require.  Has no effect if $load is false.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_header/">get_header()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_footer/">get_footer()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_sidebar/">get_sidebar()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_template_part/">get_template_part()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_search_form/">get_search_form()</a>
+							</li>
+													<li>
+								<span>wp-includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_query_template/">get_query_template()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

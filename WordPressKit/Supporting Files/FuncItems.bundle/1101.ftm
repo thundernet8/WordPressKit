@@ -1,0 +1,56 @@
+<article id="post-4153" class="post-4153 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_widgets-php wp-parser-package-administration wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/next_widget_id_number/">next_widget_id_number ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$id_base</span> )</a></h1>
+
+	<section class="summary">
+			</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/widgets.php/">wp-admin/includes/widgets.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id_base</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_widgets/">wp_list_widgets()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/get_available_widgets/">WP_Customize_Widgets::get_available_widgets()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,48 @@
+<article id="post-1895" class="post-1895 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_admin-bar-php wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_my_account_item/">wp_admin_bar_my_account_item ( <span class="arg-type">WP_Admin_Bar</span>&nbsp;<span class="arg-name">$wp_admin_bar</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add the &quot;My Account&quot; item.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/admin-bar.php/">wp-includes/admin-bar.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$wp_admin_bar</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Admin_Bar">WP_Admin_Bar</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

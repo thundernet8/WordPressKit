@@ -1,0 +1,35 @@
+<article id="post-5921" class="post-5921 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-content_themes_twentyeleven_functions-php wp-parser-package-twenty_eleven wp-parser-package-wordpress wp-parser-since-twenty-eleven-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/twentyeleven_footer_sidebar_class/">twentyeleven_footer_sidebar_class ()</a></h1>
+
+	<section class="summary">
+		<p>Count the number of footer sidebars to enable dynamic classes for the footer.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-content/themes/twentyeleven/functions.php/">wp-content/themes/twentyeleven/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

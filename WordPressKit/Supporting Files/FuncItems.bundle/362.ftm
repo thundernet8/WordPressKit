@@ -1,0 +1,76 @@
+<article id="post-2326" class="post-2326 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-3-1-0 wp-parser-since-4-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_ancestors/">get_ancestors ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$object_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$object_type</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$resource_type</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get an array of ancestor IDs for a given object.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> An array of ancestors from lowest to highest in the hierarchy.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$object_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The ID of the object. Default 0.</span>
+									</p>
+							</dd>
+									<dt>$object_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The type of object for which we'll be retrieving                              ancestors. Accepts a post type or a taxonomy name. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$resource_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Type of resource $object_type is. Accepts 'post_type'                              or 'taxonomy'. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_add_tag/">wp_ajax_add_tag()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_term_link/">get_term_link()</a>
+							</li>
+																</ul>
+			</article>

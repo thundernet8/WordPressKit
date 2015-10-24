@@ -1,0 +1,137 @@
+<article id="post-2521" class="post-2521 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/remove_query_arg/">remove_query_arg ( <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$key</span>,  <span class="arg-type">bool|string</span>&nbsp;<span class="arg-name">$query</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Removes an item or list from the query string.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> New URL query string.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Query key or keys to remove.</span>
+									</p>
+							</dd>
+									<dt>$query</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> When false uses the $_SERVER value. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+			<hr/>
+		<section class="explanation">
+			<h2>Explanation</h2>
+			<h4>Usage:</h4>
+<pre class="brush: php; title: ; notranslate" title="">
+// individual parameter
+esc_url( remove_query_arg( $key, $query ) );
+
+// multiple parameters in an array
+esc_url( remove_query_arg( array('$key1', 'key2', 'key3'), $query ) );
+</pre>
+		</section>
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_theme_control/content_template/">WP_Customize_Theme_Control::content_template()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_canonical_url/">wp_admin_canonical_url()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_media_attach_action/">wp_media_attach_action()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/pagination/">WP_List_Table::pagination()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/print_column_headers/">WP_List_Table::print_column_headers()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_screen_options/">set_screen_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_setup/">wp_dashboard_setup()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/walker_nav_menu_edit/start_el/">Walker_Nav_Menu_Edit::start_el()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_post_type_meta_box/">wp_nav_menu_item_post_type_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_item_taxonomy_meta_box/">wp_nav_menu_item_taxonomy_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nonce_ays/">wp_nonce_ays()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_pagenum_link/">get_pagenum_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_remove_qs_args_if_not_in_url/">_remove_qs_args_if_not_in_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-formats.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_post_format_link/">_post_format_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_cancel_comment_reply_link/">get_cancel_comment_reply_link()</a>
+							</li>
+																			<a href="#" class="show-more">Show 16 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,59 @@
+<article id="post-5186" class="post-5186 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_ms-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/avoid_blog_page_permalink_collision/">avoid_blog_page_permalink_collision ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$data</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$postarr</span> )</a></h1>
+
+	<section class="summary">
+		<p>Avoids a collision between a site slug and a permalink slug.</p>
+	</section>
+
+
+	<section class="description">
+		<p>In a subdirectory install this will make sure that a site and a post do not use the same subdirectory by checking for a site with the same name as a new post.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> The new array of post data after checking for collisions.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/ms.php/">wp-admin/includes/ms.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$data</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An array of post data.</span>
+									</p>
+							</dd>
+									<dt>$postarr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An array of posts. Not currently used.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

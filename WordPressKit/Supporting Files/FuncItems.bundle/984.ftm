@@ -1,0 +1,45 @@
+<article id="post-3037" class="post-3037 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/kses_init_filters/">kses_init_filters ()</a></h1>
+
+	<section class="summary">
+		<p>Adds all Kses input form content filters.</p>
+	</section>
+
+
+	<section class="description">
+		<p>All hooks have default priority. The wp_filter_kses() function is added to the &#8216;pre_comment_content&#8217; and &#8216;title_save_pre&#8217; hooks.</p>
+<p>The wp_filter_post_kses() function is added to the &#8216;content_save_pre&#8217;, &#8216;excerpt_save_pre&#8217;, and &#8216;content_filtered_save_pre&#8217; hooks.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_replyto_comment/">wp_ajax_replyto_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/kses_init/">kses_init()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,74 @@
+<article id="post-1992" class="post-1992 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_http-php wp-parser-package-http wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_http_get_object/">_wp_http_get_object ()</a></h1>
+
+	<section class="summary">
+		<p>Returns the initialized WP_Http Object</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Http)</span> HTTP Transport object.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/http.php/">wp-includes/http.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_safe_remote_request/">wp_safe_remote_request()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_safe_remote_get/">wp_safe_remote_get()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_safe_remote_post/">wp_safe_remote_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_safe_remote_head/">wp_safe_remote_head()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_remote_request/">wp_remote_request()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_remote_get/">wp_remote_get()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_remote_post/">wp_remote_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_remote_head/">wp_remote_head()</a>
+							</li>
+													<li>
+								<span>wp-includes/http.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_http_supports/">wp_http_supports()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

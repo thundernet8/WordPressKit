@@ -1,0 +1,106 @@
+<article id="post-1876" class="post-1876 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/remove_action/">remove_action ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$function_to_remove</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$priority</span>&nbsp;=&nbsp;<span class="arg-default">10</span> )</a></h1>
+
+	<section class="summary">
+		<p>Removes a function from a specified action hook.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function removes a function attached to a specified action hook. This method can be used to remove default functions attached to a specific filter hook and possibly replace them with a substitute.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the function is removed.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The action hook to which the function to be removed is hooked.</span>
+									</p>
+							</dd>
+									<dt>$function_to_remove</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The name of the function which should be removed.</span>
+									</p>
+							</dd>
+									<dt>$priority</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The priority of the function. </span>
+									</p>
+								<p class="default">Default value: 10</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/run/">WP_Automatic_Updater::run()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-themes-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_themes_list_table/single_row/">WP_MS_Themes_List_Table::single_row()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_preview_signature/">WP_Customize_Manager::remove_preview_signature()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/__construct/">WP_Customize_Manager::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_remove_theme_support/">_remove_theme_support()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_theme_switched/">check_theme_switched()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/automatic_feed_links/">automatic_feed_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_feed/">add_feed()</a>
+							</li>
+													<li>
+								<span>wp-includes/media-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_print_media_templates/">wp_print_media_templates()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

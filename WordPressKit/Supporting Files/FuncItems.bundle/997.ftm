@@ -1,0 +1,90 @@
+<article id="post-3070" class="post-3070 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use wp_list_authors()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/list_authors/">list_authors ( <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$optioncount</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$exclude_admin</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$show_fullname</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$hide_empty</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$feed</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$feed_image</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>List authors.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(null|string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$optioncount</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$exclude_admin</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$show_fullname</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$hide_empty</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$feed</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$feed_image</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

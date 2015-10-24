@@ -1,0 +1,153 @@
+<article id="post-3413" class="post-3413 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-5-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_avatar/">get_avatar ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$id_or_email</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$size</span>&nbsp;=&nbsp;<span class="arg-default">96</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$default</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$alt</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the avatar `&lt;img&gt;` tag for a user, email address, MD5 hash, comment, or post.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|string)</span> <code>&lt;img&gt;</code> tag for the user's avatar. False on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id_or_email</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The Gravatar to retrieve. Accepts a user_id, gravatar md5 hash,                           user email, WP_User object, WP_Post object, or comment object.</span>
+									</p>
+							</dd>
+									<dt>$size</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Height and width of the avatar image file in pixels. </span>
+									</p>
+								<p class="default">Default value: 96</p>
+							</dd>
+									<dt>$default</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> URL for the default image or a default type. Accepts '404'                           (return a 404 instead of a default image), 'retro' (8bit), 'monsterid'                           (monster), 'wavatar' (cartoon face), 'indenticon' (the &quot;quilt&quot;),                           'mystery', 'mm', or 'mysterman' (The Oyster Man), 'blank' (transparent GIF),                           or 'gravatar_default' (the Gravatar logo). Default is the value of the                           'avatar_default' option, with a fallback of 'mystery'.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$alt</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Alternative text to use in &amp;lt;img&amp;gt; tag. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Extra arguments to retrieve the avatar. <ul class="param-hash"><li><b>'height'</b><br /><i><span class='type'>(int)</span></i> Display height of the avatar in pixels. Defaults to $size. </li>
+<li><b>'width'</b><br /><i><span class='type'>(int)</span></i> Display width of the avatar in pixels. Defaults to $size. </li>
+<li><b>'force_default'</b><br /><i><span class='type'>(bool)</span></i> Whether to always show the default image, never the Gravatar. Default false. </li>
+<li><b>'rating'</b><br /><i><span class='type'>(string)</span></i> What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option. </li>
+<li><b>'scheme'</b><br /><i><span class='type'>(string)</span></i> URL scheme to use. See set_url_scheme() for accepted values. </li>
+<li><b>'class'</b><br /><i><span class='type'>(array|string)</span></i> Array or string of additional classes to add to the &amp;lt;img&amp;gt; element. </li>
+<li><b>'force_display'</b><br /><i><span class='type'>(bool)</span></i> Whether to always show the avatar - ignores the show_avatars option. Default false. </li>
+<li><b>'extra_attr'</b><br /><i><span class='type'>(string)</span></i> HTML attributes to insert in the IMG element. Is not sanitized. Default empty.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/column_title/">WP_Posts_List_Table::column_title()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/column_username/">WP_MS_Users_List_Table::column_username()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_check_locked_posts/">wp_check_locked_posts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_refresh_post_lock/">wp_refresh_post_lock()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_dashboard_recent_comments_row/">_wp_dashboard_recent_comments_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/single_row/">WP_Users_List_Table::single_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_admin_notice_post_locked/">_admin_notice_post_locked()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_revisions_for_js/">wp_prepare_revisions_for_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/floated_admin_avatar/">floated_admin_avatar()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_my_account_item/">wp_admin_bar_my_account_item()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_my_account_menu/">wp_admin_bar_my_account_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_post_revision_title_expanded/">wp_post_revision_title_expanded()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/walker_comment/comment/">Walker_Comment::comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/walker_comment/html5_comment/">Walker_Comment::html5_comment()</a>
+							</li>
+																			<a href="#" class="show-more">Show 14 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,48 @@
+<article id="post-740" class="post-740 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_nav-menu-php wp-parser-package-nav_menus wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_nav_menu_locations/">get_nav_menu_locations ()</a></h1>
+
+	<section class="summary">
+		<p>Returns an array with the registered navigation menu locations and the menu assigned to it</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/nav-menu.php/">wp-includes/nav-menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/nav-menu-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu/">wp_nav_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/has_nav_menu/">has_nav_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_nav_menu/">wp_delete_nav_menu()</a>
+							</li>
+																</ul>
+			</article>

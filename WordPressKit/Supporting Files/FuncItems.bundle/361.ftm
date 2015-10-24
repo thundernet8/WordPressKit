@@ -1,0 +1,48 @@
+<article id="post-1659" class="post-1659 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_option-php wp-parser-package-option wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_all_user_settings/">get_all_user_settings ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve all user interface settings.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> the last saved user settings or empty array.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/option.php/">wp-includes/option.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_setting/">get_user_setting()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_user_setting/">set_user_setting()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_user_setting/">delete_user_setting()</a>
+							</li>
+																</ul>
+			</article>

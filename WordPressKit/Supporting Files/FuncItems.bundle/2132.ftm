@@ -1,0 +1,82 @@
+<article id="post-987" class="post-987 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_is_large_network/">wp_is_large_network ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$using</span>&nbsp;=&nbsp;<span class="arg-default">'sites'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Whether or not we have a large network.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The default criteria for a large network is either more than 10,000 users or more than 10,000 sites. Plugins can alter this criteria using the &#8216;wp_is_large_network&#8217; filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if the network meets the criteria for large. False otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$using</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">'sites or 'users'. Default is 'sites'.</span>
+									</p>
+								<p class="default">Default value: 'sites'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/prepare_items/">WP_MS_Users_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-sites-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_sites_list_table/prepare_items/">WP_MS_Sites_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_autocomplete_user/">wp_ajax_autocomplete_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user_query/prepare_query/">WP_User_Query::prepare_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_sites/">wp_get_sites()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_update_network_site_counts/">wp_maybe_update_network_site_counts()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_update_network_user_counts/">wp_maybe_update_network_user_counts()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

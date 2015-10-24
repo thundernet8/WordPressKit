@@ -1,0 +1,40 @@
+<article id="post-3317" class="post-3317 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_thickbox/">add_thickbox ()</a></h1>
+
+	<section class="summary">
+		<p>Enqueues the default ThickBox js and css.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If any of the settings need to be changed, this can be done with another js file similar to media-upload.js. That file should require array(&#8216;thickbox&#8217;) to ensure it is loaded after.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/enqueue_scripts/">_WP_Editors::enqueue_scripts()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,71 @@
+<article id="post-2548" class="post-2548 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-4">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_referer/">wp_get_referer ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve referer from &#8216;_wp_http_referer&#8217; or HTTP referer.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If it&#8217;s the same as the current request URL, will return false.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|string)</span> False on failure. Referer URL on success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_media_attach_action/">wp_media_attach_action()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_screen_options/">set_screen_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_admin_notice_post_locked/">_admin_notice_post_locked()</a>
+							</li>
+													<li>
+								<span>wp-admin/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_post/">redirect_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/auth_redirect/">auth_redirect()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_admin_referer/">check_admin_referer()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nonce_ays/">wp_nonce_ays()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_original_referer_field/">wp_original_referer_field()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

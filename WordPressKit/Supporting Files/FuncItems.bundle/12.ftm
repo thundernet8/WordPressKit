@@ -1,0 +1,59 @@
+<article id="post-4334" class="post-4334 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_menu-php wp-parser-package-administration wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_cssclass/">add_cssclass ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$add</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$class</span> )</a></h1>
+
+	<section class="summary">
+			</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/menu.php/">wp-admin/includes/menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$add</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$class</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_menu_classes/">add_menu_classes()</a>
+							</li>
+																</ul>
+			</article>

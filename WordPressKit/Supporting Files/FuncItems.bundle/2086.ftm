@@ -1,0 +1,60 @@
+<article id="post-989" class="post-989 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_sites/">wp_get_sites ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Return an array of sites for a network or networks.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> An empty array if the install is considered "large" via wp_is_large_network(). Otherwise,               an associative array of site data arrays, each containing the site (network) ID, blog ID,               site domain and path, dates registered and modified, and the language ID. Also, boolean               values for whether the site is public, archived, mature, spam, and/or deleted.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array of default arguments. Optional. <ul class="param-hash"><li><b>'network_id'</b><br /><i><span class='type'>(int|array)</span></i> A network ID or array of network IDs. Set to null to retrieve sites from all networks. Defaults to current network ID. </li>
+<li><b>'public'</b><br /><i><span class='type'>(int)</span></i> Retrieve public or non-public sites. Default null, for any. </li>
+<li><b>'archived'</b><br /><i><span class='type'>(int)</span></i> Retrieve archived or non-archived sites. Default null, for any. </li>
+<li><b>'mature'</b><br /><i><span class='type'>(int)</span></i> Retrieve mature or non-mature sites. Default null, for any. </li>
+<li><b>'spam'</b><br /><i><span class='type'>(int)</span></i> Retrieve spam or non-spam sites. Default null, for any. </li>
+<li><b>'deleted'</b><br /><i><span class='type'>(int)</span></i> Retrieve deleted or non-deleted sites. Default null, for any. </li>
+<li><b>'limit'</b><br /><i><span class='type'>(int)</span></i> Number of sites to limit the query to. Default 100. </li>
+<li><b>'offset'</b><br /><i><span class='type'>(int)</span></i> Exclude the first x sites. Used in combination with the $limit parameter. Default 0.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

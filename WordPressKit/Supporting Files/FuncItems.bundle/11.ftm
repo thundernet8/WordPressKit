@@ -1,0 +1,58 @@
+<article id="post-5359" class="post-5359 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use get_current_screen()-&gt;add_help_tab()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_contextual_help/">add_contextual_help ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$screen</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$help</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add contextual help text for a page.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Creates an &#8216;Overview&#8217; help tab.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/deprecated.php/">wp-admin/includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$screen</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The handle for the screen to add help to. This is usually the hook name returned by the add_*_page() functions.</span>
+									</p>
+							</dd>
+									<dt>$help</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The content of an 'Overview' help tab.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

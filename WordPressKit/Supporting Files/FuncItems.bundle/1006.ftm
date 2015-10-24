@@ -1,0 +1,56 @@
+<article id="post-3568" class="post-3568 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_l10n-php wp-parser-package-i18n wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/load_default_textdomain/">load_default_textdomain ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$locale</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Load default translated strings based on locale.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Loads the .mo file in WP_LANG_DIR constant path from WordPress root. The translated (.mo) file is named based on the locale.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the textdomain was loaded.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/l10n.php/">wp-includes/l10n.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$locale</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Locale to load. Default is the value of <a href="https://developer.wordpress.org/reference/functions/get_locale">get_locale()</a>.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_redirect_to_about_wordpress/">_redirect_to_about_wordpress()</a>
+							</li>
+																</ul>
+			</article>

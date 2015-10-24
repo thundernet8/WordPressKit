@@ -1,0 +1,75 @@
+<article id="post-1418" class="post-1418 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0 wp-parser-since-4-2-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_dropdown_pages/">wp_dropdown_pages ( <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve or display list of pages as a dropdown (select list).</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> HTML content, if not displaying.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments to generate a pages drop-down element. <ul class="param-hash"><li><b>'depth'</b><br /><i><span class='type'>(int)</span></i> Maximum depth. Default 0. </li>
+<li><b>'child_of'</b><br /><i><span class='type'>(int)</span></i> Page ID to retrieve child pages of. Default 0. </li>
+<li><b>'selected'</b><br /><i><span class='type'>(int|string)</span></i> Value of the option that should be selected. Default 0. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to echo or return the generated markup. Accepts 0, 1, or their bool equivalents. Default 1. </li>
+<li><b>'name'</b><br /><i><span class='type'>(string)</span></i> Value for the 'name' attribute of the select element. Default 'page_id'. </li>
+<li><b>'id'</b><br /><i><span class='type'>(string)</span></i> Value for the 'id' attribute of the select element. </li>
+<li><b>'class'</b><br /><i><span class='type'>(string)</span></i> Value for the 'class' attribute of the select element. Default: none. Defaults to the value of &lt;code&gt;$name&lt;/code&gt;. </li>
+<li><b>'show_option_none'</b><br /><i><span class='type'>(string)</span></i> Text to display for showing no pages. Default empty (does not display). </li>
+<li><b>'show_option_no_change'</b><br /><i><span class='type'>(string)</span></i> Text to display for &quot;no change&quot; option. Default empty (does not display). </li>
+<li><b>'option_none_value'</b><br /><i><span class='type'>(string)</span></i> Value to use when no page is selected. </li>
+<li><b>'value_field'</b><br /><i><span class='type'>(string)</span></i> Post field used to populate the 'value' attribute of the option elements. Accepts any valid post field. Default 'ID'.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/page_attributes_meta_box/">page_attributes_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/inline_edit/">WP_Posts_List_Table::inline_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_control/render_content/">WP_Customize_Control::render_content()</a>
+							</li>
+																</ul>
+			</article>

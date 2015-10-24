@@ -1,0 +1,58 @@
+<article id="post-753" class="post-753 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_nav-menu-php wp-parser-package-nav_menus wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_sort_nav_menu_items/">_sort_nav_menu_items ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$a</span>,  <span class="arg-type">object</span>&nbsp;<span class="arg-name">$b</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sort menu items by the desired key.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> -1, 0, or 1 if $a is considered to be respectively less than, equal to, or greater than $b.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/nav-menu.php/">wp-includes/nav-menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$a</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The first object to compare</span>
+									</p>
+							</dd>
+									<dt>$b</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The second object to compare</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

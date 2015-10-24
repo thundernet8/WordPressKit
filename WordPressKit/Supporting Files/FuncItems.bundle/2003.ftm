@@ -1,0 +1,180 @@
+<article id="post-2667" class="post-2667 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-wp-scripts-php wp-parser-package-backpress wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_enqueue_script/">wp_enqueue_script ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$handle</span>,  <span class="arg-type">string|bool</span>&nbsp;<span class="arg-name">$src</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$deps</span>&nbsp;=&nbsp;<span class="arg-default">array()</span>,  <span class="arg-type">string|bool</span>&nbsp;<span class="arg-name">$ver</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$in_footer</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Enqueue a script.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Registers the script if $src provided (does NOT overwrite), and enqueues it.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions-wp-scripts.php/">wp-includes/functions.wp-scripts.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$handle</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Name of the script.</span>
+									</p>
+							</dd>
+									<dt>$src</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Path to the script from the root directory of WordPress. Example: '/js/myscript.js'.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$deps</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">An array of registered handles this script depends on. </span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+									<dt>$ver</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> String specifying the script version number, if it has one. This parameter                               is used to ensure that the correct version is sent to the client regardless of caching,                               and so should be included if a version number is available and makes sense for the script.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$in_footer</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to enqueue the script before &lt;/head&gt; or before &lt;/body&gt;.                               Default 'false'. Accepts 'false' or 'true'.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_cropped_image_control/enqueue/">WP_Customize_Cropped_Image_Control::enqueue()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/customize_preview_enqueue_deps/">WP_Customize_Nav_Menus::customize_preview_enqueue_deps()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/enqueue_scripts/">WP_Customize_Nav_Menus::enqueue_scripts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/html/">WP_Press_This::html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_internal_pointers/enqueue_scripts/">WP_Internal_Pointers::enqueue_scripts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_accordion_sections/">do_accordion_sections()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_gallery/">media_upload_gallery()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/enqueue_comment_hotkeys_js/">enqueue_comment_hotkeys_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/js_includes/">Custom_Image_Header::js_includes()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/admin_load/">Custom_Background::admin_load()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/customize_preview_init/">WP_Customize_Manager::customize_preview_init()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_thickbox/">add_thickbox()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_auth_check_load/">wp_auth_check_load()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/initialize/">WP_Admin_Bar::initialize()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_enqueue_media/">wp_enqueue_media()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_video_shortcode/">wp_video_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_playlist_scripts/">wp_playlist_scripts()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_audio_shortcode/">wp_audio_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_header_image_control/enqueue/">WP_Customize_Header_Image_Control::enqueue()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_color_control/enqueue/">WP_Customize_Color_Control::enqueue()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/enqueue_scripts/">WP_Customize_Widgets::enqueue_scripts()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/customize_preview_enqueue/">WP_Customize_Widgets::customize_preview_enqueue()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/enqueue_scripts/">_WP_Editors::enqueue_scripts()</a>
+							</li>
+																			<a href="#" class="show-more">Show 23 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

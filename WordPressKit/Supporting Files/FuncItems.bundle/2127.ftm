@@ -1,0 +1,102 @@
+<article id="post-4797" class="post-4797 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_upgrade-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_install/">wp_install ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$blog_title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_name</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_email</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$public</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$deprecated</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_password</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$language</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Installs the site.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Runs the required functions to set up and populate the database, including primary admin user and initial options.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Array keys 'url', 'user_id', 'password', and 'password_message'.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/upgrade.php/">wp-admin/includes/upgrade.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$blog_title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Blog title.</span>
+									</p>
+							</dd>
+									<dt>$user_name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User's username.</span>
+									</p>
+							</dd>
+									<dt>$user_email</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User's email.</span>
+									</p>
+							</dd>
+									<dt>$public</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Whether blog is public.</span>
+									</p>
+							</dd>
+									<dt>$deprecated</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Not used.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$user_password</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> User's chosen password. Default empty (random password).</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$language</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Language chosen. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

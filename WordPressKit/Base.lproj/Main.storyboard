@@ -71,17 +71,17 @@
                         <outlet property="searchBar" destination="obI-06-ekR" id="snL-Ok-zv1"/>
                         <outlet property="tableView" destination="tBg-Mn-Y0N" id="SBS-O0-y6d"/>
                         <segue destination="66C-2J-q8F" kind="show" identifier="ShowFuncItem" id="Owd-lW-jMT"/>
-                        <segue destination="ZFL-wu-P7l" kind="show" identifier="Show" id="fXW-at-9Lp"/>
+                        <segue destination="ZFL-wu-P7l" kind="show" identifier="ShowFuncItemInWebView" id="fXW-at-9Lp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dx-QQ-pyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="812" y="-1046"/>
         </scene>
-        <!--HTML-->
+        <!--单个函数(Web)-->
         <scene sceneID="6X4-Dc-8Cq">
             <objects>
-                <viewController id="ZFL-wu-P7l" customClass="temp" sceneMemberID="viewController">
+                <viewController title="单个函数(Web)" id="ZFL-wu-P7l" customClass="FuncItemWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SEN-va-bWs"/>
                         <viewControllerLayoutGuide type="bottom" id="aY9-Qp-vvX"/>
@@ -90,24 +90,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRu-j0-UJL">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-1V-4Rt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ug2-1V-4Rt" firstAttribute="leading" secondItem="UgR-zm-8sU" secondAttribute="leadingMargin" constant="-16" id="8Pq-aN-X2H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ug2-1V-4Rt" secondAttribute="trailing" constant="-16" id="J6y-WD-MFb"/>
+                            <constraint firstItem="aY9-Qp-vvX" firstAttribute="top" secondItem="ug2-1V-4Rt" secondAttribute="bottom" constant="-49" id="UMb-8q-9jt"/>
+                            <constraint firstItem="ug2-1V-4Rt" firstAttribute="top" secondItem="SEN-va-bWs" secondAttribute="bottom" constant="-64" id="gcV-8G-Xwc"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="HTML" id="Mak-3p-9Cl"/>
+                    <navigationItem key="navigationItem" title="函数" id="Mak-3p-9Cl"/>
                     <connections>
-                        <outlet property="text" destination="nRu-j0-UJL" id="b25-8I-a2G"/>
+                        <outlet property="webView" destination="ug2-1V-4Rt" id="Ksn-lj-DXP"/>
+                        <segue destination="Mxb-CT-PLD" kind="show" identifier="ShowSourfileFromFuncItemInWebView" id="lWj-40-Zpx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWj-Nf-6wL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="-1713"/>
+            <point key="canvasLocation" x="1618" y="-1725"/>
         </scene>
         <!--单个函数-->
         <scene sceneID="SSO-gH-bo3">
@@ -325,7 +330,7 @@
                     <navigationItem key="navigationItem" id="znQ-pi-kVf"/>
                     <connections>
                         <outlet property="scrollView" destination="cjQ-1o-Hy6" id="wB5-nP-K5g"/>
-                        <segue destination="Mxb-CT-PLD" kind="show" identifier="ShouSourfileFromFuncItem" id="r7U-Ry-fub"/>
+                        <segue destination="Mxb-CT-PLD" kind="show" identifier="ShowSourfileFromFuncItem" id="r7U-Ry-fub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb8-GZ-0wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2013,10 +2018,10 @@
         <image name="wordpress_transparent" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Owd-lW-jMT"/>
-        <segue reference="r7U-Ry-fub"/>
         <segue reference="UZO-Er-ThG"/>
         <segue reference="4wf-xV-8FY"/>
         <segue reference="osW-FN-eW0"/>
+        <segue reference="Owd-lW-jMT"/>
+        <segue reference="lWj-40-Zpx"/>
     </inferredMetricsTieBreakers>
 </document>

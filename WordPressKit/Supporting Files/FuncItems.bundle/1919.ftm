@@ -1,0 +1,62 @@
+<article id="post-4977" class="post-4977 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_taxonomy-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_create_term/">wp_create_term ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$tag_name</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span>&nbsp;=&nbsp;<span class="arg-default">'post_tag'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add a new term to the database if it does not already exist.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|WP_Error)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/taxonomy.php/">wp-admin/includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag_name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The taxonomy for which to retrieve terms. </span>
+									</p>
+								<p class="default">Default value: 'post_tag'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_tag/">wp_create_tag()</a>
+							</li>
+																</ul>
+			</article>

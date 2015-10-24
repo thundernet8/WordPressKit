@@ -1,0 +1,36 @@
+<article id="post-3734" class="post-3734 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_cache-php wp-parser-package-cache wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. </div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_cache_reset/">wp_cache_reset ()</a></h1>
+
+	<section class="summary">
+		<p>Reset internal cache keys and structures. If the cache backend uses global blog or site IDs as part of its cache keys, this function instructs the backend to reset those keys and perform any cleanup since blog or site IDs have changed since cache init.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function is deprecated. Use wp_cache_switch_to_blog() instead of this function when preparing the cache for a blog switch. For clearing the cache during unit tests, consider using wp_cache_init(). wp_cache_init() is not recommended outside of unit tests as the performance penality for using it is high.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/cache.php/">wp-includes/cache.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

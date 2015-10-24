@@ -1,0 +1,57 @@
+<article id="post-3761" class="post-3761 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_cron-php wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_schedules/">wp_get_schedules ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve supported and filtered Cron recurrences.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The supported recurrences are &#8216;hourly&#8217; and &#8216;daily&#8217;. A plugin may add more by hooking into the &#8216;cron_schedules&#8217; filter. The filter accepts an array of arrays. The outer array has a key that is the name of the schedule or for example &#8216;weekly&#8217;. The value is an array with two keys, one is &#8216;interval&#8217; and the other is &#8216;display&#8217;.</p>
+<p>The &#8216;interval&#8217; is a number in seconds of when the cron job should run. So for &#8216;hourly&#8217;, the time is 3600 or 60<em>60. For weekly, the value would be 60</em>60<em>24</em>7 or 604800. The value of &#8216;interval&#8217; would then be 604800.</p>
+<p>The &#8216;display&#8217; is the description. For the &#8216;weekly&#8217; key, the &#8216;display&#8217; would be <code>__( 'Once Weekly' )</code>.</p>
+<p>For your plugin, you will be passed an array. you can easily add your schedule by doing the following.</p>
+<pre><code>// Filter parameter variable name is 'array'.
+$array['weekly'] = array(
+    'interval' =&gt; 604800,
+       'display'  =&gt; __( 'Once Weekly' )
+);</code></pre>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/cron.php/">wp-includes/cron.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_schedule_event/">wp_schedule_event()</a>
+							</li>
+													<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_reschedule_event/">wp_reschedule_event()</a>
+							</li>
+													<li>
+								<span>wp-includes/cron.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_cron/">wp_cron()</a>
+							</li>
+																</ul>
+			</article>

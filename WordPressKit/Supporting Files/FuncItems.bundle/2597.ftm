@@ -1,0 +1,67 @@
+<article id="post-1016" class="post-1016 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_canonical-php wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_remove_qs_args_if_not_in_url/">_remove_qs_args_if_not_in_url ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$query_string</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args_to_check</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span> )</a></h1>
+
+	<section class="summary">
+		<p>Removes arguments from a query string if they are not present in a URL DO NOT use this in plugin code.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The altered query string</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/canonical.php/">wp-includes/canonical.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$query_string</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$args_to_check</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+																</ul>
+			</article>

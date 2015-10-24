@@ -1,0 +1,84 @@
+<article id="post-2783" class="post-2783 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-php wp-parser-package-wordpress wp-parser-since-1-5-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_category/">get_category ( <span class="arg-type">int|object</span>&nbsp;<span class="arg-name">$category</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$output</span>&nbsp;=&nbsp;<span class="arg-default">OBJECT</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$filter</span>&nbsp;=&nbsp;<span class="arg-default">'raw'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieves category data given a category ID or category object.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If you pass the $category parameter an object, which is assumed to be the category row object retrieved the database. It will cache the category data.</p>
+<p>If you pass $category an integer of the category ID, then that category will be retrieved from the database, if it isn&#8217;t already cached, and pass it back.</p>
+<p>If you look at get_term(), then both types will be passed through several filters and finally sanitized based on the $filter parameter value.</p>
+<p>The category will converted to maintain backwards compatibility.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object|array|WP_Error|null)</span> Category data in type defined by $output parameter.                                    WP_Error if $category is empty, null if it does not exist.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category.php/">wp-includes/category.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$category</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Category ID or Category row object</span>
+									</p>
+							</dd>
+									<dt>$output</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Constant OBJECT, ARRAY_A, or ARRAY_N</span>
+									</p>
+								<p class="default">Default value: OBJECT</p>
+							</dd>
+									<dt>$filter</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Default is raw or no WordPress defined filter will applied.</span>
+									</p>
+								<p class="default">Default value: 'raw'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/add_category/">WP_Press_This::add_category()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_children/">get_category_children()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkcatname/">get_linkcatname()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,94 @@
+<article id="post-2651" class="post-2651 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-3-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_checkdate/">wp_checkdate ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$month</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$day</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$year</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$source_date</span> )</a></h1>
+
+	<section class="summary">
+		<p>Test if the supplied date is valid for the Gregorian calendar.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if valid date, false if not valid date.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$month</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Month number.</span>
+									</p>
+							</dd>
+									<dt>$day</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Day number.</span>
+									</p>
+							</dd>
+									<dt>$year</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Year number.</span>
+									</p>
+							</dd>
+									<dt>$source_date</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The date to filter.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/date.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_date_query/validate_date_values/">WP_Date_Query::validate_date_values()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_translate_postdata/">_wp_translate_postdata()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_query/parse_query/">WP_Query::parse_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_post/">wp_insert_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+																</ul>
+			</article>

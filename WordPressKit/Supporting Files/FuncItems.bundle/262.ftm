@@ -1,0 +1,37 @@
+<article id="post-2534" class="post-2534 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/do_feed/">do_feed ()</a></h1>
+
+	<section class="summary">
+		<p>Load the feed template from the use of an action hook.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the feed action does not have a hook, then the function will die with a message telling the visitor that the feed is not valid.</p>
+<p>It is better to only have one hook for each feed.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

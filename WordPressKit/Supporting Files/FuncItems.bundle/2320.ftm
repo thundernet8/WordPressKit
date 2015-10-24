@@ -1,0 +1,64 @@
+<article id="post-1006" class="post-1006 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_revision-php wp-parser-package-post_revisions wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_revisions_to_keep/">wp_revisions_to_keep ( <span class="arg-type">WP_Post</span>&nbsp;<span class="arg-name">$post</span> )</a></h1>
+
+	<section class="summary">
+		<p>Determine how many revisions to retain for a given post.</p>
+	</section>
+
+
+	<section class="description">
+		<p>By default, an infinite number of revisions are kept.</p>
+<p>The constant WP_POST_REVISIONS can be set in wp-config to specify the limit of revisions to keep.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> The number of revisions to keep.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/revision.php/">wp-includes/revision.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The post object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_submit_meta_box/">post_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_revisions_enabled/">wp_revisions_enabled()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_post_revision/">wp_save_post_revision()</a>
+							</li>
+																</ul>
+			</article>

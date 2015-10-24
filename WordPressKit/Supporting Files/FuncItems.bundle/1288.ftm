@@ -1,0 +1,85 @@
+<article id="post-3440" class="post-3440 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/sanitize_title_with_dashes/">sanitize_title_with_dashes ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$raw_title</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">'display'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sanitizes a title, replacing whitespace and a few other characters with dashes.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Limits the output to alphanumeric characters, underscore (_) and dash (-). Whitespace becomes a dash.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The sanitized title.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The title to be sanitized.</span>
+									</p>
+							</dd>
+									<dt>$raw_title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Not used.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The operation for which the string is sanitized.</span>
+									</p>
+								<p class="default">Default value: 'display'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_dashboard/">install_dashboard()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugin-install-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugin_install_list_table/prepare_items/">WP_Plugin_Install_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_taxonomy/">register_taxonomy()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type()</a>
+							</li>
+																</ul>
+			</article>

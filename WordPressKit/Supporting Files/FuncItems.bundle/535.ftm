@@ -1,0 +1,94 @@
+<article id="post-3063" class="post-3063 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-1-0-1">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use get_bookmarks()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_linkobjects/">get_linkobjects ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$category</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$orderby</span>&nbsp;=&nbsp;<span class="arg-default">'name'</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$limit</span> )</a></h1>
+
+	<section class="summary">
+		<p>Gets an array of link objects associated with category n.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Usage:</p>
+<pre><code>$links = get_linkobjects(1);
+if ($links) {
+    foreach ($links as $link) {
+        echo '&lt;li&gt;'.$link-&gt;link_name.'&lt;br /&gt;'.$link-&gt;link_description.'&lt;/li&gt;';
+    }
+}</code></pre>
+<p>Fields are:</p>
+<ul>
+<li>link_id</li>
+<li>link_url</li>
+<li>link_name</li>
+<li>link_image</li>
+<li>link_target</li>
+<li>link_category</li>
+<li>link_description</li>
+<li>link_visible</li>
+<li>link_owner</li>
+<li>link_rating</li>
+<li>link_updated</li>
+<li>link_rel</li>
+<li>link_notes</li>
+</ul>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$category</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The category to use. If no category supplied uses all</span>
+									</p>
+							</dd>
+									<dt>$orderby</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">the order to output the links. E.g. 'id', 'name', 'url', 	'description', or 'rating'. Or maybe owner. If you start the name with an 	underscore the order will be reversed. You can also specify 'rand' as the 	order which will return links in a random order.</span>
+									</p>
+								<p class="default">Default value: 'name'</p>
+							</dd>
+									<dt>$limit</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Limit to X entries. If not specified, all entries are shown.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkobjectsbyname/">get_linkobjectsbyname()</a>
+							</li>
+																</ul>
+			</article>

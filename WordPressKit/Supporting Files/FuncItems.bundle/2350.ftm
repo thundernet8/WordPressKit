@@ -1,0 +1,89 @@
+<article id="post-3361" class="post-3361 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-5-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_set_auth_cookie/">wp_set_auth_cookie ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$user_id</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$remember</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$secure</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$token</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sets the authentication cookies based on user ID.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The $remember parameter increases the time that the cookie will be kept. The default the cookie is kept without remembering is two days. When $remember is set, the cookies will be kept for 14 days or two weeks.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User ID</span>
+									</p>
+							</dd>
+									<dt>$remember</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether to remember the user</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$secure</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether the admin cookies should only be sent over HTTPS.                         Default is_ssl().</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$token</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> User's session token to use for this cookie.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_user/">wp_update_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_signon/">wp_signon()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_setcookie/">wp_setcookie()</a>
+							</li>
+																</ul>
+			</article>

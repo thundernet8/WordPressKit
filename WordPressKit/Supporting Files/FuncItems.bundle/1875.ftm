@@ -1,0 +1,205 @@
+<article id="post-3730" class="post-3730 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_cache-php wp-parser-package-cache wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_cache_set/">wp_cache_set ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$key</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$data</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$group</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$expire</span> )</a></h1>
+
+	<section class="summary">
+		<p>Saves the data to the cache.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> False on failure, true on success</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/cache.php/">wp-includes/cache.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">What to call the contents in the cache</span>
+									</p>
+							</dd>
+									<dt>$data</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The contents to store in the cache</span>
+									</p>
+							</dd>
+									<dt>$group</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Where to group the cache contents</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$expire</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">When to expire the cache contents</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-ms-sites-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_sites_list_table/column_users/">WP_MS_Sites_List_Table::column_users()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_comment_query/get_comments/">WP_Comment_Query::get_comments()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_plugins/">get_plugins()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_archives/">wp_get_archives()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_calendar/">get_calendar()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_blog_installed/">is_blog_installed()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_recent_posts/widget/">WP_Widget_Recent_Posts::widget()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_recent_comments/widget/">WP_Widget_Recent_Comments::widget()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clean_term_cache/">clean_term_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_terms/">get_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_adjacent_post/">get_adjacent_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_site_transient/">set_site_transient()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_site_option/">add_site_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_site_option/">update_site_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/set_transient/">set_transient()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_site_option/">get_site_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_load_core_site_options/">wp_load_core_site_options()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_option/">update_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_option/">add_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_option/">delete_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/option.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_option/">get_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clean_post_cache/">clean_post_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_get_last_post_time/">_get_last_post_time()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_pages/">get_pages()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_count_posts/">wp_count_posts()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blog_id_from_url/">get_blog_id_from_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_bookmarks/">get_bookmarks()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_id_from_blogname/">get_id_from_blogname()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blog_details/">get_blog_details()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/clean_comment_cache/">clean_comment_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_comment/">wp_insert_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_count_comments/">wp_count_comments()</a>
+							</li>
+																			<a href="#" class="show-more">Show 32 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

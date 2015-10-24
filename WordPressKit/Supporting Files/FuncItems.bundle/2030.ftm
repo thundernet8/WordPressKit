@@ -1,0 +1,41 @@
+<article id="post-868" class="post-868 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-load-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_active_network_plugins/">wp_get_active_network_plugins ()</a></h1>
+
+	<section class="summary">
+		<p>Returns array of network plugin files to be included in global scope.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The default directory is wp-content/plugins. To change the default directory manually, define <code>WP_PLUGIN_DIR</code> and <code>WP_PLUGIN_URL</code> in <code>wp-config.php</code>.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Files to include.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-load.php/">wp-includes/ms-load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_active_and_valid_plugins/">wp_get_active_and_valid_plugins()</a>
+							</li>
+																</ul>
+			</article>

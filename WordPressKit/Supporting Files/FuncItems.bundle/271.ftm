@@ -1,0 +1,81 @@
+<article id="post-1959" class="post-1959 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_shortcodes-php wp-parser-package-shortcodes wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/do_shortcode/">do_shortcode ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$content</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$ignore_html</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Search content for shortcodes and filter shortcodes through their hooks.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If there are no shortcode tags defined, then the content will be returned without any filtering. This might cause issues when plugins are disabled but the shortcode will still show up in the post or content.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Content with shortcodes filtered out.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/shortcodes.php/">wp-includes/shortcodes.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$content</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Content to search for shortcodes.</span>
+									</p>
+							</dd>
+									<dt>$ignore_html</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">When true, shortcodes inside HTML elements will be skipped.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+			<hr/>
+		<section class="explanation">
+			<h2>Explanation</h2>
+			<p>If there are no shortcode tags defined, then the content will be returned without any filtering. This might cause issues if a plugin is disabled as its shortcode will still show up in the post or content.</p>
+		</section>
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_parse_embed/">wp_ajax_parse_embed()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_parse_media_shortcode/">wp_ajax_parse_media_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-embed.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_embed/run_shortcode/">WP_Embed::run_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/img_caption_shortcode/">img_caption_shortcode()</a>
+							</li>
+																</ul>
+			</article>

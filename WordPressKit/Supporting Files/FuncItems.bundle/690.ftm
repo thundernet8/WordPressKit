@@ -1,0 +1,41 @@
+<article id="post-3599" class="post-3599 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_stylesheet_uri/">get_stylesheet_uri ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve URI of current theme stylesheet.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The stylesheet file name is &#8216;style.css&#8217; which is appended to <a href="https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri stylesheet directory URI">get_stylesheet_directory_uri() stylesheet directory URI</a> path.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_bloginfo/">get_bloginfo()</a>
+							</li>
+																</ul>
+			</article>

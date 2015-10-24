@@ -1,0 +1,65 @@
+<article id="post-5972" class="post-5972 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-content_themes_twentyten_functions-php wp-parser-package-twenty_ten wp-parser-package-wordpress wp-parser-since-twenty-ten-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/twentyten_comment/">twentyten_comment ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$comment</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$depth</span> )</a></h1>
+
+	<section class="summary">
+		<p>Template for comments and pingbacks.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-content/themes/twentyten/functions.php/">wp-content/themes/twentyten/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comment</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The comment object.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">An array of arguments. @see get_comment_reply_link()</span>
+									</p>
+							</dd>
+									<dt>$depth</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The depth of the comment.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,91 @@
+<article id="post-4743" class="post-4743 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_plugins/">get_plugins ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$plugin_folder</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check the plugins directory and retrieve all plugin files with plugin data.</p>
+	</section>
+
+
+	<section class="description">
+		<p>WordPress only supports plugin files in the base plugins directory (wp-content/plugins) and in one directory above the plugins directory (wp-content/plugins/my-plugin). The file it looks for has the plugin data and must be found in those two locations. It is recommended to keep your plugin files in their own directories.</p>
+<p>The file with the plugin data is the file that will be included and therefore needs to have the main execution for the plugin. This does not mean everything must be contained in the file and it is recommended that the file be split for maintainability. Keep everything in one file for extreme optimization purposes.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Key is the plugin file path and the value is an array of the plugin data.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$plugin_folder</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Relative path to single plugin folder.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_update_plugin/">wp_ajax_update_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/language_pack_upgrader/get_name_for_update/">Language_Pack_Upgrader::get_name_for_update()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/plugin_info/">Plugin_Upgrader::plugin_info()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugins-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugins_list_table/prepare_items/">WP_Plugins_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_plugin_updates/">get_plugin_updates()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugin_install_status/">install_plugin_install_status()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_plugins_output/">wp_dashboard_plugins_output()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_plugin/">validate_plugin()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_plugins/">wp_update_plugins()</a>
+							</li>
+																			<a href="#" class="show-more">Show 9 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

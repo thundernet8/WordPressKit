@@ -1,0 +1,58 @@
+<article id="post-5999" class="post-5999 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-content_themes_twentyfourteen_functions-php wp-parser-package-twenty_fourteen wp-parser-package-wordpress wp-parser-since-twenty-fourteen-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/twentyfourteen_wp_title/">twentyfourteen_wp_title ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$sep</span> )</a></h1>
+
+	<section class="summary">
+		<p>Create a nicely formatted and more specific title element text for output in head of document, based on current view.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The filtered title.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-content/themes/twentyfourteen/functions.php/">wp-content/themes/twentyfourteen/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Default title text for current view.</span>
+									</p>
+							</dd>
+									<dt>$sep</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">separator.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

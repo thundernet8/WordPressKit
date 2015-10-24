@@ -1,0 +1,71 @@
+<article id="post-3307" class="post-3307 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/language_attributes/">language_attributes ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$doctype</span>&nbsp;=&nbsp;<span class="arg-default">'html'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Displays the language attributes for the html tag.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Builds up a set of html attributes containing the text direction and language information for the page.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$doctype</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The type of html document. Accepts 'xhtml' or 'html'. </span>
+									</p>
+								<p class="default">Default value: 'html'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/html/">WP_Press_This::html()</a>
+							</li>
+													<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/login_header/">login_header()</a>
+							</li>
+													<li>
+								<span>wp-admin/install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/display_header/">display_header()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_admin_html_begin/">_wp_admin_html_begin()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_default_wp_die_handler/">_default_wp_die_handler()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,105 @@
+<article id="post-4521" class="post-4521 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_media-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/image_add_caption/">image_add_caption ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$html</span>,  <span class="arg-type">integer</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$caption</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$title</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$align</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$size</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$alt</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Adds image shortcode with caption to editor</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/media.php/">wp-admin/includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$html</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="integer">integer</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$caption</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">image caption</span>
+									</p>
+							</dd>
+									<dt>$alt</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">image alt attribute</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">image title attribute</span>
+									</p>
+							</dd>
+									<dt>$align</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">image css alignment property</span>
+									</p>
+							</dd>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">image src url</span>
+									</p>
+							</dd>
+									<dt>$size</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">image size (thumbnail, medium, large, full or added with add_image_size() )</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

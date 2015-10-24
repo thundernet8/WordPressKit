@@ -1,0 +1,45 @@
+<article id="post-3398" class="post-3398 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_nonce_tick/">wp_nonce_tick ()</a></h1>
+
+	<section class="summary">
+		<p>Get the time-dependent variable for nonce creation.</p>
+	</section>
+
+
+	<section class="description">
+		<p>A nonce has a lifespan of two ticks. Nonces in their second tick may be updated, e.g. by autosave.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(float)</span> Float value rounded up to the next highest integer.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_verify_nonce/">wp_verify_nonce()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_nonce/">wp_create_nonce()</a>
+							</li>
+																</ul>
+			</article>

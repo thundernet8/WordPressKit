@@ -1,0 +1,83 @@
+<article id="post-4174" class="post-4174 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_file-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_filesystem_method/">get_filesystem_method ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$allow_relaxed_file_ownership</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Determines which method to use for reading, writing, modifying, or deleting files on the filesystem.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The priority of the transports are: Direct, SSH2, FTP PHP Extension, FTP Sockets (Via Sockets class, or <code>fsockopen()</code>). Valid values for these are: &#8216;direct&#8217;, &#8216;ssh2&#8217;, &#8216;ftpext&#8217; or &#8216;ftpsockets&#8217;.</p>
+<p>The return value can be overridden by defining the <code>FS_METHOD</code> constant in <code>wp-config.php</code>, or filtering via <a href="https://developer.wordpress.org/reference/hooks/filesystem_method">&#8216;filesystem_method&#8217;</a>.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The transport to use, see description for valid return values.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/file.php/">wp-admin/includes/file.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Connection details. </span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Full path to the directory that is tested                                             for being writable. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$allow_relaxed_file_ownership</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to allow Group/World writable.                                             </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_print_request_filesystem_credentials_modal/">wp_print_request_filesystem_credentials_modal()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/request_filesystem_credentials/">request_filesystem_credentials()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_filesystem/">WP_Filesystem()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,51 @@
+<article id="post-1025" class="post-1025 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_rewrite-php wp-parser-package-rewrite wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_filter_taxonomy_base/">_wp_filter_taxonomy_base ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$base</span> )</a></h1>
+
+	<section class="summary">
+		<p>Filter the URL base for taxonomies.</p>
+	</section>
+
+
+	<section class="description">
+		<p>To remove any manually prepended /index.php/.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/rewrite.php/">wp-includes/rewrite.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$base</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The taxonomy base that we're going to filter</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,81 @@
+<article id="post-1886" class="post-1886 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-2-2-3">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_filter_build_unique_id/">_wp_filter_build_unique_id ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$function</span>,  <span class="arg-type">int|bool</span>&nbsp;<span class="arg-name">$priority</span> )</a></h1>
+
+	<section class="summary">
+		<p>Build Unique ID for storage and retrieval.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The old way to serialize the callback caused issues and this function is the solution. It works by checking for objects and creating a new property in the class to keep track of the object and new objects of the same class that need to be added.</p>
+<p>It also allows for the removal of actions and filters for objects after they change class properties. It is possible to include the property $wp_filter_id in your class and set it to &#8220;null&#8221; or a number to bypass the workaround. However this will prevent you from adding new classes and any new classes will overwrite the previous hook by the same class.</p>
+<p>Functions and static method callbacks are just returned as strings and shouldn&#8217;t have any speed penalty.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> Unique ID for usage as array key or false if $priority === false                      and $function is an object reference, and it does not already have                      a unique id.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Used in counting how many hooks were applied</span>
+									</p>
+							</dd>
+									<dt>$function</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Used for creating unique id</span>
+									</p>
+							</dd>
+									<dt>$priority</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Used in counting how many hooks were applied. If === false                           and $function is an object reference, we return the unique                           id only if it already has one, false otherwise.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_filter/">add_filter()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/has_filter/">has_filter()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_filter/">remove_filter()</a>
+							</li>
+																</ul>
+			</article>

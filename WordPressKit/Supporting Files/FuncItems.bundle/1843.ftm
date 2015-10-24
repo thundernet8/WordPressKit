@@ -1,0 +1,35 @@
+<article id="post-4404" class="post-4404 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_ajax-actions-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_ajax_wp_compression_test/">wp_ajax_wp_compression_test ()</a></h1>
+
+	<section class="summary">
+		<p>Ajax handler for compression testing.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/ajax-actions.php/">wp-admin/includes/ajax-actions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

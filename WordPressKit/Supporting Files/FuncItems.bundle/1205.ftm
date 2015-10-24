@@ -1,0 +1,59 @@
+<article id="post-1882" class="post-1882 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/register_activation_hook/">register_activation_hook ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$function</span> )</a></h1>
+
+	<section class="summary">
+		<p>Set the activation hook for a plugin.</p>
+	</section>
+
+
+	<section class="description">
+		<p>When a plugin is activated, the action &#8216;activate_PLUGINNAME&#8217; hook is called. In the name of this hook, PLUGINNAME is replaced with the name of the plugin, including the optional subdirectory. For example, when the plugin is located in wp-content/plugins/sampleplugin/sample.php, then the name of this hook will become &#8216;activate_sampleplugin/sample.php&#8217;.</p>
+<p>When the plugin consists of only one file and is (as by default) located at wp-content/plugins/sample.php the name of this hook will be &#8216;activate_sample.php&#8217;.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The filename of the plugin including the path.</span>
+									</p>
+							</dd>
+									<dt>$function</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The function hooked to the 'activate_PLUGIN' action.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

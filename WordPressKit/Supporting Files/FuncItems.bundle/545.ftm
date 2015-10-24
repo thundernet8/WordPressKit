@@ -1,0 +1,42 @@
+<article id="post-3601" class="post-3601 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_locale_stylesheet_uri/">get_locale_stylesheet_uri ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve localized stylesheet URI.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The stylesheet directory for the localized stylesheet files are located, by default, in the base theme directory. The name of the locale file will be the locale followed by &#8216;.css&#8217;. If that does not exist, then the text direction stylesheet will be checked for existence, for example &#8216;ltr.css&#8217;.</p>
+<p>The theme may change the location of the stylesheet directory by either using the &#8216;stylesheet_directory_uri&#8217; filter or the &#8216;locale_stylesheet_uri&#8217; filter. If you want to change the location of the stylesheet files for the entire WordPress workflow, then change the former. If you just have the locale in a separate folder, then change the latter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/locale_stylesheet/">locale_stylesheet()</a>
+							</li>
+																</ul>
+			</article>

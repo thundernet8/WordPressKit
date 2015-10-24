@@ -1,0 +1,45 @@
+<article id="post-96" class="post-96 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment_statuses/">get_comment_statuses ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve all of the WordPress supported comment statuses.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Comments have a limited set of valid status values, this provides the comment status values and descriptions.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> List of comment statuses.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_editcomment/">wp_xmlrpc_server::wp_editComment()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getcommentstatuslist/">wp_xmlrpc_server::wp_getCommentStatusList()</a>
+							</li>
+																</ul>
+			</article>

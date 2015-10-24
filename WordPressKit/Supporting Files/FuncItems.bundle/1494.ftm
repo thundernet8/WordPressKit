@@ -1,0 +1,36 @@
+<article id="post-5920" class="post-5920 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-content_themes_twentyeleven_functions-php wp-parser-package-twenty_eleven wp-parser-package-wordpress wp-parser-since-twenty-eleven-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/twentyeleven_url_grabber/">twentyeleven_url_grabber ()</a></h1>
+
+	<section class="summary">
+		<p>Return the URL for the first link found in the post content.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|bool)</span> URL or false when no link is present.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-content/themes/twentyeleven/functions.php/">wp-content/themes/twentyeleven/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

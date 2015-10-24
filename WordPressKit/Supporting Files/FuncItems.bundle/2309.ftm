@@ -1,0 +1,55 @@
+<article id="post-2004" class="post-2004 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_http-php wp-parser-package-http wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_remote_retrieve_response_message/">wp_remote_retrieve_response_message ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$response</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve only the response message from the raw response.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will return an empty array if incorrect parameter value is given.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The response message. Empty string on incorrect parameter given.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/http.php/">wp-includes/http.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$response</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">HTTP response.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/file.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/download_url/">download_url()</a>
+							</li>
+																</ul>
+			</article>

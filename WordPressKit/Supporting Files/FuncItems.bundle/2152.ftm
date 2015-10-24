@@ -1,0 +1,63 @@
+<article id="post-3014" class="post-3014 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_kses-php wp-parser-package-external wp-parser-package-kses wp-parser-since-1-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_kses_hair/">wp_kses_hair ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$attr</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$allowed_protocols</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds an attribute list from string containing attributes.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function does a lot of work. It parses an attribute list into an array with attribute data, and tries to do the right thing even if it gets weird input. It will add quotes around attribute values that don&#8217;t have any quotes or apostrophes around them, to make it easier to produce HTML code that will conform to W3C&#8217;s HTML specification. It will also remove bad URL protocols from attribute values. It also reduces duplicate attributes by using the attribute defined first (foo=&#8217;bar&#8217; foo=&#8217;baz&#8217; will result in foo=&#8217;bar&#8217;).</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> List of attributes after parsing</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/kses.php/">wp-includes/kses.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attribute list from HTML element to closing HTML element tag</span>
+									</p>
+							</dd>
+									<dt>$allowed_protocols</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Allowed protocols to keep</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/kses.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_kses_attr/">wp_kses_attr()</a>
+							</li>
+																</ul>
+			</article>

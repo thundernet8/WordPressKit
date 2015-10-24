@@ -1,0 +1,66 @@
+<article id="post-3403" class="post-3403 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_salt/">wp_salt ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$scheme</span>&nbsp;=&nbsp;<span class="arg-default">'auth'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get salt to add to hashes.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Salts are created using secret keys. Secret keys are located in two places: in the database and in the wp-config.php file. The secret key in the database is randomly generated and will be appended to the secret keys in wp-config.php.</p>
+<p>The secret keys in wp-config.php should be updated to strong, random keys to maximize security. Below is an example of how the secret key constants are defined. Do not paste this example directly into wp-config.php. Instead, have a <a href="https://api.wordpress.org/secret-key/1.1/salt/"> secret key created</a> just for you.</p>
+<pre><code>define('AUTH_KEY',         ' Xakm&lt;o xQy rw4EMsLKM-?!T+,PFF})H4lzcW57AF0U@N@&lt; &gt;M%G4Yt&gt;f`z]MON');
+define('SECURE_AUTH_KEY',  'LzJ}op]mr|6+![P}Ak:uNdJCJZd&gt;(Hx.-Mh#Tz)pCIU#uGEnfFz|f ;;eU%/U^O~');
+define('LOGGED_IN_KEY',    '|i|Ux`9&lt;p-h$aFf(qnT:sDO:D1P^wZ$$/Ra@miTJi9G;ddp_&lt;q}6H1)o|a +&amp;JCM');
+define('NONCE_KEY',        '%:R{[P|,s.KuMltH5}cI;/k&lt;Gx~j!f0I)m_sIyu+&amp;NJZ)-iO&gt;z7X&gt;QYR0Z_XnZ@|');
+define('AUTH_SALT',        'eZyT)-Naw]F8CwA*VaW#q*|.)g@o}||wf~@C-YSt}(dh_r6EbI#A,y|nU2{B#JBW');
+define('SECURE_AUTH_SALT', '!=oLUTXh,QW=H `}`L|9/^4-3 STz},T(w}W&lt;I`.JjPi)&lt;Bmf1v,HpGe}T1:Xt7n');
+define('LOGGED_IN_SALT',   '+XSqHc;@Q*K_b|Z?NC[3H!!EONbh.n&lt;+=uKR:&gt;*c(u`g~EJBf#8u#R{mUEZrozmm');
+define('NONCE_SALT',       'h`GXHhD&gt;SLWVfg1(1(N{;.V!MoE(SfbA_ksP@&amp;`+AycHcAV$+?@3q+rxV{%^VyKT');</code></pre>
+<p>Salting passwords helps against tools which has stored hashed values of common dictionary strings. The added values makes it harder to crack.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Salt value</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$scheme</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Authentication scheme (auth, secure_auth, logged_in, nonce)</span>
+									</p>
+								<p class="default">Default value: 'auth'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_hash/">wp_hash()</a>
+							</li>
+																</ul>
+			</article>

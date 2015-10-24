@@ -1,0 +1,41 @@
+<article id="post-4931" class="post-4931 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_update-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/find_core_auto_update/">find_core_auto_update ()</a></h1>
+
+	<section class="summary">
+		<p>Gets the best available (and enabled) Auto-Update for WordPress Core.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If there&#8217;s 1.2.3 and 1.3 on offer, it&#8217;ll choose 1.3 if the install allows it, else, 1.2.3</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|false)</span> False on failure, otherwise the core update offering.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/update.php/">wp-admin/includes/update.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/run/">WP_Automatic_Updater::run()</a>
+							</li>
+																</ul>
+			</article>

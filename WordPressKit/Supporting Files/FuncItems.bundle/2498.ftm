@@ -1,0 +1,44 @@
+<article id="post-4669" class="post-4669 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_admin_search_query/">_admin_search_query ()</a></h1>
+
+	<section class="summary">
+		<p>Display the search query.</p>
+	</section>
+
+
+	<section class="description">
+		<p>A simple wrapper to display the &#8220;s&#8221; parameter in a GET URI. This function should only be used when <a href="https://developer.wordpress.org/reference/functions/the_search_query">the_search_query()</a> cannot.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-media-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_media_list_table/views/">WP_Media_List_Table::views()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/search_box/">WP_List_Table::search_box()</a>
+							</li>
+																</ul>
+			</article>

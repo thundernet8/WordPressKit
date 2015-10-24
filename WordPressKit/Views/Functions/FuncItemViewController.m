@@ -107,7 +107,7 @@
             [self.dataModel querySourceFileById:sourfileId];
             SourceFile *sourcefile = [[SourceFile alloc] init];
             sourcefile = (SourceFile *)self.dataModel.sourceFile;
-            [self performSegueWithIdentifier:@"ShouSourfileFromFuncItem" sender:sourcefile];
+            [self performSegueWithIdentifier:@"ShowSourfileFromFuncItem" sender:sourcefile];
         }
     }
     return YES;
@@ -116,7 +116,7 @@
 //执行调整sourfile页面的segue前准备
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"ShouSourfileFromFuncItem"]) {
+    if ([segue.identifier isEqualToString:@"ShowSourfileFromFuncItem"]) {
         FileItemViewController *controller = segue.destinationViewController;
         controller.file = sender;
     }

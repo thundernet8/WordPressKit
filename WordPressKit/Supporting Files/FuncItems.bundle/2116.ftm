@@ -1,0 +1,36 @@
+<article id="post-4106" class="post-4106 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_import-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_import_handle_upload/">wp_import_handle_upload ()</a></h1>
+
+	<section class="summary">
+		<p>Handle importer uploading and add attachment.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Uploaded file's details on success, error message on failure</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/import.php/">wp-admin/includes/import.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

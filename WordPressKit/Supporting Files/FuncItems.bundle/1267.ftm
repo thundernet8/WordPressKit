@@ -1,0 +1,96 @@
+<article id="post-889" class="post-889 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_bookmark-php wp-parser-package-bookmark wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/sanitize_bookmark_field/">sanitize_bookmark_field ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$field</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$value</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$bookmark_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$context</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sanitizes a bookmark field</p>
+	</section>
+
+
+	<section class="description">
+		<p>Sanitizes the bookmark fields based on what the field name is. If the field has a strict value set, then it will be tested for that, else a more generic filtering is applied. After the more strict filter is applied, if the $context is &#8216;raw&#8217; then the value is immediately return.</p>
+<p>Hooks exist for the more generic cases. With the &#8216;edit&#8217; context, the &#8216;edit_$field&#8217; filter will be called and passed the $value and $bookmark<em>id respectively. With the &#8216;db&#8217; context, the &#8216;pre</em>$field&#8217; filter is called and passed the value. The &#8216;display&#8217; context is the final context and has the $field has the filter name and is passed the $value, $bookmark_id, and $context respectively.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> The filtered value</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/bookmark.php/">wp-includes/bookmark.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$field</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The bookmark field</span>
+									</p>
+							</dd>
+									<dt>$value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The bookmark field value</span>
+									</p>
+							</dd>
+									<dt>$bookmark_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Bookmark ID</span>
+									</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">How to filter the field value. Either 'raw', 'edit', 	'attribute', 'js', 'db', or 'display'</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_links/">get_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_linkrating/">get_linkrating()</a>
+							</li>
+													<li>
+								<span>wp-includes/bookmark-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_walk_bookmarks/">_walk_bookmarks()</a>
+							</li>
+													<li>
+								<span>wp-includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_bookmark/">sanitize_bookmark()</a>
+							</li>
+													<li>
+								<span>wp-includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_bookmark_field/">get_bookmark_field()</a>
+							</li>
+																</ul>
+			</article>

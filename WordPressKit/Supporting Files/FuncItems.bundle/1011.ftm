@@ -1,0 +1,86 @@
+<article id="post-3561" class="post-3561 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_l10n-php wp-parser-package-i18n wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/load_textdomain/">load_textdomain ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$domain</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$mofile</span> )</a></h1>
+
+	<section class="summary">
+		<p>Load a .mo file into the text domain $domain.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the text domain already exists, the translations will be merged. If both sets have the same string, the translation from the original value will be taken.</p>
+<p>On success, the .mo file will be placed in the $l10n global by $domain and will be a MO object.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/l10n.php/">wp-includes/l10n.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$domain</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Text domain. Unique identifier for retrieving translated strings.</span>
+									</p>
+							</dd>
+									<dt>$mofile</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Path to the .mo file.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/load_default_textdomain/">load_default_textdomain()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/load_plugin_textdomain/">load_plugin_textdomain()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/load_muplugin_textdomain/">load_muplugin_textdomain()</a>
+							</li>
+													<li>
+								<span>wp-includes/l10n.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/load_theme_textdomain/">load_theme_textdomain()</a>
+							</li>
+													<li>
+								<span>wp-includes/load.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_load_translations_early/">wp_load_translations_early()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_timezone_choice/">wp_timezone_choice()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

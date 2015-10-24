@@ -1,0 +1,36 @@
+<article id="post-4860" class="post-4860 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_dashboard-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_dashboard_right_now/">wp_dashboard_right_now ()</a></h1>
+
+	<section class="summary">
+		<p>Dashboard widget that displays some basic stats about the site.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Formerly &#8216;Right Now&#8217;. A streamlined &#8216;At a Glance&#8217; as of 3.8.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/dashboard.php/">wp-admin/includes/dashboard.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

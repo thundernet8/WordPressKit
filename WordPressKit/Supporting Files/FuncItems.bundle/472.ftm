@@ -1,0 +1,50 @@
+<article id="post-879" class="post-879 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-load-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use get_current_site() instead.</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_current_site_name/">get_current_site_name ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$current_site</span> )</a></h1>
+
+	<section class="summary">
+		<p>This deprecated function formerly set the site_name property of the $current_site object.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function simply returns the object, as before. The bootstrap takes care of setting site_name.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-load.php/">wp-includes/ms-load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$current_site</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

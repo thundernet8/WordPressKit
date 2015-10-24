@@ -1,0 +1,92 @@
+<article id="post-3842" class="post-3842 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_capabilities-php wp-parser-package-user wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_role/">get_role ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$role</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve role object.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Role|null)</span> WP_Role object if found, null if the role does not exist.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/capabilities.php/">wp-includes/capabilities.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$role</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Role name.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_160/">populate_roles_160()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_210/">populate_roles_210()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_230/">populate_roles_230()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_250/">populate_roles_250()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_260/">populate_roles_260()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_270/">populate_roles_270()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_280/">populate_roles_280()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/schema.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/populate_roles_300/">populate_roles_300()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_option/">sanitize_option()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getusers/">wp_xmlrpc_server::wp_getUsers()</a>
+							</li>
+																			<a href="#" class="show-more">Show 10 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

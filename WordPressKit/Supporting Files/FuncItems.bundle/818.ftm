@@ -1,0 +1,64 @@
+<article id="post-3710" class="post-3710 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_category-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/has_category/">has_category ( <span class="arg-type">string|int|array</span>&nbsp;<span class="arg-name">$category</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">int|object</span>&nbsp;<span class="arg-name">$post</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check if the current post has any of given category.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if the current post has any of the given categories (or any category, if no category specified).</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/category-template.php/">wp-includes/category-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$category</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="int">int</span>|<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The category name/term_id/slug or array of them to check for.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="object">object</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post to check instead of the current post.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/in_category/">in_category()</a>
+							</li>
+																</ul>
+			</article>

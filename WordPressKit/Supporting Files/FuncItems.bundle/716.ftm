@@ -1,0 +1,81 @@
+<article id="post-2096" class="post-2096 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_term_feed_link/">get_term_feed_link ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$term_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$taxonomy</span>&nbsp;=&nbsp;<span class="arg-default">'category'</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$feed</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the feed link for a term.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Returns a link to the feed for all posts in a given term. A specific feed can be requested or left blank to get the default feed.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> Link to the feed for the term specified by $term_id and $taxonomy.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$term_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">ID of a category.</span>
+									</p>
+							</dd>
+									<dt>$taxonomy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Taxonomy of $term_id</span>
+									</p>
+								<p class="default">Default value: 'category'</p>
+							</dd>
+									<dt>$feed</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Feed type.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/walker_category/start_el/">Walker_Category::start_el()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_tag_feed_link/">get_tag_feed_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_category_feed_link/">get_category_feed_link()</a>
+							</li>
+																</ul>
+			</article>

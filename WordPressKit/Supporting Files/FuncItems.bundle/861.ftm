@@ -1,0 +1,108 @@
+<article id="post-3195" class="post-3195 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. </div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/image_resize/">image_resize ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$max_w</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$max_h</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$crop</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$suffix</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$dest_path</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$jpeg_quality</span>&nbsp;=&nbsp;<span class="arg-default">90</span> )</a></h1>
+
+	<section class="summary">
+		<p>Scale down an image to fit a particular size and save a new copy of the image.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The PNG transparency will be preserved using the function, as well as the image type. If the file going in is PNG, then the resized image is going to be PNG. The only supported image types are PNG, GIF, and JPEG.</p>
+<p>Some functionality requires API to exist, so some PHP version may lose out support. This is not the fault of WordPress (where functionality is downgraded, not actual defects), but of your PHP version.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(mixed)</span> WP_Error on failure. String with new destination path.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Image file path.</span>
+									</p>
+							</dd>
+									<dt>$max_w</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Maximum width to resize to.</span>
+									</p>
+							</dd>
+									<dt>$max_h</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Maximum height to resize to.</span>
+									</p>
+							</dd>
+									<dt>$crop</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to crop image or resize.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$suffix</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> File suffix.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$dest_path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> New image file path.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$jpeg_quality</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Image quality percentage.</span>
+									</p>
+								<p class="default">Default value: 90</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_thumbnail/">wp_create_thumbnail()</a>
+							</li>
+																</ul>
+			</article>

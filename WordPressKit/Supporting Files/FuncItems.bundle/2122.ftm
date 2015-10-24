@@ -1,0 +1,69 @@
+<article id="post-146" class="post-146 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_insert_comment/">wp_insert_comment ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$commentdata</span> )</a></h1>
+
+	<section class="summary">
+		<p>Inserts a comment into the database.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|false)</span> The new comment's ID on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$commentdata</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Array of arguments for inserting a new comment. <ul class="param-hash"><li><b>'comment_agent'</b><br /><i><span class='type'>(string)</span></i> The HTTP user agent of the &lt;code&gt;$comment_author&lt;/code&gt; when the comment was submitted. Default empty. </li>
+<li><b>'comment_approved'</b><br /><i><span class='type'>(int|string)</span></i> Whether the comment has been approved. Default 1. </li>
+<li><b>'comment_author'</b><br /><i><span class='type'>(string)</span></i> The name of the author of the comment. Default empty. </li>
+<li><b>'comment_author_email'</b><br /><i><span class='type'>(string)</span></i> The email address of the &lt;code&gt;$comment_author&lt;/code&gt;. Default empty. </li>
+<li><b>'comment_author_IP'</b><br /><i><span class='type'>(string)</span></i> The IP address of the &lt;code&gt;$comment_author&lt;/code&gt;. Default empty. </li>
+<li><b>'comment_author_url'</b><br /><i><span class='type'>(string)</span></i> The URL address of the &lt;code&gt;$comment_author&lt;/code&gt;. Default empty. </li>
+<li><b>'comment_content'</b><br /><i><span class='type'>(string)</span></i> The content of the comment. Default empty. </li>
+<li><b>'comment_date'</b><br /><i><span class='type'>(string)</span></i> The date the comment was submitted. To set the date manually, &lt;code&gt;$comment_date_gmt&lt;/code&gt; must also be specified. Default is the current time. </li>
+<li><b>'comment_date_gmt'</b><br /><i><span class='type'>(string)</span></i> The date the comment was submitted in the GMT timezone. Default is &lt;code&gt;$comment_date&lt;/code&gt; in the site's GMT timezone. </li>
+<li><b>'comment_karma'</b><br /><i><span class='type'>(int)</span></i> The karma of the comment. Default 0. </li>
+<li><b>'comment_parent'</b><br /><i><span class='type'>(int)</span></i> ID of this comment's parent, if any. Default 0. </li>
+<li><b>'comment_post_ID'</b><br /><i><span class='type'>(int)</span></i> ID of the post that relates to the comment, if any. Default empty. </li>
+<li><b>'comment_type'</b><br /><i><span class='type'>(string)</span></i> Comment type. Default empty. </li>
+<li><b>'user_id'</b><br /><i><span class='type'>(int)</span></i> ID of the user who submitted the comment. Default 0.</li>
+</li></ul>
+</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_new_comment/">wp_new_comment()</a>
+							</li>
+																</ul>
+			</article>

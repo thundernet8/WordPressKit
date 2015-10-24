@@ -1,0 +1,66 @@
+<article id="post-1536" class="post-1536 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_authenticate_cookie/">wp_authenticate_cookie ( <span class="arg-type">WP_User|WP_Error|null</span>&nbsp;<span class="arg-name">$user</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$username</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$password</span> )</a></h1>
+
+	<section class="summary">
+		<p>Authenticate the user using the WordPress auth cookie.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_User|WP_Error)</span> WP_User on success, WP_Error on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_User">WP_User</span>|<span class="WP_Error">WP_Error</span>|<span class="null">null</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">WP_User or WP_Error object from a previous callback. Default null.</span>
+									</p>
+							</dd>
+									<dt>$username</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Username. If not empty, cancels the cookie authentication.</span>
+									</p>
+							</dd>
+									<dt>$password</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Password. If not empty, cancels the cookie authentication.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

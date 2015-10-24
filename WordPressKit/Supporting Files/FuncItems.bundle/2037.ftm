@@ -1,0 +1,115 @@
+<article id="post-1429" class="post-1429 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_attachment_link/">wp_get_attachment_link ( <span class="arg-type">int|WP_Post</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$size</span>&nbsp;=&nbsp;<span class="arg-default">'thumbnail'</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$permalink</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$icon</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">string|bool</span>&nbsp;<span class="arg-name">$text</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$attr</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve an attachment page link using an image or icon, if possible.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> HTML content.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Post ID or post object.</span>
+									</p>
+							</dd>
+									<dt>$size</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Size of image, either array or string.</span>
+									</p>
+								<p class="default">Default value: 'thumbnail'</p>
+							</dd>
+									<dt>$permalink</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Whether to add permalink to image.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$icon</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Whether to include icon.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  If string, then will be link text.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Array or string of attributes.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/prepend_attachment/">prepend_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_attachment_link/">the_attachment_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/adjacent_image_link/">adjacent_image_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/gallery_shortcode/">gallery_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_playlist_shortcode/">wp_playlist_shortcode()</a>
+							</li>
+																</ul>
+			</article>

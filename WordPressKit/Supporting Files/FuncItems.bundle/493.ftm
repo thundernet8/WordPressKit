@@ -1,0 +1,62 @@
+<article id="post-2128" class="post-2128 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_edit_bookmark_link/">get_edit_bookmark_link ( <span class="arg-type">int|stdClass</span>&nbsp;<span class="arg-name">$link</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display edit bookmark (literally a URL external to blog) link.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> The edit bookmark link URL.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$link</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="stdClass">stdClass</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Bookmark ID.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-links-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_links_list_table/handle_row_actions/">WP_Links_List_Table::handle_row_actions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-links-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_links_list_table/column_name/">WP_Links_List_Table::column_name()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_bookmark_link/">edit_bookmark_link()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,60 @@
+<article id="post-4159" class="post-4159 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_file-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/validate_file_to_edit/">validate_file_to_edit ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$file</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$allowed_files</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Make sure that the file that was requested to edit, is allowed to be edited</p>
+	</section>
+
+
+	<section class="description">
+		<p>Function will die if if you are not allowed to edit the file</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|null)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/file.php/">wp-admin/includes/file.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">file the users is attempting to edit</span>
+									</p>
+							</dd>
+									<dt>$allowed_files</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array of allowed files to edit, $file must match an entry exactly</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

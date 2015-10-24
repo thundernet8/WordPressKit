@@ -1,0 +1,38 @@
+<article id="post-326" class="post-326 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-1-3">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_comment_form_unfiltered_html_nonce/">wp_comment_form_unfiltered_html_nonce ()</a></h1>
+
+	<section class="summary">
+		<p>Display form token for unfiltered comments.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will only display nonce token if the current user has permissions for unfiltered html. Won&#8217;t display the token for other users.</p>
+<p>The function was backported to 2.0.10 and was added to versions 2.1.3 and above. Does not exist in versions prior to 2.0.10 in the 2.0 branch and in the 2.1 branch, prior to 2.1.3. Technically added in 2.2.0.</p>
+<p>Backported to 2.0.10.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment-template.php/">wp-includes/comment-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,106 @@
+<article id="post-90" class="post-90 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/check_comment/">check_comment ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$author</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$email</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$comment</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_ip</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$user_agent</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$comment_type</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check whether a comment passes internal checks to be allowed to add.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If manual comment moderation is set in the administration, then all checks, regardless of their type and whitelist, will fail and the function will return false.</p>
+<p>If the number of links exceeds the amount in the administration, then the check fails. If any of the parameter contents match the blacklist of words, then the check fails.</p>
+<p>If the comment author was approved before, then the comment is automatically whitelisted.</p>
+<p>If all checks pass, the function will return true.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> If all checks pass, true, otherwise false.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$author</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment author name.</span>
+									</p>
+							</dd>
+									<dt>$email</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment author email.</span>
+									</p>
+							</dd>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment author URL.</span>
+									</p>
+							</dd>
+									<dt>$comment</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Content of the comment.</span>
+									</p>
+							</dd>
+									<dt>$user_ip</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment author IP address.</span>
+									</p>
+							</dd>
+									<dt>$user_agent</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment author User-Agent.</span>
+									</p>
+							</dd>
+									<dt>$comment_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment type, either user-submitted comment, 	                       trackback, or pingback.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_allow_comment/">wp_allow_comment()</a>
+							</li>
+																</ul>
+			</article>

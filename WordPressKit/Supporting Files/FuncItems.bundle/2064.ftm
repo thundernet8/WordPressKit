@@ -1,0 +1,178 @@
+<article id="post-2274" class="post-2274 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-2-3-0 wp-parser-since-4-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_object_terms/">wp_get_object_terms ( <span class="arg-type">int|array</span>&nbsp;<span class="arg-name">$object_ids</span>,  <span class="arg-type">string|array</span>&nbsp;<span class="arg-name">$taxonomies</span>,  <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieves the terms associated with the given object(s), in the supplied taxonomies.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|WP_Error)</span> The requested term data or empty array if no terms found.                        WP_Error if any of the $taxonomies don't exist.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$object_ids</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The ID(s) of the object(s) to retrieve.</span>
+									</p>
+							</dd>
+									<dt>$taxonomies</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The taxonomies to retrieve terms from.</span>
+									</p>
+							</dd>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array of arguments. <ul class="param-hash"><li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> Field by which results should be sorted. Accepts 'name', 'count', 'slug', 'term_group', 'term_order', 'taxonomy', 'parent', or 'term_taxonomy_id'. Default 'name'. </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Sort order. Accepts 'ASC' or 'DESC'. Default 'ASC'. </li>
+<li><b>'fields'</b><br /><i><span class='type'>(string)</span></i> Fields to return for matched terms. Accepts 'all', 'ids', 'names', and 'all_with_object_id'. Note that 'all' or 'all_with_object_id' will result in an array of term objects being returned, 'ids' will return an array of integers, and 'names' an array of strings. </li>
+<li><b>'parent'</b><br /><i><span class='type'>(int)</span></i> Optional. Limit results to the direct children of a given term ID.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/export.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wxr_post_taxonomy/">wxr_post_taxonomy()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_terms_to_edit/">get_terms_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_inline_data/">get_inline_data()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_terms_checklist/">wp_terms_checklist()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_popular_terms_checklist/">wp_popular_terms_checklist()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_attachment_fields_to_edit/">get_attachment_fields_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_compat_media_markup/">get_compat_media_markup()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/bulk_edit_posts/">bulk_edit_posts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_link_cats/">wp_get_link_cats()</a>
+							</li>
+													<li>
+								<span>wp-includes/category-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_terms/">get_the_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_object_term_cache/">update_object_term_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_the_taxonomies/">get_the_taxonomies()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_object_in_term/">is_object_in_term()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_object_terms/">wp_get_object_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_object_terms/">wp_set_object_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_object_term_relationships/">wp_delete_object_term_relationships()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_term/">wp_delete_term()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_adjacent_post/">get_adjacent_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_boundary_post/">get_boundary_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/nav-menu-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_menu_item_classes_by_context/">_wp_menu_item_classes_by_context()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_update_term_count_on_transition_post_status/">_update_term_count_on_transition_post_status()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_post_categories/">wp_get_post_categories()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_post_terms/">wp_get_post_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+													<li>
+								<span>wp-includes/bookmark.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_bookmark/">get_bookmark()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/_prepare_post/">wp_xmlrpc_server::_prepare_post()</a>
+							</li>
+																			<a href="#" class="show-more">Show 26 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

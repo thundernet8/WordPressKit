@@ -1,0 +1,59 @@
+<article id="post-4763" class="post-4763 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/validate_plugin/">validate_plugin ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$plugin</span> )</a></h1>
+
+	<section class="summary">
+		<p>Validate the plugin path.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks that the file exists and <a href="https://developer.wordpress.org/reference/functions/validate_file is valid file">validate_file() is valid file</a>.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Error|int)</span> 0 on success, WP_Error on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$plugin</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Plugin Path</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/activate_plugin/">activate_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_active_plugins/">validate_active_plugins()</a>
+							</li>
+																</ul>
+			</article>

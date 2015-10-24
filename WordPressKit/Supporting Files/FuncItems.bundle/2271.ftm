@@ -1,0 +1,35 @@
+<article id="post-202" class="post-202 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_script-loader-php wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_print_footer_scripts/">wp_print_footer_scripts ()</a></h1>
+
+	<section class="summary">
+		<p>Hooks to print the scripts and styles in the footer.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/script-loader.php/">wp-includes/script-loader.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

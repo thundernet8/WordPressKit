@@ -1,0 +1,79 @@
+<article id="post-140" class="post-140 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_transition_comment_status/">wp_transition_comment_status ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$new_status</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$old_status</span>,  <span class="arg-type">object</span>&nbsp;<span class="arg-name">$comment</span> )</a></h1>
+
+	<section class="summary">
+		<p>Call hooks for when a comment status transition occurs.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Calls hooks for comment status transitions. If the new comment status is not the same as the previous comment status, then two hooks will be ran, the first is &#8216;transition_comment_status&#8217; with new status, old status, and comment data. The next action called is &#8216;comment_OLDSTATUS_to_NEWSTATUS&#8217; the NEWSTATUS is the $new_status parameter and the OLDSTATUS is $old_status parameter; it has the comment data.</p>
+<p>The final action will run whether or not the comment statuses are the same. The action is named &#8216;comment_NEWSTATUS_COMMENTTYPE&#8217;, NEWSTATUS is from the $new_status parameter and COMMENTTYPE is comment_type comment data.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$new_status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">New comment status.</span>
+									</p>
+							</dd>
+									<dt>$old_status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Previous comment status.</span>
+									</p>
+							</dd>
+									<dt>$comment</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment data.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_set_comment_status/">wp_set_comment_status()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_update_comment/">wp_update_comment()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_comment/">wp_delete_comment()</a>
+							</li>
+																</ul>
+			</article>

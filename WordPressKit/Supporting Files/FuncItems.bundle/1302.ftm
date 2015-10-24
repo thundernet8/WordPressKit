@@ -1,0 +1,68 @@
+<article id="post-3424" class="post-3424 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-1-2-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/seems_utf8/">seems_utf8 ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$str</span> )</a></h1>
+
+	<section class="summary">
+		<p>Checks to see if a string is utf8 encoded.</p>
+	</section>
+
+
+	<section class="description">
+		<p>NOTE: This function checks for 5-Byte sequences, UTF8</p>
+<pre><code>  has Bytes Sequences with a maximum length of 4.</code></pre>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if $str fits a UTF-8 model, false otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$str</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The string to be checked</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/export.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wxr_cdata/">wxr_cdata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_read_image_metadata/">wp_read_image_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/sanitize_title_with_dashes/">sanitize_title_with_dashes()</a>
+							</li>
+													<li>
+								<span>wp-includes/formatting.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/remove_accents/">remove_accents()</a>
+							</li>
+																</ul>
+			</article>

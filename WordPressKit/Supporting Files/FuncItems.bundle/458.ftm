@@ -1,0 +1,85 @@
+<article id="post-117" class="post-117 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_comment_pages_count/">get_comment_pages_count ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$comments</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$per_page</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$threaded</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Calculate the total number of comment pages.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int)</span> Number of comment pages.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$comments</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">array of comment objects. Defaults to $wp_query-&gt;comments</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$per_page</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">comments per page.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$threaded</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">control over flat or threaded comments.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_next_comments_link/">get_next_comments_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/paginate_comments_links/">paginate_comments_links()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_comments/">wp_list_comments()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/comments_template/">comments_template()</a>
+							</li>
+																</ul>
+			</article>

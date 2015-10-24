@@ -1,0 +1,38 @@
+<article id="post-861" class="post-861 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-mu">
+
+	<div class='deprecated'>Warning: This function has been deprecated. No alternative available. For performance reasons this function is not recommended.</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_blog_list/">get_blog_list (&nbsp;<span class="arg-name">$start</span>, &nbsp;<span class="arg-name">$num</span>&nbsp;=&nbsp;<span class="arg-default">10</span>, &nbsp;<span class="arg-name">$deprecated</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+			</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-deprecated.php/">wp-includes/ms-deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_most_active_blogs/">get_most_active_blogs()</a>
+							</li>
+																</ul>
+			</article>

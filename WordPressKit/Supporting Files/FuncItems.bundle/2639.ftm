@@ -1,0 +1,67 @@
+<article id="post-1885" class="post-1885 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_call_all_hook/">_wp_call_all_hook ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$args</span> )</a></h1>
+
+	<section class="summary">
+		<p>Call the &#8216;all&#8217; hook, which will process the functions hooked into it.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The &#8216;all&#8217; hook passes all of the arguments or parameters that were used for the hook, which this function was called for.</p>
+<p>This function is used internally for apply_filters(), do_action(), and do_action_ref_array() and is not meant to be used from outside those functions. This function does not check for the existence of the all hook, so it will fail unless the all hook exists prior to this function call.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The collected parameters from the hook that was called.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/apply_filters/">apply_filters()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/apply_filters_ref_array/">apply_filters_ref_array()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_action/">do_action()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_action_ref_array/">do_action_ref_array()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,37 @@
+<article id="post-2653" class="post-2653 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_auth_check_load/">wp_auth_check_load ()</a></h1>
+
+	<section class="summary">
+		<p>Load the auth check for monitoring whether the user is still logged in.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Can be disabled with remove_action( &#8216;admin_enqueue_scripts&#8217;, &#8216;wp_auth_check_load&#8217; );</p>
+<p>This is disabled for certain screens where a login screen could cause an inconvenient interruption. A filter called wp_auth_check_load can be used for fine-grained control.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

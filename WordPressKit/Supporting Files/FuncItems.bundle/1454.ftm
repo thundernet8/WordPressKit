@@ -1,0 +1,68 @@
+<article id="post-3577" class="post-3577 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_l10n-php wp-parser-package-i18n wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/translate_user_role/">translate_user_role ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$name</span> )</a></h1>
+
+	<section class="summary">
+		<p>Translates role name.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Since the role names are in the database and not in the source there are dummy gettext calls to get them into the POT file and this function properly translates them back.</p>
+<p>The before_last_bar() call is needed, because older installs keep the roles using the old context format: &#8216;Role name|User role&#8217; and just skipping the content after the last bar is easier than fixing them in the DB. New installs won&#8217;t suffer from that problem.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Translated role name on success, original name on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/l10n.php/">wp-includes/l10n.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$name</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The role name.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dropdown_roles/">wp_dropdown_roles()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/single_row/">WP_Users_List_Table::single_row()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/get_views/">WP_Users_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-admin/user-new.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/admin_created_user_email/">admin_created_user_email()</a>
+							</li>
+																</ul>
+			</article>

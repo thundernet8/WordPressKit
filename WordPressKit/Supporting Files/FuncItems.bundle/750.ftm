@@ -1,0 +1,36 @@
+<article id="post-3109" class="post-3109 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use get_the_author_meta(&#039;yim&#039;)</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_the_author_yim/">get_the_author_yim ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the Yahoo! IM name of the author of the current post.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The author's Yahoo! IM name.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

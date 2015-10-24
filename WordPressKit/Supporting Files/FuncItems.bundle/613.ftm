@@ -1,0 +1,84 @@
+<article id="post-845" class="post-845 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-formats-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_post_format_string/">get_post_format_string ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$slug</span> )</a></h1>
+
+	<section class="summary">
+		<p>Returns a pretty, translated version of a post format slug</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The translated post format name.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-formats.php/">wp-includes/post-formats.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$slug</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">A post format slug.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/column_title/">WP_Posts_List_Table::column_title()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/html/">WP_Press_This::html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/post_formats_html/">WP_Press_This::post_formats_html()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_format_meta_box/">post_format_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/inline_edit/">WP_Posts_List_Table::inline_edit()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-formats.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_post_format_get_term/">_post_format_get_term()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-formats.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_post_format_get_terms/">_post_format_get_terms()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-formats.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_post_format_wp_get_object_terms/">_post_format_wp_get_object_terms()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

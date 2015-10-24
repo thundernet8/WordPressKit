@@ -1,0 +1,64 @@
+<article id="post-4038" class="post-4038 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_credits-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_credits_add_profile_link/">_wp_credits_add_profile_link (&nbsp;<span class="arg-name">$display_name</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$username</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$profiles</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the link to a contributor&#8217;s WordPress.org profile page.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/credits.php/">wp-admin/credits.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">&amp;amp;$display_name The contributor's display name, passed by reference.</span>
+									</p>
+							</dd>
+									<dt>$username</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The contributor's username.</span>
+									</p>
+							</dd>
+									<dt>$profiles</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">URL to the contributor's WordPress.org profile page.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

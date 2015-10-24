@@ -1,0 +1,66 @@
+<article id="post-1962" class="post-1962 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_shortcodes-php wp-parser-package-shortcodes wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/shortcode_parse_atts/">shortcode_parse_atts ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$text</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve all attributes from the shortcodes tag.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The attributes list has the attribute name as the key and the value of the attribute as the value in the key/value pair. This allows for easier retrieval of the attributes, since all attributes have to be known.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> List of attributes and their value.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/shortcodes.php/">wp-includes/shortcodes.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_parse_embed/">wp_ajax_parse_embed()</a>
+							</li>
+													<li>
+								<span>wp-includes/shortcodes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_shortcode_tag/">do_shortcode_tag()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-oembed.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_oembed/discover/">WP_oEmbed::discover()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_post_galleries/">get_post_galleries()</a>
+							</li>
+																</ul>
+			</article>

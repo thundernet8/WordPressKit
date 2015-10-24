@@ -1,0 +1,40 @@
+<article id="post-198" class="post-198 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_script-loader-php wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/print_footer_scripts/">print_footer_scripts ()</a></h1>
+
+	<section class="summary">
+		<p>Prints the scripts that were queued for the footer or too late for the HTML head.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/script-loader.php/">wp-includes/script-loader.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/script-loader.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_footer_scripts/">_wp_footer_scripts()</a>
+							</li>
+																</ul>
+			</article>

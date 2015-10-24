@@ -1,0 +1,49 @@
+<article id="post-4394" class="post-4394 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_update-core-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_redirect_to_about_wordpress/">_redirect_to_about_wordpress ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$new_version</span> )</a></h1>
+
+	<section class="summary">
+		<p>Redirect to the About WordPress page after a successful upgrade.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function is only needed when the existing install is older than 3.4.0.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/update-core.php/">wp-admin/includes/update-core.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$new_version</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

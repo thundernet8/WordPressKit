@@ -1,0 +1,57 @@
+<article id="post-4087" class="post-4087 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_link-parse-opml-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/endelement/">endElement ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$parser</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tagName</span> )</a></h1>
+
+	<section class="summary">
+		<p>XML callback function that is called at the end of a XML tag.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/link-parse-opml.php/">wp-admin/link-parse-opml.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$parser</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">XML Parser resource.</span>
+									</p>
+							</dd>
+									<dt>$tagName</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">XML tag name.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

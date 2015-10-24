@@ -1,0 +1,80 @@
+<article id="post-4924" class="post-4924 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_image-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-4-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_load_image_to_edit_path/">_load_image_to_edit_path ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$attachment_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$size</span>&nbsp;=&nbsp;<span class="arg-default">'full'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the path or url of an attachment&#8217;s attached file.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the attached file is not present on the local filesystem (usually due to replication plugins), then the url of the file is returned if url fopen is supported.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> File path or url on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/image.php/">wp-admin/includes/image.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attachment_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Attachment ID.</span>
+									</p>
+							</dd>
+									<dt>$size</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Image size, defaults to 'full'.</span>
+									</p>
+								<p class="default">Default value: 'full'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/stream_preview_image/">stream_preview_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image-edit.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_image/">wp_save_image()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_copy_image_file/">_copy_image_file()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/load_image_to_edit/">load_image_to_edit()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_crop_image/">wp_crop_image()</a>
+							</li>
+																</ul>
+			</article>

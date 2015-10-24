@@ -1,0 +1,69 @@
+<article id="post-909" class="post-909 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wpmu_validate_blog_signup/">wpmu_validate_blog_signup ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$blogname</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$blog_title</span>, &nbsp;<span class="arg-name">$user</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Processes new site registrations.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks the data provided by the user during blog signup. Verifies the validity and uniqueness of blog paths and domains.</p>
+<p>This function prevents the current user from registering a new site with a blogname equivalent to another user&#8217;s login name. Passing the $user parameter to the function, where $user is the other user, is effectively an override of this limitation.</p>
+<p>Filter &#8216;wpmu_validate_blog_signup&#8217; if you want to modify the way that WordPress validates new site signups.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Contains the new site data and error messages.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$blogname</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The blog name provided by the user. Must be unique.</span>
+									</p>
+							</dd>
+									<dt>$blog_title</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The blog title provided by the user.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-signup.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_blog_signup/">validate_blog_signup()</a>
+							</li>
+													<li>
+								<span>wp-signup.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_blog_form/">validate_blog_form()</a>
+							</li>
+																</ul>
+			</article>

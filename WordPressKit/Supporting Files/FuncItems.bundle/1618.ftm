@@ -1,0 +1,78 @@
+<article id="post-76" class="post-76 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_meta-php wp-parser-package-meta wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/update_meta_cache/">update_meta_cache ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_type</span>,  <span class="arg-type">int|array</span>&nbsp;<span class="arg-name">$object_ids</span> )</a></h1>
+
+	<section class="summary">
+		<p>Update the metadata cache for the specified objects.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array|false)</span> Metadata cache for the specified objects, or false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/meta.php/">wp-includes/meta.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$meta_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Type of object metadata is for (e.g., comment, post, or user)</span>
+									</p>
+							</dd>
+									<dt>$object_ids</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Array or comma delimited list of object IDs to update cache for</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/cache_users/">cache_users()</a>
+							</li>
+													<li>
+								<span>wp-includes/deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_user_metavalues/">get_user_metavalues()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/update_postmeta_cache/">update_postmeta_cache()</a>
+							</li>
+													<li>
+								<span>wp-includes/meta.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_metadata/">get_metadata()</a>
+							</li>
+													<li>
+								<span>wp-includes/meta.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/metadata_exists/">metadata_exists()</a>
+							</li>
+																</ul>
+			</article>

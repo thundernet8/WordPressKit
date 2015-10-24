@@ -1,0 +1,55 @@
+<article id="post-5194" class="post-5194 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_ms-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/can_edit_network/">can_edit_network ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$site_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Whether or not we can edit this network from this page.</p>
+	</section>
+
+
+	<section class="description">
+		<p>By default editing of network is restricted to the Network Admin for that <code>$site_id</code> this allows for this to be overridden.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if network can be edited, otherwise false.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/ms.php/">wp-admin/includes/ms.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$site_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The network/site ID to check.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/column_blogs/">WP_MS_Users_List_Table::column_blogs()</a>
+							</li>
+																</ul>
+			</article>

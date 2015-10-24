@@ -1,0 +1,67 @@
+<article id="post-374" class="post-374 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_widgets-php wp-parser-package-widgets wp-parser-package-wordpress wp-parser-since-2-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/register_sidebar/">register_sidebar ( <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds the definition for a single sidebar and returns the ID.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Accepts either a string or an array and then parses that against a set of default arguments for the new sidebar. WordPress will automatically generate a sidebar ID and name based on the current number of registered sidebars if those arguments are not included.</p>
+<p>When allowing for automatic generation of the name and ID parameters, keep in mind that the incrementor for your sidebar can change over time depending on what other plugins and themes are installed.</p>
+<p>If theme support for &#8216;widgets&#8217; has not yet been added when this function is called, it will be automatically enabled through the use of add_theme_support()</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Sidebar ID added to $wp_registered_sidebars global.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/widgets.php/">wp-includes/widgets.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments for the sidebar being registered. <ul class="param-hash"><li><b>'name'</b><br /><i><span class='type'>(string)</span></i> The name or title of the sidebar displayed in the Widgets interface. Default 'Sidebar $instance'. </li>
+<li><b>'id'</b><br /><i><span class='type'>(string)</span></i> The unique identifier by which the sidebar will be called. Default 'sidebar-$instance'. </li>
+<li><b>'description'</b><br /><i><span class='type'>(string)</span></i> Description of the sidebar, displayed in the Widgets interface. Default empty string. </li>
+<li><b>'class'</b><br /><i><span class='type'>(string)</span></i> Extra CSS class to assign to the sidebar in the Widgets interface. </li>
+<li><b>'before_widget'</b><br /><i><span class='type'>(string)</span></i> HTML content to prepend to each widget's HTML output when assigned to this sidebar. Default is an opening list item element. </li>
+<li><b>'after_widget'</b><br /><i><span class='type'>(string)</span></i> HTML content to append to each widget's HTML output when assigned to this sidebar. Default is a closing list item element. </li>
+<li><b>'before_title'</b><br /><i><span class='type'>(string)</span></i> HTML content to prepend to the sidebar title when displayed. Default is an opening h2 element. </li>
+<li><b>'after_title'</b><br /><i><span class='type'>(string)</span></i> HTML content to append to the sidebar title when displayed. Default is a closing h2 element.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_sidebars/">register_sidebars()</a>
+							</li>
+																</ul>
+			</article>

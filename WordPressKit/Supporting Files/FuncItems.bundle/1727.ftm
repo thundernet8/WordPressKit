@@ -1,0 +1,54 @@
+<article id="post-864" class="post-864 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-mu">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use add_query_arg()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/wpmu_admin_redirect_add_updated_param/">wpmu_admin_redirect_add_updated_param ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$url</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Adds an &#8216;updated=true&#8217; argument to a URL.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-deprecated.php/">wp-includes/ms-deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$url</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+														</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_admin_do_redirect/">wpmu_admin_do_redirect()</a>
+							</li>
+																</ul>
+			</article>

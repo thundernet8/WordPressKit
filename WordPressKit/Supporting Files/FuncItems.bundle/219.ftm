@@ -1,0 +1,114 @@
+<article id="post-62" class="post-62 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_meta-php wp-parser-package-meta wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/delete_metadata/">delete_metadata ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_type</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$object_id</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$meta_key</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$meta_value</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$delete_all</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Delete metadata for the specified object.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True on successful delete, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/meta.php/">wp-includes/meta.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$meta_type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Type of object metadata is for (e.g., comment, post, or user)</span>
+									</p>
+							</dd>
+									<dt>$object_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">ID of the object metadata is for</span>
+									</p>
+							</dd>
+									<dt>$meta_key</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Metadata key</span>
+									</p>
+							</dd>
+									<dt>$meta_value</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Metadata value. Must be serializable if non-scalar. If specified, only delete                           metadata entries with this value. Otherwise, delete all entries with the specified meta_key.                           Pass &lt;code&gt;null,&lt;/code&gt;false`, or an empty string to skip this check. (For backward compatibility,                           it is not possible to pass an empty string to delete those entries with an empty string                           for a value.)</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$delete_all</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  If true, delete matching metadata entries for all objects,                           ignoring the specified object_id. Otherwise, only delete matching metadata entries for                           the specified object_id.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/session.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_user_meta_session_tokens/drop_sessions/">WP_User_Meta_Session_Tokens::drop_sessions()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_user_meta/">delete_user_meta()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_delete_attachment/">wp_delete_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_post_meta/">delete_post_meta()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_post_meta_by_key/">delete_post_meta_by_key()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_blog/">install_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_comment_meta/">delete_comment_meta()</a>
+							</li>
+																			<a href="#" class="show-more">Show 7 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,108 @@
+<article id="post-3593" class="post-3593 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_theme-php wp-parser-package-theme wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_stylesheet/">get_stylesheet ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve name of the current stylesheet.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The theme name that the administrator has currently set the front end theme as.</p>
+<p>For all intents and purposes, the template name and the stylesheet name are going to be the same for most cases.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Stylesheet name.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/theme.php/">wp-includes/theme.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/ajax_background_add/">Custom_Background::ajax_background_add()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/current_before/">Theme_Upgrader::current_before()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/current_after/">Theme_Upgrader::current_after()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader/bulk_upgrade/">Theme_Upgrader::bulk_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_themes_for_js/">wp_prepare_themes_for_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader-skins.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/theme_upgrader_skin/after/">Theme_Upgrader_Skin::after()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/ajax_header_add/">Custom_Image_Header::ajax_header_add()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/ajax_header_remove/">Custom_Image_Header::ajax_header_remove()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/customize_set_last_used/">Custom_Image_Header::customize_set_last_used()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/get_uploaded_header_images/">Custom_Image_Header::get_uploaded_header_images()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/set_header_image/">Custom_Image_Header::set_header_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/setup_theme/">WP_Customize_Manager::setup_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/validate_current_theme/">validate_current_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_stylesheet_directory/">get_stylesheet_directory()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/">get_stylesheet_directory_uri()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_themes/">wp_get_themes()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_theme/">wp_get_theme()</a>
+							</li>
+																			<a href="#" class="show-more">Show 17 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

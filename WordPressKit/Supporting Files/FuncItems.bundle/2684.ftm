@@ -1,0 +1,87 @@
+<article id="post-3327" class="post-3327 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-8-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/__checked_selected_helper/">__checked_selected_helper ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$helper</span>,  <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$current</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$echo</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$type</span> )</a></h1>
+
+	<section class="summary">
+		<p>Private helper function for checked, selected, and disabled.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Compares the first two arguments and if identical marks as $type</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> html attribute or empty string</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$helper</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">One of the values to compare</span>
+									</p>
+							</dd>
+									<dt>$current</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">(true) The other value to compare if not just true</span>
+									</p>
+							</dd>
+									<dt>$echo</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Whether to echo or just return the string</span>
+									</p>
+							</dd>
+									<dt>$type</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The type of checked|selected|disabled we are doing</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/checked/">checked()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/selected/">selected()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/disabled/">disabled()</a>
+							</li>
+																</ul>
+			</article>

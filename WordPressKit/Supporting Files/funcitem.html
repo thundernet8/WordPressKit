@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta id="meta" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <style type="text/css">
+        body {background: #f7f7f7;margin:0 !important;padding:5px 8px;word-wrap:nowrap;word-break:normal;white-space:nowrap;}
+      body.wrap *{white-space:normal;word-wrap:break-all;word-break:break-all;}
+      #codecontent{line-height: 120%;font-size: 12pt;text-align: left;color: #404040;font-family:"Fira Sans", "Source Sans Pro","Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;Consolas;}
+      body p{margin-bottom:5px;}
+      body hr{border:none;border-bottom: 1px solid #eeeeee;}
+      body pre{background: #eee;font-family: "Courier 10 Pitch", Courier, monospace;font-size: 12px;line-height: 1.5;margin-bottom: 10px;max-width: 100%;overflow: auto;padding: 8px 5px;}
+      pre code{font: 12px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;}
+      *,*:before,*:after {box-sizing:border-box}
+      article h1{padding-bottom: 9px;margin: 10px 0 5px;border-bottom: 1px solid #eeeeee;font-size:20px;font-family: monospace,museo-slab, Georgia, "Times New Roman", Times, serif;font-weight:normal;}
+      article h1 a{text-decoration:none;color:#24831d;line-height:1.1;letter-spacing:-2px;}
+      article h1 .arg-type{color: #cd2f23;font-style: italic;}
+      article h1 .arg-name{color: #0f55c8;}
+      article section a{text-decoration:none;color:#0f55c8;}
+      article section.return span.return-type{font-style:italic;}
+      article section h2{font-size:20px;font-family: Georgia, Times, serif;}
+      article section.source a[href="#source-code"],section a[href="#"].show-more,section a[href="#"].hide-more{display:none;}
+      article section dt{font-weight:bold;margin-bottom:0px;padding:0;line-height:1;letter-spacing:0.5px;}
+      article section dd{margin:5px 0px 10px 15px;padding:0;}
+      article section dd p{margin:0;padding:0}
+      article section dd span.type,article section dd span.required,article section dd p.default{font-style:italic;}
+      section.usage a{color:#404040;}
+      section.usage ul{padding-left:20px;}
+      section.usage li{margin-bottom:8px;margin-left:0;padding:0;}
+    </style>
+  </head>
+  <body>
+    <div id="codecontent">
+    	{{code}}
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      document.isLocalLoader = true;
+      function wrapContent(e){
+      	if (e===0){
+      		document.body.className = "wrap";
+            document.getElementById('meta').setAttribute('content',"",0);
+      	}else{
+            document.body.className = "";
+            document.getElementById('meta').setAttribute('content',"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",0);
+      	}
+      }
+      function sendMsg(){
+      	if(document.readyState == "complete"){
+      		//通知oc
+      		var iFrame;
+		    iFrame = document.createElement("iframe");
+		    iFrame.setAttribute("src", "funcitem://completed");
+		    iFrame.setAttribute("style", "display:none;");
+		    iFrame.setAttribute("height", "0px");
+		    iFrame.setAttribute("width", "0px");
+		    iFrame.setAttribute("frameborder", "0");
+		    document.body.appendChild(iFrame);
+		    // 发起请求后这个 iFrame 就没用了，所以把它从 dom 上移除掉
+		    iFrame.parentNode.removeChild(iFrame);
+		    iFrame = null;
+      	}
+	  }
+	  document.onreadystatechange = sendMsg;
+
+    </script>
+  </body>
+</html>

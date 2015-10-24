@@ -1,0 +1,102 @@
+<article id="post-3400" class="post-3400 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-2-0-3">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_verify_nonce/">wp_verify_nonce ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$nonce</span>,  <span class="arg-type">string|int</span>&nbsp;<span class="arg-name">$action</span>&nbsp;=&nbsp;<span class="arg-default">-1</span> )</a></h1>
+
+	<section class="summary">
+		<p>Verify that correct nonce was used with time limit.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The user is given an amount of time to use the token, so therefore, since the UID and $action remain the same, the independent variable is the time.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|int)</span> False if the nonce is invalid, 1 if the nonce is valid and generated between                   0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$nonce</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Nonce that was used in the form to verify</span>
+									</p>
+							</dd>
+									<dt>$action</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Should give context to what is taking place and be the same when nonce was created.</span>
+									</p>
+								<p class="default">Default value: -1</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/add_category/">WP_Press_This::add_category()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-press-this.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_press_this/save_post/">WP_Press_This::save_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_destroy_sessions/">wp_ajax_destroy_sessions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_autosave/">wp_autosave()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_heartbeat/">wp_ajax_heartbeat()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/step/">Custom_Image_Header::step()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_admin_referer/">check_admin_referer()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_ajax_referer/">check_ajax_referer()</a>
+							</li>
+													<li>
+								<span>wp-includes/canonical.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/redirect_canonical/">redirect_canonical()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_show_post_preview/">_show_post_preview()</a>
+							</li>
+																			<a href="#" class="show-more">Show 10 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

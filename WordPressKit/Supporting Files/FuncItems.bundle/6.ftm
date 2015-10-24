@@ -1,0 +1,271 @@
+<article id="post-1871" class="post-1871 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-1-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_action/">add_action ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$function_to_add</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$priority</span>&nbsp;=&nbsp;<span class="arg-default">10</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$accepted_args</span>&nbsp;=&nbsp;<span class="arg-default">1</span> )</a></h1>
+
+	<section class="summary">
+		<p>Hooks a function on to a specific action.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Actions are the hooks that the WordPress core launches at specific points during execution, or when specific events occur. Plugins can specify that one or more of its PHP functions are executed at these points, using the Action API.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(true)</span> Will always return true.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The name of the action to which the $function_to_add is hooked.</span>
+									</p>
+							</dd>
+									<dt>$function_to_add</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The name of the function you wish to be called.</span>
+									</p>
+							</dd>
+									<dt>$priority</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Used to specify the order in which the functions                                  associated with a particular action are executed.                                   Lower numbers correspond with earlier execution,                                  and functions with the same priority are executed                                  in the order in which they were added to the action.</span>
+									</p>
+								<p class="default">Default value: 10</p>
+							</dd>
+									<dt>$accepted_args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The number of arguments the function accepts. </span>
+									</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_customize_menu/">wp_admin_bar_customize_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_factory/__construct/">WP_Widget_Factory::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-control.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_site_icon_control/__construct/">WP_Customize_Site_Icon_Control::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-setting.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menu_item_setting/__construct/">WP_Customize_Nav_Menu_Item_Setting::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/customize_preview_enqueue_deps/">WP_Customize_Nav_Menus::customize_preview_enqueue_deps()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/customize_preview_init/">WP_Customize_Nav_Menus::customize_preview_init()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/__construct/">WP_Customize_Nav_Menus::__construct()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-site-icon.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_site_icon/__construct/">WP_Site_Icon::__construct()</a>
+							</li>
+													<li>
+								<span>wp-login.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/login_header/">login_header()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_list_table/__construct/">WP_List_Table::__construct()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-theme-install-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_theme_install_list_table/prepare_items/">WP_Theme_Install_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_plugin_update_rows/">wp_plugin_update_rows()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_theme_update_rows/">wp_theme_update_rows()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/uninstall_plugin/">uninstall_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_menu_page/">add_menu_page()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_submenu_page/">add_submenu_page()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugin-install-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugin_install_list_table/prepare_items/">WP_Plugin_Install_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_internal_pointers/enqueue_scripts/">WP_Internal_Pointers::enqueue_scripts()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/__construct/">Custom_Image_Header::__construct()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_image_header/init/">Custom_Image_Header::init()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/__construct/">Custom_Background::__construct()</a>
+							</li>
+													<li>
+								<span>wp-admin/custom-background.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/custom_background/init/">Custom_Background::init()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/customize_preview_init/">WP_Customize_Manager::customize_preview_init()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/setup_theme/">WP_Customize_Manager::setup_theme()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-manager.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_manager/__construct/">WP_Customize_Manager::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_custom_header_background_just_in_time/">_custom_header_background_just_in_time()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_thickbox/">add_thickbox()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_auth_check_load/">wp_auth_check_load()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_maybe_load_widgets/">wp_maybe_load_widgets()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_recent_posts/__construct/">WP_Widget_Recent_Posts::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_recent_comments/__construct/">WP_Widget_Recent_Comments::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/locale.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_locale/init/">WP_Locale::init()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-embed.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_embed/__construct/">WP_Embed::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/add_menus/">WP_Admin_Bar::add_menus()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/initialize/">WP_Admin_Bar::initialize()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_activation_hook/">register_activation_hook()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_deactivation_hook/">register_deactivation_hook()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_enqueue_media/">wp_enqueue_media()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_playlist_scripts/">wp_playlist_scripts()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_rewrite/flush_rules/">WP_Rewrite::flush_rules()</a>
+							</li>
+													<li>
+								<span>wp-includes/rewrite.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_feed/">add_feed()</a>
+							</li>
+													<li>
+								<span>wp-includes/class.wp-scripts.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_scripts/__construct/">WP_Scripts::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/customize_preview_init/">WP_Customize_Widgets::customize_preview_init()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/__construct/">WP_Customize_Widgets::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-customize-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_widgets/schedule_customize_register/">WP_Customize_Widgets::schedule_customize_register()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/_wp_editors/editor_settings/">_WP_Editors::editor_settings()</a>
+							</li>
+													<li>
+								<span>wp-includes/media-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_print_media_templates/">wp_print_media_templates()</a>
+							</li>
+																			<a href="#" class="show-more">Show 48 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

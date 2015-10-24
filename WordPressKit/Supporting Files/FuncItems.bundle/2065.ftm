@@ -1,0 +1,40 @@
+<article id="post-2549" class="post-2549 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-4">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_original_referer/">wp_get_original_referer ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve original referer that was posted, if it exists.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> False if no original referer or original referer if set.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_original_referer_field/">wp_original_referer_field()</a>
+							</li>
+																</ul>
+			</article>

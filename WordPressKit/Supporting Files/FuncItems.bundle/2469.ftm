@@ -1,0 +1,67 @@
+<article id="post-2402" class="post-2402 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_default-widgets-php wp-parser-package-widgets wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_widget_rss_form/">wp_widget_rss_form ( <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$inputs</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display RSS widget options form.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The options for what fields are displayed for the RSS form are all booleans and are as follows: &#8216;url&#8217;, &#8216;title&#8217;, &#8216;items&#8217;, &#8216;show_summary&#8217;, &#8216;show_author&#8217;, &#8216;show_date&#8217;.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/default-widgets.php/">wp-includes/default-widgets.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Values for input fields.</span>
+									</p>
+							</dd>
+									<dt>$inputs</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Override default display options.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_rss_control/">wp_dashboard_rss_control()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_rss/form/">WP_Widget_RSS::form()</a>
+							</li>
+																</ul>
+			</article>

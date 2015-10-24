@@ -1,0 +1,36 @@
+<article id="post-961" class="post-961 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-functions-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/maybe_add_existing_user_to_blog/">maybe_add_existing_user_to_blog ()</a></h1>
+
+	<section class="summary">
+		<p>Add a new user to a blog by visiting /newbloguser/username/.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This will only work when the user&#8217;s details are saved as an option keyed as &#8216;new_user_x&#8217;, where &#8216;x&#8217; is the username of the user to be added, as when a user is invited through the regular WP Add User interface.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-functions.php/">wp-includes/ms-functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

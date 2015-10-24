@@ -1,0 +1,91 @@
+<article id="post-3417" class="post-3417 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wptexturize/">wptexturize ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$text</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$reset</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Replaces common plain text characters into formatted entities</p>
+	</section>
+
+
+	<section class="description">
+		<p>As an example,</p>
+<pre><code>'cause today's effort makes it worth tomorrow's "holiday" ...</code></pre>
+<p>Becomes:</p>
+<pre><code>&#8217;cause today&#8217;s effort makes it worth tomorrow&#8217;s &#8220;holiday&#8221; &#8230;</code></pre>
+<p>Code within certain html blocks are skipped.</p>
+<p>Do not use this function before the &#8216;init&#8217; action hook; everything will break.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The string replaced with html entities</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$text</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The text to be formatted</span>
+									</p>
+							</dd>
+									<dt>$reset</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Set to true for unit testing. Translated patterns will reset.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_get_plugin_data_markup_translate/">_get_plugin_data_markup_translate()</a>
+							</li>
+													<li>
+								<span>wp-admin/menu-header.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_menu_output/">_wp_menu_output()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_archives_link/">get_archives_link()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_theme/markup_header/">WP_Theme::markup_header()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/gallery_shortcode/">gallery_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/trackback_rdf/">trackback_rdf()</a>
+							</li>
+																			<a href="#" class="show-more">Show 6 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,35 @@
+<article id="post-539" class="post-539 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-default-constants-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/ms_cookie_constants/">ms_cookie_constants ()</a></h1>
+
+	<section class="summary">
+		<p>Defines Multisite cookie constants.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-default-constants.php/">wp-includes/ms-default-constants.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

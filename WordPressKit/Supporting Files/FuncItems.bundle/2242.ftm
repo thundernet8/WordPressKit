@@ -1,0 +1,66 @@
+<article id="post-1344" class="post-1344 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-2-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_oembed_add_provider/">wp_oembed_add_provider ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$format</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$provider</span>,  <span class="arg-type">boolean</span>&nbsp;<span class="arg-name">$regex</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Adds a URL format and oEmbed provider URL pair.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$format</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The format of URL that this provider can handle. You can use asterisks                          as wildcards.</span>
+									</p>
+							</dd>
+									<dt>$provider</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The URL to the oEmbed provider.</span>
+									</p>
+							</dd>
+									<dt>$regex</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="boolean">boolean</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether the &lt;code&gt;$format&lt;/code&gt; parameter is in a RegEx format. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

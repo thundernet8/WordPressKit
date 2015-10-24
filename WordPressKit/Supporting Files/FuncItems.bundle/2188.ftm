@@ -1,0 +1,69 @@
+<article id="post-1526" class="post-1526 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-1-2-2">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use wp_signon()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_login/">wp_login ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$username</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$password</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$deprecated</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Checks a users login information and logs them in if it checks out. This function is deprecated.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Use the global $error to get the reason why the login failed. If the username is blank, no error will be set, so assume blank username on that case.</p>
+<p>Plugins extending this function should also provide the global $error and set what the error is, so that those checking the global for why there was a failure can utilize it later.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> False on login failure, true on successful check</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable-deprecated.php/">wp-includes/pluggable-deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$username</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User's username</span>
+									</p>
+							</dd>
+									<dt>$password</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User's password</span>
+									</p>
+							</dd>
+									<dt>$deprecated</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Not used</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

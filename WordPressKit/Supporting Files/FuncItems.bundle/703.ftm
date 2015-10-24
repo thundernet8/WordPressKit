@@ -1,0 +1,75 @@
+<article id="post-2232" class="post-2232 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_taxonomy-php wp-parser-package-taxonomy wp-parser-package-wordpress wp-parser-since-3-0-0 wp-parser-since-4-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_taxonomy_labels/">get_taxonomy_labels ( <span class="arg-type">object</span>&nbsp;<span class="arg-name">$tax</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds an object with all taxonomy labels out of a taxonomy object</p>
+	</section>
+
+
+	<section class="description">
+		<p>Accepted keys of the label array in the taxonomy object:</p>
+<ul>
+<li>name &#8211; general name for the taxonomy, usually plural. The same as and overridden by $tax-&gt;label. Default is Tags/Categories</li>
+<li>singular_name &#8211; name for one object of this taxonomy. Default is Tag/Category</li>
+<li>search_items &#8211; Default is Search Tags/Search Categories</li>
+<li>popular_items &#8211; This string isn&#8217;t used on hierarchical taxonomies. Default is Popular Tags</li>
+<li>all_items &#8211; Default is All Tags/All Categories</li>
+<li>parent_item &#8211; This string isn&#8217;t used on non-hierarchical taxonomies. In hierarchical ones the default is Parent Category</li>
+<li>parent_item_colon &#8211; The same as <code>parent_item</code>, but with colon <code>:</code> in the end</li>
+<li>edit_item &#8211; Default is Edit Tag/Edit Category</li>
+<li>view_item &#8211; Default is View Tag/View Category</li>
+<li>update_item &#8211; Default is Update Tag/Update Category</li>
+<li>add_new_item &#8211; Default is Add New Tag/Add New Category</li>
+<li>new_item_name &#8211; Default is New Tag Name/New Category Name</li>
+<li>separate_items_with_commas &#8211; This string isn&#8217;t used on hierarchical taxonomies. Default is &#8220;Separate tags with commas&#8221;, used in the meta box.</li>
+<li>add_or_remove_items &#8211; This string isn&#8217;t used on hierarchical taxonomies. Default is &#8220;Add or remove tags&#8221;, used in the meta box when JavaScript is disabled.</li>
+<li>choose_from_most_used &#8211; This string isn&#8217;t used on hierarchical taxonomies. Default is &#8220;Choose from the most used tags&#8221;, used in the meta box.</li>
+<li>not_found &#8211; Default is &#8220;No tags found&#8221;/&#8221;No categories found&#8221;, used in the meta box and taxonomy list table.</li>
+<li>no_terms &#8211; Default is &#8220;No tags&#8221;/&#8221;No categories&#8221;, used in the posts and media list tables.</li>
+</ul>
+<p>Above, the first default value is for non-hierarchical taxonomies (like tags) and the second one is for hierarchical taxonomies (like categories).</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(object)</span> object with all the labels as member variables.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/taxonomy.php/">wp-includes/taxonomy.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tax</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="object">object</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Taxonomy object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_taxonomy/">register_taxonomy()</a>
+							</li>
+																</ul>
+			</article>

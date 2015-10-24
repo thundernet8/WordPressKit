@@ -1,0 +1,71 @@
+<article id="post-2550" class="post-2550 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-0-1">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_mkdir_p/">wp_mkdir_p ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$target</span> )</a></h1>
+
+	<section class="summary">
+		<p>Recursive directory creation based on full path.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will attempt to set permissions on folders.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the path was created. True if path already exists.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$target</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Full path to attempt to create.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_copy_image_file/">_copy_image_file()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/image.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_crop_image/">wp_crop_image()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_upload_bits/">wp_upload_bits()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_upload_dir/">wp_upload_dir()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-image-editor.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_image_editor/make_image/">WP_Image_Editor::make_image()</a>
+							</li>
+																</ul>
+			</article>

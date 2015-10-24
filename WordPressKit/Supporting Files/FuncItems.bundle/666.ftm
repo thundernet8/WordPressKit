@@ -1,0 +1,58 @@
+<article id="post-3213" class="post-3213 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_search_form/">get_search_form ( <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$echo</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display search form.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will first attempt to locate the searchform.php file in either the child or the parent, then load it. If it doesn&#8217;t exist, then the default search form will be displayed. The default search form is HTML, which will be displayed. There is a filter applied to the search form HTML in order to edit or replace it. The filter is &#8216;get_search_form&#8217;.</p>
+<p>This function is primarily used by themes which want to hardcode the search form into the sidebar and also by the search widget in WordPress.</p>
+<p>There is also an action that is called whenever the function is run called, &#8216;pre_get_search_form&#8217;. This can be useful for outputting JavaScript that the search relies on or various formatting that applies to the beginning of the search. To give a few examples of what it can be used for.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> String when $echo is false.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$echo</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Default to echo and not return the form.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget_search/widget/">WP_Widget_Search::widget()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,84 @@
+<article id="post-3519" class="post-3519 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_html_excerpt/">wp_html_excerpt ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$str</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$count</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$more</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Safely extracts not more than the first $count characters from html string.</p>
+	</section>
+
+
+	<section class="description">
+		<p>UTF-8, tags and entities safe prefix extraction. Entities inside will <em>NOT</em> be counted as one character. For example &amp; will be counted as 4, &lt; as 3, etc.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The excerpt.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$str</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">String to get the excerpt from.</span>
+									</p>
+							</dd>
+									<dt>$count</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Maximum number of characters to take.</span>
+									</p>
+							</dd>
+									<dt>$more</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> What to append if $str needs to be trimmed. Defaults to empty string.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-customize-nav-menus.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_customize_nav_menus/customize_register/">WP_Customize_Nav_Menus::customize_register()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_media_item/">get_media_item()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_site_menu/">wp_admin_bar_site_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/comment.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_trackbacks/">do_trackbacks()</a>
+							</li>
+																</ul>
+			</article>

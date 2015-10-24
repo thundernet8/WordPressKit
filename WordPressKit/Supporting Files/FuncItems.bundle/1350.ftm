@@ -1,0 +1,81 @@
+<article id="post-2504" class="post-2504 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/size_format/">size_format ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$bytes</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$decimals</span> )</a></h1>
+
+	<section class="summary">
+		<p>Convert number of bytes largest unit bytes will fit into.</p>
+	</section>
+
+
+	<section class="description">
+		<p>It is easier to read 1 kB than 1024 bytes and 1 MB than 1048576 bytes. Converts number of bytes to human readable number by taking the number of that unit that the bytes will go into it. Supports TB value.</p>
+<p>Please note that integers in PHP are limited to 32 bits, unless they are on 64 bit architecture, then they have 64 bit size. If you need to place the larger size then what PHP integer type will hold, then use a string. It will be converted to a double, which should always have 64 bit length.</p>
+<p>Technically the correct unit names for powers of 1024 are KiB, MiB etc.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> False on failure. Number string on success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$bytes</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Number of bytes. Note max integer size for integers.</span>
+									</p>
+							</dd>
+									<dt>$decimals</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Precision of number of decimal places. Default 0.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_import_upload_form/">wp_import_upload_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attachment_submitbox_metadata/">attachment_submitbox_metadata()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/media_upload_form/">media_upload_form()</a>
+							</li>
+													<li>
+								<span>wp-includes/media.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_attachment_for_js/">wp_prepare_attachment_for_js()</a>
+							</li>
+													<li>
+								<span>wp-includes/media-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_print_media_templates/">wp_print_media_templates()</a>
+							</li>
+																</ul>
+			</article>

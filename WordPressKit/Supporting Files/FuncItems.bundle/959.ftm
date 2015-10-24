@@ -1,0 +1,86 @@
+<article id="post-867" class="post-867 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-load-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_subdomain_install/">is_subdomain_install ()</a></h1>
+
+	<section class="summary">
+		<p>Whether a subdomain configuration is enabled.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if subdomain configuration is enabled, false otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-load.php/">wp-includes/ms-load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-signup.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/show_blog_form/">show_blog_form()</a>
+							</li>
+													<li>
+								<span>wp-admin/network.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_step2/">network_step2()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/avoid_blog_page_permalink_collision/">avoid_blog_page_permalink_collision()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-sites-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_sites_list_table/prepare_items/">WP_MS_Sites_List_Table::prepare_items()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_create_blog/">wpmu_create_blog()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_validate_blog_signup/">wpmu_validate_blog_signup()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wpmu_signup_blog_notification/">wpmu_signup_blog_notification()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-deprecated.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blogaddress_by_domain/">get_blogaddress_by_domain()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blogaddress_by_name/">get_blogaddress_by_name()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_id_from_blogname/">get_id_from_blogname()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-blogs.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_blog_details/">get_blog_details()</a>
+							</li>
+													<li>
+								<span>wp-includes/ms-default-constants.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/ms_cookie_constants/">ms_cookie_constants()</a>
+							</li>
+																			<a href="#" class="show-more">Show 12 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

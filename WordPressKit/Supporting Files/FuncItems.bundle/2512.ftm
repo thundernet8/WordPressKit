@@ -1,0 +1,76 @@
+<article id="post-5151" class="post-5151 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_image-edit-php wp-parser-package-administration wp-parser-package-wordpress">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_crop_image_resource/">_crop_image_resource ( <span class="arg-type">GD_Resource</span>&nbsp;<span class="arg-name">$img</span>,  <span class="arg-type">float</span>&nbsp;<span class="arg-name">$x</span>,  <span class="arg-type">float</span>&nbsp;<span class="arg-name">$y</span>,  <span class="arg-type">float</span>&nbsp;<span class="arg-name">$w</span>,  <span class="arg-type">float</span>&nbsp;<span class="arg-name">$h</span> )</a></h1>
+
+	<section class="summary">
+			</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(GD_Resource)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/image-edit.php/">wp-admin/includes/image-edit.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$img</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="GD_Resource">GD_Resource</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$x</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="float">float</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$y</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="float">float</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$w</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="float">float</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$h</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="float">float</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

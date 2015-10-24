@@ -1,0 +1,35 @@
+<article id="post-5890" class="post-5890 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-content_themes_twentytwelve_functions-php wp-parser-package-twenty_twelve wp-parser-package-wordpress wp-parser-since-twenty-twelve-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/twentytwelve_content_nav/">twentytwelve_content_nav (&nbsp;<span class="arg-name">$html_id</span> )</a></h1>
+
+	<section class="summary">
+		<p>Displays navigation to next/previous pages when applicable.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-content/themes/twentytwelve/functions.php/">wp-content/themes/twentytwelve/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

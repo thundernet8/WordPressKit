@@ -1,0 +1,60 @@
+<article id="post-4725" class="post-4725 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_user-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_delete_user/">wp_delete_user ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$id</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$reassign</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Remove user and optionally reassign posts and links to another user.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the $reassign parameter is not assigned to a User ID, then all posts will be deleted of that user. The action &#8216;delete_user&#8217; that is passed the User ID being deleted will be run after the posts are either reassigned or deleted. The user meta will also be deleted that are for that User ID.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True when finished.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/user.php/">wp-admin/includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">User ID.</span>
+									</p>
+							</dd>
+									<dt>$reassign</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Reassign posts and links to new User ID.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

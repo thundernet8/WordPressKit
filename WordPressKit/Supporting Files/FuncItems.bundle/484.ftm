@@ -1,0 +1,36 @@
+<article id="post-5366" class="post-5366 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use get_default_post_to_edit()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_default_page_to_edit/">get_default_page_to_edit ()</a></h1>
+
+	<section class="summary">
+		<p>Get the default page information to use.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(WP_Post)</span> Post object containing all the default post data as attributes</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/deprecated.php/">wp-admin/includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

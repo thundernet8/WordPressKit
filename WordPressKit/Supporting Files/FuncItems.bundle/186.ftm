@@ -1,0 +1,60 @@
+<article id="post-1556" class="post-1556 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/count_users/">count_users ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$strategy</span>&nbsp;=&nbsp;<span class="arg-default">'time'</span> )</a></h1>
+
+	<section class="summary">
+		<p>Count number of users who have each of the user roles.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Assumes there are neither duplicated nor orphaned capabilities meta_values. Assumes role names are unique phrases. Same assumption made by WP_User_Query::prepare_query() Using $strategy = &#8216;time&#8217; this is CPU-intensive and should handle around 10^7 users. Using $strategy = &#8216;memory&#8217; this is memory-intensive and should handle around 10^5 users, but see WP Bug #12257.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Includes a grand total and an array of counts indexed by role strings.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$strategy</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">'time' or 'memory'</span>
+									</p>
+								<p class="default">Default value: 'time'</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_users_list_table/get_views/">WP_Users_List_Table::get_views()</a>
+							</li>
+													<li>
+								<span>wp-includes/update.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_version_check/">wp_version_check()</a>
+							</li>
+																</ul>
+			</article>

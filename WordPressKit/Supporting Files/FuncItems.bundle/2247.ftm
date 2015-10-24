@@ -1,0 +1,59 @@
+<article id="post-1423" class="post-1423 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_page_menu/">wp_page_menu ( <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">array()</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display or retrieve list of pages with optional home link.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The arguments are listed below and part of the arguments are for <a href="https://developer.wordpress.org/reference/functions/wp_list_pages">wp_list_pages()</a> function. Check that function for more info on those arguments.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|void)</span> HTML menu</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post-template.php/">wp-includes/post-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Arguments to generate a page menu. See wp_list_pages() for additional arguments. <ul class="param-hash"><li><b>'sort_column'</b><br /><i><span class='type'>(string)</span></i> How to short the list of pages. Accepts post column names. Default 'menu_order, post_title'. </li>
+<li><b>'menu_class'</b><br /><i><span class='type'>(string)</span></i> Class to use for the div ID containing the page list. Default 'menu'. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(bool)</span></i> Whether to echo the list or return it. Accepts true (echo) or false (return). Default true. </li>
+<li><b>'link_before'</b><br /><i><span class='type'>(string)</span></i> The HTML or text to prepend to $show_home text. </li>
+<li><b>'link_after'</b><br /><i><span class='type'>(string)</span></i> The HTML or text to append to $show_home text. </li>
+<li><b>'show_home'</b><br /><i><span class='type'>(int|bool|string)</span></i> Whether to display the link to the home page. Can just enter the text you'd like shown for the home link. 1|true defaults to 'Home'.</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: array()</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

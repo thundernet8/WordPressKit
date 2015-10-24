@@ -1,0 +1,36 @@
+<article id="post-6042" class="post-6042 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-content_themes_twentythirteen_functions-php wp-parser-package-twenty_thirteen wp-parser-package-wordpress wp-parser-since-twenty-thirteen-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/twentythirteen_fonts_url/">twentythirteen_fonts_url ()</a></h1>
+
+	<section class="summary">
+		<p>Return the Google font stylesheet URL, if available.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Font stylesheet or empty string if disabled.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-content/themes/twentythirteen/functions.php/">wp-content/themes/twentythirteen/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

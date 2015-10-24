@@ -1,0 +1,39 @@
+<article id="post-2587" class="post-2587 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-2-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/smilies_init/">smilies_init ()</a></h1>
+
+	<section class="summary">
+		<p>Convert smiley code to the icon graphic file equivalent.</p>
+	</section>
+
+
+	<section class="description">
+		<p>You can turn off smilies, by going to the write setting screen and unchecking the box, or by setting &#8216;use_smilies&#8217; option to false or removing the option.</p>
+<p>Plugins may override the default smiley list by setting the $wpsmiliestrans to an array, with the key the code the blogger types in and the value the image file.</p>
+<p>The $wp_smiliessearch global is for the regular expression and is set each time the function is called.</p>
+<p>The full list of smilies can be found in the function and won&#8217;t be listed in the description. Probably should create a Codex page for it, so that it is available.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,36 @@
+<article id="post-6189" class="post-6189 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_translation-install-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-4-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_can_install_language_pack/">wp_can_install_language_pack ()</a></h1>
+
+	<section class="summary">
+		<p>Check if WordPress has access to the filesystem without asking for credentials.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Returns true on success, false on failure.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/translation-install.php/">wp-admin/includes/translation-install.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,66 @@
+<article id="post-153" class="post-153 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_throttle_comment_flood/">wp_throttle_comment_flood ( <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$block</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$time_lastcomment</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$time_newcomment</span> )</a></h1>
+
+	<section class="summary">
+		<p>Whether a comment should be blocked because of comment flood.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether comment should be blocked.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$block</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Whether plugin has already blocked comment.</span>
+									</p>
+							</dd>
+									<dt>$time_lastcomment</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Timestamp for last comment.</span>
+									</p>
+							</dd>
+									<dt>$time_newcomment</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Timestamp for new comment.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

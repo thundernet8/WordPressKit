@@ -1,0 +1,59 @@
+<article id="post-735" class="post-735 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_nav-menu-php wp-parser-package-nav_menus wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/is_nav_menu/">is_nav_menu ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$menu</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check if the given ID is a navigation menu.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Returns true if it is; false otherwise.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether the menu exists.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/nav-menu.php/">wp-includes/nav-menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$menu</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The menu to check (ID, slug, or name).</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_nav_menu_items/">wp_save_nav_menu_items()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_nav_menu_to_edit/">wp_get_nav_menu_to_edit()</a>
+							</li>
+																</ul>
+			</article>

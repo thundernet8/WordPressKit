@@ -13,9 +13,9 @@
 #import "FuncItemViewController.h"
 #import "CatItem.h"
 #import "UIImageView+WebCache.h"
-#import "temp.h"
+#import "FuncItemWebViewController.h"
 
-@interface FunctionsViewController () <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@interface FunctionsViewController () <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,weak) IBOutlet UISearchBar *searchBar;
@@ -61,7 +61,8 @@
 - (void)viewTapped: (UITapGestureRecognizer *)tap
 {
     //[self.searchBar resignFirstResponder];
-    [self.view endEditing:YES];
+    //[self.view endEditing:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,7 +76,7 @@
     // 点击空白搜索框消失
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     tap.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:tap];
+    [self.tableView addGestureRecognizer:tap];
 }
 
 - (void)configureSearchBar
@@ -197,16 +198,23 @@
     return nil;
 }
 
+#pragma mark - tableview delegate
 //cell选中执行segue跳转详情页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.searchBar resignFirstResponder];
     NSInteger num = [self getFuncItemRowNumofIndexPath:indexPath];
     FuncItem *funcItem = self.dataModel.funcItems[num];
-    //[self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
-    [self performSegueWithIdentifier:@"Show" sender:self.dataModel.funcItems];
+    if ([funcItem.img isEqualToString:@"api"]) {
+        [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
+    }else{
+        [self performSegueWithIdentifier:@"ShowFuncItemInWebView" sender:funcItem];
+    }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
 
 //跳转函数详情页前segue准备
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -214,10 +222,9 @@
     if ([segue.identifier isEqualToString:@"ShowFuncItem"]) {
         FuncItemViewController *controller = segue.destinationViewController;
         controller.funcItem = sender;
-    }
-    if ([segue.identifier isEqualToString:@"Show"]) {
-        temp *controller = segue.destinationViewController;
-        controller.items = sender;
+    }else if ([segue.identifier isEqualToString:@"ShowFuncItemInWebView"]) {
+        FuncItemWebViewController *controller = segue.destinationViewController;
+        controller.funcItem = sender;
     }
 }
 

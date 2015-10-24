@@ -1,0 +1,72 @@
+<article id="post-3520" class="post-3520 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_formatting-php wp-parser-package-wordpress wp-parser-since-2-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/links_add_base_url/">links_add_base_url ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$content</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$base</span>,  <span class="arg-type">array</span>&nbsp;<span class="arg-name">$attrs</span>&nbsp;=&nbsp;<span class="arg-default">array('src', 'href')</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add a Base url to relative links in passed content.</p>
+	</section>
+
+
+	<section class="description">
+		<p>By default it supports the &#8216;src&#8217; and &#8216;href&#8217; attributes. However this can be changed via the 3rd param.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The processed content.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/formatting.php/">wp-includes/formatting.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$content</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">String to search for links in.</span>
+									</p>
+							</dd>
+									<dt>$base</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The base URL to prefix to links.</span>
+									</p>
+							</dd>
+									<dt>$attrs</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The attributes which should be processed.</span>
+									</p>
+								<p class="default">Default value: array('src', 'href')</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugin_information/">install_plugin_information()</a>
+							</li>
+																</ul>
+			</article>

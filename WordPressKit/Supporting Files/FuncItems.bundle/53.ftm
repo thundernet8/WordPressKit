@@ -1,0 +1,91 @@
+<article id="post-1954" class="post-1954 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_shortcodes-php wp-parser-package-shortcodes wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_shortcode/">add_shortcode ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">callable</span>&nbsp;<span class="arg-name">$func</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add hook for shortcode tag.</p>
+	</section>
+
+
+	<section class="description">
+		<p>There can only be one hook for each shortcode. Which means that if another plugin has a similar shortcode, it will override yours or yours will override theirs depending on which order the plugins are included and/or ran.</p>
+<p>Simplest example of a shortcode tag using the API:</p>
+<pre><code>// [footag foo="bar"]
+function footag_func( $atts ) {
+    return "foo = {
+        $atts[foo]
+    }";
+}
+add_shortcode( 'footag', 'footag_func' );</code></pre>
+<p>Example with nice attribute defaults:</p>
+<pre><code>// [bartag foo="bar"]
+function bartag_func( $atts ) {
+    $args = shortcode_atts( array(
+        'foo' =&gt; 'no foo',
+        'baz' =&gt; 'default baz',
+    ), $atts );
+
+    return "foo = {$args['foo']}";
+}
+add_shortcode( 'bartag', 'bartag_func' );</code></pre>
+<p>Example with enclosed content:</p>
+<pre><code>// [baztag]content[/baztag]
+function baztag_func( $atts, $content = '' ) {
+    return "content = $content";
+}
+add_shortcode( 'baztag', 'baztag_func' );</code></pre>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/shortcodes.php/">wp-includes/shortcodes.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Shortcode tag to be searched in post content.</span>
+									</p>
+							</dd>
+									<dt>$func</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callable">callable</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Hook to run when shortcode is found.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/class-wp-embed.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_embed/__construct/">WP_Embed::__construct()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-embed.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_embed/run_shortcode/">WP_Embed::run_shortcode()</a>
+							</li>
+																</ul>
+			</article>

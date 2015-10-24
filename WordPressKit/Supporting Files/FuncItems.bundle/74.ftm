@@ -1,0 +1,44 @@
+<article id="post-5660" class="post-5660 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_network-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/allow_subdirectory_install/">allow_subdirectory_install ()</a></h1>
+
+	<section class="summary">
+		<p>Allow subdirectory install.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> Whether subdirectory install is allowed</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/network.php/">wp-admin/network.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/network.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_step1/">network_step1()</a>
+							</li>
+													<li>
+								<span>wp-admin/network.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/network_step2/">network_step2()</a>
+							</li>
+																</ul>
+			</article>

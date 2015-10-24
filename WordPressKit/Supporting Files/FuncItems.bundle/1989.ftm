@@ -1,0 +1,98 @@
+<article id="post-1558" class="post-1558 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-wordpress wp-parser-package-users wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_dropdown_users/">wp_dropdown_users ( <span class="arg-type">array|string</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Create dropdown HTML content of users.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The content can either be displayed, which it is by default or retrieved by setting the &#8216;echo&#8217; argument. The &#8216;include&#8217; and &#8216;exclude&#8217; arguments do not need to be used; all users will be displayed in that case. Only one can be used, either &#8216;include&#8217; or &#8216;exclude&#8217;, but not both.</p>
+<p>The available arguments are as follows:</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> String of HTML content.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Array or string of arguments to generate a drop-down of users. <a href="https://developer.wordpress.org/reference/classes/WP_User_Query/prepare_query for additional available arguments. <ul class="param-hash"><li><b>'show_option_all'</b><br /><i><span class='type'>(string)</span></i> Text to show as the drop-down default (all). </li>
+<li><b>'show_option_none'</b><br /><i><span class='type'>(string)</span></i> Text to show as the drop-down default when no users were found. </li>
+<li><b>'option_none_value'</b><br /><i><span class='type'>(int|string)</span></i> Value to use for $show_option_non when no users were found. Default -1. </li>
+<li><b>'hide_if_only_one_author'</b><br /><i><span class='type'>(string)</span></i> Whether to skip generating the drop-down if only one user was found. </li>
+<li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> Field to order found users by. Accepts user fields. Default 'display_name'. </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Whether to order users in ascending or descending order. Accepts 'ASC' (ascending) or 'DESC' (descending). Default 'ASC'. </li>
+<li><b>'include'</b><br /><i><span class='type'>(array|string)</span></i> Array or comma-separated list of user IDs to include. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(array|string)</span></i> Array or comma-separated list of user IDs to exclude. </li>
+<li><b>'multi'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to skip the ID attribute on the 'select' element. Accepts 1|true or 0|false. Default 0|false. </li>
+<li><b>'show'</b><br /><i><span class='type'>(string)</span></i> User table column to display. If the selected item is empty then the 'user_login' will be displayed in parentheses. Accepts user fields. Default 'display_name'. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to echo or return the drop-down. Accepts 1|true (echo) or 0|false (return). Default 1|true. </li>
+<li><b>'selected'</b><br /><i><span class='type'>(int)</span></i> Which user ID should be selected. Default 0. </li>
+<li><b>'include_selected'</b><br /><i><span class='type'>(bool)</span></i> Whether to always include the selected user ID in the drop- down. Default false. </li>
+<li><b>'name'</b><br /><i><span class='type'>(string)</span></i> Name attribute of select element. Default 'user'. </li>
+<li><b>'id'</b><br /><i><span class='type'>(string)</span></i> ID attribute of the select element. Default is the value of $name. </li>
+<li><b>'class'</b><br /><i><span class='type'>(string)</span></i> Class attribute of the select element. </li>
+<li><b>'blog_id'</b><br /><i><span class='type'>(int)</span></i> ID of blog (Multisite only). Default is ID of the current blog. </li>
+<li><b>'who'</b><br /><i><span class='type'>(string)</span></i> Which type of users to query. Accepts only an empty string or 'authors'.">WP_User_Query::prepare_query() for additional available arguments. </li>
+<li><b>'show_option_all'</b><br /><i><span class='type'>(string)</span></i> Text to show as the drop-down default (all). </li>
+<li><b>'show_option_none'</b><br /><i><span class='type'>(string)</span></i> Text to show as the drop-down default when no users were found. </li>
+<li><b>'option_none_value'</b><br /><i><span class='type'>(int|string)</span></i> Value to use for $show_option_non when no users were found. Default -1. </li>
+<li><b>'hide_if_only_one_author'</b><br /><i><span class='type'>(string)</span></i> Whether to skip generating the drop-down if only one user was found. </li>
+<li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> Field to order found users by. Accepts user fields. Default &#039;display_name&#039;. </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Whether to order users in ascending or descending order. Accepts &#039;ASC&#039; (ascending) or &#039;DESC&#039; (descending). Default &#039;ASC&#039;. </li>
+<li><b>'include'</b><br /><i><span class='type'>(array|string)</span></i> Array or comma-separated list of user IDs to include. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(array|string)</span></i> Array or comma-separated list of user IDs to exclude. </li>
+<li><b>'multi'</b><br /><i><span class='type'>(bool|int)</span></i> Whether to skip the ID attribute on the &#039;select&#039; element. Accepts 1|true or 0|false. Default 0|false. </li>
+<li><b>'show'</b><br /><i><span class='type'>(string)</span></i> User table column to display. If the selected item is empty then the &#039;user_login&#039; will be displayed in parentheses. Accepts user fields. Default &#039;display_name&#039;. </li>
+<li><b>'echo'</b><br /><i><span class='type'>(int|bool)</span></i> Whether to echo or return the drop-down. Accepts 1|true (echo) or 0|false (return). Default 1|true. </li>
+<li><b>'selected'</b><br /><i><span class='type'>(int)</span></i> Which user ID should be selected. Default 0. </li>
+<li><b>'include_selected'</b><br /><i><span class='type'>(bool)</span></i> Whether to always include the selected user ID in the drop- down. Default false. </li>
+<li><b>'name'</b><br /><i><span class='type'>(string)</span></i> Name attribute of select element. Default &#039;user&#039;. </li>
+<li><b>'id'</b><br /><i><span class='type'>(string)</span></i> ID attribute of the select element. Default is the value of $name. </li>
+<li><b>'class'</b><br /><i><span class='type'>(string)</span></i> Class attribute of the select element. </li>
+<li><b>'blog_id'</b><br /><i><span class='type'>(int)</span></i> ID of blog (Multisite only). Default is ID of the current blog. </li>
+<li><b>'who'</b><br /><i><span class='type'>(string)</span></i> Which type of users to query. Accepts only an empty string or &#039;authors&#039;. </a</li>
+</li></ul>
+</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_author_meta_box/">post_author_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-posts-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_posts_list_table/inline_edit/">WP_Posts_List_Table::inline_edit()</a>
+							</li>
+																</ul>
+			</article>

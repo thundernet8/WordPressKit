@@ -1,0 +1,37 @@
+<article id="post-1509" class="post-1509 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_paged_template/">get_paged_template ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve path of paged template in current or parent template.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The template path is filterable via the dynamic <a href="https://developer.wordpress.org/reference/functions/&#8216;$type_template&#8217;">&#8216;$type_template&#8217;</a> hook, e.g. &#8216;paged_template&#8217;.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Full path to paged template file.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/template.php/">wp-includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

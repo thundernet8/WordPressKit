@@ -1,0 +1,68 @@
+<article id="post-997" class="post-997 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_revision-php wp-parser-package-post_revisions wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_wp_put_post_revision/">_wp_put_post_revision ( <span class="arg-type">int|WP_Post|array|null</span>&nbsp;<span class="arg-name">$post</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$autosave</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Inserts post data into the posts table as a post revision.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(int|WP_Error)</span> WP_Error or 0 if error, new revision ID if success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/revision.php/">wp-includes/revision.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="WP_Post">WP_Post</span>|<span class="array">array</span>|<span class="null">null</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Post ID, post object OR post array.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$autosave</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Is the revision an autosave?</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_create_post_autosave/">wp_create_post_autosave()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_post_revision/">wp_save_post_revision()</a>
+							</li>
+																</ul>
+			</article>

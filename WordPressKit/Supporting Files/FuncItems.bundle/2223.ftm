@@ -1,0 +1,39 @@
+<article id="post-4211" class="post-4211 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_nav-menu-php wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_post_type_meta_boxes/">wp_nav_menu_post_type_meta_boxes ()</a></h1>
+
+	<section class="summary">
+		<p>Creates metaboxes for any post type menu item.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/nav-menu.php/">wp-admin/includes/nav-menu.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/nav-menu.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_nav_menu_setup/">wp_nav_menu_setup()</a>
+							</li>
+																</ul>
+			</article>

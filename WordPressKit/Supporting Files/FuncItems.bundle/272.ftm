@@ -1,0 +1,67 @@
+<article id="post-17959" class="post-17959 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_shortcodes-php wp-parser-package-shortcodes wp-parser-package-wordpress wp-parser-since-4-2-3">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/do_shortcodes_in_html_tags/">do_shortcodes_in_html_tags ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$content</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$ignore_html</span> )</a></h1>
+
+	<section class="summary">
+		<p>Search only inside HTML elements for shortcodes and process them.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Any [ or ] characters remaining inside elements will be HTML encoded to prevent interference with shortcodes that are outside the elements. Assumes $content processed by KSES already.  Users with unfiltered_html capability may get unexpected output if angle braces are nested in tags.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Content with shortcodes filtered out.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/shortcodes.php/">wp-includes/shortcodes.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$content</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Content to search for shortcodes</span>
+									</p>
+							</dd>
+									<dt>$ignore_html</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">When true, all square braces inside elements will be encoded.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/shortcodes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_shortcode/">do_shortcode()</a>
+							</li>
+													<li>
+								<span>wp-includes/shortcodes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/strip_shortcodes/">strip_shortcodes()</a>
+							</li>
+																</ul>
+			</article>

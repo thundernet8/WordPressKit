@@ -1,0 +1,75 @@
+<article id="post-1194" class="post-1194 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_post-php wp-parser-package-post wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_transition_post_status/">wp_transition_post_status ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$new_status</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$old_status</span>,  <span class="arg-type">WP_Post</span>&nbsp;<span class="arg-name">$post</span> )</a></h1>
+
+	<section class="summary">
+		<p>Fires actions related to the transitioning of a post&#8217;s status.</p>
+	</section>
+
+
+	<section class="description">
+		<p>When a post is saved, the post status is &#8220;transitioned&#8221; from one status to another, though this does not always mean the status has actually changed before and after the save. This function fires a number of action hooks related to that transition: the generic &#8216;transition_post_status&#8217; action, as well as the dynamic hooks <code>"{$old_status}_to_{$new_status}"</code> and <code>"{$new_status}_{$post-&gt;post_type}"</code>. Note that the function does not transition the post object in the database.</p>
+<p>For instance: When publishing a post for the first time, the post status may transition from &#8216;draft&#8217; – or some other status – to &#8216;publish&#8217;. However, if a post is already published and is simply being updated, the &#8220;old&#8221; and &#8220;new&#8221; statuses may both be &#8216;publish&#8217; before and after the transition.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/post.php/">wp-includes/post.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$new_status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Transition to this post status.</span>
+									</p>
+							</dd>
+									<dt>$old_status</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Previous post status.</span>
+									</p>
+							</dd>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Post data.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_publish_post/">wp_publish_post()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_post/">wp_insert_post()</a>
+							</li>
+																</ul>
+			</article>

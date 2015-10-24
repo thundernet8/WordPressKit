@@ -1,0 +1,87 @@
+<article id="post-4172" class="post-4172 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_file-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_filesystem/">WP_Filesystem ( <span class="arg-type">array|false</span>&nbsp;<span class="arg-name">$args</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">string|false</span>&nbsp;<span class="arg-name">$context</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$allow_relaxed_file_ownership</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Initialises and connects the WordPress Filesystem Abstraction classes.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This function will include the chosen transport and attempt connecting.</p>
+<p>Plugins may add extra transports, And force WordPress to use them by returning the filename via the <a href="https://developer.wordpress.org/reference/hooks/filesystem_method_file">&#8216;filesystem_method_file&#8217;</a> filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(null|bool)</span> false on failure, true on success.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/file.php/">wp-admin/includes/file.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$args</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>|<span class="false">false</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Connection args, These are passed directly to                                                   the &lt;code&gt;WP_Filesystem_*()&lt;/code&gt; classes. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$context</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="false">false</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Context for get_filesystem_method(). </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$allow_relaxed_file_ownership</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to allow Group/World writable. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_upgrader/fs_connect/">WP_Upgrader::fs_connect()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_theme/">delete_theme()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/delete_plugins/">delete_plugins()</a>
+							</li>
+													<li>
+								<span>wp-admin/update-core.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_core_upgrade/">do_core_upgrade()</a>
+							</li>
+																</ul>
+			</article>

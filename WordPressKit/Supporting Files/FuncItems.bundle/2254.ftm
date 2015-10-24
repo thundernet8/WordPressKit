@@ -1,0 +1,63 @@
+<article id="post-1310" class="post-1310 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_media-php wp-parser-package-media wp-parser-package-wordpress wp-parser-since-3-9-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_playlist_shortcode/">wp_playlist_shortcode ( <span class="arg-type">array</span>&nbsp;<span class="arg-name">$attr</span> )</a></h1>
+
+	<section class="summary">
+		<p>Builds the Playlist shortcode output.</p>
+	</section>
+
+
+	<section class="description">
+		<p>This implements the functionality of the playlist shortcode for displaying a collection of WordPress audio or video files in a post.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Playlist output. Empty string if the passed type is unsupported.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/media.php/">wp-includes/media.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$attr</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="array">array</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Array of default playlist attributes. <ul class="param-hash"><li><b>'type'</b><br /><i><span class='type'>(string)</span></i> Type of playlist to display. Accepts 'audio' or 'video'. Default 'audio'. </li>
+<li><b>'order'</b><br /><i><span class='type'>(string)</span></i> Designates ascending or descending order of items in the playlist. Accepts 'ASC', 'DESC'. Default 'ASC'. </li>
+<li><b>'orderby'</b><br /><i><span class='type'>(string)</span></i> Any column, or columns, to sort the playlist. If $ids are passed, this defaults to the order of the $ids array ('post__in'). Otherwise default is 'menu_order ID'. </li>
+<li><b>'id'</b><br /><i><span class='type'>(int)</span></i> If an explicit $ids array is not present, this parameter will determine which attachments are used for the playlist. Default is the current post ID. </li>
+<li><b>'ids'</b><br /><i><span class='type'>(array)</span></i> Create a playlist out of these explicit attachment IDs. If empty, a playlist will be created from all $type attachments of $id. Default empty. </li>
+<li><b>'exclude'</b><br /><i><span class='type'>(array)</span></i> List of specific attachment IDs to exclude from the playlist. Default empty. </li>
+<li><b>'style'</b><br /><i><span class='type'>(string)</span></i> Playlist style to use. Accepts 'light' or 'dark'. Default 'light'. </li>
+<li><b>'tracklist'</b><br /><i><span class='type'>(bool)</span></i> Whether to show or hide the playlist. Default true. </li>
+<li><b>'tracknumbers'</b><br /><i><span class='type'>(bool)</span></i> Whether to show or hide the numbers next to entries in the playlist. Default true. </li>
+<li><b>'images'</b><br /><i><span class='type'>(bool)</span></i> Show or hide the video or audio thumbnail (Featured Image/post thumbnail). Default true. </li>
+<li><b>'artists'</b><br /><i><span class='type'>(bool)</span></i> Whether to show or hide artist name in the playlist. Default true.</li>
+</li></ul>
+</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

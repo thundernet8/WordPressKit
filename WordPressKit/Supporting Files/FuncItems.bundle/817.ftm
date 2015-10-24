@@ -1,0 +1,71 @@
+<article id="post-1875" class="post-1875 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_plugin-php wp-parser-package-plugin wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/has_action/">has_action ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$tag</span>,  <span class="arg-type">callback|bool</span>&nbsp;<span class="arg-name">$function_to_check</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check if any action has been registered for a hook.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool|int)</span> If $function_to_check is omitted, returns boolean for whether the hook has                  anything registered. When checking a specific function, the priority of that                  hook is returned, or false if the function is not attached. When using the                  $function_to_check argument, this function may return a non-boolean value                  that evaluates to false (e.g.) 0, so use the === operator for testing the                  return value.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/plugin.php/">wp-includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$tag</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The name of the action hook.</span>
+									</p>
+							</dd>
+									<dt>$function_to_check</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>|<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The callback to check for. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/screen.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_screen/render_screen_options/">WP_Screen::render_screen_options()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_plugin_page_hook/">get_plugin_page_hook()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_feed/">do_feed()</a>
+							</li>
+																</ul>
+			</article>

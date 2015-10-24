@@ -1,0 +1,68 @@
+<article id="post-3184" class="post-3184 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use add_theme_support(&#039;custom-background, $args)</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/add_custom_background/">add_custom_background ( <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$wp_head_callback</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$admin_head_callback</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">callback</span>&nbsp;<span class="arg-name">$admin_preview_callback</span>&nbsp;=&nbsp;<span class="arg-default">''</span> )</a></h1>
+
+	<section class="summary">
+		<p>Add callbacks for background image display.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/deprecated.php/">wp-includes/deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$wp_head_callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Call on 'wp_head' action.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$admin_head_callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Call on custom background administration screen.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$admin_preview_callback</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="callback">callback</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Output a custom background image div on the custom background administration screen. Optional.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

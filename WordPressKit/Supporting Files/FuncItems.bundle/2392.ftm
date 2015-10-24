@@ -1,0 +1,65 @@
+<article id="post-2622" class="post-2622 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-3-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_suspend_cache_addition/">wp_suspend_cache_addition ( <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$suspend</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Temporarily suspend cache additions.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Stops more data being added to the cache, but still allows cache retrieval. This is useful for actions, such as imports, when a lot of data would otherwise be almost uselessly added to the cache.</p>
+<p>Suspension lasts for a single page load at most. Remember to call this function again if you wish to re-enable cache adds earlier.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> The current suspend setting</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$suspend</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Suspends additions if true, re-enables them if false.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/cache.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_object_cache/add/">WP_Object_Cache::add()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget/display_callback/">WP_Widget::display_callback()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_widget/update_callback/">WP_Widget::update_callback()</a>
+							</li>
+																</ul>
+			</article>

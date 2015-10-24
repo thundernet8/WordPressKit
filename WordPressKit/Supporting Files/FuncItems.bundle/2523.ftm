@@ -1,0 +1,233 @@
+<article id="post-2610" class="post-2610 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-3-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/_doing_it_wrong/">_doing_it_wrong ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$function</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$message</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$version</span> )</a></h1>
+
+	<section class="summary">
+		<p>Mark something as being incorrectly called.</p>
+	</section>
+
+
+	<section class="description">
+		<p>There is a hook doing_it_wrong_run that will be called that can be used to get the backtrace up to what file and function called the deprecated function.</p>
+<p>The current behavior is to trigger a user error if WP_DEBUG is true.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$function</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The function that was called.</span>
+									</p>
+							</dd>
+									<dt>$message</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">A message explaining what has been done incorrectly.</span>
+									</p>
+							</dd>
+									<dt>$version</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The version of WordPress where the message was added.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/date.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_date_query/validate_date_values/">WP_Date_Query::validate_date_values()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/convert_to_screen/">convert_to_screen()</a>
+							</li>
+													<li>
+								<span>wp-includes/theme.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/add_theme_support/">add_theme_support()</a>
+							</li>
+													<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/check_admin_referer/">check_admin_referer()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_preview/">is_preview()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_robots/">is_robots()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_search/">is_search()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_single/">is_single()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_singular/">is_singular()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_time/">is_time()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_trackback/">is_trackback()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_year/">is_year()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_404/">is_404()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_main_query/">is_main_query()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_attachment/">is_attachment()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_author/">is_author()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_category/">is_category()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_tag/">is_tag()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_tax/">is_tax()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_comments_popup/">is_comments_popup()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_date/">is_date()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_day/">is_day()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_feed/">is_feed()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_comment_feed/">is_comment_feed()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_front_page/">is_front_page()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_home/">is_home()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_month/">is_month()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_page/">is_page()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_paged/">is_paged()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_archive/">is_archive()</a>
+							</li>
+													<li>
+								<span>wp-includes/query.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_post_type_archive/">is_post_type_archive()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.wp-scripts.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_deregister_script/">wp_deregister_script()</a>
+							</li>
+													<li>
+								<span>wp-includes/taxonomy.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_taxonomy/">register_taxonomy()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/add_node/">WP_Admin_Bar::add_node()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.wp-styles.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_add_inline_style/">wp_add_inline_style()</a>
+							</li>
+													<li>
+								<span>wp-includes/shortcodes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/do_shortcode_tag/">do_shortcode_tag()</a>
+							</li>
+													<li>
+								<span>wp-includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_uninstall_hook/">register_uninstall_hook()</a>
+							</li>
+													<li>
+								<span>wp-includes/post.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_post_type/">register_post_type()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/_real_escape/">wpdb::_real_escape()</a>
+							</li>
+													<li>
+								<span>wp-includes/wp-db.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wpdb/prepare/">wpdb::prepare()</a>
+							</li>
+													<li>
+								<span>wp-includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/register_sidebar/">register_sidebar()</a>
+							</li>
+																			<a href="#" class="show-more">Show 41 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

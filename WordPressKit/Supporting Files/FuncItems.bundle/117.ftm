@@ -1,0 +1,66 @@
+<article id="post-113" class="post-113 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_comment-php wp-parser-package-comment wp-parser-package-wordpress wp-parser-since-2-3-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/check_comment_flood_db/">check_comment_flood_db ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$ip</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$email</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$date</span> )</a></h1>
+
+	<section class="summary">
+		<p>Check whether comment flooding is occurring.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Won&#8217;t run, if current user can manage options, so to not block administrators.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/comment.php/">wp-includes/comment.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$ip</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment IP.</span>
+									</p>
+							</dd>
+									<dt>$email</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Comment author email address.</span>
+									</p>
+							</dd>
+									<dt>$date</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">MySQL time string.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

@@ -1,0 +1,138 @@
+<article id="post-4740" class="post-4740 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_plugin-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_plugin_data/">get_plugin_data ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$plugin_file</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$markup</span>&nbsp;=&nbsp;<span class="arg-default">true</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$translate</span>&nbsp;=&nbsp;<span class="arg-default">true</span> )</a></h1>
+
+	<section class="summary">
+		<p>Parse the plugin contents to retrieve plugin&#8217;s metadata.</p>
+	</section>
+
+
+	<section class="description">
+		<p>The metadata of the plugin&#8217;s data searches for the following in the plugin&#8217;s header. All plugin data must be on its own line. For plugin description, it must not have any newlines or only parts of the description will be displayed and the same goes for the plugin data. The below is formatted for printing.</p>
+<pre><code>/*
+Plugin Name: Name of Plugin
+Plugin URI: Link to plugin information
+Description: Plugin Description
+Author: Plugin author's name
+Author URI: Link to the author's web site
+Version: Must be set in the plugin for WordPress 2.3+
+Text Domain: Optional. Unique identifier, should be same as the one used in
+       load_plugin_textdomain()
+Domain Path: Optional. Only useful if the translations are located in a
+       folder above the plugin's base path. For example, if .mo files are
+       located in the locale folder then Domain Path will be "/locale/" and
+       must have the first slash. Defaults to the base folder the plugin is
+       located in.
+Network: Optional. Specify "Network: true" to require that a plugin is activated
+       across all sites in an installation. This will prevent a plugin from being
+       activated on a single site when Multisite is enabled.
+ * / # Remove the space to close comment</code></pre>
+<p>Plugin data returned array contains the following:</p>
+<ul>
+<li>&#8216;Name&#8217; &#8211; Name of the plugin, must be unique.</li>
+<li>&#8216;Title&#8217; &#8211; Title of the plugin and the link to the plugin&#8217;s web site.</li>
+<li>&#8216;Description&#8217; &#8211; Description of what the plugin does and/or notes</li>
+<li>from the author.</li>
+<li>&#8216;Author&#8217; &#8211; The author&#8217;s name</li>
+<li>&#8216;AuthorURI&#8217; &#8211; The authors web site address.</li>
+<li>&#8216;Version&#8217; &#8211; The plugin version number.</li>
+<li>&#8216;PluginURI&#8217; &#8211; Plugin web site address.</li>
+<li>&#8216;TextDomain&#8217; &#8211; Plugin&#8217;s text domain for localization.</li>
+<li>&#8216;DomainPath&#8217; &#8211; Plugin&#8217;s relative directory path to .mo files.</li>
+<li>&#8216;Network&#8217; &#8211; Boolean. Whether the plugin can only be activated network wide.</li>
+</ul>
+<p>Some users have issues with opening large files and manipulating the contents for want is usually the first 1kiB or 2kiB. This function stops pulling in the plugin contents when it has all of the required plugin data.</p>
+<p>The first 8kiB of the file will be pulled in and if the plugin data is not within that first 8kiB, then the plugin author should correct their plugin and move the plugin data headers to the top.</p>
+<p>The plugin file is assumed to have permissions to allow for scripts to read the file. This is not checked however and the file is only opened for reading.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> See above for description.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/plugin.php/">wp-admin/includes/plugin.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$plugin_file</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Path to the plugin file</span>
+									</p>
+							</dd>
+									<dt>$markup</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> If the returned data should have HTML markup applied. Defaults to true.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+									<dt>$translate</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> If the returned data should be translated. Defaults to true.</span>
+									</p>
+								<p class="default">Default value: true</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_update_plugin/">wp_ajax_update_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_automatic_updater/update/">WP_Automatic_Updater::update()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/bulk_upgrade/">Plugin_Upgrader::bulk_upgrade()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-upgrader.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/plugin_upgrader/check_package/">Plugin_Upgrader::check_package()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_dropins/">get_dropins()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/is_network_only_plugin/">is_network_only_plugin()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_plugins/">get_plugins()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/get_mu_plugins/">get_mu_plugins()</a>
+							</li>
+																			<a href="#" class="show-more">Show 8 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

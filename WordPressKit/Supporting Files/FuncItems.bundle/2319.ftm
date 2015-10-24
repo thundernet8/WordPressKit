@@ -1,0 +1,70 @@
+<article id="post-1005" class="post-1005 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_revision-php wp-parser-package-post_revisions wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_revisions_enabled/">wp_revisions_enabled ( <span class="arg-type">WP_Post</span>&nbsp;<span class="arg-name">$post</span> )</a></h1>
+
+	<section class="summary">
+		<p>Determine if revisions are enabled for a given post.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True if number of revisions to keep isn't zero, false otherwise.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/revision.php/">wp-includes/revision.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$post</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_Post">WP_Post</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The post object.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_revisions_for_js/">wp_prepare_revisions_for_js()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_post_revisions/">wp_get_post_revisions()</a>
+							</li>
+													<li>
+								<span>wp-includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_save_post_revision/">wp_save_post_revision()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_getrevisions/">wp_xmlrpc_server::wp_getRevisions()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-xmlrpc-server.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_xmlrpc_server/wp_restorerevision/">wp_xmlrpc_server::wp_restoreRevision()</a>
+							</li>
+																</ul>
+			</article>

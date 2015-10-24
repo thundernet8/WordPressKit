@@ -1,0 +1,53 @@
+<article id="post-1760" class="post-1760 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_feed-php wp-parser-package-feed wp-parser-package-wordpress wp-parser-since-2-5-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/prep_atom_text_construct/">prep_atom_text_construct ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$data</span> )</a></h1>
+
+	<section class="summary">
+		<p>Determine the type of a string of data with the data formatted.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Tell whether the type is text, html, or xhtml, per RFC 4287 section 3.1.</p>
+<p>In the case of WordPress, text is defined as containing no markup, xhtml is defined as &#8220;well formed&#8221;, and html as tag soup (i.e., the rest).</p>
+<p>Container div tags are added to xhtml values, per section 3.1.1.3.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> array(type, value)</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/feed.php/">wp-includes/feed.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$data</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Input string</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

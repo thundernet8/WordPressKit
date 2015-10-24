@@ -1,0 +1,57 @@
+<article id="post-2017" class="post-2017 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_http-php wp-parser-package-http wp-parser-package-wordpress wp-parser-since-3-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/ms_allowed_http_request_hosts/">ms_allowed_http_request_hosts ( <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$is_external</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$host</span> )</a></h1>
+
+	<section class="summary">
+		<p>Whitelists any domain in a multisite installation for safe HTTP requests.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Attached to the http_request_host_is_external filter.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> </p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/http.php/">wp-includes/http.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$is_external</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+									<dt>$host</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+														</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

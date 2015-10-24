@@ -1,0 +1,41 @@
+<article id="post-3335" class="post-3335 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-php wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_currentuserinfo/">get_currentuserinfo ()</a></h1>
+
+	<section class="summary">
+		<p>Populate global variables with information about the currently logged in user.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Will set the current user, if the current user is not set. The current user will be set to the logged-in person. If no user is logged-in, then it will set the current user to 0, which is invalid and won&#8217;t have any permissions.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(false|void)</span> False on XML-RPC Request and invalid auth cookie.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable.php/">wp-includes/pluggable.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/pluggable.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_current_user/">wp_get_current_user()</a>
+							</li>
+																</ul>
+			</article>

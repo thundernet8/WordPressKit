@@ -1,0 +1,61 @@
+<article id="post-195" class="post-195 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_script-loader-php wp-parser-package-wordpress wp-parser-since-2-6-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_style_loader_src/">wp_style_loader_src ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$src</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$handle</span> )</a></h1>
+
+	<section class="summary">
+		<p>Administration Screen CSS for changing the styles.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If installing the &#8216;wp-admin/&#8217; directory will be replaced with &#8216;./&#8217;.</p>
+<p>The $_wp_admin_css_colors global manages the Administration Screens CSS stylesheet that is loaded. The option that is set is &#8216;admin_color&#8217; and is the color and key for the array. The value for the color key is an object with a &#8216;url&#8217; parameter that has the URL path to the CSS file.</p>
+<p>The query from $src parameter will be appended to the URL that is given from the $_wp_admin_css_colors array value URL.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string|false)</span> URL path to CSS stylesheet for Administration Screens.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/script-loader.php/">wp-includes/script-loader.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$src</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Source URL.</span>
+									</p>
+							</dd>
+									<dt>$handle</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Either 'colors' or 'colors-rtl'.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

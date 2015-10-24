@@ -1,0 +1,39 @@
+<article id="post-869" class="post-869 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-load-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/ms_site_check/">ms_site_check ()</a></h1>
+
+	<section class="summary">
+		<p>Checks status of current blog.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Checks if the blog is deleted, inactive, archived, or spammed.</p>
+<p>Dies with a default message if the blog does not pass the check.</p>
+<p>To change the default message when a blog does not pass the check, use the wp-content/blog-deleted.php, blog-inactive.php and blog-suspended.php drop-ins.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(true|string)</span> Returns true on success, or drop-in file to include.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-load.php/">wp-includes/ms-load.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

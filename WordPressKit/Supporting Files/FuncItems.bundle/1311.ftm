@@ -1,0 +1,72 @@
+<article id="post-4665" class="post-4665 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-admin_includes_template-php wp-parser-package-administration wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/settings_errors/">settings_errors ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$setting</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$sanitize</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$hide_on_update</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display settings errors registered by {@see add_settings_error()}.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Part of the Settings API. Outputs a div for each error retrieved by <a href="https://developer.wordpress.org/reference/functions/get_settings_errors">get_settings_errors()</a>.</p>
+<p>This is called automatically after a settings page based on the Settings API is submitted. Errors should be added during the validation callback function for a setting defined in <a href="https://developer.wordpress.org/reference/functions/register_setting">register_setting()</a></p>
+<p>The $sanitize option is passed into <a href="https://developer.wordpress.org/reference/functions/get_settings_errors">get_settings_errors()</a> and will re-run the setting sanitization on its current value.</p>
+<p>The $hide_on_update option will cause errors to only show when the settings page is first loaded. if the user has already saved new values it will be hidden to avoid repeating messages already shown in the default error reporting after submission. This is useful to show general errors like missing settings when the user arrives at the settings page.</p>
+	</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-admin/includes/template.php/">wp-admin/includes/template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$setting</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">slug title of a specific setting who's errors you want.</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$sanitize</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Whether to re-sanitize the setting value before returning errors.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$hide_on_update</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">If set to true errors will not be shown if the settings page has already been submitted.</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

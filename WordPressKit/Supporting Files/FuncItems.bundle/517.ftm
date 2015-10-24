@@ -1,0 +1,115 @@
+<article id="post-2180" class="post-2180 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_link-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-3-0-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_home_url/">get_home_url ( <span class="arg-type">int</span>&nbsp;<span class="arg-name">$blog_id</span>&nbsp;=&nbsp;<span class="arg-default">null</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$path</span>&nbsp;=&nbsp;<span class="arg-default">''</span>, &nbsp;<span class="arg-name">$scheme</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the home url for a given site.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Returns the &#8216;home&#8217; option with the appropriate protocol, &#8216;https&#8217; if <a href="https://developer.wordpress.org/reference/functions/is_ssl">is_ssl()</a> and &#8216;http&#8217; otherwise. If <code>$scheme</code> is &#8216;http&#8217; or &#8216;https&#8217;, <code>is_ssl()</code> is overridden.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Home URL link with optional path appended.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/link-template.php/">wp-includes/link-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$blog_id</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Blog ID. Default null (current blog).</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+									<dt>$path</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Path relative to the home URL. </span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$orig_scheme</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>|<span class="null">null</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Scheme to give the home URL context. Accepts                                  'http', 'https', 'relative', or null. Default null.</span>
+									</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/class-wp-ms-sites-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_sites_list_table/handle_row_actions/">WP_MS_Sites_List_Table::handle_row_actions()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-ms-users-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_ms_users_list_table/column_blogs/">WP_MS_Users_List_Table::column_blogs()</a>
+							</li>
+													<li>
+								<span>wp-signup.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/signup_another_blog/">signup_another_blog()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_access_denied_splash/">_access_denied_splash()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ms.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/choose_primary_blog/">choose_primary_blog()</a>
+							</li>
+													<li>
+								<span>wp-admin/options-general.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/options_general_add_js/">options_general_add_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/network/users.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/confirm_delete_users/">confirm_delete_users()</a>
+							</li>
+													<li>
+								<span>wp-includes/link-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/home_url/">home_url()</a>
+							</li>
+													<li>
+								<span>wp-includes/class-wp-admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_admin_bar/initialize/">WP_Admin_Bar::initialize()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_site_menu/">wp_admin_bar_site_menu()</a>
+							</li>
+													<li>
+								<span>wp-includes/admin-bar.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_admin_bar_my_sites_menu/">wp_admin_bar_my_sites_menu()</a>
+							</li>
+																			<a href="#" class="show-more">Show 11 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

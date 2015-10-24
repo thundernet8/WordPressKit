@@ -1,0 +1,68 @@
+<article id="post-1585" class="post-1585 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_user-php wp-parser-package-users wp-parser-package-wordpress wp-parser-since-3-7-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_get_user_contact_methods/">wp_get_user_contact_methods ( <span class="arg-type">WP_User</span>&nbsp;<span class="arg-name">$user</span>&nbsp;=&nbsp;<span class="arg-default">null</span> )</a></h1>
+
+	<section class="summary">
+		<p>Set up the user contact methods.</p>
+	</section>
+
+
+	<section class="description">
+		<p>Default contact methods were removed in 3.6. A filter dictates contact methods.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> Array of contact methods and their labels.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/user.php/">wp-includes/user.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$user</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="WP_User">WP_User</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> WP_User object.</span>
+									</p>
+								<p class="default">Default value: null</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/edit_user/">edit_user()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_get_additional_user_keys/">_get_additional_user_keys()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/_wp_get_user_contactmethods/">_wp_get_user_contactmethods()</a>
+							</li>
+													<li>
+								<span>wp-includes/user.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_insert_user/">wp_insert_user()</a>
+							</li>
+																</ul>
+			</article>

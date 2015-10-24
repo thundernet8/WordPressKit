@@ -1,0 +1,131 @@
+<article id="post-2500" class="post-2500 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_functions-php wp-parser-package-wordpress wp-parser-since-0-71">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/date_i18n/">date_i18n ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$dateformatstring</span>,  <span class="arg-type">bool|int</span>&nbsp;<span class="arg-name">$unixtimestamp</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$gmt</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Retrieve the date in localized format, based on timestamp.</p>
+	</section>
+
+
+	<section class="description">
+		<p>If the locale specifies the locale month and weekday, then the locale will take over the format for the date. If it isn&#8217;t, then the date format string will be used instead.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> The date, translated if locale specifies it.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/functions.php/">wp-includes/functions.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$dateformatstring</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">Format to display the date.</span>
+									</p>
+							</dd>
+									<dt>$unixtimestamp</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>|<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Unix timestamp. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$gmt</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether to use GMT timezone. </span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/misc.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/heartbeat_autosave/">heartbeat_autosave()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/plugin-install.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/install_plugin_information/">install_plugin_information()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/dashboard.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_dashboard_recent_posts/">wp_dashboard_recent_posts()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/class-wp-plugin-install-list-table.php:</span>
+								<a href="https://developer.wordpress.org/reference/classes/wp_plugin_install_list_table/display_rows/">WP_Plugin_Install_List_Table::display_rows()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_date_format/">wp_ajax_date_format()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_time_format/">wp_ajax_time_format()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/ajax-actions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_ajax_wp_fullscreen_save_post/">wp_ajax_wp_fullscreen_save_post()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/revision.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_prepare_revisions_for_js/">wp_prepare_revisions_for_js()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/post_submit_meta_box/">post_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-admin/includes/meta-boxes.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/attachment_submit_meta_box/">attachment_submit_meta_box()</a>
+							</li>
+													<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_get_archives/">wp_get_archives()</a>
+							</li>
+													<li>
+								<span>wp-includes/functions.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/mysql2date/">mysql2date()</a>
+							</li>
+													<li>
+								<span>wp-includes/default-widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_widget_rss_output/">wp_widget_rss_output()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_post_revision_title/">wp_post_revision_title()</a>
+							</li>
+													<li>
+								<span>wp-includes/post-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_post_revision_title_expanded/">wp_post_revision_title_expanded()</a>
+							</li>
+																			<a href="#" class="show-more">Show 15 more used by</a>
+							<a href="#" class="hide-more">Hide more used by</a>
+										</ul>
+			</article>

@@ -1,0 +1,56 @@
+<article id="post-387" class="post-387 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_widgets-php wp-parser-package-widgets wp-parser-package-wordpress wp-parser-since-2-2-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/dynamic_sidebar/">dynamic_sidebar ( <span class="arg-type">int|string</span>&nbsp;<span class="arg-name">$index</span>&nbsp;=&nbsp;<span class="arg-default">1</span> )</a></h1>
+
+	<section class="summary">
+		<p>Display dynamic sidebar.</p>
+	</section>
+
+
+	<section class="description">
+		<p>By default this displays the default sidebar or &#8216;sidebar-1&#8217;. If your theme specifies the &#8216;id&#8217; or &#8216;name&#8217; parameter for its registered sidebars you can pass an id or name as the $index parameter. Otherwise, you can pass in a numerical index to display the sidebar at that index.</p>
+	</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(bool)</span> True, if widget sidebar was found and called. False if not found or not called.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/widgets.php/">wp-includes/widgets.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$index</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>|<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">  Index, name or ID of dynamic sidebar.</span>
+									</p>
+								<p class="default">Default value: 1</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-admin/includes/widgets.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/wp_list_widget_controls/">wp_list_widget_controls()</a>
+							</li>
+																</ul>
+			</article>

@@ -1,0 +1,68 @@
+<article id="post-798" class="post-798 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_ms-blogs-php wp-parser-package-multisite wp-parser-package-wordpress wp-parser-since-mu">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_last_updated/">get_last_updated ( <span class="arg-type">mixed</span>&nbsp;<span class="arg-name">$deprecated</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$start</span>,  <span class="arg-type">int</span>&nbsp;<span class="arg-name">$quantity</span>&nbsp;=&nbsp;<span class="arg-default">40</span> )</a></h1>
+
+	<section class="summary">
+		<p>Get a list of most recently updated blogs.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(array)</span> The list of blogs</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/ms-blogs.php/">wp-includes/ms-blogs.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$deprecated</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="mixed">mixed</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">Not used</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$start</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The offset</span>
+									</p>
+							</dd>
+									<dt>$quantity</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="int">int</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description">The maximum number of blogs to retrieve. Default is 40.</span>
+									</p>
+								<p class="default">Default value: 40</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>

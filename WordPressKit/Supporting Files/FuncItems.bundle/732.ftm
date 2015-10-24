@@ -1,0 +1,40 @@
+<article id="post-14138" class="post-14138 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_general-template-php wp-parser-package-template wp-parser-package-wordpress wp-parser-since-4-1-0">
+
+	
+	<h1><a href="https://developer.wordpress.org/reference/functions/get_the_archive_description/">get_the_archive_description ()</a></h1>
+
+	<section class="summary">
+		<p>Retrieve category, tag, or term description.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+			<section class="return"><p><strong>Return:</strong> <span class='return-type'>(string)</span> Archive description.</p></section>
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/general-template.php/">wp-includes/general-template.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+												<li>
+								<span>wp-includes/general-template.php:</span>
+								<a href="https://developer.wordpress.org/reference/functions/the_archive_description/">the_archive_description()</a>
+							</li>
+																</ul>
+			</article>

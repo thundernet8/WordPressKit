@@ -1,0 +1,94 @@
+<article id="post-1523" class="post-1523 wp-parser-function type-wp-parser-function status-publish hentry wp-parser-source-file-wp-includes_pluggable-deprecated-php wp-parser-package-deprecated wp-parser-package-wordpress wp-parser-since-1-5-0">
+
+	<div class='deprecated'>Warning: This function has been deprecated. Use wp_set_auth_cookie()</div>
+	<h1><a href="https://developer.wordpress.org/reference/functions/wp_setcookie/">wp_setcookie ( <span class="arg-type">string</span>&nbsp;<span class="arg-name">$username</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$password</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$already_md5</span>&nbsp;=&nbsp;<span class="arg-default">false</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$home</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">string</span>&nbsp;<span class="arg-name">$siteurl</span>&nbsp;=&nbsp;<span class="arg-default">''</span>,  <span class="arg-type">bool</span>&nbsp;<span class="arg-name">$remember</span>&nbsp;=&nbsp;<span class="arg-default">false</span> )</a></h1>
+
+	<section class="summary">
+		<p>Sets a cookie for a user who just logged in. This function is deprecated.</p>
+	</section>
+
+
+	<section class="description">
+			</section>
+
+	
+			<section class="source">
+			<p>
+				<strong>Source file:</strong>
+				<a href="https://developer.wordpress.org/reference/files/wp-includes/pluggable-deprecated.php/">wp-includes/pluggable-deprecated.php</a>
+			</p>
+						<p>
+				<a href="#source-code">View source</a>
+			</p>
+					</section>
+	
+		<hr/>
+	<section class="parameters">
+		<h2>Parameters</h2>
+		<dl>
+									<dt>$username</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Required)</span>
+															<span class="description">The user's username</span>
+									</p>
+							</dd>
+									<dt>$password</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> The user's password</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$already_md5</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Whether the password has already been through MD5</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+									<dt>$home</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Will be used instead of COOKIEPATH if set</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$siteurl</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="string">string</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Will be used instead of SITECOOKIEPATH if set</span>
+									</p>
+								<p class="default">Default value: ''</p>
+							</dd>
+									<dt>$remember</dt>
+						<dd>
+				<p class="desc">
+										<span class="type">(<span class="bool">bool</span>)</span>
+															<span class="required">(Optional)</span>
+															<span class="description"> Remember that the user is logged in</span>
+									</p>
+								<p class="default">Default value: false</p>
+							</dd>
+					</dl>
+	</section>
+	
+	
+	
+	
+			<hr id="usage" />
+		<section class="usage">
+			<article class="used-by">
+				<h2>Used by</h2>
+				<ul>
+															</ul>
+			</article>
