@@ -100,50 +100,8 @@ const CGFloat tableViewInsertBottom = 49.0;
     return cell;
 }
 
-//即将显示cell
-- (void)tableView:(UITableView *)tableView willDisplayCell:(PostCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    //去掉cell背景
-    //cell.backgroundColor = [UIColor clearColor];
-    //cell边框阴影效果
-    //    UIView *view = cell.postCellWrapper;
-    //    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, cell.bounds.size.width-8, cell.bounds.size.height-21)];
-    //    view.layer.masksToBounds = NO;
-    //    view.layer.shadowColor = [UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0].CGColor;
-    //    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-    //    view.layer.shadowOpacity = 0.2f;
-    //    view.layer.shadowPath = shadowPath.CGPath;
-    
-}
-
-/**
- *  预估cell高度，减少不必要的heightForRowAtIndexPath的调用
- *
- *  @param tableView tableView
- *  @param indexPath indexPath
- *
- *  @return 预估的cell高度值
- */
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Post *post = self.pc.posts[indexPath.row];
-    if ([post.postThumbnailPath isEmpty]) {
-        return 324.0;
-    }
-    return 536.0;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Post *post = self.pc.posts[indexPath.row];
-    PostCell *cell;
-    if ([post.postThumbnailPath isEmpty]) {
-        cell = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostTextCell" owner:nil options:nil] firstObject];
-    }else{
-        cell = (PostCell *)[[[NSBundle mainBundle] loadNibNamed:@"PostImageCell" owner:nil options:nil] firstObject];
-    }
-    [self configCellContent:cell atIndexPath:indexPath];
-    CGSize size = [cell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 12, CGFLOAT_MAX)];
-    CGFloat height = ceil(size.height);
-    return height;
+    return 62.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -209,11 +167,11 @@ const CGFloat tableViewInsertBottom = 49.0;
     [self.view addSubview:self.tableView];
     
     // Register the cells
-    UINib *postTextCellNib = [UINib nibWithNibName:@"PostTextCell" bundle:[NSBundle mainBundle]];
-    [self.tableView registerNib:postTextCellNib forCellReuseIdentifier:@"PostTextCell"];
+    UINib *postTextCellNib = [UINib nibWithNibName:@"TextCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:postTextCellNib forCellReuseIdentifier:@"TextCell"];
     
-    UINib *postImageCellNib = [UINib nibWithNibName:@"PostImageCell" bundle:[NSBundle mainBundle]];
-    [self.tableView registerNib:postImageCellNib forCellReuseIdentifier:@"PostImageCell"];
+    UINib *postImageCellNib = [UINib nibWithNibName:@"ImageCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:postImageCellNib forCellReuseIdentifier:@"ImageCell"];
     
 }
 
@@ -227,7 +185,7 @@ const CGFloat tableViewInsertBottom = 49.0;
     Post *post = self.pc.posts[indexPath.row];
     NSNumber *thumb = post.postThumbnailID;
     NSString *thumbPath = post.postThumbnailPath;
-    NSString *cellIdentifier = (thumb > 0 && ![thumbPath isEqualToString:@""]) ? @"PostImageCell" : @"PostTextCell";
+    NSString *cellIdentifier = (thumb > 0 && ![thumbPath isEqualToString:@""]) ? @"ImageCell" : @"TextCell";
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     return cell;
     

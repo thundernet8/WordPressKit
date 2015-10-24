@@ -10,6 +10,7 @@
 
 @interface temp()
 @property (weak, nonatomic) IBOutlet UITextView *text;
+@property (nonatomic) NSInteger num;
 
 @end
 
@@ -18,6 +19,15 @@
 - (void)viewDidLoad
 {
     self.navigationController.navigationBarHidden = NO;
+    _num = 1367;
+    [self diditWithItem];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self
+                                                    selector:@selector(diditWithItem) userInfo:nil repeats:true];
+}
+
+- (void)diditWithItem
+{
+    FuncItem *item = _items[(int)_num];
     NSError *error;
     NSString *sourceHtml;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -26,29 +36,30 @@
     if (![fileManager fileExistsAtPath:cachePath]) {
         [fileManager createDirectoryAtPath:cachePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    NSString *cacheFilePath = [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%i.fcache", (int)_item.itemId]];
+    NSString *cacheFilePath = [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%i.fcache", (int)item.itemId]];
     if ([fileManager fileExistsAtPath:cacheFilePath] && [[NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error] lengthOfBytesUsingEncoding:NSUTF8StringEncoding] > 0) {
         sourceHtml = [NSString stringWithContentsOfFile:cacheFilePath encoding:NSUTF8StringEncoding error:&error];
     }else{
-            //采用Github源的代码文件
-            NSString *gitSourceBaseUrl = @"https://developer.wordpress.org/reference/functions/";
-            NSString *completeUrl = [NSString stringWithFormat:@"%@%@", gitSourceBaseUrl, _item.name];
-            NSURL *url = [[NSURL alloc] initWithString:completeUrl];
-            sourceHtml = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+        //采用Github源的代码文件
+        NSString *gitSourceBaseUrl = @"https://developer.wordpress.org/reference/functions/";
+        NSString *completeUrl = [NSString stringWithFormat:@"%@%@", gitSourceBaseUrl, item.name];
+        NSURL *url = [[NSURL alloc] initWithString:completeUrl];
+        sourceHtml = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     }
     NSString *searchText = sourceHtml;
     NSRange range = [searchText rangeOfString:@"<article[^<>]+?>(.|[\r\n])*?</article>" options:NSRegularExpressionSearch];
     if (range.location != NSNotFound) {
         sourceHtml = [searchText substringWithRange:range];
-        NSLog(@"%@", sourceHtml);
+        //NSLog(@"%@", sourceHtml);
+        NSLog(@"%i -- %@\n",(int)_num,item.name);
+        _num++;
     }
     
-        
-        //写入缓存
-        [fileManager createFileAtPath:cacheFilePath contents:[sourceHtml dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    
+    //写入缓存
+    [fileManager createFileAtPath:cacheFilePath contents:[sourceHtml dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
     self.text.text = sourceHtml;
 }
-
 
 
 

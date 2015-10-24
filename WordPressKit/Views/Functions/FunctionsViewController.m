@@ -204,7 +204,7 @@
     NSInteger num = [self getFuncItemRowNumofIndexPath:indexPath];
     FuncItem *funcItem = self.dataModel.funcItems[num];
     //[self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
-    [self performSegueWithIdentifier:@"Show" sender:funcItem];
+    [self performSegueWithIdentifier:@"Show" sender:self.dataModel.funcItems];
 }
 
 
@@ -217,7 +217,7 @@
     }
     if ([segue.identifier isEqualToString:@"Show"]) {
         temp *controller = segue.destinationViewController;
-        controller.item = sender;
+        controller.items = sender;
     }
 }
 

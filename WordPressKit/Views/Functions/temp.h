@@ -12,5 +12,6 @@
 @interface temp : UIViewController
 
 @property (strong,nonatomic) FuncItem *item;
+@property (strong,nonatomic) NSMutableArray *items;
 
 @end

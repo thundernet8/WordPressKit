@@ -23,18 +23,11 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 
 @interface PostCell()
 @property (weak, nonatomic) IBOutlet UIView *PostWrapper;
-@property (weak, nonatomic) IBOutlet UIView *PostHead;
-@property (weak, nonatomic) IBOutlet UIImageView *BlogAvatar;
-@property (weak, nonatomic) IBOutlet UILabel *BlogName;
-@property (weak, nonatomic) IBOutlet UILabel *PostAuthor;
 
 @property (weak, nonatomic) IBOutlet UIImageView *PostThumb;
 @property (weak, nonatomic) IBOutlet UILabel *PostTitle;
-@property (weak, nonatomic) IBOutlet UILabel *PostContent;
 @property (weak, nonatomic) IBOutlet UILabel *PostDate;
 @property (weak, nonatomic) IBOutlet UILabel *PostCat;
-@property (weak, nonatomic) IBOutlet UIImageView *catIcon;
-@property (weak, nonatomic) IBOutlet PostActionBar *ActionBar;
 
 
 @property (weak, nonatomic) Post *post;
@@ -69,27 +62,27 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 {
     self.backgroundColor = kBackgroundColorLightGray;
     self.post = post;
-    //博客名
-    self.BlogName.text = blog.name;
-    //作者
-    self.PostAuthor.text = post.authorDisplayName;
+//    //博客名
+//    self.BlogName.text = blog.name;
+//    //作者
+//    self.PostAuthor.text = post.authorDisplayName;
     //文章标题
     self.PostTitle.text = post.title;
     //特色图
     [self confiImageWithPost:post];
     //文章内容
-    NSString *content = [post.excerpt isEmpty] ? [post.content trim] : [post.excerpt trim];
-//    content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-//    content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    NSUInteger length = content.length > 120 ? 120 : content.length;
-    NSString *tail = content.length > 120 ? @" ···" : @"";
-    content = [content substringWithRange:NSMakeRange(0, length)];
-    content = [content stringByAppendingString:tail];
-    self.PostContent.text = content;
-    self.PostContent.font = [UIFont systemFontOfSize:14.0f];
+//    NSString *content = [post.excerpt isEmpty] ? [post.content trim] : [post.excerpt trim];
+////    content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+////    content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+//    NSUInteger length = content.length > 120 ? 120 : content.length;
+//    NSString *tail = content.length > 120 ? @" ···" : @"";
+//    content = [content substringWithRange:NSMakeRange(0, length)];
+//    content = [content stringByAppendingString:tail];
+//    self.PostContent.text = content;
+//    self.PostContent.font = [UIFont systemFontOfSize:14.0f];
     //文章日期
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"YYYY-MM-dd HH:MM"];
+    [dateFormat setDateFormat:@"YYYY-MM-dd"];
     NSString *dateStr = [dateFormat stringFromDate:post.date];
     self.PostDate.text = dateStr;
     //文章分类
@@ -99,53 +92,13 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
             [catNames addObject:cat.name];
         }
         NSString *catStr = [catNames componentsJoinedByString:@" · "];
-        self.PostCat.text = catStr;
+        self.PostCat.text = [NSString stringWithFormat:@"分类: %@",catStr];
     }else{
-        [self.catIcon removeFromSuperview];
         [self.PostCat removeFromSuperview];
-    }
-    //Action bar
-    if ([post.type isEqualToString:@"post"]) {
-        [self configureActionBar];
-    }else{
-        [self.ActionBar removeFromSuperview];
     }
     [self setNeedsUpdateConstraints];
 }
 
-/**
- *  重建自适应内容高度方法
- *
- *  @param size 内容的约束尺寸
- *
- *  @return 返回内容的合适尺寸
- */
-- (CGSize)sizeThatFits:(CGSize)size
-{
-    CGFloat height = CGRectGetMinY(self.PostWrapper.frame);
-    
-    height += CGRectGetMinY(self.PostHead.frame);
-    height += 34;//head height
-    height += 16;//head low margin
-    
-    if (self.PostThumb) {
-        height += CGRectGetHeight(self.PostThumb.frame);
-        height += 16;
-    }
-    CGFloat width = size.width - 32;
-    CGSize innerSize = CGSizeMake(width, CGFLOAT_MAX);
-    height += [self.PostTitle sizeThatFits:innerSize].height;
-    height += 16;//title low margin
-    
-    height += [self.PostContent sizeThatFits:innerSize].height;
-    height += 16;//post content low margin
-    
-    height += CGRectGetHeight(self.PostDate.frame);
-    height += 16;
-    
-    height += CGRectGetHeight(self.ActionBar.frame);
-    return CGSizeMake(size.width, height);
-}
 
 /**
  *  配置cell的缩略图
@@ -154,7 +107,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
  */
 - (void)confiImageWithPost:(Post *)post
 {
-    if (!self.PostThumb) {
+    if (!self.PostThumb || [post.postThumbnailPath isEmpty]) {
         return;
     }
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
@@ -214,7 +167,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     };
     [items addObject:item];
     
-    [self.ActionBar setItems:items];
+    //[self.ActionBar setItems:items];
 }
 
 - (void)configureDraftActionBar
@@ -253,7 +206,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     };
     [items addObject:item];
     
-    [self.ActionBar setItems:items];
+    //[self.ActionBar setItems:items];
 }
 
 - (void)configureTrashedActionBar
@@ -276,7 +229,7 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     };
     [items addObject:item];
     
-    [self.ActionBar setItems:items];
+    //[self.ActionBar setItems:items];
 }
 
 #pragma mark - Actions
