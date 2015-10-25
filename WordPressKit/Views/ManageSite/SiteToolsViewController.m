@@ -190,6 +190,9 @@
         controller.blog = sender;
     } else if ([segue.identifier isEqualToString:@"SiteSettings"]){
         SiteSettingViewController *controller = segue.destinationViewController;
+        controller.blogChanged = ^(Blog *blog){
+            self.blog = blog;
+        };
         controller.blog = sender;
     } else if ([segue.identifier isEqualToString:@"ShowCustomPosts"]){
         CustomPostsListViewController *controller = segue.destinationViewController;

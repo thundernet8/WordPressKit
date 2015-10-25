@@ -54,7 +54,8 @@ const CGFloat tableViewInsertBottom = 49.0;
     [self configureNavBackButton];
     [self addSCPullRefreshBlocks];
     [self fetchPostsFromDB];
-    
+    //隐藏添加文章按钮，待用
+    self.navigationItem.rightBarButtonItem = nil;
     NSLog(@"viewDidLoad");
     
 }

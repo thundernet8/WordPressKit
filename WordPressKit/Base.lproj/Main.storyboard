@@ -26,7 +26,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="tBg-Mn-Y0N">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FuncItem" textLabel="4lX-el-RCG" style="IBUITableViewCellStyleDefault" id="Cpe-ry-8pU">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -358,7 +358,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1203" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urm-WI-DrS">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1203" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urm-WI-DrS">
                                             <rect key="frame" x="472" y="8" width="100" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="A5h-Sf-4rx"/>
@@ -370,6 +370,7 @@
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="A5h-Sf-4rx"/>
                                                     <exclude reference="Q5c-sA-IgS"/>
                                                 </mask>
                                             </variation>
@@ -1081,6 +1082,61 @@
             </objects>
             <point key="canvasLocation" x="4439" y="584"/>
         </scene>
+        <!--站点设置-输入-->
+        <scene sceneID="pAO-XN-LmS">
+            <objects>
+                <viewController title="站点设置-输入" id="10U-F0-KXY" customClass="SiteSettingInputViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gda-20-bKR"/>
+                        <viewControllerLayoutGuide type="bottom" id="aiG-k1-3LH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NjG-hf-O7A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="66u-ml-TdO">
+                                <rect key="frame" x="-1" y="114" width="602" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nGu-CB-Cxl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tips:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnL-Qx-x4V" userLabel="Tips">
+                                <rect key="frame" x="16" y="164" width="568" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="JcT-rj-YzJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JcT-rj-YzJ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xnL-Qx-x4V" firstAttribute="top" secondItem="66u-ml-TdO" secondAttribute="bottom" constant="10" id="DbL-9V-RKn"/>
+                            <constraint firstItem="xnL-Qx-x4V" firstAttribute="leading" secondItem="NjG-hf-O7A" secondAttribute="leadingMargin" id="Exg-4P-obC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="66u-ml-TdO" secondAttribute="trailing" constant="-17" id="cTC-qA-D5V"/>
+                            <constraint firstItem="66u-ml-TdO" firstAttribute="top" secondItem="Gda-20-bKR" secondAttribute="bottom" constant="50" id="m8F-AA-4iO"/>
+                            <constraint firstItem="66u-ml-TdO" firstAttribute="leading" secondItem="NjG-hf-O7A" secondAttribute="leadingMargin" constant="-17" id="nND-gb-M98"/>
+                            <constraint firstItem="xnL-Qx-x4V" firstAttribute="trailing" secondItem="NjG-hf-O7A" secondAttribute="trailingMargin" id="uwb-yW-l0R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="input" destination="66u-ml-TdO" id="jdT-uW-Hdf"/>
+                        <outlet property="tipLabel" destination="xnL-Qx-x4V" id="Tp9-zi-fD5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNP-jS-R4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3547" y="-877"/>
+        </scene>
         <!--博客设置-->
         <scene sceneID="5Ee-Jk-oko">
             <objects>
@@ -1419,6 +1475,7 @@
                     </tableView>
                     <connections>
                         <outlet property="locationMark" destination="Ndx-t3-6wm" id="s8Y-GQ-auE"/>
+                        <segue destination="10U-F0-KXY" kind="show" identifier="SiteSettingInput" id="tbj-XC-6sk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dl8-GY-WLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1952,7 +2009,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="Szf-HD-V2r"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnI-Sb-pKo">
@@ -1961,7 +2018,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="QEG-SI-xSY"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAi-62-lWa">
@@ -2019,8 +2076,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UZO-Er-ThG"/>
-        <segue reference="4wf-xV-8FY"/>
-        <segue reference="osW-FN-eW0"/>
+        <segue reference="8dJ-qP-zOc"/>
+        <segue reference="pcj-8d-1vn"/>
         <segue reference="Owd-lW-jMT"/>
         <segue reference="lWj-40-Zpx"/>
     </inferredMetricsTieBreakers>

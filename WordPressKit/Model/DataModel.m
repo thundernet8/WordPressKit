@@ -899,7 +899,7 @@
             sqlite3_bind_int(stmt, 4, (int)blogId);
             sqlite3_bind_text(stmt, 5, [xmlrpc UTF8String], -1, NULL);
             sqlite3_bind_int(stmt, 6, (int)isAdmin);
-            sqlite3_bind_int(stmt, 6, (int)id);
+            sqlite3_bind_int(stmt, 7, (int)id);
             if (sqlite3_step(stmt) == SQLITE_DONE) {
                 return 1;
             }

@@ -108,8 +108,9 @@
     //CGSize countSize = [countLabel.text sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(50.0, 12.0)];
     //CGFloat width = countSize.width + 15;
     //CGFloat width = countLabel.frame.size.width + 15;
-    CGSize countSize = [countLabel sizeThatFits:CGSizeMake(CGFLOAT_MAX, 16.0)];
-    CGFloat width = countSize.width + 10;
+//    CGSize countSize = [countLabel sizeThatFits:CGSizeMake(CGFLOAT_MAX, 16.0)];
+//    CGFloat width = countSize.width + 10;
+    CGFloat width = 30.0f;
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:countLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:0.0f constant:width];
     widthConstraint.active = YES;
     

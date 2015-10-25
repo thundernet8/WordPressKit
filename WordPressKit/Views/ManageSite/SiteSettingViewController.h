@@ -12,5 +12,6 @@
 @interface SiteSettingViewController : UITableViewController
 
 @property (nonatomic, strong) Blog *blog;
+@property (nonatomic, copy) void(^blogChanged)(Blog *);
 
 @end

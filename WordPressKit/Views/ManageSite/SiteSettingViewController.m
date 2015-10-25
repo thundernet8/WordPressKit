@@ -9,13 +9,17 @@
 #import "SiteSettingViewController.h"
 #import "WordPressXMLRPCApi.h"
 #import "DataModel.h"
+#import "SiteSettingInputViewController.h"
+#import "OptionData.h"
+#import "MBProgressHUD.h"
 
-@interface SiteSettingViewController ()
+@interface SiteSettingViewController () <OptionDataDelegate>
 
 @property (nonatomic, strong) NSDictionary *blogOptions;
 @property (weak, nonatomic) IBOutlet UISwitch *locationMark;
 @property (nonatomic, assign) BOOL currentLocationMark;
 @property (nonatomic, strong) DataModel *dataModel;
+@property (nonatomic, copy) NSString *password;
 
 - (void)configTableView;
 - (void)configTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -33,9 +37,18 @@
     [super viewDidLoad];
     //data model
     self.dataModel = [[DataModel alloc] init];
+    _password = [self.dataModel readKeyChainWithId:self.blog.id];
     [self configNavTitle];
     [self configureNavBackButton];
     [self configTableView];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if (self.blogChanged) {
+        self.blogChanged(_blog);
+    }
+    [super viewDidDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +71,6 @@
     return cell;
 }
 
-#pragma - tableview的header
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *header = [[UIView alloc] init];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16.0f, 12.0f, tableView.frame.size.width, 16.0f)];
@@ -75,6 +87,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0;
+}
+
+#pragma mark - tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        NSDictionary *settingObject = @{@"key":@"blog_title",@"value":self.blog.name,@"blog":self.blog};
+        [self performSegueWithIdentifier:@"SiteSettingInput" sender:settingObject];
+    }else if (indexPath.section == 0 && indexPath.row == 1){
+        NSDictionary *settingObject = @{@"key":@"blog_tagline",@"value":self.blog.subTitle,@"blog":self.blog};
+        [self performSegueWithIdentifier:@"SiteSettingInput" sender:settingObject];
+    }else if (indexPath.section == 1 && indexPath.row == 1){
+        NSString *password = _password;
+        NSDictionary *settingObject = @{@"key":@"password",@"value":password,@"blog":self.blog};
+        [self performSegueWithIdentifier:@"SiteSettingInput" sender:settingObject];
+    }
 }
 
 #pragma mark - configure
@@ -221,6 +248,94 @@
         }
     }
     self.currentLocationMark = self.locationMark.on;
+}
+
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SiteSettingInput"]) {
+        SiteSettingInputViewController *vc = segue.destinationViewController;
+        vc.settingObject = sender;
+        vc.onValueChanged = ^(NSString *value, NSString *key, BOOL isCancel){
+            if (!isCancel) {
+                [self validateInputKey:key withValue:value];
+                NSLog(@"no");
+            } else{
+                NSLog(@"yes");
+            }
+        };
+    }
+}
+
+#pragma mark - validate input
+- (void)validateInputKey:(NSString *)key withValue:(NSString *)value
+{
+    if ([value isEqualToString:@""]) {
+        return;
+    }
+    OptionData *od = [OptionData sharedManager];
+    od.delegate = self;
+    if ([key isEqualToString:@"blog_title"]) {
+        ![value isEqualToString:_blog.name]?[od updateBlog:self.blog withTitle:value],[self showHudWithTitle:@"更新中"]:nil;
+    }else if ([key isEqualToString:@"blog_tagline"]){
+        ![value isEqualToString:_blog.subTitle]?[od updateBlog:self.blog withSubTitle:value],[self showHudWithTitle:@"更新中"]:nil;
+    }else if ([key isEqualToString:@"password"]){
+        ![value isEqualToString:_password]?[od verifyBlog:self.blog withUserPassword:value],[self showHudWithTitle:@"验证中"]:nil;
+    }
+}
+
+#pragma mark - optiondata delegate
+- (void)updateBlogTitleFinished:(NSString *)title
+{
+    _blog.name = title;
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [self.tableView reloadData];
+}
+
+- (void)updateBlogTitleFailure:(NSError *)error
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    NSString *message = error.localizedDescription;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误提示" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)updateBlogSubTitleFinished:(NSString *)subtitle
+{
+    _blog.subTitle = subtitle;
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [self.tableView reloadData];
+}
+
+- (void)updateBlogSubTitleFailure:(NSError *)error
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    NSString *message = error.localizedDescription;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误提示" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)verifyUserPasswordFinished:(NSString *)password
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    _password = password;
+    [self.tableView reloadData];
+}
+
+- (void)verifyUserPasswordFailure:(NSError *)error
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    NSString *message = error.localizedDescription;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误提示" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alert show];
+}
+
+#pragma mark - accessories
+- (void)showHudWithTitle:(NSString *)title
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = title;
 }
 
 @end

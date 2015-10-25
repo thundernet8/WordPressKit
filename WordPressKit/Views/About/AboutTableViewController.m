@@ -200,6 +200,10 @@
     NSString *codeSourceCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/SourceFiles"];
     NSFileManager *manager = [NSFileManager defaultManager];
     [manager removeItemAtPath:codeSourceCachePath error:nil];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view.superview.superview animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"缓存清理成功";
+    [hud hide:YES afterDelay:1.5];
 }
 
 /**
