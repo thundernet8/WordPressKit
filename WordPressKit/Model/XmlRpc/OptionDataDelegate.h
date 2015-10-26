@@ -21,6 +21,12 @@
 - (void)verifyUserPasswordFinished:(NSString *)password;
 - (void)verifyUserPasswordFailure:(NSError *)error;
 
+- (void)fetchCategoriesFinished:(NSArray *)categories;
+- (void)fetchCategoriesFailure:(NSError *)error;
+
+- (void)fetchFormatsFinished:(NSArray *)formats;
+- (void)fetchFormatsFailure:(NSError *)error;
+
 @end
 
 @interface OptionData : NSObject

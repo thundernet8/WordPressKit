@@ -58,7 +58,6 @@ static NSInteger insertedPostsNum = 0;
 - (BOOL)existPost:(NSNumber *)postId inBlogId:(NSInteger)blogId;
 - (NSDate *)getDateFromStr:(NSString *)dateStr;
 - (NSString *)getDateStr:(NSDate *)date;
-- (void)insertCats:(NSArray *)categories;
 - (void)insertCat:(PostCategory *)category;
 - (BOOL)existCategory:(NSNumber *)categoryId;
 - (PostCategory *)queryCategoryWithId:(NSNumber *)categoryId;
@@ -394,7 +393,6 @@ static NSInteger insertedPostsNum = 0;
     post.tags = [self tagsFromXMLRPCTermsArray:terms];
     post.categories = [self remoteCategoriesFromXMLRPCTermsArray:terms];
     
-    // Pick an image to use for display
     if (post.postThumbnailPath) {
         post.pathForDisplayImage = post.postThumbnailPath;
     } else {
@@ -408,8 +406,6 @@ static NSInteger insertedPostsNum = 0;
 
 + (NSString *)statusForPostStatus:(NSString *)status andDate:(NSDate *)date
 {
-    // Scheduled posts are synced with a post_status of 'publish' but we want to
-    // work with a status of 'future' from within the app.
     if (date == [date laterDate:[NSDate date]]) {
         return PostStatusScheduled;
     }
@@ -676,7 +672,7 @@ static NSInteger insertedPostsNum = 0;
     if (sqlite3_open(npath, &db) != SQLITE_OK) {
         NSAssert(NO, @"打开数据库文件失败");
     }else{
-        const char *sql = [[NSString stringWithFormat:@"INSERT INTO CATEGORIES (CATEGORYID,NAME,PARENTID) VALUES(%i,'%@',%i)",[category.categoryID intValue],category.name,[category.parentID intValue]] UTF8String];
+        const char *sql = [[NSString stringWithFormat:@"INSERT INTO CATEGORIES (CATEGORYID,NAME,PARENTID,SITEID) VALUES(%i,'%@',%i,%i)",[category.categoryID intValue],category.name,[category.parentID intValue],(int)_blog.id] UTF8String];
         sqlite3_stmt *stmt;
         if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK) {
             if (sqlite3_step(stmt) == SQLITE_DONE) {
@@ -738,7 +734,8 @@ static NSInteger insertedPostsNum = 0;
                 PostCategory *cat = [PostCategory new];
                 cat.categoryID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
                 cat.name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)];
-                cat.parentID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 1)];
+                cat.parentID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 3)];
+                cat.siteID = [NSNumber numberWithInt:sqlite3_column_int(stmt, 4)];
                 sqlite3_finalize(stmt);
                 //sqlite3_close(db);
                 return cat;

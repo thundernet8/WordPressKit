@@ -38,8 +38,6 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 
 - (void)awakeFromNib {
     
-    //[self setNeedsUpdateConstraints];
-    
 }
 
 - (void)didMoveToSuperview{
@@ -48,8 +46,6 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 /**
@@ -62,24 +58,10 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
 {
     self.backgroundColor = kBackgroundColorLightGray;
     self.post = post;
-//    //博客名
-//    self.BlogName.text = blog.name;
-//    //作者
-//    self.PostAuthor.text = post.authorDisplayName;
     //文章标题
     self.PostTitle.text = post.title;
     //特色图
     [self confiImageWithPost:post];
-    //文章内容
-//    NSString *content = [post.excerpt isEmpty] ? [post.content trim] : [post.excerpt trim];
-////    content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-////    content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-//    NSUInteger length = content.length > 120 ? 120 : content.length;
-//    NSString *tail = content.length > 120 ? @" ···" : @"";
-//    content = [content substringWithRange:NSMakeRange(0, length)];
-//    content = [content stringByAppendingString:tail];
-//    self.PostContent.text = content;
-//    self.PostContent.font = [UIFont systemFontOfSize:14.0f];
     //文章日期
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"YYYY-MM-dd"];
@@ -129,10 +111,8 @@ static const UIEdgeInsets ViewButtonImageInsets = {2.0, 0.0, 0.0, 0.0};
     if ([status isEqualToString:PostStatusPublish] || [status isEqualToString:PostStatusPrivate]) {
         [self configurePublishedActionBar];
     } else if ([status isEqualToString:PostStatusTrash]) {
-        // trashed
         [self configureTrashedActionBar];
     } else {
-        // anything else (draft, pending, scheduled, something custom) treat as draft
         [self configureDraftActionBar];
     }
 }

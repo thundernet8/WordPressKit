@@ -710,7 +710,7 @@
                 
                 char *defaultFormat = (char *)sqlite3_column_text(stmt, 11);
                 NSString *nsDefaultFormat = defaultFormat ? [[NSString alloc] initWithUTF8String:defaultFormat] : nil;
-                blog.defaultCat = nsDefaultFormat;
+                blog.defaultFormat = nsDefaultFormat;
                 
                 NSInteger locationMark = (NSInteger)sqlite3_column_int(stmt, 12);
                 blog.locationMark = locationMark;
@@ -920,7 +920,6 @@
         NSAssert(NO, @"打开数据库文件失败");
     }else{
         NSString *sql = @"UPDATE BLOGS SET ";
-        NSLog(@"keyvalue %@", keyValuePairs);
         if (!keyValuePairs.count == 0) {
             NSInteger i = 0;
             for (NSString *key in keyValuePairs) {

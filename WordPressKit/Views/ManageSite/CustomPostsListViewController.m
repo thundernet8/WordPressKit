@@ -94,32 +94,15 @@ extern CGFloat tableViewInsertBottom;
 #pragma mark - Table view data source and delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //NSLog(@"numberOfRowsInSection:");
     return self.pc.posts ? [self.pc.posts count] : 0;
 }
 
-- (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"cellforrowatindexpath");
+- (PostCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     PostCell *cell = [self configCellNib:indexPath];
     [self configCellStyle:cell];
     [self configCellContent:cell atIndexPath:indexPath];
-    
     return cell;
-}
-
-//即将显示cell
-- (void)tableView:(UITableView *)tableView willDisplayCell:(PostCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    //去掉cell背景
-    //cell.backgroundColor = [UIColor clearColor];
-    //cell边框阴影效果
-    //    UIView *view = cell.postCellWrapper;
-    //    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(view.bounds.origin.x, view.bounds.origin.y, cell.bounds.size.width-8, cell.bounds.size.height-21)];
-    //    view.layer.masksToBounds = NO;
-    //    view.layer.shadowColor = [UIColor colorWithRed:89/255.0 green:120/255.0 blue:144/255.0 alpha:1.0].CGColor;
-    //    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-    //    view.layer.shadowOpacity = 0.2f;
-    //    view.layer.shadowPath = shadowPath.CGPath;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -244,141 +227,16 @@ extern CGFloat tableViewInsertBottom;
 - (void)configCellContent:(PostCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     Post *post = self.pc.posts[indexPath.row];
-    
     [cell configCellWithPost:post inBlog:self.blog];
-    
-    //cell delegate
     cell.delegate = self;
-    
 }
-
 
 #pragma mark - cell delegate methods
 
-- (void)cell:(PostCell *)cell receivedEditActionForProvider:(Post *)post
-{
-    [self editPost:post];
-}
-
-- (void)cell:(PostCell *)cell receivedViewActionForProvider:(Post *)post
-{
-    [self viewPost:post];
-}
-
-- (void)cell:(PostCell *)cell receivedPublishActionForProvider:(Post *)post
-{
-    [self publishPost:post];
-}
-
-- (void)cell:(PostCell *)cell receivedTrashActionForProvider:(Post *)post
-{
-    [self deletePost:post];
-}
-
-- (void)cell:(PostCell *)cell receivedRestoreActionForProvider:(Post *)post
-{
-    [self restorePost:post];
-}
 
 #pragma mark - Post Actions
 
-/*
- - (void)createPost
- {
- UINavigationController *navController;
- 
- if ([WPPostViewController isNewEditorEnabled]) {
- WPPostViewController *postViewController = [[WPPostViewController alloc] initWithDraftForBlog:self.blog];
- navController = [[UINavigationController alloc] initWithRootViewController:postViewController];
- navController.restorationIdentifier = WPEditorNavigationRestorationID;
- navController.restorationClass = [WPPostViewController class];
- } else {
- WPLegacyEditPostViewController *editPostViewController = [[WPLegacyEditPostViewController alloc] initWithDraftForLastUsedBlog];
- navController = [[UINavigationController alloc] initWithRootViewController:editPostViewController];
- navController.restorationIdentifier = WPLegacyEditorNavigationRestorationID;
- navController.restorationClass = [WPLegacyEditPostViewController class];
- }
- 
- [navController setToolbarHidden:NO]; // Fixes incorrect toolbar animation.
- navController.modalPresentationStyle = UIModalPresentationFullScreen;
- 
- [self presentViewController:navController animated:YES completion:nil];
- 
- [WPAnalytics track:WPAnalyticsStatEditorCreatedPost withProperties:@{ @"tap_source": @"posts_view" }];
- }
- */
 
-- (void)previewEditPost:(Post *)post
-{
-    [self editPost:post withEditMode:@"preview"];
-}
-
-- (void)editPost:(Post *)post
-{
-    [self editPost:post withEditMode:@"edit"];
-}
-
-- (void)viewPost:(Post *)post
-{
-    NSString *url = [post.URL absoluteString];
-    [self performSegueWithIdentifier:@"PreviewPost" sender:url];
-}
-
-
-- (void)editPost:(Post *)post withEditMode:(NSString *)mode
-{
-    //    if ([WPPostViewController isNewEditorEnabled]) {
-    //        WPPostViewController *postViewController = [[WPPostViewController alloc] initWithPost:apost mode:mode];
-    //        postViewController.hidesBottomBarWhenPushed = YES;
-    //        [self.navigationController pushViewController:postViewController animated:YES];
-    //    } else {
-    //        // In legacy mode, view means edit
-    //        WPLegacyEditPostViewController *editPostViewController = [[WPLegacyEditPostViewController alloc] initWithPost:apost];
-    //        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editPostViewController];
-    //        [navController setToolbarHidden:NO]; // Fixes incorrect toolbar animation.
-    //        navController.modalPresentationStyle = UIModalPresentationFullScreen;
-    //        navController.restorationIdentifier = WPLegacyEditorNavigationRestorationID;
-    //        navController.restorationClass = [WPLegacyEditPostViewController class];
-    //
-    //        [self presentViewController:navController animated:YES completion:nil];
-    //    }
-}
-
-//- (void)promptThatPostRestoredToFilter:(PostListFilter *)filter
-//{
-//    NSString *message = NSLocalizedString(@"Post Restored to Drafts", @"Prompts the user that a restored post was moved to the drafts list.");
-//    switch (filter.filterType) {
-//        case PostListStatusFilterPublished:
-//            message = NSLocalizedString(@"Post Restored to Published", @"Prompts the user that a restored post was moved to the published list.");
-//            break;
-//        case PostListStatusFilterScheduled:
-//            message = NSLocalizedString(@"Post Restored to Scheduled", @"Prompts the user that a restored post was moved to the scheduled list.");
-//            break;
-//        default:
-//            break;
-//    }
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-//                                                        message:message
-//                                                       delegate:nil
-//                                              cancelButtonTitle:NSLocalizedString(@"OK", @"Title of an OK button. Pressing the button acknowledges and dismisses a prompt.")
-//                                              otherButtonTitles:nil, nil];
-//    [alertView show];
-//}
-
-- (void)publishPost:(Post *)post
-{
-    
-}
-
-- (void)deletePost:(Post *)post
-{
-    
-}
-
-- (void)restorePost:(Post *)post
-{
-    
-}
 
 #pragma mark - segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -397,12 +255,9 @@ extern CGFloat tableViewInsertBottom;
 #pragma mark - hud
 - (void)addHud
 {
-    //if (!self.pc.posts || self.pc.posts.count == 0) {
-    //添加指示器
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
     hud.labelText = @"加载中···";
-    //}
 }
 
 - (void)removeHud
@@ -467,18 +322,11 @@ extern CGFloat tableViewInsertBottom;
 - (void)addSCPullRefreshBlocks
 {
     __weak typeof(CustomPostsListViewController) *weakSelf = self;
-    
     self.refreshBlock = ^{
-        
         __strong typeof(CustomPostsListViewController) *strongSelf = weakSelf;
-        
-        //[strongSelf performSelector:@selector(endRefresh) withObject:strongSelf afterDelay:2.0];
         [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:pageC];
-        
     };
-    
     self.loadMoreBlock = ^{
-        
         __strong typeof(CustomPostsListViewController) *strongSelf = weakSelf;
         NSArray *morePosts = [strongSelf.pc loadMoreDBPostsofType:postType postStatus:postStatusC ForBlog:strongSelf.blog page:pageC+1];
         if (morePosts && morePosts.count >= numOfPostsPerPageC) {
@@ -488,7 +336,6 @@ extern CGFloat tableViewInsertBottom;
         }else{
             [PostControll syncPostsWithBlog:strongSelf.blog postType:postType page:pageC+1];
         }
-        //[strongSelf performSelector:@selector(endLoadMore) withObject:strongSelf afterDelay:2.0];
     };
 }
 
@@ -507,7 +354,6 @@ extern CGFloat tableViewInsertBottom;
         [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView endUpdates];
         [self.tableView scrollToRowAtIndexPath:[indexPaths firstObject] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        //[self.tableView layoutIfNeeded];
     });
 }
 

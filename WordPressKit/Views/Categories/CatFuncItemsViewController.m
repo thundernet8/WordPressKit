@@ -12,6 +12,7 @@
 #import "DataModel.h"
 #import "FuncItemViewController.h"
 #import "CatItem.h"
+#import "FuncItemWebViewController.h"
 
 @interface CatFuncItemsViewController () <UISearchBarDelegate>
 
@@ -112,10 +113,6 @@
 - (void)configImgForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
 {
     NSString *img = [self.dataModel isBlankString:item.img] ? @"type_icon_function" : [NSString stringWithFormat:@"type_icon_%@",item.img];
-//    UIGraphicsBeginImageContext(CGSizeMake(20, 20));
-//    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
-//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
     cell.imageView.image = [UIImage imageNamed:img];
     
 }
@@ -159,7 +156,11 @@
 {
     [self.searchBar resignFirstResponder];
     FuncItem *funcItem = self.dataModel.funcItems[indexPath.row];
-    [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
+    if ([funcItem.img isEqualToString:@"api"]) {
+        [self performSegueWithIdentifier:@"ShowFuncItem" sender:funcItem];
+    }else{
+        [self performSegueWithIdentifier:@"ShowCatFuncItemInWebView" sender:funcItem];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -167,7 +168,9 @@
     if ([segue.identifier isEqualToString:@"ShowFuncItem"]) {
         FuncItemViewController *controller = segue.destinationViewController;
         controller.funcItem = sender;
-        
+    }else if ([segue.identifier isEqualToString:@"ShowCatFuncItemInWebView"]){
+        FuncItemWebViewController *controller = segue.destinationViewController;
+        controller.funcItem = sender;
     }
 }
 

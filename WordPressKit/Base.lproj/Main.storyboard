@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWj-Nf-6wL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="-1725"/>
+            <point key="canvasLocation" x="2422" y="-1046"/>
         </scene>
         <!--单个函数-->
         <scene sceneID="SSO-gH-bo3">
@@ -459,6 +459,7 @@
                     <connections>
                         <outlet property="searchBar" destination="luy-P4-AHB" id="Sqs-2c-GZL"/>
                         <segue destination="66C-2J-q8F" kind="show" identifier="ShowFuncItem" id="wTr-pV-qft"/>
+                        <segue destination="ZFL-wu-P7l" kind="show" identifier="ShowCatFuncItemInWebView" id="RgE-E6-pND"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkd-u0-VRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2075,10 +2076,11 @@
         <image name="wordpress_transparent" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wTr-pV-qft"/>
+        <segue reference="RgE-E6-pND"/>
+        <segue reference="lWj-40-Zpx"/>
         <segue reference="UZO-Er-ThG"/>
         <segue reference="8dJ-qP-zOc"/>
         <segue reference="pcj-8d-1vn"/>
-        <segue reference="Owd-lW-jMT"/>
-        <segue reference="lWj-40-Zpx"/>
     </inferredMetricsTieBreakers>
 </document>

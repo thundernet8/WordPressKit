@@ -12,6 +12,10 @@
 #import "SiteSettingInputViewController.h"
 #import "OptionData.h"
 #import "MBProgressHUD.h"
+#import "SettingFilterTableViewController.h"
+#import "PostCategory.h"
+#import "PostFormat.h"
+#import "NSString+Util.h"
 
 @interface SiteSettingViewController () <OptionDataDelegate>
 
@@ -20,6 +24,8 @@
 @property (nonatomic, assign) BOOL currentLocationMark;
 @property (nonatomic, strong) DataModel *dataModel;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) PostCategory *defaultCat;
+@property (nonatomic, copy) PostFormat *defaultFormat;
 
 - (void)configTableView;
 - (void)configTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -35,12 +41,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //data model
-    self.dataModel = [[DataModel alloc] init];
-    _password = [self.dataModel readKeyChainWithId:self.blog.id];
+    [self configureVars];
     [self configNavTitle];
     [self configureNavBackButton];
     [self configTableView];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -101,10 +106,24 @@
         NSString *password = _password;
         NSDictionary *settingObject = @{@"key":@"password",@"value":password,@"blog":self.blog};
         [self performSegueWithIdentifier:@"SiteSettingInput" sender:settingObject];
+    }else if (indexPath.section == 2 && indexPath.row == 1){
+        //默认分类
+        [self displayFiltersViewOfType:@"category"];
+    }else if (indexPath.section == 2 && indexPath.row == 2){
+        //默认文章形式
+        [self displayFiltersViewOfType:@"format"];
     }
 }
 
 #pragma mark - configure
+- (void)configureVars
+{
+    //data model
+    self.dataModel = [[DataModel alloc] init];
+    _password = [self.dataModel readKeyChainWithId:self.blog.id];
+    _defaultCat = [self getDefaultCategoryForBlog:_blog];
+    _defaultFormat = [self getDefaultPostFormatForBlog:_blog];
+}
 
 - (void)configureNavBackButton
 {
@@ -188,13 +207,24 @@
         BOOL mark = [defaults boolForKey:@"LocationMark"];
         locationMark.on = mark;
         self.currentLocationMark = mark;
-
     }else if (indexPath.section == 2 && indexPath.row == 1){
         //默认分类
+        UILabel *catLabel = (UILabel *)[cell.contentView.subviews lastObject];
+        if (_blog.defaultCat && ![_blog.defaultCat isEmpty]) {
+            catLabel.text = _blog.defaultCat;
+            return;
+        }
+        catLabel.text = @"未分类";
+        
     }else if (indexPath.section == 2 && indexPath.row == 2){
         //默认文章形式
+        UILabel *formatLabel = (UILabel *)[cell.contentView.subviews lastObject];
+        if (_blog.defaultFormat && ![_blog.defaultFormat isEmpty]) {
+            formatLabel.text = _blog.defaultFormat;
+            return;
+        }
+        formatLabel.text = @"标准";
     }
-    
 }
 
 - (void)configNavTitle
@@ -241,11 +271,6 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool:self.locationMark.on forKey:@"LocationMark"];
         [defaults synchronize];
-        if (self.locationMark.on) {
-            NSLog(@"yes");
-        }else{
-            NSLog(@"no");
-        }
     }
     self.currentLocationMark = self.locationMark.on;
 }
@@ -259,9 +284,6 @@
         vc.onValueChanged = ^(NSString *value, NSString *key, BOOL isCancel){
             if (!isCancel) {
                 [self validateInputKey:key withValue:value];
-                NSLog(@"no");
-            } else{
-                NSLog(@"yes");
             }
         };
     }
@@ -296,7 +318,7 @@
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     NSString *message = error.localizedDescription;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误提示" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"出错了" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
     [alert show];
 }
 
@@ -311,7 +333,7 @@
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     NSString *message = error.localizedDescription;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误提示" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"出错了" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
     [alert show];
 }
 
@@ -326,7 +348,7 @@
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     NSString *message = error.localizedDescription;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误提示" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"出错了" message:message delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
     [alert show];
 }
 
@@ -336,6 +358,75 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
     hud.labelText = title;
+}
+
+#pragma mark - filter view controll
+- (PostCategory *)getDefaultCategoryForBlog:(Blog *)blog
+{
+    OptionData *od = [OptionData sharedManager];
+    PostCategory *cat = [od getDefaultCategoryForBlog:_blog];
+    return cat;
+}
+
+- (PostFormat *)getDefaultPostFormatForBlog:(Blog *)blog
+{
+    OptionData *od = [OptionData sharedManager];
+    PostFormat *format = [od getDefaultPostFormatForBlog:_blog];
+    return format;
+}
+
+- (void)displayFiltersViewOfType:(NSString *)type
+{
+    id filter;
+    if ([type isEqualToString:@"category"]) {
+        filter = _defaultCat?_defaultCat:[self getDefaultCategoryForBlog:_blog];
+    }else if ([type isEqualToString:@"format"]){
+        filter = _defaultFormat?_defaultFormat:[self getDefaultPostFormatForBlog:_blog];
+    }else{
+        return;
+    }
+    SettingFilterTableViewController *controller = [[SettingFilterTableViewController alloc] initWithCurrentFilter:filter forFilterType:type];
+    controller.onItemSelected = ^(id selectedFilter) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        if (([selectedFilter isKindOfClass:[PostCategory class]] && selectedFilter == _defaultCat) || ([selectedFilter isKindOfClass:[PostFormat class]] && selectedFilter == _defaultFormat)) {
+            return;
+        }
+        [self setCurrentFilter:selectedFilter];
+        [self recordBlogDefaultFilter:selectedFilter];
+    };
+    controller.onCancel = ^() {
+        //[self handleFilterSelectionCanceled];
+    };
+    controller.blog = _blog;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    navController.modalPresentationStyle = UIModalPresentationPageSheet;
+    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)setCurrentFilter:(id)filter
+{
+    if ([filter isKindOfClass:[PostCategory class]]) {
+        _defaultCat = filter;
+        _blog.defaultCat = _defaultCat.name;
+        _blog.defaultCatId = [_defaultCat.categoryID integerValue];
+        [self.tableView reloadData];
+    }else if ([filter isKindOfClass:[PostFormat class]]){
+        _defaultFormat = filter;
+        _blog.defaultFormat = _defaultFormat.name;
+        [self.tableView reloadData];
+    }
+}
+
+- (void)recordBlogDefaultFilter:(id)filter
+{
+    OptionData *od = [OptionData sharedManager];
+    _blog.defaultCat = _defaultCat.name;
+    _blog.defaultCatId = [_defaultCat.categoryID integerValue];
+    _blog.defaultFormat = _defaultFormat.name;
+    [od updateBlog:_blog];
+    NSLog(@"recordBlogDefaultFilter");
 }
 
 @end
