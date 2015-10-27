@@ -11,6 +11,7 @@
 #import "WebBrowserController.h"
 #import "UIImageView+WebCache.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import "IntroViewController.h"
 
 @interface AboutTableViewController () <MFMailComposeViewControllerDelegate>
 
@@ -53,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 3;
+        return 2;
     }else if (section == 1){
         return 2;
     }
@@ -87,11 +88,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0 && indexPath.row == 0) {
         //功能介绍
-        
+        [self performSegueWithIdentifier:@"IntroWebPage" sender:@"intro"];
     }else if(indexPath.section == 0 && indexPath.row == 1) {
-        //帮助
-        
-    }else if(indexPath.section == 0 && indexPath.row == 2) {
         //反馈
         [self sendEmail];
     }else if(indexPath.section == 1 && indexPath.row == 0) {
@@ -252,6 +250,9 @@
     if ([segue.identifier isEqualToString:@"AboutToBrowser"]) {
         WebBrowserController *controller = segue.destinationViewController;
         controller.url = sender;
+    }else if ([segue.identifier isEqualToString:@"IntroWebPage"]){
+        IntroViewController *controller = segue.destinationViewController;
+        controller.type = sender;
     }
 }
 

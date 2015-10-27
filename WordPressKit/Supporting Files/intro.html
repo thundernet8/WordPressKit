@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <style type="text/css">
+            body {background: #fff;margin:0 !important; font-size: 12px; font-family:"Microsoft Yahei",Consolas,sans-serif,Arial,Helvetica;line-height:150%;padding:2px 8px;}
+            body.wrap *{white-space:normal;word-wrap:break-all;word-break:break-all;}
+            #intro{}
+            *,*:before,*:after {box-sizing:border-box}
+            .func-block{padding: 10px 0;}
+            .func-block h2{font-size: 20px;font-weight: 300;line-height: 1.5;margin: 0;padding: 0;color: #000000;}
+            .func-block h3{font-size: 14px;color: #888888;line-height:1.2;padding:0;margin:0;font-weight:normal;}
+            .func-block#intro-2{text-align: right;}
+            .func-block p img{margin:10px 0; width: 100%;height: auto;}
+            </style>
+    </head>
+    <body class="wrap">
+        <div id="intro">
+            <div class="func-block" id="intro-1">
+                <h2>API函数文档</h2>
+                <h3>收录WordPress官方近3000函数，详细附注并随时离线搜索查看</h3>
+                <p><img src="intro1.png" /></p>
+            </div>
+            <div class="func-block" id="intro-2">
+                <h2>函数源码</h2>
+                <h3>层级模式展现源码目录，代码高亮显示查看</h3>
+                <p><img src="intro2.png" /></p>
+            </div>
+            <div class="func-block" id="intro-3">
+                <h2>博客管理</h2>
+                <h3>添加个人基于WordPress搭建的博客站点，随时随地查看文章及评论并管理</h3>
+                <p><img src="intro3.png" /></p>
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            function sender(){
+                if(document.readyState == "complete"){
+                    return;
+                    //通知oc
+                    var iFrame;
+                    iFrame = document.createElement("iframe");
+                    iFrame.setAttribute("src", "wpkwebview://postloaded");
+                    iFrame.setAttribute("style", "display:none;");
+                    iFrame.setAttribute("height", "0px");
+                    iFrame.setAttribute("width", "0px");
+                    iFrame.setAttribute("frameborder", "0");
+                    document.body.appendChild(iFrame);
+                    // 发起请求后这个 iFrame 就没用了，所以把它从 dom 上移除掉
+                    iFrame.parentNode.removeChild(iFrame);
+                    iFrame = null;
+                }
+            }
+        document.onreadystatechange = sender;
+            </script>
+    </body>
+</html>

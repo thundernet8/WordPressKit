@@ -160,6 +160,11 @@
     }else if ([segue.identifier isEqualToString:@"ShowSiteToolsView"]){
         SiteToolsViewController *controller = segue.destinationViewController;
         controller.blog = sender;
+        controller.blogChanged = ^(){
+            if ([self.navigationController.topViewController isKindOfClass:[ManagesiteViewController class]]) {
+                [self.dataModel queryAllBlogs];
+            }
+        };
     }
 }
 

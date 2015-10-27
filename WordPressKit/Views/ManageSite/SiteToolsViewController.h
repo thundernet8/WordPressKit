@@ -12,5 +12,6 @@
 @interface SiteToolsViewController : UITableViewController
 
 @property (nonatomic, strong) Blog *blog;
+@property (nonatomic, copy) void(^blogChanged)();
 
 @end

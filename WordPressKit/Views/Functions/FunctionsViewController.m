@@ -112,6 +112,7 @@
 - (void)configureTabbar
 {
     self.tabBarController.tabBar.tintColor = kFontColorGreenBlue; //tab bar tint color
+    self.tabBarController.tabBar.barTintColor = kWhiteColor;
 }
 
 #pragma mark - 配置cell的img和label
