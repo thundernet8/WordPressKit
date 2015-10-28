@@ -41,15 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self configurePullToRefresh];
-    
     [self configureCancelButton];
-    
     [self configureTableView];
-    
     [self configureNavibar];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -78,7 +73,6 @@
     self.tableView.separatorColor = kSeparatorColor;
     self.tableView.scrollEnabled = YES;
     if (self.tableView.style == UITableViewStylePlain) {
-        // 隐藏表格底部空白行
         self.tableView.tableFooterView = [UIView new];
     }
 }

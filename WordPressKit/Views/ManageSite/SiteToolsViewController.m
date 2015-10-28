@@ -37,11 +37,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - configure
 - (void)configureBlogInfo
 {
@@ -79,7 +74,6 @@
     if (section == 0) {
         return 2;
     }else if (section == 1){
-        //return 4;
         return 3;
     }else if (section == 2){
         return 1;
@@ -130,7 +124,6 @@
     cell.imageView.image = [UIImage imageNamed:icon];
     cell.textLabel.text = text;
     cell.textLabel.textColor = [[UIColor alloc] initWithRed:25/255.0 green:50/255.0 blue:68/255.0 alpha:1.0f];
-    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -178,7 +171,6 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return NO;
 }
 
@@ -214,7 +206,6 @@
  */
 - (void)configureNavBackItemTitle
 {
-    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:[NSString string] style:UIBarButtonItemStylePlain target:nil action:nil];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     [self configureNavBackButton];

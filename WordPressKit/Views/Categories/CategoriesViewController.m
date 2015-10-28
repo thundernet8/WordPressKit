@@ -26,16 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     //通过dataModel获取catItems
     self.dataModel = [[DataModel alloc] init];//
     [self.dataModel queryAllCatItems]; //查询
-    
-    
     [self configureNavi];
     [self configureTabbar];
     [self configureTableView];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,12 +76,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"CatCell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    
     //配置cell文字
     [self configLabelTextForCell:cell cellWithCatItem:self.dataModel.catItems[indexPath.row]];
     
@@ -102,14 +96,6 @@
     CGRect rect = cell.frame;
     rect.size.height = 32 + desSize.height;
     cell.frame = rect;
-    
-    //配置countLabel尺寸
-    //[countLabel sizeToFit];
-    //CGSize countSize = [countLabel.text sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(50.0, 12.0)];
-    //CGFloat width = countSize.width + 15;
-    //CGFloat width = countLabel.frame.size.width + 15;
-//    CGSize countSize = [countLabel sizeThatFits:CGSizeMake(CGFLOAT_MAX, 16.0)];
-//    CGFloat width = countSize.width + 10;
     CGFloat width = 30.0f;
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:countLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:0.0f constant:width];
     widthConstraint.active = YES;
@@ -144,8 +130,6 @@
 //选中cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //取消选中
-    //[tableView deselectRowAtIndexPath:indexPath animated:NO];
     CatItem *catItem = self.dataModel.catItems[indexPath.row];
     [self performSegueWithIdentifier:@"shouCatFuncItems" sender:catItem];
 }

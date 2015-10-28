@@ -68,14 +68,7 @@ extern const CGFloat tableViewInsertBottom;
     }else if (self.pc.posts.count <= numOfPostsPerPageB) {
         [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
     }
-    pageB = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPageB));
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - tableView data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

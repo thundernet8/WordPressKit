@@ -94,7 +94,7 @@
         [self sendEmail];
     }else if(indexPath.section == 1 && indexPath.row == 0) {
         //打开App Store评分
-        NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/WordPressKit"];
+        NSURL *url = [NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/WordPressKit/id1053428034?mt=8"];
         [[UIApplication sharedApplication] openURL:url];
         
     }else if(indexPath.section == 1 && indexPath.row == 1) {

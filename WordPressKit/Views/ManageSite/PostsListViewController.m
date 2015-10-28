@@ -56,8 +56,6 @@ const CGFloat tableViewInsertBottom = 49.0;
     [self fetchPostsFromDB];
     //隐藏添加文章按钮，待用
     self.navigationItem.rightBarButtonItem = nil;
-    NSLog(@"viewDidLoad");
-    
 }
 
 - (void)loadView {
@@ -72,13 +70,11 @@ const CGFloat tableViewInsertBottom = 49.0;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSLog(@"view appear");
     if (self.pc.posts.count == 0) {
         [PostControll syncPostsWithBlog:self.blog postType:postType page:pageA];
     }else if (self.pc.posts.count <= numOfPostsPerPageA) {
         [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
     }
-    pageA = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPageA));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,7 +93,6 @@ const CGFloat tableViewInsertBottom = 49.0;
     PostCell *cell = [self configCellNib:indexPath];
     [self configCellStyle:cell];
     [self configCellContent:cell atIndexPath:indexPath];
-    
     return cell;
 }
 
@@ -173,7 +168,6 @@ const CGFloat tableViewInsertBottom = 49.0;
     
     UINib *postImageCellNib = [UINib nibWithNibName:@"ImageCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:postImageCellNib forCellReuseIdentifier:@"ImageCell"];
-    
 }
 
 /**
@@ -189,7 +183,6 @@ const CGFloat tableViewInsertBottom = 49.0;
     NSString *cellIdentifier = (thumb > 0 && ![thumbPath isEqualToString:@""]) ? @"ImageCell" : @"TextCell";
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     return cell;
-    
 }
 
 /**
@@ -221,12 +214,8 @@ const CGFloat tableViewInsertBottom = 49.0;
 - (void)configCellContent:(PostCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     Post *post = self.pc.posts[indexPath.row];
-    
     [cell configCellWithPost:post inBlog:self.blog];
-    
-    //cell delegate
     cell.delegate = self;
-    
 }
 
 

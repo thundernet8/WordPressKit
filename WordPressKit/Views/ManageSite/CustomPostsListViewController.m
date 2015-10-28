@@ -59,9 +59,6 @@ extern CGFloat tableViewInsertBottom;
     [self configureNavBackButton];
     [self addSCPullRefreshBlocks];
     [self fetchPostsFromDB];
-    
-    NSLog(@"viewDidLoad");
-    
 }
 
 - (void)loadView {
@@ -82,7 +79,6 @@ extern CGFloat tableViewInsertBottom;
     }else if (self.pc.posts.count <= numOfPostsPerPageC) {
         [self.pc needsSyncPostsForBlog:self.blog forTimeInterval:syncTimeInterval postType:postType];
     }
-    pageC = ceil((double)(self.pc.posts.count*1.0/numOfPostsPerPageC));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,7 +89,8 @@ extern CGFloat tableViewInsertBottom;
 
 #pragma mark - Table view data source and delegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.pc.posts ? [self.pc.posts count] : 0;
 }
 
@@ -428,7 +425,7 @@ extern CGFloat tableViewInsertBottom;
     [NSUserDefaults resetStandardUserDefaults];
     [self updateFilter];
     [self updateFilterTitle];
-    
+
     [self fetchPostsFromDB];
 }
 
@@ -488,7 +485,6 @@ extern CGFloat tableViewInsertBottom;
 }
 
 #pragma mark - UIPopover Delegate Methods
-
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     self.postFilterPopoverController.delegate = nil;
@@ -496,12 +492,9 @@ extern CGFloat tableViewInsertBottom;
 }
 
 #pragma mark - fetch posts
-
 - (void)fetchPostsFromDB
 {
     [self addHud];
     [self.pc getDBPostsofType:postType postStatus:postStatusC ForBlog:self.blog number:numOfPostsPerPageC];
 }
-
-
 @end

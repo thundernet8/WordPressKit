@@ -106,11 +106,10 @@
         imageField.image = [UIImage imageNamed:@"icon_lock"];
         textField.placeholder = @"密码";
         textField.secureTextEntry = YES;
-        //textField.text = @"wxq881994";
     }else{
         imageField.image = [UIImage imageNamed:@"icon_global"];
         textField.placeholder = @"站点地址(URL)";
-        textField.keyboardType = UIKeyboardTypeURL;
+        textField.keyboardType = UIKeyboardTypeASCIICapable;
         textField.text = [[self.blog.url stringByReplacingOccurrencesOfString:@"http://" withString:@""] stringByReplacingOccurrencesOfString:@"/" withString:@""];;
     }
     //cell不可选中
@@ -194,7 +193,6 @@
     }else{
         //通过xml-rpc请求验证并尝试添加站点
         [self tryAddBlogWithUrl:urlField.text withUserName:userField.text withPassWord:passwordField.text];
-        
     }
 }
 
@@ -204,7 +202,6 @@
     //添加指示器
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
-    
     //通过getuserblogs尝试获取网站对应用户的博客列表
     [WordPressXMLRPCApi guessXMLRPCURLForSite:url success:^(NSURL *xmlrpcURL) {
         WordPressXMLRPCApi *xmlrpcApi = [[WordPressXMLRPCApi alloc] initWithXMLRPCEndpoint:xmlrpcURL username:username password:password];

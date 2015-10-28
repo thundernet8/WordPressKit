@@ -25,9 +25,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
     self.navigationController.navigationBarHidden = NO;
-    
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor grayColor]];//searchtext颜色
     [[UILabel appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor grayColor]];//placeholder颜色
     self.searchBar.backgroundColor = [UIColor whiteColor];
@@ -35,10 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.searchBar.delegate = self;
     self.dataModel = [[DataModel alloc] init]; //初始化DataModel
-    
     [self.dataModel queryFuncItemsInCatItemId:self.catItem.id];//查询数据
     self.searchBar.placeholder = [NSString stringWithFormat:@"Search in %@",self.catItem.name];
     self.view.backgroundColor = kBackgroundColorLightGray;
@@ -46,14 +42,9 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
-
     [self configureTableView];
     [self configureNavBackButton];
-
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
-    
-    
-    
 }
 
 // 点击空白搜索框消失

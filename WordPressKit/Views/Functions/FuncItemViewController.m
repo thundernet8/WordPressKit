@@ -25,19 +25,16 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //[self.scrollView setContentSize:CGSizeMake(320.0, 1800.0)];
     [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, [self.view viewWithTag:1102].frame.size.height + [self.view viewWithTag:1103].frame.size.height + [self.view viewWithTag:1104].frame.size.height + [self.view viewWithTag:1105].frame.size.height + [self.view viewWithTag:1106].frame.size.height + [self.view viewWithTag:1107].frame.size.height + [self.view viewWithTag:1108].frame.size.height + 390)];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     //配置文字
     [self configText];
     //textview 委托
@@ -46,12 +43,6 @@
     [self configureNavi];
     [self configureNavBackItemTitle];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 // 配置各模块的文字
 - (void)configText
@@ -80,7 +71,6 @@
     //变更日志
     UITextView *changeLogText = (UITextView *)[self.view viewWithTag:1107];
     changeLogText.text = funcItem.changeLog;
-
     //源文件
     UITextView *sourceFileText = (UITextView *)[self.view viewWithTag:1108];
     if (funcItem.sourceFile && ![funcItem.sourceFile isEmpty]) {

@@ -35,40 +35,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //[NSThread sleepForTimeInterval:2.0]; //延长Launch image加载时间
-    
-    
+    [NSThread sleepForTimeInterval:1.0]; //延长Launch image加载时间
     [self configureTableView];
-    
     self.dataModel = [[DataModel alloc] init]; //初始化DataModel
-    
     [self.dataModel queryAllFuncItems]; //查询数据
-    
     [self configureSearchBar];
     [self configureNavi];
     [self configureTabbar];
     [self setStatusBarBackgroundColor]; //设置状态栏背景色
     [self addTapGesture];
-    
-    
-    NSLog(@"the path is %@", [self.dataModel dataFilePath]);
-    
-    
 }
 
 // 点击空白搜索框消失
 - (void)viewTapped: (UITapGestureRecognizer *)tap
 {
-    //[self.searchBar resignFirstResponder];
-    //[self.view endEditing:YES];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
+    [self.view endEditing:YES];
 }
 
 - (void)addTapGesture
@@ -106,7 +87,6 @@
     self.navigationController.navigationBar.barTintColor = [[UIColor alloc] initWithRed:0.0 green:168/255.0 blue:219/255.0 alpha:1.0]; //导航条背景色
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};//导航条标题颜色
-    
 }
 
 - (void)configureTabbar
@@ -119,17 +99,12 @@
 - (void)configImgForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
 {
     NSString *img = [self.dataModel isBlankString:item.img] ? @"type_icon_function" : [NSString stringWithFormat:@"type_icon_%@",item.img];
-//    UIGraphicsBeginImageContext(CGSizeMake(20, 20));
-//    [[UIImage imageNamed:img] drawInRect:CGRectMake(0, 0, 20, 20)];
-//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
     cell.imageView.image = [UIImage imageNamed:img];
     
 }
 
 - (void)configTextForCell: (UITableViewCell *)cell cellWithFuncItem: (FuncItem *)item
 {
-    //UILabel *label = (UILabel *)[cell viewWithTag:1002];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", item.name];
 }
 

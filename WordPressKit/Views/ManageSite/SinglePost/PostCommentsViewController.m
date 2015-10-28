@@ -93,7 +93,7 @@ static NSString *commentType = @"";
     contentLabel.font = [UIFont systemFontOfSize:14.0];
     contentLabel.text = comment.content;
     CGSize contentLabelSize = [contentLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width - 32, CGFLOAT_MAX)];
-    return 60.0 + contentLabelSize.height;
+    return 70.0 + contentLabelSize.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

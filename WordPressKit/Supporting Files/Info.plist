@@ -21,18 +21,19 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>com.wuxueqian.WordPressKit</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxd9a39c7122aa6516</string>
 				<string>WPK</string>
 				<string>WordPressKit</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>067</string>
+	<string>068</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
