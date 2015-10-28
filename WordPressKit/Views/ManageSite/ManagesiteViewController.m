@@ -226,18 +226,8 @@
     [self.tableView setEditing:editing animated:animated];
     NSArray *cells = self.tableView.visibleCells;
     for (UITableViewCell *cell in cells) {
-//        for (UIView *configBtn in cell.contentView.subviews) {
-//            if ([configBtn isKindOfClass:[UIButton class]]) {
-//                configBtn.hidden = !editing;
-//            }
-//        }
         UIButton *configBtn = [cell.contentView.subviews objectAtIndex:3];
         configBtn.hidden = !editing;
-    }
-    if (editing) {
-        
-    }else{
-        
     }
 }
 

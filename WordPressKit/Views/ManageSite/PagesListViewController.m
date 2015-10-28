@@ -17,7 +17,7 @@
 #import "SinglePostViewController.h"
 
 static NSInteger const syncTimeInterval = 600;
-NSInteger const numOfPostsPerPageB = 20;
+NSInteger const numOfPostsPerPageB = 100;
 NSUInteger pageB = 1;//当前页码
 static NSString * postType = @"page";
 NSString * postStatusB = @"publish";

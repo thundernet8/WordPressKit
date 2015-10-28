@@ -15,6 +15,9 @@
     NSMutableArray *result = [NSMutableArray array];
     DataModel *dataModel = [[DataModel alloc] init];
     NSString *password = [dataModel readKeyChainWithId:self.id];
+    if (!password) {
+        password = @"";
+    }
     [result addObject:[NSNumber numberWithInteger:self.blogId]];
     [result addObject:self.userName];
     [result addObject:password];

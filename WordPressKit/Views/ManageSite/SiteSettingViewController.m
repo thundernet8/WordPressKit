@@ -100,6 +100,9 @@
         NSDictionary *settingObject = @{@"key":@"blog_title",@"value":self.blog.name,@"blog":self.blog};
         [self performSegueWithIdentifier:@"SiteSettingInput" sender:settingObject];
     }else if (indexPath.section == 0 && indexPath.row == 1){
+        if (!self.blog.subTitle) {
+            self.blog.subTitle = @"";
+        }
         NSDictionary *settingObject = @{@"key":@"blog_tagline",@"value":self.blog.subTitle,@"blog":self.blog};
         [self performSegueWithIdentifier:@"SiteSettingInput" sender:settingObject];
     }else if (indexPath.section == 1 && indexPath.row == 1){
